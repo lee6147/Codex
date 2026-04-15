@@ -1,0 +1,1 @@
+Read codex.md first. Run the local AI trend report harness preflight in this workspace, then create today's report set and verify the outputs at the end. If article volume is low, widen article search to 7 days and state that clearly.

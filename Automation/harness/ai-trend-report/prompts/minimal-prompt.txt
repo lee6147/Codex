@@ -1,0 +1,1 @@
+Read codex.md first. Run the local AI trend report harness and create today's report set.
