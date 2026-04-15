@@ -21,6 +21,12 @@
 특히 `Companion Recommender`는 이전에 본 영상 목록이 있어야 훨씬 정확해진다.
 없으면 특정 영상 추천 대신 "어떤 유형의 영상을 찾아보면 좋은지" 중심으로만 답한다.
 
+## Git / Worktree 메모
+
+- 이 워크스페이스가 Git 저장소라면 `git worktree`를 써서 병렬 실험이나 브랜치 분리를 할 수 있다.
+- 다만 유튜브 분석 산출물은 기본적으로 현재 메인 워크스페이스의 `youtube-transcript-team/analyses/` 아래에 저장한다.
+- 별도 worktree를 쓰더라도 분석 결과 보관 위치는 사용자가 따로 원하지 않는 한 이 폴더를 기준으로 유지한다.
+
 ## 추천 팀 구성
 
 ### 1) Summary Analyst
