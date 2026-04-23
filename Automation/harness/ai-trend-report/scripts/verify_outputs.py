@@ -15,12 +15,14 @@ HTML_REQUIRED_SNIPPETS = (
     "<h1>",
     "생성일",
     "출처",
+    "목차",
 )
 
 HTML_PLACEHOLDERS = (
+    "여기에 이번 보고서의 핵심 요약을 작성한다.",
     "여기에 조사 기준 요약을 작성한다.",
-    "여기에 본문을 작성한다.",
-    "여기에 핵심 요약을 작성한다.",
+    "여기에 독자가 먼저 알아야 할 핵심 변화 2~3문장을 작성한다.",
+    "여기에 첫 번째 카드 본문을 작성한다.",
     "여기에 출처 목록을 작성한다.",
 )
 
@@ -28,12 +30,12 @@ MD_REQUIRED_SNIPPETS = (
     "[[01_official_tool_updates]]",
     "[[02_trending_github_repos]]",
     "[[03_ai_coding_tools_articles]]",
-    "# AI 도구 종합 평가",
 )
 
 MD_PLACEHOLDERS = (
-    "## 개요\n\n## 도구별 평가",
-    "## 다음 주 체크포인트",
+    "여기에 이번 주 전체 흐름을 2~3개 불릿으로 요약한다.",
+    "여기에 강점을 작성한다.",
+    "여기에 이번 주 총평을 작성한다.",
 )
 
 
@@ -87,6 +89,9 @@ def main() -> int:
             placeholders = find_present_placeholders(text, MD_PLACEHOLDERS)
             if placeholders:
                 failures.append(f"{name}: still looks like the scaffold template")
+
+            if "# AI 코딩 도구 종합 평가" not in text and "# AI 도구 종합 평가" not in text:
+                failures.append(f"{name}: missing report title heading")
 
             if "#AI트렌드" not in text and "- AI트렌드" not in text:
                 failures.append(f"{name}: missing AI트렌드 tag or equivalent frontmatter entry")

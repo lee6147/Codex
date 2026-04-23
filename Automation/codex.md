@@ -10,6 +10,7 @@
 3. 필요 시 아래 참고 문서를 순서대로 읽는다.
    - `harness/ai-trend-report/references/preflight.md`
    - `harness/ai-trend-report/references/output-contract.md`
+   - `harness/ai-trend-report/references/presentation-style.md`
    - `harness/ai-trend-report/references/source-policy.md`
 4. 가능하면 `harness/ai-trend-report/scripts/run_preflight.py --ensure-scaffold`를 먼저 실행한다.
 5. 그 다음에만 계획, 웹 리서치, 파일 생성을 시작한다.
@@ -39,6 +40,7 @@
 - `codex.md`: 시작 순서, 로컬 하네스 우선순위, 최종 보고 방식의 기준 문서
 - `harness/ai-trend-report/skill.md`: 실행 흐름과 프롬프트 사용 방식
 - `harness/ai-trend-report/references/output-contract.md`: 산출물 형식과 파일별 필수 항목
+- `harness/ai-trend-report/references/presentation-style.md`: 화면 구성, 정보 밀도, 스캔 가능성 기준
 - `harness/ai-trend-report/references/source-policy.md`: 출처, 검증, 기간 확장 규칙
 
 문서 간 표현이 다를 때는 위 역할에 따라 해석한다.
@@ -64,6 +66,7 @@
 
 세 HTML 파일은 모두 한국어 단일 파일 문서로 작성하고, 링크 가능한 출처를 포함한다.
 Markdown 파일은 Obsidian 호환으로 작성한다.
+형식만 맞추는 평면적인 표 문서보다, 요약 박스, 카드형 섹션, 배지, 분명한 헤더 구조를 우선한다.
 
 ## 병렬 작업
 
@@ -81,7 +84,7 @@ Markdown 파일은 Obsidian 호환으로 작성한다.
 자동화 설정에는 아래 문구를 기본형으로 사용한다.
 더 짧거나 더 보수적인 문구가 필요하면 `harness/ai-trend-report/prompts/` 아래 변형을 사용한다.
 
-`Read codex.md first. Run the local AI trend report harness preflight in this workspace, then create today's report set and verify the outputs at the end. If article volume is low, widen article search to 7 days and state that clearly.`
+`Read codex.md first. Run the local AI trend report harness preflight in this workspace, then create today's report set and verify the outputs at the end. Follow the local presentation-style guide so the reports are easy to scan: strong header, top summary box, card-style sections, and readable Markdown. If article volume is low, widen article search to 7 days and state that clearly.`
 
 ## 최종 보고 방식
 

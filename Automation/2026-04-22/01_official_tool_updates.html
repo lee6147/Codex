@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 도구 업데이트 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5b6877;
+      --line: #d8e1eb;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e8f7ec;
+      --warn: #fff2da;
+      --hero: linear-gradient(135deg, #173a63 0%, #255996 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1b4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1f6e36; }
+    .badge.warn { background: #fde8d6; color: #9a4b13; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    .mini-title {
+      font-weight: 700;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>공식 도구 업데이트 보고서</h1>
+      <p>생성일: 2026-04-22 | 조사 기간: 2026-04-19 ~ 2026-04-22</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 요약</strong><br>Claude Code는 2026-04-20에 새 릴리스를 냈고, Cursor는 이 창 안에 새 공식 changelog가 없었으며, OpenAI Codex는 2026-04-19 기준 도움말 문서가 다시 정리됐다.</div>
+        <div class="stat"><strong>조사 기준</strong><br>GitHub Releases, Cursor changelog, OpenAI 공식 제품 글과 Help Center 문서만 반영했다.</div>
+        <div class="stat"><strong>메모</strong><br>Cursor는 “새 항목 없음” 자체가 신호였다. 반대로 Claude Code와 Codex는 기능 확장보다 운영 안정성과 접근 경로 정리에 무게를 뒀다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">이번 창에서 가장 분명한 변화는 Claude Code의 2026-04-20 릴리스 v2.1.116이다. 성능, MCP 초기화, 터미널 UX, 위험 경로 삭제 보호까지 동시에 손봤다. Cursor는 2026-04-19~2026-04-22 사이 새 공식 changelog가 확인되지 않았고, 최신 공식 기준점은 2026-04-15 Canvases와 2026-04-14 CLI Debug Mode다. Codex는 2026-04-19 기준 접근 경로, 플랜 포함 범위, 플러그인 제어, Compliance API 노출 범위를 정리한 Help Center 문서가 현재 창의 핵심 공식 업데이트다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>v2.1.116: 대용량 세션 복구와 MCP 시작 속도 개선</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 GitHub Releases</span>
+          <span class="badge">2026-04-20</span>
+        </div>
+        <p>Anthropic의 최신 공식 릴리스는 2026-04-20 v2.1.116이다. 공개 노트 기준으로 핵심은 세 가지다. 첫째, 대형 세션에서 <code>/resume</code> 성능을 크게 끌어올렸고, 둘째, 여러 stdio MCP 서버를 쓸 때 초기 기동 속도를 높였으며, 셋째, VS Code·Cursor·Windsurf 터미널에서 스크롤 체감과 도구 UX를 다듬었다. 여기에 위험 경로로 향하는 <code>rm</code>/<code>rmdir</code> 자동 허용 우회를 막는 안전 수정도 포함됐다.</p>
+        <p class="meta-line">발표일: 2026-04-20 | 출처: GitHub Releases | 확인 상태: 확인 완료 | 링크: <a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a></p>
+        <p class="mini-title">실무 시사점</p>
+        <p>이번 릴리스는 화려한 신규 기능보다 장기 세션 복구, MCP 연결, 안전 가드레일 같은 운영층을 먼저 만진다. Claude Code가 “한 번 잘 답하는 도구”에서 “오래 붙여놓고 굴리는 작업 환경”으로 이동 중이라는 증거다.</p>
+      </article>
+
+      <article class="card">
+        <h3>직전 릴리스 v2.1.113의 연장선: 네이티브 바이너리와 보안 규칙 강화</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 GitHub Releases</span>
+          <span class="badge">2026-04-17</span>
+        </div>
+        <p>이번 창 바로 직전 릴리스인 v2.1.113도 방향성이 선명하다. 네이티브 Claude Code 바이너리 실행 전환, <code>sandbox.network.deniedDomains</code> 추가, <code>/ultrareview</code> 병렬화, 그리고 위험한 Bash 허용 규칙을 더 엄격하게 막는 보안 보강이 들어갔다. 즉 2026-04-17과 2026-04-20 두 릴리스를 같이 보면 Anthropic은 성능과 확장성보다 신뢰 가능한 실행 환경을 먼저 다듬고 있다.</p>
+        <p class="meta-line">발표일: 2026-04-17 | 출처: GitHub Releases | 확인 상태: 확인 완료 | 링크: <a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>2026-04-19 ~ 2026-04-22 새 공식 changelog 항목: 확인 불가</h3>
+        <div class="badge-row">
+          <span class="badge warn">확인 불가</span>
+          <span class="badge">공식 changelog 기준</span>
+          <span class="badge">신규 항목 없음</span>
+        </div>
+        <p>Cursor 공식 changelog를 다시 확인했지만 2026-04-19~2026-04-22 구간에는 새 항목이 보이지 않았다. 따라서 이번 보고서 기준으로는 “이 창에 새 공식 발표가 없었다”가 정확한 상태다. 빠른 출시 주기를 가진 제품에서는 이 공백 자체가 신호인데, 4월 초에 Cursor 3와 Agents Window를 대형 업데이트로 낸 뒤, 현재는 바로 다음 대형 기능보다 그 위에서의 확장과 외부 연동 정리에 시간을 쓰고 있다고 해석할 수 있다.</p>
+        <p class="meta-line">확인일: 2026-04-22 | 출처: Cursor Changelog | 확인 상태: 확인 불가(신규 항목 없음) | 링크: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a></p>
+      </article>
+
+      <article class="card">
+        <h3>가장 가까운 공식 기준점은 2026-04-15 Canvases와 2026-04-14 CLI Debug Mode</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 changelog</span>
+          <span class="badge">2026-04-15, 2026-04-14</span>
+        </div>
+        <p>Cursor의 가장 가까운 공식 기준점은 2026-04-15 Canvases와 2026-04-14 CLI Debug Mode다. Canvases는 에이전트 응답을 대시보드, 차트, 박스, diff, to-do 같은 지속형 시각 산출물로 남기고, CLI Debug Mode는 원인 가설 생성과 런타임 기반 디버깅을 도구 전면으로 끌어올린다. 즉 Cursor는 “코드를 써주는 IDE”를 넘어 “에이전트 작업면 + 시각 산출물 + 터미널 조사 도구”로 제품 정의를 바꾸는 중이다.</p>
+        <p class="meta-line">발표일: 2026-04-15, 2026-04-14 | 출처: Cursor Changelog | 확인 상태: 확인 완료 | 링크: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>Help Center 갱신: 플랜 포함 범위와 진입 경로를 2026-04-19 기준으로 재정리</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 Help Center</span>
+          <span class="badge">2026-04-19 갱신</span>
+        </div>
+        <p>OpenAI의 <em>Using Codex with your ChatGPT plan</em> 문서는 2026-04-22 조회 시점에 “Updated: 3 days ago”로 표시됐다. 이 문서가 이번 창에서 중요한 이유는 Codex 접근 경로를 app, CLI, IDE extension, web으로 명확히 나누고, 플랜 포함 범위를 Plus·Pro·Business·Enterprise/Edu에 더해 Free·Go의 한시 포함까지 다시 정리했기 때문이다. 또한 플러그인 제어, RBAC, Compliance API 노출 범위까지 함께 설명해 제품 기능이 아니라 운영 경로를 문서로 정교화하고 있다.</p>
+        <p class="meta-line">확인일: 2026-04-22 | 출처: OpenAI Help Center | 확인 상태: 확인 완료 | 링크: <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan/">https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan/</a></p>
+      </article>
+
+      <article class="card">
+        <h3>가장 가까운 대형 제품 기준점은 2026-04-16 “Codex for (almost) everything”</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 Product Post</span>
+          <span class="badge">2026-04-16</span>
+        </div>
+        <p>이번 3일 창 안에 더 큰 제품 발표는 없었지만, 직전 기준점인 2026-04-16 제품 글은 여전히 현재 Codex의 방향을 설명한다. OpenAI는 Codex가 컴퓨터 사용, 웹 브라우저, 이미지 생성, 90개 이상의 추가 플러그인, 다중 터미널, SSH devbox, 자동화 재사용, 메모리 프리뷰까지 포함한다고 밝혔다. 따라서 이번 창의 문서 갱신은 별개 사건이라기보다 2026-04-16 대형 확장판의 사용 조건과 관리 경로를 뒤따라 정리하는 후속 작업으로 보는 편이 맞다.</p>
+        <p class="meta-line">발표일: 2026-04-16 | 출처: OpenAI Product | 확인 상태: 확인 완료 | 링크: <a href="https://openai.com/index/codex-for-almost-everything/">https://openai.com/index/codex-for-almost-everything/</a></p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Codex의 최근 변화는 모델 성능 경쟁보다 “어디서 들어오고, 무엇까지 연결되며, 조직에서 어떻게 통제되는가”를 넓히는 쪽이다. 즉 Codex는 단일 코딩 도구보다 작업 시스템에 가까워지고 있다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/anthropics/claude-code/releases">Claude Code GitHub Releases</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan/">OpenAI Help Center: Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://openai.com/index/codex-for-almost-everything/">OpenAI: Codex for (almost) everything</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

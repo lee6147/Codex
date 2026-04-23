@@ -1,1 +1,1 @@
-Read codex.md first. Run the local AI trend report harness and create today's report set.
+Read codex.md first. Run the local AI trend report harness, follow the presentation-style guide, and create today's report set.

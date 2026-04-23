@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f8f6;
+      --panel: #ffffff;
+      --text: #18251f;
+      --muted: #5f6f67;
+      --line: #d9e4dc;
+      --link: #0f766e;
+      --accent: #e7f7f1;
+      --hero: linear-gradient(135deg, #123e37 0%, #1f7a6b 100%);
+      --hero-text: #ffffff;
+      --warn: #fff4dc;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); line-height: 1.72; }
+    .container { width: min(1020px, calc(100vw - 32px)); margin: 32px auto 64px; }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero { background: var(--hero); color: var(--hero-text); border-radius: 18px; padding: 36px; margin-bottom: 24px; box-shadow: 0 16px 40px rgba(18, 62, 55, 0.16); }
+    .hero p { margin: 10px 0 0; opacity: 0.94; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px; }
+    .stat { background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 14px 16px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: 24px; margin-bottom: 20px; }
+    .toc ol, .sources ul { margin: 0; padding-left: 20px; }
+    .toc li { margin: 6px 0; }
+    .notice { background: var(--warn); border-radius: 12px; padding: 14px 16px; }
+    .card { border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-top: 16px; background: linear-gradient(180deg, #ffffff 0%, #fbfefd 100%); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; background: var(--accent); color: #0d6258; }
+    .meta-line { color: var(--muted); font-size: 0.92rem; margin-top: 10px; }
+    .mini-title { font-weight: 700; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일: 2026-04-21 | 조사 기준: GitHub Trending 기준선과 각 저장소 페이지 조회</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 수</strong><br>6개 저장소</div>
+        <div class="stat"><strong>가장 강한 흐름</strong><br>워크플로 하네스, 계획 검수 UI, 메시징 브리지, 장기 메모리형 에이전트, 브라우저 MCP, 멀티에이전트 SDK</div>
+        <div class="stat"><strong>왜 중요한가</strong><br>GitHub 관심이 모델 래퍼보다 에이전트 운영 체계와 연결 레이어로 계속 이동하고 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">오늘 눈에 띈 저장소들은 공통적으로 “좋은 모델을 호출하는 법”보다 “좋은 에이전트 절차를 반복 가능하게 만드는 법”에 집중했다. Claude Code, Cursor, Codex 사용자 모두에게 중요한 축이 작업 분해, 검수, 브라우저 연결, 장기 메모리, 다중 에이전트 조율로 확장되고 있다.</div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <article class="card">
+        <h3>coleam00 / Archon</h3>
+        <div class="badge-row">
+          <span class="badge">워크플로 엔진</span>
+          <span class="badge">총 19k stars</span>
+          <span class="badge">AI coding harness</span>
+        </div>
+        <p>Archon은 AI 코딩 프로세스를 YAML 워크플로로 고정해 계획, 구현, 검증, 코드 리뷰, PR 생성까지 반복 가능하게 만드는 하네스 빌더다. README는 이를 “GitHub Actions가 CI/CD에 한 역할을 AI 코딩 워크플로에 가져오는 것”으로 설명한다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/coleam00/Archon">https://github.com/coleam00/Archon</a> | Star 수 조회 시점 기준: 2026-04-21</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>에이전트가 계획을 생략하거나 테스트를 빼먹는 문제를 프롬프트가 아니라 워크플로 구조로 해결하려는 수요가 커지고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>세 도구 모두 여러 표면을 지원하지만, 실제 팀 운영 단계에서는 결국 반복 가능한 절차 계층이 별도로 필요하다는 점을 보여준다.</p>
+      </article>
+
+      <article class="card">
+        <h3>backnotprop / plannotator</h3>
+        <div class="badge-row">
+          <span class="badge">계획 검수 UI</span>
+          <span class="badge">총 4.4k stars</span>
+          <span class="badge">plan review</span>
+        </div>
+        <p>Plannotator는 코딩 에이전트의 계획과 코드 diff를 브라우저에서 시각적으로 검토하고 주석을 달아 되돌려주는 도구다. Claude Code, Codex, Copilot CLI, OpenCode 등 여러 에이전트에 붙도록 설계돼 있다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/backnotprop/plannotator">https://github.com/backnotprop/plannotator</a> | Star 수 조회 시점 기준: 2026-04-21</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>계획 품질을 사람 눈으로 빠르게 교정하는 UI가 별도 제품군으로 커지고 있다. 자동화 강도가 높아질수록 승인 게이트와 설명 가능한 diff가 더 중요해진다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Cursor가 작업면을 강화하는 흐름과 맞닿고, Claude Code와 Codex에는 사람이 개입하는 승인면을 덧대는 역할을 한다.</p>
+      </article>
+
+      <article class="card">
+        <h3>chenhg5 / cc-connect</h3>
+        <div class="badge-row">
+          <span class="badge">메시징 브리지</span>
+          <span class="badge">총 5.4k stars</span>
+          <span class="badge">multi-agent relay</span>
+        </div>
+        <p>cc-connect는 Claude Code, Codex, Cursor Agent, Gemini CLI 등 로컬 AI 코딩 에이전트를 Slack, Telegram, Discord, Lark 같은 메신저에 연결한다. 원격 채팅에서 세션 전환, 모델 전환, 메모리 편집, 스케줄 작업까지 다룰 수 있도록 설계돼 있다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/chenhg5/cc-connect">https://github.com/chenhg5/cc-connect</a> | Star 수 조회 시점 기준: 2026-04-21</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>에이전트가 IDE나 터미널 안에만 머물지 않고, 팀 커뮤니케이션 채널로 바로 들어가는 흐름이 강해지고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Codex 자동화, Claude Code 장기 세션, Cursor의 다중 에이전트 흐름을 모두 메신저 운영면으로 끌어올리는 사례다.</p>
+      </article>
+
+      <article class="card">
+        <h3>zhayujie / CowAgent</h3>
+        <div class="badge-row">
+          <span class="badge">장기 메모리형 에이전트</span>
+          <span class="badge">총 43.6k stars</span>
+          <span class="badge">skills + memory</span>
+        </div>
+        <p>CowAgent는 장기 메모리, 개인 지식베이스, 스킬 시스템, 파일/터미널/브라우저 도구, 멀티모달 메시지, 다중 모델 전환을 한 프레임워크에 넣은 오픈소스 에이전트 플랫폼이다. README는 지속 성장형 개인 비서와 기업 디지털 워커 양쪽을 목표로 잡고 있다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/zhayujie/CowAgent">https://github.com/zhayujie/CowAgent</a> | Star 수 조회 시점 기준: 2026-04-21</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>단기 실행 정확도만이 아니라, 시간이 지날수록 기억과 기술을 축적하는 에이전트 설계가 별도 경쟁 축이 되고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>세 도구가 모두 메모리와 장기 작업을 넓히는 가운데, CowAgent는 그 흐름을 가장 노골적으로 플랫폼화한 사례다.</p>
+      </article>
+
+      <article class="card">
+        <h3>openai / openai-agents-python</h3>
+        <div class="badge-row">
+          <span class="badge">멀티에이전트 SDK</span>
+          <span class="badge">총 23.8k stars</span>
+          <span class="badge">sandbox agents</span>
+        </div>
+        <p>OpenAI Agents SDK는 agents, tools, guardrails, handoffs, sessions, tracing, sandbox agents를 포함하는 멀티에이전트 프레임워크다. 저장소 설명도 “lightweight, powerful framework for multi-agent workflows”로 요약돼 있다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/openai/openai-agents-python">https://github.com/openai/openai-agents-python</a> | Star 수 조회 시점 기준: 2026-04-21</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>장기 작업용 sandbox agent가 이제 제품 데모가 아니라 개발 프리미티브가 되고 있다는 점을 보여준다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Codex 철학과 가장 가깝지만, 실제로는 Claude Code나 Cursor 사용자도 자체 하네스를 만들 때 참고할 수 있는 공통 인프라다.</p>
+      </article>
+
+      <article class="card">
+        <h3>ChromeDevTools / chrome-devtools-mcp</h3>
+        <div class="badge-row">
+          <span class="badge">브라우저 MCP</span>
+          <span class="badge">총 36.4k stars</span>
+          <span class="badge">cross-agent integration</span>
+        </div>
+        <p>chrome-devtools-mcp는 브라우저 조작과 디버깅을 코딩 에이전트에 연결하는 표준 MCP 서버다. README는 Claude Code, Codex, Cursor, VS Code, Gemini CLI 등 다양한 런타임에 대한 설치 경로를 직접 제공한다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">https://github.com/ChromeDevTools/chrome-devtools-mcp</a> | Star 수 조회 시점 기준: 2026-04-21</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>브라우저 자동화가 더 이상 부가 기능이 아니라 에이전트의 기본 능력으로 편입되고 있다. 특히 프론트엔드와 검증 루프에서 중요하다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>세 도구 모두 시각 검증과 브라우저 실행을 넓히는 가운데, 실제 연결 표준이 MCP로 수렴하고 있음을 보여준다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending</a></li>
+        <li><a href="https://github.com/coleam00/Archon">coleam00 / Archon</a></li>
+        <li><a href="https://github.com/backnotprop/plannotator">backnotprop / plannotator</a></li>
+        <li><a href="https://github.com/chenhg5/cc-connect">chenhg5 / cc-connect</a></li>
+        <li><a href="https://github.com/zhayujie/CowAgent">zhayujie / CowAgent</a></li>
+        <li><a href="https://github.com/openai/openai-agents-python">openai / openai-agents-python</a></li>
+        <li><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools / chrome-devtools-mcp</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

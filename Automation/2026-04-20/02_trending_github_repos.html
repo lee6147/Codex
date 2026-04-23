@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f8f6;
+      --panel: #ffffff;
+      --text: #18251f;
+      --muted: #5f6f67;
+      --line: #d9e4dc;
+      --link: #0f766e;
+      --accent: #e7f7f1;
+      --hero: linear-gradient(135deg, #123e37 0%, #1f7a6b 100%);
+      --hero-text: #ffffff;
+      --warn: #fff4dc;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); line-height: 1.72; }
+    .container { width: min(1020px, calc(100vw - 32px)); margin: 32px auto 64px; }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero { background: var(--hero); color: var(--hero-text); border-radius: 18px; padding: 36px; margin-bottom: 24px; box-shadow: 0 16px 40px rgba(18, 62, 55, 0.16); }
+    .hero p { margin: 10px 0 0; opacity: 0.94; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px; }
+    .stat { background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 14px 16px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: 24px; margin-bottom: 20px; }
+    .toc ol, .sources ul { margin: 0; padding-left: 20px; }
+    .toc li { margin: 6px 0; }
+    .notice { background: var(--warn); border-radius: 12px; padding: 14px 16px; }
+    .card { border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-top: 16px; background: linear-gradient(180deg, #ffffff 0%, #fbfefd 100%); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; background: var(--accent); color: #0d6258; }
+    .meta-line { color: var(--muted); font-size: 0.92rem; margin-top: 10px; }
+    .mini-title { font-weight: 700; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일: 2026-04-20 | 조사 기준: GitHub Trending 오늘 피드 + 각 저장소 페이지 조회</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 수</strong><br>7개 저장소</div>
+        <div class="stat"><strong>가장 강한 흐름</strong><br>스킬 프레임워크, 자기 진화 메모리, 브라우저 도구, 멀티에이전트 운영 자동화</div>
+        <div class="stat"><strong>왜 중요한가</strong><br>상위권 관심이 모델 래퍼보다 “에이전트 운영 체계” 쪽으로 계속 이동하고 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">오늘 GitHub Trending에서 반복해 보이는 단어는 memory, skills, handoff, browser, workflow, SRE였다. 즉, AI 코딩 도구 시장의 관심이 “어느 모델이 더 잘 쓰는가”에서 “에이전트를 어떤 절차와 도구 조합으로 굴리는가”로 이동하고 있다. Claude Code, Cursor, Codex 사용자 모두에게 중요한 건 이제 엔진 하나보다 제어 레이어다.</div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <article class="card">
+        <h3>obra / superpowers</h3>
+        <div class="badge-row">
+          <span class="badge">Shell</span>
+          <span class="badge">총 160k stars</span>
+          <span class="badge">오늘 +1,645</span>
+        </div>
+        <p>스킬 묶음과 개발 방법론을 함께 제공하는 대표적인 에이전트 운영 프레임워크다. 브레인스토밍, 설계, worktree, 계획 작성, TDD, 서브에이전트 개발, 리뷰까지 한 흐름으로 연결한다.</p>
+        <p class="meta-line">출처: GitHub Trending + 저장소 페이지 | GitHub URL: <a href="https://github.com/obra/superpowers">https://github.com/obra/superpowers</a> | Star 수 조회 시점 기준: 2026-04-20</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>상용 도구 위에 얹는 공통 운영 레이어가 오픈소스에서도 사실상 표준 제품처럼 소비되고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>저장소 README가 세 도구 모두에 설치 경로를 따로 제시한다는 점 자체가, 시장이 엔진 공통화보다 운영 공통화로 움직인다는 신호다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>좋은 모델보다 재현 가능한 팀 절차가 더 큰 차별점이 되는 단계다.</p>
+      </article>
+
+      <article class="card">
+        <h3>EvoMap / evolver</h3>
+        <div class="badge-row">
+          <span class="badge">JavaScript</span>
+          <span class="badge">총 5.3k stars</span>
+          <span class="badge">오늘 +750</span>
+        </div>
+        <p>GEP 기반 자기 진화 엔진으로, ad hoc 프롬프트 수정 대신 재사용 가능한 진화 자산과 감사 가능한 변화를 강조한다. README도 “prompt governance”와 “audit trail”을 핵심 키워드로 전면에 둔다.</p>
+        <p class="meta-line">출처: GitHub Trending + 저장소 페이지 | GitHub URL: <a href="https://github.com/EvoMap/evolver">https://github.com/EvoMap/evolver</a> | Star 수 조회 시점 기준: 2026-04-20</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>개별 세션 성능보다 반복 가능한 개선 자산을 남기는 흐름이 강해지고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>세 제품 모두 메모리와 장기 작업을 강화하는 가운데, 오픈소스는 아예 “진화 자산”을 별도 개념으로 분리해 더 과격하게 밀고 있다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>컨텍스트 길이 경쟁 다음 단계는 학습된 운영 자산의 누적이다.</p>
+      </article>
+
+      <article class="card">
+        <h3>lsdefine / GenericAgent</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">총 4.4k stars</span>
+          <span class="badge">오늘 +848</span>
+        </div>
+        <p>약 3K 줄 핵심 코드에서 시작해 스킬 트리를 스스로 키운다는 자기 진화형 에이전트 프레임워크다. 브라우저, 터미널, 파일시스템, 키보드/마우스, 모바일 장치까지 제어하며 경험을 스킬로 굳힌다.</p>
+        <p class="meta-line">출처: GitHub Trending + 저장소 페이지 | GitHub URL: <a href="https://github.com/lsdefine/GenericAgent">https://github.com/lsdefine/GenericAgent</a> | Star 수 조회 시점 기준: 2026-04-20</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>거대한 제품면보다 작은 핵심 루프와 누적 스킬을 선호하는 개발자 층이 분명히 커지고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Claude Code의 규칙 파일, Cursor의 작업면, Codex의 자동화와 다르게, GenericAgent는 적은 코어와 자기 누적형 메모리로 대안을 제시한다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>작은 핵심과 강한 기억을 결합한 경량 하네스가 별도 흐름으로 자리 잡고 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>openai / openai-agents-python</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">총 23k stars</span>
+          <span class="badge">오늘 +624</span>
+        </div>
+        <p>Agents, handoffs, tools, guardrails, human-in-the-loop, sessions, tracing, sandbox agents를 한 SDK 안에 넣은 멀티에이전트 워크플로 프레임워크다. 최근 README도 장기 작업용 sandbox agent를 전면 기능으로 내세운다.</p>
+        <p class="meta-line">출처: GitHub Trending + 저장소 페이지 | GitHub URL: <a href="https://github.com/openai/openai-agents-python">https://github.com/openai/openai-agents-python</a> | Star 수 조회 시점 기준: 2026-04-20</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>상용 앱에서 보이던 에이전트 개념이 오픈소스 개발 프레임워크 층으로 빠르게 내려오고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Codex 철학과 가장 직접적으로 맞닿아 있지만, Claude Code나 Cursor 사용자도 자체 하네스를 짤 때 참고할 수 있는 공통 인프라다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>장기 실행 에이전트는 이제 제품 기능이 아니라 개발 프리미티브가 되고 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>ChromeDevTools / chrome-devtools-mcp</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge">총 36.2k stars</span>
+          <span class="badge">오늘 +279</span>
+        </div>
+        <p>코딩 에이전트가 Chrome DevTools를 MCP 서버로 직접 활용하게 해주는 저장소다. Codex, Claude Code, Cursor를 포함한 여러 에이전트 런타임에 브라우저 도구를 꽂는 실제 설치 경로가 문서화돼 있다.</p>
+        <p class="meta-line">출처: GitHub Trending + 저장소 페이지 | GitHub URL: <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">https://github.com/ChromeDevTools/chrome-devtools-mcp</a> | Star 수 조회 시점 기준: 2026-04-20</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>브라우저 자동화가 더 이상 별도 테스트 툴이 아니라 범용 코딩 에이전트의 기본 능력으로 편입되고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>세 도구 모두 프론트엔드 확인, 브라우저 상호작용, 시각 검증을 강화하는 가운데, 실제 연결 표준으로 MCP가 굳어지고 있음을 보여준다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>실행 엔진 경쟁만큼 브라우저 도구 체인 경쟁도 중요해졌다.</p>
+      </article>
+
+      <article class="card">
+        <h3>Tracer-Cloud / opensre</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">총 1.3k stars</span>
+          <span class="badge">오늘 +257</span>
+        </div>
+        <p>Datadog, Grafana, Slack 등 60개 이상 도구를 연결해 AI SRE 에이전트를 구축하고 평가하는 프레임워크다. 루트 원인 분석과 incident response를 훈련/평가 환경까지 포함해 다룬다.</p>
+        <p class="meta-line">출처: GitHub Trending + 저장소 페이지 | GitHub URL: <a href="https://github.com/Tracer-Cloud/opensre">https://github.com/Tracer-Cloud/opensre</a> | Star 수 조회 시점 기준: 2026-04-20</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>AI 코딩 다음 수요가 운영 자동화와 장애 대응이라는 점을 명확히 보여준다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>세 제품이 모두 장기 실행과 자동화를 넓히는 상황에서, SRE는 가장 먼저 실사용 수익화가 붙는 후속 시장 중 하나다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>코드 생성 이후의 운영 단계가 빠르게 에이전트 전장으로 변하고 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>Donchitos / Claude-Code-Game-Studios</h3>
+        <div class="badge-row">
+          <span class="badge">Shell</span>
+          <span class="badge">총 13.2k stars</span>
+          <span class="badge">오늘 +405</span>
+        </div>
+        <p>49개 AI 에이전트와 72개 워크플로 스킬을 게임 스튜디오 조직도처럼 배치한 저장소다. 프로젝트를 개인 채팅이 아니라 승인 게이트와 역할 분리가 있는 스튜디오 운영으로 바꾼다.</p>
+        <p class="meta-line">출처: GitHub Trending + 저장소 페이지 | GitHub URL: <a href="https://github.com/Donchitos/Claude-Code-Game-Studios">https://github.com/Donchitos/Claude-Code-Game-Studios</a> | Star 수 조회 시점 기준: 2026-04-20</p>
+        <p class="mini-title">지금 주목할 이유</p>
+        <p>단일 에이전트보다 역할 분리와 승인 체계가 있는 팀형 운영 모델의 수요가 커졌기 때문이다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Claude Code 친화적이지만, 실제로는 Cursor의 병렬 에이전트 관리면과 Codex의 다중 작업 흐름을 모두 설명하는 사례다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>에이전트 도구는 점점 소프트웨어 팀 구조를 닮아가고 있다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending</a></li>
+        <li><a href="https://github.com/obra/superpowers">obra / superpowers</a></li>
+        <li><a href="https://github.com/EvoMap/evolver">EvoMap / evolver</a></li>
+        <li><a href="https://github.com/lsdefine/GenericAgent">lsdefine / GenericAgent</a></li>
+        <li><a href="https://github.com/openai/openai-agents-python">openai / openai-agents-python</a></li>
+        <li><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools / chrome-devtools-mcp</a></li>
+        <li><a href="https://github.com/Tracer-Cloud/opensre">Tracer-Cloud / opensre</a></li>
+        <li><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos / Claude-Code-Game-Studios</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

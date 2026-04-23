@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 공식 업데이트</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --text:#18202a; --muted:#5f6b7a; --line:#d8dee8; --link:#0a66c2; --accent:#e8f1fb; --warn:#fff3cd; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI","Noto Sans KR",sans-serif; line-height:1.7; }
+    .container { width:min(980px, calc(100vw - 32px)); margin:32px auto 64px; }
+    .hero { background:linear-gradient(135deg,#17345d 0%,#2f5aa8 100%); color:#fff; border-radius:16px; padding:36px; margin-bottom:24px; }
+    .hero p { margin:8px 0 0; opacity:.92; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:14px 16px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:20px; }
+    .notice { background:var(--warn); border-radius:12px; padding:14px 16px; }
+    .toc ol, .sources ul { margin:0; padding-left:20px; }
+    .toc li { margin:6px 0; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:16px; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+    .badge { display:inline-block; font-size:.78rem; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--accent); color:#204977; }
+    .badge.alt { background:#f3e8ff; color:#6b21a8; }
+    .badge.warn { background:#fff3cd; color:#8a5a00; }
+    .meta-line { color:var(--muted); font-size:.9rem; margin-top:10px; }
+    h1,h2,h3 { line-height:1.3; margin:0; }
+    a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 공식 업데이트</h1>
+      <p>생성일: 2026-04-16 | 조사 기간: 2026-04-13 ~ 2026-04-16 | 기준: 공식 changelog, 공식 문서, 공식 블로그만 반영</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>확인된 신규 업데이트</strong><br>Claude Code 3건 / Cursor 2건</div>
+        <div class="stat"><strong>최근 3일 신규 공지 없음</strong><br>OpenAI Codex</div>
+        <div class="stat"><strong>추적 벤더</strong><br>3개</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">이번 3일 창에서 실질적인 제품 업데이트는 Claude Code와 Cursor에 집중됐다. OpenAI Codex는 같은 기간 새 공식 공지를 확인하지 못했고, 직전 확인 가능한 공개 정보는 2026-04-09 업데이트가 마지막이었다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <div class="card">
+        <h3>v2.1.110: /tui 전체화면, 푸시 알림, /focus 분리</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">신규 기능</span></div>
+        <p>2026-04-15 릴리즈에서 Claude Code는 `/tui fullscreen`, 푸시 알림 도구, `/focus` 전용 토글, 자동 스크롤 제어 설정을 추가했다. 장시간 세션을 유지하는 사용자를 직접 겨냥한 업데이트다.</p>
+        <p class="meta-line">발표일: 2026-04-15 | 왜 중요한가: 장기 실행 세션에서 UI 안정성과 재진입 알림이 좋아져 실제 운영성이 올라간다. | 출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></p>
+      </div>
+      <div class="card">
+        <h3>v2.1.108: 1시간 프롬프트 캐시, /recap, Skill 기반 slash command 발견</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">운영성 개선</span></div>
+        <p>2026-04-14 릴리즈는 1시간 프롬프트 캐시 TTL, 세션 복귀용 `/recap`, built-in slash command 발견, `/undo` 별칭, 메모리 사용량 감소를 묶어 공개했다. 새 모델 추가보다 세션 복귀와 비용 최적화에 더 초점이 있다.</p>
+        <p class="meta-line">발표일: 2026-04-14 | 왜 중요한가: 긴 대화와 반복 세션을 쓰는 팀에서 비용·컨텍스트 관리가 더 쉬워진다. | 출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></p>
+      </div>
+      <div class="card">
+        <h3>v2.1.105: 기존 worktree 진입, PreCompact hook, plugin monitors</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">에이전트 워크플로</span></div>
+        <p>2026-04-13 릴리즈에서는 기존 worktree로 들어가는 `path` 파라미터, compaction을 차단할 수 있는 PreCompact hook, 플러그인용 background monitor support가 추가됐다. 자동화 하네스와 병렬 worktree 운영에 바로 연결되는 변화다.</p>
+        <p class="meta-line">발표일: 2026-04-13 | 왜 중요한가: 멀티 worktree, hook, background monitoring을 쓰는 고급 워크플로에 직접 도움이 된다. | 출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></p>
+      </div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <div class="card">
+        <h3>Canvases: 에이전트가 인터랙티브 결과물을 직접 만든다</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">신규 기능</span></div>
+        <p>2026-04-15 Cursor는 Agents Window와 에디터에서 인터랙티브 캔버스를 생성하는 기능을 공개했다. 표, 박스, 다이어그램, 차트, diff, to-do list를 포함한 시각 결과물을 에이전트 응답으로 남길 수 있고, 그 결과는 사이드 패널에서 지속 아티팩트로 유지된다.</p>
+        <p class="meta-line">발표일: 2026-04-15 | 왜 중요한가: 텍스트 응답만 받던 에이전트 결과를 검토 가능한 UI 아티팩트로 바꾸기 때문에 설계·요약·리뷰 단계가 훨씬 읽기 쉬워진다. | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </div>
+      <div class="card">
+        <h3>Cursor 3.1: 타일 레이아웃과 향상된 음성 입력</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">멀티에이전트 UX</span></div>
+        <p>2026-04-13 공개된 Cursor 3.1은 Agents Window를 타일 레이아웃으로 분할해 여러 에이전트를 병렬 관리하게 했고, 음성 입력 안정성, 브랜치 선택, diff에서 파일 이동, 검색 필터 등도 함께 개선했다.</p>
+        <p class="meta-line">발표일: 2026-04-13 | 왜 중요한가: 여러 에이전트 출력을 비교하고 worktree/branch를 오가며 검토하는 실무 흐름의 전환 비용을 줄인다. | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </div>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <div class="card">
+        <h3>최근 3일 신규 공식 업데이트 확인 불가</h3>
+        <div class="badge-row"><span class="badge warn">공식 확인 불가</span></div>
+        <p>2026-04-13부터 2026-04-16 사이 OpenAI 공식 공개면에서는 Codex 전용 신규 공지를 확인하지 못했다. 이번 보고서에서는 그 창 안의 새 업데이트를 억지로 채우지 않고, 직전 확인 가능한 공식 정보만 참고 메모로 남긴다.</p>
+        <p class="meta-line">조사 결과: 최근 3일 신규 항목 없음 | 직전 확인 가능한 공개 정보: 2026-04-09 Pro plan/Codex usage 변경, 2026-04-09 교육기관 배포 가이드 | 출처: <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">ChatGPT Release Notes</a>, <a href="https://academy.openai.com/en/public/clubs/higher-education-05x4z/blogs/deploying-codex-in-higher-education-2026-04-09">OpenAI Academy</a></p>
+      </div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></li>
+        <li><a href="https://code.claude.com/docs/en/whats-new/2026-w15">Week 15 · Claude Code Docs</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">ChatGPT Release Notes</a></li>
+        <li><a href="https://academy.openai.com/en/public/clubs/higher-education-05x4z/blogs/deploying-codex-in-higher-education-2026-04-09">Deploying Codex in Higher Education</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

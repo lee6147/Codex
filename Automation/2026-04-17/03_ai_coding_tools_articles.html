@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 아티클 요약</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --text:#18202a; --muted:#5f6b7a; --line:#d8dee8; --link:#6b21a8; --accent:#efe7ff; --warn:#fff3cd; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI","Noto Sans KR",sans-serif; line-height:1.7; }
+    .container { width:min(980px, calc(100vw - 32px)); margin:32px auto 64px; }
+    .hero { background:linear-gradient(135deg,#1e1b4b 0%,#6b21a8 100%); color:#fff; border-radius:16px; padding:36px; margin-bottom:24px; }
+    .hero p { margin:8px 0 0; opacity:.92; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:14px 16px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:20px; }
+    .notice { background:var(--warn); border-radius:12px; padding:14px 16px; }
+    .toc ol, .sources ul { margin:0; padding-left:20px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:16px; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+    .badge { display:inline-block; font-size:.78rem; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--accent); color:#4c1d95; }
+    .badge.alt { background:#e8f1fb; color:#204977; }
+    .meta-line { color:var(--muted); font-size:.9rem; margin-top:10px; }
+    h1, h2, h3 { line-height:1.3; margin:0; }
+    a { color:var(--link); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 아티클 요약</h1>
+      <p>생성일: 2026-04-17 | 기본 기준은 최근 2일이었지만 도구별 균형 있는 글 수가 부족해 2026-04-10 ~ 2026-04-17 범위로 확장</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장</strong><br>적용됨</div>
+        <div class="stat"><strong>확장 이유</strong><br>최근 2일만으로는 세 도구를 균형 있게 채우기 어려움</div>
+        <div class="stat"><strong>우선 출처</strong><br>공식 블로그 · 공식 문서 · 공식 도움말</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">최근 2일 창만 보면 Cursor와 Codex는 읽을 거리가 있었지만 Claude Code와의 균형이 맞지 않았다. 그래서 2026-04-10부터 2026-04-17까지로 넓혔고, 각 도구에서 실제 실무 판단에 도움이 되는 공식 글만 추려서 요약했다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <div class="card">
+        <h3>2.1.111 changelog</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">릴리즈 노트</span></div>
+        <p>2026-04-16 changelog는 Opus 4.7 xhigh, Auto mode 확대, <code>/less-permission-prompts</code>, <code>/ultrareview</code> 를 묶어 공개했다. Claude Code가 더 무거운 리뷰와 장기 실행을 전제로 권한 마찰을 줄이는 방향으로 움직이고 있음을 보여준다.</p>
+        <p class="meta-line">게시일: 2026-04-16 | 실무 시사점: CLI 중심 팀이 리뷰와 반복 실행을 더 자동화하기 좋은 환경이 됐다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></p>
+      </div>
+      <div class="card">
+        <h3>2.1.110 changelog</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">운영성 개선</span></div>
+        <p>2026-04-15 changelog는 <code>/tui fullscreen</code>, 푸시 알림, <code>/focus</code>, auto-scroll 제어를 담고 있다. 이번 업데이트 묶음은 새 모델보다 장시간 세션을 덜 피곤하게 운영하는 데 초점이 있다.</p>
+        <p class="meta-line">게시일: 2026-04-15 | 실무 시사점: 리모트 세션과 장기 작업에서 실제 체감 품질 차이가 큰 타입의 개선이다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></p>
+      </div>
+      <div class="card">
+        <h3>Week 15 · April 6–10, 2026</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">주간 정리</span></div>
+        <p>Week 15 문서는 Ultraplan, Monitor tool, <code>/autofix-pr</code>, <code>/team-onboarding</code> 를 한 번에 읽게 해준다. Claude Code가 단일 편집 도구를 넘어서 계획, 감시, PR 후속 조치까지 엮인 운영 도구가 되고 있다는 해석이 가능하다.</p>
+        <p class="meta-line">게시일: 2026-04-10 | 실무 시사점: 기능 하나하나보다 CLI 에이전트 운영 체계 전체를 어떻게 조합할지 보는 편이 더 중요하다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://code.claude.com/docs/en/whats-new/2026-w15">Week 15 · Claude Code Docs</a></p>
+      </div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <div class="card">
+        <h3>Canvases</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">신규 기능</span></div>
+        <p>2026-04-15 changelog의 Canvases는 에이전트 응답을 표, 차트, 다이어그램, diff가 들어간 인터랙티브 결과물로 남긴다. Cursor가 코드 생성만이 아니라 결과물 검토와 설명 표면까지 제품으로 만들고 있음을 보여준다.</p>
+        <p class="meta-line">게시일: 2026-04-15 | 실무 시사점: 에이전트 출력을 제품팀이나 비개발 이해관계자와 공유할 때 해상도가 크게 올라간다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </div>
+      <div class="card">
+        <h3>Speeding up GPU kernels by 38% with a multi-agent system</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">연구 글</span></div>
+        <p>2026-04-14 Cursor 블로그는 멀티에이전트 시스템이 CUDA 커널 최적화 문제 235개를 풀어 기하평균 38% 속도 향상을 냈다고 설명한다. 이 글은 Cursor의 진짜 베팅이 IDE 장식이 아니라 장기 멀티에이전트 시스템이라는 점을 분명하게 보여준다.</p>
+        <p class="meta-line">게시일: 2026-04-14 | 실무 시사점: Cursor의 경쟁력은 인터페이스보다 병렬 탐색과 장기 실행 구조에서 더 크게 나온다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://cursor.com/blog/multi-agent-kernels">Cursor Blog</a></p>
+      </div>
+      <div class="card">
+        <h3>Cursor 3.1</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">릴리즈 노트</span></div>
+        <p>2026-04-13 Cursor 3.1은 타일 레이아웃, 음성 입력 개선, branch selection, diff-to-file navigation, 검색 필터를 묶어 공개했다. 여러 에이전트 결과를 동시에 비교하고 후속 편집으로 바로 이어 가게 해 주는 기능이 많다.</p>
+        <p class="meta-line">게시일: 2026-04-13 | 실무 시사점: 병렬 에이전트 워크플로를 IDE 안에서 검토하고 조정해야 하는 팀에 잘 맞는다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </div>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <div class="card">
+        <h3>Codex for (almost) everything</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">제품 업데이트</span></div>
+        <p>2026-04-16 OpenAI 제품 글은 Codex가 background computer use, 인앱 브라우저, 이미지 생성, 90개 이상 추가 플러그인, GitHub 리뷰 코멘트 처리, 여러 터미널, SSH devbox, 재사용 가능한 자동화, 메모리 프리뷰를 지원한다고 발표했다. 최근 Codex 흐름 중 가장 큰 폭의 표면 확장이다.</p>
+        <p class="meta-line">게시일: 2026-04-16 | 실무 시사점: Codex가 코드 생성 도구가 아니라 개발 운영 허브로 빠르게 이동하고 있다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://openai.com/index/codex-for-almost-everything/">OpenAI Product</a></p>
+      </div>
+      <div class="card">
+        <h3>Using Codex with your ChatGPT plan</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">운영 문서</span></div>
+        <p>이 도움말 문서는 2026-04-17에 갱신되었고, Codex가 Plus, Pro, Business, Enterprise/Edu에 포함되며 CLI, IDE extension, 앱, 웹을 통해 연결된다는 점을 다시 정리한다. 로컬/클라우드 사용 범위와 플랜 차이를 짧게 확인하기에 가장 실용적인 문서다.</p>
+        <p class="meta-line">업데이트일: 2026-04-17 | 실무 시사점: 팀 도입 시 제품 설명 페이지보다 현재 접근 가능 표면과 제한을 더 빠르게 확인할 수 있다. | 신뢰도 메모: 공식 운영 문서 | 출처: <a href="https://help.openai.com/en/articles/11369540-icodex-in-chatgpt">OpenAI Help Center</a></p>
+      </div>
+      <div class="card">
+        <h3>Using Credits for Flexible Usage in ChatGPT (Free/Go/Plus/Pro) &amp; Sora</h3>
+        <div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">과금 문서</span></div>
+        <p>2026-04-15경 갱신된 이 도움말은 Codex 사용량 한도 이후 크레딧 구매, auto top-up, Usage Dashboard 경로를 정리한다. 최근 Codex 관련 변화가 기능뿐 아니라 사용량·과금 경험까지 묶여 있다는 점을 보여준다.</p>
+        <p class="meta-line">업데이트일: 2026-04-15 기준 | 실무 시사점: Plus/Pro 사용자는 기능 비교만이 아니라 크레딧 모델까지 같이 봐야 총비용을 판단할 수 있다. | 신뢰도 메모: 공식 운영 문서 | 출처: <a href="https://help.openai.com/en/articles/12642688">OpenAI Help Center</a></p>
+      </div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></li>
+        <li><a href="https://code.claude.com/docs/en/whats-new/2026-w15">Week 15 · Claude Code Docs</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://cursor.com/blog/multi-agent-kernels">Cursor Blog</a></li>
+        <li><a href="https://openai.com/index/codex-for-almost-everything/">OpenAI: Codex for (almost) everything</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-icodex-in-chatgpt">OpenAI Help: Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://help.openai.com/en/articles/12642688">OpenAI Help: Using Credits for Flexible Usage in ChatGPT</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

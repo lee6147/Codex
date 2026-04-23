@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf7f2;
+      --panel: #ffffff;
+      --text: #201d1a;
+      --muted: #6b655f;
+      --line: #e4dcd0;
+      --link: #a34b00;
+      --accent: #fff1e2;
+      --hero: linear-gradient(135deg, #603813 0%, #bf6a1c 100%);
+      --hero-text: #ffffff;
+      --warn: #fff2da;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(96, 56, 19, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #8d4300;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    .mini-title {
+      font-weight: 700;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-04-22 | 기사 조사 범위: 2026-04-16 ~ 2026-04-22</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장</strong><br>적용됨</div>
+        <div class="stat"><strong>확장 이유</strong><br>기본 2일 창(2026-04-20 ~ 2026-04-22)에서는 Claude Code와 Cursor, Codex를 균형 있게 채울 만큼의 고신호 기사 수가 부족했다.</div>
+        <div class="stat"><strong>수집 기준</strong><br>공식 글, 주요 기술/비즈니스 기사, 대표 분석 글만 남기고 광고성·중복성 글은 제외했다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">7일로 범위를 넓혀도 기사들이 가리키는 방향은 비슷했다. Claude Code는 안정적인 실행 루프와 개인화 소프트웨어의 기반으로, Cursor는 보안과 인프라 확장으로, Codex는 더 넓은 작업 시스템과 엔터프라이즈 채널 확대로 읽힌다. 즉 지금 기사 시장의 초점은 “더 똑똑한 모델”보다 “더 오래 붙여두고 더 넓게 배포할 수 있는 운영체계”다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>Claude Code v2.1.116 release notes</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-20</span>
+          <span class="badge">릴리스 노트</span>
+        </div>
+        <p>Anthropic의 2026-04-20 릴리스 노트는 Claude Code가 세션 재개 속도, MCP 시작 지연, 터미널 스크롤 UX, 위험 경로 삭제 안전장치까지 동시에 만지고 있음을 보여준다. 특히 대형 세션의 <code>/resume</code> 개선과 MCP 초기화 지연 축소는 이 도구가 더 긴 업무 흐름을 전제로 진화하고 있다는 신호다. 새 기능 홍보보다 운영 마찰 제거가 전면에 나온 점이 눈에 띈다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Claude Code는 지금 “한 번 잘 답하는 보조자”보다 “길게 붙여두는 작업 런타임”으로 포지셔닝을 굳히는 중이다. 장기 세션, 멀티 MCP, 터미널 상호작용이 많은 팀일수록 체감 가치가 크다.</p>
+        <p class="meta-line">출처 URL: <a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a> | 출처 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>The AI Coding Stack Nobody Planned</h3>
+        <div class="badge-row">
+          <span class="badge">분석 글</span>
+          <span class="badge">2026-04-16</span>
+          <span class="badge">Digital Upstream</span>
+        </div>
+        <p>Digital Upstream는 Cursor, Claude Code, Codex가 경쟁 관계를 넘어서 서로 다른 층위의 스택으로 굳어지고 있다고 해석한다. 이 글에서 Claude Code는 복잡한 코드 이해와 실행을 맡는 “execution layer”에 가장 가깝게 배치된다. 요점은 승자독식이 아니라 역할 분화다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Claude Code를 단독 우승 후보로 보기보다, 설계와 실행에서 강한 층으로 써야 한다는 시각이 넓어지고 있다. 실제 팀 도입 시에도 다른 도구와의 조합 전략이 더 중요해질 가능성이 크다.</p>
+        <p class="meta-line">출처 URL: <a href="https://digital-upstream.com/blog/ai-coding-stack-convergence-2026">https://digital-upstream.com/blog/ai-coding-stack-convergence-2026</a> | 출처 메모: 비교 분석 글</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Chainguard and Cursor Partner to Secure Agentic Coding</h3>
+        <div class="badge-row">
+          <span class="badge">공식 보도자료</span>
+          <span class="badge">2026-04-21</span>
+          <span class="badge">Chainguard × Cursor</span>
+        </div>
+        <p>Chainguard의 2026-04-21 보도자료는 Cursor가 보안 검증된 오픈소스 아티팩트를 에이전트 코딩 흐름에 연결하는 방향을 공식화했다. 메시지는 단순하다. 에이전트가 더 많은 코드를 더 빠르게 만들수록, 어떤 라이브러리와 이미지가 들어가는지를 통제하는 별도 신뢰 계층이 필요하다는 것이다. Cursor는 이제 생산성뿐 아니라 공급망 안전성까지 제품 서사에 포함시키고 있다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>엔터프라이즈 채택 관점에서 Cursor의 다음 경쟁 축은 모델 성능보다 배포 가능한 코드의 안전성이다. “vibe coding”을 실제 프로덕션으로 올릴 때 필요한 보완재가 붙기 시작했다.</p>
+        <p class="meta-line">출처 URL: <a href="https://www.prnewswire.com/news-releases/chainguard-and-cursor-partner-to-secure-agentic-coding-with-trusted-open-source-302748112.html">https://www.prnewswire.com/news-releases/chainguard-and-cursor-partner-to-secure-agentic-coding-with-trusted-open-source-302748112.html</a> | 출처 메모: 공식 보도자료</p>
+      </article>
+
+      <article class="card">
+        <h3>Cursor 3 Is Out and xAI Is Now Powering Its Next Model</h3>
+        <div class="badge-row">
+          <span class="badge">분석 글</span>
+          <span class="badge">2026-04-16</span>
+          <span class="badge">TechSifted</span>
+        </div>
+        <p>TechSifted는 2026-04-16 글에서 Cursor 3의 에이전트 중심 인터페이스와 xAI 컴퓨트 계약을 한 흐름으로 묶는다. 제품면에서는 Agents Window로 병렬 에이전트 작업면을 만들었고, 인프라면에서는 Composer 계열 모델을 키우기 위한 GPU 조달 라인을 확보하려 한다는 해석이다. 즉 Cursor는 에디터 회사라기보다 에이전트 제품과 모델 운영을 동시에 하는 회사에 가까워지고 있다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Cursor의 경쟁력은 더 이상 IDE 안 UX만으로 설명되지 않는다. 작업면, 모델 공급, 기업 배포, 보안 파트너십이 한 묶음으로 움직이고 있다는 점을 봐야 한다.</p>
+        <p class="meta-line">출처 URL: <a href="https://techsifted.com/posts/cursor-3-xai-deal-april-2026/">https://techsifted.com/posts/cursor-3-xai-deal-april-2026/</a> | 출처 메모: 분석 글</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>Codex for (almost) everything</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-16</span>
+          <span class="badge">제품 업데이트</span>
+        </div>
+        <p>OpenAI의 2026-04-16 제품 글은 Codex가 컴퓨터 사용, 웹 브라우저, 이미지 생성, 90개 이상의 플러그인, 다중 터미널, SSH devbox, 자동화 재사용, 메모리 프리뷰까지 포함하도록 넓어졌다고 설명한다. 예전의 “코드를 써주는 도구”가 아니라, 개발 수명주기 전체와 반복 업무까지 감싸는 작업 시스템으로 범위를 재정의한 셈이다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Codex는 점점 더 앱 하나가 아니라 운영면이 되고 있다. 특히 자동화와 메모리, 플러그인, 브라우저가 묶이면서 팀 단위 반복 업무로 진입하는 길이 넓어졌다.</p>
+        <p class="meta-line">출처 URL: <a href="https://openai.com/index/codex-for-almost-everything/">https://openai.com/index/codex-for-almost-everything/</a> | 출처 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>Using Codex with your ChatGPT plan</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-19 기준 갱신</span>
+          <span class="badge">Help Center</span>
+        </div>
+        <p>OpenAI Help Center 문서는 2026-04-22 조회 기준 “Updated: 3 days ago”로 표시됐다. 이 문서가 중요한 이유는 Codex 진입 경로를 app, CLI, IDE extension, web으로 분리하고, Free·Go 한시 포함, 플러그인 제어, RBAC, Compliance API 범위까지 운영 관점에서 다시 정리했기 때문이다. 제품 확장 이후 실제 사용 경로와 관리 방법을 문서로 따라잡는 단계라고 볼 수 있다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Codex는 지금 기능만 늘어나는 단계가 아니라, 배포 경로와 관리자 통제까지 함께 정교화되는 단계다. 엔터프라이즈 채택 가능성을 읽을 때는 이 문서 변화가 더 중요할 수 있다.</p>
+        <p class="meta-line">출처 URL: <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan/">https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan/</a> | 출처 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>OpenAI is working with consultants to sell Codex</h3>
+        <div class="badge-row">
+          <span class="badge">주요 매체</span>
+          <span class="badge">2026-04-21</span>
+          <span class="badge">WSJ / Reuters 재전송</span>
+        </div>
+        <p>WSJ 보도를 바탕으로 Reuters가 재전송한 2026-04-21 기사에 따르면 OpenAI는 컨설팅 회사들과 함께 Codex 확산을 밀고 있다. 핵심은 도구 판매가 아니라 도입 서비스까지 붙여 기업 안착률을 높이겠다는 것이다. 기사 요약만 봐도 Codex가 소프트웨어 개발을 넘어 마케팅, 재무, 영업 등 더 넓은 지식 업무로 확장되는 그림이 보인다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Codex의 경쟁 무대가 개발자 개인 생산성에서 기업 배포와 컨설팅 채널로 이동 중이라는 점이 분명하다. 제품 성숙도보다 영업/도입 체계가 다음 성장 레버라는 뜻이다.</p>
+        <p class="meta-line">출처 URL: <a href="https://www.marketscreener.com/news/openai-is-working-with-consultants-to-sell-codex-wsj--ce7f59dbd980f52d">https://www.marketscreener.com/news/openai-is-working-with-consultants-to-sell-codex-wsj--ce7f59dbd980f52d</a> | 출처 메모: Reuters 재전송</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/anthropics/claude-code/releases">Claude Code GitHub Releases</a></li>
+        <li><a href="https://digital-upstream.com/blog/ai-coding-stack-convergence-2026">Digital Upstream: The AI Coding Stack Nobody Planned</a></li>
+        <li><a href="https://www.prnewswire.com/news-releases/chainguard-and-cursor-partner-to-secure-agentic-coding-with-trusted-open-source-302748112.html">PRNewswire: Chainguard and Cursor Partner to Secure Agentic Coding</a></li>
+        <li><a href="https://techsifted.com/posts/cursor-3-xai-deal-april-2026/">TechSifted: Cursor 3 Is Out and xAI Is Now Powering Its Next Model</a></li>
+        <li><a href="https://openai.com/index/codex-for-almost-everything/">OpenAI: Codex for (almost) everything</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan/">OpenAI Help Center: Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://www.marketscreener.com/news/openai-is-working-with-consultants-to-sell-codex-wsj--ce7f59dbd980f52d">MarketScreener / Reuters: OpenAI is working with consultants to sell Codex</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

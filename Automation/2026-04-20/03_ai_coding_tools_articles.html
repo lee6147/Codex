@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf7f2;
+      --panel: #ffffff;
+      --text: #201d1a;
+      --muted: #6b655f;
+      --line: #e4dcd0;
+      --link: #a34b00;
+      --accent: #fff1e2;
+      --hero: linear-gradient(135deg, #603813 0%, #bf6a1c 100%);
+      --hero-text: #ffffff;
+      --warn: #fff2da;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); line-height: 1.72; }
+    .container { width: min(1020px, calc(100vw - 32px)); margin: 32px auto 64px; }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero { background: var(--hero); color: var(--hero-text); border-radius: 18px; padding: 36px; margin-bottom: 24px; box-shadow: 0 16px 40px rgba(96, 56, 19, 0.16); }
+    .hero p { margin: 10px 0 0; opacity: 0.94; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px; }
+    .stat { background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 14px 16px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: 24px; margin-bottom: 20px; }
+    .toc ol, .sources ul { margin: 0; padding-left: 20px; }
+    .toc li { margin: 6px 0; }
+    .notice { background: var(--warn); border-radius: 12px; padding: 14px 16px; }
+    .card { border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-top: 16px; background: linear-gradient(180deg, #ffffff 0%, #fffdfa 100%); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; background: var(--accent); color: #8d4300; }
+    .meta-line { color: var(--muted); font-size: 0.92rem; margin-top: 10px; }
+    .mini-title { font-weight: 700; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-04-20 | 기사 조사 범위: 2026-04-14 ~ 2026-04-20</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장</strong><br>적용됨</div>
+        <div class="stat"><strong>확장 이유</strong><br>기본 최근 2일 범위인 2026-04-18 ~ 2026-04-20에서는 도구별로 2개 이상씩 고르게 채울 만큼 고신호 글이 충분하지 않았다.</div>
+        <div class="stat"><strong>선정 원칙</strong><br>공식 블로그, changelog, 도움말, 연구 글을 우선하고, 해설 글은 실무 관찰이나 구조적 시사점이 분명한 경우만 남겼다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">기본 2일 창에서는 Codex 관련 도움말/플랜 글은 잡히지만, Claude Code와 Cursor는 제품 해설이나 연구 글이 고르게 모이지 않았다. 그래서 7일로 넓혀 2026-04-14 ~ 2026-04-20 구간을 봤고, 그 결과 세 도구 모두 “더 강한 생성”보다 “더 긴 작업, 더 많은 에이전트, 더 넓은 운영면”을 어떻게 다루는지가 핵심 서사로 드러났다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>Claude Code v2.1.113 release notes</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-17</span>
+          <span class="badge">릴리스 노트</span>
+        </div>
+        <p>v2.1.113은 네이티브 바이너리 실행 전환, <code>sandbox.network.deniedDomains</code> 추가, <code>/ultrareview</code> 시작 병렬화, 정체된 서브에이전트의 명시적 실패 처리, Bash 보안 규칙 강화 등 “긴 작업을 더 안전하게 굴리기 위한 기능”이 중심이다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Anthropic은 모델 지능보다 실행 하네스를 계속 다듬는 쪽에 무게를 두고 있다. 실제 사용자에게는 이런 릴리스가 자동화 안정성, 권한 설계, 리뷰 흐름에 직접적인 체감 차이를 만든다.</p>
+        <p class="meta-line">출처 URL: <a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>What the Claude Code leak really teaches us about models, harnesses, memory, context and security</h3>
+        <div class="badge-row">
+          <span class="badge">비교 리뷰</span>
+          <span class="badge">2026-04-15</span>
+          <span class="badge">구조 해설</span>
+        </div>
+        <p>Ahmed Fessi의 해설 글은 Claude Code 소스맵 노출 사건을 단순 사고가 아니라 “하네스 공학이 실제 차별화 포인트가 됐다는 증거”로 읽는다. 글은 메모리 계층, self-healing loop, Bash 검증, 도구 권한, 컨텍스트 압축을 Claude Code의 핵심 경쟁력으로 정리한다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Claude Code를 평가할 때 모델 자체보다 기억 체계, 권한 경계, 재시도 루프, 비용 통제 같은 운영 계층을 봐야 한다는 점을 잘 짚는다. 팀이 로컬 규칙과 장기 작업을 중시한다면 특히 참고할 만하다.</p>
+        <p class="meta-line">출처 URL: <a href="https://medium.com/@AhmedF/what-the-claude-code-leak-really-teaches-us-about-models-harnesses-memory-context-and-security-481057d52e1e">https://medium.com/@AhmedF/what-the-claude-code-leak-really-teaches-us-about-models-harnesses-memory-context-and-security-481057d52e1e</a> | 신뢰도 메모: 비교 리뷰</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Better AI models enable more ambitious work</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-15</span>
+          <span class="badge">연구 글</span>
+        </div>
+        <p>Cursor는 500개 기업의 사용 데이터를 바탕으로 더 나은 모델이 실제로 더 많은 AI 사용을 만들어냈다고 주장한다. 기사에 따르면 주당 메시지 수는 연구 기간 동안 44% 늘었고, 시간이 지나며 저복잡도 작업보다 고복잡도 작업이 더 빠르게 증가했다. 문서화, 아키텍처, 코드 리뷰, 러닝 작업이 특히 크게 늘었다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Cursor가 밀고 있는 건 단순 코드 자동완성이 아니라 “에이전트가 맡는 작업 범위를 오른쪽으로 이동시키는 것”이다. 즉, 제품의 가치는 편집기 안 성능보다 업무 분배 구조 변화에서 나온다.</p>
+        <p class="meta-line">출처 URL: <a href="https://cursor.com/blog/better-models-ambitious-work">https://cursor.com/blog/better-models-ambitious-work</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>Canvases</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-15</span>
+          <span class="badge">제품 업데이트</span>
+        </div>
+        <p>Cursor의 2026-04-15 changelog는 Canvases를 에이전트 응답의 새 형식으로 소개한다. 표, 박스, 다이어그램, 차트, diff, to-do를 포함한 인터랙티브 산출물이 Agents Window 안에 남고, 브라우저와 소스컨트롤 옆에서 지속적으로 관리된다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Cursor는 코드를 바로 쓰는 도구라기보다, 여러 에이전트 결과를 비교하고 설명하는 작업면을 강화하는 쪽으로 가고 있다. 제품팀과 프론트엔드 팀이 특히 큰 이점을 느낄 지점이다.</p>
+        <p class="meta-line">출처 URL: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>Speeding up GPU kernels by 38% with a multi-agent system</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-14</span>
+          <span class="badge">연구 글</span>
+        </div>
+        <p>Cursor는 다중 에이전트 하네스가 235개 GPU 커널 문제를 3주 동안 자율적으로 풀며 38% geomean speedup을 냈다고 공개했다. planner agent가 worker들을 분배하고, 벤치마크 파이프라인을 스스로 호출하며, 결과를 다시 최적화 루프로 넣는 구조가 핵심이다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>이 글은 Cursor가 단순한 IDE 기능을 넘어서 연구급 멀티에이전트 오케스트레이션을 제품 서사의 일부로 밀고 있다는 점을 보여준다. “병렬 에이전트 관리면”이라는 최근 방향과도 정확히 이어진다.</p>
+        <p class="meta-line">출처 URL: <a href="https://cursor.com/blog/multi-agent-kernels">https://cursor.com/blog/multi-agent-kernels</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>Codex for (almost) everything</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-16</span>
+          <span class="badge">제품 업데이트</span>
+        </div>
+        <p>OpenAI는 Codex가 이제 컴퓨터를 함께 조작하고, 더 많은 앱과 도구를 연결하고, 이미지를 생성하고, 선호와 작업 이력을 기억하며, 반복 작업과 장기 작업을 이어받는다고 설명한다. 동시에 PR 리뷰, 다중 파일과 터미널 보기, 원격 devbox SSH 연결, 인앱 브라우저도 강화됐다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Codex는 코딩 에이전트 하나가 아니라 작업 시스템 전체로 범위를 넓히고 있다. 로컬 개발, 프론트엔드 반복, 리뷰 대응, 장기 자동화가 한 제품면 안으로 합쳐지는 방향이다.</p>
+        <p class="meta-line">출처 URL: <a href="https://openai.com/index/codex-for-almost-everything/">https://openai.com/index/codex-for-almost-everything/</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>Using Codex with your ChatGPT plan</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-19 갱신 확인</span>
+          <span class="badge">도움말</span>
+        </div>
+        <p>최근 갱신된 도움말 문서는 Codex를 app, CLI, IDE extension, web 네 경로로 정리하고, Plus, Pro, Business, Enterprise/Edu 포함 범위와 Free/Go 한시 포함, 2x rate limits 정보를 한 페이지에 모은다. 기술 상세는 제품 페이지로 보내되, 사용 시작 경로와 관리 지점을 더 명확히 설명한다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>OpenAI는 기능 확장 뒤에 사용 경로를 빠르게 문서화해 혼선을 줄이고 있다. Codex 평가 기준도 단일 모델 성능보다 어떤 표면에서 어떤 작업을 위임할 수 있는지로 옮겨간다.</p>
+        <p class="meta-line">출처 URL: <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>What is ChatGPT Enterprise?</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-04-18 갱신 확인</span>
+          <span class="badge">관리/요금 문서</span>
+        </div>
+        <p>Enterprise 도움말은 Codex seat를 별도 좌석 유형으로 설명하고, 토큰 기반 Codex rate card와 표준 ChatGPT seat 대비 접근 범위를 정리한다. 이는 Codex가 조직 예산과 좌석 정책을 가진 제품으로 재정의되고 있음을 보여준다.</p>
+        <p class="mini-title">실무 시사점</p>
+        <p>Codex의 확장은 기능 수 증가에 그치지 않는다. 조직 배치, 비용 통제, 접근 권한 설계가 함께 따라오고 있다는 점에서 상용화 속도가 빠르다.</p>
+        <p class="meta-line">출처 URL: <a href="https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise">https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/anthropics/claude-code/releases">Claude Code GitHub Releases</a></li>
+        <li><a href="https://medium.com/@AhmedF/what-the-claude-code-leak-really-teaches-us-about-models-harnesses-memory-context-and-security-481057d52e1e">Ahmed Fessi on Medium</a></li>
+        <li><a href="https://cursor.com/blog/better-models-ambitious-work">Cursor Blog: Better AI models enable more ambitious work</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://cursor.com/blog/multi-agent-kernels">Cursor Blog: Speeding up GPU kernels by 38% with a multi-agent system</a></li>
+        <li><a href="https://openai.com/index/codex-for-almost-everything/">OpenAI: Codex for (almost) everything</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">OpenAI Help Center: Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise">OpenAI Help Center: What is ChatGPT Enterprise?</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

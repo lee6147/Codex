@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f8f6;
+      --panel: #ffffff;
+      --text: #18251f;
+      --muted: #5f6f67;
+      --line: #d9e4dc;
+      --link: #0f766e;
+      --accent: #e7f7f1;
+      --hero: linear-gradient(135deg, #123e37 0%, #1f7a6b 100%);
+      --hero-text: #ffffff;
+      --warn: #fff4dc;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); line-height: 1.72; }
+    .container { width: min(1020px, calc(100vw - 32px)); margin: 32px auto 64px; }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero { background: var(--hero); color: var(--hero-text); border-radius: 18px; padding: 36px; margin-bottom: 24px; box-shadow: 0 16px 40px rgba(18, 62, 55, 0.16); }
+    .hero p { margin: 10px 0 0; opacity: 0.94; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px; }
+    .stat { background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 14px 16px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: 24px; margin-bottom: 20px; }
+    .toc ol, .sources ul { margin: 0; padding-left: 20px; }
+    .toc li { margin: 6px 0; }
+    .notice { background: var(--warn); border-radius: 12px; padding: 14px 16px; }
+    .card { border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-top: 16px; background: linear-gradient(180deg, #ffffff 0%, #fbfefd 100%); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; background: var(--accent); color: #0d6258; }
+    .meta-line { color: var(--muted); font-size: 0.92rem; margin-top: 10px; }
+    .mini-title { font-weight: 700; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일: 2026-04-19 | 조사 기준: GitHub Trending 오늘 피드 + 각 저장소 페이지 조회</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 수</strong><br>7개 저장소</div>
+        <div class="stat"><strong>가장 강한 흐름</strong><br>스킬 체계, 멀티에이전트 조율, 운영 자동화, 시각적 에이전트 작업면</div>
+        <div class="stat"><strong>왜 중요한가</strong><br>Claude Code, Cursor, Codex 위에 얹는 “제어 레이어” 오픈소스가 계속 강하게 올라오고 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">오늘 피드에서 눈에 띈 것은 모델 자체보다 작업 방식이었다. “스킬 묶음”, “에이전트 조직도”, “운영 루프”, “문서형 작업면”, “SRE 자동화”가 동시에 상위권에 보이며, AI 코딩 시장의 관심이 이제 성능 단일 비교에서 운영 체계와 반복 가능한 워크플로로 이동하고 있음을 보여준다.</div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <article class="card">
+        <h3>obra / superpowers</h3>
+        <div class="badge-row">
+          <span class="badge">Shell</span>
+          <span class="badge">총 157.6k stars</span>
+          <span class="badge">오늘 +1,645</span>
+        </div>
+        <p>스킬 라이브러리와 개발 방법론을 함께 묶은 에이전트 작업 프레임워크다. 브레인스토밍, 계획 작성, TDD, 코드 리뷰, 병렬 서브에이전트, git worktree까지 개발 전 과정을 “반복 가능한 절차”로 정의한다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/obra/superpowers">https://github.com/obra/superpowers</a> | Star 수 조회 시점 기준: 2026-04-19</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>Claude Code, Cursor, Codex 모두에 설치 또는 적용 경로를 제시하며, 어떤 에이전트를 쓰든 프로세스 계층을 표준화하려는 수요를 정면으로 잡고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>세 도구를 모델 비교 대상이 아니라 공통 운영 레이어 위에 올릴 실행 엔진으로 다루고 있다는 점이 핵심이다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>“좋은 프롬프트”보다 “재현 가능한 팀 절차”가 더 중요해졌다는 시장 신호다.</p>
+      </article>
+
+      <article class="card">
+        <h3>Donchitos / Claude-Code-Game-Studios</h3>
+        <div class="badge-row">
+          <span class="badge">Shell</span>
+          <span class="badge">총 11.7k stars</span>
+          <span class="badge">오늘 +405</span>
+        </div>
+        <p>Claude Code 한 세션을 게임 개발 스튜디오처럼 운영하도록 만든 레포다. 역할 분리된 AI 에이전트, 워크플로 스킬, 승인 게이트를 붙여 개인 작업을 조직 단위 작업처럼 바꾼다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/Donchitos/Claude-Code-Game-Studios">https://github.com/Donchitos/Claude-Code-Game-Studios</a> | Star 수 조회 시점 기준: 2026-04-19</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>AI 코딩 툴을 “채팅창”으로 쓰는 대신, 조직도와 승인 흐름이 있는 생산 체계로 바꾸려는 욕구가 강해졌기 때문이다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>특히 Claude Code 친화적이지만, 실제로는 Cursor와 Codex가 강화하는 병렬 에이전트 흐름과도 맞닿아 있다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>도메인 특화 멀티에이전트 설계가 이제 취미 프로젝트 수준을 넘고 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>lsdefine / GenericAgent</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">총 3.5k stars</span>
+          <span class="badge">오늘 +848</span>
+        </div>
+        <p>3.3K 줄 씨앗 코드에서 스스로 스킬 트리를 키운다는 자기 진화형 에이전트 프레임워크다. 브라우저, 파일, 키보드/마우스, 모바일 장치까지 제어하며, 경험을 스킬로 굳혀 다음 작업에 재사용한다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/lsdefine/GenericAgent">https://github.com/lsdefine/GenericAgent</a> | Star 수 조회 시점 기준: 2026-04-19</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>토큰 절감과 메모리 누적을 전면에 세우며 “작은 핵심 + 스킬 성장” 모델을 제안해, 거대한 하네스와 다른 방향의 대안을 보여준다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>세 상용 도구가 메모리와 장기 작업을 강화하는 흐름과 맞물려, 오픈소스 진영에서도 장기 기억과 자기 누적형 설계가 강한 관심을 받고 있음을 보여준다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>“컨텍스트를 크게 주는 것”보다 “경험을 적층하는 것”이 더 중요해지는 흐름이다.</p>
+      </article>
+
+      <article class="card">
+        <h3>Tracer-Cloud / opensre</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">총 1.3k stars</span>
+          <span class="badge">오늘 +257</span>
+        </div>
+        <p>로그, 메트릭, 알림 시스템을 엮어 AI SRE 에이전트를 만들 수 있게 하는 오픈소스 툴킷이다. Datadog, Grafana, Slack, incident response, root cause analysis 같은 운영 키워드를 전면에 둔다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/Tracer-Cloud/opensre">https://github.com/Tracer-Cloud/opensre</a> | Star 수 조회 시점 기준: 2026-04-19</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>AI 코딩의 다음 수익 구간이 빌드/코드 생성뿐 아니라 운영 자동화와 장애 대응이라는 점을 보여주는 저장소다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Codex 자동화, Claude Code /loop, Cursor Automations 같은 장기 실행 기능과 직접 이어지는 운영 시나리오다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>개발 에이전트 다음 단계는 “코드 작성”이 아니라 “서비스 운영”일 수 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>lukilabs / craft-agents-oss</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge">총 4.3k stars</span>
+          <span class="badge">오늘 +107</span>
+        </div>
+        <p>문서 중심의 시각적 인터페이스로 AI 에이전트를 다루는 오픈소스 앱이다. 슬랙, Gmail, Linear 같은 외부 서비스 연결과 세션 조직화, 시각적 작업면을 강조한다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/lukilabs/craft-agents-oss">https://github.com/lukilabs/craft-agents-oss</a> | Star 수 조회 시점 기준: 2026-04-19</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>개발자가 아니어도 에이전트 워크플로를 다룰 수 있는 “작업면 제품” 수요가 커지고 있다는 증거다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Cursor Agents Window, Codex 앱, Anthropic 데스크톱 재설계와 같은 흐름을 오픈소스 쪽에서 구현하는 사례로 읽힌다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>에이전트는 점점 CLI만의 영역이 아니라 문서형·시각형 워크스페이스 상품으로 확장되고 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>SimoneAvogadro / android-reverse-engineering-skill</h3>
+        <div class="badge-row">
+          <span class="badge">Shell</span>
+          <span class="badge">총 2.7k stars</span>
+          <span class="badge">오늘 +558</span>
+        </div>
+        <p>Claude Code용 안드로이드 리버스 엔지니어링 스킬이다. 일반 범용 스킬이 아니라 특정 전문 작업을 지원하는 좁은 도메인 스킬이라는 점이 눈에 띈다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/SimoneAvogadro/android-reverse-engineering-skill">https://github.com/SimoneAvogadro/android-reverse-engineering-skill</a> | Star 수 조회 시점 기준: 2026-04-19</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>에이전트 시장의 다음 차별화가 “더 좋은 범용 프롬프트”가 아니라, 깊은 현업 도메인 스킬 팩이라는 점을 잘 보여준다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Claude Code 스킬 생태계의 강세를 보여주지만, 결국 Cursor 플러그인과 Codex 스킬도 같은 방향으로 갈 가능성이 높다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>세밀한 전문 스킬이 플랫폼 선택만큼 중요해지는 단계다.</p>
+      </article>
+
+      <article class="card">
+        <h3>openai / openai-agents-python</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">총 21.9k stars</span>
+          <span class="badge">v0.14.2 릴리스 2026-04-18</span>
+        </div>
+        <p>OpenAI의 멀티에이전트 워크플로 SDK다. 에이전트, handoff, guardrail, tracing, human-in-the-loop, 그리고 샌드박스 에이전트까지 한 프레임 안에 넣는다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/openai/openai-agents-python">https://github.com/openai/openai-agents-python</a> | Star 수 조회 시점 기준: 2026-04-19</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>오픈소스 SDK 수준에서 이미 “장기 작업용 샌드박스 에이전트”가 핵심 개념으로 올라왔고, 2026-04-18 최신 릴리스도 그 흐름을 이어간다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결점</p>
+        <p>Codex의 장기 실행 철학과 가장 직접적으로 맞닿아 있지만, Claude Code와 Cursor 사용자도 자신의 하네스를 직접 만들고 싶을 때 참고할 수 있는 기반이다.</p>
+        <p class="mini-title">한줄 총평</p>
+        <p>상용 제품 못지않게 “에이전트 인프라를 직접 조립하는 층”도 빠르게 두꺼워지고 있다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending</a></li>
+        <li><a href="https://github.com/explore">GitHub Explore</a></li>
+        <li><a href="https://github.com/obra/superpowers">obra / superpowers</a></li>
+        <li><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos / Claude-Code-Game-Studios</a></li>
+        <li><a href="https://github.com/lsdefine/GenericAgent">lsdefine / GenericAgent</a></li>
+        <li><a href="https://github.com/Tracer-Cloud/opensre">Tracer-Cloud / opensre</a></li>
+        <li><a href="https://github.com/lukilabs/craft-agents-oss">lukilabs / craft-agents-oss</a></li>
+        <li><a href="https://github.com/SimoneAvogadro/android-reverse-engineering-skill">SimoneAvogadro / android-reverse-engineering-skill</a></li>
+        <li><a href="https://github.com/openai/openai-agents-python">openai / openai-agents-python</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

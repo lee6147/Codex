@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 아티클 요약</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --text:#18202a; --muted:#5f6b7a; --line:#d8dee8; --link:#6b21a8; --accent:#efe7ff; --warn:#fff3cd; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI","Noto Sans KR",sans-serif; line-height:1.7; }
+    .container { width:min(980px, calc(100vw - 32px)); margin:32px auto 64px; }
+    .hero { background:linear-gradient(135deg,#1e1b4b 0%,#6b21a8 100%); color:#fff; border-radius:16px; padding:36px; margin-bottom:24px; }
+    .hero p { margin:8px 0 0; opacity:.92; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:14px 16px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:20px; }
+    .notice { background:var(--warn); border-radius:12px; padding:14px 16px; }
+    .toc ol, .sources ul { margin:0; padding-left:20px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:16px; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+    .badge { display:inline-block; font-size:.78rem; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--accent); color:#4c1d95; }
+    .badge.alt { background:#e8f1fb; color:#204977; }
+    .meta-line { color:var(--muted); font-size:.9rem; margin-top:10px; }
+    h1,h2,h3 { line-height:1.3; margin:0; }
+    a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 아티클 요약</h1>
+      <p>생성일: 2026-04-16 | 기본 기준은 최근 2일이었지만 기사량이 부족해 2026-04-09 ~ 2026-04-16 창으로 확장</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장</strong><br>적용됨</div>
+        <div class="stat"><strong>도구별 목표</strong><br>가능한 범위에서 2~3개</div>
+        <div class="stat"><strong>우선 출처</strong><br>공식 문서·공식 블로그·신뢰 가능한 사례 글</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">최근 2일 안에서는 세 도구를 균형 있게 채울 만한 글이 부족했다. 그래서 한 주 범위로 넓혔고, 각 섹션 첫 줄에 그 사실을 분명히 남겼다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <div class="card"><h3>Week 15 · April 6–10, 2026</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">주간 정리</span></div><p>Ultraplan, Monitor tool, /autofix-pr, /team-onboarding, Bedrock/Vertex 설정 마법사 같은 운영성 기능이 한 주에 묶여 정리된 문서다. Claude Code가 단순 편집 보조를 넘어서 계획, 감시, PR 처리까지 엮인 에이전트 환경으로 확장되고 있음을 보여준다.</p><p class="meta-line">게시일: 2026-04-10 | 실무 시사점: 팀 도입 시 모델 성능보다 실행 루틴과 운영 도구를 먼저 봐야 한다. | 출처: <a href="https://code.claude.com/docs/en/whats-new/2026-w15">Week 15 · Claude Code Docs</a></p></div>
+      <div class="card"><h3>2.1.110 changelog</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">릴리즈 노트</span></div><p>4월 15일 changelog는 /tui, 푸시 알림, /focus 분리, auto-scroll 제어 같은 UI/운영 기능을 묶어 공개했다. 최근 관심사가 새 모델 공개보다 장시간 세션을 어떻게 덜 피곤하게 굴릴까에 가깝다는 점이 드러난다.</p><p class="meta-line">게시일: 2026-04-15 | 실무 시사점: 리모트 제어·장기 세션·알림 흐름을 실제 업무 도구처럼 다듬는 단계다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></p></div>
+      <div class="card"><h3>2.1.108 changelog</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">릴리즈 노트</span></div><p>4월 14일 changelog는 1시간 프롬프트 캐시, /recap, slash command discovery, 메모리 절감 개선을 담고 있다. 지금 Claude Code의 주요 개선 방향은 과제 수행 자체보다 긴 세션의 맥락 복원과 비용 통제에 있다.</p><p class="meta-line">게시일: 2026-04-14 | 실무 시사점: 세션 재개와 캐시 정책이 중요한 팀일수록 체감 차이가 크다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></p></div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <div class="card"><h3>Canvases</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">신규 기능</span></div><p>Cursor는 4월 15일 에이전트가 인터랙티브 캔버스를 만들어 표, 차트, 다이어그램, diff를 남길 수 있게 했다. 이는 단순 코드 생성보다 결과를 검토 가능한 시각 아티팩트로 바꾸는 변화다.</p><p class="meta-line">게시일: 2026-04-15 | 실무 시사점: 결과물을 읽고 리뷰하는 비용이 줄어, 비개발 이해관계자와의 협업에도 유리하다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p></div>
+      <div class="card"><h3>Speeding up GPU kernels by 38% with a multi-agent system</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">연구 글</span></div><p>4월 14일 Cursor 블로그는 자사 멀티에이전트 시스템이 CUDA 커널 최적화 문제에서 38%의 기하평균 속도 향상을 냈다고 설명한다. Cursor가 IDE 기능만이 아니라 멀티에이전트 하네스를 연구·제품 양쪽에서 밀고 있다는 신호다.</p><p class="meta-line">게시일: 2026-04-14 | 실무 시사점: Cursor의 차별점은 완성형 IDE보다는 병렬 에이전트 오케스트레이션 쪽으로 이동 중이다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://cursor.com/blog/multi-agent-kernels">Cursor Blog</a></p></div>
+      <div class="card"><h3>Cursor 3.1</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">릴리즈 노트</span></div><p>4월 13일 3.1 릴리즈는 tiled layout, voice input 개선, branch selection, diff-to-file navigation, 파일 검색 필터를 한 번에 내놨다. 이 조합은 멀티에이전트 결과를 비교하고 후속 수정을 연결하는 실제 편집 흐름을 강화한다.</p><p class="meta-line">게시일: 2026-04-13 | 실무 시사점: 여러 에이전트 결과를 병렬 검토하는 팀에 가장 직접적인 개선이다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p></div>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <div class="card"><h3>New Pro plan options</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">과금·사용량</span></div><p>4월 9일 ChatGPT release notes는 새 100달러 Pro 옵션과 함께 Codex 사용 정책을 다시 설명했다. Plus는 더 많은 주간 세션 쪽으로, 100달러 Pro는 더 긴 고강도 Codex 세션 쪽으로 포지셔닝이 갈린다.</p><p class="meta-line">게시일: 2026-04-09 | 실무 시사점: Codex의 최근 변화는 기능보다 요금제·사용량 설계가 더 직접적이다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">ChatGPT Release Notes</a></p></div>
+      <div class="card"><h3>Deploying Codex in Higher Education</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">배포 가이드</span></div><p>OpenAI Academy의 4월 9일 글은 Codex App, Cloud, CLI를 어떤 조직 표면에 배치할지와 권한·보안 설정을 어떻게 검토할지 정리한다. Codex를 개인 개발자 도구보다 조직형 업무 에이전트로 바라보는 시선이 강하다.</p><p class="meta-line">게시일: 2026-04-09 | 실무 시사점: 도입 시 기능 비교만 하지 말고 권한 구조와 롤아웃 절차를 같이 봐야 한다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://academy.openai.com/en/public/clubs/higher-education-05x4z/blogs/deploying-codex-in-higher-education-2026-04-09">OpenAI Academy</a></p></div>
+      <div class="card"><h3>CyberAgent moves faster with ChatGPT Enterprise and Codex</h3><div class="badge-row"><span class="badge">공식 글</span><span class="badge alt">고객 사례</span></div><p>4월 9일 OpenAI 사례 글은 CyberAgent가 Codex를 설계 검토, 코드 리뷰 개선안 생성, AGENTS.md 같은 지식 문서 유지에 쓰고 있다고 소개한다. 특히 구현 전 의사결정 품질을 높이는 용도로 Codex를 쓰는 점이 눈에 띈다.</p><p class="meta-line">게시일: 2026-04-09 | 실무 시사점: Codex는 코드 생성 도구뿐 아니라 설계·리뷰·문서화 보조로 포지셔닝되고 있다. | 신뢰도 메모: 공식 글 | 출처: <a href="https://openai.com/index/cyber-agent/">OpenAI 고객 사례</a></p></div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></li>
+        <li><a href="https://code.claude.com/docs/en/whats-new/2026-w15">Week 15 · Claude Code Docs</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://cursor.com/blog/multi-agent-kernels">Cursor Blog</a></li>
+        <li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">ChatGPT Release Notes</a></li>
+        <li><a href="https://academy.openai.com/en/public/clubs/higher-education-05x4z/blogs/deploying-codex-in-higher-education-2026-04-09">OpenAI Academy</a></li>
+        <li><a href="https://openai.com/index/cyber-agent/">OpenAI 고객 사례</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

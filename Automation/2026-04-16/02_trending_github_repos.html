@@ -1,0 +1,115 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 레포지터리 큐레이션</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --text:#18202a; --muted:#5f6b7a; --line:#d8dee8; --link:#0969da; --accent:#e8f1fb; --warn:#fff3cd; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI","Noto Sans KR",sans-serif; line-height:1.7; }
+    .container { width:min(980px, calc(100vw - 32px)); margin:32px auto 64px; }
+    .hero { background:linear-gradient(135deg,#1f2937 0%,#0969da 100%); color:#fff; border-radius:16px; padding:36px; margin-bottom:24px; }
+    .hero p { margin:8px 0 0; opacity:.92; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:14px 16px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:20px; }
+    .toc ol, .sources ul { margin:0; padding-left:20px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:16px; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+    .badge { display:inline-block; font-size:.78rem; font-weight:700; padding:4px 10px; border-radius:999px; background:#e8f1fb; color:#204977; }
+    .badge.alt { background:#f3e8ff; color:#6b21a8; }
+    .meta-line { color:var(--muted); font-size:.9rem; margin-top:10px; }
+    .lead { margin:0; }
+    .bullets { margin:10px 0 0; padding-left:18px; }
+    .bullets li { margin:6px 0; }
+    h1,h2,h3 { line-height:1.3; margin:0; }
+    a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 레포지터리 큐레이션</h1>
+      <p>생성일: 2026-04-16 | 기준: GitHub Trending weekly 스냅샷에 나온 저장소 중 AI 코딩·개발 생산성 연결성이 강한 것만 선별하고, Star 수는 GitHub REST API로 재확인</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 저장소</strong><br>6개</div>
+        <div class="stat"><strong>핵심 테마</strong><br>스킬·메모리·에이전트 운영</div>
+        <div class="stat"><strong>Star 재확인 시점</strong><br>2026-04-16</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="meta-line">이번 주 트렌딩은 더 좋은 모델보다 더 오래 일하는 에이전트 운영 계층이 강하게 뜬 주간이다. 스킬 파일, 장기 메모리, managed agents, harness builder, 문서 정규화 도구가 함께 올라왔다.</div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <div class="card">
+        <h3><a href="https://github.com/forrestchang/andrej-karpathy-skills">forrestchang/andrej-karpathy-skills</a></h3>
+        <div class="badge-row"><span class="badge">Skills</span><span class="badge alt">Agent Rules</span></div>
+        <p class="lead">Andrej Karpathy의 LLM 코딩 실패 패턴 관찰을 바탕으로 Claude Code 행동을 교정하는 단일 CLAUDE.md 룰셋이다.</p>
+        <ul class="bullets"><li><strong>Star 수:</strong> 43,460</li><li><strong>지금 주목할 이유:</strong> 모델 교체보다 규칙 파일이 체감 품질을 좌우한다는 흐름을 상징한다.</li><li><strong>연결점:</strong> Claude Code, Codex, Cursor 모두 비슷한 규칙층으로 옮겨 쓰기 좋다.</li></ul>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+        <div class="badge-row"><span class="badge">Memory</span><span class="badge alt">Claude Code</span></div>
+        <p class="lead">Claude Code 세션 동안 나온 맥락을 자동 캡처·압축하고, 이후 세션에 다시 주입하는 메모리 플러그인이다.</p>
+        <ul class="bullets"><li><strong>Star 수:</strong> 57,924</li><li><strong>지금 주목할 이유:</strong> 장기 작업에서 가장 큰 병목인 컨텍스트 단절을 메우는 레이어다.</li><li><strong>연결점:</strong> Codex와 Cursor 사용자도 외부 메모리 계층 설계 아이디어를 그대로 가져갈 수 있다.</li></ul>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></h3>
+        <div class="badge-row"><span class="badge">Agent Runtime</span><span class="badge alt">Platform</span></div>
+        <p class="lead">스킬, 스케줄링, 다중 채널 인터페이스, 서브에이전트 운영을 묶은 범용 자율 에이전트 플랫폼이다.</p>
+        <ul class="bullets"><li><strong>Star 수:</strong> 89,875</li><li><strong>지금 주목할 이유:</strong> 오픈소스 진영이 단일 에이전트에서 운영 가능한 에이전트 런타임으로 이동하고 있음을 보여준다.</li><li><strong>연결점:</strong> 장기 실행, 스케줄, 메모리 계층을 별도로 설계할 때 비교 대상이 된다.</li></ul>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/multica-ai/multica">multica-ai/multica</a></h3>
+        <div class="badge-row"><span class="badge">Managed Agents</span><span class="badge alt">Workflow</span></div>
+        <p class="lead">코딩 에이전트를 실제 팀원처럼 배정하고 추적하는 오픈소스 managed agents 플랫폼이다.</p>
+        <ul class="bullets"><li><strong>Star 수:</strong> 13,667</li><li><strong>지금 주목할 이유:</strong> 작업 할당, 진행 추적, 스킬 누적을 제품 표면으로 끌어올린다.</li><li><strong>연결점:</strong> 여러 에이전트에게 독립 작업을 나눠 맡기는 팀 운영 흐름과 직접 맞닿아 있다.</li></ul>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/coleam00/Archon">coleam00/Archon</a></h3>
+        <div class="badge-row"><span class="badge">Harness</span><span class="badge alt">Deterministic</span></div>
+        <p class="lead">AI 코딩을 더 결정적이고 반복 가능하게 만들기 위한 오픈소스 harness builder다.</p>
+        <ul class="bullets"><li><strong>Star 수:</strong> 18,239</li><li><strong>지금 주목할 이유:</strong> 좋은 모델보다 좋은 하네스가 재현성을 만든다는 흐름을 보여준다.</li><li><strong>연결점:</strong> 자동화 하네스, 검증 루프, 규칙 파일 중심 개발을 하는 팀에 특히 잘 맞는다.</li></ul>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/microsoft/markitdown">microsoft/markitdown</a></h3>
+        <div class="badge-row"><span class="badge">Docs</span><span class="badge alt">Productivity</span></div>
+        <p class="lead">PDF, Office, HTML, 오디오 등 다양한 입력을 LLM 친화적인 Markdown으로 정규화하는 도구다.</p>
+        <ul class="bullets"><li><strong>Star 수:</strong> 109,562</li><li><strong>지금 주목할 이유:</strong> 에이전트 성능이 아니라 입력 정리 계층이 생산성에 얼마나 중요한지 보여준다.</li><li><strong>연결점:</strong> Claude Code, Cursor, Codex 모두 긴 자료를 그대로 먹이기보다 Markdown 정규화와 같이 쓸 때 효율이 오른다.</li></ul>
+      </div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending?since=weekly">GitHub Trending Weekly</a></li>
+        <li><a href="https://api.github.com/">GitHub REST API</a></li>
+        <li><a href="https://github.com/forrestchang/andrej-karpathy-skills">forrestchang/andrej-karpathy-skills</a></li>
+        <li><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></li>
+        <li><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></li>
+        <li><a href="https://github.com/multica-ai/multica">multica-ai/multica</a></li>
+        <li><a href="https://github.com/coleam00/Archon">coleam00/Archon</a></li>
+        <li><a href="https://github.com/microsoft/markitdown">microsoft/markitdown</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

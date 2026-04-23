@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f8f6;
+      --panel: #ffffff;
+      --text: #17241f;
+      --muted: #5e6d66;
+      --line: #d9e4dc;
+      --link: #0f766e;
+      --accent: #e7f7f1;
+      --warn: #fff4dc;
+      --hero: linear-gradient(135deg, #123e37 0%, #1f7a6b 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 62, 55, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfefd 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #0d6258;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    .mini-title {
+      font-weight: 700;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일: 2026-04-22 | 조사 기준: GitTrend 일간 노출과 각 저장소 원문 페이지 재확인</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 수</strong><br>6개 저장소</div>
+        <div class="stat"><strong>가장 강한 흐름</strong><br>스킬 팩, 메모리 계층, 문서 정규화, 장기 에이전트 루프, 범용 오픈 에이전트 플랫폼이 함께 뜨고 있다.</div>
+        <div class="stat"><strong>해석</strong><br>지금 GitHub 관심은 모델 자체보다 “에이전트를 오래, 안전하게, 팀 단위로 굴리는 운영층”에 모여 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">오늘 확인한 저장소들의 공통점은 “에이전트가 실제로 일하게 만드는 보조층”이다. 코딩 규칙 파일, 장기 기억, 문서-마크다운 변환, 스킬 기반 방법론, PRD 루프, 범용 오픈 에이전트까지 모두 같은 방향을 가리킨다. Claude Code, Cursor, Codex 사용자 입장에서는 이제 좋은 모델 하나보다 좋은 실행 환경 묶음이 더 중요한 국면이다.</div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <article class="card">
+        <h3>1. forrestchang / andrej-karpathy-skills</h3>
+        <div class="badge-row">
+          <span class="badge">AI skills</span>
+          <span class="badge">70.6k stars</span>
+          <span class="badge">Claude Code behavior</span>
+        </div>
+        <p>이 저장소는 Claude Code의 행동을 개선하는 단일 <code>CLAUDE.md</code>와 스킬 세트를 제공한다. 핵심 원칙은 “생각한 뒤 코딩”, “단순성 우선”, “수술식 변경”, “검증 가능한 목표 중심 실행”이다. 즉 모델 성능을 바꾸는 대신 프롬프트 계약을 바꿔 결과 품질을 높이려는 접근이다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/forrestchang/andrej-karpathy-skills">https://github.com/forrestchang/andrej-karpathy-skills</a> | Star 수 조회 시점 기준: 약 70.6k</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>코딩 에이전트의 병목이 모델 정확도보다 잘못된 가정, 과설계, 주변 코드 오염이라는 데 공감대가 쌓이면서 “좋은 규칙 파일” 자체가 하나의 제품처럼 소비되고 있다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결성</p>
+        <p>Claude Code에서 시작됐지만 실제 문제는 세 도구 공통이다. Codex와 Cursor 모두 결국 장기 세션 제어와 규칙 관리가 품질 차이를 만든다.</p>
+      </article>
+
+      <article class="card">
+        <h3>2. thedotmack / claude-mem</h3>
+        <div class="badge-row">
+          <span class="badge">memory</span>
+          <span class="badge">65k stars</span>
+          <span class="badge">Claude Code plugin</span>
+        </div>
+        <p>Claude-Mem은 세션 중 도구 사용 관찰을 자동 수집하고, 요약을 압축한 뒤 다음 세션에 다시 주입하는 메모리 플러그인이다. README 기준으로 자동 캡처, 의미 기반 요약, 검색용 MCP 도구, SQLite와 벡터 검색 조합을 내세운다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/thedotmack/claude-mem">https://github.com/thedotmack/claude-mem</a> | Star 수 조회 시점 기준: 약 65k</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>에이전트 활용이 반복 업무로 넘어가면서 가장 비싼 자산은 모델 호출이 아니라 “이전 세션에서 이미 배운 맥락”이 됐다. claude-mem은 그 맥락을 시스템화한다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결성</p>
+        <p>현재 이름은 Claude Code에 붙어 있지만, 문제 정의는 Cursor의 background agents와 Codex memory/automation 흐름과 사실상 같다. 메모리는 공통 인프라가 되고 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>3. microsoft / markitdown</h3>
+        <div class="badge-row">
+          <span class="badge">document ingestion</span>
+          <span class="badge">111k stars</span>
+          <span class="badge">MCP ready</span>
+        </div>
+        <p>MarkItDown은 PDF, Office 문서, 이미지, 오디오, HTML 등 다양한 파일을 Markdown으로 바꾸는 경량 Python 유틸리티다. 저장소 소개 문구와 MCP Registry 설명 모두 “LLM 입력용 구조 보존”을 핵심 가치로 잡고 있다. 최근에는 MCP 서버도 제공한다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지, MCP Registry | GitHub URL: <a href="https://github.com/microsoft/markitdown">https://github.com/microsoft/markitdown</a> | Star 수 조회 시점 기준: 약 111k</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>에이전트 시대의 숨은 병목은 코딩이 아니라 입력 정제다. 문서, 슬라이드, 스프레드시트, PDF를 깨끗한 Markdown으로 바꾸는 도구는 거의 모든 코딩 에이전트 체인에 들어간다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결성</p>
+        <p>세 도구 모두 결국 외부 문서를 읽어야 한다. MarkItDown은 모델 경쟁과 무관하게 공통 전처리 계층으로 자리 잡고 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>4. obra / superpowers</h3>
+        <div class="badge-row">
+          <span class="badge">skills framework</span>
+          <span class="badge">163k stars</span>
+          <span class="badge">workflow methodology</span>
+        </div>
+        <p>Superpowers는 단순한 팁 모음이 아니라 스킬 기반 소프트웨어 개발 방법론을 내세운다. 저장소 설명 그대로, 브레인스토밍부터 설계 승인, 계획, 서브에이전트 실행, TDD, 코드 리뷰, 브랜치 마무리까지 하나의 운영 절차로 연결한다. Claude Code, Cursor, Codex, OpenCode, Gemini CLI까지 설치 경로를 직접 제공한다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/obra/superpowers">https://github.com/obra/superpowers</a> | Star 수 조회 시점 기준: 약 163k</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>개발자들이 더 이상 “어느 모델이 제일 센가”만 묻지 않고 “에이전트를 어떤 프로세스로 통제할 것인가”를 묻기 시작했다. Superpowers는 그 질문에 가장 직접적으로 답하는 저장소다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결성</p>
+        <p>세 도구를 모두 하나의 운영 언어로 묶는다는 점이 중요하다. 도구가 달라도 스킬과 단계는 공유될 수 있다는 가설을 검증 중이다.</p>
+      </article>
+
+      <article class="card">
+        <h3>5. snarktank / ralph</h3>
+        <div class="badge-row">
+          <span class="badge">autonomous loop</span>
+          <span class="badge">17.6k stars</span>
+          <span class="badge">PRD driven</span>
+        </div>
+        <p>Ralph는 PRD 항목이 모두 끝날 때까지 AI 코딩 도구를 반복 실행하는 자율 루프다. 각 반복은 새 컨텍스트로 시작하지만, <code>git history</code>, <code>progress.txt</code>, <code>prd.json</code>으로 기억을 넘긴다. 저장소가 내세우는 핵심은 작은 스토리 분해와 반복 검증이다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/snarktank/ralph">https://github.com/snarktank/ralph</a> | Star 수 조회 시점 기준: 약 17.6k</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>“한 번에 완성하는 에이전트”보다 “작은 목표를 끝낼 때까지 다시 부르는 루프”가 더 현실적이라는 판단이 널리 퍼지고 있다. Ralph는 그 운영 감각을 가장 노골적으로 제품화했다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결성</p>
+        <p>이 패턴은 Claude Code에서 특히 자연스럽지만, Codex 자동화와 Cursor의 장기 에이전트 흐름에도 거의 그대로 이식할 수 있다.</p>
+      </article>
+
+      <article class="card">
+        <h3>6. aaif-goose / goose</h3>
+        <div class="badge-row">
+          <span class="badge">open agent platform</span>
+          <span class="badge">42.5k stars</span>
+          <span class="badge">desktop + CLI + API</span>
+        </div>
+        <p>goose는 데스크톱 앱, CLI, API를 동시에 제공하는 범용 오픈 에이전트 플랫폼이다. 설명 문구 기준으로 코드뿐 아니라 리서치, 자동화, 데이터 분석까지 포괄하며, 15개 이상 모델 제공자와 70개 이상 MCP 확장을 연결한다. 로컬 실행과 개방형 확장이라는 점에서 상용 코딩 에이전트의 대안 축으로 읽힌다.</p>
+        <p class="meta-line">출처: GitHub 저장소 페이지 | GitHub URL: <a href="https://github.com/aaif-goose/goose">https://github.com/aaif-goose/goose</a> | Star 수 조회 시점 기준: 약 42.5k</p>
+        <p class="mini-title">지금 주목받는 이유</p>
+        <p>개발자 커뮤니티는 특정 벤더에 잠기지 않는 범용 에이전트 런타임도 함께 찾고 있다. goose는 그 수요를 가장 넓은 범위로 받는 프로젝트 중 하나다.</p>
+        <p class="mini-title">Claude Code / Cursor / Codex 연결성</p>
+        <p>goose가 바로 세 도구의 대체재는 아니지만, 세 도구가 끌어올린 기대치를 오픈소스 생태계가 어떻게 흡수하는지 보여주는 대표 사례다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://gittrend.top/">GitTrend</a></li>
+        <li><a href="https://github.com/forrestchang/andrej-karpathy-skills">forrestchang / andrej-karpathy-skills</a></li>
+        <li><a href="https://github.com/thedotmack/claude-mem">thedotmack / claude-mem</a></li>
+        <li><a href="https://github.com/microsoft/markitdown">microsoft / markitdown</a></li>
+        <li><a href="https://github.com/obra/superpowers">obra / superpowers</a></li>
+        <li><a href="https://github.com/snarktank/ralph">snarktank / ralph</a></li>
+        <li><a href="https://github.com/aaif-goose/goose">aaif-goose / goose</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

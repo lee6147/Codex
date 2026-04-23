@@ -8,12 +8,13 @@
 1. 현재 작업 폴더 기준으로 가장 가까운 `codex.md`를 이미 읽었는지 확인한다.
 2. `references/preflight.md`를 읽는다.
 3. `references/output-contract.md`를 읽는다.
-4. `references/source-policy.md`를 읽는다.
-5. `scripts/run_preflight.py --ensure-scaffold`를 우선 실행한다.
-6. 웹 리서치를 수행한다.
-7. HTML 3개를 먼저 작성한다.
-8. 마지막에 `04_ai_tools_review.md`를 작성한다.
-9. `scripts/verify_outputs.py`로 산출물을 검증한다.
+4. `references/presentation-style.md`를 읽는다.
+5. `references/source-policy.md`를 읽는다.
+6. `scripts/run_preflight.py --ensure-scaffold`를 우선 실행한다.
+7. 웹 리서치를 수행한다.
+8. HTML 3개를 먼저 작성한다.
+9. 마지막에 `04_ai_tools_review.md`를 작성한다.
+10. `scripts/verify_outputs.py`로 산출물을 검증한다.
 
 ## 기본 워크플로
 
@@ -24,6 +25,14 @@
 3. 각 도구 관련 아티클을 최근 2일 우선으로 수집하고, 부족하면 최근 7일로 넓힌다.
 4. HTML 보고서 3개를 작성한다.
 5. Markdown 종합 평가 파일을 작성한다.
+
+작성할 때는 가독성 레이어를 반드시 넣는다.
+
+- 헤더
+- 요약 박스
+- 목차
+- 카드형 본문
+- 분리된 출처 블록
 
 ## 로컬 병렬화
 
@@ -44,5 +53,5 @@
 ## 실행 스크립트
 
 - `scripts/run_preflight.py`: 로컬 하네스 파일 존재 여부 점검, 날짜 폴더 확인, 필요 시 스캐폴드 생성
-- `scripts/create_report_scaffold.py`: 날짜 폴더와 기본 파일 생성
+- `scripts/create_report_scaffold.py`: 날짜 폴더와 기본 파일 생성, 읽기 쉬운 기본 레이아웃 제공
 - `scripts/verify_outputs.py`: 생성된 보고서의 기본 형식과 플레이스홀더 잔존 여부 검증

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf7f2;
+      --panel: #ffffff;
+      --text: #201d1a;
+      --muted: #6b655f;
+      --line: #e4dcd0;
+      --link: #a34b00;
+      --accent: #fff1e2;
+      --hero: linear-gradient(135deg, #603813 0%, #bf6a1c 100%);
+      --hero-text: #ffffff;
+      --warn: #fff2da;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); line-height: 1.72; }
+    .container { width: min(1020px, calc(100vw - 32px)); margin: 32px auto 64px; }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero { background: var(--hero); color: var(--hero-text); border-radius: 18px; padding: 36px; margin-bottom: 24px; box-shadow: 0 16px 40px rgba(96, 56, 19, 0.16); }
+    .hero p { margin: 10px 0 0; opacity: 0.94; }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px; }
+    .stat { background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 14px; padding: 14px 16px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: 24px; margin-bottom: 20px; }
+    .toc ol, .sources ul { margin: 0; padding-left: 20px; }
+    .toc li { margin: 6px 0; }
+    .notice { background: var(--warn); border-radius: 12px; padding: 14px 16px; }
+    .card { border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-top: 16px; background: linear-gradient(180deg, #ffffff 0%, #fffdfa 100%); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; background: var(--accent); color: #8d4300; }
+    .meta-line { color: var(--muted); font-size: 0.92rem; margin-top: 10px; }
+    .mini-title { font-weight: 700; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-04-19 | 기사 조사 범위: 2026-04-12 ~ 2026-04-19</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장</strong><br>적용됨</div>
+        <div class="stat"><strong>확장 이유</strong><br>기본 2일 창에서는 도구별로 2개 이상씩 고르게 채울 만큼 고신호 기사가 충분하지 않았다.</div>
+        <div class="stat"><strong>선정 원칙</strong><br>공식 발표를 중복 요약한 짧은 속보보다, 실제 사용 맥락·시장 해석·업무 시사점이 있는 기사 위주로 골랐다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#market">시장 관찰 메모</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">기본 최근 2일 범위에서는 Codex 대형 업데이트 기사만 상대적으로 많고 Cursor·Claude Code는 제품 분석이나 실전 워크플로 글이 고르게 잡히지 않았다. 그래서 7일 범위로 넓혀 2026-04-12 ~ 2026-04-19 구간의 고신호 기사만 남겼고, 각 도구마다 “무엇이 바뀌었는지”보다 “어떤 작업면을 차지하려 하는지”가 드러나는 글을 우선 선택했다.</div>
+    </section>
+
+    <section class="panel" id="market">
+      <h2>시장 관찰 메모</h2>
+      <article class="card">
+        <h3>Cursor, Claude Code, and Codex are merging into one AI coding stack nobody planned</h3>
+        <div class="badge-row">
+          <span class="badge">The New Stack</span>
+          <span class="badge">2026-04-12</span>
+          <span class="badge">비교/시장 해석</span>
+        </div>
+        <p>이 글은 Cursor를 오케스트레이션 계층, Claude Code와 Codex를 실행 계층, 크로스 툴 리뷰를 검증 계층으로 읽는다. 핵심 주장은 하나의 승자가 나오는 대신, 인프라 스택처럼 여러 도구가 조합되는 방향으로 시장이 가고 있다는 것이다.</p>
+        <p class="meta-line">출처 URL: <a href="https://thenewstack.io/ai-coding-tool-stack/">https://thenewstack.io/ai-coding-tool-stack/</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>We tested Anthropic’s redesigned Claude Code desktop app and 'Routines' — here's what enterprises should know</h3>
+        <div class="badge-row">
+          <span class="badge">VentureBeat</span>
+          <span class="badge">2026-04-15</span>
+          <span class="badge">제품 분석</span>
+        </div>
+        <p>VentureBeat는 Anthropic의 데스크톱 앱 재설계와 Routines 연구 프리뷰를 “챗봇에서 AI 노동력 관리면으로 넘어가는 신호”로 해석했다. 포인트는 코드 생성 능력 그 자체보다, 여러 작업 스트림을 지시하고 이어서 관리하는 관리자형 사용 패턴이 전면으로 올라왔다는 점이다.</p>
+        <p class="mini-title">업무 시사점</p>
+        <p>Claude Code를 잘 쓰는 조직은 이제 프롬프트 작성보다 큐잉, 승인, 재개, 반복 작업 설계를 더 중요하게 다뤄야 한다. 개인 생산성 도구에서 운영 콘솔로 무게중심이 이동하고 있다는 뜻이다.</p>
+        <p class="meta-line">출처 URL: <a href="https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know">https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know</a> | 소스 메모: 기술 매체</p>
+      </article>
+
+      <article class="card">
+        <h3>Claude Code for Mobile App Development in 2026: A Practical SwiftUI & Kotlin Workflow</h3>
+        <div class="badge-row">
+          <span class="badge">Claude Lab</span>
+          <span class="badge">2026-04-18</span>
+          <span class="badge">실전 워크플로</span>
+        </div>
+        <p>Claude Lab은 Claude Code가 모바일 개발에서 어디에 강하고 어디에서 사람이 계속 잡아줘야 하는지 구체적으로 나눴다. 보일러플레이트, 리팩터링, 테스트 스캐폴딩, 스택 트레이스 해석에는 강하지만, 시각 확인과 실제 디바이스 권한 검증은 여전히 인간 주도 영역이라고 정리한다.</p>
+        <p class="mini-title">업무 시사점</p>
+        <p>Claude Code의 실제 가치는 “전부 맡긴다”가 아니라 “문서화 가능하고 재현 가능한 텍스트 작업을 크게 압축한다”에 있다. 강한 영역과 약한 영역의 경계를 분명히 잡을수록 효율이 높아진다.</p>
+        <p class="meta-line">출처 URL: <a href="https://claudelab.net/en/articles/claude-code/claude-code-mobile-app-dev-workflow-2026">https://claudelab.net/en/articles/claude-code/claude-code-mobile-app-dev-workflow-2026</a> | 소스 메모: 실전 사용기</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Cursor 3 Introduces Agent-First Interface, Moving Beyond the IDE Model</h3>
+        <div class="badge-row">
+          <span class="badge">InfoQ</span>
+          <span class="badge">2026-04-16</span>
+          <span class="badge">제품 해석</span>
+        </div>
+        <p>InfoQ는 Cursor 3를 “파일 편집 중심 IDE”에서 “병렬 코딩 에이전트 관리면”으로 옮겨 간 제품으로 설명했다. 기사에 따르면 Cursor 내부에서도 자율 에이전트 사용 비중이 탭 자동완성을 넘어섰고, 제품 구조도 그 현실을 반영해 Agents Window를 중심에 놓는다.</p>
+        <p class="mini-title">업무 시사점</p>
+        <p>Cursor는 더 이상 편집기 안 AI가 아니라 에이전트 조율 UI로 평가해야 한다. 코드 작성 품질 못지않게 에이전트 handoff, 비교, 시각적 검수, 세션 관리가 핵심 사용 가치가 되고 있다.</p>
+        <p class="meta-line">출처 URL: <a href="https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/">https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/</a> | 소스 메모: 기술 매체 분석</p>
+      </article>
+
+      <article class="card">
+        <h3>Elon Musk's xAI plans to supply AI computing power to coding startup Cursor</h3>
+        <div class="badge-row">
+          <span class="badge">Business Insider</span>
+          <span class="badge">2026-04-15</span>
+          <span class="badge">인프라/기업 동향</span>
+        </div>
+        <p>Business Insider는 Cursor가 차기 Composer 2.5 학습을 위해 xAI의 GPU 인프라를 활용할 계획이라고 전했다. 이 기사의 포인트는 기능 데모가 아니라, AI 코딩 툴 경쟁이 결국 모델 훈련 인프라와 자본력 경쟁으로도 이어지고 있다는 점이다.</p>
+        <p class="mini-title">업무 시사점</p>
+        <p>Cursor가 계속 오케스트레이션 UI를 밀더라도, 밑단 모델 경쟁력은 여전히 대규모 훈련 투자에 달려 있다. 따라서 Cursor를 평가할 때 UI 혁신과 함께 모델 공급망도 같이 봐야 한다.</p>
+        <p class="meta-line">출처 URL: <a href="https://www.businessinsider.com/elon-musk-xai-compute-cursor-ai-model-training-2026-4">https://www.businessinsider.com/elon-musk-xai-compute-cursor-ai-model-training-2026-4</a> | 소스 메모: 기업/인프라 기사</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>OpenAI's big Codex update is a direct shot at Claude Code</h3>
+        <div class="badge-row">
+          <span class="badge">The Verge</span>
+          <span class="badge">2026-04-16</span>
+          <span class="badge">경쟁 구도</span>
+        </div>
+        <p>The Verge는 Codex의 이번 확장을 Claude Code를 정면으로 겨냥한 움직임으로 해석했다. 데스크톱 앱 조작, 병렬 에이전트, 메모리, 플러그인, 브라우저, 이미지 생성까지 한데 묶으며 “에이전트 개발 작업면” 전반을 노리고 있다는 설명이다.</p>
+        <p class="mini-title">업무 시사점</p>
+        <p>Codex는 더 이상 클라우드 코드 에이전트 하나로만 보기는 어렵다. 제품팀 입장에서는 개발, 검수, 프론트엔드 반복, 문서/리뷰 연결까지 한 워크플로로 통합할 수 있는지 여부가 핵심 평가 포인트가 된다.</p>
+        <p class="meta-line">출처 URL: <a href="https://www.theverge.com/ai-artificial-intelligence/913034/openai-codex-updates-use-macos">https://www.theverge.com/ai-artificial-intelligence/913034/openai-codex-updates-use-macos</a> | 소스 메모: 기술 매체 분석</p>
+      </article>
+
+      <article class="card">
+        <h3>'Codex can now operate your computer alongside you' OpenAI takes major shot at Claude Code with major workplace updates</h3>
+        <div class="badge-row">
+          <span class="badge">TechRadar</span>
+          <span class="badge">2026-04-17</span>
+          <span class="badge">기능 정리</span>
+        </div>
+        <p>TechRadar는 이번 Codex 업데이트를 “코딩을 넘는 업무 도구”라는 관점에서 정리했다. 컴퓨터 사용, 장기 작업 자동 재개, 메모리, 인앱 브라우저, 이미지 생성, 여러 터미널과 파일 미리보기까지 포함해 작업면 자체가 크게 넓어졌다고 본다.</p>
+        <p class="mini-title">업무 시사점</p>
+        <p>Codex의 확장성은 특히 프론트엔드, 앱 테스트, 문서 중심 협업에서 매력적이다. 반대로 조직은 기능 수가 늘어난 만큼 권한 제어와 작업 경계도 더 세밀하게 설계해야 한다.</p>
+        <p class="meta-line">출처 URL: <a href="https://www.techradar.com/pro/codex-can-now-operate-your-computer-alongside-you-openai-takes-major-shot-at-claude-code-with-major-workplace-updates">https://www.techradar.com/pro/codex-can-now-operate-your-computer-alongside-you-openai-takes-major-shot-at-claude-code-with-major-workplace-updates</a> | 소스 메모: 기술 매체 요약</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://thenewstack.io/ai-coding-tool-stack/">The New Stack</a></li>
+        <li><a href="https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know">VentureBeat</a></li>
+        <li><a href="https://claudelab.net/en/articles/claude-code/claude-code-mobile-app-dev-workflow-2026">Claude Lab</a></li>
+        <li><a href="https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/">InfoQ</a></li>
+        <li><a href="https://www.businessinsider.com/elon-musk-xai-compute-cursor-ai-model-training-2026-4">Business Insider</a></li>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/913034/openai-codex-updates-use-macos">The Verge</a></li>
+        <li><a href="https://www.techradar.com/pro/codex-can-now-operate-your-computer-alongside-you-openai-takes-major-shot-at-claude-code-with-major-workplace-updates">TechRadar</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
