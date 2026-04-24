@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5d6877;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e7f7ec;
+      --warn: #fff2da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #20334d 0%, #3266a3 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1b4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1f6e36; }
+    .rank {
+      font-weight: 800;
+      color: #214f80;
+      margin-right: 8px;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일: 2026-04-24 | 조사 기준: GitHub Trending today 스냅샷(2026-04-24 조회)</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 원칙</strong><br>GitHub Trending 전체 목록에서 AI, 코딩, 개발 생산성과 직접 연결되는 저장소만 추렸다. 억지로 10개를 채우지 않고 8개만 남겼다.</div>
+        <div class="stat"><strong>이번 흐름</strong><br>에이전트 자체보다 에이전트를 더 잘 쓰게 해 주는 컨텍스트 압축, 스킬 팩, 학습 자료, 터미널 기반 워크플로가 같이 뜨고 있다.</div>
+        <div class="stat"><strong>실무 메모</strong><br>Claude Code, Cursor, Codex를 잘 쓰는 팀은 모델 교체보다 주변 운영 레이어를 먼저 정비하는 쪽으로 움직이고 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">핵심 해석</a></li>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>핵심 해석</h2>
+      <div class="notice">
+        오늘의 트렌딩은 “더 강한 모델”보다 “에이전트를 실제 업무에 붙이는 보조 레이어”에 별이 몰렸다. 컨텍스트 절감, 스킬 재사용, 학습용 커리큘럼, Windows 셸 자동화가 같이 뜨는 구도는 현업 팀이 실험 단계를 지나 운영 단계로 가고 있음을 보여준다.
+      </div>
+      <div class="soft-box">
+        <strong>읽는 법</strong><br>
+        표면적으로는 오픈소스 저장소 목록이지만, 실제로는 Claude Code, Cursor, Codex 같은 상용 에이전트를 둘러싼 주변 생태계 신호로 읽는 편이 맞다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <article class="card">
+        <h3><span class="rank">1.</span>mksglu / context-mode</h3>
+        <div class="badge-row">
+          <span class="badge ok">302 stars today</span>
+          <span class="badge">9,251 stars</span>
+          <span class="badge">컨텍스트 최적화</span>
+        </div>
+        <p>AI 코딩 에이전트의 컨텍스트 창을 줄이고 도구 출력을 샌드박싱하는 프로젝트다. 설명 자체가 “98% reduction”을 전면에 내세우고 있어, 지금 시장의 병목이 모델 지능보다 컨텍스트 비용과 혼잡이라는 점을 잘 보여준다.</p>
+        <p>Claude Code, Cursor, Codex 모두 장문 세션과 병렬 작업에서 컨텍스트 관리가 비용과 품질을 좌우한다. 이런 레이어가 뜨는 건 상용 도구만으로는 아직 운영 최적화가 끝나지 않았다는 신호다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/mksglu/context-mode">github.com/mksglu/context-mode</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">2.</span>cline / cline</h3>
+        <div class="badge-row">
+          <span class="badge ok">103 stars today</span>
+          <span class="badge">60,744 stars</span>
+          <span class="badge">IDE 에이전트</span>
+        </div>
+        <p>IDE 안에서 파일 편집, 명령 실행, 브라우저 사용까지 허용하는 대표적인 자율 코딩 에이전트다. 상용 도구와 직접 경쟁하는 오픈소스 벤치마크 역할을 계속 하고 있어 트렌딩에 남아 있는 것 자체가 의미가 있다.</p>
+        <p>Cursor가 IDE형 오케스트레이션을 밀고, Claude Code와 Codex가 각자 실행/자동화 쪽을 강화하는 상황에서 Cline의 존재감은 “개발자가 원하는 에이전트 UX의 최소 기준”을 오픈소스가 계속 끌어올리고 있다는 뜻이다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/cline/cline">github.com/cline/cline</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">3.</span>VoltAgent / awesome-agent-skills</h3>
+        <div class="badge-row">
+          <span class="badge ok">176 stars today</span>
+          <span class="badge">17,852 stars</span>
+          <span class="badge">스킬 생태계</span>
+        </div>
+        <p>Claude Code, Codex, Gemini CLI, Cursor 등 여러 도구와 호환되는 스킬 모음집이다. 특정 모델보다 “재사용 가능한 작업 단위”가 더 중요해지고 있다는 신호라서 의미가 크다.</p>
+        <p>상용 도구가 강해질수록 팀들은 내부 스킬, 정책, 템플릿, 자동화 규칙을 자산으로 쌓는다. 이 저장소의 상승은 에이전트 경쟁이 점점 플랫폼 경쟁으로 넘어가고 있음을 보여준다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/VoltAgent/awesome-agent-skills">github.com/VoltAgent/awesome-agent-skills</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">4.</span>microsoft / ai-agents-for-beginners</h3>
+        <div class="badge-row">
+          <span class="badge ok">177 stars today</span>
+          <span class="badge">58,671 stars</span>
+          <span class="badge">학습 커리큘럼</span>
+        </div>
+        <p>에이전트를 처음 접하는 팀이 빠르게 공통 언어를 맞추는 데 유용한 입문형 커리큘럼이다. 트렌딩 상위권에 계속 보인다는 것은 여전히 많은 조직이 “모델 선택”보다 “에이전트 개념 정리” 단계에 있다는 뜻이다.</p>
+        <p>Claude Code, Cursor, Codex 모두 도입 장벽이 높아진 지금, 팀 온보딩 자료가 다시 중요해졌다. 기술 경쟁이 거칠수록 학습 자료가 같이 뜨는 구도가 반복되고 있다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/microsoft/ai-agents-for-beginners">github.com/microsoft/ai-agents-for-beginners</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">5.</span>coreyhaines31 / marketingskills</h3>
+        <div class="badge-row">
+          <span class="badge ok">491 stars today</span>
+          <span class="badge">23,565 stars</span>
+          <span class="badge">역할 스킬 팩</span>
+        </div>
+        <p>이 저장소는 Claude Code와 AI 에이전트를 위한 마케팅 스킬 묶음을 제공한다. 코딩 전용이 아닌 역할별 스킬 레이어가 강하게 뜨고 있다는 점에서 흥미롭다.</p>
+        <p>즉 시장은 더 이상 “코드 생성기” 하나로 움직이지 않는다. Codex의 플러그인, Claude Code의 플러그인/MCP, Cursor의 마켓플레이스처럼 도구들이 주변 업무까지 흡수하는 흐름과 맞물린다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/coreyhaines31/marketingskills">github.com/coreyhaines31/marketingskills</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">6.</span>PowerShell / PowerShell</h3>
+        <div class="badge-row">
+          <span class="badge ok">76 stars today</span>
+          <span class="badge">52,715 stars</span>
+          <span class="badge">터미널 생산성</span>
+        </div>
+        <p>직접적인 AI 프로젝트는 아니지만, Windows 기반 개발 환경에서 에이전트가 실제 일을 하려면 결국 셸이 안정적이어야 한다. PowerShell이 트렌딩에 들어온 것은 터미널 중심 자동화의 저변이 넓다는 의미로 해석할 수 있다.</p>
+        <p>특히 Claude Code나 Codex CLI를 Windows에서 돌리는 팀에게는 셸 품질이 곧 에이전트 실행 품질이다. Cursor도 CLI/Agent Window를 강화하는 중이라, 셸 기반 작업성은 계속 중요하다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/PowerShell/PowerShell">github.com/PowerShell/PowerShell</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">7.</span>chiphuyen / aie-book</h3>
+        <div class="badge-row">
+          <span class="badge ok">214 stars today</span>
+          <span class="badge">15,113 stars</span>
+          <span class="badge">AI 엔지니어링 자료</span>
+        </div>
+        <p>AI 엔지니어링 전반 자료를 모은 저장소다. 직접적인 도구가 아님에도 트렌딩에 오른다는 건 개발자들이 단순 사용법을 넘어서 운영, 데이터, 평가, 배포까지 같이 배우려 한다는 뜻이다.</p>
+        <p>이런 흐름은 Codex 자동화, Claude Code 장문 세션, Cursor 다중 에이전트처럼 복합 시스템을 다루는 데 필요한 배경 지식 수요와 맞닿아 있다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/chiphuyen/aie-book">github.com/chiphuyen/aie-book</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">8.</span>microsoft / onnxruntime</h3>
+        <div class="badge-row">
+          <span class="badge ok">80 stars today</span>
+          <span class="badge">20,090 stars</span>
+          <span class="badge">추론 인프라</span>
+        </div>
+        <p>ONNX Runtime은 애플리케이션 내부 추론 최적화를 위한 기반 프로젝트다. 표면상 코딩 에이전트와는 거리가 있어 보이지만, 팀들이 상용 모델과 로컬/하이브리드 추론을 섞으려 할수록 이런 인프라층이 다시 중요해진다.</p>
+        <p>즉 상위 레이어에서는 Claude Code, Cursor, Codex가 경쟁하고 있지만, 하위 레이어에서는 여전히 추론 비용과 배포 유연성이 핵심이다. 트렌딩에 이런 인프라 저장소가 섞여 있다는 점이 시장의 현실을 보여준다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/microsoft/onnxruntime">github.com/microsoft/onnxruntime</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>GitHub Trending: <a href="https://github.com/trending">https://github.com/trending</a></li>
+        <li>mksglu/context-mode: <a href="https://github.com/mksglu/context-mode">https://github.com/mksglu/context-mode</a></li>
+        <li>cline/cline: <a href="https://github.com/cline/cline">https://github.com/cline/cline</a></li>
+        <li>VoltAgent/awesome-agent-skills: <a href="https://github.com/VoltAgent/awesome-agent-skills">https://github.com/VoltAgent/awesome-agent-skills</a></li>
+        <li>microsoft/ai-agents-for-beginners: <a href="https://github.com/microsoft/ai-agents-for-beginners">https://github.com/microsoft/ai-agents-for-beginners</a></li>
+        <li>coreyhaines31/marketingskills: <a href="https://github.com/coreyhaines31/marketingskills">https://github.com/coreyhaines31/marketingskills</a></li>
+        <li>PowerShell/PowerShell: <a href="https://github.com/PowerShell/PowerShell">https://github.com/PowerShell/PowerShell</a></li>
+        <li>chiphuyen/aie-book: <a href="https://github.com/chiphuyen/aie-book">https://github.com/chiphuyen/aie-book</a></li>
+        <li>microsoft/onnxruntime: <a href="https://github.com/microsoft/onnxruntime">https://github.com/microsoft/onnxruntime</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
