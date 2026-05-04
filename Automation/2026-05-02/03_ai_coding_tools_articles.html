@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --link: #0a66c2;
+      --accent: #f2ecff;
+      --warn: #fff3cd;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #0b5168 0%, #3558a8 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(42, 43, 86, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #35508a;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일 2026-05-02 | 기본 기사 창 2026-04-30 ~ 2026-05-02 | 실제 적용 창 2026-04-25 ~ 2026-05-02</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장 여부</strong><br>최근 2일 기본 창만으로는 Cursor 공식 글과 Codex 문서 갱신에 과도하게 쏠려 Claude Code 관련 읽을 만한 글이 부족했다. 그래서 기사 범위를 <strong>2026-04-25 ~ 2026-05-02</strong>로 넓혔다.</div>
+        <div class="stat"><strong>핵심 축</strong><br>확장 후 기사 흐름은 두 줄기다. 하나는 SDK, 팀 배포, 플랜 문서처럼 <strong>운영 면 확대</strong>이고, 다른 하나는 권한 남용, 프롬프트 주입, 자격 증명 유출처럼 <strong>통제 실패 리스크</strong>다.</div>
+        <div class="stat"><strong>실무 메모</strong><br>이번 주는 “무엇을 더 잘 코딩하나”보다 “어디까지 맡길 수 있나”가 더 중요한 질문이었다. 생산성 확대와 안전성 부담이 동시에 커지고 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">기사 창 해석</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>기사 창 해석</h2>
+      <div class="notice">
+        기사량이 낮아 7일 창으로 확장했다. 기본 2일 범위인 2026-04-30 ~ 2026-05-02에서는 Cursor 공식 공지와 OpenAI 문서 갱신은 충분했지만, Claude Code 쪽은 균형 잡힌 실사용 기사 확보가 어려웠다.
+      </div>
+      <div class="soft-box">
+        확장 뒤에도 메시지는 일관됐다. 세 도구 모두 더 많은 권한과 더 긴 작업을 맡기려 하지만, 그만큼 리뷰 가능성, 권한 추적, 보안 경계 설계가 같이 올라오고 있다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>Claude Code <code>v2.1.126</code> 릴리스 노트</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-01</span>
+          <span class="badge">매체 GitHub Releases</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p><code>v2.1.126</code>은 gateway model picker, pasted auth code 로그인, 프로젝트 purge UI, Windows PowerShell 7 탐지, OAuth refresh token 처리 개선을 묶었다. 긴 사용 시나리오에서 반복적으로 걸리던 문제를 정리하는 데 무게가 실렸다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code는 여전히 “새 기능 쇼”보다 “덜 끊기는 작업 루프”에 집중한다. CLI 중심 팀에게는 이 방향이 더 중요하다.</p>
+        <p class="meta-line">출처: <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">https://github.com/anthropics/claude-code/releases/tag/v2.1.126</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Claude 3.7 프롬프트 주입 사건이 보여준 에이전트 리스크</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-30</span>
+          <span class="badge">매체 The Guardian</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>The Guardian은 Cursor 내부 Claude 3.7 Sonnet 에이전트를 상대로 구성된 프롬프트 주입 공격이 사용자를 속여 악성 명령을 승인하게 만들 수 있었다고 보도했다. 단일 모델 문제가 아니라, 에이전트가 셸과 저장소에 가까워질수록 설계 실수의 비용이 커진다는 점을 보여준다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code 계열 도구를 실제 셸 작업에 쓰는 팀은 요약 품질보다 승인 UX와 명령 검토 흐름을 먼저 점검해야 한다.</p>
+        <p class="meta-line">출처: <a href="https://www.theguardian.com/technology/2026/apr/30/hacker-uses-hidden-text-to-trick-ai-coding-assistant-into-writing-dangerous-code">https://www.theguardian.com/technology/2026/apr/30/hacker-uses-hidden-text-to-trick-ai-coding-assistant-into-writing-dangerous-code</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Anthropic 정보 유출 보도가 던진 운영 질문</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-30</span>
+          <span class="badge">매체 MSSP Alert</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>MSSP Alert는 Anthropic 관련 정보 유출 보도를 다루며, 실제 피해보다도 “에이전트 플랫폼을 운영하는 조직이 어떤 권한과 민감 정보를 다루는가”를 다시 보게 만든다고 정리했다. 코딩 에이전트가 기업 업무 흐름 깊숙이 들어갈수록 이 질문은 더 중요해진다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code 도입은 모델 평가만으로 끝나지 않는다. API 키, 토큰, 내부 저장소 접근 범위까지 운영 정책으로 묶어야 한다.</p>
+        <p class="meta-line">출처: <a href="https://www.msspalert.com/perspective/anthropic-leak-confirms-what-security-teams-already-suspected">https://www.msspalert.com/perspective/anthropic-leak-confirms-what-security-teams-already-suspected</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Cursor SDK 공개</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-29</span>
+          <span class="badge">매체 Cursor</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p>Cursor는 SDK 공개 글에서 TypeScript 기반 호출면, 로컬 또는 Isolated VM 실행, Cloud Agents API의 durable runs를 한 번에 설명했다. 핵심은 “편집기 내 기능”을 넘어 외부 서비스와 파이프라인에서 Cursor agent를 호출하게 만든다는 점이다.</p>
+        <p><strong>실무 시사점:</strong> Cursor를 이미 쓰는 팀은 이제 IDE 보조를 넘어서 리서치, 배치 작업, 브랜치 자동화까지 연결할 수 있다. 동시에 권한 경계도 같이 설계해야 한다.</p>
+        <p class="meta-line">출처: <a href="https://cursor.com/changelog/sdk-release">https://cursor.com/changelog/sdk-release</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Security Review가 승인 뒤 감사 흐름을 보강</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-30</span>
+          <span class="badge">매체 Cursor</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p>Cursor의 <em>Security Review</em>는 에이전트가 수행한 민감한 작업을 나중에 검토하는 기능이다. SDK로 실행면을 넓힌 직후에 이 기능이 나왔다는 점이 중요하다. Cursor도 확장과 통제를 동시에 팔아야 한다는 걸 알고 있다는 뜻이기 때문이다.</p>
+        <p><strong>실무 시사점:</strong> Cursor는 개발 속도만 볼 도구가 아니라 감사 가능성과 팀 정책 수용성까지 같이 봐야 할 플랫폼이 됐다.</p>
+        <p class="meta-line">출처: <a href="https://cursor.com/changelog/05-01-26">https://cursor.com/changelog/05-01-26</a></p>
+      </article>
+
+      <article class="card">
+        <h3>프롬프트 주입 사고 보도가 Cursor의 승인 UX를 시험대에 올리다</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-30</span>
+          <span class="badge">매체 The Guardian</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>The Guardian 보도는 Cursor 내부의 Claude 3.7 Sonnet 에이전트가 숨은 텍스트 공격에 속아 악성 명령을 제안하게 만들 수 있었다고 설명한다. 자동화 UX가 아무리 좋더라도 승인 단계가 약하면 실제 사용자 위험이 커진다는 사실이 부각됐다.</p>
+        <p><strong>실무 시사점:</strong> Cursor SDK나 Team Marketplace를 도입하는 팀은 prompt hygiene와 승인 단계 설계를 제품 기능만큼 중요하게 다뤄야 한다.</p>
+        <p class="meta-line">출처: <a href="https://www.theguardian.com/technology/2026/apr/30/hacker-uses-hidden-text-to-trick-ai-coding-assistant-into-writing-dangerous-code">https://www.theguardian.com/technology/2026/apr/30/hacker-uses-hidden-text-to-trick-ai-coding-assistant-into-writing-dangerous-code</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>플랜 문서가 Codex 기능 묶음을 재정리</h3>
+        <div class="badge-row">
+          <span class="badge">조회일 2026-05-02</span>
+          <span class="badge">OpenAI Help Center</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p><em>Using Codex with your ChatGPT plan</em>은 2026-05-02 조회 기준 <strong>Updated: 9 hours ago</strong>로 노출됐다. Free·Go의 제한적 포함, Plus·Pro·Business·Enterprise/Edu 차이, memories·automations·browser·computer use를 한 문서에 모았다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 이번 주에 기능 데모보다 “누가 어떤 플랜에서 어디까지 쓸 수 있는가”를 더 중요하게 다뤘다. 조직 도입 시 이 문서가 실제 운영 기준이 된다.</p>
+        <p class="meta-line">출처: <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan</a> | 정확한 수정일 확인 불가</p>
+      </article>
+
+      <article class="card">
+        <h3>요금 문서가 모델 계층별 단가를 더 분명히 제시</h3>
+        <div class="badge-row">
+          <span class="badge">조회일 2026-05-02</span>
+          <span class="badge">OpenAI Help Center</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p><em>Codex rate card</em>는 2026-05-02 조회 기준 <strong>Updated: 3 days ago</strong>로 보였다. GPT-5.5, GPT-5.4, GPT-5.3 Codex 계열과 fast mode, code review 항목까지 세분화한 구조가 실려 있다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 실험 단계에서 운영 단계로 넘어가면서 비용 가시성을 더 정교하게 만들고 있다. 자동화 빈도가 높을수록 이 문서 중요도가 커진다.</p>
+        <p class="meta-line">출처: <a href="https://help.openai.com/en/articles/20001106-codex-rate-card">https://help.openai.com/en/articles/20001106-codex-rate-card</a> | 정확한 수정일 확인 불가</p>
+      </article>
+
+      <article class="card">
+        <h3>Codex Security 문서가 권한 경계 논의를 공식화</h3>
+        <div class="badge-row">
+          <span class="badge">조회일 2026-05-02</span>
+          <span class="badge">OpenAI Help Center</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p><em>Codex Security</em> 문서는 2026-05-02 조회 기준 <strong>Updated: 7 days ago</strong>로 표시됐다. 격리 환경, 비밀정보 처리, 네트워크 접근, 승인 경계 같은 운영 질문을 직접 다룬다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 “무엇을 할 수 있는가”와 동시에 “무엇을 못 하게 막는가”를 공식 문서로 설명하기 시작했다. 조직 사용이 늘수록 이 축이 더 중요해질 가능성이 크다.</p>
+        <p class="meta-line">출처: <a href="https://help.openai.com/en/articles/11145703-codex-security">https://help.openai.com/en/articles/11145703-codex-security</a> | 정확한 수정일 확인 불가</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">Claude Code v2.1.126</a></li>
+        <li><a href="https://www.theguardian.com/technology/2026/apr/30/hacker-uses-hidden-text-to-trick-ai-coding-assistant-into-writing-dangerous-code">The Guardian prompt-injection article</a></li>
+        <li><a href="https://www.msspalert.com/perspective/anthropic-leak-confirms-what-security-teams-already-suspected">MSSP Alert Anthropic leak commentary</a></li>
+        <li><a href="https://cursor.com/changelog/sdk-release">Cursor SDK release</a></li>
+        <li><a href="https://cursor.com/changelog/05-01-26">Cursor Security Review</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://help.openai.com/en/articles/20001106-codex-rate-card">Codex rate card</a></li>
+        <li><a href="https://help.openai.com/en/articles/11145703-codex-security">Codex Security</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

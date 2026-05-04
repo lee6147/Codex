@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e9f8ee;
+      --warn: #fff3da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #20344d 0%, #3268a3 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1d4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .badge.warn { background: #fde8d6; color: #9a4b13; }
+    .rank {
+      font-weight: 800;
+      color: #1d4f82;
+      margin-right: 8px;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일 2026-04-29 | 기준 화면 GitHub Trending today 2026-04-29 조회</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 기준</strong><br>오늘 트렌딩에서 AI 코딩, 에이전트 실행, skills, 코드 인텔리전스, 문서 자동화, 프로토콜 래핑과 직접 연결되는 저장소만 남겼다. 범용 인기 저장소와 주제 이탈 항목은 제외했다.</div>
+        <div class="stat"><strong>오늘의 흐름</strong><br>skills, 코드베이스 지식 그래프, Codex 전용 skill 아카이브, 템플릿, 우회 런타임, 에이전트용 문서 레이어가 상단에 몰렸다. 시장의 관심이 모델 성능보다 운영 습관과 재사용 가능한 작업 골격으로 옮겨가고 있다.</div>
+        <div class="stat"><strong>읽는 법</strong><br>별 수와 오늘 증가 폭은 2026-04-29 조회 시점 스냅샷이다. 장기 품질 점수라기보다 "오늘 어떤 실행 방식이 사람을 끌고 있는가"를 읽는 신호로 보는 편이 맞다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">트렌딩 해석</a></li>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>트렌딩 해석</h2>
+      <div class="notice">
+        2026-04-29 GitHub Trending 상단은 "더 똑똑한 단일 모델"보다 "에이전트를 반복 가능하게 굴리는 운영 레이어"에 강하게 반응하고 있다. Claude Code, Cursor, Codex 사용자 관점에서는 skill 팩, 코드 탐색 레이어, 템플릿, 문서 자동화, 비용 우회 프록시가 실제 수요 신호의 중심이다.
+      </div>
+      <div class="soft-box">
+        <strong>주의 메모</strong><br>
+        <code>free-claude-code</code>나 <code>ds2api</code> 같은 저장소는 도입 권장안이라기보다 비용 압박과 공급 경로 우회 수요를 보여주는 지표에 가깝다. 반대로 <code>skills</code>, <code>GitNexus</code>, <code>awesome-codex-skills</code>는 작업 절차를 자산화하려는 움직임이 이미 메인스트림이 됐다는 신호다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <article class="card">
+        <h3><span class="rank">1.</span>mattpocock / skills</h3>
+        <div class="badge-row">
+          <span class="badge ok">Shell</span>
+          <span class="badge">35,868 stars</span>
+          <span class="badge">7,429 stars today</span>
+        </div>
+        <p>오늘 화면의 가장 상징적인 신호다. 개인 프롬프트보다 재사용 가능한 skill 묶음이 더 가치 있는 생산성 자산으로 거래되기 시작했다는 뜻이다.</p>
+        <p>Claude Code, Cursor, Codex 모두 반복 업무의 품질 차이가 이제 모델보다 작업 절차 캡슐화에서 나기 때문에, 이 저장소의 급등은 시장 초점 이동을 아주 선명하게 보여준다.</p>
+        <p class="meta-line">지금 주목할 이유: 에이전트 사용이 "좋은 질문"에서 "설치 가능한 작업 패턴"으로 이동 중임을 보여준다 | GitHub URL: <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">2.</span>abhigyanpatwari / GitNexus</h3>
+        <div class="badge-row">
+          <span class="badge ok">TypeScript</span>
+          <span class="badge">32,475 stars</span>
+          <span class="badge">1,565 stars today</span>
+        </div>
+        <p>브라우저 안에서 저장소를 지식 그래프로 만들고 Graph RAG 에이전트를 붙이는 코드 인텔리전스 엔진이다. 대형 코드베이스를 바로 수정하기 전에 앞단 탐색 지도를 두려는 수요가 여전히 강하다는 뜻이다.</p>
+        <p>Claude Code나 Codex 같은 깊은 추론형 도구를 쓸수록, 먼저 구조를 잘 이해시키는 보조 레이어의 가치가 커진다. GitNexus 상승은 그 흐름을 그대로 반영한다.</p>
+        <p class="meta-line">도구 연결점: 대규모 저장소 탐색과 온보딩 병목을 줄이는 레이어 | GitHub URL: <a href="https://github.com/abhigyanpatwari/GitNexus">https://github.com/abhigyanpatwari/GitNexus</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">3.</span>ComposioHQ / awesome-codex-skills</h3>
+        <div class="badge-row">
+          <span class="badge ok">Python</span>
+          <span class="badge">3,786 stars</span>
+          <span class="badge">961 stars today</span>
+        </div>
+        <p>Codex 전용 skill 큐레이션 저장소가 상위권에 올라왔다. OpenAI Codex 생태계에서도 단발 프롬프트보다 재사용 가능한 작업 단위가 훨씬 빨리 확산된다는 뜻이다.</p>
+        <p>오늘 공식 업데이트에서 OpenAI가 Symphony와 Automations를 밀고 있다는 점까지 합치면, Codex의 시장 관심은 기능보다 오케스트레이션 자산 쪽으로 쏠리고 있다.</p>
+        <p class="meta-line">도구 연결점: Codex 하네스와 반복 작업 표준화 수요가 직접 반영된 저장소 | GitHub URL: <a href="https://github.com/ComposioHQ/awesome-codex-skills">https://github.com/ComposioHQ/awesome-codex-skills</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">4.</span>microsoft / VibeVoice</h3>
+        <div class="badge-row">
+          <span class="badge ok">Python</span>
+          <span class="badge">44,337 stars</span>
+          <span class="badge">1,523 stars today</span>
+        </div>
+        <p>오픈소스 frontier voice AI라는 설명 그대로, 코딩 보조를 넘어 멀티모달 인터페이스를 붙인 에이전트 응용이 얼마나 빠르게 확장되는지 보여준다.</p>
+        <p>직접적인 코드 생산성 도구는 아니지만, Cursor와 Codex가 브라우저·앱·음성·원격 작업 표면을 넓히는 흐름과 맞닿아 있다. AI 코딩 도구 시장이 점점 "개발자용 채팅창"을 벗어나는 증거로 볼 수 있다.</p>
+        <p class="meta-line">도구 연결점: 에이전트 제품이 음성과 앱 자동화까지 확장되는 분위기 반영 | GitHub URL: <a href="https://github.com/microsoft/VibeVoice">https://github.com/microsoft/VibeVoice</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">5.</span>davila7 / claude-code-templates</h3>
+        <div class="badge-row">
+          <span class="badge ok">Python</span>
+          <span class="badge">26,055 stars</span>
+          <span class="badge">347 stars today</span>
+        </div>
+        <p>Claude Code 설정과 모니터링 템플릿 모음이 트렌딩에 붙었다는 것은, 사용자가 더 이상 빈 대화창보다 재사용 가능한 운영 골격을 더 원한다는 뜻이다.</p>
+        <p>오늘 Claude Code 릴리스가 <code>/skills</code> 검색과 장기 세션 안정성까지 다듬었다는 점을 생각하면, 템플릿 저장소의 상승은 생태계가 실험을 넘어 실무 운영 단계로 진입했음을 보여준다.</p>
+        <p class="meta-line">도구 연결점: Claude Code 실사용 운영 패턴을 빠르게 복제하려는 수요 | GitHub URL: <a href="https://github.com/davila7/claude-code-templates">https://github.com/davila7/claude-code-templates</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">6.</span>CJackHwang / ds2api</h3>
+        <div class="badge-row">
+          <span class="badge ok">Go</span>
+          <span class="badge">2,236 stars</span>
+          <span class="badge">418 stars today</span>
+        </div>
+        <p>여러 클라이언트 프로토콜을 범용 API 형식으로 변환하는 미들웨어다. 설명에서부터 Google, Claude, OpenAI 포맷 호환을 강조하고 있어 다중 제공자 운영 수요를 정면으로 반영한다.</p>
+        <p>이는 조직이 단일 벤더보다 공급 경로 유연성과 계정 회전을 중요하게 보기 시작했다는 신호다. 에이전트 툴 선택이 점점 모델 품질뿐 아니라 라우팅과 공급 안정성 문제로 넓어지고 있다.</p>
+        <p class="meta-line">도구 연결점: 다중 모델·다중 공급자 운영 레이어 | GitHub URL: <a href="https://github.com/CJackHwang/ds2api">https://github.com/CJackHwang/ds2api</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">7.</span>Alishahryar1 / free-claude-code</h3>
+        <div class="badge-row">
+          <span class="badge warn">Python</span>
+          <span class="badge">17,225 stars</span>
+          <span class="badge">1,706 stars today</span>
+        </div>
+        <p>Claude Code를 대체 공급 경로로 붙이려는 프록시다. 추천안이라기보다 비용 민감도와 공급 우회 욕구가 얼마나 큰지를 보여주는 신호로 읽는 편이 맞다.</p>
+        <p>오늘 증가 폭이 특히 큰 이유도 여기 있다. 사용자는 더 똑똑한 모델만 찾는 것이 아니라, "어떻게 더 싸게 오래 돌릴 수 있나"를 적극적으로 찾고 있다.</p>
+        <p class="meta-line">도구 연결점: 가격 압박과 공급 경로 우회 수요의 직접 신호 | GitHub URL: <a href="https://github.com/Alishahryar1/free-claude-code">https://github.com/Alishahryar1/free-claude-code</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">8.</span>iamgio / quarkdown</h3>
+        <div class="badge-row">
+          <span class="badge ok">Kotlin</span>
+          <span class="badge">11,714 stars</span>
+          <span class="badge">797 stars today</span>
+        </div>
+        <p>아이디어를 문서, 발표자료, 웹사이트, 지식베이스로 확장하는 "Markdown with superpowers" 프로젝트다. 코드 작성만이 아니라 결과물을 사람에게 전달하는 문서화 레이어도 개발 생산성의 일부라는 점을 보여준다.</p>
+        <p>Codex나 Claude Code 자동화가 산출물 중심으로 확장될수록, 이런 문서-출력 계층은 실제 워크플로에 더 자주 붙는다. 오늘 트렌딩이 운영과 전달 사이의 레이어까지 끌어올린 셈이다.</p>
+        <p class="meta-line">도구 연결점: 에이전트 결과물을 보고서와 지식 자산으로 굳히는 출력 레이어 | GitHub URL: <a href="https://github.com/iamgio/quarkdown">https://github.com/iamgio/quarkdown</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>GitHub Trending today, 2026-04-29 조회: <a href="https://github.com/trending">https://github.com/trending</a></li>
+        <li>mattpocock/skills: <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></li>
+        <li>abhigyanpatwari/GitNexus: <a href="https://github.com/abhigyanpatwari/GitNexus">https://github.com/abhigyanpatwari/GitNexus</a></li>
+        <li>ComposioHQ/awesome-codex-skills: <a href="https://github.com/ComposioHQ/awesome-codex-skills">https://github.com/ComposioHQ/awesome-codex-skills</a></li>
+        <li>microsoft/VibeVoice: <a href="https://github.com/microsoft/VibeVoice">https://github.com/microsoft/VibeVoice</a></li>
+        <li>davila7/claude-code-templates: <a href="https://github.com/davila7/claude-code-templates">https://github.com/davila7/claude-code-templates</a></li>
+        <li>CJackHwang/ds2api: <a href="https://github.com/CJackHwang/ds2api">https://github.com/CJackHwang/ds2api</a></li>
+        <li>Alishahryar1/free-claude-code: <a href="https://github.com/Alishahryar1/free-claude-code">https://github.com/Alishahryar1/free-claude-code</a></li>
+        <li>iamgio/quarkdown: <a href="https://github.com/iamgio/quarkdown">https://github.com/iamgio/quarkdown</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

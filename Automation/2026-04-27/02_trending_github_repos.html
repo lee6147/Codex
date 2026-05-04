@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e9f8ee;
+      --warn: #fff3da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #20344d 0%, #3268a3 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1d4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .badge.warn { background: #fde8d6; color: #9a4b13; }
+    .rank {
+      font-weight: 800;
+      color: #1d4f82;
+      margin-right: 8px;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일 2026-04-27 | 기준 화면 GitHub Trending today 2026-04-27 조회</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 기준</strong><br>오늘 트렌딩에 보인 저장소 중 AI 코딩, 에이전트 실행, 코드 탐색, skills, memory, 비용 우회 신호가 강한 항목만 추렸다. 단순 인기 프로젝트나 범용 학습 저장소는 줄였다.</div>
+        <div class="stat"><strong>오늘의 흐름</strong><br>이번 화면은 모델 자체보다 스킬 팩, 코드 인텔리전스, 컴퓨터 사용 에이전트, 메모리 보강, 비용 라우팅 쪽이 강했다. 즉 생성보다 운영층과 제어층이 더 뜨겁다.</div>
+        <div class="stat"><strong>읽는 법</strong><br>별 수와 오늘 증가 폭은 2026-04-27 조회 시점의 트렌딩 스냅샷이다. 저장소 총 star와 today 증가는 금방 바뀌므로 장기 지표가 아니라 “오늘 무슨 방향이 뜨는가”로 읽는 편이 맞다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">트렌딩 해석</a></li>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>트렌딩 해석</h2>
+      <div class="notice">
+        2026-04-27 GitHub Trending을 보면 “더 좋은 모델”보다 “에이전트를 더 오래, 더 안전하게, 더 싸게, 더 큰 코드베이스에서 굴리는 법”이 인기의 중심으로 올라와 있다. Claude Code, Cursor, Codex 사용자에게 중요한 건 이제 모델 체급보다 skills, context, worktree, memory, computer-use 인프라다.
+      </div>
+      <div class="soft-box">
+        <strong>주의 메모</strong><br>
+        <code>free-claude-code</code> 같은 우회 성격 저장소는 관심도는 높지만 기업 도입 추천 항목은 아니다. 다만 비용 압박과 공식 공급 경로 우회 수요가 실제로 강하다는 시장 신호로는 읽을 가치가 있다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <article class="card">
+        <h3><span class="rank">1.</span>mattpocock / skills</h3>
+        <div class="badge-row">
+          <span class="badge ok">Shell</span>
+          <span class="badge">23,106 stars</span>
+          <span class="badge">2,507 stars today</span>
+        </div>
+        <p>“실제 엔지니어를 위한 agent skills”라는 설명 그대로, 에이전트를 잘 쓰는 법이 이제 별도 코드가 아니라 재사용 가능한 skill 묶음으로 상품화되고 있다는 신호다.</p>
+        <p>Claude Code, Cursor, Codex 모두 반복 업무의 품질 차이가 결국 프롬프트 한 줄보다 skills 설계에서 난다는 점을 생각하면, 오늘 화면에서 가장 상징적인 저장소 중 하나다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">2.</span>ComposioHQ / awesome-codex-skills</h3>
+        <div class="badge-row">
+          <span class="badge ok">Python</span>
+          <span class="badge">1,916 stars</span>
+          <span class="badge">518 stars today</span>
+        </div>
+        <p>Codex 전용 skills 큐레이션이 오늘 급상승했다는 점은 OpenAI Codex 생태계에서도 “모델 성능”보다 “어떤 작업 습관을 캡슐화해 붙일 수 있는가”가 더 중요한 관심사로 올라왔다는 뜻이다.</p>
+        <p>특히 자동화 하네스나 반복 점검 작업을 돌리는 사람에게는 단발성 프롬프트보다 skill 아카이브가 더 큰 자산이 된다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/ComposioHQ/awesome-codex-skills">https://github.com/ComposioHQ/awesome-codex-skills</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">3.</span>abhigyanpatwari / GitNexus</h3>
+        <div class="badge-row">
+          <span class="badge ok">TypeScript</span>
+          <span class="badge">30,074 stars</span>
+          <span class="badge">667 stars today</span>
+        </div>
+        <p>브라우저 안에서 저장소를 지식 그래프로 바꾸고 Graph RAG 에이전트까지 붙이는 프로젝트다. 대형 코드베이스를 이해하는 일이 병목인 지금, 코드 탐색용 “앞단 맵” 수요가 강하다는 걸 보여준다.</p>
+        <p>Claude Code나 Codex처럼 깊게 파고드는 도구 앞에 GitNexus 같은 정리 레이어를 두려는 수요가 커지고 있다고 읽으면 된다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/abhigyanpatwari/GitNexus">https://github.com/abhigyanpatwari/GitNexus</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">4.</span>trycua / cua</h3>
+        <div class="badge-row">
+          <span class="badge ok">HTML</span>
+          <span class="badge">14,329 stars</span>
+          <span class="badge">200 stars today</span>
+        </div>
+        <p>Computer-Use Agents용 오픈 인프라라는 설명이 핵심이다. 데스크톱을 직접 조작하는 에이전트 수요가 계속 커지면서, 모델이 아니라 샌드박스와 평가 벤치가 트렌딩으로 올라오는 상황이다.</p>
+        <p>이는 Cursor의 Agents Window, Codex의 클라우드 실행, Claude Code의 장기 실행 루프와도 방향이 맞닿아 있다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/trycua/cua">https://github.com/trycua/cua</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">5.</span>gastownhall / beads</h3>
+        <div class="badge-row">
+          <span class="badge ok">Go</span>
+          <span class="badge">21,623 stars</span>
+          <span class="badge">133 stars today</span>
+        </div>
+        <p>“코딩 에이전트를 위한 메모리 업그레이드”라는 메시지 자체가 지금 시장의 병목을 정확히 찌른다. 장기 맥락 유지, 반복 실수 감소, 세션 간 연속성이 에이전트 실사용에서 매우 중요해졌다는 뜻이다.</p>
+        <p>하루짜리 데모보다 반복 운용을 보는 사용자라면 이런 메모리 계층 프로젝트의 상승을 더 주의해서 봐야 한다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/gastownhall/beads">https://github.com/gastownhall/beads</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">6.</span>microsoft / typescript-go</h3>
+        <div class="badge-row">
+          <span class="badge ok">Go</span>
+          <span class="badge">25,143 stars</span>
+          <span class="badge">38 stars today</span>
+        </div>
+        <p>수치상 급등폭은 작아도, native TypeScript 포트가 계속 트렌딩에 붙어 있다는 사실 자체가 중요하다. 에이전트가 더 많은 파일을 더 자주 건드릴수록 빌드와 타입체크 속도가 다시 병목으로 올라오기 때문이다.</p>
+        <p>즉 AI 코딩 생태계의 뜨거운 프런트는 agent지만, 백엔드의 실제 생산성은 여전히 툴체인 속도가 좌우한다는 점을 상기시킨다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/microsoft/typescript-go">https://github.com/microsoft/typescript-go</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">7.</span>Alishahryar1 / free-claude-code</h3>
+        <div class="badge-row">
+          <span class="badge warn">Python</span>
+          <span class="badge">13,337 stars</span>
+          <span class="badge">1,694 stars today</span>
+        </div>
+        <p>공식 공급 경로 대신 NVIDIA NIM, OpenRouter, DeepSeek, LM Studio, llama.cpp 등으로 요청을 우회하는 프로젝트다. 제품 권장안보다 비용 우회와 대체 공급 경로 수요를 보여주는 신호로 읽는 편이 맞다.</p>
+        <p>트렌딩 상위권이라는 사실은 AI 코딩 도구 시장에서 가격 민감도와 모델 라우팅 욕구가 매우 커졌다는 점을 보여준다.</p>
+        <p class="meta-line">GitHub URL: <a href="https://github.com/Alishahryar1/free-claude-code">https://github.com/Alishahryar1/free-claude-code</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>GitHub Trending today, 2026-04-27 조회: <a href="https://github.com/trending">https://github.com/trending</a></li>
+        <li>mattpocock/skills: <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></li>
+        <li>ComposioHQ/awesome-codex-skills: <a href="https://github.com/ComposioHQ/awesome-codex-skills">https://github.com/ComposioHQ/awesome-codex-skills</a></li>
+        <li>abhigyanpatwari/GitNexus: <a href="https://github.com/abhigyanpatwari/GitNexus">https://github.com/abhigyanpatwari/GitNexus</a></li>
+        <li>trycua/cua: <a href="https://github.com/trycua/cua">https://github.com/trycua/cua</a></li>
+        <li>gastownhall/beads: <a href="https://github.com/gastownhall/beads">https://github.com/gastownhall/beads</a></li>
+        <li>microsoft/typescript-go: <a href="https://github.com/microsoft/typescript-go">https://github.com/microsoft/typescript-go</a></li>
+        <li>Alishahryar1/free-claude-code: <a href="https://github.com/Alishahryar1/free-claude-code">https://github.com/Alishahryar1/free-claude-code</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

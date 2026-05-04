@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending AI·개발 생산성 저장소</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #eef6ec;
+      --ok: #e9f8ee;
+      --warn: #fff3da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #1d5c34 0%, #3a8b59 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(24, 76, 43, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #285c39;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>GitHub Trending AI·개발 생산성 저장소</h1>
+      <p>생성일 2026-04-30 | 기준 스냅샷 GitHub Trending Today</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 관찰</strong><br>오늘 Trending 관련 상위권은 에디터 자체보다 <strong>스킬, 하네스, 멀티에이전트 작업장, 코드 인텔리전스</strong>에 몰렸다. 시장의 관심이 "더 좋은 모델"에서 "에이전트를 더 잘 굴리는 운영 구조"로 이동 중이라는 신호다.</div>
+        <div class="stat"><strong>선정 원칙</strong><br>GitHub Trending Today에서 AI 코딩, 개발 생산성, 에이전트 실행 환경과 직접 연결되는 저장소만 골랐다. 단순 인기 저장소나 보안/일반 유틸은 제외했다.</div>
+        <div class="stat"><strong>실무 해석</strong><br>Claude Code, Cursor, Codex 사용자 입장에서는 새 모델보다도 skills, worktree, knowledge graph, agent harness 같은 운영 부품을 익히는 편이 실제 생산성 차이를 더 크게 만들 수 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">트렌드 해석</a></li>
+        <li><a href="#repos">주목 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>트렌드 해석</h2>
+      <div class="soft-box">
+        오늘 Trending에서 눈에 띈 패턴은 세 가지다. 첫째, 실제 작업 방식을 바꾸는 <strong>skills와 harness</strong>가 강하다. 둘째, 멀티세션·멀티에이전트 실행을 전제로 한 <strong>작업장형 도구</strong>가 늘었다. 셋째, 단순 검색보다 <strong>코드 이해 레이어</strong>를 별도 제품으로 분리하는 저장소가 주목받고 있다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>주목 저장소</h2>
+
+      <article class="card">
+        <h3>warpdotdev / warp</h3>
+        <div class="badge-row">
+          <span class="badge">Rust</span>
+          <span class="badge ok">42,012 stars</span>
+          <span class="badge">오늘 +11,955</span>
+        </div>
+        <p>Warp는 "터미널에서 태어난 agentic development environment"라는 설명 그대로, 에이전트 중심 터미널을 전면에 내세운다. Claude Code와 Codex 같은 CLI형 도구를 쓰는 사용자에게는 단일 프롬프트보다 세션 관리와 병렬 작업 UX가 얼마나 중요한지 보여주는 대표 사례다.</p>
+        <p><strong>왜 중요한가:</strong> 도구 본체보다 작업장이 경쟁력이 되는 흐름을 가장 직접적으로 보여준다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/warpdotdev">warpdotdev / warp</a></div>
+      </article>
+
+      <article class="card">
+        <h3>mattpocock / skills</h3>
+        <div class="badge-row">
+          <span class="badge">Shell</span>
+          <span class="badge ok">42,858 stars</span>
+          <span class="badge">오늘 +7,356</span>
+        </div>
+        <p>개인의 <code>.claude</code> 디렉터리에서 출발한 스킬 모음이 Trending 상위권에 있다는 점 자체가 중요하다. 사용자들이 이제 "어떤 프롬프트를 쓸까"보다 "어떤 작업 단위를 재사용 가능한 skill로 묶을까"에 더 관심이 있다는 뜻이다.</p>
+        <p><strong>왜 중요한가:</strong> Claude Code뿐 아니라 Cursor와 Codex에서도 재현 가능한 작업 계약이 핵심 경쟁 레이어가 되고 있음을 보여준다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/mattpocock/skills">mattpocock / skills</a></div>
+      </article>
+
+      <article class="card">
+        <h3>obra / superpowers</h3>
+        <div class="badge-row">
+          <span class="badge">Shell</span>
+          <span class="badge ok">172,855 stars</span>
+          <span class="badge">오늘 +1,683</span>
+        </div>
+        <p>Superpowers는 "agentic skills framework &amp; software development methodology"를 표방한다. 단순 스킬 모음이 아니라 팀이 에이전트와 일하는 방법론 전체를 패키지로 다룬다는 점에서 한 단계 더 위에 있다.</p>
+        <p><strong>왜 중요한가:</strong> 에이전트 사용의 차별점이 모델 성능보다 운영 규약과 팀 워크플로로 옮겨가고 있다는 강한 신호다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/obra/superpowers">obra / superpowers</a></div>
+      </article>
+
+      <article class="card">
+        <h3>ComposioHQ / awesome-codex-skills</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge ok">4,645 stars</span>
+          <span class="badge">오늘 +1,180</span>
+        </div>
+        <p>Codex 전용 실전 스킬 큐레이션 저장소가 오늘 Trending에 잡혔다. 이메일, 스프레드시트, 깃허브, 노션, 리서치처럼 "코드 밖 작업"까지 Codex 스킬로 묶는 방향이 강조된다.</p>
+        <p><strong>왜 중요한가:</strong> Codex가 코드 생성기보다 범용 작업 자동화 하네스로 읽히고 있다는 시장 반응이다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/ComposioHQ/awesome-codex-skills">ComposioHQ / awesome-codex-skills</a></div>
+      </article>
+
+      <article class="card">
+        <h3>1jehuang / jcode</h3>
+        <div class="badge-row">
+          <span class="badge">Rust</span>
+          <span class="badge ok">1,208 stars</span>
+          <span class="badge">오늘 +386</span>
+        </div>
+        <p>jcode는 스스로를 "coding agent harness"라고 부른다. 멀티세션 워크플로, 무한 커스터마이징, 성능을 전면에 내세우며 CLI 에이전트 자체보다 그 위 하네스의 효율을 판다.</p>
+        <p><strong>왜 중요한가:</strong> 사용자는 더 이상 도구를 그대로 쓰지 않고, 자기 팀의 하네스로 감싸 쓰려 한다는 점을 보여준다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/1jehuang/jcode">1jehuang / jcode</a></div>
+      </article>
+
+      <article class="card">
+        <h3>abhigyanpatwari / GitNexus</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge ok">33,208 stars</span>
+          <span class="badge">오늘 +777</span>
+        </div>
+        <p>GitNexus는 브라우저 안에서 돌아가는 zero-server code intelligence engine으로, 저장소를 knowledge graph와 Graph RAG 에이전트로 바꿔 준다. 에이전트가 코드를 "쓰기" 전에 "이해"하는 레이어가 별도 시장이 되고 있음을 보여준다.</p>
+        <p><strong>왜 중요한가:</strong> Claude Code, Cursor, Codex 모두 긴 코드베이스 이해가 병목이기 때문에 코드 인텔리전스 보조층의 가치가 커지고 있다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/abhigyanpatwari/GitNexus">abhigyanpatwari / GitNexus</a></div>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending Today</a></li>
+        <li><a href="https://github.com/warpdotdev">warpdotdev / warp</a></li>
+        <li><a href="https://github.com/mattpocock/skills">mattpocock / skills</a></li>
+        <li><a href="https://github.com/obra/superpowers">obra / superpowers</a></li>
+        <li><a href="https://github.com/ComposioHQ/awesome-codex-skills">ComposioHQ / awesome-codex-skills</a></li>
+        <li><a href="https://github.com/1jehuang/jcode">1jehuang / jcode</a></li>
+        <li><a href="https://github.com/abhigyanpatwari/GitNexus">abhigyanpatwari / GitNexus</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

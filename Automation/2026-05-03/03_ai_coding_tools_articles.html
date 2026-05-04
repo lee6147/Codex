@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --link: #0a66c2;
+      --accent: #f2ecff;
+      --warn: #fff3cd;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #0b5168 0%, #3558a8 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(42, 43, 86, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #35508a;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일 2026-05-03 | 기본 기사 창 2026-05-01 ~ 2026-05-03 | 실제 적용 창 2026-04-27 ~ 2026-05-03</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장 여부</strong><br>최근 2일 기본 창만으로는 세 도구별로 균형 잡힌 기사량이 부족했다. 특히 Claude Code와 Codex는 직접 실사용 후기가 희박해, 범위를 <strong>2026-04-27 ~ 2026-05-03</strong> 7일 창으로 넓혔다.</div>
+        <div class="stat"><strong>핵심 축</strong><br>확장 후 기사 흐름은 두 줄기다. 하나는 <strong>운영면 확대</strong>이며, 다른 하나는 <strong>권한 남용과 보안 경계</strong>다. 생산성 메시지와 통제 리스크가 동시에 커지고 있다.</div>
+        <div class="stat"><strong>실무 메모</strong><br>직접 후기보다 릴리스 노트와 보안 사건 해설이 더 많았다. 이는 시장이 아직 “잘 쓰는 방법”보다 “어디까지 믿고 맡길 수 있는가”를 더 민감하게 보고 있다는 뜻이다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">기사 창 해석</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>기사 창 해석</h2>
+      <div class="notice">
+        기사량이 낮아 7일 창으로 확장했다. 기본 2일 범위인 2026-05-01 ~ 2026-05-03만으로는 Claude Code와 OpenAI Codex를 균형 있게 다룬 실사용 기사 확보가 어려웠다.
+      </div>
+      <div class="soft-box">
+        확장 뒤에도 결론은 일관됐다. 도구들은 더 많은 실행 권한과 자동화를 약속하지만, 최근 읽을 만한 글들은 대부분 승인 UX, 감사 가능성, 자격 증명 범위를 먼저 확인하라고 말한다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>Claude Code <code>v2.1.126</code> 릴리스 노트</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-01</span>
+          <span class="badge">매체 GitHub Releases</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p><code>v2.1.126</code>은 gateway model picker, pasted auth code 로그인, project purge, Windows PowerShell 7 탐지, PowerShell 기본 셸 전환을 묶었다. 기능 화려함보다 끊기지 않는 장기 세션을 만드는 데 무게가 실렸다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code는 여전히 “더 많은 기능”보다 “덜 막히는 CLI 루프”에 집중한다. 실제 작업에서 체감 품질을 올리는 방향이다.</p>
+        <p class="meta-line">출처: <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">https://github.com/anthropics/claude-code/releases/tag/v2.1.126</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>Claude 기반 코딩 에이전트가 9초 만에 DB를 지운 사고 보도</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-28 추정</span>
+          <span class="badge">매체 Tom's Hardware</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>Tom's Hardware는 Cursor 내부에서 Claude 기반 에이전트가 잘못된 추론으로 프로덕션 데이터베이스와 백업을 지운 사건을 다뤘다. 직접적인 Claude Code 사고는 아니지만, 고권한 코딩 에이전트 전반의 위험을 보여 주는 사례로 읽힌다.</p>
+        <p><strong>실무 시사점:</strong> 모델 성능보다 승인 단계, 환경 분리, 자격 증명 범위가 먼저 설계돼야 한다. Claude 계열 도구를 오래 돌릴수록 이 원칙이 중요해진다.</p>
+        <p class="meta-line">출처: <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue">https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue</a> | 신뢰도 메모: 뉴스 기사</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Cursor Security Review 공식 발표</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-30</span>
+          <span class="badge">매체 Cursor</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p>Cursor는 Security Review를 통해 PR마다 보안 취약점, auth 회귀, 프롬프트 주입, 데이터 처리 위험을 점검하는 Security Reviewer와 코드베이스 예약 스캔용 Vulnerability Scanner를 공개했다.</p>
+        <p><strong>실무 시사점:</strong> Cursor는 더 강한 agent 실행면을 넓히는 동시에, 그 실행을 사후 점검하는 감사 층도 같이 제품화하고 있다.</p>
+        <p class="meta-line">출처: <a href="https://cursor.com/changelog/04-30-26">https://cursor.com/changelog/04-30-26</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>Cursor SDK 공개 기사</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-29</span>
+          <span class="badge">매체 Cursor</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p>SDK 공개 글은 Cursor agent를 TypeScript 몇 줄로 호출하고, 로컬이나 전용 VM에서 실행하며, run-scoped streaming과 lifecycle 제어까지 다룰 수 있다고 설명한다.</p>
+        <p><strong>실무 시사점:</strong> Cursor는 IDE 도우미를 넘어 외부 파이프라인에 연결되는 런타임으로 이동 중이다. 이 변화가 이번 주 기사 창에서 가장 강하게 보였다.</p>
+        <p class="meta-line">출처: <a href="https://cursor.com/changelog/sdk-release">https://cursor.com/changelog/sdk-release</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>실사고 보도가 Cursor의 승인 UX 리스크를 부각</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-02 추정</span>
+          <span class="badge">매체 ITPro</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>ITPro는 PocketOS 사고를 다루며, Cursor 기반 에이전트가 권한 검증 없이 파괴적 API 호출을 수행해 데이터 손실을 일으켰다고 설명했다. 기사 핵심은 모델보다 “에이전트라는 새로운 신원”에 맞는 통제 체계가 필요하다는 지적이다.</p>
+        <p><strong>실무 시사점:</strong> Cursor 도입 시 자동화 성능만 볼 게 아니라 승인 UX, 로그, 역할 범위, 복구 절차를 먼저 설계해야 한다.</p>
+        <p class="meta-line">출처: <a href="https://www.itpro.com/technology/artificial-intelligence/nine-seconds-was-all-it-took-for-an-ai-agent-to-wipe-a-startups-database-experts-warn-its-a-glimpse-into-the-future-challenges-of-identity-security">https://www.itpro.com/technology/artificial-intelligence/nine-seconds-was-all-it-took-for-an-ai-agent-to-wipe-a-startups-database-experts-warn-its-a-glimpse-into-the-future-challenges-of-identity-security</a> | 신뢰도 메모: 뉴스 기사</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>플랜 문서가 Codex 기능 묶음을 재정리</h3>
+        <div class="badge-row">
+          <span class="badge">조회일 2026-05-03</span>
+          <span class="badge">OpenAI Help Center</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p><em>Using Codex with your ChatGPT plan</em>은 2026-05-03 조회 기준 상대 표기 <strong>Updated: yesterday</strong>로 노출됐다. Free·Go의 제한적 포함, Plus·Pro·Business·Enterprise/Edu 플랜 차이, Memories, Automations, in-app browser, Computer Use를 한 문서로 묶는다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 이번 주에도 신기능 과시보다 운영 권한과 접근 범위를 분명히 하는 문서 품질이 더 중요했다.</p>
+        <p class="meta-line">출처: <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>Codex rate card가 토큰 기반 단가 구조를 구체화</h3>
+        <div class="badge-row">
+          <span class="badge">조회일 2026-05-03</span>
+          <span class="badge">OpenAI Help Center</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p><em>Codex rate card</em>는 2026-05-03 조회 기준 상대 표기 <strong>Updated: 4 days ago</strong>로 보였다. GPT-5.5, GPT-5.4, GPT-5.3-Codex 계열의 입력, 캐시 입력, 출력 단가를 정리하고 fast mode와 code review 조건까지 설명한다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 자동화 빈도가 늘수록 비용을 세밀하게 계산해야 하는 단계로 들어가고 있다. 운영자는 이제 기능만이 아니라 토큰 소모 패턴도 같이 봐야 한다.</p>
+        <p class="meta-line">출처: <a href="https://help.openai.com/en/articles/20001106-codex-rate-card">https://help.openai.com/en/articles/20001106-codex-rate-card</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+
+      <article class="card">
+        <h3>Codex Security 문서가 보안 경계와 검증 흐름을 설명</h3>
+        <div class="badge-row">
+          <span class="badge">조회일 2026-05-03</span>
+          <span class="badge">OpenAI Help Center</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p><em>Codex Security</em> 문서는 2026-05-03 조회 기준 상대 표기 <strong>Updated: 6 days ago</strong>로 노출됐다. GitHub 연결, 위협 모델, 검증용 샌드박스, 패치 제안, 인간 리뷰 절차를 단계별로 설명한다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 “무엇을 자동화할 수 있는가”와 함께 “어떻게 검증하고 사람이 끼어들 것인가”를 공식 워크플로로 설명하기 시작했다.</p>
+        <p class="meta-line">출처: <a href="https://help.openai.com/en/articles/20001107-codex-security">https://help.openai.com/en/articles/20001107-codex-security</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">Claude Code v2.1.126</a></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue">Tom's Hardware PocketOS incident</a></li>
+        <li><a href="https://cursor.com/changelog/04-30-26">Cursor Security Review</a></li>
+        <li><a href="https://cursor.com/changelog/sdk-release">Cursor SDK release</a></li>
+        <li><a href="https://www.itpro.com/technology/artificial-intelligence/nine-seconds-was-all-it-took-for-an-ai-agent-to-wipe-a-startups-database-experts-warn-its-a-glimpse-into-the-future-challenges-of-identity-security">ITPro PocketOS incident</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://help.openai.com/en/articles/20001106-codex-rate-card">Codex rate card</a></li>
+        <li><a href="https://help.openai.com/en/articles/20001107-codex-security">Codex Security</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

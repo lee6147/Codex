@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending AI·개발 생산성 저장소</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #eef6ec;
+      --ok: #e9f8ee;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #1d5c34 0%, #3a8b59 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(24, 76, 43, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #285c39;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>GitHub Trending AI·개발 생산성 저장소</h1>
+      <p>생성일 2026-05-04 | 기준 스냅샷 GitHub Trending Today</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 관찰</strong><br>오늘 스냅샷의 중심은 모델 자체보다 <strong>에이전트 오케스트레이션</strong>, <strong>하네스</strong>, <strong>MCP 연결</strong>이다. 즉 “어떤 모델을 쓰는가”보다 “어떻게 굴리는가”가 더 많이 올라왔다.</div>
+        <div class="stat"><strong>선정 기준</strong><br>Trending 상위 9개 중 AI 코딩, 에이전트 자동화, 개발 생산성과 직접 연결되는 저장소 6개만 남겼다. 일반 OSINT, 일반 영상 생성, 네트워크 OS 레포는 이번 목적에서 제외했다.</div>
+        <div class="stat"><strong>실무 해석</strong><br>Claude Code, Cursor, Codex 사용자에게 중요한 것은 이제 모델 교체보다 skill, browser task, workflow wiring, team harness를 얼마나 잘 재사용하느냐다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">트렌드 해석</a></li>
+        <li><a href="#repos">주목 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>트렌드 해석</h2>
+      <div class="soft-box">
+        오늘 선별 6개 중 5개가 에이전트 운영층을 직접 겨냥한다. <strong>ruflo</strong>, <strong>TradingAgents</strong>는 멀티에이전트 구조를, <strong>browserbase/skills</strong>와 <strong>jcode</strong>는 재사용 가능한 skill·harness 층을, <strong>n8n-mcp</strong>는 도구 연결면을 보여 준다.
+      </div>
+      <div class="soft-box">
+        특히 브라우저 작업, 워크플로 자동화, 하네스 패키징이 각각 독립 저장소로 급상승한다는 점은 현재 시장이 모델 래퍼보다 <strong>실행 계약</strong>과 <strong>운영 연결성</strong>에 더 관심을 둔다는 신호다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>주목 저장소</h2>
+
+      <article class="card">
+        <h3>1. ruvnet / ruflo</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge ok">38,576 stars</span>
+          <span class="badge">오늘 +1,834</span>
+        </div>
+        <p>ruflo는 스스로를 Claude용 에이전트 오케스트레이션 플랫폼으로 소개한다. 분산 swarm, autonomous workflow, RAG, Claude Code·Codex 연동을 전면에 둔다.</p>
+        <p><strong>왜 중요한가:</strong> 단일 에이전트가 아니라 역할 분리와 병렬 실행을 제품처럼 다루려는 수요가 실제 트렌드 상위권까지 올라왔다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a> | 연결점: Cursor의 팀 배포, Codex의 automations, Claude Code의 subagent 운영 흐름과 맞닿는다.</div>
+      </article>
+
+      <article class="card">
+        <h3>2. TauricResearch / TradingAgents</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge ok">64,933 stars</span>
+          <span class="badge">오늘 +3,315</span>
+        </div>
+        <p>TradingAgents는 금융 도메인에 초점을 맞춘 multi-agent LLM framework다. 도메인은 다르지만, 대중이 멀티에이전트 구조 자체를 실험 대상으로 삼고 있다는 점이 핵심이다.</p>
+        <p><strong>왜 중요한가:</strong> 개발 생산성 도구 사용자도 이제 “코드 생성”보다 “에이전트를 어떻게 나눠 맡길까”에 더 관심을 보인다는 간접 지표다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/TauricResearch/TradingAgents">TauricResearch/TradingAgents</a> | 연결점: 팀 단위 오케스트레이션과 병렬 검증 패턴을 참고하기 좋다.</div>
+      </article>
+
+      <article class="card">
+        <h3>3. Hmbown / DeepSeek-TUI</h3>
+        <div class="badge-row">
+          <span class="badge">Rust</span>
+          <span class="badge ok">2,041 stars</span>
+          <span class="badge">오늘 +389</span>
+        </div>
+        <p>DeepSeek-TUI는 터미널에서 도는 코딩 에이전트라는 점을 전면에 내세운다. GUI보다 셸 기반 에이전트 인터페이스 수요가 여전히 강하다는 신호다.</p>
+        <p><strong>왜 중요한가:</strong> Claude Code와 Codex CLI가 강한 이유와 같은 축이다. 긴 작업은 여전히 터미널 친화성과 명시적 권한 흐름을 선호하는 사용자가 많다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/Hmbown/DeepSeek-TUI">Hmbown/DeepSeek-TUI</a> | 연결점: CLI형 에이전트 경험에 대한 시장 수요를 보여 준다.</div>
+      </article>
+
+      <article class="card">
+        <h3>4. browserbase / skills</h3>
+        <div class="badge-row">
+          <span class="badge">JavaScript</span>
+          <span class="badge ok">1,769 stars</span>
+          <span class="badge">오늘 +322</span>
+        </div>
+        <p>browserbase/skills는 브라우저 자동화 작업을 재사용 가능한 skill 단위로 묶는다. 브라우저 리서치를 스크립트 한 번이 아니라 에이전트 자산으로 관리하려는 흐름이 뚜렷하다.</p>
+        <p><strong>왜 중요한가:</strong> 기사 수집, UI 점검, SaaS 운영 같은 업무에서는 브라우저 task가 코드 작성만큼 중요해지고 있다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/browserbase/skills">browserbase/skills</a> | 연결점: Cursor, Codex, Claude Code 모두 브라우저 기반 에이전트 기능과 잘 맞는다.</div>
+      </article>
+
+      <article class="card">
+        <h3>5. czlonkowski / n8n-mcp</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge ok">19,420 stars</span>
+          <span class="badge">오늘 +264</span>
+        </div>
+        <p>n8n-mcp는 Claude Desktop, Claude Code, Windsurf, Cursor에서 n8n 워크플로를 만들 수 있게 돕는 MCP 서버다. 에이전트와 외부 자동화 플랫폼 연결면이 따로 주목받는다는 점이 중요하다.</p>
+        <p><strong>왜 중요한가:</strong> 실제 생산성 차이는 모델 하나보다 외부 시스템과 얼마나 잘 연결되는가에서 벌어진다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/czlonkowski/n8n-mcp">czlonkowski/n8n-mcp</a> | 연결점: 에이전트가 SaaS 워크플로 안으로 들어가는 경로를 보여 준다.</div>
+      </article>
+
+      <article class="card">
+        <h3>6. 1jehuang / jcode</h3>
+        <div class="badge-row">
+          <span class="badge">Rust</span>
+          <span class="badge ok">3,352 stars</span>
+          <span class="badge">오늘 +587</span>
+        </div>
+        <p>jcode는 스스로를 <em>Coding Agent Harness</em>라고 부른다. 이름 자체가 현재 시장 관심을 요약한다. 하네스가 독립적인 생산성 상품군으로 떠오르고 있다.</p>
+        <p><strong>왜 중요한가:</strong> 로컬 규칙, 검증 흐름, 역할 분리 같은 하네스 자산이 쌓일수록 모델 교체 비용보다 운영 자산 가치가 더 커진다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/1jehuang/jcode">1jehuang/jcode</a> | 연결점: 오늘 이 리포트 하네스처럼 에이전트 계약을 다루는 팀에 직접적인 참고 사례다.</div>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending</a></li>
+        <li><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></li>
+        <li><a href="https://github.com/TauricResearch/TradingAgents">TauricResearch/TradingAgents</a></li>
+        <li><a href="https://github.com/Hmbown/DeepSeek-TUI">Hmbown/DeepSeek-TUI</a></li>
+        <li><a href="https://github.com/browserbase/skills">browserbase/skills</a></li>
+        <li><a href="https://github.com/czlonkowski/n8n-mcp">czlonkowski/n8n-mcp</a></li>
+        <li><a href="https://github.com/1jehuang/jcode">1jehuang/jcode</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

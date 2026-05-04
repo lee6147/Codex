@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 AI 코딩 도구 업데이트 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e9f8ee;
+      --warn: #fff3da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #173c68 0%, #2b5f9d 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1d4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    code {
+      font-family: "Cascadia Code", "Consolas", monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>공식 AI 코딩 도구 업데이트 보고서</h1>
+      <p>생성일 2026-05-02 | 조사 기간 2026-04-29 ~ 2026-05-02</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 변화</strong><br>이번 3일 창에서는 Cursor가 <strong>SDK 공개</strong>, <strong>Security Review</strong>, <strong>Team Marketplace</strong>까지 연속적으로 공식 메시지를 냈다. Claude Code는 2026-05-01 <code>v2.1.126</code>으로 운영성 패치를 이어 갔고, OpenAI Codex는 제품 런치보다 플랜·요금 문서 갱신이 중심이었다.</div>
+        <div class="stat"><strong>실무 해석</strong><br>세 도구 모두 모델 성능 과시보다 <strong>실행면</strong>, <strong>운영 정책</strong>, <strong>조직 도입 방식</strong>을 더 강하게 다루고 있다. 즉 지금 경쟁축은 채팅 품질보다 “에이전트를 어떻게 계속 굴릴 것인가”에 가깝다.</div>
+        <div class="stat"><strong>확인 메모</strong><br>OpenAI Help Center는 절대 수정 날짜를 숨기므로 문서 상태는 2026-05-02 실제 조회로 확인했지만, 정확한 수정일은 <strong>확인 불가</strong>로 남긴다. 상대 표기인 <strong>9 hours ago</strong>, <strong>3 days ago</strong>는 그대로 근거로 사용했다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">빠른 요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>빠른 요약</h2>
+      <div class="soft-box">
+        가장 공격적인 제품 메시지는 Cursor가 가져갔다. 2026-04-29 SDK, 2026-04-30 Security Review, 2026-05-01 Team Marketplace가 이어지며 “에디터 내 AI”에서 “팀 단위 운영 플랫폼”으로 프레임을 넓혔다.
+      </div>
+      <div class="notice" style="margin-top: 14px;">
+        Claude Code는 여전히 릴리스 단위가 짧고 실전적이다. 반면 OpenAI Codex는 이번 창에서 새 공개 기능보다 플랜 접근성과 과금 체계 문서 갱신이 더 눈에 띄었다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3><code>v2.1.126</code> 배포로 gateway·Windows·인증 흐름을 정리</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Claude Code</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-05-01</span>
+        </div>
+        <p>Anthropic GitHub Releases 기준 <code>v2.1.126</code>은 2026-05-01에 배포됐다. Gateway model picker 추가, pasted auth code 로그인, 프로젝트 purge UI, Windows PowerShell 7 탐지 개선, OAuth refresh token 처리 보정처럼 “매일 쓰다 걸리는 지점”을 다듬는 항목이 중심이다.</p>
+        <p>즉 Claude Code는 이번 창에서도 대형 신기능보다 세션 유지와 운영 복구성 강화에 우선순위를 뒀다. 긴 CLI 세션을 자주 돌리는 사용자에게는 이런 방향이 체감 가치가 크다.</p>
+        <div class="meta-line">출처: anthropics/claude-code GitHub Releases | <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">v2.1.126</a></div>
+      </article>
+
+      <article class="card">
+        <h3><code>v2.1.123</code> 이후에도 안정화 기조 유지</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Claude Code</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-04-29</span>
+        </div>
+        <p><code>v2.1.123</code>은 2026-04-29에 공개됐다. 공개 메모 길이는 짧지만, 직전 <code>v2.1.122</code>와 이어 보면 OAuth 401 루프, ToolSearch, Bedrock 리전, PR URL 기반 검색 같은 운영층 문제가 최근 배포 묶음의 중심이었다.</p>
+        <p>이번 3일 창에서 Claude Code는 “새로운 데모”보다 “덜 끊기는 작업 루프”를 만드는 쪽이 더 중요하다는 점을 다시 보여줬다.</p>
+        <div class="meta-line">출처: anthropics/claude-code GitHub Releases | <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.123">v2.1.123</a></div>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Cursor SDK 공개</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Cursor</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-04-29</span>
+        </div>
+        <p>Cursor는 2026-04-29 공식 changelog에서 Cursor SDK를 공개했다. TypeScript 호출면, 로컬 또는 Cursor Isolated VM 실행, Cloud Agents API의 durable runs 구성을 함께 제시하며 제품 범위를 IDE 바깥으로 넓혔다.</p>
+        <p>이 발표의 의미는 “좋은 편집기 보조”가 아니라 “외부 자동화 파이프라인에 연결 가능한 에이전트 런타임”을 공식 제품으로 밀기 시작했다는 데 있다.</p>
+        <div class="meta-line">출처: Cursor Changelog | <a href="https://cursor.com/changelog/sdk-release">Build programmatic agents with the Cursor SDK</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Security Review로 권한 가시성 강화</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Cursor</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-04-30</span>
+        </div>
+        <p>2026-04-30 changelog의 <em>Security Review</em>는 agent가 수행한 권한 민감 동작을 사용자와 팀이 나중에 점검할 수 있도록 만드는 기능이다. 이는 SDK로 실행면을 넓힌 직후, 통제 면도 같이 강화하려는 움직임으로 읽힌다.</p>
+        <p>즉 Cursor는 확장만 앞세우지 않고 “무엇을 했는지 다시 볼 수 있는가”를 같이 제품화하고 있다.</p>
+        <div class="meta-line">출처: Cursor Changelog | <a href="https://cursor.com/changelog/05-01-26">Security Review</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Team Marketplace로 팀 배포 모델 확장</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Cursor</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-05-01</span>
+        </div>
+        <p>2026-05-01 공식 changelog의 <em>Team Marketplace</em>는 팀이 내부 agent와 rules를 배포하고 공유하는 면을 전면에 둔다. 개인 프롬프트를 넘어서 “팀 공통 작업 계약”을 제품 안에서 유통시키려는 방향이 분명하다.</p>
+        <p>SDK와 Security Review가 기술적 기반이라면, Team Marketplace는 조직 확산 경로다. 이 조합 때문에 이번 창에서 Cursor의 공식 모멘텀이 가장 강했다.</p>
+        <div class="meta-line">출처: Cursor Changelog | <a href="https://cursor.com/changelog/team-marketplace">Team Marketplace</a></div>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>플랜 문서가 Codex 접근 범위를 다시 정리</h3>
+        <div class="badge-row">
+          <span class="badge">도구: OpenAI Codex</span>
+          <span class="badge">조회일 2026-05-02</span>
+          <span class="badge">정확한 수정일 확인 불가</span>
+        </div>
+        <p><em>Using Codex with your ChatGPT plan</em> 문서는 2026-05-02 조회 기준 <strong>Updated: 9 hours ago</strong>로 표시됐다. 문서 본문은 Free와 Go 플랜의 제한적 포함, Plus·Pro·Business·Enterprise/Edu의 사용 조건, memories·automations·in-app browser·computer use 같은 기능 묶음을 한 번에 정리한다.</p>
+        <p>이번 창의 Codex 메시지는 새 런치보다 운영 안내 강화에 가깝다. 즉 제품 기능을 추가로 소개하기보다 “누가 어떤 권한으로 어디까지 쓸 수 있는가”를 더 분명히 만들고 있다.</p>
+        <div class="meta-line">출처: OpenAI Help Center | <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a></div>
+      </article>
+
+      <article class="card">
+        <h3>요금 문서가 모델별 토큰 단가를 세분화</h3>
+        <div class="badge-row">
+          <span class="badge">도구: OpenAI Codex</span>
+          <span class="badge">조회일 2026-05-02</span>
+          <span class="badge">정확한 수정일 확인 불가</span>
+        </div>
+        <p><em>Codex rate card</em> 문서는 2026-05-02 조회 기준 <strong>Updated: 3 days ago</strong>로 표시됐다. GPT-5.5, GPT-5.4, GPT-5.3 Codex 계열의 입력, 캐시 입력, 출력 단가와 fast mode, code review 항목이 구조적으로 정리돼 있다.</p>
+        <p>Codex는 이번 3일 창에서 화려한 릴리스보다 비용 가시성과 운영 경계 명확화에 더 무게를 뒀다. 조직 도입 관점에서는 이 편이 오히려 중요한 업데이트다.</p>
+        <div class="meta-line">출처: OpenAI Help Center | <a href="https://help.openai.com/en/articles/20001106-codex-rate-card">Codex rate card</a></div>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">Claude Code v2.1.126</a></li>
+        <li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.123">Claude Code v2.1.123</a></li>
+        <li><a href="https://cursor.com/changelog/sdk-release">Cursor SDK release</a></li>
+        <li><a href="https://cursor.com/changelog/05-01-26">Cursor Security Review</a></li>
+        <li><a href="https://cursor.com/changelog/team-marketplace">Cursor Team Marketplace</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://help.openai.com/en/articles/20001106-codex-rate-card">Codex rate card</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

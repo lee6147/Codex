@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e9f8ee;
+      --warn: #fff3da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #20344d 0%, #3268a3 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1d4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .badge.warn { background: #fde8d6; color: #9a4b13; }
+    .rank {
+      font-weight: 800;
+      color: #1d4f82;
+      margin-right: 8px;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일 2026-04-25 | 기준 화면 GitHub Explore / Trending today 조회</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 원칙</strong><br>오늘 화면에 보인 저장소 중 AI 코딩, 에이전트 오케스트레이션, MCP, 개발 생산성에 직접 연결되는 항목만 추렸다. 단순 인기 저장소나 범용 학습 자료는 제외했다.</div>
+        <div class="stat"><strong>오늘의 흐름</strong><br>컨텍스트 확장, 멀티에이전트, 보안 스캐닝, 빌드 속도 개선이 함께 올라왔다. 즉 “코드 생성”보다 “주변 제어층”이 더 강한 주간이다.</div>
+        <div class="stat"><strong>읽는 법</strong><br>아래 순위는 GitHub 공식 절대 순위 재현이 아니라 오늘 화면에서 실무 관련성이 높은 항목을 우선 정렬한 큐레이션이다. 별 수는 조회 시점 기준이라 빠르게 변한다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">트렌드 해석</a></li>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>트렌드 해석</h2>
+      <div class="notice">
+        오늘 GitHub 흐름은 “좋은 모델”보다 “좋은 작업면” 쪽으로 기울어 있다. Claude/Cursor/Codex 사용자를 돕는 컨텍스트 레이어, 보안 레이어, 멀티레포/멀티에이전트 실행 레이어가 동시에 떠 있다.
+      </div>
+      <div class="soft-box">
+        <strong>주의 메모</strong><br>
+        <code>free-claude-code</code>는 수요 신호로는 강하지만 우회 라우팅 성격이 있으므로 기업 도입 추천 항목이 아니라 비용 압박과 공급자 전환 욕구를 보여주는 관찰 대상으로 읽는 편이 맞다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+
+      <article class="card">
+        <h3><span class="rank">1.</span>zilliztech / claude-context</h3>
+        <div class="badge-row">
+          <span class="badge ok">8.9k stars</span>
+          <span class="badge">TypeScript</span>
+          <span class="badge">MCP</span>
+        </div>
+        <p>Claude Code용 code-search MCP다. 저장소 전체를 검색 가능한 맥락으로 만들고, 다른 코딩 에이전트에도 붙일 수 있는 구조라는 점이 핵심이다.</p>
+        <p>왜 중요한가: 컨텍스트 부족은 지금 AI 코딩 도구의 가장 비싼 실패 원인 중 하나다. 이 저장소가 뜨는 것은 “모델 교체”보다 “코드베이스 검색 품질 향상”이 더 큰 생산성 레버라는 뜻이다.</p>
+        <p class="meta-line">GitHub 표시 별 수 8.9k | 출처 URL: <a href="https://github.com/zilliztech/claude-context">https://github.com/zilliztech/claude-context</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">2.</span>huggingface / ml-intern</h3>
+        <div class="badge-row">
+          <span class="badge ok">4.9k stars</span>
+          <span class="badge">Python</span>
+          <span class="badge">Agent engineer</span>
+        </div>
+        <p>논문을 읽고, 모델을 학습하고, 결과를 내는 오픈소스 ML 엔지니어 지향 프로젝트다. 단순 코드 생성기가 아니라 역할이 있는 에이전트형 작업 흐름을 전면에 둔다.</p>
+        <p>왜 중요한가: “IDE 안에서 코드를 조금 빨리 쓰는 것”에서 “역할을 가진 자동화된 작업자”로 관심이 이동하고 있다는 신호다. ML 팀이든 앱 팀이든 에이전트 역할 분리가 보편화되는 흐름과 맞닿아 있다.</p>
+        <p class="meta-line">GitHub 표시 별 수 4.9k | 출처 URL: <a href="https://github.com/huggingface/ml-intern">https://github.com/huggingface/ml-intern</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">3.</span>google / osv-scanner</h3>
+        <div class="badge-row">
+          <span class="badge ok">9.4k stars</span>
+          <span class="badge">Go</span>
+          <span class="badge">Security</span>
+        </div>
+        <p>OSV 데이터를 활용하는 취약점 스캐너다. 전통적인 보안 도구처럼 보이지만, AI가 코드 생산량을 늘릴수록 이런 스캐너가 더 자주 개발 루프 안으로 들어온다.</p>
+        <p>왜 중요한가: 에이전트 코딩 시대에는 생성 속도와 함께 검증 속도도 올라가야 한다. security scan이 트렌딩 상위에 있는 것은 AI 코딩 보조의 반대편에서 검증 자동화 수요가 같이 커진다는 뜻이다.</p>
+        <p class="meta-line">GitHub 표시 별 수 9.4k | 출처 URL: <a href="https://github.com/google/osv-scanner">https://github.com/google/osv-scanner</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">4.</span>microsoft / typescript-go</h3>
+        <div class="badge-row">
+          <span class="badge ok">25k stars</span>
+          <span class="badge">Go</span>
+          <span class="badge">Build speed</span>
+        </div>
+        <p>TypeScript의 native port 개발 저장소다. 에이전트가 코드를 더 많이 바꿀수록 결국 병목은 타입체크와 빌드 시간으로 돌아온다.</p>
+        <p>왜 중요한가: AI 코딩 생산성을 실제 배포 속도로 연결하려면 언어 도구 체인 자체가 빨라져야 한다. 이 저장소가 트렌딩인 것은 AI 도구 밖의 컴파일러/타입체커 개선도 다시 주목받는다는 의미다.</p>
+        <p class="meta-line">GitHub 표시 별 수 25k | 출처 URL: <a href="https://github.com/microsoft/typescript-go">https://github.com/microsoft/typescript-go</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">5.</span>open-metadata / OpenMetadata</h3>
+        <div class="badge-row">
+          <span class="badge ok">13.2k stars</span>
+          <span class="badge">TypeScript</span>
+          <span class="badge">MCP server</span>
+        </div>
+        <p>데이터 카탈로그와 거버넌스 플랫폼이지만 태그에 <code>mcp</code>와 <code>mcp-server</code>가 함께 붙어 있다. 즉 메타데이터와 에이전트 연결점이 점점 가까워지고 있다는 사례다.</p>
+        <p>왜 중요한가: AI 코딩 도구가 코드만 읽는 시대에서 데이터와 운영 문맥까지 읽는 시대로 넘어갈 때, 메타데이터 계층은 중요한 제어면이 된다. 특히 엔터프라이즈 팀이 관심 가질 만한 신호다.</p>
+        <p class="meta-line">GitHub 표시 별 수 13.2k | 출처 URL: <a href="https://github.com/open-metadata/OpenMetadata">https://github.com/open-metadata/OpenMetadata</a></p>
+      </article>
+
+      <article class="card">
+        <h3><span class="rank">6.</span>Alishahryar1 / free-claude-code</h3>
+        <div class="badge-row">
+          <span class="badge warn">7.8k stars</span>
+          <span class="badge">Python</span>
+          <span class="badge">Cost routing</span>
+        </div>
+        <p>Claude Code 요청을 NVIDIA NIM, OpenRouter, DeepSeek, LM Studio, llama.cpp 등으로 우회 라우팅하는 프로젝트다. 성격상 공식 추천 대상보다는 시장 압력을 보여주는 지표에 가깝다.</p>
+        <p>왜 중요한가: 비용과 모델 공급자 선택권이 이미 AI 코딩 스택의 일부가 됐다는 뜻이다. 기업 환경에서는 라이선스와 계정 정책을 먼저 점검해야 하지만, 사용자 수요 방향은 분명하다.</p>
+        <p class="meta-line">GitHub 표시 별 수 7.8k | 출처 URL: <a href="https://github.com/Alishahryar1/free-claude-code">https://github.com/Alishahryar1/free-claude-code</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>GitHub Explore / Trending today: <a href="https://github.com/explore">https://github.com/explore</a></li>
+        <li>claude-context: <a href="https://github.com/zilliztech/claude-context">https://github.com/zilliztech/claude-context</a></li>
+        <li>ml-intern: <a href="https://github.com/huggingface/ml-intern">https://github.com/huggingface/ml-intern</a></li>
+        <li>osv-scanner: <a href="https://github.com/google/osv-scanner">https://github.com/google/osv-scanner</a></li>
+        <li>typescript-go: <a href="https://github.com/microsoft/typescript-go">https://github.com/microsoft/typescript-go</a></li>
+        <li>OpenMetadata: <a href="https://github.com/open-metadata/OpenMetadata">https://github.com/open-metadata/OpenMetadata</a></li>
+        <li>free-claude-code: <a href="https://github.com/Alishahryar1/free-claude-code">https://github.com/Alishahryar1/free-claude-code</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

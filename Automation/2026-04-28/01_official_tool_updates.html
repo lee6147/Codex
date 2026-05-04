@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 AI 코딩 도구 업데이트 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e9f8ee;
+      --warn: #fff3da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #183a64 0%, #28589b 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1d4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    code {
+      font-family: "Cascadia Code", "Consolas", monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>공식 AI 코딩 도구 업데이트 보고서</h1>
+      <p>생성일 2026-04-28 | 조사 기간 2026-04-25 ~ 2026-04-28</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 신호</strong><br>이번 3일 창에서 새 공식 변화가 분명하게 잡힌 쪽은 OpenAI Codex다. Claude Code와 Cursor는 같은 창 안의 신규 공식 항목이 없었고, 직전 핵심 발표가 여전히 해석 기준으로 남아 있다.</div>
+        <div class="stat"><strong>운영 의미</strong><br>제품 경쟁의 초점이 새 모델 이름보다 앱 표면, 작업 권한, 플러그인 제어, 토큰 기반 과금, 장기 실행 같은 운영 구조로 옮겨가고 있다.</div>
+        <div class="stat"><strong>메모</strong><br>Cursor의 최신 확인 공식 제품 항목은 2026-04-24의 3.2이고, Claude Code의 최신 확인 릴리스는 2026-04-23의 <code>v2.1.119</code>다. 둘 다 이번 창 밖 참고 카드로 남겼다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">빠른 요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>빠른 요약</h2>
+      <div class="notice">
+        2026-04-25~2026-04-28 공식 창을 다시 확인한 결과, Claude Code와 Cursor는 신규 공식 항목이 없었고 OpenAI Codex만 Help Center 문서가 계속 갱신되고 있었다. 따라서 이번 비교의 초점은 "누가 새 기능을 더 많이 냈는가"보다 "누가 운영 표면을 더 빠르게 정리하고 있나"에 가깝다.
+      </div>
+      <div class="soft-box">
+        <strong>확인 불가 메모</strong><br>
+        OpenAI Help Center는 절대 수정 시각 대신 상대 표기만 제공했다. 따라서 본문에서는 <strong>2026-04-28 확인 시</strong> 문서 상태를 기준으로 정리했고, 정확한 분 단위 수정 시각은 <strong>확인 불가</strong>로 본다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>이번 3일 창에서는 신규 공식 항목 미확인</h3>
+        <div class="badge-row">
+          <span class="badge">2026-04-25 ~ 2026-04-28</span>
+          <span class="badge">공식 신규 항목 없음</span>
+        </div>
+        <p>Anthropic Engineering과 Claude Code GitHub Releases를 다시 확인했지만, 이번 3일 창 안에서 새로 추가된 Claude Code 공식 공지나 릴리스는 확인되지 않았다.</p>
+        <p>즉 오늘 기준 Claude Code는 신기능 추격보다 직전 릴리스와 품질 회고가 여전히 해석 기준인 상태다. 최근 체감 품질 이슈를 어떻게 다뤘는지가 제품 신뢰의 핵심으로 남아 있다.</p>
+        <p class="meta-line">확인 상태: 확인 완료 | 출처: Anthropic Engineering, GitHub Releases</p>
+      </article>
+
+      <article class="card">
+        <h3>최신 확인 릴리스는 2026-04-23의 <code>v2.1.119</code></h3>
+        <div class="badge-row">
+          <span class="badge ok">GitHub Releases</span>
+          <span class="badge">2026-04-23</span>
+          <span class="badge">창 밖 참고</span>
+        </div>
+        <p><code>v2.1.119</code>는 <code>/config</code> 영속화, PowerShell tool 자동 승인, MCP 서버 병렬 재연결, worktree 관련 수정, Windows 경고 정리처럼 실제 사용 마찰을 줄이는 항목이 많았다.</p>
+        <p>특히 터미널 중심 사용자에게는 "더 많은 기능"보다 "설정이 남고, 권한 흐름이 덜 끊기고, Windows에서 덜 거슬린다"는 유지보수 성격이 더 중요하다.</p>
+        <p class="meta-line">발표일 2026-04-23 | 출처: Claude Code GitHub Releases | 출처 URL: <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.119">https://github.com/anthropics/claude-code/releases/tag/v2.1.119</a> | 확인 상태: 확인 완료</p>
+      </article>
+
+      <article class="card">
+        <h3>2026-04-23 품질 회고는 아직도 읽어야 하는 기준 문서</h3>
+        <div class="badge-row">
+          <span class="badge ok">Anthropic Engineering</span>
+          <span class="badge">2026-04-23</span>
+          <span class="badge">운영 회고</span>
+        </div>
+        <p>Anthropic은 Claude Code 품질 저하를 세 가지 원인으로 분리해 설명했다. 기본 effort 하향, 오래된 reasoning 정리 버그, 과도한 간결화 프롬프트가 각기 다른 사용자 집합에 영향을 줬다는 구조다.</p>
+        <p>실무적으로 중요한 점은 문제를 모델 열화가 아니라 제품 레이어의 운영 판단과 버그로 분해해 공개했다는 점이다. 앞으로 Claude Code 릴리스를 해석할 때 이 회고가 기준점으로 남는다.</p>
+        <p class="meta-line">발표일 2026-04-23 | 출처: Anthropic Engineering | 출처 URL: <a href="https://www.anthropic.com/engineering/april-23-postmortem">https://www.anthropic.com/engineering/april-23-postmortem</a> | 확인 상태: 확인 완료</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>이번 3일 창에서는 신규 공식 항목 미확인</h3>
+        <div class="badge-row">
+          <span class="badge">2026-04-25 ~ 2026-04-28</span>
+          <span class="badge">공식 신규 항목 없음</span>
+        </div>
+        <p>Cursor changelog를 2026-04-28 기준으로 다시 확인했지만, 이번 창 안에 2026-04-25 이후 새 공식 changelog 항목은 잡히지 않았다.</p>
+        <p>따라서 Cursor는 오늘도 여전히 2026-04-24의 3.2와 2026-04-21 안정성 글이 제품 방향을 설명하는 핵심 기준이다. 제품 추진력은 강하지만, 이번 창에서는 후속 공식 보강이 없었다.</p>
+        <p class="meta-line">확인 상태: 확인 완료 | 출처: Cursor Changelog</p>
+      </article>
+
+      <article class="card">
+        <h3>최신 제품 신호는 2026-04-24의 Cursor 3.2</h3>
+        <div class="badge-row">
+          <span class="badge ok">공식 changelog</span>
+          <span class="badge">2026-04-24</span>
+          <span class="badge">창 밖 참고</span>
+        </div>
+        <p>Cursor 3.2는 <code>/multitask</code>로 비동기 subagent를 병렬 실행하고, 개선된 worktrees 흐름과 multi-root workspaces를 묶었다. 이는 Cursor가 단순 IDE 보조를 넘어 멀티레포 작업 콘솔로 올라가고 있다는 가장 분명한 공식 신호다.</p>
+        <p>실사용 관점에서는 "한 프로젝트 안에서 고치기"보다 "여러 분기와 여러 폴더를 동시에 조정하기"가 전면으로 올라왔다. 오늘 창에는 새 항목이 없지만, 여전히 가장 큰 방향 전환 카드다.</p>
+        <p class="meta-line">발표일 2026-04-24 | 출처: Cursor Changelog | 출처 URL: <a href="https://cursor.com/en-US/changelog">https://cursor.com/en-US/changelog</a> | 확인 상태: 확인 완료</p>
+      </article>
+
+      <article class="card">
+        <h3>안정성 엔지니어링 글도 여전히 유효한 참고 자료</h3>
+        <div class="badge-row">
+          <span class="badge ok">Cursor Research</span>
+          <span class="badge">2026-04-21</span>
+          <span class="badge">기술 글</span>
+        </div>
+        <p>Cursor는 앱 안정성 글에서 OOM-per-session 80% 감소, OOM-per-request 73% 감소를 공개했다. Agents Window가 커질수록 메모리와 충돌률을 제품 경쟁력의 일부로 다뤄야 한다는 메시지다.</p>
+        <p>이는 3.2의 병렬성과도 연결된다. 기능 확장이 계속될수록 "얼마나 똑똑한가"만큼 "얼마나 덜 죽는가"가 중요하다는 점을 분명히 보여준다.</p>
+        <p class="meta-line">발표일 2026-04-21 | 출처: Cursor Research | 출처 URL: <a href="https://cursor.com/blog/app-stability">https://cursor.com/blog/app-stability</a> | 확인 상태: 확인 완료</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>Codex rate card가 2026-04-28 확인 시 다시 갱신 상태</h3>
+        <div class="badge-row">
+          <span class="badge ok">OpenAI Help Center</span>
+          <span class="badge">2026-04-28 확인</span>
+          <span class="badge">가격 구조</span>
+        </div>
+        <p>2026-04-28 확인 시 Codex rate card 문서는 <code>Updated: 2 hours ago</code>로 표시됐다. 이 문서는 Codex 가격 체계가 메시지당 과금이 아니라 토큰 기반 크레딧 구조라는 점을 다시 못박고, Enterprise, Edu, Health, Gov까지 새 기준을 적용 범위에 넣고 있다.</p>
+        <p>또 GPT-5.5, GPT-5.4, GPT-5.4-Mini, GPT-5.3-Codex의 입력, 캐시 입력, 출력 토큰별 크레딧을 구체적으로 공개한다. 즉 Codex는 이제 기능 경쟁만이 아니라 운영비 계산 방식 자체가 제품 표면의 일부다.</p>
+        <p class="meta-line">2026-04-28 확인 시 상대 표기 갱신 | 출처: OpenAI Help Center | 출처 URL: <a href="https://help.openai.com/en/articles/20001106-codex-rate-card">https://help.openai.com/en/articles/20001106-codex-rate-card</a> | 확인 상태: 확인 완료</p>
+      </article>
+
+      <article class="card">
+        <h3>플랜 접근 문서는 앱, 플러그인, 권한 제어까지 묶어 설명</h3>
+        <div class="badge-row">
+          <span class="badge ok">OpenAI Help Center</span>
+          <span class="badge">Updated: 2 days ago</span>
+          <span class="badge">접근 권한</span>
+        </div>
+        <p><strong>Using Codex with your ChatGPT plan</strong> 문서는 2026-04-28 확인 시 최근 갱신 상태였고, Plus, Pro, Business, Enterprise/Edu 기본 포함, 한시적 Free/Go 포함, 일부 2x rate limits, Codex app/CLI/IDE/web 진입 경로를 한 문서에서 묶어 설명한다.</p>
+        <p>특히 플러그인, RBAC, Workspace app controls, Compliance API까지 한 곳에 모은 점이 중요하다. OpenAI는 Codex를 단순 코드 에이전트가 아니라 조직 운영 표면이 있는 제품군으로 정리하고 있다.</p>
+        <p class="meta-line">2026-04-28 확인 시 상대 표기 기준 | 출처: OpenAI Help Center | 출처 URL: <a href="https://help.openai.com/en/articles/11369540-codex-in-chatgpt">https://help.openai.com/en/articles/11369540-codex-in-chatgpt</a> | 확인 상태: 확인 완료</p>
+      </article>
+
+      <article class="card">
+        <h3>Academy 문서는 자동화와 프로젝트 단위를 전면으로 올렸다</h3>
+        <div class="badge-row">
+          <span class="badge ok">OpenAI Academy</span>
+          <span class="badge">2026-04-23</span>
+          <span class="badge">실무 가이드</span>
+        </div>
+        <p>OpenAI Academy의 <strong>Working with Codex</strong>와 <strong>Automations</strong>는 Codex를 채팅 도구가 아니라 프로젝트 폴더, 스레드, 반복 작업을 관리하는 실행 환경으로 설명한다.</p>
+        <p>공식 제품 표면이 app, projects, automations로 빠르게 넓어지고 있다는 점을 생각하면, 이번 3일 창의 Help Center 갱신과 Academy 흐름은 같은 방향을 가리킨다. Codex의 최근 강점은 기능 한두 개보다 자동화 운영 체계다.</p>
+        <p class="meta-line">발표일 2026-04-23 | 출처: OpenAI Academy | 출처 URL: <a href="https://openai.com/academy/working-with-codex/">https://openai.com/academy/working-with-codex/</a>, <a href="https://openai.com/academy/codex-automations/">https://openai.com/academy/codex-automations/</a> | 확인 상태: 확인 완료</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>Claude Code release <code>v2.1.119</code>: <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.119">https://github.com/anthropics/claude-code/releases/tag/v2.1.119</a></li>
+        <li>Anthropic Engineering, An update on recent Claude Code quality reports: <a href="https://www.anthropic.com/engineering/april-23-postmortem">https://www.anthropic.com/engineering/april-23-postmortem</a></li>
+        <li>Cursor Changelog: <a href="https://cursor.com/en-US/changelog">https://cursor.com/en-US/changelog</a></li>
+        <li>Cursor Research, Keeping the Cursor app stable: <a href="https://cursor.com/blog/app-stability">https://cursor.com/blog/app-stability</a></li>
+        <li>OpenAI Help Center, Codex rate card: <a href="https://help.openai.com/en/articles/20001106-codex-rate-card">https://help.openai.com/en/articles/20001106-codex-rate-card</a></li>
+        <li>OpenAI Help Center, Using Codex with your ChatGPT plan: <a href="https://help.openai.com/en/articles/11369540-codex-in-chatgpt">https://help.openai.com/en/articles/11369540-codex-in-chatgpt</a></li>
+        <li>OpenAI Academy, Working with Codex: <a href="https://openai.com/academy/working-with-codex/">https://openai.com/academy/working-with-codex/</a></li>
+        <li>OpenAI Academy, Automations: <a href="https://openai.com/academy/codex-automations/">https://openai.com/academy/codex-automations/</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

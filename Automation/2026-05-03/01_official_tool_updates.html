@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 AI 코딩 도구 업데이트 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e9f8ee;
+      --warn: #fff3da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #173c68 0%, #2b5f9d 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1d4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    code {
+      font-family: "Cascadia Code", "Consolas", monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>공식 AI 코딩 도구 업데이트 보고서</h1>
+      <p>생성일 2026-05-03 | 조사 기간 2026-04-30 ~ 2026-05-03</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 변화</strong><br>이번 창에서 가장 선명한 공식 메시지는 Cursor의 <strong>Security Review</strong>와 <strong>Team Marketplace</strong>였다. Claude Code는 <code>v2.1.126</code>으로 CLI 안정화와 Windows 흐름을 다듬었고, OpenAI Codex는 <strong>CLI 0.128.0</strong>과 플랜 문서 갱신으로 운영층을 확장했다.</div>
+        <div class="stat"><strong>실무 해석</strong><br>세 도구 모두 모델 성능 과시보다 <strong>운영 계약</strong>, <strong>권한 통제</strong>, <strong>반복 작업 지속성</strong>을 더 강하게 다루고 있다. 즉 현재 경쟁축은 답변 품질 단독이 아니라 에이전트를 오래 안전하게 굴리는 면이다.</div>
+        <div class="stat"><strong>확인 메모</strong><br>OpenAI Help Center는 절대 수정 시각 대신 상대 표기만 보여 주는 문서가 있어, 2026-05-03 실제 조회 사실은 확인했지만 정확한 수정 시각은 <strong>확인 불가</strong>로 남겼다. Claude Code와 Cursor는 게시 날짜를 직접 확인했다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">빠른 요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>빠른 요약</h2>
+      <div class="soft-box">
+        Cursor는 2026-04-30 Security Review와 2026-05-01 Team Marketplace를 연속으로 내며, 에디터 보조를 넘어 팀 배포와 감사 흐름을 가진 운영 플랫폼 이미지를 강화했다.
+      </div>
+      <div class="notice" style="margin-top: 14px;">
+        Claude Code는 2026-05-01 <code>v2.1.126</code>으로 OAuth, Windows PowerShell, project purge, gateway model picker를 정리했고, OpenAI Codex는 2026-04-30 CLI 0.128.0과 2026-05-03 조회 기준 최신 플랜 문서로 운영면을 재정비했다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3><code>v2.1.126</code> 배포로 인증과 Windows 셸 흐름을 정리</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Claude Code</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-05-01</span>
+        </div>
+        <p>Anthropic GitHub Releases 기준 <code>v2.1.126</code>은 2026-05-01 공개됐다. gateway model picker, <code>claude project purge</code>, pasted auth code 로그인, Windows PowerShell 7 탐지, PowerShell 기본 셸 처리 개선이 핵심이다.</p>
+        <p>이번 릴리스는 “새로운 데모”보다 긴 세션에서 자주 막히던 인증과 운영 복구 흐름을 줄이는 쪽에 집중했다. CLI 중심 팀에게는 이런 패치가 체감 가치가 더 크다.</p>
+        <div class="meta-line">출처: anthropics/claude-code GitHub Releases | <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">v2.1.126</a></div>
+      </article>
+
+      <article class="card">
+        <h3>추가 공식 릴리스는 2026-05-03까지 확인되지 않음</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Claude Code</span>
+          <span class="badge">조회일 2026-05-03</span>
+          <span class="badge">관찰 메모</span>
+        </div>
+        <p>이번 3일 창에서 Claude Code의 마지막 직접 릴리스는 <code>v2.1.126</code>이었다. 2026-05-02와 2026-05-03 추가 공식 태그나 별도 공지는 확인되지 않았다.</p>
+        <p>즉 Claude Code는 현재도 빠른 릴리스 주기를 유지하지만, 이번 창의 메시지는 확장보다 안정화와 셸 친화성 개선에 더 가깝다.</p>
+        <div class="meta-line">출처: <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">Claude Code release feed</a></div>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Security Review 베타로 PR 감사와 취약점 스캔을 제품화</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Cursor</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-04-30</span>
+        </div>
+        <p>Cursor는 2026-04-30 changelog에서 <em>Cursor Security Review</em>를 발표했다. Security Reviewer는 PR마다 보안 취약점, auth 회귀, 프롬프트 주입, 데이터 처리 위험을 검토하고, Vulnerability Scanner는 의존성 및 설정 문제를 예약 스캔한다.</p>
+        <p>SDK와 Background Agent로 실행면을 넓히던 흐름에 대해, Cursor가 이제는 감사 가능성과 통제 장치를 공식 기능으로 같이 묶고 있다는 점이 중요하다.</p>
+        <div class="meta-line">출처: Cursor Changelog | <a href="https://cursor.com/changelog/04-30-26">Cursor Security Review</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Team Marketplace 업데이트로 팀 배포 모델을 더 명시화</h3>
+        <div class="badge-row">
+          <span class="badge">도구: Cursor</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-05-01</span>
+        </div>
+        <p>2026-05-01 changelog의 <em>Team Marketplace Updates</em>는 저장소 연결 없이도 팀 마켓플레이스를 만들고, first-party plugin을 기본 해제, 기본 설치, 필수 설치로 배포할 수 있게 했다.</p>
+        <p>이 업데이트는 Cursor가 개인용 에디터 보조를 넘어서 “팀 공통 작업 계약을 배포하는 플랫폼”으로 이동하고 있음을 더 분명히 보여 준다.</p>
+        <div class="meta-line">출처: Cursor Changelog | <a href="https://cursor.com/changelog/05-01-26">Team Marketplace Updates</a></div>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>Codex CLI 0.128.0이 목표 지속성, 권한 프로필, 플러그인 흐름을 확장</h3>
+        <div class="badge-row">
+          <span class="badge">도구: OpenAI Codex</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">발표일 2026-04-30</span>
+        </div>
+        <p>Codex changelog의 2026-04-30 항목은 CLI 0.128.0 공개를 기록한다. persisted <code>/goal</code> workflow, <code>codex update</code>, 권한 프로필 확장, plugin-bundled hooks, 외부 agent 세션 import, MultiAgentV2 설정 명시화가 한 번에 들어갔다.</p>
+        <p>이번 릴리스는 단순한 사용성 패치가 아니라 “장기 작업을 어떻게 중단 없이 이어 가고 관리할 것인가”를 CLI 수준에서 강화한 업데이트로 읽힌다.</p>
+        <div class="meta-line">출처: OpenAI Codex Changelog | <a href="https://developers.openai.com/codex/changelog">Codex CLI 0.128.0</a></div>
+      </article>
+
+      <article class="card">
+        <h3>플랜 문서가 Codex 접근 범위와 데이터 제어 기능을 다시 정리</h3>
+        <div class="badge-row">
+          <span class="badge">도구: OpenAI Codex</span>
+          <span class="badge">조회일 2026-05-03</span>
+          <span class="badge">정확한 수정 시각 확인 불가</span>
+        </div>
+        <p><em>Using Codex with your ChatGPT plan</em> 문서는 2026-05-03 조회 기준 상대 표기 <strong>Updated: yesterday</strong>로 노출됐다. 본문은 Plus, Pro, Business, Enterprise/Edu 접근 범위와 함께 Memories, Automations, in-app browser, Computer Use를 한 문서로 정리한다.</p>
+        <p>Codex는 이번 창에서 새로운 쇼케이스보다 “누가 어떤 플랜과 권한으로 무엇을 쓸 수 있는가”를 더 분명히 하는 문서 운영에 무게를 두고 있다.</p>
+        <div class="meta-line">출처: OpenAI Help Center | <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a></div>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">Claude Code v2.1.126</a></li>
+        <li><a href="https://cursor.com/changelog/04-30-26">Cursor Security Review</a></li>
+        <li><a href="https://cursor.com/changelog/05-01-26">Team Marketplace Updates</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex changelog</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
