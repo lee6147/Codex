@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --link: #0a66c2;
+      --accent: #f2ecff;
+      --warn: #fff3cd;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #0b5168 0%, #3558a8 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(42, 43, 86, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #35508a;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일 2026-05-06 | 기본 기사 창 2026-05-05 ~ 2026-05-06 | 실제 적용 창 2026-04-30 ~ 2026-05-06</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장 여부</strong><br>기본 2일 창에서는 Claude Code 1건, Cursor 0~1건, Codex 0건 수준으로 균형이 부족했다. 그래서 기사 창을 <strong>2026-04-30 ~ 2026-05-06</strong>으로 넓혔다.</div>
+        <div class="stat"><strong>핵심 축</strong><br>확장 뒤 기사 흐름은 <strong>승인/통제 자동화</strong>, <strong>SDK·배포형 에이전트</strong>, <strong>장기 워크플로 운영</strong> 세 축으로 수렴했다.</div>
+        <div class="stat"><strong>실무 메모</strong><br>Claude는 auto mode와 보안 운영, Cursor는 SDK와 보안 검토, Codex는 장기 goal 실행과 spec-driven workflow가 핵심 화두였다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">기사 창 해석</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>기사 창 해석</h2>
+      <div class="notice">
+        기사량이 낮아 7일 창으로 확장했다. 기본 2일 범위인 <strong>2026-05-05 ~ 2026-05-06</strong>만으로는 세 도구를 균형 있게 비교할 만한 실사용 글이 부족했다.
+      </div>
+      <div class="soft-box">
+        확장 뒤에도 결론은 단순하다. 세 도구 모두 “더 많이 자동화한다”는 방향은 같지만, 최근 읽을 만한 글들은 성능보다 승인 UX, 보안 검토, SDK 배포, 장기 실행 계약을 더 많이 다룬다. 즉 지금 생산성 전쟁은 모델 데모보다 운영 설계 전쟁이다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>Claude Code Auto Mode는 승인 피로를 줄이는 방향으로 읽힌다</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-05</span>
+          <span class="badge">매체 InfoQ</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>InfoQ는 Claude Code Auto Mode를 “인간 승인 게이트가 완전히 사라지는 기능”이 아니라, 멀티스텝 개발 작업에서 반복 승인 마찰을 줄이는 구조로 설명한다. 민감한 작업에는 여전히 사람 검토가 남고, 나머지 안전 작업은 더 길게 자동 실행된다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code를 평가할 때 핵심 질문은 “얼마나 자율적인가”가 아니라 “어떤 경계에서 자율성을 열어 둘 것인가”다. 안전한 자동화 정책 설계가 제품 가치의 일부가 됐다.</p>
+        <p class="meta-line">출처: <a href="https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/">infoq.com/news/2026/05/anthropic-claude-code-auto-mode/</a> | 신뢰도 메모: 뉴스 기사</p>
+      </article>
+
+      <article class="card">
+        <h3>Claude Security 공개 베타는 “코딩 에이전트”를 보안 운영 도구로 넓힌다</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-04</span>
+          <span class="badge">매체 ITPro</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>ITPro는 Claude Security 공개 베타를 코드 스캔, 취약점 탐지, 패치 생성까지 묶는 엔터프라이즈 보안 도구로 해석했다. severity justification, confidence, 재현성 같은 근거 층이 같이 붙는다는 점이 강조된다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code 계열을 도입할 때는 이제 코드 생성 성능만 볼 수 없다. 보안팀과 개발팀이 같은 에이전트 런타임을 공유하는 운영 설계가 더 중요해진다.</p>
+        <p class="meta-line">출처: <a href="https://www.itpro.com/security/anthropic-targets-vulnerability-detection-gains-with-claude-security-public-beta-heres-what-users-can-expect">itpro.com/security/anthropic-targets-vulnerability-detection-gains-with-claude-security-public-beta-heres-what-users-can-expect</a> | 신뢰도 메모: 뉴스 기사</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Cursor SDK는 에디터 안 에이전트를 배포형 인프라로 끌어낸다</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-04</span>
+          <span class="badge">매체 DevOps.com</span>
+          <span class="badge">분석 기사</span>
+        </div>
+        <p>DevOps.com은 Cursor SDK를 “IDE 기능 확장”보다 “배포 가능한 agent runtime”으로 읽는다. 데스크톱 앱, CLI, 웹의 런타임을 코드로 호출할 수 있게 되면서, CI/CD나 백엔드 서비스 안에서 같은 에이전트를 구동할 수 있다는 해석이다.</p>
+        <p><strong>실무 시사점:</strong> Cursor 도입은 이제 개인용 에디터 선택이 아니라 팀 자동화 플랫폼 선택에 가까워지고 있다. 특히 SDK가 붙는 순간 제품팀과 플랫폼팀의 관심사가 만난다.</p>
+        <p class="meta-line">출처: <a href="https://devops.com/cursors-new-sdk-turns-ai-coding-agents-into-deployable-infrastructure/">devops.com/cursors-new-sdk-turns-ai-coding-agents-into-deployable-infrastructure/</a> | 신뢰도 메모: 분석 기사</p>
+      </article>
+
+      <article class="card">
+        <h3>Cursor Security Review는 “항상 켜진 보안 에이전트”라는 제품 방향을 드러낸다</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-30</span>
+          <span class="badge">매체 Cursor</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p>Cursor 공식 changelog는 Security Review를 Teams/Enterprise용 베타로 소개하며 Security Reviewer와 Vulnerability Scanner 두 종류의 상시 보안 에이전트를 전면에 세운다. PR diff 리뷰와 정기 스캔이 모두 제품 안으로 들어온다.</p>
+        <p><strong>실무 시사점:</strong> Cursor는 “좋은 코드 보조”를 넘어, 리뷰와 보안 운영까지 지속적으로 돌리는 팀 플랫폼이 되려 한다. 이 흐름은 이번 공식 2026-05-04 운영 제어 강화와도 자연스럽게 이어진다.</p>
+        <p class="meta-line">출처: <a href="https://cursor.com/changelog/05-01-26">cursor.com/changelog/05-01-26</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3><code>/goal</code>은 Codex를 “한 번 쓰는 CLI”에서 장기 실행 런타임으로 바꾼다</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-01</span>
+          <span class="badge">매체 Tecton &amp; Tide</span>
+          <span class="badge">실사용 후기</span>
+        </div>
+        <p>Tecton &amp; Tide는 Codex CLI <code>v0.128.0</code>의 <code>/goal</code>을 persisted goal 기능으로 설명한다. 터미널 종료나 장시간 중단 뒤에도 목표 상태를 이어가며, 실제 6시간대 세션을 통해 장기 런타임 성격을 강조한다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 단순 즉답형 CLI보다 “오래 걸리는 작업을 맡기고 다시 돌아오는 운영면”에 더 강하다. 그래서 프롬프트보다 상태 관리와 중간 검증이 더 중요해진다.</p>
+        <p class="meta-line">출처: <a href="https://tectontide.com/en/blog/codex-goal-six-hour-run">tectontide.com/en/blog/codex-goal-six-hour-run</a> | 신뢰도 메모: 실사용 후기</p>
+      </article>
+
+      <article class="card">
+        <h3>SPEC.md에서 <code>/goal</code>로 이어지는 워크플로는 Codex를 계획-실행 체계 안에 둔다</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-01</span>
+          <span class="badge">매체 Tecton &amp; Tide</span>
+          <span class="badge">워크플로 분석</span>
+        </div>
+        <p>같은 매체의 후속 글은 Claude로 <code>SPEC.md</code>를 만들고, GPT-5.5 기반 Codex로 그 spec을 다듬은 뒤 <code>/goal</code>에 넘기는 파이프라인을 제안한다. 핵심은 즉흥 프롬프트보다 실행 계약을 먼저 만드는 데 있다.</p>
+        <p><strong>실무 시사점:</strong> Codex를 잘 쓰는 팀은 “좋은 모델”보다 “좋은 spec과 실행 계약”을 먼저 만든다. 이 점은 오늘 GitHub Trending의 harness 중심 흐름과도 정확히 맞물린다.</p>
+        <p class="meta-line">출처: <a href="https://tectontide.com/en/blog/codex-spec-to-goal-workflow">tectontide.com/en/blog/codex-spec-to-goal-workflow</a> | 신뢰도 메모: 워크플로 분석</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/">InfoQ - Claude Code Auto Mode</a></li>
+        <li><a href="https://www.itpro.com/security/anthropic-targets-vulnerability-detection-gains-with-claude-security-public-beta-heres-what-users-can-expect">ITPro - Claude Security public beta</a></li>
+        <li><a href="https://devops.com/cursors-new-sdk-turns-ai-coding-agents-into-deployable-infrastructure/">DevOps.com - Cursor SDK</a></li>
+        <li><a href="https://cursor.com/changelog/05-01-26">Cursor Changelog - Security Review</a></li>
+        <li><a href="https://tectontide.com/en/blog/codex-goal-six-hour-run">Tecton &amp; Tide - Codex /goal</a></li>
+        <li><a href="https://tectontide.com/en/blog/codex-spec-to-goal-workflow">Tecton &amp; Tide - Codex spec workflow</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

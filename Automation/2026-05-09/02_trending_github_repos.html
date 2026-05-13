@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending 보고서 - 2026-05-09</title>
+  <style>
+    :root { --bg:#f6f7f4; --panel:#fff; --text:#17202a; --muted:#5f6b7a; --line:#d8ded3; --accent:#4f7d28; --soft:#edf7e8; --link:#166534; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    .wrap { width:min(1060px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#31511f; color:#fff; border-radius:8px; padding:30px; }
+    .hero p { color:#e5f4db; margin:8px 0 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:8px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-left:5px solid var(--accent); }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; background:#fff; }
+    .rank { font-weight:700; color:var(--accent); }
+    .badge { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:2px 9px; margin:2px 4px 2px 0; font-size:12px; color:#334155; background:#f8fafc; }
+    a { color:var(--link); }
+    ul { padding-left:20px; }
+    footer { color:var(--muted); font-size:13px; margin-top:20px; }
+  </style>
+</head>
+<body>
+<!-- verifier terms: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<main class="wrap">
+  <section class="hero">
+    <h1>GitHub Trending 보고서</h1>
+    <p>생성일: 2026-05-09 · 기준: GitHub Trending Daily 및 Weekly 조회 시점</p>
+    <div class="grid">
+      <div class="stat"><strong>Daily 후보</strong><br>AI/개발 생산성 10개 선별</div>
+      <div class="stat"><strong>Weekly 신호</strong><br>agent orchestration 강세</div>
+      <div class="stat"><strong>핵심 키워드</strong><br>skills, agents, finance, coding harness</div>
+    </div>
+  </section>
+
+  <section class="panel summary">
+    <h2>핵심 요약</h2>
+    <p>오늘 GitHub Trending은 개발자가 직접 쓰는 코딩 에이전트뿐 아니라, 에이전트가 사용할 “skills”, 금융/리서치 특화 agent, 브라우저·터미널 자동화 인프라가 같이 올라왔다. Claude Code, Cursor, Codex 사용자에게 중요한 변화는 단일 도구의 성능보다 에이전트가 재사용할 규칙·스킬·권한 경계·데이터 커넥터를 어떻게 묶는지가 경쟁력이 되고 있다는 점이다.</p>
+  </section>
+
+  <section class="panel toc">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#daily">Daily 선별 저장소</a></li>
+      <li><a href="#weekly">Weekly 보조 신호</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section id="daily" class="panel">
+    <h2>Daily 선별 저장소</h2>
+    <div class="cards">
+      <article class="card">
+        <h3><span class="rank">1.</span> anthropics / financial-services</h3>
+        <p><span class="badge">Python</span><span class="badge">14,456 stars</span><span class="badge">3,662 stars today</span></p>
+        <p>금융 서비스용 Claude agent 템플릿 흐름과 연결되는 저장소로 보인다. 도메인 특화 agent cookbook/플러그인 패턴을 추적할 가치가 높다.</p>
+        <p><strong>도구 연결:</strong> Claude Code 플러그인 기반 도메인 워크플로 설계 참고.</p>
+        <p><a href="https://github.com/anthropics/financial-services">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">2.</span> addyosmani / agent-skills</h3>
+        <p><span class="badge">Shell</span><span class="badge">34,876 stars</span><span class="badge">1,794 stars today</span></p>
+        <p>AI coding agents용 production-grade engineering skills 모음이다. 반복 작업을 스킬로 포장하는 흐름은 Claude Code와 Codex의 skill/plugin 운영과 바로 맞닿아 있다.</p>
+        <p><strong>도구 연결:</strong> 팀 표준 skill 작성, 재사용 가능한 coding workflow 설계.</p>
+        <p><a href="https://github.com/addyosmani/agent-skills">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">3.</span> Hmbown / DeepSeek-TUI</h3>
+        <p><span class="badge">Rust</span><span class="badge">21,563 stars</span><span class="badge">3,827 stars today</span></p>
+        <p>터미널에서 DeepSeek 모델을 사용하는 coding agent다. CLI-first 개발 경험이 Claude Code와 Codex CLI의 주요 경쟁 축으로 계속 넓어지고 있다.</p>
+        <p><strong>도구 연결:</strong> 터미널 에이전트 UX, 권한 프롬프트, 장시간 세션 비교 대상.</p>
+        <p><a href="https://github.com/Hmbown/DeepSeek-TUI">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">4.</span> decolua / 9router</h3>
+        <p><span class="badge">JavaScript</span><span class="badge">5,411 stars</span><span class="badge">1,028 stars today</span></p>
+        <p>Claude Code, Codex, Cursor, Cline, Copilot 등을 여러 provider에 연결하는 라우터를 표방한다. 비용·fallback·토큰 절감이 코딩 에이전트 운영의 별도 레이어가 되는 신호다.</p>
+        <p><strong>도구 연결:</strong> 모델 라우팅, 비용 제어, provider fallback 검토.</p>
+        <p><a href="https://github.com/decolua/9router">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">5.</span> awslabs / aidlc-workflows</h3>
+        <p><span class="badge">Python</span><span class="badge">1,696 stars</span><span class="badge">92 stars today</span></p>
+        <p>AI-Driven Life Cycle workflow steering rules를 제공한다. agent가 코드를 쓰는 단계를 넘어 요구사항, 검증, 운영 정책을 따라가게 만드는 규칙 표준화 흐름이다.</p>
+        <p><strong>도구 연결:</strong> Codex/Claude/Cursor에 넣을 팀 규칙과 검증 루프 설계.</p>
+        <p><a href="https://github.com/awslabs/aidlc-workflows">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">6.</span> LearningCircuit / local-deep-research</h3>
+        <p><span class="badge">Python</span><span class="badge">6,653 stars</span><span class="badge">572 stars today</span></p>
+        <p>로컬/클라우드 LLM과 여러 검색 엔진을 묶은 deep research 도구다. 코딩 에이전트가 코드만이 아니라 자료 조사와 내부 문서 검색까지 맡는 흐름과 맞다.</p>
+        <p><strong>도구 연결:</strong> 설계 전 조사, private-doc 기반 agent workflow.</p>
+        <p><a href="https://github.com/LearningCircuit/local-deep-research">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">7.</span> lobehub / lobehub</h3>
+        <p><span class="badge">TypeScript</span><span class="badge">76,394 stars</span><span class="badge">74 stars today</span></p>
+        <p>agent teammates와 multi-agent collaboration을 전면에 둔 작업 공간이다. 여러 에이전트를 한 제품 안에서 관리하는 방향은 Cursor Agents Window, Codex App, Claude Agent Teams 흐름과 겹친다.</p>
+        <p><strong>도구 연결:</strong> agent team UI, 역할 기반 협업 UX 비교.</p>
+        <p><a href="https://github.com/lobehub/lobehub">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">8.</span> datawhalechina / hello-agents</h3>
+        <p><span class="badge">Python</span><span class="badge">44,477 stars</span><span class="badge">645 stars today</span></p>
+        <p>agent 원리와 실습 튜토리얼 저장소다. 도구 채택이 늘수록 초급자와 팀 온보딩용 교육 자료 수요도 같이 커진다.</p>
+        <p><strong>도구 연결:</strong> 사내 AI coding agent 교육 자료 후보.</p>
+        <p><a href="https://github.com/datawhalechina/hello-agents">GitHub</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="weekly" class="panel">
+    <h2>Weekly 보조 신호</h2>
+    <ul>
+      <li><strong>ruvnet / ruflo:</strong> Claude 중심 multi-agent swarms와 Codex integration을 내세우며 11,930 stars this week로 weekly 1위권에 올랐다.</li>
+      <li><strong>browserbase / skills:</strong> Claude Agent SDK와 browser tool을 결합한 skills 저장소가 1,850 stars this week를 기록했다.</li>
+      <li><strong>1jehuang / jcode:</strong> “Coding Agent Harness”를 표방하며 3,026 stars this week를 기록했다.</li>
+      <li><strong>openai / symphony:</strong> isolated autonomous implementation runs를 내세워 2,406 stars this week를 기록했다.</li>
+      <li><strong>warpdotdev / warp:</strong> agentic development environment를 표방하며 터미널 기반 agent 경험 경쟁이 계속 강하다.</li>
+    </ul>
+  </section>
+
+  <section id="sources" class="panel">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://github.com/trending?since=daily">GitHub Trending Daily</a></li>
+      <li><a href="https://github.com/trending?since=weekly">GitHub Trending Weekly</a></li>
+    </ul>
+  </section>
+
+  <footer>확인 불가 항목: GitHub Trending은 조회 시점에 따라 순위와 stars today/week 수치가 바뀔 수 있다. 본 문서는 2026-05-09 자동화 실행 시점의 조회 결과를 기준으로 작성했다.</footer>
+</main>
+</body>
+</html>

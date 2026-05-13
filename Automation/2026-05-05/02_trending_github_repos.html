@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending AI·개발 생산성 저장소</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #eef6ec;
+      --ok: #e9f8ee;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #1d5c34 0%, #3a8b59 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(24, 76, 43, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #285c39;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>GitHub Trending AI·개발 생산성 저장소</h1>
+      <p>생성일 2026-05-05 | 기준 스냅샷 GitHub Trending Daily | 조회 범위 Python, TypeScript, Rust 일간 트렌딩</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 관찰</strong><br>오늘 스냅샷은 모델 자체보다 <strong>agent orchestration</strong>, <strong>MCP 연결</strong>, <strong>harness</strong>, <strong>context 관리</strong> 저장소가 강했다.</div>
+        <div class="stat"><strong>선정 기준</strong><br>각 언어 일간 트렌딩에서 AI 코딩, 에이전트 자동화, 개발 생산성과 직접 연결되는 저장소만 남겼다. 금융·보안·멀티미디어 도메인이라도 에이전트 구조 신호가 강하면 포함했다.</div>
+        <div class="stat"><strong>실무 해석</strong><br>Claude Code, Cursor, Codex 사용자에게 중요한 시장 흐름은 “더 좋은 모델”보다 “더 오래 굴리는 운영층”이다. 하네스, 컨텍스트 압축, 스킬 배포, 커넥터가 전면으로 올라왔다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">트렌드 해석</a></li>
+        <li><a href="#repos">주목 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>트렌드 해석</h2>
+      <div class="soft-box">
+        오늘 선별한 저장소를 묶어 보면 세 축이 분명하다. 첫째는 <strong>오케스트레이션</strong>, 둘째는 <strong>연결면</strong>, 셋째는 <strong>운영 최적화</strong>다. 모델 호출 그 자체보다 에이전트를 어떻게 분업시키고, 어디에 붙이고, 어떻게 망가지지 않게 운용할지가 트렌딩 상단을 차지한다.
+      </div>
+      <div class="soft-box">
+        특히 <strong>ruflo</strong>, <strong>TradingAgents</strong>, <strong>flue</strong>는 병렬·샌드박스형 에이전트 구조를, <strong>n8n-mcp</strong>는 외부 자동화 연결을, <strong>context-mode</strong>와 <strong>jcode</strong>는 장기 세션 운영 품질을, <strong>DeepSeek-TUI</strong>는 터미널형 실행면 수요를 보여 준다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>주목 저장소</h2>
+
+      <article class="card">
+        <h3>1. ruvnet / ruflo</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge ok">41,032 stars</span>
+          <span class="badge">오늘 +2,594</span>
+        </div>
+        <p>ruflo는 Claude 중심의 agent orchestration platform을 전면에 내세운다. multi-agent swarms, autonomous workflows, RAG integration, Claude Code / Codex integration을 한 묶음으로 설명한다.</p>
+        <p><strong>지금 주목할 이유:</strong> 단일 챗 보조를 넘어 역할 분리와 병렬 실행을 하나의 제품군으로 보려는 수요가 폭발적으로 커지고 있다.</p>
+        <p><strong>연결점:</strong> Cursor의 Agents Window, Codex의 multi-agent/automation, Claude Code의 subagent 흐름과 직접 맞닿는다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/ruvnet/ruflo">github.com/ruvnet/ruflo</a> | 한줄 총평: “에이전트 운영층”이 이제 독립 카테고리라는 사실을 가장 노골적으로 보여 주는 저장소다.</div>
+      </article>
+
+      <article class="card">
+        <h3>2. TauricResearch / TradingAgents</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge ok">67,141 stars</span>
+          <span class="badge">오늘 +2,181</span>
+        </div>
+        <p>금융 특화 multi-agent LLM framework지만, 오늘 트렌딩에서 중요한 것은 도메인이 아니라 구조다. 여러 역할의 에이전트를 조합해 장기 판단 루프를 돌리는 패턴이 강하게 소비되고 있다.</p>
+        <p><strong>지금 주목할 이유:</strong> 개발 생산성 영역에서도 “한 모델에게 다 시키기”보다 “에이전트를 나눠 맡기기”가 표준 패턴으로 굳어지는 중이다.</p>
+        <p><strong>연결점:</strong> 계획, 실행, 검증을 분리하는 Codex/Claude Code/Cursor 팀형 워크플로 설계에 참고할 만하다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/TauricResearch/TradingAgents">github.com/TauricResearch/TradingAgents</a> | 한줄 총평: 도메인은 금융이지만, 관심의 본질은 멀티에이전트 실행 설계다.</div>
+      </article>
+
+      <article class="card">
+        <h3>3. czlonkowski / n8n-mcp</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge ok">19,851 stars</span>
+          <span class="badge">오늘 +497</span>
+        </div>
+        <p>Claude Desktop, Claude Code, Windsurf, Cursor에서 n8n 워크플로를 만들게 하는 MCP 서버다. 코드 에이전트와 외부 자동화 시스템 사이의 연결면 자체가 주요 관심사로 떠올랐다는 뜻이다.</p>
+        <p><strong>지금 주목할 이유:</strong> 생산성 차이는 모델보다 연결성에서 벌어진다. MCP가 외부 시스템으로 나가는 공통 언어로 굳어지는 흐름이 선명하다.</p>
+        <p><strong>연결점:</strong> 툴 호출을 리포 바깥 운영 시스템까지 넓히는 팀에게 특히 직접적이다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/czlonkowski/n8n-mcp">github.com/czlonkowski/n8n-mcp</a> | 한줄 총평: “에이전트가 실제 일을 하게 만드는 커넥터” 수요를 가장 잘 보여 준다.</div>
+      </article>
+
+      <article class="card">
+        <h3>4. withastro / flue</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge ok">2,341 stars</span>
+          <span class="badge">오늘 +305</span>
+        </div>
+        <p>flue는 스스로를 sandbox agent framework라고 정의한다. 즉 에이전트 품질보다 샌드박스 경계와 실행 프레임을 먼저 설계하려는 움직임이다.</p>
+        <p><strong>지금 주목할 이유:</strong> 안전하게 굴리는 구조가 경쟁력이 되는 시기라는 점을 잘 드러낸다.</p>
+        <p><strong>연결점:</strong> Codex의 sandbox profile, Claude Code의 permission model, Cursor의 dedicated VM 흐름과 같은 문제를 다룬다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/withastro/flue">github.com/withastro/flue</a> | 한줄 총평: 에이전트 프레임워크의 핵심이 이제 “얼마나 똑똑한가”보다 “어떻게 가둬서 굴리는가”로 이동했다.</div>
+      </article>
+
+      <article class="card">
+        <h3>5. mksglu / context-mode</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge ok">12,543 stars</span>
+          <span class="badge">오늘 +309</span>
+        </div>
+        <p>context-mode는 AI coding agents의 context window optimization을 전면에 둔다. tool output을 샌드박싱해 컨텍스트 낭비를 줄인다는 설명은 지금 현장 pain point를 정확히 찌른다.</p>
+        <p><strong>지금 주목할 이유:</strong> 장기 세션에서는 모델 성능보다 컨텍스트 관리가 실제 품질을 좌우한다.</p>
+        <p><strong>연결점:</strong> 큰 리포에서 Claude Code, Cursor, Codex를 오래 돌릴 때 생기는 compaction과 context decay 문제에 바로 연결된다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/mksglu/context-mode">github.com/mksglu/context-mode</a> | 한줄 총평: 컨텍스트 관리가 이제 보조 기능이 아니라 핵심 운영 레이어다.</div>
+      </article>
+
+      <article class="card">
+        <h3>6. Hmbown / DeepSeek-TUI</h3>
+        <div class="badge-row">
+          <span class="badge">Rust</span>
+          <span class="badge ok">3,787 stars</span>
+          <span class="badge">오늘 +1,277</span>
+        </div>
+        <p>DeepSeek-TUI는 터미널에서 도는 coding agent를 전면에 내세운다. GUI보다 셸 안에서 길게 이어지는 작업 흐름에 여전히 큰 수요가 있다는 점을 보여 준다.</p>
+        <p><strong>지금 주목할 이유:</strong> CLI형 작업면은 여전히 빠르고 검증 가능하며, 복잡한 코드베이스에서 선호도가 높다.</p>
+        <p><strong>연결점:</strong> Claude Code와 Codex CLI가 강한 이유를 그대로 설명해 주는 외부 신호다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/Hmbown/DeepSeek-TUI">github.com/Hmbown/DeepSeek-TUI</a> | 한줄 총평: 터미널형 에이전트 경험은 아직도 강한 시장 축이다.</div>
+      </article>
+
+      <article class="card">
+        <h3>7. 1jehuang / jcode</h3>
+        <div class="badge-row">
+          <span class="badge">Rust</span>
+          <span class="badge ok">3,849 stars</span>
+          <span class="badge">오늘 +545</span>
+        </div>
+        <p>jcode는 설명 자체가 <em>Coding Agent Harness</em>다. 규칙, 검증, 반복 실행, 리뷰 가능한 변경이라는 하네스 자산이 독립적인 제품 가치가 됐다는 신호다.</p>
+        <p><strong>지금 주목할 이유:</strong> 모델을 바꿔도 하네스는 남는다. 즉 팀 경쟁력은 점점 모델보다 실행 계약에 쌓인다.</p>
+        <p><strong>연결점:</strong> 오늘 이 AI trend 하네스처럼 로컬 계약과 검증 루프를 중시하는 팀에 특히 직접적이다.</p>
+        <div class="meta-line">저장소: <a href="https://github.com/1jehuang/jcode">github.com/1jehuang/jcode</a> | 한줄 총평: “하네스가 곧 제품”이라는 흐름을 가장 직접적으로 보여 준다.</div>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending/python?since=daily">GitHub Trending Python Daily</a></li>
+        <li><a href="https://github.com/trending/typescript?since=daily">GitHub Trending TypeScript Daily</a></li>
+        <li><a href="https://github.com/trending/rust?since=daily">GitHub Trending Rust Daily</a></li>
+        <li><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></li>
+        <li><a href="https://github.com/TauricResearch/TradingAgents">TauricResearch/TradingAgents</a></li>
+        <li><a href="https://github.com/czlonkowski/n8n-mcp">czlonkowski/n8n-mcp</a></li>
+        <li><a href="https://github.com/withastro/flue">withastro/flue</a></li>
+        <li><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></li>
+        <li><a href="https://github.com/Hmbown/DeepSeek-TUI">Hmbown/DeepSeek-TUI</a></li>
+        <li><a href="https://github.com/1jehuang/jcode">1jehuang/jcode</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

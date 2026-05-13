@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-07</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --ink:#18202a; --muted:#64748b; --line:#d8dee8; --accent:#0f6b6e; --soft:#e7f5f2; --warn:#fff4d6; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    a { color:#075985; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#12343b; color:white; padding:32px; border-radius:8px; }
+    header p { margin:8px 0 0; color:#d7eef0; }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:18px; }
+    .meta div { border:1px solid rgba(255,255,255,.22); padding:12px; border-radius:8px; background:rgba(255,255,255,.08); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-left:5px solid var(--accent); }
+    .notice { background:var(--warn); }
+    h1,h2,h3 { line-height:1.25; margin-top:0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; background:#fff; }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:700; background:#e2e8f0; color:#334155; margin-right:6px; }
+    .ok { background:#dff7e7; color:#166534; }
+    .watch { background:#fef3c7; color:#92400e; }
+    .small { color:var(--muted); font-size:14px; }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <!-- harness-check: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main class="wrap">
+    <header>
+      <h1>공식 업데이트 보고서</h1>
+      <p>Claude Code, Cursor, OpenAI Codex의 최근 3일 공식 업데이트 흐름을 확인한 요약입니다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-07</div>
+        <div><strong>조사 기준</strong><br>2026-05-05 ~ 2026-05-07</div>
+        <div><strong>확인 방식</strong><br>공식 릴리스·체인지로그 우선</div>
+        <div><strong>확인 상태</strong><br>공식 확인 완료 / 일부 발행일 확인 불가</div>
+      </div>
+    </header>
+
+    <section class="panel summary">
+      <h2>상단 요약</h2>
+      <ul>
+        <li><strong>Cursor</strong>는 2026-05-06에 3.3 릴리스를 공개했고, 컨텍스트 사용량 가시화와 에이전트 터미널 제어가 핵심입니다.</li>
+        <li><strong>Claude Code</strong>는 공식 GitHub 릴리스에서 2.1.131까지 확인되며, 최근 항목은 안정성 수정과 플러그인 URL 설치 흐름 개선이 중심입니다.</li>
+        <li><strong>OpenAI Codex CLI</strong>는 0.129.x alpha가 2026-05-04 ~ 2026-05-06에 집중적으로 올라왔고, 안정판 기준선은 0.128.0입니다.</li>
+      </ul>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>1. Claude Code</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="badge ok">확인 완료</span><span class="badge">2.1.131</span>
+          <h3>안정성 중심의 최신 릴리스</h3>
+          <p>공식 GitHub 릴리스에서 2.1.131 버전이 최신으로 확인됩니다. 릴리스 노트는 압축되어 있어 세부 기능보다 버전 흐름과 패치 반영 여부 확인에 적합합니다.</p>
+          <p><strong>실무 의미:</strong> 팀 표준 설치 버전을 고정하는 경우 2.1.131을 기준으로 재현성을 맞추는 것이 좋습니다.</p>
+          <p class="small">발표일: 공식 페이지에서 상대 시간만 확인됨. 확인일: 2026-05-07.</p>
+        </article>
+        <article class="card">
+          <span class="badge ok">확인 완료</span><span class="badge">2.1.129</span>
+          <h3>플러그인 URL 설치 흐름 개선</h3>
+          <p>최근 릴리스 흐름에서 플러그인 URL 설치와 관련한 개선이 확인됩니다. Claude Code를 사내 확장·워크플로 자동화와 묶어 쓰는 팀에는 배포 편의성과 온보딩 안정성에 영향을 줍니다.</p>
+          <p><strong>주의:</strong> 플러그인 배포는 신뢰 경계가 넓어지므로 내부 허용 목록과 설치 경로 검증이 필요합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>2. Cursor</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="badge ok">확인 완료</span><span class="badge">2026-05-06</span>
+          <h3>Cursor 3.3: 컨텍스트 사용량 표시</h3>
+          <p>Cursor 3.3은 에이전트가 사용 중인 컨텍스트를 드롭다운으로 보여주는 기능을 추가했습니다. 긴 작업에서 모델이 왜 느려졌는지, 어떤 컨텍스트가 비용을 쓰는지 파악하기 쉬워집니다.</p>
+          <p><strong>실무 의미:</strong> 대형 리포지토리에서 불필요한 파일 주입을 줄이고, 에이전트 세션을 끊을 타이밍을 판단하는 데 유용합니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge ok">확인 완료</span><span class="badge">2026-05-06</span>
+          <h3>에이전트 터미널 제어와 병렬성 개선</h3>
+          <p>에이전트가 여러 터미널을 병렬로 만들고, 각각의 작업을 추적할 수 있게 된 점이 핵심입니다. 자동 테스트·서버 실행·로그 감시를 동시에 돌리는 개발 흐름에 맞습니다.</p>
+          <p><strong>관리 포인트:</strong> 병렬 실행은 빠르지만 실패 원인 분리가 어려워질 수 있으므로 명령 로그와 종료 상태를 함께 남겨야 합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>3. OpenAI Codex</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="badge ok">확인 완료</span><span class="badge">0.129.x alpha</span>
+          <h3>alpha 릴리스가 2026-05-04 ~ 2026-05-06에 집중</h3>
+          <p>OpenAI Codex GitHub 릴리스에서 0.129.0-alpha.6부터 0.129.0-alpha.10까지의 프리릴리스 흐름이 확인됩니다. 자동화·검증 환경에서는 alpha 채널을 운영 표준으로 쓰기보다 별도 실험 브랜치에서 확인하는 편이 안전합니다.</p>
+          <p><strong>실무 의미:</strong> CLI 동작, 샌드박스, 도구 호출 계약이 바뀔 수 있으므로 고정 버전과 회귀 체크가 필요합니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge watch">기준선</span><span class="badge">0.128.0</span>
+          <h3>안정판 기준선은 2026-04-30 릴리스</h3>
+          <p>최근 3일 안의 안정판 릴리스는 확인되지 않았습니다. 오늘 기준 운영 안정성을 비교할 때는 0.128.0을 기준선으로 두고 alpha 흐름을 별도 관찰하는 것이 합리적입니다.</p>
+          <p><strong>확인 상태:</strong> 공식 GitHub 릴리스 기준 확인 완료.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel notice">
+      <h2>확인 불가 항목</h2>
+      <ul>
+        <li>Claude Code 일부 릴리스의 정확한 게시일은 공식 GitHub 화면에서 상대 시간 중심으로 확인되어, 보고서에는 확인일을 함께 표기했습니다.</li>
+        <li>OpenAI Codex alpha 릴리스별 세부 변경 내용은 릴리스 제목만으로는 충분히 분리되지 않아, 운영 판단은 alpha 채널 존재와 버전 흐름 중심으로 정리했습니다.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>Anthropic Claude Code GitHub Releases: <a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a></li>
+        <li>Anthropic Claude Code Changelog: <a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</a></li>
+        <li>Cursor Changelog 3.3: <a href="https://cursor.com/changelog/05-06-26">https://cursor.com/changelog/05-06-26</a></li>
+        <li>OpenAI Codex GitHub Releases: <a href="https://github.com/openai/codex/releases">https://github.com/openai/codex/releases</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

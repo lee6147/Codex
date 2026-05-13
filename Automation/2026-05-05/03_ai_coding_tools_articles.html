@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --link: #0a66c2;
+      --accent: #f2ecff;
+      --warn: #fff3cd;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #0b5168 0%, #3558a8 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(42, 43, 86, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #35508a;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일 2026-05-05 | 기본 기사 창 2026-05-04 ~ 2026-05-05 | 실제 적용 창 2026-04-29 ~ 2026-05-05</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장 여부</strong><br>최근 2일 창만으로는 Claude Code, Cursor, OpenAI Codex를 균형 있게 다룰 만한 기사 수가 부족했다. 그래서 기사 창을 <strong>2026-04-29 ~ 2026-05-05</strong>로 넓혔다.</div>
+        <div class="stat"><strong>핵심 축</strong><br>확장 뒤 기사 흐름은 <strong>운영 거버넌스</strong>, <strong>팀 배포/제품화</strong>, <strong>비용과 통제</strong> 세 축으로 수렴했다. 성능 자랑보다 운영 현실이 더 많이 언급된다.</div>
+        <div class="stat"><strong>실무 메모</strong><br>Codex는 공식 문서 비중이 높고, Cursor는 SDK와 팀 플랫폼 해석이 두드러지며, Claude Code는 비용·보안·권한 경계 이슈가 강하게 붙는다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">기사 창 해석</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>기사 창 해석</h2>
+      <div class="notice">
+        기사량이 낮아 7일 창으로 확장했다. 기본 2일 범위만으로는 세 도구를 모두 실사용 관점에서 비교하기 어려웠다.
+      </div>
+      <div class="soft-box">
+        확장 뒤에도 결론은 같다. 세 도구 모두 더 많이 자동화하려고 하지만, 최근 읽을 만한 글들은 성능보다 승인 UX, 팀 운영, 비용 추적, 보안 책임을 먼저 본다. 즉 지금 생산성 전쟁은 모델 품질만의 경쟁이 아니다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>Anthropic이 Claude Code 비용 추정치를 상향 조정</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-29</span>
+          <span class="badge">매체 Business Insider</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>Business Insider는 Anthropic이 Claude Code의 예상 토큰 비용 설명을 조정했다고 전했다. 평균 enterprise developer active day 비용을 더 높게 잡은 이유는 가격 인상보다 <strong>Opus 4.7 중심 사용 패턴 변화</strong>라는 해석이 붙었다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code는 단순 월 구독 툴이 아니라 사용량 관리가 필요한 운영 도구로 읽어야 한다. 성능이 좋아질수록 비용 추적의 중요성도 커진다.</p>
+        <p class="meta-line">출처: <a href="https://www.businessinsider.com/anthropic-claude-code-token-estimates-2026-4">businessinsider.com/anthropic-claude-code-token-estimates-2026-4</a> | 신뢰도 메모: 뉴스 기사</p>
+      </article>
+
+      <article class="card">
+        <h3>Claude Security 공개 베타는 “코딩 에이전트”를 보안 운영 도구로 넓힘</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-01</span>
+          <span class="badge">매체 DevOps.com</span>
+          <span class="badge">분석 기사</span>
+        </div>
+        <p>DevOps.com은 Claude Security 공개 베타를 단순 스캐너가 아니라 보안팀용 agent product로 해석했다. 취약점 탐지뿐 아니라 패치 생성까지 묶이며, Claude 계열 제품이 개발 생산성에서 보안 운영면으로 확장된다는 점을 강조한다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code를 평가할 때는 이제 코드 작성 능력만이 아니라, 보안 검토와 권한 분리까지 포함한 팀 운영 면을 같이 봐야 한다.</p>
+        <p class="meta-line">출처: <a href="https://devops.com/anthropic-brings-ai-powered-security-scanning-to-enterprise-teams-with-claude-security/">devops.com/anthropic-brings-ai-powered-security-scanning-to-enterprise-teams-with-claude-security/</a> | 신뢰도 메모: 분석 기사</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>Cursor를 “AI-native editor”가 아니라 agent workspace로 읽는 시각</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-30</span>
+          <span class="badge">매체 Built In</span>
+          <span class="badge">설명 기사</span>
+        </div>
+        <p>Built In은 Cursor를 단순 자동완성 에디터가 아니라 agent-driven workflow 중심 제품으로 설명한다. 개발자의 역할이 직접 타이핑에서 에이전트 지휘와 검토로 이동한다는 프레임이 강하다.</p>
+        <p><strong>실무 시사점:</strong> Cursor 평가는 코드 생성 품질뿐 아니라 병렬 작업 공간, 규칙 배포, 리뷰 흐름을 얼마나 자연스럽게 묶는지로 해야 한다.</p>
+        <p class="meta-line">출처: <a href="https://builtin.com/articles/what-is-cursor-ai">builtin.com/articles/what-is-cursor-ai</a> | 신뢰도 메모: 설명 기사</p>
+      </article>
+
+      <article class="card">
+        <h3>Cursor SDK는 에디터 안 에이전트를 배포형 인프라로 바꾼다는 해석</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-04</span>
+          <span class="badge">매체 DevOps.com</span>
+          <span class="badge">분석 기사</span>
+        </div>
+        <p>DevOps.com은 Cursor SDK를 “IDE 기능”이 아니라 배포 가능한 에이전트 인프라로 읽는다. CI/CD, 백엔드 서비스, 내부 도구에서 같은 런타임을 호출하게 되면서 Cursor의 무게중심이 편집기 밖으로 나간다는 해석이다.</p>
+        <p><strong>실무 시사점:</strong> Cursor 도입은 이제 개인 생산성 도구 선택이 아니라 조직 자동화 플랫폼 선택에 가까워지고 있다.</p>
+        <p class="meta-line">출처: <a href="https://devops.com/cursors-new-sdk-turns-ai-coding-agents-into-deployable-infrastructure/">devops.com/cursors-new-sdk-turns-ai-coding-agents-into-deployable-infrastructure/</a> | 신뢰도 메모: 분석 기사</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>Codex CLI 0.128.0은 “무엇이 새로 생겼나”보다 “어떻게 운영할까”가 핵심</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-05-01</span>
+          <span class="badge">매체 Codex Workshop</span>
+          <span class="badge">실무 분석</span>
+        </div>
+        <p>Codex Workshop은 0.128.0을 workflow release로 요약한다. persisted <code>/goal</code>, permission profiles, plugin workflow, resume/review loop 개선을 통해 Codex가 더 오래 이어지는 운영 도구가 됐다는 해석이다.</p>
+        <p><strong>실무 시사점:</strong> Codex의 새 기능을 쓰기 전에 <code>AGENTS.md</code>, 테스트 규칙, MCP 경계를 먼저 정리해야 한다는 메시지가 분명하다.</p>
+        <p class="meta-line">출처: <a href="https://www.codexworkshop.com/research/codex-cli-workflows-20260501-0511">codexworkshop.com/research/codex-cli-workflows-20260501-0511</a> | 신뢰도 메모: 실무 분석</p>
+      </article>
+
+      <article class="card">
+        <h3>macOS 사용자 업데이트 공지는 Codex도 운영 제품으로 굳어졌다는 신호</h3>
+        <div class="badge-row">
+          <span class="badge">게시일 2026-04-29</span>
+          <span class="badge">매체 Times of India</span>
+          <span class="badge">뉴스 기사</span>
+        </div>
+        <p>Times of India는 OpenAI가 macOS 사용자에게 ChatGPT Desktop, Codex, Codex CLI 등을 2026-05-08 전까지 업데이트하라고 공지했다고 전했다. 단순 기능 홍보가 아니라 서비스 지속성과 클라이언트 관리 이슈가 전면에 나왔다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 더 이상 실험적 CLI 하나가 아니라, 버전 관리와 운영 공지가 필요한 플랫폼 제품으로 봐야 한다.</p>
+        <p class="meta-line">출처: <a href="https://timesofindia.indiatimes.com/technology/tech-news/openai-to-apple-macos-users-update-chatgpt-codex-and-its-other-apps-before-may-8-or-lose-access/articleshow/130607402.cms">timesofindia.indiatimes.com/.../130607402.cms</a> | 신뢰도 메모: 뉴스 기사</p>
+      </article>
+
+      <article class="card">
+        <h3>Codex 실사용 글보다 공식 플랜 문서가 더 많이 읽히는 구간</h3>
+        <div class="badge-row">
+          <span class="badge">조회일 2026-05-05</span>
+          <span class="badge">OpenAI Help Center</span>
+          <span class="badge">공식 글</span>
+        </div>
+        <p>이번 7일 창에서 Codex는 외부 실사용 기사보다 공식 문서 비중이 높았다. Help Center의 <em>Using Codex with your ChatGPT plan</em>은 2026-05-05 조회 시 <strong>Updated: 3 days ago</strong>로 표시됐고, 접근 플랜, plugins, Local/Cloud 제어, data controls를 다시 정리한다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 지금도 기능보다 운영 계약 문서를 먼저 읽어야 제대로 쓰는 도구다. 이 점은 다른 두 도구보다 더 강하다.</p>
+        <p class="meta-line">출처: <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/anthropic-claude-code-token-estimates-2026-4">Business Insider - Claude Code token estimates</a></li>
+        <li><a href="https://devops.com/anthropic-brings-ai-powered-security-scanning-to-enterprise-teams-with-claude-security/">DevOps.com - Claude Security</a></li>
+        <li><a href="https://builtin.com/articles/what-is-cursor-ai">Built In - What Is Cursor?</a></li>
+        <li><a href="https://devops.com/cursors-new-sdk-turns-ai-coding-agents-into-deployable-infrastructure/">DevOps.com - Cursor SDK</a></li>
+        <li><a href="https://www.codexworkshop.com/research/codex-cli-workflows-20260501-0511">Codex Workshop - Codex CLI 0.128.0</a></li>
+        <li><a href="https://timesofindia.indiatimes.com/technology/tech-news/openai-to-apple-macos-users-update-chatgpt-codex-and-its-other-apps-before-may-8-or-lose-access/articleshow/130607402.cms">Times of India - OpenAI macOS update notice</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">OpenAI Help Center - Using Codex with your ChatGPT plan</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

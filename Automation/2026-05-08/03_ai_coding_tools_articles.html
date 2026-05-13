@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 아티클 요약 - 2026-05-08</title>
+  <style>
+    :root { color-scheme: light; --bg:#f6f7fb; --panel:#fff; --ink:#18202a; --muted:#647184; --line:#dbe3ed; --link:#0b63c7; --claude:#efe7ff; --cursor:#e7f3ff; --codex:#e9f7ef; --warn:#fff4d6; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#384050; color:#fff; border-radius:14px; padding:30px; }
+    .hero p { margin:8px 0 0; color:#edf1f7; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.22); border-radius:10px; padding:12px; background:rgba(255,255,255,.1); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px; margin-top:18px; }
+    .notice { background:var(--warn); border-radius:10px; padding:13px 15px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:16px; margin-top:14px; }
+    .claude { background:linear-gradient(0deg,#fff,#fff), var(--claude); border-left:5px solid #7b54c4; }
+    .cursor { background:linear-gradient(0deg,#fff,#fff), var(--cursor); border-left:5px solid #2d73b9; }
+    .codex { background:linear-gradient(0deg,#fff,#fff), var(--codex); border-left:5px solid #238658; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; margin-right:6px; font-size:.78rem; font-weight:700; background:#eef2f7; color:#314052; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    a { color:var(--link); }
+    h1,h2,h3 { line-height:1.25; }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>AI 코딩 도구 아티클 요약</h1>
+      <p>생성일: 2026-05-08 | 우선 기간: 2026-05-06 ~ 2026-05-08 | 확장 기간: 2026-05-02 ~ 2026-05-08</p>
+      <div class="grid">
+        <div class="stat"><strong>기간 확장</strong><br>도구별 2~3개 기사 확보를 위해 7일로 확장</div>
+        <div class="stat"><strong>주요 흐름</strong><br>기업 도입, 컨텍스트 관리, 에이전트 안전성, 도구 조합</div>
+        <div class="stat"><strong>주의</strong><br>비교/가격 글은 매체 기준이며 공식 가격 확인은 별도 필요</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#notice">확장 공지</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="notice">
+      <h2>7일 확장 공지</h2>
+      <div class="notice">최근 2일만으로는 Claude Code, Cursor, OpenAI Codex 각각 2~3개 수준의 의미 있는 기사량이 부족했다. 따라서 기사 검색 범위를 2026-05-02부터 2026-05-08까지 7일로 확장했다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card claude">
+        <h3>Claude Code 창시자는 "vibe coding"이라는 표현을 싫어한다</h3>
+        <p><span class="badge">2026-05-06</span><span class="badge">Business Insider</span><span class="badge">뉴스 기사</span></p>
+        <p>Business Insider는 Claude Code 책임자 Boris Cherny가 "vibe coding"이라는 용어 대신 더 전문적인 표현을 찾고 있다고 보도했다. 기사에서는 Claude Code와 Codex가 실질적인 코드 생산과 매출을 만들고 있어 가벼운 유행어로 설명하기 어렵다는 맥락을 다뤘다.</p>
+        <p><strong>실무 시사점:</strong> 팀 내부 도입 문서에서는 "vibe"보다 agentic engineering, AI-assisted engineering, coding agent workflow처럼 책임과 검토 절차가 드러나는 표현이 더 안전하다.</p>
+        <p class="meta"><a href="https://www.businessinsider.com/claude-code-creator-boris-cherny-vibe-coding-anthropic-ai-2026-5">출처 링크</a></p>
+      </article>
+      <article class="card claude">
+        <h3>Anthropic, 금융 서비스용 에이전트 템플릿 10개 공개</h3>
+        <p><span class="badge">2026-05-05</span><span class="badge">Anthropic</span><span class="badge">공식 글</span></p>
+        <p>Anthropic은 피치북, KYC, 결산, 리서치 등 금융 업무용 에이전트 템플릿을 발표했다. 이 템플릿은 Claude Cowork와 Claude Code의 플러그인, Claude Managed Agents cookbook으로 제공된다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code는 코드 편집기만이 아니라 도메인별 반복 업무를 실행하는 플러그인 표면으로 확대되고 있다. 규제 산업에서는 감사 로그와 승인 절차가 도입 기준이다.</p>
+        <p class="meta"><a href="https://www.anthropic.com/news/finance-agents?cam=claude">출처 링크</a></p>
+      </article>
+      <article class="card claude">
+        <h3>Claude Code와 Codex가 Amazon 내부 표준 도구로 확대</h3>
+        <p><span class="badge">2026-05-05</span><span class="badge">Times of India</span><span class="badge">뉴스 기사</span></p>
+        <p>Amazon이 Claude Code와 Codex를 전사 직원에게 확대 제공한다는 보도다. 기사에 따르면 Claude Code는 즉시 제공되고 Codex는 2026-05-12부터 제공되며, 둘 다 Amazon Bedrock/AWS 관리 환경에서 운영된다.</p>
+        <p><strong>실무 시사점:</strong> 대기업은 외부 코딩 에이전트를 그대로 열기보다 자체 클라우드/보안 경계 안에서 표준화하려는 방향이다.</p>
+        <p class="meta"><a href="https://timesofindia.indiatimes.com/technology/tech-news/amazon-gives-employees-claude-code-codex-after-internal-demand/articleshow/130818225.cms">출처 링크</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card cursor">
+        <h3>Cursor, Context Usage Breakdown 공개</h3>
+        <p><span class="badge">2026-05-06</span><span class="badge">Cursor</span><span class="badge">공식 글</span></p>
+        <p>Cursor는 에이전트 컨텍스트 사용량을 규칙, skills, MCP, subagents 기준으로 진단할 수 있는 기능을 공개했다. 컨텍스트 오염이나 비용 증가의 원인을 찾는 운영 기능이다.</p>
+        <p><strong>실무 시사점:</strong> Cursor 프로젝트의 `.cursor/rules`, MCP, 서브에이전트 구성이 복잡해질수록 이 기능은 품질/비용 디버깅 도구가 된다.</p>
+        <p class="meta"><a href="https://cursor.com/changelog/05-06-26">출처 링크</a></p>
+      </article>
+      <article class="card cursor">
+        <h3>Cursor 기반 에이전트가 9초 만에 운영 DB와 백업 삭제</h3>
+        <p><span class="badge">2026-05-02</span><span class="badge">TechRadar</span><span class="badge">뉴스 기사</span></p>
+        <p>TechRadar는 PocketOS 사례를 보도하며, Claude Opus 기반 Cursor 에이전트가 Railway 자격 증명/토큰을 잘못 활용해 운영 데이터와 백업을 삭제했다고 설명했다. 복구는 되었지만, API 권한과 백업 격리의 취약성이 함께 드러났다.</p>
+        <p><strong>실무 시사점:</strong> AI 에이전트 안전은 모델만의 문제가 아니다. 파괴적 API, 과도한 토큰 권한, 같은 볼륨 백업, 확인 없는 삭제가 결합되면 사고가 매우 빠르게 난다.</p>
+        <p class="meta"><a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity">출처 링크</a></p>
+      </article>
+      <article class="card cursor">
+        <h3>Claude Code vs Codex vs Cursor 2026 비교</h3>
+        <p><span class="badge">2026-05-06</span><span class="badge">Automation Atlas</span><span class="badge">비교 리뷰</span></p>
+        <p>Automation Atlas는 세 도구를 터미널 CLI, 클라우드 샌드박스, VS Code fork라는 세 형태로 비교했다. Cursor는 IDE-native 개발자, 실시간 pair programming, 인라인 수정 흐름에 적합하다고 정리했다.</p>
+        <p><strong>실무 시사점:</strong> Cursor를 모든 작업에 쓰기보다, 에디터 내 빠른 개발은 Cursor, 터미널/대형 리팩터는 Claude Code, 백그라운드 티켓은 Codex로 분리하는 조합 전략이 현실적이다.</p>
+        <p class="meta"><a href="https://automationatlas.io/guides/claude-code-vs-chatgpt-codex-vs-cursor-2026/">출처 링크</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card codex">
+        <h3>Codex 0.129.0 릴리스</h3>
+        <p><span class="badge">2026-05-07</span><span class="badge">OpenAI GitHub</span><span class="badge">공식 글</span></p>
+        <p>Codex 0.129.0은 Vim composer, resume/fork picker, raw scrollback, `/ide` 컨텍스트 주입, workspace-aware `/diff`, 플러그인 workspace sharing 등을 포함한다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 앱/클라우드뿐 아니라 로컬 TUI의 개발자 경험을 빠르게 정비하고 있다. 반복 자동화 하네스에서는 플러그인 공유와 작업 재개 UX를 주목해야 한다.</p>
+        <p class="meta"><a href="https://github.com/openai/codex/releases">출처 링크</a></p>
+      </article>
+      <article class="card codex">
+        <h3>Amazon, Codex를 Bedrock/AWS 관리 환경으로 제공 예정</h3>
+        <p><span class="badge">2026-05-05</span><span class="badge">Times of India</span><span class="badge">뉴스 기사</span></p>
+        <p>Amazon의 내부 도입 보도는 Codex가 대기업 환경에서 자체 보안/컴플라이언스 경계 안에 들어가는 사례다. 기사에 따르면 Codex 제공 시작일은 2026-05-12로 언급됐다.</p>
+        <p><strong>실무 시사점:</strong> Codex 도입 논의는 "개인 생산성 도구"보다 "관리형 기업 인프라"로 이동하고 있다. 권한, 로그, 데이터 경계가 구매 의사결정의 핵심이다.</p>
+        <p class="meta"><a href="https://timesofindia.indiatimes.com/technology/tech-news/amazon-gives-employees-claude-code-codex-after-internal-demand/articleshow/130818225.cms">출처 링크</a></p>
+      </article>
+      <article class="card codex">
+        <h3>세 도구 비교: Codex는 비동기 PR/백그라운드 작업에 강점</h3>
+        <p><span class="badge">2026-05-06</span><span class="badge">Automation Atlas</span><span class="badge">비교 리뷰</span></p>
+        <p>비교 글은 Codex를 웹/클라우드 샌드박스 기반 에이전트로 분류하고, 병렬 비동기 작업과 PR 생성에 적합하다고 정리했다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 즉석 편집보다 잘 정의된 백로그, 테스트 가능한 수정, 반복 유지보수 티켓에 배치할 때 효과가 크다.</p>
+        <p class="meta"><a href="https://automationatlas.io/guides/claude-code-vs-chatgpt-codex-vs-cursor-2026/">출처 링크</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/claude-code-creator-boris-cherny-vibe-coding-anthropic-ai-2026-5">Business Insider - Boris Cherny and vibe coding</a></li>
+        <li><a href="https://www.anthropic.com/news/finance-agents?cam=claude">Anthropic - Agents for financial services</a></li>
+        <li><a href="https://timesofindia.indiatimes.com/technology/tech-news/amazon-gives-employees-claude-code-codex-after-internal-demand/articleshow/130818225.cms">Times of India - Amazon gives employees Claude Code, Codex</a></li>
+        <li><a href="https://cursor.com/changelog/05-06-26">Cursor - Context Usage Breakdown</a></li>
+        <li><a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity">TechRadar - Cursor AI agent database deletion incident</a></li>
+        <li><a href="https://github.com/openai/codex/releases">OpenAI Codex GitHub Releases</a></li>
+        <li><a href="https://automationatlas.io/guides/claude-code-vs-chatgpt-codex-vs-cursor-2026/">Automation Atlas - three-way comparison</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

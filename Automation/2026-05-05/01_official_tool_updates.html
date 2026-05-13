@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 AI 코딩 도구 업데이트 보고서</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5e6b79;
+      --line: #d9e2ec;
+      --link: #0b67c3;
+      --accent: #e8f1fb;
+      --ok: #e9f8ee;
+      --warn: #fff3da;
+      --soft: #f5f7fa;
+      --hero: linear-gradient(135deg, #173c68 0%, #2b5f9d 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    .container {
+      width: min(1020px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    a { color: var(--link); }
+    h1, h2, h3 { line-height: 1.3; margin: 0; }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 16px 40px rgba(18, 43, 79, 0.16);
+    }
+    .hero p {
+      margin: 10px 0 0;
+      opacity: 0.94;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li, .sources li { margin: 6px 0; }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .soft-box {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: #1d4f82;
+    }
+    .badge.ok { background: var(--ok); color: #1e6c37; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    code {
+      font-family: "Cascadia Code", "Consolas", monospace;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>공식 AI 코딩 도구 업데이트 보고서</h1>
+      <p>생성일 2026-05-05 | 공식 확인 창 2026-05-02 ~ 2026-05-05 | 원칙: 새 공식 항목이 없으면 그 부재를 그대로 기록</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>이번 창 요약</strong><br>이번 공식 창에서는 <strong>OpenAI Codex</strong>만 인윈도 문서 갱신이 확인됐다. <strong>Claude Code</strong>와 <strong>Cursor</strong>는 직전 큰 릴리스 이후 새 공식 항목이 확인되지 않았다.</div>
+        <div class="stat"><strong>관찰 포인트</strong><br>지금 시장의 공식 신호는 화려한 기능 폭발보다 <strong>권한 제어</strong>, <strong>플랜/과금 구조</strong>, <strong>팀 배포 정책</strong> 같은 운영층에 더 집중돼 있다.</div>
+        <div class="stat"><strong>실무 해석</strong><br>Claude와 Cursor는 잠깐 숨 고르기 구간이고, Codex는 접근 정책과 데이터 제어 문서가 계속 살아 움직이고 있다. 즉 기능 경쟁보다 운영 계약 경쟁이 더 선명하다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">조사 요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>조사 요약</h2>
+      <div class="notice">
+        공식 업데이트 규칙상, 기간 안에 새 항목이 없는 도구를 억지로 채우지 않았다. Claude Code와 Cursor는 <strong>2026-05-02 ~ 2026-05-05</strong> 창에서 새 공식 항목 <strong>확인 불가가 아니라 없음</strong>으로 기록한다.
+      </div>
+      <div class="soft-box">
+        이번 보고서의 중심 변화는 제품 기능보다 운영 문서다. Codex는 플랜 문서가 계속 갱신되며 접근 범위, 데이터 제어, 플러그인/앱 통제를 명시하고 있고, Claude Code와 Cursor는 직전 릴리스의 여파를 소화하는 구간으로 읽힌다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+
+      <article class="card">
+        <h3>인윈도 신규 공식 업데이트 없음</h3>
+        <div class="badge-row">
+          <span class="badge">기간 2026-05-02 ~ 2026-05-05</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">신규 항목 없음</span>
+        </div>
+        <p><strong>업데이트명:</strong> 해당 기간 신규 공식 릴리스 또는 공식 문서 갱신 항목 없음</p>
+        <p><strong>핵심 설명:</strong> Anthropic 공식 릴리스 노트와 GitHub Releases를 다시 확인했지만, <code>v2.1.126</code> 이후 이 창 안에 들어오는 새 공식 항목은 보이지 않았다.</p>
+        <p><strong>실사용 관점에서 중요한 이유:</strong> Claude Code는 현재 기능 확장보다 직전 릴리스 품질을 체감하는 구간이다. 따라서 이번 주 판단 포인트는 “무엇이 추가됐나”보다 “없던 새 항목이 왜 없는가, 기존 릴리스가 안정적으로 먹히는가”에 가깝다.</p>
+        <div class="meta-line">발표일: 해당 없음 | 출처명: Anthropic Claude Code Release Notes / GitHub Releases | 출처 URL: <a href="https://docs.anthropic.com/en/release-notes/claude-code">docs.anthropic.com/en/release-notes/claude-code</a> / <a href="https://github.com/anthropics/claude-code/releases">github.com/anthropics/claude-code/releases</a> | 확인 상태: 확인 완료</div>
+      </article>
+
+      <article class="card">
+        <h3>직전 공식 맥락: <code>v2.1.126</code></h3>
+        <div class="badge-row">
+          <span class="badge">발표일 2026-05-01</span>
+          <span class="badge">GitHub Releases</span>
+          <span class="badge ok">공식 글</span>
+        </div>
+        <p><strong>기능 또는 업데이트명:</strong> <code>v2.1.126</code></p>
+        <p><strong>핵심 설명:</strong> model picker의 gateway 모델 나열, <code>claude project purge</code>, pasted auth code 로그인, Windows PowerShell 7 탐지, PowerShell 기본 셸 우선화가 핵심이었다.</p>
+        <p><strong>실사용 관점에서 중요한 이유:</strong> 이 버전은 새 능력 과시보다 긴 CLI 세션을 덜 끊기게 만드는 운영 품질 개선에 초점이 있었다. 이번 창에 새 버전이 없더라도, 아직 현장 영향은 이 릴리스가 만든다.</p>
+        <div class="meta-line">발표일: 2026-05-01 | 출처명: GitHub Releases | 출처 URL: <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.126">github.com/anthropics/claude-code/releases/tag/v2.1.126</a> | 확인 상태: 확인 완료</div>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+
+      <article class="card">
+        <h3>인윈도 신규 공식 업데이트 없음</h3>
+        <div class="badge-row">
+          <span class="badge">기간 2026-05-02 ~ 2026-05-05</span>
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">신규 항목 없음</span>
+        </div>
+        <p><strong>업데이트명:</strong> 해당 기간 신규 changelog 항목 없음</p>
+        <p><strong>핵심 설명:</strong> Cursor 공식 changelog의 최신 항목은 2026-05-01 Team Marketplace Updates였고, 그 이후 이 보고 창 안에 들어오는 새 공식 항목은 확인되지 않았다.</p>
+        <p><strong>실사용 관점에서 중요한 이유:</strong> Cursor는 여전히 Agents Window, 팀 배포, 보안 검토, SDK 흐름을 밀고 있지만, 오늘 판단은 새 발표보다 직전 운영 기능이 실제 팀 프로세스에 어떻게 흡수되는지에 달려 있다.</p>
+        <div class="meta-line">발표일: 해당 없음 | 출처명: Cursor Changelog | 출처 URL: <a href="https://cursor.com/en-US/changelog">cursor.com/en-US/changelog</a> | 확인 상태: 확인 완료</div>
+      </article>
+
+      <article class="card">
+        <h3>직전 공식 맥락: Team Marketplace Updates</h3>
+        <div class="badge-row">
+          <span class="badge">발표일 2026-05-01</span>
+          <span class="badge">Cursor Changelog</span>
+          <span class="badge ok">공식 글</span>
+        </div>
+        <p><strong>기능 또는 업데이트명:</strong> Team Marketplace Updates</p>
+        <p><strong>핵심 설명:</strong> 관리자가 저장소를 먼저 연결하지 않아도 team marketplace를 만들 수 있고, first-party plugin을 기본 비활성화, 기본 활성화, 필수 설치로 나눠 배포 정책을 정할 수 있게 됐다.</p>
+        <p><strong>실사용 관점에서 중요한 이유:</strong> Cursor는 개인 IDE를 넘어 팀 규칙 배포 플랫폼으로 이동 중이다. plugin이 MCP servers, skills, subagents, rules, hooks를 묶는다는 설명 자체가 현재 제품 방향을 잘 보여 준다.</p>
+        <div class="meta-line">발표일: 2026-05-01 | 출처명: Cursor Changelog | 출처 URL: <a href="https://cursor.com/changelog/05-01-26">cursor.com/changelog/05-01-26</a> | 확인 상태: 확인 완료</div>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+
+      <article class="card">
+        <h3>플랜 문서 갱신으로 접근 범위와 제어 항목 재정리</h3>
+        <div class="badge-row">
+          <span class="badge">갱신일 2026-05-02 추정</span>
+          <span class="badge">OpenAI Help Center</span>
+          <span class="badge ok">공식 글</span>
+        </div>
+        <p><strong>기능 또는 업데이트명:</strong> <em>Using Codex with your ChatGPT plan</em> 갱신</p>
+        <p><strong>핵심 설명:</strong> 2026-05-05 조회 시 Help Center는 이 문서를 <strong>Updated: 3 days ago</strong>로 표시했다. 문서 내용은 Codex가 Plus, Pro, Business, Enterprise/Edu뿐 아니라 한시적으로 Free와 Go에도 포함된다는 점, 그리고 plugins, RBAC, Compliance API, Codex Local/Cloud 제어를 한 번에 설명한다.</p>
+        <p><strong>실사용 관점에서 중요한 이유:</strong> Codex의 현재 경쟁력은 기능 추가만이 아니라 어떤 플랜에서 어떤 실행면을 열어 주는지, 어떤 데이터 제어가 가능한지에 있다. 운영자 입장에서는 이 문서 갱신이 실제 제품 변화보다 더 중요할 수 있다.</p>
+        <div class="meta-line">발표일: 2026-05-02 추정 (2026-05-05 조회 시 "Updated: 3 days ago") | 출처명: OpenAI Help Center | 출처 URL: <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan</a> | 확인 상태: 확인 완료</div>
+      </article>
+
+      <article class="card">
+        <h3>직전 공식 맥락: Codex CLI <code>0.128.0</code></h3>
+        <div class="badge-row">
+          <span class="badge">발표일 2026-04-30</span>
+          <span class="badge">GitHub Releases</span>
+          <span class="badge ok">공식 글</span>
+        </div>
+        <p><strong>기능 또는 업데이트명:</strong> <code>0.128.0</code></p>
+        <p><strong>핵심 설명:</strong> persisted <code>/goal</code> workflows, <code>codex update</code>, expanded permission profiles, plugin workflow 개선, external agent session import, MultiAgentV2 제어 명시화가 핵심이다.</p>
+        <p><strong>실사용 관점에서 중요한 이유:</strong> 이 릴리스는 Codex를 단순 CLI가 아니라 계속 이어지는 워크플로 엔진으로 강화했다. 오늘 인윈도 공식 문서 갱신과 합치면, Codex는 기능과 운영 계약을 동시에 밀어 붙이는 상태다.</p>
+        <div class="meta-line">발표일: 2026-04-30 | 출처명: GitHub Releases | 출처 URL: <a href="https://github.com/openai/codex/releases/tag/rust-v0.128.0">github.com/openai/codex/releases/tag/rust-v0.128.0</a> | 확인 상태: 확인 완료</div>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://docs.anthropic.com/en/release-notes/claude-code">Anthropic Claude Code release notes</a></li>
+        <li><a href="https://github.com/anthropics/claude-code/releases">anthropics/claude-code releases</a></li>
+        <li><a href="https://cursor.com/en-US/changelog">Cursor changelog</a></li>
+        <li><a href="https://cursor.com/changelog/05-01-26">Cursor Team Marketplace Updates</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a></li>
+        <li><a href="https://help.openai.com/en/articles/20001106-codex-rate-card">Codex rate card</a></li>
+        <li><a href="https://github.com/openai/codex/releases/tag/rust-v0.128.0">openai/codex 0.128.0 release</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

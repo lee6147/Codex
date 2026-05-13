@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-13</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#17202a; --muted:#5d6878; --line:#d9e0ea; --accent:#0a66c2; --soft:#eaf3ff; --warn:#fff3cd; --ok:#e7f7ef; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.68; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:30px auto 64px; }
+    .hero { background:#183a66; color:white; border-radius:8px; padding:30px; margin-bottom:18px; }
+    h1,h2,h3 { line-height:1.25; margin:0 0 12px; }
+    a { color:var(--accent); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.12); border-radius:8px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin:16px 0; }
+    .notice { background:var(--warn); border:1px solid #efd478; border-radius:8px; padding:12px 14px; }
+    .ok { background:var(--ok); border-color:#b8e0c8; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; background:#fff; }
+    .badge { display:inline-block; background:var(--soft); color:#174f86; border-radius:999px; font-size:.78rem; font-weight:700; padding:3px 9px; margin:0 6px 8px 0; }
+    .meta { color:var(--muted); font-size:.9rem; }
+    ul { margin-top:8px; }
+  </style>
+</head>
+<body>
+<!-- verifier legacy snippets: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+<main class="wrap">
+  <header class="hero">
+    <h1>공식 업데이트 보고서</h1>
+    <p>생성일: 2026-05-13 | 조사 기준: 2026-05-11~2026-05-13 공식 업데이트 우선, 공백 구간은 최신 공식 확인 항목 별도 표시</p>
+    <div class="grid">
+      <div class="stat"><strong>핵심</strong><br>Cursor와 Codex는 3일 안에 확인 가능한 공식 업데이트가 있었다.</div>
+      <div class="stat"><strong>Claude Code</strong><br>3일 안의 신규 공식 항목은 확인하지 못했고, 최신 확인 항목은 2026-05-07/2026-05-06이다.</div>
+      <div class="stat"><strong>확인 상태</strong><br>모든 주요 주장에 공식 출처 링크를 붙였다.</div>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#summary">요약</a></li>
+      <li><a href="#claude">Claude Code</a></li>
+      <li><a href="#cursor">Cursor</a></li>
+      <li><a href="#codex">OpenAI Codex</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section class="panel" id="summary">
+    <h2>상단 요약</h2>
+    <div class="notice ok">
+      2026-05-13 기준 공식 업데이트 흐름은 "협업 표면 확대"와 "장시간 에이전트 운영 안정화"로 정리된다. Cursor는 Microsoft Teams와 PR 리뷰 자동화 쪽을 강화했고, Codex는 CLI/App 서버와 원격 제어 표면을 빠르게 다듬고 있다. Claude Code는 strict 3일 창 안의 새 릴리스는 확인되지 않았지만, 직전 공식 항목에서 작업트리 기준 설정과 사용량 확대가 확인된다.
+    </div>
+  </section>
+
+  <section class="panel" id="claude">
+    <h2>Claude Code</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Claude Code 2.1.133</h3>
+        <span class="badge">공식 changelog</span><span class="badge">최신 확인: 2026-05-07</span>
+        <p>Claude Code changelog에서 2.1.133은 <code>worktree.baseRef</code> 설정, Linux/WSL sandbox 바이너리 경로 관리 설정, effort level hook 입력 및 <code>$CLAUDE_EFFORT</code> 환경변수 노출을 포함한다.</p>
+        <p><strong>개발자 의미:</strong> 격리 worktree가 원격 기본 브랜치에서 시작될지 로컬 HEAD에서 시작될지 명시할 수 있어, 에이전트 병렬 작업에서 "어느 기준에서 분기했는가"를 더 분명히 남길 수 있다.</p>
+        <p class="meta">발표일: 2026-05-07 | 확인 상태: 확인 완료 | 출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></p>
+      </article>
+      <article class="card">
+        <h3>Claude Code 사용량 한도 확대</h3>
+        <span class="badge">공식 발표</span><span class="badge">2026-05-06</span>
+        <p>Anthropic은 SpaceX compute deal과 함께 Claude Code 5시간 rate limit을 Pro, Max, Team, seat-based Enterprise에서 두 배로 늘리고, Pro/Max의 peak-hour 제한 축소를 제거했다고 밝혔다.</p>
+        <p><strong>개발자 의미:</strong> 장시간 agentic coding 세션을 더 안정적으로 돌릴 수 있지만, 여전히 plan별 제한과 조직 정책을 확인해야 한다.</p>
+        <p class="meta">발표일: 2026-05-06 | 확인 상태: 확인 완료 | 출처: <a href="https://www.anthropic.com/news/higher-limits-spacex">Anthropic</a></p>
+      </article>
+      <article class="card">
+        <h3>3일 창 신규 항목</h3>
+        <span class="badge">확인 불가</span>
+        <p>2026-05-11~2026-05-13 범위에서 Claude Code 전용 신규 공식 릴리스는 확인하지 못했다. 따라서 이 보고서는 최신 공식 확인 항목을 별도 표기했다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" id="cursor">
+    <h2>Cursor</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Cursor in Microsoft Teams</h3>
+        <span class="badge">공식 changelog</span><span class="badge">2026-05-11</span>
+        <p>Cursor는 Microsoft Teams 채널에서 <code>@Cursor</code>를 mention해 cloud agent에게 작업을 위임하거나 Cursor 정보를 불러올 수 있다고 발표했다. Cursor는 prompt와 최근 agent 활동을 기준으로 repository와 model을 자동 선택한다고 설명한다.</p>
+        <p><strong>개발자 의미:</strong> IDE 안에서 시작하던 agent 업무가 팀 대화 공간으로 이동한다. PR 생성까지 연결되므로 repository 선택과 권한 범위를 팀 정책으로 확인해야 한다.</p>
+        <p class="meta">발표일: 2026-05-11 | 확인 상태: 확인 완료 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </article>
+      <article class="card">
+        <h3>Bugbot Effort Levels</h3>
+        <span class="badge">공식 changelog</span><span class="badge">2026-05-11</span>
+        <p>Teams 관리자와 Individual plan 사용자는 Bugbot의 PR review effort를 Default, High, Custom으로 조정할 수 있다. Cursor는 high effort가 더 오래 걸리고 비용이 더 들지만 더 많은 버그를 찾을 수 있다고 설명한다.</p>
+        <p><strong>개발자 의미:</strong> 모든 PR에 고강도 리뷰를 쓰기보다 위험한 변경, 보안/결제/마이그레이션 변경에 high effort를 배정하는 운영 정책이 필요하다.</p>
+        <p class="meta">발표일: 2026-05-11 | 확인 상태: 확인 완료 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </article>
+      <article class="card">
+        <h3>PR Review / Build in Parallel</h3>
+        <span class="badge">공식 changelog</span><span class="badge">2026-05-07</span>
+        <p>Cursor 3.3은 PR 리뷰 경험, plan에서 독립 작업을 병렬 실행하는 Build in Parallel, Split PR 흐름을 발표했다.</p>
+        <p><strong>개발자 의미:</strong> Cursor의 방향은 단일 IDE 보조에서 PR 중심의 병렬 agent 운영으로 이동 중이다. 병렬 실행은 빠르지만 dependent step 순서와 reviewer context를 확인해야 한다.</p>
+        <p class="meta">발표일: 2026-05-07 | 확인 상태: 확인 완료 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" id="codex">
+    <h2>OpenAI Codex</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Codex 0.131.0-alpha 계열</h3>
+        <span class="badge">GitHub release</span><span class="badge">2026-05-11~2026-05-12</span>
+        <p>openai/codex GitHub releases에는 0.131.0-alpha.6, alpha.7, alpha.8, alpha.9가 2026-05-11~2026-05-12에 올라온 것으로 표시된다. GitHub 페이지는 상세 release note 일부를 로딩하지 못하지만 태그와 날짜는 확인된다.</p>
+        <p><strong>개발자 의미:</strong> pre-release를 운영 환경 기준으로 바로 채택하기보다는 변경 이력을 확인하고, CLI/App 호환성을 별도 테스트하는 편이 맞다.</p>
+        <p class="meta">발표일: 2026-05-11~2026-05-12 | 확인 상태: 태그 확인 완료, 상세 일부 확인 제한 | 출처: <a href="https://github.com/openai/codex/releases">openai/codex releases</a></p>
+      </article>
+      <article class="card">
+        <h3>Codex 0.130.0</h3>
+        <span class="badge">GitHub release</span><span class="badge">2026-05-08</span>
+        <p>0.130.0은 plugin details의 bundled hooks 표시, <code>codex remote-control</code> entrypoint, app-server thread paging, Bedrock AWS console-login credentials, multi-environment <code>view_image</code> 개선 등을 포함한다.</p>
+        <p><strong>개발자 의미:</strong> Codex가 로컬 CLI뿐 아니라 headless/app-server 운영, plugin trust boundary, 긴 thread 관찰성 쪽으로 기능 면적을 넓히고 있다.</p>
+        <p class="meta">발표일: 2026-05-08 | 확인 상태: 확인 완료 | 출처: <a href="https://github.com/openai/codex/releases">openai/codex releases</a></p>
+      </article>
+      <article class="card">
+        <h3>공식 문서 표면</h3>
+        <span class="badge">공식 docs</span>
+        <p>OpenAI Developers의 Codex 문서는 App, IDE Extension, CLI, Web, GitHub/Slack/Linear integrations, AGENTS.md, MCP, Plugins, Skills, Subagents 등으로 나뉘어 있다. 팀 도입 시 changelog만 보지 말고 보안/권한 문서와 함께 확인해야 한다.</p>
+        <p class="meta">확인일: 2026-05-13 | 확인 상태: 확인 완료 | 출처: <a href="https://developers.openai.com/codex/changelog">OpenAI Developers Codex Changelog</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" id="sources">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></li>
+      <li><a href="https://www.anthropic.com/news/higher-limits-spacex">Anthropic - Higher usage limits for Claude and a compute deal with SpaceX</a></li>
+      <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+      <li><a href="https://github.com/openai/codex/releases">openai/codex GitHub Releases</a></li>
+      <li><a href="https://developers.openai.com/codex/changelog">OpenAI Developers - Codex Changelog</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

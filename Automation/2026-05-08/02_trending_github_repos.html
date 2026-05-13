@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 레포지터리 보고서 - 2026-05-08</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f7fb; --panel:#fff; --ink:#18212c; --muted:#617083; --line:#dae2ec; --accent:#385b9f; --soft:#eef3ff; --link:#0b63c7; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#243b63; color:white; border-radius:14px; padding:30px; }
+    .hero p { margin:8px 0 0; color:#e5ecfb; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.22); border-radius:10px; padding:12px; background:rgba(255,255,255,.1); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px; margin-top:18px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:16px; margin-top:14px; }
+    .badge { display:inline-block; background:var(--soft); color:#254986; border-radius:999px; padding:3px 9px; margin-right:6px; font-size:.78rem; font-weight:700; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    .notice { background:#eef7f2; border-radius:10px; padding:13px 15px; }
+    a { color:var(--link); }
+    h1,h2,h3 { line-height:1.25; }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>트렌딩 GitHub 레포지터리 보고서</h1>
+      <p>생성일: 2026-05-08 | 조사 기준: GitHub Trending Daily 스냅샷 | 필터: AI, 코딩, 개발 생산성 관련</p>
+      <div class="grid">
+        <div class="stat"><strong>선정 저장소</strong><br>10개 중 개발 생산성 직접 관련 8개 선별</div>
+        <div class="stat"><strong>가장 강한 신호</strong><br>터미널 코딩 에이전트, skills, 에이전트 백엔드, RAG</div>
+        <div class="stat"><strong>조회 시점</strong><br>2026-05-08, GitHub Trending 표시 기준</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약 통계</a></li>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>요약 통계와 해석</h2>
+      <div class="notice">오늘 GitHub Trending은 "AI가 코드를 작성한다"에서 한 단계 넘어, 에이전트가 쓸 수 있는 skills, 백엔드, 검색/RAG, 안전한 라우팅 계층으로 관심이 넓어졌다. Claude Code, Cursor, Codex 사용자는 단일 도구보다 주변 실행 환경을 함께 봐야 한다.</div>
+      <ul>
+        <li>가장 높은 일일 증가: Hmbown/DeepSeek-TUI, 5,787 stars today</li>
+        <li>AI 코딩 skills 신호: addyosmani/agent-skills, 3,058 stars today</li>
+        <li>개발자 운영 계층 신호: InsForge, open-agents, goose, 9router</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소 카드</h2>
+      <article class="card">
+        <h3>1. Hmbown / DeepSeek-TUI</h3>
+        <p><span class="badge">Rust</span><span class="badge">18,068 stars</span><span class="badge">5,787 today</span></p>
+        <p>DeepSeek 모델용 터미널 코딩 에이전트. 터미널 기반 에이전트 사용성이 Claude Code, Codex CLI류의 핵심 경쟁 축으로 확산되고 있음을 보여준다.</p>
+        <p><strong>연결점:</strong> Claude Code/Codex 사용자에게는 TUI 상호작용, 권한 승인, 셸 통합 방식 비교 대상으로 유용하다. Cursor 사용자에게는 IDE 밖 에이전트 작업의 보완재다.</p>
+        <p class="meta">한줄 총평: 터미널 코딩 에이전트 수요가 여전히 강하다. <a href="https://github.com/Hmbown/DeepSeek-TUI">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3>2. addyosmani / agent-skills</h3>
+        <p><span class="badge">Shell</span><span class="badge">32,515 stars</span><span class="badge">3,058 today</span></p>
+        <p>AI 코딩 에이전트를 위한 production-grade engineering skills 모음. 프롬프트보다 재사용 가능한 작업 절차, 검증 루프, 역할별 지침을 자산화하는 흐름이다.</p>
+        <p><strong>연결점:</strong> Claude Code skills, Codex skills, Cursor rules/subagents를 운영하는 팀에 바로 맞닿는다.</p>
+        <p class="meta">한줄 총평: 에이전트 생산성은 모델보다 작업 계약의 품질에서 갈린다. <a href="https://github.com/addyosmani/agent-skills">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3>3. anthropics / financial-services</h3>
+        <p><span class="badge">Python</span><span class="badge">10,621 stars</span><span class="badge">1,367 today</span></p>
+        <p>Anthropic의 금융 서비스용 에이전트 템플릿/마켓플레이스 저장소. 공식 발표와 맞물려 도메인별 에이전트 템플릿이 오픈소스 관심을 받았다.</p>
+        <p><strong>연결점:</strong> Claude Code 플러그인 활용 사례이며, Codex/Cursor 사용자에게도 도메인별 워크플로 패키징의 참고 사례다.</p>
+        <p class="meta">한줄 총평: 범용 코딩 에이전트가 산업별 업무 에이전트로 내려오고 있다. <a href="https://github.com/anthropics/financial-services">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3>4. VectifyAI / PageIndex</h3>
+        <p><span class="badge">Python</span><span class="badge">29,346 stars</span><span class="badge">953 today</span></p>
+        <p>Vectorless, reasoning-based RAG를 표방하는 문서 인덱스 프로젝트. 대규모 문서/코드베이스를 검색 가능한 지식 표면으로 만드는 흐름에 속한다.</p>
+        <p><strong>연결점:</strong> 대형 저장소 탐색, 사내 문서 기반 코딩 에이전트, Obsidian/문서 자동화에 연결된다.</p>
+        <p class="meta">한줄 총평: 에이전트 품질은 컨텍스트 검색 계층에 크게 의존한다. <a href="https://github.com/VectifyAI/PageIndex">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3>5. InsForge / InsForge</h3>
+        <p><span class="badge">TypeScript</span><span class="badge">8,743 stars</span><span class="badge">459 today</span></p>
+        <p>Postgres 기반 백엔드, auth, storage, compute, hosting, AI gateway를 코딩 에이전트 친화적으로 묶는 프로젝트.</p>
+        <p><strong>연결점:</strong> Cursor/Codex/Claude Code가 앱을 빠르게 만들 때 안전한 백엔드 표준 템플릿으로 쓰일 수 있다.</p>
+        <p class="meta">한줄 총평: 에이전트 시대의 백엔드는 "AI가 다루기 쉬운 운영면"이 경쟁력이다. <a href="https://github.com/InsForge/InsForge">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3>6. LearningCircuit / local-deep-research</h3>
+        <p><span class="badge">Python</span><span class="badge">6,097 stars</span><span class="badge">564 today</span></p>
+        <p>로컬/클라우드 LLM과 여러 검색 엔진을 지원하는 로컬 deep research 도구. 사내 문서와 공개 자료를 함께 다루는 조사 자동화에 맞다.</p>
+        <p><strong>연결점:</strong> Codex/Cursor/Claude Code 이전 단계의 요구사항 조사, 이슈 분류, 문서 근거 수집에 유용하다.</p>
+        <p class="meta">한줄 총평: 코딩 에이전트 전 단계인 리서치 자동화가 계속 중요해지고 있다. <a href="https://github.com/LearningCircuit/local-deep-research">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3>7. vercel-labs / open-agents</h3>
+        <p><span class="badge">TypeScript</span><span class="badge">4,945 stars</span><span class="badge">160 today</span></p>
+        <p>클라우드 에이전트 구축용 오픈소스 템플릿. 에이전트를 제품 내부 기능으로 넣으려는 팀의 출발점에 가깝다.</p>
+        <p><strong>연결점:</strong> Codex식 비동기 작업자, Cursor Cloud Agents, Claude Managed Agents와 비교할 수 있는 구현 표본이다.</p>
+        <p class="meta">한줄 총평: 에이전트를 쓰는 시대에서 에이전트를 만드는 시대로 확장 중이다. <a href="https://github.com/vercel-labs/open-agents">GitHub</a></p>
+      </article>
+      <article class="card">
+        <h3>8. aaif-goose / goose</h3>
+        <p><span class="badge">Rust</span><span class="badge">44,363 stars</span><span class="badge">431 today</span></p>
+        <p>LLM을 붙여 설치, 실행, 편집, 테스트를 수행하는 확장형 AI agent. 코드 제안 수준을 넘어 실제 명령 실행과 검증 루프를 목표로 한다.</p>
+        <p><strong>연결점:</strong> Claude Code나 Codex CLI의 운영 방식과 유사한 오픈 에이전트 생태계 비교 대상이다.</p>
+        <p class="meta">한줄 총평: 오픈 에이전트 프레임워크는 상용 도구의 압박과 보완재 역할을 동시에 한다. <a href="https://github.com/aaif-goose/goose">GitHub</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending Daily</a></li>
+        <li><a href="https://trendshift.io/">Trendshift daily repository snapshot</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

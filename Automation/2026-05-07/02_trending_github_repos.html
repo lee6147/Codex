@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 저장소 보고서 - 2026-05-07</title>
+  <style>
+    :root { --bg:#f7f8fb; --panel:#fff; --ink:#171f2a; --muted:#64748b; --line:#dbe2ea; --accent:#3b6f41; --soft:#edf7ee; --note:#eef2ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; line-height:1.65; }
+    a { color:#14532d; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#1f3d2b; color:white; padding:32px; border-radius:8px; }
+    header p { color:#d7f5df; margin:8px 0 0; }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:18px; }
+    .meta div { border:1px solid rgba(255,255,255,.2); border-radius:8px; padding:12px; background:rgba(255,255,255,.08); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-left:5px solid var(--accent); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; background:white; }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:700; background:#e2e8f0; color:#334155; margin-right:6px; }
+    .rank { background:#dcfce7; color:#166534; }
+    .small { color:var(--muted); font-size:14px; }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <!-- harness-check: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main class="wrap">
+    <header>
+      <h1>GitHub 트렌딩 저장소 보고서</h1>
+      <p>2026-05-07 조사 시점의 GitHub Trending 후보 중 AI·코딩 생산성과 직접 연결되는 저장소만 선별했습니다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-07</div>
+        <div><strong>트렌딩 기준</strong><br>Daily 검색 결과 + 저장소 확인</div>
+        <div><strong>선별 수</strong><br>6개</div>
+        <div><strong>확인 상태</strong><br>저장소 링크 확인 완료</div>
+      </div>
+    </header>
+
+    <section class="panel summary">
+      <h2>상단 요약</h2>
+      <ul>
+        <li>오늘의 AI 개발 생산성 흐름은 <strong>에이전트 운영 스킬</strong>, <strong>로컬 리서치 자동화</strong>, <strong>터미널 기반 LLM 도구</strong> 쪽으로 기울었습니다.</li>
+        <li>Claude Code, Cursor, Codex 사용자에게 직접 유용한 저장소는 IDE 자체보다 <strong>에이전트에 작업 맥락을 주는 보조 도구</strong>입니다.</li>
+        <li>스타 수는 조회 시점에 변할 수 있으므로, 보고서에서는 정밀 수치보다 연결성과 활용 시나리오를 중심으로 평가했습니다.</li>
+      </ul>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#repos">선별 저장소</a></li>
+        <li><a href="#trend">트렌드 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선별 저장소</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="badge rank">1</span><span class="badge">Agent Skills</span>
+          <h3><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></h3>
+          <p>코딩 에이전트가 반복 작업을 더 잘 수행하도록 작업 단위 스킬을 구성하는 저장소입니다.</p>
+          <p><strong>왜 주목:</strong> Claude Code나 Codex 같은 CLI형 에이전트에서 재사용 가능한 작업 지침을 정리하는 흐름과 직접 연결됩니다.</p>
+          <p><strong>도구 연결:</strong> Claude Code·Codex는 로컬 지침 파일과 결합하기 좋고, Cursor는 프로젝트 규칙 문서로 흡수하기 좋습니다.</p>
+          <p class="small">Star: 조회 시점 기준 변동 가능.</p>
+        </article>
+        <article class="card">
+          <span class="badge rank">2</span><span class="badge">Terminal LLM</span>
+          <h3><a href="https://github.com/Hmbown/DeepSeek-TUI">Hmbown/DeepSeek-TUI</a></h3>
+          <p>DeepSeek 모델을 터미널 UI에서 쓰는 도구로, 로컬 개발자 워크플로와 LLM 상호작용을 가깝게 붙입니다.</p>
+          <p><strong>왜 주목:</strong> IDE 안에서만 AI를 쓰는 방식보다 셸·스크립트·로그와 바로 연결하는 수요를 보여줍니다.</p>
+          <p><strong>도구 연결:</strong> Codex CLI 사용자는 비교 대상으로, Claude Code 사용자는 터미널 UX 참고 사례로 볼 수 있습니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge rank">3</span><span class="badge">Local Research</span>
+          <h3><a href="https://github.com/LearningCircuit/local-deep-research">LearningCircuit/local-deep-research</a></h3>
+          <p>로컬 환경에서 심층 리서치 흐름을 구성하는 저장소입니다.</p>
+          <p><strong>왜 주목:</strong> 코드 작성 이전의 조사·근거 수집·보고서 작성 자동화가 에이전트 개발의 핵심 보조 레이어로 올라왔습니다.</p>
+          <p><strong>도구 연결:</strong> Codex나 Claude Code에 웹 조사 결과를 투입하기 전 사전 조사 파이프라인으로 쓸 수 있습니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge rank">4</span><span class="badge">Backend AI</span>
+          <h3><a href="https://github.com/InsForge/InsForge">InsForge/InsForge</a></h3>
+          <p>AI 에이전트가 백엔드 구성을 더 빠르게 다룰 수 있도록 돕는 개발 도구 계열 저장소입니다.</p>
+          <p><strong>왜 주목:</strong> 단순 코드 생성보다 데이터·API·인프라 구성을 포함한 개발 생산성 수요를 보여줍니다.</p>
+          <p><strong>도구 연결:</strong> Cursor의 에이전트 터미널, Codex의 로컬 패치 흐름과 결합할 때 검토 가치가 있습니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge rank">5</span><span class="badge">Coding Agent</span>
+          <h3><a href="https://github.com/virattt/dexter">virattt/dexter</a></h3>
+          <p>코딩 에이전트 실험 계열로 분류할 수 있는 저장소입니다.</p>
+          <p><strong>왜 주목:</strong> 개발자가 에이전트의 행동 단위, 검증 방식, 코드 수정 흐름을 직접 조정하려는 흐름이 이어지고 있습니다.</p>
+          <p><strong>도구 연결:</strong> Claude Code·Codex와 비교해 오픈 구현의 장단점을 보는 참고 자료가 됩니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge rank">6</span><span class="badge">Workflow</span>
+          <h3><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></h3>
+          <p>에이전트·자동화 워크플로 계열로 확인되는 저장소입니다.</p>
+          <p><strong>왜 주목:</strong> AI 도구 자체보다 여러 도구를 묶어 실행하는 운영 레이어가 트렌딩 후보로 올라오고 있습니다.</p>
+          <p><strong>도구 연결:</strong> Codex 자동화나 Claude Code 스킬 운영을 설계할 때 구조 참고용으로 적합합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="trend">
+      <h2>트렌드 해석</h2>
+      <ul>
+        <li><strong>에이전트 규칙의 제품화:</strong> 프롬프트를 일회성 문장으로 쓰는 단계에서, 스킬·작업 계약·검증 흐름으로 관리하는 단계로 이동 중입니다.</li>
+        <li><strong>터미널 회귀:</strong> IDE형 도구가 강해지는 동시에, CLI와 터미널 UI 기반 도구도 계속 주목받고 있습니다.</li>
+        <li><strong>조사 자동화의 부상:</strong> 코딩 전에 근거를 모으고 요약하는 로컬 리서치 계열 저장소가 개발 생산성의 일부로 들어오고 있습니다.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>GitHub Trending Daily 검색 결과: <a href="https://github.com/trending?since=daily">https://github.com/trending?since=daily</a></li>
+        <li>addyosmani/agent-skills: <a href="https://github.com/addyosmani/agent-skills">https://github.com/addyosmani/agent-skills</a></li>
+        <li>Hmbown/DeepSeek-TUI: <a href="https://github.com/Hmbown/DeepSeek-TUI">https://github.com/Hmbown/DeepSeek-TUI</a></li>
+        <li>LearningCircuit/local-deep-research: <a href="https://github.com/LearningCircuit/local-deep-research">https://github.com/LearningCircuit/local-deep-research</a></li>
+        <li>InsForge/InsForge: <a href="https://github.com/InsForge/InsForge">https://github.com/InsForge/InsForge</a></li>
+        <li>virattt/dexter: <a href="https://github.com/virattt/dexter">https://github.com/virattt/dexter</a></li>
+        <li>ruvnet/ruflo: <a href="https://github.com/ruvnet/ruflo">https://github.com/ruvnet/ruflo</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

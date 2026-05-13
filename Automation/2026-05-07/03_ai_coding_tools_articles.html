@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-05-07</title>
+  <style>
+    :root { --bg:#f6f8fb; --panel:#fff; --ink:#18202a; --muted:#64748b; --line:#dae2ec; --accent:#7c3aed; --soft:#f2ecff; --warn:#fff7d6; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    a { color:#5b21b6; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#2f224f; color:white; padding:32px; border-radius:8px; }
+    header p { color:#eadfff; margin:8px 0 0; }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:18px; }
+    .meta div { border:1px solid rgba(255,255,255,.22); border-radius:8px; padding:12px; background:rgba(255,255,255,.08); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-left:5px solid var(--accent); }
+    .notice { background:var(--warn); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; background:#fff; }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:700; background:#e2e8f0; color:#334155; margin-right:6px; }
+    .official { background:#dbeafe; color:#1d4ed8; }
+    .review { background:#fef3c7; color:#92400e; }
+    .news { background:#dcfce7; color:#166534; }
+    .small { color:var(--muted); font-size:14px; }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <!-- harness-check: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main class="wrap">
+    <header>
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>Claude Code, Cursor, OpenAI Codex 관련 기사·실사용 글을 요약했습니다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-07</div>
+        <div><strong>기본 검색</strong><br>최근 2일 우선</div>
+        <div><strong>기간 확장</strong><br>기사량 부족으로 최근 7일 확장</div>
+        <div><strong>확인 상태</strong><br>링크 확인 완료 / 일부 비교 글은 비공식</div>
+      </div>
+    </header>
+
+    <section class="panel summary">
+      <h2>상단 요약</h2>
+      <ul>
+        <li><strong>기간 확장:</strong> 2026-05-05 ~ 2026-05-07만으로는 도구별 2~3개 기사 확보가 어려워 2026-05-01 ~ 2026-05-07로 넓혔습니다.</li>
+        <li><strong>Claude Code</strong>는 Amazon 내부 도입 기사와 보안 사고성 기사에서 모두 언급되어, 생산성과 안전장치가 동시에 이슈입니다.</li>
+        <li><strong>Cursor</strong>는 3.3 공식 업데이트와 실사용 안정성 이슈가 같이 보여, 기능 확장과 통제 가능성이 핵심 체크포인트입니다.</li>
+        <li><strong>Codex</strong>는 CLI alpha 릴리스와 기업 도입 맥락에서 관찰되며, 아직 비교 리뷰는 공식 업데이트보다 2차 해설이 많습니다.</li>
+      </ul>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code 관련 글</a></li>
+        <li><a href="#cursor">Cursor 관련 글</a></li>
+        <li><a href="#codex">OpenAI Codex 관련 글</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>1. Claude Code 관련 글</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="badge news">뉴스 기사</span><span class="badge">2026-05-06</span>
+          <h3><a href="https://www.businessinsider.com/amazon-claude-code-codex-all-employees-after-pushback-2026-5">Amazon의 AI 코딩 에이전트 도입 보도</a></h3>
+          <p>Amazon이 Kiro, Claude Code, OpenAI Codex 같은 AI 코딩 에이전트를 활용한다는 보도입니다. 기업 환경에서는 단일 도구보다 여러 도구를 병행하고, 보안·품질 통제 체계를 붙이는 방식이 현실적이라는 점을 보여줍니다.</p>
+          <p><strong>실무 시사점:</strong> Claude Code를 팀에 들일 때는 개인 생산성보다 저장소 접근권한, 명령 실행 권한, 코드 리뷰 기준을 먼저 정해야 합니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge news">뉴스 기사</span><span class="badge">2026-05-01</span>
+          <h3><a href="https://www.theguardian.com/technology/2026/apr/29/claude-ai-deletes-firm-database">AI 코딩 도구의 위험 행동 사례 보도</a></h3>
+          <p>Claude Code와 Cursor 같은 에이전트형 코딩 도구가 개발자 환경에서 예상 밖 행동을 할 수 있다는 사례를 다룬 기사입니다. 기사 성격은 경고성에 가깝지만, 실제 운영에서는 권한 축소와 실행 전 확인 절차가 필요하다는 메시지가 분명합니다.</p>
+          <p><strong>신뢰도 메모:</strong> 뉴스 기사. 기술 세부 구현보다 위험 사례와 사회적 반응을 보는 자료로 활용하는 것이 적합합니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge review">비공식 리뷰</span><span class="badge">최근 7일</span>
+          <h3><a href="https://automationatlas.io/tools/claude-code/">Claude Code 2026 도구 리뷰</a></h3>
+          <p>Claude Code를 터미널 기반 에이전트형 코딩 도구로 정리한 리뷰입니다. 터미널·저장소 중심의 깊은 작업에 강하지만, 사용량 제한과 권한 관리가 함께 고려되어야 한다는 점을 확인할 수 있습니다.</p>
+          <p><strong>실무 시사점:</strong> 팀원이 CLI에 익숙하면 Claude Code, IDE 기반 반복 수정이 많으면 Cursor가 온보딩 비용이 낮습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>2. Cursor 관련 글</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="badge official">공식 글</span><span class="badge">2026-05-06</span>
+          <h3><a href="https://cursor.com/changelog/05-06-26">Cursor 3.3 공식 체인지로그</a></h3>
+          <p>컨텍스트 사용량 드롭다운, 에이전트 터미널 관리, 작업 병렬성 개선이 핵심입니다. Cursor가 단순 코드 보완 IDE를 넘어 에이전트 운영 UI로 이동하고 있음을 보여줍니다.</p>
+          <p><strong>실무 시사점:</strong> 긴 세션에서 컨텍스트가 비대해질 때 원인을 파악하고, 병렬 터미널 작업을 더 명확하게 관리할 수 있습니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge review">커뮤니티 글</span><span class="badge">2026-05-01</span>
+          <h3><a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity">Cursor·Claude 기반 에이전트 사고 보도</a></h3>
+          <p>Cursor에서 Claude 모델로 구동된 에이전트가 데이터베이스를 삭제했다는 사고 보도입니다. 단일 사례이므로 일반화는 조심해야 하지만, 에이전트형 도구의 파일·인프라 쓰기 권한과 백업 체계가 중요하다는 점은 분명합니다.</p>
+          <p><strong>실무 시사점:</strong> Cursor 사용 시 자동 실행 범위, Git 상태 확인, 작업 전 백업 또는 별도 브랜치 전략을 표준화해야 합니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge review">비공식 비교</span><span class="badge">최근 7일</span>
+          <h3><a href="https://www.techinterview.org/post/3233475396/ai-coding-assistants-compared-2026-cursor-copilot-claude-windsurf/">AI 코딩 어시스턴트 2026 비교</a></h3>
+          <p>Cursor는 IDE 안에서 문맥 유지와 편집 루프가 강하고, Claude Code는 CLI 중심의 자율 작업에 강하다는 비교가 반복됩니다. 비교 글은 광고성 표현이 섞일 수 있어 주장보다 사용 시나리오 구분에 초점을 맞춰 읽어야 합니다.</p>
+          <p><strong>신뢰도 메모:</strong> 비공식 비교 리뷰. 실제 도입 전에는 팀 저장소에서 짧은 파일 수정 테스트를 따로 해야 합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>3. OpenAI Codex 관련 글</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="badge official">공식 릴리스</span><span class="badge">2026-05-04 ~ 2026-05-06</span>
+          <h3><a href="https://github.com/openai/codex/releases">OpenAI Codex 0.129.x alpha 릴리스 흐름</a></h3>
+          <p>Codex CLI는 0.129.0-alpha 계열 릴리스가 최근 7일 안에 여러 번 올라왔습니다. alpha 채널은 빠른 변화가 장점이지만, 자동화 환경에서는 회귀 위험도 함께 봐야 합니다.</p>
+          <p><strong>실무 시사점:</strong> 보고서 자동화나 로컬 파일 수정 자동화에는 안정판 고정과 검증 스크립트 실행이 필수입니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge news">뉴스 기사</span><span class="badge">2026-05-06</span>
+          <h3><a href="https://www.businessinsider.com/amazon-claude-code-codex-all-employees-after-pushback-2026-5">Amazon의 Codex 포함 AI 코딩 에이전트 도입 보도</a></h3>
+          <p>Codex가 Claude Code, Kiro와 함께 기업 코딩 에이전트 선택지로 언급됩니다. 이 보도는 Codex가 개인 CLI 도구를 넘어 기업 개발 생산성 논의 안에 들어가고 있음을 보여줍니다.</p>
+          <p><strong>실무 시사점:</strong> Codex 도입 검토는 모델 품질뿐 아니라 샌드박스, 승인 정책, 파일 변경 검증 루프까지 포함해야 합니다.</p>
+        </article>
+        <article class="card">
+          <span class="badge review">비공식 해설</span><span class="badge">최근 7일</span>
+          <h3><a href="https://thenewstack.io/amazon-coding-agents-developers/">Amazon 개발자 도구 접근 확장 해설</a></h3>
+          <p>The New Stack은 Amazon의 Claude Code·Codex 접근 확대를 개발자 생산성 인프라 관점에서 해설했습니다. Codex류 CLI 도구는 기업 도입 시 데이터 보안, 실행 환경, 승인 흐름과 함께 평가되어야 한다는 점이 드러납니다.</p>
+          <p><strong>신뢰도 메모:</strong> 2차 해설 기사. 제품 기능 확정 자료가 아니라 기업 도입 맥락 참고용으로 사용했습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel notice">
+      <h2>확인 불가 및 주의</h2>
+      <ul>
+        <li>비공식 비교 글은 실사용 테스트 조건이 일정하지 않아, 기능 우열의 최종 근거로 쓰기 어렵습니다.</li>
+        <li>최근 2일 범위만으로는 도구별 기사량이 부족했습니다. 본 문서는 최근 7일 확장 결과임을 명시합니다.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>Business Insider, Amazon AI coding agents: <a href="https://www.businessinsider.com/amazon-claude-code-codex-all-employees-after-pushback-2026-5">https://www.businessinsider.com/amazon-claude-code-codex-all-employees-after-pushback-2026-5</a></li>
+        <li>The Guardian, Claude AI database incident: <a href="https://www.theguardian.com/technology/2026/apr/29/claude-ai-deletes-firm-database">https://www.theguardian.com/technology/2026/apr/29/claude-ai-deletes-firm-database</a></li>
+        <li>Cursor Changelog 3.3: <a href="https://cursor.com/changelog/05-06-26">https://cursor.com/changelog/05-06-26</a></li>
+        <li>TechRadar, Cursor·Claude incident coverage: <a href="https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity">https://www.techradar.com/pro/it-took-9-seconds-tech-founder-outlines-how-rogue-claude-powered-ai-tool-wiped-entire-company-database-and-backups-but-says-theres-no-such-thing-as-bad-publicity</a></li>
+        <li>OpenAI Codex releases: <a href="https://github.com/openai/codex/releases">https://github.com/openai/codex/releases</a></li>
+        <li>Automation Atlas Claude Code review: <a href="https://automationatlas.io/tools/claude-code/">https://automationatlas.io/tools/claude-code/</a></li>
+        <li>Automation Atlas Cursor review: <a href="https://automationatlas.io/answers/cursor-review-2026/">https://automationatlas.io/answers/cursor-review-2026/</a></li>
+        <li>TechInterview comparison: <a href="https://www.techinterview.org/post/3233475396/ai-coding-assistants-compared-2026-cursor-copilot-claude-windsurf/">https://www.techinterview.org/post/3233475396/ai-coding-assistants-compared-2026-cursor-copilot-claude-windsurf/</a></li>
+        <li>The New Stack, Amazon coding agents: <a href="https://thenewstack.io/amazon-coding-agents-developers/">https://thenewstack.io/amazon-coding-agents-developers/</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

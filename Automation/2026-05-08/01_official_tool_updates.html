@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-08</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f7fb; --panel:#fff; --ink:#17202a; --muted:#607086; --line:#d9e1ec; --accent:#0f6f68; --soft:#e9f5f2; --warn:#fff4d8; --link:#0b63c7; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#153c43; color:#fff; border-radius:14px; padding:30px; }
+    .hero p { margin:8px 0 0; color:#dcebef; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.22); border-radius:10px; padding:12px; background:rgba(255,255,255,.09); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px; margin-top:18px; }
+    .notice { background:var(--warn); border-radius:10px; padding:13px 15px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:16px; margin-top:14px; background:#fff; }
+    .badge { display:inline-block; background:var(--soft); color:#07564f; border-radius:999px; padding:3px 9px; margin-right:6px; font-size:.78rem; font-weight:700; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    a { color:var(--link); }
+    h1,h2,h3 { line-height:1.25; }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>공식 업데이트 보고서</h1>
+      <p>생성일: 2026-05-08 | 조사 기간: 2026-05-05 ~ 2026-05-08 | 대상: Claude Code, Cursor, OpenAI Codex</p>
+      <div class="grid">
+        <div class="stat"><strong>확인된 공식 업데이트</strong><br>Claude Code, Cursor, Codex 모두 공식 채널에서 새 항목 확인</div>
+        <div class="stat"><strong>핵심 방향</strong><br>컨텍스트 가시성, 터미널 안정성, 플러그인/워크스페이스 운영 강화</div>
+        <div class="stat"><strong>확인 상태</strong><br>제품 릴리스 3건 확인 완료, 가격 변화는 확인 범위 밖</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>상단 요약</h2>
+      <div class="notice">2026-05-05 이후 공식 업데이트는 에이전트 개발 도구가 "더 많이 자동화"되는 동시에 운영 통제와 복구 가능성을 강화하는 쪽으로 모였다. Cursor는 컨텍스트 사용량을 보여주기 시작했고, Claude Code와 Codex는 CLI/TUI 안정성, 재개 흐름, 플러그인/워크스페이스 운영을 다듬었다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>Claude Code v2.1.132</h3>
+        <p><span class="badge">공식 GitHub 릴리스</span><span class="badge">확인 완료</span></p>
+        <p>Anthropic의 Claude Code 저장소 최신 릴리스는 Bash 하위 프로세스에 `CLAUDE_CODE_SESSION_ID`를 전달하고, 대체 화면 렌더러 비활성화 환경 변수를 추가했다. 외부 SIGINT, SSH 연결 종료, resume 중 문자열 손상, plan-mode 재개, fullscreen 복구 같은 터미널 운용 문제도 다수 수정했다.</p>
+        <p><strong>실사용 관점:</strong> 장시간 터미널 세션, IDE 중단 버튼, tmux/SSH 환경에서의 복구 안정성이 중요해졌다. 로컬 자동화나 에이전트 하네스는 세션 ID를 로그와 훅에 연결하기 쉬워진다.</p>
+        <p class="meta">발표일: 2026-05-06 | 출처: GitHub Releases | <a href="https://github.com/anthropics/claude-code/releases">링크</a></p>
+      </article>
+      <article class="card">
+        <h3>금융 서비스용 에이전트 템플릿</h3>
+        <p><span class="badge">공식 발표</span><span class="badge">Claude Code 플러그인</span></p>
+        <p>Anthropic은 금융 서비스 업무용 ready-to-run 에이전트 템플릿 10개를 발표했다. 피치북, KYC, 결산, 밸류에이션 검토 같은 업무가 Claude Cowork와 Claude Code 플러그인, Claude Managed Agents cookbook 형태로 제공된다.</p>
+        <p><strong>실사용 관점:</strong> Claude Code가 범용 코딩 보조 도구를 넘어 도메인별 업무 플러그인 실행 표면으로 확장되고 있다. 규제 산업에서는 도구 권한, 감사 로그, 검토자 승인 흐름이 핵심 체크포인트다.</p>
+        <p class="meta">발표일: 2026-05-05 | 출처: Anthropic News | <a href="https://www.anthropic.com/news/finance-agents?cam=claude">링크</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Context Usage Breakdown</h3>
+        <p><span class="badge">공식 Changelog</span><span class="badge">Cursor 3.3</span></p>
+        <p>Cursor는 에이전트의 컨텍스트 사용량을 분해해서 볼 수 있는 기능을 공개했다. 규칙, skills, MCP, subagents가 컨텍스트를 얼마나 쓰는지 진단하는 용도다.</p>
+        <p><strong>실사용 관점:</strong> Cursor 기반 팀은 성능 저하나 응답 품질 저하를 "모델 문제"로만 보지 않고, 규칙/도구/서브에이전트가 컨텍스트를 과하게 쓰는지 점검할 수 있다.</p>
+        <p class="meta">발표일: 2026-05-06 | 출처: Cursor Changelog | <a href="https://cursor.com/changelog/05-06-26">링크</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>Codex 0.129.0</h3>
+        <p><span class="badge">공식 GitHub 릴리스</span><span class="badge">확인 완료</span></p>
+        <p>OpenAI Codex 저장소의 0.129.0 릴리스는 TUI composer의 Vim 편집 모드, resume/fork picker 개선, raw scrollback, `/ide` 컨텍스트 주입, workspace-aware `/diff`, 상태줄 색상/PR/브랜치 요약, 플러그인 workspace sharing을 포함한다.</p>
+        <p><strong>실사용 관점:</strong> Codex CLI/TUI가 단순 채팅 셸보다 실제 개발 터미널에 가까워지고 있다. 플러그인 공유와 워크스페이스 단위 운영 기능은 반복 자동화 하네스와 조직 내 설정 재사용에 직접 연결된다.</p>
+        <p class="meta">발표일: 2026-05-07 | 출처: GitHub Releases | <a href="https://github.com/openai/codex/releases">링크</a></p>
+      </article>
+      <article class="card">
+        <h3>Codex 커뮤니티 이벤트</h3>
+        <p><span class="badge">공식 개발자 사이트</span><span class="badge">생태계 업데이트</span></p>
+        <p>OpenAI Developers 사이트는 2026-05-07 샌프란시스코 커뮤니티 밋업과 2026-05-08 오스틴/싱가포르 해커톤, 도쿄 밋업 등 Codex 커뮤니티 일정을 게시했다.</p>
+        <p><strong>실사용 관점:</strong> 제품 릴리스와 별개로 Codex 학습/커뮤니티 채널이 늘고 있다. 팀 도입 검토자는 공식 문서뿐 아니라 지역 밋업/해커톤 자료도 후속 참고 대상으로 볼 만하다.</p>
+        <p class="meta">발표일: 2026-05-07~2026-05-08 | 출처: OpenAI Developers | <a href="https://developers.openai.com/community/meetups">링크</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/anthropics/claude-code/releases">Anthropic Claude Code Releases</a></li>
+        <li><a href="https://www.anthropic.com/news/finance-agents?cam=claude">Anthropic - Agents for financial services</a></li>
+        <li><a href="https://cursor.com/changelog/05-06-26">Cursor Changelog - Context Usage Breakdown</a></li>
+        <li><a href="https://github.com/openai/codex/releases">OpenAI Codex Releases</a></li>
+        <li><a href="https://developers.openai.com/community/meetups">OpenAI Developers - Codex Meetups</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
