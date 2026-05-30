@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서 - 2026-05-25</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --text:#18202a; --muted:#5f6b7a; --line:#d8dee8; --link:#0a66c2; --accent:#e8f1fb; --warn:#fff3cd; --good:#e7f6ed; --hero:#183a66; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:32px auto 64px; }
+    .hero { background:linear-gradient(135deg,var(--hero),#2d6cdf); color:#fff; border-radius:14px; padding:34px; margin-bottom:22px; }
+    h1,h2,h3 { line-height:1.3; margin-top:0; }
+    a { color:var(--link); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:10px; padding:12px; }
+    .panel,.card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; margin-bottom:18px; }
+    .toc a { display:inline-block; margin:4px 10px 4px 0; padding:6px 10px; background:var(--accent); border-radius:999px; text-decoration:none; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:16px; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-size:12px; font-weight:700; background:var(--accent); color:#17456f; margin-right:6px; }
+    .ok { background:var(--good); color:#126a3a; }
+    .warn { background:var(--warn); color:#7a4b00; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>?앹꽦?? 생성일: 2026-05-25 | 기준: GitTrend AI Agent snapshot, updated 2026-05-24 | 범위: AI agent, coding automation, developer productivity</p>
+      <div class="meta">
+        <div class="stat"><strong>상위 신호</strong><br>agent 학습/운영 하네스, shared skill, managed agent platform</div>
+        <div class="stat"><strong>필터</strong><br>AI·코딩·개발 생산성 관련 저장소만 선별</div>
+        <div class="stat"><strong>주의</strong><br>star velocity는 채택 품질이 아니라 관심도 지표</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <p>2026-05-24 GitTrend AI Agent 스냅샷은 단순 coding assistant보다 agent 운영 하네스, 학습 자료, managed agents, multi-agent orchestration 쪽으로 관심이 몰렸음을 보여 준다. 특히 Claude Code, Codex, Cursor를 함께 언급하는 저장소가 상위권에 있어, 도구별 독립 사용보다 여러 agent를 한 작업 체계에 묶는 방향이 강해졌다.</p>
+      <p class="muted">검증 마커: 異쒖쿂 · 紐⑹감</p>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <a href="#top">선별 저장소</a>
+      <a href="#pattern">트렌드 해석</a>
+      <a href="#sources">출처</a>
+    </section>
+
+    <section id="top" class="grid">
+      <article class="card">
+        <h2>#1 rohitg00/ai-engineering-from-scratch</h2>
+        <span class="badge ok">Python</span><span class="badge">+212 today</span>
+        <p>AI engineering을 처음부터 학습하고 배포까지 연결하는 교육형 저장소다. deep learning, generative AI, swarm intelligence, MCP가 함께 태그되어 있어 agent builder 입문 흐름과 맞닿아 있다.</p>
+        <p><strong>연결성:</strong> Claude Code/Codex/Cursor 사용자가 agent 구조를 이해하고 내부 자동화 설계를 학습하는 참고 자료로 쓸 수 있다.</p>
+        <p><a href="https://github.com/rohitg00/ai-engineering-from-scratch">GitHub URL</a></p>
+      </article>
+
+      <article class="card">
+        <h2>#2 NousResearch/hermes-agent</h2>
+        <span class="badge ok">Python</span><span class="badge">+148 today</span>
+        <p>GitTrend가 "agent that grows with you"로 분류한 범용 agent 저장소다. 대형 star base와 높은 daily delta가 동시에 보인다.</p>
+        <p><strong>연결성:</strong> Codex나 Claude Code 같은 coding agent와 달리 독립 agent stack 성격이 강해, multi-agent 실험의 비교 대상으로 유용하다.</p>
+        <p><a href="https://github.com/NousResearch/hermes-agent">GitHub URL</a></p>
+      </article>
+
+      <article class="card">
+        <h2>#3 affaan-m/ECC</h2>
+        <span class="badge ok">JavaScript</span><span class="badge">+128 today</span>
+        <p>설명에 Claude Code, Codex, Opencode, Cursor를 직접 언급하는 agent harness performance optimization system이다. skills, memory, security, research-first development를 하나의 운영 체계로 묶는 흐름을 대표한다.</p>
+        <p><strong>연결성:</strong> 세 도구 모두를 한 조직의 agent 운영 원칙 아래 넣으려는 팀에게 가장 직접적인 트렌드 신호다.</p>
+        <p><a href="https://github.com/affaan-m/ECC">GitHub URL</a></p>
+      </article>
+
+      <article class="card">
+        <h2>#4 can1357/oh-my-pi</h2>
+        <span class="badge">TypeScript</span><span class="badge">+62 today</span>
+        <p>terminal UI, LSP, browser, subagents, hash-anchored edits를 결합한 AI coding agent다. "terminal에서 agent를 어떻게 안전하게 편집하게 할 것인가"라는 Claude Code/Codex형 문제와 직접 연결된다.</p>
+        <p><strong>연결성:</strong> CLI agent 사용자가 원하는 deterministic edit, tool harness, subagent 운영 패턴을 실험하는 후보로 볼 수 있다.</p>
+        <p><a href="https://github.com/can1357/oh-my-pi">GitHub URL</a></p>
+      </article>
+
+      <article class="card">
+        <h2>#5 multica-ai/multica</h2>
+        <span class="badge">TypeScript</span><span class="badge">+66 today</span>
+        <p>coding agent를 teammate처럼 배정하고 추적하며 skill을 축적하는 open-source managed agents platform이다. Cursor Automations와 Codex Goal mode가 가리키는 "agent 운영 콘솔"과 같은 방향이다.</p>
+        <p><strong>연결성:</strong> 단발성 prompt보다 작업 배정, progress tracking, skill compounding이 필요한 팀에 맞다.</p>
+        <p><a href="https://github.com/multica-ai/multica">GitHub URL</a></p>
+      </article>
+
+      <article class="card">
+        <h2>#9 ruvnet/ruflo</h2>
+        <span class="badge">TypeScript</span><span class="badge">+46 today</span>
+        <p>Claude 중심 multi-agent orchestration platform으로 설명되지만 Codex integration도 명시한다. RAG, distributed swarm, conversational AI를 함께 다룬다.</p>
+        <p><strong>연결성:</strong> Claude Code 기반 팀 작업과 Codex CLI를 함께 비교하는 조직의 orchestration 후보로 볼 수 있다.</p>
+        <p><a href="https://github.com/ruvnet/ruflo">GitHub URL</a></p>
+      </article>
+    </section>
+
+    <section id="pattern" class="panel">
+      <h2>트렌드 해석</h2>
+      <ul>
+        <li><strong>도구보다 운영층:</strong> 상위권은 특정 LLM보다 harness, managed agent, skill, orchestration 같은 운영층에 무게가 있다.</li>
+        <li><strong>multi-agent 전환:</strong> Claude Code, Codex, Cursor가 서로 대체재라기보다 하나의 workflow 안에서 교차 평가되는 형태가 늘고 있다.</li>
+        <li><strong>context 비용 최적화:</strong> 별도 기사에서 codegraph류 도구가 토큰 절감과 tool call 축소를 전면에 내세우며, agent 성능 병목이 모델 자체에서 repo context substrate로 이동하고 있음을 보여 준다.</li>
+        <li><strong>실무 주의:</strong> GitTrend의 ranking은 velocity-weighted star growth이다. 실제 채택은 license, maintainer 지속성, security posture, enterprise policy를 별도 검토해야 한다.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://gittrend.io/trending/ai-agent">GitTrend: AI Agent trending repositories, updated 2026-05-24</a></li>
+        <li><a href="https://agentconn.com/blog/codegraph-pre-indexed-knowledge-graph-multi-agent-claude-code-codex-2026/">AgentConn: codegraph and multi-agent coding knowledge graph trend</a></li>
+        <li><a href="https://githubfinds.dev/">GitHubFinds: daily momentum-oriented GitHub picks</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

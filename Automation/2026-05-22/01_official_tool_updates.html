@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-22</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --text:#1d2633; --muted:#5e6b7b; --line:#d9e1ec; --brand:#174a7c; --soft:#e9f2ff; --warn:#fff4d6; --ok:#e9f8ef; --no:#f6edf7; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.68; }
+    main { width:min(1040px, calc(100vw - 32px)); margin:30px auto 64px; }
+    header { background:linear-gradient(135deg,#153a5f,#22689d); color:white; border-radius:18px; padding:32px; }
+    h1 { margin:0; font-size:30px; }
+    h2 { margin:0 0 14px; font-size:21px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:#0b62b4; }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.22); border-radius:12px; padding:12px 14px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-color:#c8ddf7; }
+    .notice { background:var(--warn); border-color:#edd79c; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff; }
+    .badge { display:inline-block; border-radius:999px; padding:4px 10px; font-size:12px; font-weight:700; background:#e9edf5; color:#324256; margin-right:6px; }
+    .ok { background:var(--ok); color:#17653a; }
+    .gap { background:var(--no); color:#6b316f; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+    footer { color:var(--muted); font-size:14px; margin-top:22px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>공식 업데이트 보고서</h1>
+    <p>Claude Code, Cursor, OpenAI Codex의 공식 업데이트 흐름을 2026-05-22 기준으로 점검했다.</p>
+    <div class="meta">
+      <div><strong>생성일</strong><br>2026-05-22</div>
+      <div><strong>조사 기준</strong><br>공식 업데이트 최근 3일: 2026-05-20~2026-05-22</div>
+      <div><strong>상태</strong><br>Claude Code만 엄격 기간 내 새 릴리스 확인</div>
+      <div><strong>기간 확장</strong><br>Cursor, Codex는 근접 공식 항목을 별도 표시</div>
+    </div>
+  </header>
+
+  <section class="panel summary">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li>Claude Code는 2026-05-21에 v2.1.146을 공개했고, Windows PowerShell, MCP 페이지네이션, 백그라운드 세션, 하위 에이전트 모델 전달 등 실제 운영 안정성 문제를 집중적으로 고쳤다.</li>
+      <li>Cursor는 엄격한 3일 창에서는 새 공식 AI 코딩 업데이트를 찾지 못했다. 가장 가까운 공식 항목은 2026-05-18의 Cursor in Jira 및 Composer 2.5다.</li>
+      <li>OpenAI Codex도 2026-05-20~2026-05-22 사이 Codex 전용 공식 업데이트는 확인되지 않았다. 가장 가까운 Codex 관련 공식 항목은 2026-05-14 원격 접속 및 자동화용 access token이다.</li>
+    </ul>
+  </section>
+
+  <section class="panel toc">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#claude">Claude Code</a></li>
+      <li><a href="#cursor">Cursor</a></li>
+      <li><a href="#codex">OpenAI Codex</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section id="claude" class="panel">
+    <h2>Claude Code</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge ok">확인 완료</span><span class="badge">2026-05-21</span>
+        <h3>v2.1.146: 코드 리뷰 명령과 Windows 안정성 개선</h3>
+        <p>Anthropic의 GitHub 릴리스에 따르면 `/simplify`가 `/code-review`로 이름이 바뀌었고, effort level 지정이 가능해졌다. Auto mode가 명시적 질문 요청을 억제하지 않도록 수정됐으며, winget 또는 Microsoft Store로 설치된 `pwsh`에서 PowerShell 도구가 실패하던 회귀도 고쳤다.</p>
+        <p><strong>실무 의미:</strong> Windows 기반 자동화와 다중 에이전트 운용에서 막히던 지점들이 직접 수정됐다. Claude Code를 상태 표시줄, MCP 서버, 백그라운드 세션과 엮어 쓰는 팀에는 즉시 업데이트 가치가 있다.</p>
+        <p><a href="https://github.com/anthropics/claude-code/releases">GitHub 릴리스 보기</a></p>
+      </article>
+      <article class="card">
+        <span class="badge ok">확인 완료</span><span class="badge">2026-05-19</span>
+        <h3>v2.1.145: 에이전트 JSON, 추적성, 플러그인 탐색 강화</h3>
+        <p>`claude agents --json`으로 실행 중인 세션을 스크립트에서 읽을 수 있게 됐고, OTEL span에 agent id 계층 정보가 추가됐다. 플러그인 설치 전 명령, 에이전트, 스킬, hook, MCP/LSP 서버를 보여주는 개선도 포함됐다.</p>
+        <p><strong>실무 의미:</strong> Claude Code가 단일 CLI를 넘어 상태 감시, 세션 선택기, 팀 대시보드와 붙는 운영 표면으로 확장되고 있다.</p>
+        <p><a href="https://github.com/anthropics/claude-code/releases">GitHub 릴리스 보기</a></p>
+      </article>
+      <article class="card">
+        <span class="badge">근접 공식 문서</span><span class="badge">2026-05-11~2026-05-15</span>
+        <h3>Agent view, goal 지속 실행, Opus 4.7 fast mode</h3>
+        <p>Claude Code 문서의 Week 20 업데이트는 `claude agents` 대시보드, 목표 조건이 만족될 때까지 계속 실행하는 흐름, `/fast`의 Opus 4.7 기본 사용을 설명한다.</p>
+        <p><strong>실무 의미:</strong> 최근 릴리스의 방향은 "사용자가 계속 지켜보는 도구"에서 "여러 장기 작업을 감시하고 개입하는 도구"로 이동 중이다.</p>
+        <p><a href="https://code.claude.com/docs/en/whats-new/2026-w20">Claude Code What's New 보기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="cursor" class="panel">
+    <h2>Cursor</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge gap">3일 창 내 새 항목 없음</span>
+        <h3>2026-05-20~2026-05-22 공식 AI 코딩 업데이트 부재</h3>
+        <p>Cursor 공식 changelog에서 엄격한 3일 창에 해당하는 새 AI 코딩 업데이트는 확인하지 못했다. 이 항목은 확인 불가가 아니라 "기간 내 없음"으로 기록한다.</p>
+        <p><strong>실무 의미:</strong> 오늘의 Cursor 판단은 새 릴리스보다는 직전 릴리스의 방향성, 특히 Jira와 cloud agent 확장에 근거해야 한다.</p>
+      </article>
+      <article class="card">
+        <span class="badge">근접 공식 항목</span><span class="badge">2026-05-18</span>
+        <h3>Cursor in Jira 및 Composer 2.5</h3>
+        <p>Cursor는 Jira work item에서 `@Cursor`를 호출해 cloud agent를 시작하고 PR 링크를 남기는 흐름을 공개했다. 같은 날 Composer 2.5도 공개되며 장기 작업 지시 준수와 협업 품질 개선을 강조했다.</p>
+        <p><strong>실무 의미:</strong> Cursor의 초점은 에디터 보조에서 이슈 트래커 기반 작업 할당과 팀 운영으로 넓어지고 있다.</p>
+        <p><a href="https://cursor.com/changelog">Cursor changelog 보기</a></p>
+      </article>
+      <article class="card">
+        <span class="badge">근접 공식 항목</span><span class="badge">2026-05-13</span>
+        <h3>Agents Window, compact chat, multi-repo environments</h3>
+        <p>Cursor 3.4는 Agents Window의 전체 화면 탭, compact chat, PR 탭 개선, cloud agent 상태와 환경 선택 안정성을 다뤘다. Cloud agents와 automations의 multi-repo environment도 공식적으로 강조됐다.</p>
+        <p><strong>실무 의미:</strong> 여러 저장소를 묶어 에이전트 실행 환경을 재사용하는 팀에는 Cursor의 관리형 agent 환경이 점점 중요한 차별점이다.</p>
+        <p><a href="https://cursor.com/changelog">Cursor changelog 보기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="codex" class="panel">
+    <h2>OpenAI Codex</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge gap">3일 창 내 Codex 전용 새 항목 없음</span>
+        <h3>공식 릴리스 노트에서 Codex 새 항목 미확인</h3>
+        <p>OpenAI Help Center의 Enterprise/Edu 릴리스 노트는 2026-05-18에 Apps Directory beta label 제거를 기록했지만, Codex 전용 기능 업데이트는 아니었다. 2026-05-20~2026-05-22 범위에서도 Codex 전용 공식 항목은 확인하지 못했다.</p>
+        <p><strong>실무 의미:</strong> 오늘 Codex 평가는 새 기능보다는 2026-05-14 원격 접속과 access token 발표의 후속 운영 영향에 초점을 맞춘다.</p>
+      </article>
+      <article class="card">
+        <span class="badge">근접 공식 항목</span><span class="badge">2026-05-14</span>
+        <h3>ChatGPT 모바일 앱을 통한 Codex remote access</h3>
+        <p>OpenAI 공식 릴리스 노트는 Codex가 ChatGPT 모바일 앱에서 원격 접속을 지원한다고 설명한다. 사용자는 장기 실행 작업 상태, 승인, 스크린샷, 터미널 출력, diff, 테스트 결과를 확인하고 개입할 수 있다.</p>
+        <p><strong>실무 의미:</strong> Codex는 데스크톱 앱만의 작업 큐가 아니라, 장시간 실행되는 로컬 또는 원격 작업을 모바일에서 감독하는 운영 체계로 확장 중이다.</p>
+        <p><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes">OpenAI 릴리스 노트 보기</a></p>
+      </article>
+      <article class="card">
+        <span class="badge">근접 공식 항목</span><span class="badge">2026-05-14</span>
+        <h3>Enterprise access token for automation</h3>
+        <p>OpenAI는 Enterprise workspaces에서 브라우저 로그인 없이 신뢰된 비대화형 로컬 워크플로가 ChatGPT workspace identity와 enterprise controls를 사용할 수 있는 Codex access token을 제공한다고 밝혔다.</p>
+        <p><strong>실무 의미:</strong> 반복 자동화, 야간 빌드, 내부 agent harness에서 사람의 브라우저 세션 의존도를 낮출 수 있다. 다만 관리자 정책과 governance 표면 확인이 선행돼야 한다.</p>
+        <p><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes">OpenAI 릴리스 노트 보기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sources" class="panel">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://github.com/anthropics/claude-code/releases">Anthropic Claude Code GitHub Releases</a> - v2.1.146, v2.1.145, v2.1.142 확인.</li>
+      <li><a href="https://code.claude.com/docs/en/whats-new/2026-w20">Claude Code What's New Week 20</a> - Agent view, fast mode, hook/remote-control 관련 흐름 확인.</li>
+      <li><a href="https://cursor.com/changelog">Cursor Changelog</a> - Cursor in Jira, Composer 2.5, Agents Window, multi-repo environments 확인.</li>
+      <li><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes">OpenAI ChatGPT Enterprise & Edu Release Notes</a> - Codex remote access, access tokens 확인.</li>
+    </ul>
+  </section>
+
+  <section class="panel notice">
+    <h2>확인 불가 및 주의</h2>
+    <ul>
+      <li>Cursor와 OpenAI Codex는 2026-05-20~2026-05-22 엄격 기간 안의 새 Codex/Cursor 전용 공식 업데이트를 확인하지 못했다.</li>
+      <li>Cursor와 Codex 항목에는 근접 공식 업데이트를 별도 표시했으며, 엄격 기간 내 업데이트로 오해하지 않도록 날짜를 명시했다.</li>
+    </ul>
+  </section>
+
+  <footer>생성일: 2026-05-22 · 기준: 공식 출처 우선 · 확인 상태: 링크별 수동 확인 완료</footer>
+</main>
+</body>
+</html>

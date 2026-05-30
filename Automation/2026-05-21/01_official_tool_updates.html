@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-21 공식 업데이트 보고서</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --text:#17202a; --muted:#5d6978; --line:#d9e0ea; --blue:#0b62b4; --green:#147d50; --amber:#9a6700; --red:#b42318; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.68; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#102a43; color:white; border-radius:18px; padding:32px; }
+    h1, h2, h3 { line-height:1.25; margin-top:0; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:12px 14px; }
+    .panel, .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px; margin-top:18px; }
+    .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+    .summary .box { background:#eef6ff; border-left:4px solid var(--blue); border-radius:12px; padding:14px; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 10px; font-size:12px; font-weight:700; margin-right:6px; }
+    .ok { background:#e8f7ef; color:var(--green); } .warn { background:#fff7df; color:var(--amber); } .gap { background:#fff1f0; color:var(--red); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+    .source { color:var(--muted); font-size:14px; }
+    ul { margin:8px 0 0; padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>공식 업데이트 보고서</h1>
+      <p>Claude Code, Cursor, OpenAI Codex 계열의 최근 공식 업데이트를 개발 워크플로 관점에서 정리했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-21</div>
+        <div><strong>조사 기간</strong><br>공식 업데이트: 2026-05-19 ~ 2026-05-21</div>
+        <div><strong>확인 상태</strong><br>확인 완료 4건, 날짜 확인 불가 1건, 엄격 기간 공백 1건</div>
+        <div><strong>자료 기준</strong><br>공식 문서, 공식 changelog, GitHub/OpenAI 계열 공지</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>핵심 요약</h2>
+      <div class="summary">
+        <div class="box"><strong>Cursor가 가장 뚜렷하게 움직였다.</strong><br>2026-05-20 Automations 개선과 2026-05-19 Jira 통합이 모두 엄격 기간 안에 확인된다.</div>
+        <div class="box"><strong>Claude Code는 운영 안정화 쪽이다.</strong><br>공식 raw changelog에는 v2.1.145 변경이 있으나 공식 페이지가 날짜를 명확히 노출하지 않아 날짜는 제한적으로만 해석한다.</div>
+        <div class="box"><strong>Codex는 엄격 기간 내 1차 업데이트가 약하다.</strong><br>가장 가까운 공식성 높은 참고점은 2026-05-17 GitHub의 GPT-5.3-Codex 기본 모델 전환이다.</div>
+      </div>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li>Claude Code</li>
+        <li>Cursor</li>
+        <li>OpenAI Codex / GitHub Copilot 내 Codex</li>
+        <li>확인 불가 및 해석 주의</li>
+        <li>출처</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>도구별 공식 업데이트</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Claude Code v2.1.145</h3>
+          <p><span class="badge warn">날짜 제한</span><span class="badge ok">공식 내용 확인</span></p>
+          <p>공식 GitHub raw changelog 기준으로 v2.1.145에는 <code>claude agents --json</code>, OTEL span의 agent 식별자, GitHub repo/PR 정보를 포함하는 status line JSON, 플러그인 탐색 화면 개선, hook 입력 확장, Windows PowerShell 5.1 resume 힌트 수정 등이 포함됐다.</p>
+          <ul>
+            <li><strong>중요한 이유:</strong> 팀 단위 Claude Code 운용에서 세션 목록 자동화, 관측성, 플러그인 설치 전 검토, Windows 호환성이 모두 운영 품질에 직접 연결된다.</li>
+            <li><strong>발표일:</strong> 공식 raw changelog에는 날짜 미표기. 비공식 추적 페이지는 2026-05-19로 표시하나, 본 보고서에서는 날짜를 확정하지 않는다.</li>
+            <li><strong>확인 상태:</strong> 기능 내용 확인 완료, 공식 발표일 확인 불가</li>
+          </ul>
+          <p class="source">출처: <a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">Anthropic Claude Code 공식 changelog raw</a>, 날짜 참고: <a href="https://www.claudeupdates.dev/version/2.1.145">Claude Updates v2.1.145</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Cursor 3.5: Automations 개선</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge ok">2026-05-20</span></p>
+          <p>Cursor Automations가 Agents Window 안으로 들어오고, 여러 저장소를 붙인 자동화와 저장소 없는 자동화가 가능해졌다. Cursor는 Slack digest, product analytics, FAQ, finance, customer health 같은 no-repo automation 템플릿도 함께 제시했다.</p>
+          <ul>
+            <li><strong>중요한 이유:</strong> Cursor가 단순 IDE 보조에서 반복 업무를 맡는 에이전트 운영판으로 이동하고 있다.</li>
+            <li><strong>실무 영향:</strong> 멀티레포 제품, 데이터/지원/재무 알림처럼 코드 외부 신호를 함께 읽는 자동화에 유리하다.</li>
+            <li><strong>확인 상태:</strong> 확인 완료</li>
+          </ul>
+          <p class="source">출처: <a href="https://cursor.com/en-US/changelog">Cursor Changelog</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Cursor in Jira</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge ok">2026-05-19</span></p>
+          <p>Jira work item에서 Cursor를 할당하거나 댓글로 호출해 cloud agent를 시작할 수 있다. 작업 완료 후 Jira에는 진행 상태와 PR 링크가 표시된다.</p>
+          <ul>
+            <li><strong>중요한 이유:</strong> 기획 티켓에서 구현 PR까지 이어지는 흐름을 Cursor가 직접 연결한다.</li>
+            <li><strong>제약:</strong> Cursor admin access와 Jira Commercial Cloud with Rovo가 필요하다.</li>
+            <li><strong>확인 상태:</strong> 확인 완료</li>
+          </ul>
+          <p class="source">출처: <a href="https://cursor.com/en-US/changelog">Cursor Changelog</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Cursor Composer 2.5</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge warn">2026-05-18, 엄격 기간 직전</span></p>
+          <p>Composer 2.5는 Cursor 내에서 사용 가능한 최신 Composer 모델로, 장기 작업 지속성, 복잡한 지시 준수, 협업 감각 개선을 강조한다. 표준 가격은 $0.50/M input, $2.50/M output으로 공개됐다.</p>
+          <ul>
+            <li><strong>중요한 이유:</strong> Cursor는 IDE 경험뿐 아니라 자체 모델 품질과 가격 경쟁력으로 Claude Code/Codex와 직접 경쟁하고 있다.</li>
+            <li><strong>확인 상태:</strong> 확인 완료, 엄격 3일 창에서는 하루 앞선 참고 항목</li>
+          </ul>
+          <p class="source">출처: <a href="https://cursor.com/en-US/changelog">Cursor Changelog</a>, <a href="https://forum.cursor.com/t/composer-2-5-is-now-live/160934">Cursor Forum announcement</a></p>
+        </article>
+
+        <article class="card">
+          <h3>GPT-5.3-Codex: Copilot Business/Enterprise 기본 모델</h3>
+          <p><span class="badge warn">2026-05-17, 엄격 기간 밖</span><span class="badge ok">공식성 높음</span></p>
+          <p>GitHub는 Copilot Business와 Enterprise 조직의 기본 모델을 GPT-4.1에서 GPT-5.3-Codex로 전환했다. 이 모델은 OpenAI와의 파트너십에서 GitHub의 첫 LTS 모델로 지정됐고, 2027-02-04까지 사용 가능하다고 공지됐다.</p>
+          <ul>
+            <li><strong>중요한 이유:</strong> Codex 계열 모델이 엔터프라이즈 Copilot의 기본값이 되면서 조직 단위 코드 생성·리뷰 품질의 기준선이 바뀐다.</li>
+            <li><strong>주의:</strong> 2026-05-19~2026-05-21 엄격 창 안의 OpenAI 1차 Codex 업데이트는 확인하지 못했다.</li>
+            <li><strong>확인 상태:</strong> GitHub 공식 확인 완료, 엄격 기간 내 OpenAI 1차 업데이트는 확인 불가</li>
+          </ul>
+          <p class="source">출처: <a href="https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise/">GitHub Changelog</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Codex remote access from ChatGPT mobile app</h3>
+          <p><span class="badge warn">2026-05-14, 근접 참고</span><span class="badge ok">OpenAI Help 확인</span></p>
+          <p>OpenAI Help의 ChatGPT release notes는 Codex를 ChatGPT 모바일 앱에서 원격으로 확인하고, 질문에 답하고, 방향을 바꾸고, 승인하는 preview 기능을 설명한다.</p>
+          <ul>
+            <li><strong>중요한 이유:</strong> Codex가 데스크톱/CLI 중심의 작업자를 모바일 승인·검토 루프로 확장하고 있다.</li>
+            <li><strong>주의:</strong> 오늘 엄격 기간의 신규 업데이트가 아니라 최신 근접 공식 참고점이다.</li>
+            <li><strong>확인 상태:</strong> 확인 완료</li>
+          </ul>
+          <p class="source">출처: <a href="https://help.openai.com/en/articles/6825453-chatgptrelease-notes">OpenAI Help Center, ChatGPT Release Notes</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>확인 불가 및 해석 주의</h2>
+      <ul>
+        <li>Claude Code v2.1.145의 변경 내용은 공식 raw changelog에서 확인했지만, 공식 발표일은 문서 안에서 확인하지 못했다.</li>
+        <li>OpenAI가 2026-05-19~2026-05-21 사이에 Codex 전용 1차 업데이트를 별도로 낸 근거는 확인하지 못했다.</li>
+        <li>Cursor의 Composer 2.5는 2026-05-18 공지라서 오늘 기준 최근 흐름에는 중요하지만, 엄격한 3일 창을 2026-05-19부터로 잡으면 밖에 있다.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">Anthropic Claude Code CHANGELOG raw</a></li>
+        <li><a href="https://www.claudeupdates.dev/version/2.1.145">Claude Updates v2.1.145 date tracker</a></li>
+        <li><a href="https://cursor.com/en-US/changelog">Cursor Changelog</a></li>
+        <li><a href="https://forum.cursor.com/t/composer-2-5-is-now-live/160934">Cursor Forum: Composer 2.5 is now live</a></li>
+        <li><a href="https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise/">GitHub Changelog: GPT-5.3-Codex base model</a></li>
+        <li><a href="https://help.openai.com/en/articles/6825453-chatgptrelease-notes">OpenAI Help Center: ChatGPT release notes</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

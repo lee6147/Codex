@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-19</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #5f6b7a;
+      --line: #d9e0ea;
+      --accent: #155eef;
+      --accent-soft: #e8f0ff;
+      --warn: #fff6d7;
+      --ok: #e9f8ef;
+      --shadow: 0 12px 30px rgba(26, 39, 68, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 32px auto 56px; }
+    .hero {
+      background: linear-gradient(135deg, #10284c, #214f91);
+      color: #fff;
+      border-radius: 18px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0 0 10px; font-size: 32px; }
+    h2 { margin: 0 0 14px; font-size: 22px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    a { color: var(--accent); }
+    .hero a { color: #d8e6ff; }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .meta div {
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.12);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .panel {
+      margin-top: 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .tile {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: #fbfcff;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--accent-soft);
+      color: #0b3b8c;
+      margin-right: 6px;
+    }
+    .badge.warn { background: var(--warn); color: #7a5200; }
+    .badge.ok { background: var(--ok); color: #176c35; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fff;
+    }
+    ul { margin: 8px 0 0 20px; padding: 0; }
+    li { margin: 5px 0; }
+    .source-list li { word-break: break-word; }
+    .note {
+      background: var(--warn);
+      border: 1px solid #f1db91;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>공식 업데이트 보고서</h1>
+      <p>Claude Code, Cursor, OpenAI Codex의 공식 업데이트를 2026-05-17부터 2026-05-19까지 우선 확인했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-19</div>
+        <div><strong>기본 조사 기간</strong><br>2026-05-17 ~ 2026-05-19</div>
+        <div><strong>확장 참고</strong><br>마지막 공식 공지 확인용 7일 맥락</div>
+        <div><strong>확인 상태</strong><br>공식 출처 우선, 보조 기사 분리</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="summary">
+        <div class="tile">
+          <span class="badge warn">3일 내 신규 없음</span>
+          <h3>Claude Code</h3>
+          <p>2026-05-17 이후 공식 changelog 신규 항목은 확인하지 못했다. 마지막으로 확인한 근접 공식 항목은 2026-05-15 CLI 안정화/권한/에이전트 수정 묶음이다.</p>
+        </div>
+        <div class="tile">
+          <span class="badge warn">3일 내 신규 없음</span>
+          <h3>Cursor</h3>
+          <p>2026-05-17 이후 공식 changelog 신규 항목은 확인하지 못했다. 2026-05-13의 cloud agent 개발 환경 업데이트가 최신 주요 공식 기준점이다.</p>
+        </div>
+        <div class="tile">
+          <span class="badge warn">3일 내 신규 없음</span>
+          <h3>OpenAI Codex</h3>
+          <p>2026-05-17 이후 Codex 단독 신규 공식 공지는 확인하지 못했다. 2026-05-14 모바일 원격 접속과 기업용 토큰/훅 공지가 최신 주요 기준점이다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code 공식 변경</a></li>
+        <li><a href="#cursor">Cursor 공식 변경</a></li>
+        <li><a href="#codex">OpenAI Codex 공식 변경</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code 공식 변경</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="badge ok">확인 완료</span>
+          <h3>2026-05-15 CLI changelog: background agents, permission, terminal fixes</h3>
+          <p>최근 3일 기준 신규 공지는 없지만, 직전 공식 changelog에서는 background session 실행 인자, Fast mode 기본 모델, plugin skill 노출, remote control 인증 회복, Windows/terminal 관련 오류 수정이 묶여 있었다.</p>
+          <ul>
+            <li><strong>사용자 영향:</strong> 긴 작업 중 subagent/background session, 권한 요청, 원격 제어, Windows 터미널 안정성에 직접 연결된다.</li>
+            <li><strong>실무 메모:</strong> 팀/자동화 하네스는 background agent 실행 플래그와 권한 모드가 바뀐 지점을 점검해야 한다.</li>
+            <li><strong>출처:</strong> <a href="https://code.claude.com/docs/en/changelog">Claude Code CLI changelog</a></li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge ok">확인 완료</span>
+          <h3>2026-05-12 Desktop changelog: Quick Entry와 scheduled task 수정</h3>
+          <p>Desktop 앱은 자동 업데이트, corrupt bundled binary 재다운로드, credential helper 중복 탭, CJK 입력 누락, scheduled task 삭제 옵션을 수정했다.</p>
+          <ul>
+            <li><strong>사용자 영향:</strong> 한국어/일본어/중국어 입력과 scheduled task 파일 삭제 동작이 더 예측 가능해졌다.</li>
+            <li><strong>실무 메모:</strong> Desktop 기반 자동화 사용자는 bundled CLI binary 캐시 문제를 먼저 의심할 수 있다.</li>
+            <li><strong>출처:</strong> <a href="https://code.claude.com/docs/en/desktop-changelog">Claude Code Desktop changelog</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor 공식 변경</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="badge ok">확인 완료</span>
+          <h3>2026-05-13 Cursor 3.4: cloud agent 개발 환경</h3>
+          <p>Cursor는 cloud agents와 automations가 multi-repo 환경을 사용할 수 있게 했고, Dockerfile 기반 환경 정의, build secret, layer cache 개선, 환경 version history, rollback, egress/secret scoping을 발표했다.</p>
+          <ul>
+            <li><strong>사용자 영향:</strong> 단일 repo toy task보다 실제 조직의 다중 repo 업무에 cloud agent를 붙이기 쉬워졌다.</li>
+            <li><strong>실무 메모:</strong> agent가 실패했을 때 어떤 환경 버전에서 돌았는지 확인할 수 있어 감사와 재현성이 좋아진다.</li>
+            <li><strong>출처:</strong> <a href="https://cursor.com/en-US/changelog">Cursor changelog</a></li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge ok">확인 완료</span>
+          <h3>2026-05-11 Teams 연동과 Bugbot effort levels</h3>
+          <p>Cursor는 Microsoft Teams에서 @Cursor를 호출해 cloud agent에 작업을 위임하는 흐름과 Bugbot의 review effort level 설정을 공개했다.</p>
+          <ul>
+            <li><strong>사용자 영향:</strong> 개발자 개인 IDE를 넘어 팀 채널과 PR review 운영 흐름으로 확장되는 신호다.</li>
+            <li><strong>실무 메모:</strong> usage-based billing 조건과 고 effort 설정의 비용 증가를 같이 봐야 한다.</li>
+            <li><strong>출처:</strong> <a href="https://cursor.com/en-US/changelog">Cursor changelog</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex 공식 변경</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="badge ok">확인 완료</span>
+          <h3>2026-05-14 Codex mobile remote access preview</h3>
+          <p>OpenAI는 Codex를 ChatGPT 모바일 앱에서 preview로 사용할 수 있게 했다. 모바일에서 active thread, approval, plugin, project context를 이어 보고, Mac host 또는 원격 환경에서 계속 실행 중인 Codex 작업에 개입할 수 있다.</p>
+          <ul>
+            <li><strong>사용자 영향:</strong> 장시간 agent 작업의 병목이던 질문 응답, 방향 전환, 승인 확인을 이동 중에도 처리할 수 있다.</li>
+            <li><strong>제약:</strong> iOS/Android preview이며 현재 phone-to-Windows Codex app 연결은 추후 지원으로 공지됐다.</li>
+            <li><strong>출처:</strong> <a href="https://openai.com/index/work-with-codex-from-anywhere/">OpenAI - Work with Codex from anywhere</a></li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge ok">확인 완료</span>
+          <h3>2026-05-14 Enterprise: access tokens, hooks, HIPAA local use</h3>
+          <p>Enterprise/Edu release note는 Codex access token, remote access governance, workspace setting, Remote connections, hooks, local environment HIPAA support를 함께 명시했다.</p>
+          <ul>
+            <li><strong>사용자 영향:</strong> CI, release workflow, 내부 automation이 browser sign-in 없이 workspace identity를 사용할 여지가 생겼다.</li>
+            <li><strong>실무 메모:</strong> remote control은 기본 off이며 admin/owner enablement가 필요하므로 보안 운영 체크포인트로 봐야 한다.</li>
+            <li><strong>출처:</strong> <a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes">OpenAI Enterprise/Edu release notes</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>확인 불가 및 주의</h2>
+      <div class="note">
+        <p>2026-05-17부터 2026-05-19까지의 엄격한 3일 공식 업데이트 창에서는 세 도구 모두 신규 공식 발표를 확인하지 못했다. 따라서 본 보고서는 3일 내 부재를 기록하고, 직전 7일 내 공식 기준점을 참고로 정리했다.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul class="source-list">
+        <li><a href="https://code.claude.com/docs/en/changelog">Claude Code CLI changelog</a></li>
+        <li><a href="https://code.claude.com/docs/en/desktop-changelog">Claude Code Desktop changelog</a></li>
+        <li><a href="https://cursor.com/en-US/changelog">Cursor changelog</a></li>
+        <li><a href="https://openai.com/index/work-with-codex-from-anywhere/">OpenAI - Work with Codex from anywhere</a></li>
+        <li><a href="https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes">OpenAI ChatGPT Enterprise & Edu release notes</a></li>
+        <li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">OpenAI ChatGPT release notes</a></li>
+      </ul>
+    </section>
+  </main>
+  <!-- verifier compatibility: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+</body>
+</html>

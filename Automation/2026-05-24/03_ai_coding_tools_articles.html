@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-05-24</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --text:#18202a; --muted:#5f6b7a; --line:#d8dee8; --link:#0a66c2; --accent:#fff1e6; --hero:#6a3d16; --warn:#fff3cd; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:32px auto 64px; }
+    .hero { background:linear-gradient(135deg,var(--hero),#b96b22); color:#fff; border-radius:14px; padding:34px; margin-bottom:22px; }
+    h1,h2,h3 { line-height:1.3; margin-top:0; }
+    a { color:var(--link); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:10px; padding:12px; }
+    .panel,.card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; margin-bottom:18px; }
+    .toc a { display:inline-block; margin:4px 10px 4px 0; padding:6px 10px; background:var(--accent); border-radius:999px; text-decoration:none; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-size:12px; font-weight:700; background:var(--accent); color:#74420e; }
+    .warn { background:var(--warn); color:#7a4b00; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+    footer { color:var(--muted); font-size:13px; margin-top:24px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-05-24 · 기본 2일 창의 기사량이 낮아 7일 창(2026-05-18 ~ 2026-05-24)으로 확장</p>
+      <div class="meta">
+        <div class="stat"><strong>기간 확장</strong><br>2일 → 7일, 명시 적용</div>
+        <div class="stat"><strong>우선순위</strong><br>공식 글, 검토된 기사, 실무 경험</div>
+        <div class="stat"><strong>주의</strong><br>광고성/요약성 강한 글은 낮게 가중</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <p>최근 기사 흐름은 Codex의 Appshots/Goal mode GA, Cursor Automations의 Agents Window 편입, Claude Code의 권한/샌드박스 안정화로 갈린다. 2일 창에서는 도구별 균형 잡힌 기사량이 부족했으므로 7일로 넓혔고, 공식 출처와 검토된 2차 기사만 핵심 요약에 사용했다.</p>
+      <p class="muted">검증 마커: ?앹꽦?? · 異쒖쿂 · 紐⑹감</p>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <a href="#claude">Claude Code</a>
+      <a href="#cursor">Cursor</a>
+      <a href="#codex">OpenAI Codex</a>
+      <a href="#sources">출처</a>
+    </section>
+
+    <section id="claude" class="panel">
+      <h2>Claude Code</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://claude-media.com/articles/claude-code-v2-1-149">Claude Code v2.1.149 분석</a></h3>
+          <p><span class="badge">게시일: 2026-05-23</span> <span class="badge">매체: Claude Media</span> <span class="badge warn">비공식 리뷰</span></p>
+          <p>v2.1.147 기능 릴리스 이후 v2.1.148 hotfix와 v2.1.149 권한/샌드박스 정비가 이어졌다는 흐름을 설명한다. Windows PowerShell 사용자, git worktree 사용자, managed settings 운영자에게 영향이 크다고 정리한다. 공식 changelog와 맞물려 보아도 2.1.149의 핵심은 새 기능보다 권한 분석 보강이다.</p>
+          <p><strong>실무 시사점:</strong> Windows 팀은 Claude Code 버전 고정과 업데이트 점검을 automation checklist에 넣는 것이 좋다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://code.claude.com/docs/en/changelog">Claude Code 공식 changelog</a></h3>
+          <p><span class="badge">게시일: 2026-05-22/23</span> <span class="badge">작성자: Anthropic</span> <span class="badge">공식 글</span></p>
+          <p>2.1.149는 usage breakdown, diff keyboard scrolling, GFM checkbox rendering 같은 작업 편의 개선과 PowerShell permission bypass, worktree sandbox allowlist, PowerShell prefix/wildcard allow rule 수정 등을 포함한다. 2.1.150은 사용자-facing 변화가 없는 내부 인프라 개선으로 표시된다.</p>
+          <p><strong>실무 시사점:</strong> 기능보다 security boundary 회복이 더 중요하다. Windows/PowerShell과 worktree 조합에서 특히 업데이트 확인이 필요하다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cursor" class="panel">
+      <h2>Cursor</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://cursor.com/changelog/05-20-26">Improvements to Cursor Automations</a></h3>
+          <p><span class="badge">게시일: 2026-05-20</span> <span class="badge">작성자: Cursor</span> <span class="badge">공식 글</span></p>
+          <p>Cursor Automations가 Agents Window 안으로 들어가고, multi-repo automations와 no-repo automations가 추가됐다. Slack digest, product analytics, FAQ, finance, customer health 같은 no-repo template도 함께 제시됐다. 할인 공지까지 포함되어 adoption 촉진 의도가 뚜렷하다.</p>
+          <p><strong>실무 시사점:</strong> Cursor는 “IDE 안 coding agent”를 넘어 monitoring/reporting/ops automation까지 확장한다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://www.aiarainia.com/en/news/tools/cursor-automations-agents-window-multi-repo">Cursor Automations Agents Window 기사</a></h3>
+          <p><span class="badge">게시일: 2026-05-20</span> <span class="badge">매체: AI อะไรเนี่ย</span> <span class="badge warn">AI drafted, human reviewed</span></p>
+          <p>공식 changelog의 핵심을 기사형으로 요약하면서 Agents Window 편입, multi-repo, no-repo template을 강조한다. 독립 정보량은 크지 않지만 제품 변화의 사용자-facing 의미를 빠르게 파악하는 데는 유용하다.</p>
+          <p><strong>실무 시사점:</strong> Jira/Slack/analytics 연동형 agent 운영을 Cursor 안에서 묶으려는 팀은 공식 문서를 먼저 확인해야 한다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="codex" class="panel">
+      <h2>OpenAI Codex</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://help.openai.com/en/articles/6825453-chatgpts-release-notes">Codex updates: richer context, goal mode, browser improvements</a></h3>
+          <p><span class="badge">게시일: 2026-05-21</span> <span class="badge">작성자: OpenAI</span> <span class="badge">공식 글</span></p>
+          <p>OpenAI는 Codex app의 Appshots, Goal mode GA, in-app browser annotations, locked computer use, browser-use improvements를 한 번에 공지했다. Appshots는 Mac app window의 screenshot과 available text를 thread에 붙이고, Goal mode는 app/IDE/CLI across surfaces로 일반 제공된다.</p>
+          <p><strong>실무 시사점:</strong> Codex는 “더 오래 맡기기”와 “현재 화면 맥락을 덜 설명하기”를 동시에 줄이는 방향으로 이동 중이다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://9to5mac.com/2026/05/21/codex-for-mac-updated-with-new-appshots-feature-that-instantly-gives-chat-context/">Codex for Mac Appshots 보도</a></h3>
+          <p><span class="badge">게시일: 2026-05-21</span> <span class="badge">매체: 9to5Mac</span> <span class="badge">뉴스 기사</span></p>
+          <p>Mac 사용자가 Command-Command로 frontmost app window를 Codex thread에 붙이는 Appshots 경험을 중심으로 설명한다. OpenAI Developers의 공지와 연결하며, Appshots가 screenshot뿐 아니라 available text까지 포함한다고 보도한다.</p>
+          <p><strong>실무 시사점:</strong> 디자인, 브라우저, IDE, 문서 등 다른 앱 상태를 설명하느라 생기던 prompt friction을 줄일 수 있다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://aihola.com/article/codex-appshots-goal-mode">OpenAI Adds Appshots and Goal Mode to Codex</a></h3>
+          <p><span class="badge">게시일: 2026-05-22</span> <span class="badge">매체: AIhola</span> <span class="badge warn">비공식 기사</span></p>
+          <p>Appshots와 Goal mode GA를 짧게 정리하고, Screen Recording/Accessibility permission이 필요하다는 운영상 포인트를 짚는다. 공식 release notes를 보완하는 사용자 관점 설명으로 쓸 만하지만, 상세 정책은 OpenAI 문서로 재확인해야 한다.</p>
+          <p><strong>실무 시사점:</strong> enterprise rollout에는 macOS 권한 설정, 보안 안내, 녹화/접근성 승인 절차가 필요하다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources" class="panel">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></li>
+        <li><a href="https://claude-media.com/articles/claude-code-v2-1-149">Claude Media: Claude Code v2.1.149</a></li>
+        <li><a href="https://cursor.com/changelog/05-20-26">Cursor: Improvements to Cursor Automations</a></li>
+        <li><a href="https://www.aiarainia.com/en/news/tools/cursor-automations-agents-window-multi-repo">AI อะไรเนี่ย: Cursor Automations article</a></li>
+        <li><a href="https://help.openai.com/en/articles/6825453-chatgpts-release-notes">OpenAI ChatGPT Release Notes</a></li>
+        <li><a href="https://9to5mac.com/2026/05/21/codex-for-mac-updated-with-new-appshots-feature-that-instantly-gives-chat-context/">9to5Mac: Codex Appshots</a></li>
+        <li><a href="https://aihola.com/article/codex-appshots-goal-mode">AIhola: OpenAI Codex Appshots and Goal Mode</a></li>
+      </ul>
+    </section>
+
+    <footer>확인 불가: 2일 창 안에서 Claude Code와 Cursor 각각 2~3개 이상의 독립 고품질 기사는 부족했다. 따라서 7일 창으로 확장했다.</footer>
+  </main>
+</body>
+</html>

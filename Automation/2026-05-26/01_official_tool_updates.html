@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-26</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f7fb; --panel:#fff; --text:#17202a; --muted:#607085; --line:#d9e1ec; --link:#0b63c7; --accent:#e8f3ff; --ok:#eaf7ef; --warn:#fff4d8; --soft:#f1f5f9; --hero:#17324f; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:32px auto 64px; }
+    h1, h2, h3 { line-height:1.3; margin-top:0; }
+    a { color:var(--link); }
+    .hero { background:var(--hero); color:#fff; border-radius:16px; padding:34px; margin-bottom:22px; }
+    .hero p { margin:8px 0 0; opacity:.92; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:14px 16px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:18px; }
+    .notice { background:var(--warn); border:1px solid #f1d48a; border-radius:12px; padding:14px 16px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:14px; background:#fff; }
+    .muted { color:var(--muted); }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+    .badge { display:inline-block; font-size:.78rem; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--accent); color:#174d7d; }
+    .badge.warn { background:var(--warn); color:#795500; }
+    .badge.ok { background:var(--ok); color:#1f6b3a; }
+    .meta-line { color:var(--muted); font-size:.92rem; margin-top:10px; }
+    .sources ul { margin:0; padding-left:20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>공식 업데이트 보고서</h1>
+      <p>생성일: 2026-05-26 | strict 조사 기간: 2026-05-24 ~ 2026-05-26 KST | 보조 맥락: 2026-05-20 ~ 2026-05-23</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 포인트</strong><br>strict window 안에서 세 도구의 신규 공식 업데이트는 확인되지 않았다.</div>
+        <div class="stat"><strong>조사 기준</strong><br>공식 changelog, 공식 help/release notes, GitHub releases를 우선 확인했다.</div>
+        <div class="stat"><strong>메모</strong><br>아래 항목은 모두 window 밖의 가까운 공식 맥락으로 분리했다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">조사 결론</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>조사 결론</h2>
+      <div class="notice">
+        2026-05-24부터 2026-05-26까지의 strict 공식 업데이트 창은 비어 있다. 따라서 오늘의 공식 업데이트 보고서는 "신규 없음"을 먼저 기록하고, 실무 판단에 필요한 가까운 공식 업데이트만 보조 맥락으로 다룬다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>strict window 신규 공식 업데이트 없음</h3>
+        <div class="badge-row">
+          <span class="badge warn">2026-05-24~2026-05-26 신규 없음</span>
+          <span class="badge ok">공식 changelog 확인</span>
+        </div>
+        <p>Claude Code 공식 changelog의 최신 항목은 2026-05-23의 2.1.150이며, 사용자-facing 변화 없이 내부 인프라 개선으로 표기되어 있다. 이 날짜는 오늘 strict window 밖이므로 신규 업데이트로 계산하지 않았다.</p>
+        <p>실무적으로는 직전 2.1.149의 사용량 breakdown, diff detail keyboard scrolling, GFM task checkbox rendering, enterprise MCP managed setting이 여전히 참고 가치가 있다. 다만 오늘 보고서의 "최근 3일 공식 업데이트"에는 포함하지 않는다.</p>
+        <p class="meta-line">발표일: 2026-05-23(보조 맥락) | 출처: Claude Code Changelog | 확인 상태: 확인 완료 | <a href="https://code.claude.com/docs/en/changelog">링크</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>strict window 신규 공식 업데이트 없음</h3>
+        <div class="badge-row">
+          <span class="badge warn">2026-05-24~2026-05-26 신규 없음</span>
+          <span class="badge ok">공식 changelog 확인</span>
+        </div>
+        <p>Cursor 공식 changelog의 최신 주요 항목은 2026-05-20의 3.5 업데이트다. Automations가 Agents Window 안으로 들어왔고, multi-repo automation과 no-repo automation이 추가됐다.</p>
+        <p>이 변화는 IDE가 단순 코드 편집기를 넘어 agent 운영 콘솔로 이동하는 흐름을 보여준다. 다만 발표일이 strict window보다 이르므로 오늘의 신규 공식 업데이트가 아니라 보조 맥락이다.</p>
+        <p class="meta-line">발표일: 2026-05-20(보조 맥락) | 출처: Cursor Changelog | 확인 상태: 확인 완료 | <a href="https://cursor.com/changelog">링크</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>strict window 신규 공식 업데이트 없음</h3>
+        <div class="badge-row">
+          <span class="badge warn">2026-05-24~2026-05-26 신규 없음</span>
+          <span class="badge ok">OpenAI Help Center 확인</span>
+          <span class="badge ok">GitHub release 확인</span>
+        </div>
+        <p>OpenAI Help Center의 Codex 업데이트는 2026-05-21에 Appshots, Goal mode GA, in-app browser annotations, locked computer use, browser use improvements를 공식 안내했다. 이 항목은 오늘 strict window 밖이다.</p>
+        <p>openai/codex GitHub releases에서는 0.133.0 계열의 Goals 기본 활성화, remote-control 구조 변경, release/CI 안정화 내용을 확인했다. 공개 release 페이지에서 2026-05-24~2026-05-26 신규 stable 항목은 확인하지 못했다.</p>
+        <p class="meta-line">발표일: 2026-05-21 및 GitHub release 보조 맥락 | 출처: OpenAI Help Center, openai/codex releases | 확인 상태: 확인 완료 | <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">Help Center</a> · <a href="https://github.com/openai/codex/releases">GitHub releases</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://code.claude.com/docs/en/changelog">Claude Code Changelog</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">OpenAI Help Center - ChatGPT Release Notes</a></li>
+        <li><a href="https://github.com/openai/codex/releases">openai/codex GitHub Releases</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

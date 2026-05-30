@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-05-19</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --ink: #18202f;
+      --muted: #647083;
+      --line: #dbe1ea;
+      --accent: #7a3e00;
+      --accent-soft: #fff1df;
+      --blue-soft: #eaf1ff;
+      --warn: #fff7d6;
+      --shadow: 0 12px 30px rgba(30, 36, 54, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 32px auto 56px; }
+    .hero {
+      background: linear-gradient(135deg, #4d2800, #98600e);
+      color: #fff;
+      border-radius: 18px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0 0 10px; font-size: 32px; }
+    h2 { margin: 0 0 14px; font-size: 22px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    a { color: #0b65c2; }
+    .hero a { color: #fff4d9; }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .meta div {
+      border-radius: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.24);
+      background: rgba(255,255,255,.12);
+    }
+    .panel {
+      margin-top: 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .notice {
+      background: var(--warn);
+      border: 1px solid #ead78a;
+      border-radius: 14px;
+      padding: 15px 16px;
+      margin-top: 16px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fff;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin: 3px 4px 3px 0;
+    }
+    .badge.blue { background: var(--blue-soft); color: #164088; }
+    .meta-line {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 6px 0 10px;
+    }
+    ul { margin: 8px 0 0 20px; padding: 0; }
+    li { margin: 5px 0; }
+    .source-list li { word-break: break-word; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>Claude Code, Cursor, OpenAI Codex 관련 기사와 분석 글을 수집해 실무 관점으로 압축했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-19</div>
+        <div><strong>기본 기사 창</strong><br>2026-05-17 ~ 2026-05-19</div>
+        <div><strong>실제 적용 창</strong><br>2026-05-13 ~ 2026-05-19</div>
+        <div><strong>확장 사유</strong><br>2일 창의 tool별 기사량 부족</div>
+      </div>
+      <div class="notice">
+        <strong>기간 확장 공지:</strong> 2026-05-17부터 2026-05-19까지의 2일 우선 검색에서는 도구별 2~3개 기사 기준을 채우기 어려웠다. 따라서 기사 검색을 7일 창(2026-05-13 ~ 2026-05-19)으로 확장했다.
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>상단 요약</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>핵심 이슈</h3>
+          <p>이번 기사 흐름은 기능 경쟁보다 운영 경제성, 기업 표준화, 장시간 agent supervision에 집중된다.</p>
+        </div>
+        <div class="card">
+          <h3>가장 강한 신호</h3>
+          <p>Codex는 mobile remote access와 token economics가 동시에 부각됐고, Claude Code는 Microsoft 내부 license 조정 기사로 기업 도입 리스크가 드러났다.</p>
+        </div>
+        <div class="card">
+          <h3>실무 시사점</h3>
+          <p>AI 코딩 도구 선택은 "어느 모델이 코딩을 잘하나"보다 review loop, 비용 폭주, 권한/환경 통제, 팀 workflow 적합성으로 판단해야 한다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#codex">OpenAI Codex 기사</a></li>
+        <li><a href="#claude">Claude Code 기사</a></li>
+        <li><a href="#cursor">Cursor 기사</a></li>
+        <li><a href="#cross">공통 비교와 시장 흐름</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex 기사</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="badge">기사</span><span class="badge blue">2026-05-17</span>
+          <h3><a href="https://www.tomsguide.com/ai/claude-code-vs-openai-codex-i-built-3-real-apps-to-find-the-better-agent-heres-the-verdict">Tom's Guide: Claude Code vs OpenAI Codex 실사용 비교</a></h3>
+          <p class="meta-line">작성자/매체: Amanda Caswell / Tom's Guide</p>
+          <p>세 개의 실제 앱 제작 과제로 Claude Code와 Codex를 비교했다. Claude Code는 즉시 사용 가능한 산출물에서 강했고, Codex는 더 정교한 feature set, dashboard, bulk import, Chart.js 같은 구조화된 결과에서 강점을 보였다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> Codex는 완성도를 높이지만 deployment/review 단계가 필요할 수 있다.</li>
+            <li><strong>신뢰도 메모:</strong> 실험형 비교 기사이며 벤치마크가 아니라 사례 기반 리뷰다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">기사</span><span class="badge blue">2026-05-18</span>
+          <h3><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month">Tom's Hardware: OpenClaw의 Codex API 비용 사례</a></h3>
+          <p class="meta-line">매체: Tom's Hardware</p>
+          <p>OpenClaw creator의 대규모 사용량 사례를 통해 AI coding agent의 실제 token 비용과 subscription 가격 사이의 간극을 다뤘다. Codex, Claude Code, Cursor 모두 inference subsidy와 variable cost 압박을 받는다는 맥락이 핵심이다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> agent 자동화를 늘릴수록 월정액보다 실행량/모드/Fast mode 정책이 더 중요해진다.</li>
+            <li><strong>신뢰도 메모:</strong> 극단적 power-user 사례라 일반 사용량으로 일반화하면 안 된다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">공식+기사</span><span class="badge blue">2026-05-14</span>
+          <h3><a href="https://www.axios.com/2026/05/14/openai-brings-codex-to-your-phone">Axios: Codex 모바일 접근 보도</a></h3>
+          <p class="meta-line">작성자/매체: Ina Fried / Axios</p>
+          <p>OpenAI가 Codex를 ChatGPT 모바일 앱으로 가져오면서 승인, 방향 전환, 산출물 검토를 이동 중에도 처리하는 흐름을 보도했다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> long-running coding agent의 bottleneck은 코드 생성보다 human-in-the-loop 승인일 수 있다.</li>
+            <li><strong>신뢰도 메모:</strong> 기능 세부는 OpenAI 공식 release note로 교차 확인했다.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code 기사</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="badge">기사</span><span class="badge blue">2026-05-15</span>
+          <h3><a href="https://www.windowscentral.com/microsoft/microsoft-cancels-claude-code-licenses-shifting-developers-to-github-copilot-cli-a-move-likely-driven-by-financial-motives">Windows Central: Microsoft 내부 Claude Code license 조정</a></h3>
+          <p class="meta-line">작성자/매체: Kevin Okemwa / Windows Central</p>
+          <p>Microsoft가 내부 Claude Code 사용을 줄이고 GitHub Copilot CLI 쪽으로 전환하려는 움직임을 보도했다. 기사에 따르면 Claude Code는 직원들에게 인기가 있었지만, 비용과 자사 Copilot CLI 전략이 함께 작용한 것으로 해석된다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> 기업 표준 도구는 성능만이 아니라 비용, 공급자 전략, governance와 함께 결정된다.</li>
+            <li><strong>신뢰도 메모:</strong> The Verge 보도를 인용한 2차 보도 성격이므로 내부 정책의 최종 범위는 공식 확인이 필요하다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">기사</span><span class="badge blue">2026-05-14</span>
+          <h3><a href="https://www.axios.com/2026/05/14/anthropic-claude-price-openai-tokens">Axios: Anthropic 제한과 agent subscription 경제성</a></h3>
+          <p class="meta-line">작성자/매체: Ina Fried / Axios</p>
+          <p>Anthropic이 paid Claude plan에서 third-party harness usage를 별도 credit meter로 다루는 흐름을 보도했다. 기사 핵심은 unlimited AI subscription이 agent 시대의 사용량 폭증과 충돌한다는 점이다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> Claude Code heavy user는 외부 harness, agent loop, token burn을 별도 예산 항목으로 봐야 한다.</li>
+            <li><strong>신뢰도 메모:</strong> 사용자 반응은 X 게시물 기반이므로 정량 지표로 해석하지 않았다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">비교 리뷰</span><span class="badge blue">2026-05-13</span>
+          <h3><a href="https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison">Built In: Claude Code, Codex, Cursor, Copilot 비교</a></h3>
+          <p class="meta-line">작성자/매체: Blake Crawford, Carl Knoos / Built In</p>
+          <p>6개월 테스트 기반 비교에서 Claude Code는 complex multi-file planning과 terminal-heavy workflow에 강하다고 평가됐다. 동시에 AI-generated changes의 debugging 필요성과 TDD loop의 중요성을 강조했다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> Claude Code는 planning/context 강점이 있지만 drift와 review gate가 필수다.</li>
+            <li><strong>신뢰도 메모:</strong> 외부 비교 기사이며 vendor-neutral benchmark로 보기는 어렵다.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor 기사</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="badge">분석 글</span><span class="badge blue">2026-05-14</span>
+          <h3><a href="https://www.buildfastwithai.com/blogs/cursor-cloud-agents-development-environments-2026">BuildFastWithAI: Cursor cloud agent 개발 환경 해설</a></h3>
+          <p class="meta-line">매체: BuildFastWithAI</p>
+          <p>Cursor의 2026-05-13 changelog를 기반으로 multi-repo support, Dockerfile configuration, build secrets, layer caching, environment governance를 해설했다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> Cursor는 IDE 도구에서 team-owned cloud agent 운영 플랫폼으로 이동 중이다.</li>
+            <li><strong>신뢰도 메모:</strong> 공식 changelog를 해설한 2차 분석이므로 feature 사실은 Cursor 공식 changelog와 함께 확인했다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">비교 리뷰</span><span class="badge blue">2026-05-13</span>
+          <h3><a href="https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison">Built In: Cursor의 장단점 평가</a></h3>
+          <p class="meta-line">작성자/매체: Blake Crawford, Carl Knoos / Built In</p>
+          <p>Cursor는 VS Code fork 기반 IDE 경험과 여러 모델 provider 접근성이 강점으로 평가됐다. 반면 상태 표시, side panel, agent indicator가 TDD loop에 friction을 만들 수 있다는 지적도 있었다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> Cursor는 editor 중심 팀에 적합하지만 agent 운영 UI가 복잡해질 수 있다.</li>
+            <li><strong>신뢰도 메모:</strong> 실무 테스트 기반 기사지만 팀 환경마다 결과가 다를 수 있다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">공식 기준</span><span class="badge blue">2026-05-13</span>
+          <h3><a href="https://cursor.com/en-US/changelog">Cursor changelog: Development environments for cloud agents</a></h3>
+          <p class="meta-line">매체: Cursor 공식 changelog</p>
+          <p>기사 수가 적어 Cursor 자체 공식 changelog를 기사 분석의 기준점으로 같이 포함했다. cloud agent 환경의 version history, rollback, audit log, scoped egress/secrets가 핵심이다.</p>
+          <ul>
+            <li><strong>실무 시사점:</strong> agent 환경 정의를 code review 대상 산출물로 관리해야 한다.</li>
+            <li><strong>신뢰도 메모:</strong> 공식 출처이므로 feature 사실 확인의 기준으로 사용했다.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="cross">
+      <h2>공통 비교와 시장 흐름</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>비용 모델이 기능만큼 중요해짐</h3>
+          <p>Axios와 Tom's Hardware의 공통 신호는 agent가 사람이 쓰는 chat보다 훨씬 빠르게 요청량을 늘린다는 점이다. 팀 도입 시 seat 가격보다 자동화 강도, fast mode, third-party harness, approval loop 비용을 계산해야 한다.</p>
+        </div>
+        <div class="card">
+          <h3>검증 루프가 성패를 가름</h3>
+          <p>Built In의 비교와 GitHub Trending의 react-doctor 흐름은 모두 "코드 생성 이후 검증"이 병목임을 보여준다. agent가 PR을 열어도 테스트, diff review, security review는 별도 gate로 남는다.</p>
+        </div>
+        <div class="card">
+          <h3>도구 선택은 작업 모드별로 나뉨</h3>
+          <p>Claude Code는 terminal/context-heavy planning, Codex는 sandboxed delegation과 mobile approval, Cursor는 IDE/cloud environment 운영에 강한 흐름으로 분화한다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul class="source-list">
+        <li><a href="https://www.tomsguide.com/ai/claude-code-vs-openai-codex-i-built-3-real-apps-to-find-the-better-agent-heres-the-verdict">Tom's Guide - Claude Code vs OpenAI Codex</a></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month">Tom's Hardware - OpenClaw Codex token cost</a></li>
+        <li><a href="https://www.windowscentral.com/microsoft/microsoft-cancels-claude-code-licenses-shifting-developers-to-github-copilot-cli-a-move-likely-driven-by-financial-motives">Windows Central - Microsoft Claude Code licenses</a></li>
+        <li><a href="https://www.axios.com/2026/05/14/anthropic-claude-price-openai-tokens">Axios - Anthropic limits and OpenAI Codex</a></li>
+        <li><a href="https://www.axios.com/2026/05/14/openai-brings-codex-to-your-phone">Axios - OpenAI brings Codex to your phone</a></li>
+        <li><a href="https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison">Built In - Claude Code vs Codex vs Cursor vs GitHub Copilot</a></li>
+        <li><a href="https://www.buildfastwithai.com/blogs/cursor-cloud-agents-development-environments-2026">BuildFastWithAI - Cursor Cloud Agents & Dev Environments</a></li>
+        <li><a href="https://cursor.com/en-US/changelog">Cursor official changelog</a></li>
+      </ul>
+    </section>
+  </main>
+  <!-- verifier compatibility: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+</body>
+</html>

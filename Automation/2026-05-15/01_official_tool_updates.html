@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-15 공식 업데이트 보고서</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f7fb; --panel:#fff; --text:#17202a; --muted:#5d6675; --line:#d9e0ea; --blue:#205493; --green:#28724f; --amber:#8a5a00; --soft:#eef5ff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); line-height:1.68; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#183a66; color:white; border-radius:8px; padding:28px; }
+    .hero h1 { margin:0 0 8px; font-size:2rem; letter-spacing:0; }
+    .hero p { margin:4px 0; color:#dbe8f8; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.24); border-radius:8px; padding:12px; background:rgba(255,255,255,.1); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    h2 { margin:0 0 12px; font-size:1.28rem; }
+    h3 { margin:0 0 8px; font-size:1.05rem; }
+    a { color:var(--blue); }
+    .notice { border-left:5px solid var(--amber); background:#fff7e6; padding:12px 14px; border-radius:6px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; margin-top:12px; background:#fff; }
+    .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 10px; }
+    .badge { font-size:.78rem; font-weight:700; color:#214b74; background:var(--soft); border-radius:999px; padding:3px 9px; }
+    .ok { color:var(--green); background:#eaf7f0; }
+    .muted { color:var(--muted); font-size:.92rem; }
+    .toc ol, .sources ul { margin:0; padding-left:20px; }
+    .sources li { margin:6px 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>공식 업데이트 보고서</h1>
+      <p>생성일: 2026-05-15 | 조사 기간: 2026-05-13 ~ 2026-05-15 | 대상: Claude Code, Cursor, OpenAI Codex/CLI</p>
+      <div class="grid">
+        <div class="stat"><strong>가장 큰 변화</strong><br>Cursor가 클라우드 에이전트용 개발 환경을 팀 단위 관리 대상으로 끌어올렸다.</div>
+        <div class="stat"><strong>CLI 안정성</strong><br>Claude Code와 Codex는 모두 최근 릴리스에서 에이전트 실행, 원격 제어, Windows/터미널 안정성을 보강했다.</div>
+        <div class="stat"><strong>확인 상태</strong><br>공식/1차 출처 기준 확인 완료. OpenAI Help Center의 Codex 전용 최신 항목은 별도 확인 불가.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">핵심 요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>핵심 요약</h2>
+      <div class="notice">이번 3일 범위의 흐름은 “모델 성능 발표”보다 “에이전트가 실제 개발 환경에서 오래 일하도록 만드는 운영 기능”에 가깝다. Cursor는 환경 구성과 거버넌스를, Claude Code는 세션/훅/백그라운드 에이전트 안정성을, Codex CLI는 원격 제어와 다중 환경 편집 표면을 보강했다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>v2.1.141: 훅 출력, 에이전트 세션, Windows/터미널 안정성 보강</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">공식 GitHub 릴리스</span><span class="badge">2026-05-13</span></div>
+        <p>Claude Code 최신 릴리스는 훅 JSON 출력에 터미널 시퀀스 필드를 추가하고, GitHub 플러그인 소스를 HTTPS로 클론하는 옵션, 워크로드 ID 페더레이션용 워크스페이스 변수, 디렉터리 기준 세션 목록 조회를 추가했다. 백그라운드 에이전트가 현재 권한 모드를 유지하고, 완료된 작업이 백그라운드 셸 때문에 계속 Working으로 남는 문제도 정리됐다.</p>
+        <p><strong>실무 중요도:</strong> 장시간 CLI 에이전트 운용에서 알림, 세션 추적, 권한 모드 보존, Windows 진단 안정성이 모두 품질 관리 비용과 직결된다.</p>
+        <p class="muted">발표일: 2026-05-13 | 출처: <a href="https://github.com/anthropics/claude-code/releases">anthropics/claude-code releases</a></p>
+      </article>
+      <article class="card">
+        <h3>v2.1.140: 에이전트 타입 매칭과 Windows 이벤트 루프 정리</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">공식 GitHub 릴리스</span><span class="badge">2026-05-12</span></div>
+        <p>전날 릴리스에서는 agent subagent_type 매칭을 대소문자와 구분자 차이에 덜 민감하게 만들고, 엔터프라이즈 엔드포인트 보안 환경에서 백그라운드 서비스 시작 여유 시간을 늘렸다. Windows에서 누락 실행 파일 탐지가 반복적으로 이벤트 루프를 막는 문제도 수정됐다.</p>
+        <p><strong>실무 중요도:</strong> 역할 이름 자동 매칭과 Windows 런타임 안정성은 팀 프롬프트/에이전트 카탈로그를 운영하는 환경에서 작은 실패를 줄인다.</p>
+        <p class="muted">발표일: 2026-05-12 | 출처: <a href="https://github.com/anthropics/claude-code/releases">anthropics/claude-code releases</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Development environments for cloud agents</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">공식 Changelog</span><span class="badge">2026-05-13</span></div>
+        <p>Cursor는 클라우드 에이전트가 실제 개발자 노트북과 비슷한 환경에서 일하도록 멀티 레포 환경, Dockerfile 기반 환경 구성, 빌드 시크릿, 레이어 캐시, 에이전트 주도 설정 검증을 추가했다. 환경 버전 이력, 롤백 권한 제한, 감사 로그, 환경 단위 egress/secret 범위 지정도 포함된다.</p>
+        <p><strong>실무 중요도:</strong> 단일 레포 데모가 아니라 여러 서비스와 내부 패키지 레지스트리를 다루는 팀형 에이전트 운영에 필요한 기반이다.</p>
+        <p class="muted">발표일: 2026-05-13 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </article>
+      <article class="card">
+        <h3>Microsoft Teams 연동과 Bugbot Effort Levels</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">공식 Changelog</span><span class="badge">2026-05-11</span></div>
+        <p>3일 범위에는 살짝 벗어나지만 같은 주 공식 업데이트로, Cursor는 Teams 채널에서 @Cursor를 멘션해 클라우드 에이전트에게 작업을 위임하는 흐름과 Bugbot 리뷰 effort level 조절 기능을 공개했다.</p>
+        <p><strong>실무 중요도:</strong> 에이전트를 IDE 안의 개인 도구에서 팀 커뮤니케이션 채널과 PR 리뷰 운영 도구로 확장하는 흐름이다.</p>
+        <p class="muted">발표일: 2026-05-11 | 출처: <a href="https://cursor.com/changelog">Cursor Changelog</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex / Codex CLI</h2>
+      <article class="card">
+        <h3>0.131.0-alpha.16 pre-release</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">공식 GitHub 릴리스</span><span class="badge">2026-05-14</span></div>
+        <p>OpenAI Codex GitHub 릴리스 페이지에는 2026-05-14 기준 0.131.0-alpha.16 pre-release가 등록되어 있다. 공개 릴리스 노트는 짧지만, 같은 0.131 계열에서 연속 pre-release가 이어지고 있어 CLI/앱 서버 계층이 빠르게 조정 중임을 보여준다.</p>
+        <p><strong>실무 중요도:</strong> alpha 계열은 안정판 도입 신호라기보다, 원격 제어와 다중 환경 같은 운영 표면이 빠르게 바뀌는 구간으로 보는 편이 안전하다.</p>
+        <p class="muted">발표일: 2026-05-14 | 출처: <a href="https://github.com/openai/codex/releases">openai/codex releases</a></p>
+      </article>
+      <article class="card">
+        <h3>0.130.0 안정 릴리스의 기준점: remote-control, app-server, Windows sandbox</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">공식 GitHub 릴리스</span><span class="badge">2026-05-08</span></div>
+        <p>최근 안정 릴리스인 0.130.0은 plugin details, codex remote-control, app-server thread paging, Bedrock auth, multi-environment image resolution, apply_patch diff 정확도, Windows sandbox 런타임 캐시 권한을 포함했다.</p>
+        <p><strong>실무 중요도:</strong> Codex를 로컬 CLI 한 개가 아니라 원격 제어 가능한 앱 서버와 여러 실행 환경을 다루는 에이전트 플랫폼으로 확장하는 기반이다.</p>
+        <p class="muted">발표일: 2026-05-08 | 출처: <a href="https://github.com/openai/codex/releases">openai/codex releases</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>Claude Code GitHub releases: <a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a></li>
+        <li>Cursor Changelog: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a></li>
+        <li>OpenAI Codex GitHub releases: <a href="https://github.com/openai/codex/releases">https://github.com/openai/codex/releases</a></li>
+        <li>OpenAI ChatGPT release notes, Codex 사용량 관련 참고: <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">https://help.openai.com/en/articles/6825453-chatgpt-release-notes</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

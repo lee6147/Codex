@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 AI 코딩 도구 업데이트 - 2026-05-30</title>
+  <style>
+    :root { color-scheme: light; --ink:#17212b; --muted:#586575; --line:#d9e2ec; --bg:#f6f8fb; --card:#ffffff; --accent:#0b6bcb; --warn:#9a5b00; --ok:#087443; }
+    body { margin:0; font-family: "Segoe UI", Arial, sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+    header { background:#0d1b2a; color:#fff; padding:34px 28px; }
+    main { max-width:1120px; margin:0 auto; padding:26px; }
+    h1 { margin:0 0 10px; font-size:30px; }
+    h2 { margin-top:30px; border-bottom:2px solid var(--line); padding-bottom:8px; }
+    h3 { margin:0 0 8px; }
+    a { color:var(--accent); }
+    .meta, .note { color:var(--muted); }
+    .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:22px 0; }
+    .box, .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px; box-shadow:0 1px 2px rgba(17,24,39,.04); }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-size:12px; font-weight:700; background:#e8f2ff; color:#0b4f91; }
+    .ok { background:#e8f7ef; color:var(--ok); }
+    .warn { background:#fff4db; color:var(--warn); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+    ul { padding-left:20px; }
+    .sources li { margin-bottom:6px; }
+  </style>
+</head>
+<body>
+  <!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <header>
+    <h1>공식 AI 코딩 도구 업데이트</h1>
+    <p>생성일: 2026-05-30 · 조사 기준: 공식 업데이트 2026-05-28 ~ 2026-05-30 우선, 필요 시 인접 공식 업데이트 보조 확인</p>
+    <p>핵심: Claude Code는 2026-05-28~29 공식 릴리스가 많고, Cursor는 2026-05-20 이후 새 공식 changelog가 확인되지 않았으며, OpenAI Codex는 2026-05-21 공식 Codex 업데이트가 최신 확인 지점입니다.</p>
+  </header>
+  <main>
+    <section class="summary" aria-label="요약">
+      <div class="box"><strong>Claude Code</strong><br><span class="badge ok">확인 완료</span><p>Opus 4.8, dynamic workflows, 2.1.156 hotfix까지 공식 확인.</p></div>
+      <div class="box"><strong>Cursor</strong><br><span class="badge warn">신규 공식 항목 없음</span><p>최근 공식 항목은 2026-05-20의 Shared Canvases, /loop, Automations 개선입니다.</p></div>
+      <div class="box"><strong>OpenAI Codex</strong><br><span class="badge warn">인접 공식 항목 사용</span><p>2026-05-21 Codex 업데이트와 2026-05-28 GPT-5.5 Instant 변경을 분리해 반영했습니다.</p></div>
+    </section>
+
+    <nav class="box">
+      <strong>목차</strong>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </nav>
+
+    <section id="claude">
+      <h2>Claude Code</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Claude Opus 4.8 및 dynamic workflows</h3>
+          <p><span class="badge ok">확인 완료</span> 발표일: 2026-05-28 · 출처: Anthropic 공식 발표, Claude Code GitHub 릴리스</p>
+          <ul>
+            <li>Opus 4.8은 같은 가격으로 제공되며, Claude Code에는 대규모 문제를 다루는 dynamic workflows 연구 미리보기가 추가되었습니다.</li>
+            <li>Anthropic은 Claude Code가 수백 개 병렬 subagent를 실행하고 결과를 검증한 뒤 보고할 수 있다고 설명합니다.</li>
+            <li>v2.1.154 릴리스는 Opus 4.8, dynamic workflows, fast mode 가격 조정, lean system prompt 기본화, `/simplify` 의미 변경을 포함합니다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>v2.1.156 hotfix</h3>
+          <p><span class="badge ok">확인 완료</span> 릴리스일: 2026-05-29 · 출처: GitHub Releases</p>
+          <ul>
+            <li>Opus 4.8 사용 중 thinking block이 수정되어 API 오류가 나는 문제를 수정했습니다.</li>
+            <li>2026-05-28 v2.1.153과 v2.1.154가 연속으로 나온 뒤 다음 날 안정화 패치가 붙은 흐름입니다.</li>
+            <li>실무 관점에서는 대규모 병렬 워크플로우를 켜기 전에 버전 고정과 changelog 확인이 더 중요해졌습니다.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>공식 changelog 최신 확인</h3>
+        <p><span class="badge warn">신규 공식 항목 없음</span> 공식 최신 확인 항목: 2026-05-20 · 출처: Cursor Changelog</p>
+        <ul>
+          <li>조사 시점 기준 2026-05-28~2026-05-30 범위의 새 Cursor 공식 changelog 항목은 확인되지 않았습니다.</li>
+          <li>인접 최신 공식 항목은 Shared Canvases, `/loop` skill, Automations의 Agents Window 편입, multi-repo/no-repo automation 지원입니다.</li>
+          <li>해석: Cursor는 IDE 안에서 agent artifact, 반복 실행, 자동화를 관리하는 방향을 이미 2026-05-20에 강하게 제시했습니다.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="codex">
+      <h2>OpenAI Codex</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Codex 공식 최신 항목</h3>
+          <p><span class="badge ok">확인 완료</span> 공식 Codex 항목: 2026-05-21 · 출처: OpenAI Help Center</p>
+          <ul>
+            <li>Appshots, Goal mode 일반 제공, in-app browser annotations, locked computer use, browser use 개선이 공식 release notes에 포함되어 있습니다.</li>
+            <li>Goal mode는 Codex app, IDE extension, CLI 전반에서 outcome과 success criteria 기반으로 작업을 계속 진행하는 기능으로 설명됩니다.</li>
+            <li>이번 3일 창 안의 새 Codex 전용 공식 항목은 확인하지 못했습니다.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>2026-05-28 ChatGPT 모델 변경</h3>
+          <p><span class="badge ok">확인 완료</span> 발표일: 2026-05-28 · 출처: OpenAI Help Center</p>
+          <ul>
+            <li>GPT-5.5 Instant 품질과 응답 스타일 변경, canvas 지원 축소, writing/code blocks 중심 전환이 발표되었습니다.</li>
+            <li>Codex 직접 기능은 아니지만, Codex와 ChatGPT 경험이 같은 계정 및 일부 표면을 공유하므로 사용자 체감 흐름에는 간접 영향이 있습니다.</li>
+            <li>2026-05-29 Windows computer use 관련 신호는 보였지만, 공식 OpenAI 문서에서는 아직 별도 Codex 항목으로 확인하지 못해 "공식 확인 불가"로 둡니다.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2>출처</h2>
+      <ul class="sources">
+        <li>Anthropic, <a href="https://www.anthropic.com/news/claude-opus-4-8">Introducing Claude Opus 4.8</a>, 2026-05-28.</li>
+        <li>Anthropic GitHub, <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.156">Claude Code v2.1.156 release</a>, 2026-05-29.</li>
+        <li>Anthropic GitHub, <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.154">Claude Code v2.1.154 release</a>, 2026-05-28.</li>
+        <li>Cursor, <a href="https://cursor.com/en-US/changelog">What's New in Cursor</a>, latest checked 2026-05-30.</li>
+        <li>OpenAI Help Center, <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">ChatGPT Release Notes</a>, latest checked 2026-05-30.</li>
+        <li>OpenAI, <a href="https://openai.com/index/introducing-the-codex-app/">Introducing the Codex app</a>, includes Windows availability note.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-15 AI 코딩 도구 아티클 요약</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f7fb; --panel:#fff; --text:#17202a; --muted:#5d6675; --line:#d9e0ea; --blue:#205493; --green:#28724f; --amber:#8a5a00; --soft:#eef5ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); line-height:1.68; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#4a3568; color:#fff; border-radius:8px; padding:28px; }
+    .hero h1 { margin:0 0 8px; font-size:2rem; letter-spacing:0; }
+    .hero p { margin:4px 0; color:#efe8f8; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.24); border-radius:8px; padding:12px; background:rgba(255,255,255,.1); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    h2 { margin:0 0 12px; font-size:1.28rem; }
+    h3 { margin:0 0 8px; font-size:1.05rem; }
+    a { color:var(--blue); }
+    .notice { border-left:5px solid var(--amber); background:#fff7e6; padding:12px 14px; border-radius:6px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; margin-top:12px; background:#fff; }
+    .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 10px; }
+    .badge { font-size:.78rem; font-weight:700; color:#214b74; background:var(--soft); border-radius:999px; padding:3px 9px; }
+    .ok { color:var(--green); background:#eaf7f0; }
+    .muted { color:var(--muted); font-size:.92rem; }
+    .toc ol, .sources ul { margin:0; padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>AI 코딩 도구 아티클 요약</h1>
+      <p>생성일: 2026-05-15 | 우선 범위: 2026-05-14 ~ 2026-05-15 | 확장 범위: 2026-05-09 ~ 2026-05-15</p>
+      <div class="grid">
+        <div class="stat"><strong>기간 확장</strong><br>최근 2일 내 도구별 2~3개 기사 수량이 부족해 7일로 확장</div>
+        <div class="stat"><strong>핵심 흐름</strong><br>자율성보다 검증, 환경 구성, 작은 작업 단위가 반복 강조됨</div>
+        <div class="stat"><strong>신뢰도</strong><br>공식 글 4개, 비교 리뷰 1개, 2차 요약 2개</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#notice">기간 확장 공지</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="notice">
+      <h2>기간 확장 공지</h2>
+      <div class="notice">최근 2일만으로는 Claude Code, Cursor, OpenAI Codex 각각 2~3개씩 의미 있는 기사/릴리스 해설을 채우기 어려웠다. 따라서 하네스 규칙에 따라 기사 검색 범위를 7일(2026-05-09 ~ 2026-05-15)로 넓혔다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3><a href="https://github.com/anthropics/claude-code/releases">Claude Code v2.1.141 릴리스</a></h3>
+        <div class="badges"><span class="badge ok">공식 글</span><span class="badge">게시일: 2026-05-13</span><span class="badge">매체: GitHub Releases</span></div>
+        <p>Claude Code의 최신 릴리스는 hook 출력, 플러그인 클론 방식, workload identity federation, 세션 목록 범위 지정, 피드백 번들, 백그라운드 에이전트 권한 유지 등 운영 기능을 보강했다. 대형 신기능보다 장시간 CLI 세션을 덜 깨지게 만드는 수정이 많다. Windows daemon/doctor 오류와 터미널 폭/상태라인 문제도 포함돼 실제 Windows 사용자에게 영향이 있다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code를 팀 단위로 쓰는 경우 최신 릴리스 확인은 기능 호기심보다 안정성 관리에 가깝다. 특히 hooks, plugins, background agents를 쓰는 워크스페이스는 변경점을 확인해야 한다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison">Claude Code vs. Codex vs. Cursor vs. GitHub Copilot</a></h3>
+        <div class="badges"><span class="badge">비교 리뷰</span><span class="badge">게시일: 2026-05-13</span><span class="badge">매체: Built In</span></div>
+        <p>Built In의 비교 리뷰는 Claude Code를 복잡한 멀티 파일 계획과 터미널 중심 워크플로에 강한 도구로 평가했다. 동시에 도구가 요구 범위 밖으로 벗어나거나 품질 드리프트를 만들 수 있으므로, 작은 작업 단위와 TDD 루프가 필요하다고 강조한다. “어떤 도구가 최고인가”보다 팀의 검증 방식이 더 중요하다는 결론이다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code의 장점은 넓은 맥락과 계획력이지만, 리뷰와 테스트 없이 큰 작업을 맡기면 장점이 리스크로 바뀐다.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3><a href="https://cursor.com/changelog/05-13-26">Development environments for cloud agents</a></h3>
+        <div class="badges"><span class="badge ok">공식 글</span><span class="badge">게시일: 2026-05-13</span><span class="badge">매체: Cursor</span></div>
+        <p>Cursor는 클라우드 에이전트를 위한 멀티 레포 환경, Dockerfile 기반 설정, build secret, 레이어 캐시, 설정 검증, 버전 이력, 감사 로그, 환경별 secret/egress 범위 지정 기능을 공개했다. 에이전트가 여러 저장소와 내부 빌드 시스템을 다루는 팀형 작업을 전제로 한 업데이트다.</p>
+        <p><strong>실무 시사점:</strong> Cursor의 경쟁 포인트가 IDE 자동완성에서 “통제 가능한 에이전트 실행 환경”으로 이동하고 있다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://www.startuphub.ai/ai-news/technology/2026/cursor-boosts-cloud-agent-environments">Cursor Boosts Cloud Agent Environments</a></h3>
+        <div class="badges"><span class="badge">뉴스 기사</span><span class="badge">게시일: 2026-05-13</span><span class="badge">매체: StartupHub.ai</span></div>
+        <p>StartupHub.ai는 Cursor 업데이트를 클라우드 에이전트의 약점인 테스트, API 접근, 다중 서비스 변경 능력을 보완하는 흐름으로 해석했다. 특히 멀티 레포 지원, Dockerfile 구성, 감사 로그, 환경별 권한 분리가 엔터프라이즈 채택에 중요하다고 정리했다.</p>
+        <p><strong>실무 시사점:</strong> 홍보성 요약에 가깝지만, Cursor 공식 글의 핵심을 팀 운영/거버넌스 관점으로 다시 읽는 데 유용하다.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3><a href="https://github.com/openai/codex/releases">OpenAI Codex 0.131 alpha 계열 릴리스</a></h3>
+        <div class="badges"><span class="badge ok">공식 글</span><span class="badge">게시일: 2026-05-14</span><span class="badge">매체: GitHub Releases</span></div>
+        <p>openai/codex 릴리스 페이지에는 2026-05-14 0.131.0-alpha.16 pre-release가 올라와 있고, 2026-05-12부터 0.131 계열 alpha 릴리스가 여러 차례 이어졌다. 공개 설명은 짧지만, 최근 안정판 0.130.0에서 remote-control, app-server, multi-environment, Windows sandbox 관련 변경이 확인된다.</p>
+        <p><strong>실무 시사점:</strong> alpha 릴리스는 자동 업데이트 대상보다 변경 추적 대상으로 보는 편이 안전하다. 원격 제어와 다중 환경 기능을 쓰는 사용자만 우선 관찰하면 된다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://www.gitclear.com/open_repos/openai/codex/release/rust-v0.131.0-alpha.9">Codex rust-v0.131.0-alpha.9 Release</a></h3>
+        <div class="badges"><span class="badge">2차 릴리스 분석</span><span class="badge">게시일: 2026-05-12</span><span class="badge">매체: GitClear</span></div>
+        <p>GitClear는 0.131.0-alpha.9 릴리스에서 multi-environment apply_patch selection, codex remote-control daemon 시작, accepted line fingerprint 업로드 중단, startup/TTFT telemetry 추가를 주요 변경으로 잡았다. 공식 GitHub 릴리스 설명보다 변경 항목을 더 보기 쉽게 묶어준다.</p>
+        <p><strong>실무 시사점:</strong> Codex CLI를 자동화 하네스나 원격 제어 흐름에 붙이는 사용자는 apply_patch 대상 환경 선택과 telemetry 변경을 확인해야 한다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison">Built In 비교 리뷰의 Codex 평가</a></h3>
+        <div class="badges"><span class="badge">비교 리뷰</span><span class="badge">게시일: 2026-05-13</span><span class="badge">매체: Built In</span></div>
+        <p>Built In은 Codex를 큰 범위의 샌드박스 작업과 정의가 분명한 리팩터링에 적합한 도구로 평가했다. 다만 자율 작업 범위가 커질수록 과잉 구현과 리뷰 지점 상실 위험이 커진다고 지적한다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 “맡겨놓고 나중에 검토”할 수 있는 구조가 장점이지만, 완료 조건과 테스트를 먼저 고정하지 않으면 회수 비용이 커진다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>Claude Code releases: <a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a></li>
+        <li>Cursor changelog: <a href="https://cursor.com/changelog/05-13-26">https://cursor.com/changelog/05-13-26</a></li>
+        <li>StartupHub.ai Cursor summary: <a href="https://www.startuphub.ai/ai-news/technology/2026/cursor-boosts-cloud-agent-environments">https://www.startuphub.ai/ai-news/technology/2026/cursor-boosts-cloud-agent-environments</a></li>
+        <li>OpenAI Codex releases: <a href="https://github.com/openai/codex/releases">https://github.com/openai/codex/releases</a></li>
+        <li>GitClear Codex release analysis: <a href="https://www.gitclear.com/open_repos/openai/codex/release/rust-v0.131.0-alpha.9">https://www.gitclear.com/open_repos/openai/codex/release/rust-v0.131.0-alpha.9</a></li>
+        <li>Built In comparison review: <a href="https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison">https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

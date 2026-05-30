@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 공식 업데이트 - 2026-05-28</title>
+  <style>
+    :root { color-scheme: light; --ink:#1b1f24; --muted:#64748b; --line:#d8dee8; --bg:#f7f9fc; --card:#ffffff; --accent:#2251d1; --ok:#0f766e; --warn:#9a3412; }
+    body { margin:0; font-family: Arial, "Noto Sans KR", sans-serif; background:var(--bg); color:var(--ink); line-height:1.58; }
+    main { max-width: 1120px; margin: 0 auto; padding: 32px 20px 48px; }
+    header { border-bottom: 2px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+    h1 { margin: 0 0 10px; font-size: 30px; letter-spacing: 0; }
+    h2 { margin-top: 34px; font-size: 22px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    a { color: var(--accent); }
+    .meta, .note { color: var(--muted); font-size: 14px; }
+    .summary { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0 8px; }
+    .box, .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .box strong { display:block; font-size:22px; }
+    .tool { margin: 18px 0; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-size:12px; background:#e0f2fe; color:#075985; font-weight:700; }
+    .ok { color:var(--ok); font-weight:700; }
+    .warn { color:var(--warn); font-weight:700; }
+    ul { padding-left: 20px; }
+    table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); }
+    th, td { text-align:left; vertical-align:top; padding:10px; border-bottom:1px solid var(--line); }
+    th { background:#eef3fb; }
+    @media (max-width: 760px) { .summary { grid-template-columns:1fr; } main { padding: 22px 14px 36px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AI 코딩 도구 공식 업데이트</h1>
+    <div class="meta">생성일: 2026-05-28 · 조사 범위: 2026-05-26부터 2026-05-28까지 공식 changelog/문서/릴리스 노트 확인</div>
+    <p>이번 공식 업데이트 레인은 Claude Code에서만 엄격한 3일 범위 안의 신규 릴리스가 확인됐다. Cursor와 OpenAI Codex는 가까운 공식 업데이트가 각각 2026-05-20, 2026-05-21에 있었지만 이번 3일 범위 밖이므로 참고 맥락으로 분리했다.</p>
+  </header>
+
+  <section class="summary" aria-label="요약">
+    <div class="box"><strong>1건</strong>3일 범위 내 공식 업데이트 확인</div>
+    <div class="box"><strong>2건</strong>범위 밖 공식 맥락으로 참고</div>
+    <div class="box"><strong>0건</strong>확인 불가로 처리한 공식 업데이트</div>
+  </section>
+
+  <section>
+    <h2>목차</h2>
+    <ul>
+      <li><a href="#claude">Claude Code</a></li>
+      <li><a href="#cursor">Cursor</a></li>
+      <li><a href="#codex">OpenAI Codex</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ul>
+  </section>
+
+  <section id="claude" class="tool">
+    <h2>Claude Code</h2>
+    <article class="card">
+      <h3>Claude Code 2.1.152</h3>
+      <p><span class="badge">확인 완료</span> <span class="ok">공식 changelog · 2026-05-27</span></p>
+      <ul>
+        <li><code>/code-review --fix</code>가 리뷰 결과를 작업 트리에 적용하고 재사용, 단순화, 효율성 제안을 표면화한다. <code>/simplify</code>는 이 흐름을 호출하는 방향으로 정리됐다.</li>
+        <li>Skills와 slash command frontmatter에서 <code>disallowed-tools</code>를 지정해 특정 도구를 활성 세션에서 제거할 수 있게 됐다.</li>
+        <li><code>/reload-skills</code> 명령과 <code>SessionStart</code> hook의 <code>reloadSkills: true</code> 응답으로 세션 재시작 없이 skill 디렉터리를 재스캔할 수 있다.</li>
+        <li><code>SessionStart</code> hook이 세션 제목을 설정할 수 있고, <code>MessageDisplay</code> hook이 표시되는 assistant 메시지를 변환하거나 숨길 수 있다.</li>
+      </ul>
+      <p><strong>실사용 의미:</strong> Claude Code는 이번 릴리스에서 코드 리뷰 후 자동 수정, skill 재적재, hook 기반 표시/세션 제어처럼 에이전트 운영 표면을 넓혔다. 팀이 AGENTS/skills/hooks를 적극적으로 쓰는 경우, 권한과 컨텍스트 관리 규칙을 더 세밀하게 구성할 수 있다.</p>
+      <p class="meta">출처: <a href="https://code.claude.com/docs/en/changelog">Claude Code changelog</a></p>
+    </article>
+  </section>
+
+  <section id="cursor" class="tool">
+    <h2>Cursor</h2>
+    <article class="card">
+      <h3>Shared Canvases and /loop Skill</h3>
+      <p><span class="badge">확인 완료</span> <span class="warn">공식 changelog · 2026-05-20, 이번 3일 범위 밖</span></p>
+      <ul>
+        <li>Cursor 3.5는 agent가 만든 보고서, 대시보드, 커스텀 인터페이스 같은 canvas를 팀과 공유하는 기능을 추가했다.</li>
+        <li><code>/loop</code> skill은 프롬프트를 로컬 일정 또는 특정 결과가 나올 때까지 반복 실행하는 기능으로 설명된다.</li>
+      </ul>
+      <p><strong>실사용 의미:</strong> 이번 조사 기간 안의 신규 공식 업데이트는 확인되지 않았다. 다만 바로 직전의 3.5 업데이트는 Cursor가 IDE 보조 도구에서 팀 단위 agent artifact 관리 표면으로 이동하고 있음을 보여준다.</p>
+      <p class="meta">출처: <a href="https://cursor.com/changelog">Cursor changelog</a></p>
+    </article>
+  </section>
+
+  <section id="codex" class="tool">
+    <h2>OpenAI Codex</h2>
+    <article class="card">
+      <h3>Appshots, Goal mode, remote computer use</h3>
+      <p><span class="badge">확인 완료</span> <span class="warn">공식 changelog · 2026-05-21, 이번 3일 범위 밖</span></p>
+      <ul>
+        <li>Codex app의 Appshots는 macOS에서 앞쪽 앱 창의 스크린샷과 텍스트 컨텍스트를 Codex로 보내는 기능으로 안내됐다.</li>
+        <li>Goal mode는 Codex app, IDE extension, CLI에서 실험 기능이 아닌 일반 기능으로 제공된다고 명시됐다.</li>
+        <li>remote computer use는 Mac이 잠긴 뒤에도 Codex가 데스크톱 앱을 사용할 수 있게 하는 방향으로 설명됐다.</li>
+      </ul>
+      <p><strong>실사용 의미:</strong> 이번 3일 범위 안의 신규 공식 업데이트는 확인되지 않았다. 직전 업데이트의 핵심은 장시간 목표 수행, 앱 컨텍스트 캡처, 원격 컴퓨터 사용으로 Codex의 비동기 작업 수행 폭을 넓히는 것이다.</p>
+      <p class="meta">출처: <a href="https://developers.openai.com/codex/changelog">OpenAI Codex changelog</a></p>
+    </article>
+  </section>
+
+  <section>
+    <h2>확인 상태 표</h2>
+    <table>
+      <thead><tr><th>도구</th><th>최근 공식 항목</th><th>발표일</th><th>이번 3일 범위 포함</th><th>확인 상태</th></tr></thead>
+      <tbody>
+        <tr><td>Claude Code</td><td>2.1.152</td><td>2026-05-27</td><td>예</td><td>확인 완료</td></tr>
+        <tr><td>Cursor</td><td>3.5 Shared Canvases and /loop Skill</td><td>2026-05-20</td><td>아니오</td><td>확인 완료, 참고 맥락</td></tr>
+        <tr><td>OpenAI Codex</td><td>Appshots, Goal mode, and more</td><td>2026-05-21</td><td>아니오</td><td>확인 완료, 참고 맥락</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="sources">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://code.claude.com/docs/en/changelog">Claude Code changelog</a></li>
+      <li><a href="https://cursor.com/changelog">Cursor changelog</a></li>
+      <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex changelog</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

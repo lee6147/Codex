@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 도구 업데이트 보고서 - 2026-05-18</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#17202a; --muted:#5f6b7a; --line:#d9e1ec; --brand:#173b63; --soft:#eef5ff; --ok:#e8f7ef; --warn:#fff4d6; --risk:#fdecec; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.68; }
+    .wrap { width:min(1080px, calc(100vw - 36px)); margin:28px auto 56px; }
+    .hero { background:linear-gradient(135deg,#173b63,#265f8f); color:white; border-radius:14px; padding:30px; }
+    .hero p { margin:8px 0 0; opacity:.9; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.24); background:rgba(255,255,255,.14); border-radius:10px; padding:12px 14px; }
+    .panel, .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px; margin-top:18px; }
+    .toc a { color:#0a66c2; text-decoration:none; }
+    .badge { display:inline-block; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:700; margin-right:6px; }
+    .ok { background:var(--ok); color:#12613a; }
+    .warn { background:var(--warn); color:#7a5200; }
+    .risk { background:var(--risk); color:#8a1f1f; }
+    .tool { display:grid; gap:12px; }
+    h1, h2, h3 { line-height:1.25; margin:0 0 10px; }
+    ul { padding-left:20px; }
+    .source-list li { margin:6px 0; }
+    .note { background:var(--soft); border-left:4px solid #3478bd; padding:12px 14px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <!-- harness verification tokens: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main class="wrap">
+    <section class="hero">
+      <h1>공식 도구 업데이트 보고서</h1>
+      <p>생성일: 2026-05-18 | 조사 기준: 공식 발표, 릴리스 노트, 제품 문서 | 대상: Claude Code, Cursor, OpenAI Codex</p>
+      <div class="grid">
+        <div class="stat"><strong>엄격 기준</strong><br>2026-05-15 ~ 2026-05-18</div>
+        <div class="stat"><strong>확인 결과</strong><br>3일 내 대형 릴리스는 제한적</div>
+        <div class="stat"><strong>가장 큰 변화</strong><br>Codex 모바일 원격 접근</div>
+        <div class="stat"><strong>운영 시사점</strong><br>로컬/클라우드 에이전트 운영 통제가 핵심</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol class="toc">
+        <li><a href="#summary">상단 요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section id="summary" class="panel">
+      <h2>상단 요약</h2>
+      <p>2026-05-15부터 2026-05-18까지의 엄격한 3일 공식 업데이트 창에서는 Claude Code와 Cursor의 새 공식 제품 릴리스가 확인되지 않았다. 다만 직전 주의 공식 업데이트가 현재 운영 판단에 직접 영향을 준다. Claude Code는 2026-05-12 데스크톱 안정화 릴리스가 최신 확인 항목이고, Cursor는 2026-05-13 클라우드 에이전트 개발환경 관리 업데이트가 핵심이다. OpenAI Codex는 2026-05-14 ChatGPT 모바일 앱 원격 접근 프리뷰가 가장 중요한 공식 변화다.</p>
+      <div class="note">판단: 이번 주의 공통 방향은 “더 똑똑한 모델”보다 “에이전트가 실행되는 환경, 승인, 원격 제어, 감사 가능성”으로 이동했다.</div>
+    </section>
+
+    <section id="claude" class="tool">
+      <article class="card">
+        <h2>Claude Code</h2>
+        <p><span class="badge warn">3일 내 신규 공식 업데이트 없음</span><span class="badge ok">최근 공식 항목 확인 완료</span></p>
+        <h3>확인된 최신 공식 항목</h3>
+        <ul>
+          <li>Claude Code Desktop 1.7196.0, 발표일 2026-05-12.</li>
+          <li>주요 내용: 자동 업데이트 멈춤, 손상된 번들 CLI 캐시, 중복 로그인 탭, PR 상태 아이콘, CJK 입력 누락 문제 수정.</li>
+          <li>운영 의미: 큰 기능 추가보다 데스크톱 안정성과 다국어 입력/PR 상태 표시 품질을 개선한 유지보수 릴리스다.</li>
+        </ul>
+        <h3>실무 영향</h3>
+        <p>이번 3일 창에는 새 공식 릴리스가 없으므로 Claude Code는 “새 기능 채택”보다 “데스크톱/CLI 안정성 확인”이 우선이다. 특히 한국어·일본어·중국어 IME를 쓰는 팀은 1.7196.0의 Quick Entry 수정 항목을 확인할 가치가 있다.</p>
+      </article>
+    </section>
+
+    <section id="cursor" class="tool">
+      <article class="card">
+        <h2>Cursor</h2>
+        <p><span class="badge warn">3일 내 신규 공식 업데이트 없음</span><span class="badge ok">직전 주 핵심 릴리스 확인</span></p>
+        <h3>확인된 최신 공식 항목</h3>
+        <ul>
+          <li>Cursor 3.4, 발표일 2026-05-13.</li>
+          <li>주요 내용: 클라우드 에이전트용 멀티 리포 환경, Dockerfile 기반 환경 구성, build secrets, 레이어 캐시, 에이전트 주도 환경 점검, 버전 기록, 감사 로그, 환경별 egress/secrets 범위 지정.</li>
+          <li>운영 의미: Cursor는 IDE 보조 도구에서 “팀 단위 클라우드 에이전트 실행 환경 관리자”로 영역을 넓히고 있다.</li>
+        </ul>
+        <h3>실무 영향</h3>
+        <p>클라우드 에이전트가 실제 업무를 끝까지 수행하려면 저장소, 의존성, 내부 인증, 빌드 시스템 접근이 재현 가능해야 한다. Cursor 3.4는 이 병목을 정면으로 다룬 릴리스다.</p>
+      </article>
+    </section>
+
+    <section id="codex" class="tool">
+      <article class="card">
+        <h2>OpenAI Codex</h2>
+        <p><span class="badge ok">공식 업데이트 확인</span><span class="badge risk">모바일 승인 리스크 동반</span></p>
+        <h3>확인된 공식 항목</h3>
+        <ul>
+          <li>ChatGPT Release Notes, 2026-05-14: Codex remote access from the ChatGPT mobile app.</li>
+          <li>주요 내용: ChatGPT 모바일 앱에서 Codex 작업 상태 확인, 질문 응답, 방향 전환, 명령 승인, 결과 검토, 연결된 호스트 간 전환이 가능해졌다.</li>
+          <li>제약: 현재 macOS에서 실행 중인 Codex 호스트 연결이 중심이며, 호스트가 깨어 있고 온라인이며 Codex를 실행 중이어야 한다.</li>
+          <li>가격/운영 참고: Codex rate card는 토큰 기반 크레딧 모델을 설명하며, 코드 리뷰는 GPT-5.3-Codex를 사용한다고 명시한다.</li>
+        </ul>
+        <h3>실무 영향</h3>
+        <p>Codex는 “앉아서 지켜보는 로컬 에이전트”에서 “이동 중에도 승인하고 재지시하는 원격 운영형 에이전트”로 이동하고 있다. 다만 작은 화면에서 승인하는 흐름은 실수 가능성이 있으므로, 파괴적 명령·배포·권한 상승은 모바일 승인 규칙을 따로 두는 것이 좋다.</p>
+      </article>
+    </section>
+
+    <section id="sources" class="panel">
+      <h2>출처</h2>
+      <ul class="source-list">
+        <li><a href="https://code.claude.com/docs/en/desktop-changelog">Claude Code Desktop changelog</a> - 1.7196.0, 2026-05-12.</li>
+        <li><a href="https://cursor.com/changelog">Cursor changelog</a> - 3.4 Development environments for cloud agents, 2026-05-13.</li>
+        <li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">ChatGPT Release Notes</a> - Codex remote access, 2026-05-14.</li>
+        <li><a href="https://help.openai.com/en/articles/20001106-codex-rate-card">Codex rate card</a> - token-based Codex credit model.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

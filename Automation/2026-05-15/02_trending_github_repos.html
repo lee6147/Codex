@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-15 GitHub 트렌딩 AI/개발 생산성 보고서</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f7fb; --panel:#fff; --text:#17202a; --muted:#5d6675; --line:#d9e0ea; --blue:#205493; --green:#28724f; --soft:#eef5ff; --rank:#f1f5f9; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); line-height:1.68; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#184d47; color:#fff; border-radius:8px; padding:28px; }
+    .hero h1 { margin:0 0 8px; font-size:2rem; letter-spacing:0; }
+    .hero p { margin:4px 0; color:#e4f4f1; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.24); border-radius:8px; padding:12px; background:rgba(255,255,255,.1); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    h2 { margin:0 0 12px; font-size:1.28rem; }
+    h3 { margin:0 0 8px; font-size:1.05rem; }
+    a { color:var(--blue); }
+    .toc ol, .sources ul { margin:0; padding-left:20px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; margin-top:12px; background:#fff; }
+    .repo-head { display:flex; gap:12px; align-items:flex-start; }
+    .rank { flex:0 0 auto; min-width:42px; text-align:center; font-weight:800; background:var(--rank); border-radius:8px; padding:6px 8px; }
+    .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 10px; }
+    .badge { font-size:.78rem; font-weight:700; color:#214b74; background:var(--soft); border-radius:999px; padding:3px 9px; }
+    .ok { color:var(--green); background:#eaf7f0; }
+    .muted { color:var(--muted); font-size:.92rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>트렌딩 GitHub 레포트</h1>
+      <p>생성일: 2026-05-15 | 스냅샷: GitTrend 2026-05-14 daily engagement | 선정 기준: AI, 코딩, 개발 생산성과 직접 연결된 저장소</p>
+      <div class="grid">
+        <div class="stat"><strong>선정 저장소</strong><br>10개 중 개발 생산성 관련 8개 유지</div>
+        <div class="stat"><strong>강한 신호</strong><br>skills, agentmemory, superpowers처럼 에이전트 운영 규칙/메모리/방법론 계층이 두드러짐</div>
+        <div class="stat"><strong>주의</strong><br>Star 증가는 관심도 지표이지 안정성 검증이 아님</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#read">읽는 법</a></li>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="read">
+      <h2>트렌드 해석</h2>
+      <p>오늘의 트렌딩은 모델 래퍼보다 “에이전트가 덜 망가지게 일하게 만드는 보조 구조” 쪽으로 기울어 있다. 스킬 디렉터리, 메모리, 터미널 에이전트, 개발 방법론, 브라우저 자동화처럼 Codex, Claude Code, Cursor를 더 오래 안정적으로 굴리기 위한 주변 도구가 눈에 띈다.</p>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+      <article class="card">
+        <div class="repo-head"><div class="rank">1</div><div><h3><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></h3><div class="badges"><span class="badge ok">81.5k stars</span><span class="badge">+174 today</span><span class="badge">Shell</span></div></div></div>
+        <p>“Real Engineers”를 위한 스킬 모음으로, Claude 계열 에이전트가 반복적으로 같은 품질 규칙을 따르도록 만드는 프롬프트/스킬 자산이다. Codex나 Cursor 사용자에게도 프로젝트별 작업 계약을 구조화하는 참고점이 된다.</p>
+        <p><strong>한줄 총평:</strong> 에이전트 품질은 모델보다 반복 가능한 작업 규칙에서 먼저 갈린다는 신호.</p>
+      </article>
+      <article class="card">
+        <div class="repo-head"><div class="rank">2</div><div><h3><a href="https://github.com/rohitg00/agentmemory">rohitg00/agentmemory</a></h3><div class="badges"><span class="badge ok">7.3k stars</span><span class="badge">+96 today</span><span class="badge">TypeScript</span></div></div></div>
+        <p>AI 코딩 에이전트를 위한 지속 메모리 계층이다. 장기 작업에서 이전 결정, 코드베이스 규칙, 사용자 선호가 사라지는 문제를 줄이는 방향이라 Claude Code/Codex의 장시간 세션 운영과 직접 연결된다.</p>
+        <p><strong>한줄 총평:</strong> “컨텍스트를 다시 설명하는 비용”을 줄이는 도구는 계속 주목할 만하다.</p>
+      </article>
+      <article class="card">
+        <div class="repo-head"><div class="rank">3</div><div><h3><a href="https://github.com/Hmbown/DeepSeek-TUI">Hmbown/DeepSeek-TUI</a></h3><div class="badges"><span class="badge ok">28.8k stars</span><span class="badge">+99 today</span><span class="badge">Rust</span></div></div></div>
+        <p>DeepSeek 모델용 터미널 코딩 에이전트다. 특정 모델 계열을 CLI 워크플로에 밀착시키는 접근으로, Claude Code와 Codex CLI가 만든 “터미널 에이전트” 시장의 확장을 보여준다.</p>
+        <p><strong>한줄 총평:</strong> AI 코딩 도구 경쟁이 IDE뿐 아니라 TUI/CLI 레이어로 넓어지고 있다.</p>
+      </article>
+      <article class="card">
+        <div class="repo-head"><div class="rank">4</div><div><h3><a href="https://github.com/obra/superpowers">obra/superpowers</a></h3><div class="badges"><span class="badge ok">189.7k stars</span><span class="badge">+100 today</span><span class="badge">Shell</span></div></div></div>
+        <p>에이전트 스킬 프레임워크와 소프트웨어 개발 방법론을 결합한 프로젝트다. 단순 프롬프트보다 작업 분해, 품질 기준, 협업 절차를 표준화하려는 흐름과 맞닿아 있다.</p>
+        <p><strong>한줄 총평:</strong> 팀이 에이전트를 쓰려면 “사용법”보다 “운영 방식”이 필요하다는 신호.</p>
+      </article>
+      <article class="card">
+        <div class="repo-head"><div class="rank">5</div><div><h3><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></h3><div class="badges"><span class="badge ok">129.3k stars</span><span class="badge">+94 today</span><span class="badge">Claude Code</span></div></div></div>
+        <p>LLM 코딩의 함정과 코딩 표준을 CLAUDE.md 형태로 묶은 단일 파일 자산이다. Claude Code용으로 보이지만, AGENTS.md나 Codex 로컬 지침 설계에도 바로 참고할 수 있다.</p>
+        <p><strong>한줄 총평:</strong> 좋은 에이전트 성능은 좋은 로컬 지침 파일에서 시작한다.</p>
+      </article>
+      <article class="card">
+        <div class="repo-head"><div class="rank">6</div><div><h3><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></h3><div class="badges"><span class="badge ok">149.4k stars</span><span class="badge">+89 today</span><span class="badge">Python</span></div></div></div>
+        <p>일반 AI agent 프레임워크지만 ChatGPT/LLM/agent 태그가 붙어 있고, 도구 호출과 자기 확장형 에이전트 실험에 가깝다. 코딩 전용은 아니므로 생산 도입보다 구조 관찰 대상으로 보는 편이 적절하다.</p>
+        <p><strong>한줄 총평:</strong> 넓은 agent 프레임워크는 아이디어는 풍부하지만 코드 작업 특화성은 별도 검증이 필요하다.</p>
+      </article>
+      <article class="card">
+        <div class="repo-head"><div class="rank">7</div><div><h3><a href="https://github.com/CloakHQ/CloakBrowser">CloakHQ/CloakBrowser</a></h3><div class="badges"><span class="badge ok">9.9k stars</span><span class="badge">+70 today</span><span class="badge">Python</span></div></div></div>
+        <p>Playwright 대체를 표방하는 stealth Chromium 프로젝트다. AI 코딩 도구 자체는 아니지만, 브라우저 자동화와 테스트/스크래핑 기반 에이전트 작업의 인프라로 연결된다. 사용 시 정책/윤리/사이트 약관 리스크를 반드시 점검해야 한다.</p>
+        <p><strong>한줄 총평:</strong> 브라우저 자동화 인프라는 강력하지만 오용 리스크가 크다.</p>
+      </article>
+      <article class="card">
+        <div class="repo-head"><div class="rank">8</div><div><h3><a href="https://github.com/tinyhumansai/openhuman">tinyhumansai/openhuman</a></h3><div class="badges"><span class="badge ok">5.9k stars</span><span class="badge">+168 today</span><span class="badge">Rust</span></div></div></div>
+        <p>개인 AI 슈퍼인텔리전스를 표방하는 Rust 프로젝트다. 코딩 생산성과의 직접성은 약하지만, 로컬/개인 에이전트 런타임에 대한 관심이 커지고 있음을 보여준다.</p>
+        <p><strong>한줄 총평:</strong> 직접 도입보다 개인 에이전트 런타임 흐름을 관찰할 후보.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>GitTrend daily snapshot: <a href="https://gittrend.io/">https://gittrend.io/</a></li>
+        <li>OSSInsight AI repository ranking 참고: <a href="https://ossinsight.io/trending/ai">https://ossinsight.io/trending/ai</a></li>
+        <li>각 저장소 URL은 GitHub 원본 저장소 링크를 사용했다.</li>
+      </ul>
+      <p class="muted">확인 상태: GitTrend 스냅샷과 저장소 링크 기준 확인 완료. Star 수는 조회 시점 기준이며 이후 변동 가능.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 레포지터리 보고서 - 2026-05-20</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f7fb; --panel:#fff; --text:#17202c; --muted:#607086; --line:#d8e0ec; --link:#075fb8; --accent:#e7f1ff; --hero:#24445f; --hero2:#526d3f; --hero-text:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:32px auto 64px; }
+    h1,h2,h3 { line-height:1.3; margin-top:0; }
+    a { color:var(--link); }
+    .hero { background:linear-gradient(135deg,var(--hero),var(--hero2)); color:var(--hero-text); border-radius:16px; padding:34px; margin-bottom:22px; }
+    .hero p { margin:8px 0 0; opacity:.94; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:12px; padding:14px 16px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:18px; }
+    .notice { background:#edf7ee; border:1px solid #bddfbd; border-radius:12px; padding:14px 16px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .repo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+    .badge { display:inline-block; font-size:.78rem; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--accent); color:#204977; }
+    .meta-line { color:var(--muted); font-size:.92rem; margin-top:10px; }
+    .sources ul { margin:0; padding-left:20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>트렌딩 GitHub 레포지터리 보고서</h1>
+      <p>생성일: 2026-05-20 | 기준 스냅샷: GitTrend Daily, 2026-05-19 | 선정 기준: AI, 코딩, 개발 생산성과 직접 연결</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 수</strong><br>상위권 중 8개 유지, 관련 약한 항목 제외</div>
+        <div class="stat"><strong>강한 흐름</strong><br>Claude Code 스킬, 에이전트 방법론, 코드 검색, 로컬 그래프 도구</div>
+        <div class="stat"><strong>해석</strong><br>모델 자체보다 에이전트 운영 지식과 작업 환경 도구가 주목받음</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">트렌드 해석</a></li>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>요약</h2>
+      <div class="notice">오늘의 개발 생산성 트렌드는 "AI가 코드를 더 잘 쓴다"보다 "에이전트가 더 적은 토큰과 더 나은 규칙으로 오래 일하게 만든다"에 가깝다. Claude Code용 스킬 모음, Codex와 Cursor까지 겨냥한 코드 그래프, 에이전트 작업 방법론 레포가 동시에 올라와 있다.</div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+      <div class="repo-grid">
+        <article class="card">
+          <h3>1. tinyhumansai/openhuman</h3>
+          <div class="badge-row"><span class="badge">Rust</span><span class="badge">17.7k stars</span><span class="badge">+149 today</span></div>
+          <p><a href="https://github.com/tinyhumansai/openhuman">github.com/tinyhumansai/openhuman</a></p>
+          <p>개인용 AI 슈퍼 인텔리전스를 표방하는 프로젝트다. 직접 코딩 도구라기보다 로컬 또는 개인 에이전트 경험을 지향하는 흐름으로 볼 수 있다.</p>
+          <p><strong>연결점:</strong> Claude Code, Cursor, Codex 사용자가 개인 작업 맥락을 장기 보존하려는 수요와 맞닿아 있다.</p>
+          <p><strong>한줄 총평:</strong> 개인 AI 에이전트 인프라에 대한 관심을 보여주는 상위권 신호.</p>
+        </article>
+        <article class="card">
+          <h3>2. Imbad0202/academic-research-skills</h3>
+          <div class="badge-row"><span class="badge">Python</span><span class="badge">12.5k stars</span><span class="badge">+105 today</span></div>
+          <p><a href="https://github.com/Imbad0202/academic-research-skills">github.com/Imbad0202/academic-research-skills</a></p>
+          <p>Claude Code에서 연구, 작성, 리뷰, 수정, 마무리 흐름을 스킬로 묶는 저장소다. 논문과 문서 작업을 반복 가능한 에이전트 절차로 만드는 데 초점이 있다.</p>
+          <p><strong>연결점:</strong> Claude Code 사용자는 직접 활용 가능하고, Codex나 Cursor 사용자는 로컬 스킬 설계 참고 자료로 쓸 수 있다.</p>
+          <p><strong>한줄 총평:</strong> 코딩 에이전트가 연구 보조와 문서 생산으로 확장되는 사례.</p>
+        </article>
+        <article class="card">
+          <h3>3. mattpocock/skills</h3>
+          <div class="badge-row"><span class="badge">Shell</span><span class="badge">92.3k stars</span><span class="badge">+98 today</span></div>
+          <p><a href="https://github.com/mattpocock/skills">github.com/mattpocock/skills</a></p>
+          <p>개발자가 실제 사용하는 스킬 디렉터리 패턴을 공유하는 저장소다. AI 코딩 도구를 잘 쓰기 위한 지시문, 절차, 역할 분리가 핵심이다.</p>
+          <p><strong>연결점:</strong> Claude Code의 스킬 구조와 가장 직접적으로 맞고, Codex 자동화나 Cursor Rules 설계에도 전환 가능하다.</p>
+          <p><strong>한줄 총평:</strong> 프롬프트가 아니라 운영 가능한 작업 습관이 자산이 되는 흐름.</p>
+        </article>
+        <article class="card">
+          <h3>4. multica-ai/andrej-karpathy-skills</h3>
+          <div class="badge-row"><span class="badge">Prompt engineering</span><span class="badge">137.6k stars</span><span class="badge">+87 today</span></div>
+          <p><a href="https://github.com/multica-ai/andrej-karpathy-skills">github.com/multica-ai/andrej-karpathy-skills</a></p>
+          <p>Claude Code 동작 개선을 위한 단일 CLAUDE.md 파일을 제공한다. LLM 코딩에서 반복되는 실패 패턴을 규칙화하려는 저장소다.</p>
+          <p><strong>연결점:</strong> AGENTS.md, CLAUDE.md, Cursor Rules처럼 도구별 지시 표면을 관리하는 사용자에게 바로 관련된다.</p>
+          <p><strong>한줄 총평:</strong> 모델 선택보다 작업 계약서 품질이 성능을 좌우한다는 신호.</p>
+        </article>
+        <article class="card">
+          <h3>5. obra/superpowers</h3>
+          <div class="badge-row"><span class="badge">Shell</span><span class="badge">193.1k stars</span><span class="badge">+67 today</span></div>
+          <p><a href="https://github.com/obra/superpowers">github.com/obra/superpowers</a></p>
+          <p>에이전트형 스킬 프레임워크와 개발 방법론을 묶은 저장소다. 계획, 테스트, 리뷰, 검증 같은 절차를 AI 작업에 이식하는 데 초점을 둔다.</p>
+          <p><strong>연결점:</strong> Codex와 Claude Code 모두에서 장시간 작업의 품질 게이트로 활용할 수 있다.</p>
+          <p><strong>한줄 총평:</strong> 에이전트 생산성은 모델 호출보다 검증 루프 설계에서 나온다.</p>
+        </article>
+        <article class="card">
+          <h3>6. colbymchenry/codegraph</h3>
+          <div class="badge-row"><span class="badge">TypeScript</span><span class="badge">3.7k stars</span><span class="badge">+52 today</span></div>
+          <p><a href="https://github.com/colbymchenry/codegraph">github.com/colbymchenry/codegraph</a></p>
+          <p>Claude Code, Codex, Cursor, OpenCode용 로컬 코드 지식 그래프를 표방한다. 적은 토큰과 적은 도구 호출로 코드베이스 탐색을 돕는 것이 목표다.</p>
+          <p><strong>연결점:</strong> 대규모 저장소에서 코딩 에이전트가 파일을 무작정 읽는 비용을 줄이는 보조 계층이다.</p>
+          <p><strong>한줄 총평:</strong> 다음 병목은 모델이 아니라 코드 검색과 컨텍스트 공급이다.</p>
+        </article>
+        <article class="card">
+          <h3>7. nexu-io/open-design</h3>
+          <div class="badge-row"><span class="badge">TypeScript</span><span class="badge">41.7k stars</span><span class="badge">+59 today</span></div>
+          <p><a href="https://github.com/nexu-io/open-design">github.com/nexu-io/open-design</a></p>
+          <p>Claude Design의 로컬 우선 오픈소스 대안을 표방하며 웹, 데스크톱, 모바일 프로토타입과 슬라이드, 이미지, 영상 생성 흐름을 제시한다.</p>
+          <p><strong>연결점:</strong> Cursor와 Codex로 UI 구현을 반복하는 팀에게 디자인 산출물 생성과 코드 에이전트 연결 가능성을 보여준다.</p>
+          <p><strong>한줄 총평:</strong> 코딩 에이전트와 디자인 에이전트 경계가 흐려지는 신호.</p>
+        </article>
+        <article class="card">
+          <h3>8. NousResearch/hermes-agent</h3>
+          <div class="badge-row"><span class="badge">Python</span><span class="badge">157.1k stars</span><span class="badge">+59 today</span></div>
+          <p><a href="https://github.com/NousResearch/hermes-agent">github.com/NousResearch/hermes-agent</a></p>
+          <p>성장하는 에이전트를 표방하는 Python 프로젝트다. 범용 AI 에이전트 계층에 가깝지만, 개발 생산성 도구와 결합될 수 있는 잠재력이 있다.</p>
+          <p><strong>연결점:</strong> Codex, Claude Code, Cursor가 단일 작업 실행기에 머물지 않고 지속형 에이전트 관리자로 이동하는 흐름과 연결된다.</p>
+          <p><strong>한줄 총평:</strong> 범용 에이전트 프레임워크가 개발 도구 생태계와 계속 겹치고 있다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://gittrend.io/">GitTrend - Trending repositories, ranked by engagement, May 19, 2026</a></li>
+        <li><a href="https://github.com/tinyhumansai/openhuman">tinyhumansai/openhuman</a></li>
+        <li><a href="https://github.com/Imbad0202/academic-research-skills">Imbad0202/academic-research-skills</a></li>
+        <li><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></li>
+        <li><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></li>
+        <li><a href="https://github.com/obra/superpowers">obra/superpowers</a></li>
+        <li><a href="https://github.com/colbymchenry/codegraph">colbymchenry/codegraph</a></li>
+        <li><a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a></li>
+        <li><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

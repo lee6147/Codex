@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서 - 2026-05-22</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --text:#1d2633; --muted:#5e6b7b; --line:#d9e1ec; --brand:#255b45; --soft:#eaf8f1; --warn:#fff4d6; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.68; }
+    main { width:min(1040px, calc(100vw - 32px)); margin:30px auto 64px; }
+    header { background:linear-gradient(135deg,#204f3d,#36835f); color:white; border-radius:18px; padding:32px; }
+    h1 { margin:0; font-size:30px; }
+    h2 { margin:0 0 14px; font-size:21px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:#0b62b4; }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.22); border-radius:12px; padding:12px 14px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-color:#c6e7d3; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff; }
+    .rank { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:999px; background:#204f3d; color:#fff; font-weight:800; margin-right:8px; }
+    .badge { display:inline-block; border-radius:999px; padding:4px 10px; font-size:12px; font-weight:700; background:#e9edf5; color:#324256; margin:0 6px 6px 0; }
+    .metric { background:#f4f7fb; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:10px; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+    footer { color:var(--muted); font-size:14px; margin-top:22px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>트렌딩 GitHub 저장소 보고서</h1>
+    <p>GitHub Trending Daily에서 AI 코딩, 에이전트 운영, 개발 생산성과 직접 연결되는 저장소만 선별했다.</p>
+    <div class="meta">
+      <div><strong>생성일</strong><br>2026-05-22</div>
+      <div><strong>기준</strong><br>GitHub Trending Daily</div>
+      <div><strong>선별 수</strong><br>6개 저장소</div>
+      <div><strong>원칙</strong><br>관련성 낮은 항목은 개수 채우기 제외</div>
+    </div>
+  </header>
+
+  <section class="panel summary">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li>오늘의 가장 직접적인 신호는 <strong>Anthropic 공식 Claude Code plugin 디렉터리</strong>가 Trending Daily 상단에 오른 점이다.</li>
+      <li>에이전트용 skill, plugin, managed-agent platform, terminal coding agent가 동시에 보이며, 도구 자체보다 <strong>도구를 팀 운영 체계로 묶는 레이어</strong>가 주목받고 있다.</li>
+      <li>Claude Code, Codex, OpenClaw 같은 에이전트와 함께 쓰는 NotebookLM API/skill 저장소도 올라와 있어, 코딩 에이전트가 외부 지식 도구를 호출하는 흐름이 강해졌다.</li>
+    </ul>
+  </section>
+
+  <section class="panel toc">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#repos">선별 저장소</a></li>
+      <li><a href="#analysis">트렌드 해석</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section id="repos" class="panel">
+    <h2>선별 저장소</h2>
+    <div class="grid">
+      <article class="card">
+        <h3><span class="rank">1</span><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></h3>
+        <p>Anthropic이 관리하는 Claude Code plugin 공식 디렉터리다. 고품질 플러그인을 한곳에 모아 Claude Code의 확장 표준을 보여준다.</p>
+        <div class="metric">Python · 전체 21,944 stars · 891 stars today</div>
+        <p><strong>주목 이유:</strong> Claude Code 생태계가 개별 명령어가 아니라 plugin 배포와 재사용 가능한 워크플로 중심으로 움직이고 있음을 보여준다.</p>
+        <span class="badge">Claude Code</span><span class="badge">Plugin</span><span class="badge">공식</span>
+      </article>
+      <article class="card">
+        <h3><span class="rank">2</span><a href="https://github.com/multica-ai/multica">multica-ai/multica</a></h3>
+        <p>코딩 에이전트를 실제 팀원처럼 할당하고, 진행 상황을 추적하며, skill을 축적하는 open-source managed agents platform이다.</p>
+        <div class="metric">Go · 전체 30,583 stars · 511 stars today</div>
+        <p><strong>주목 이유:</strong> 단일 프롬프트 자동화에서 팀 단위 에이전트 운영, 관찰성, 작업 배정으로 관심이 이동 중이다.</p>
+        <span class="badge">Managed agents</span><span class="badge">Team workflow</span>
+      </article>
+      <article class="card">
+        <h3><span class="rank">3</span><a href="https://github.com/can1357/oh-my-pi">can1357/oh-my-pi</a></h3>
+        <p>터미널용 AI coding agent로, hash-anchored edits, LSP, browser, subagents, optimized tool harness를 내세운다.</p>
+        <div class="metric">TypeScript · 전체 5,778 stars · 483 stars today</div>
+        <p><strong>주목 이유:</strong> CLI 에이전트의 경쟁 축이 모델 호출 자체보다 편집 안정성, 도구 하네스, 서브에이전트 제어로 이동한다.</p>
+        <span class="badge">CLI agent</span><span class="badge">Subagents</span><span class="badge">LSP</span>
+      </article>
+      <article class="card">
+        <h3><span class="rank">4</span><a href="https://github.com/antoinezambelli/forge">antoinezambelli/forge</a></h3>
+        <p>자체 호스팅 가능한 LLM tool-calling 및 multi-step agentic workflow용 Python framework다.</p>
+        <div class="metric">Python · 전체 1,420 stars · 449 stars today</div>
+        <p><strong>주목 이유:</strong> 기업과 개인 개발자가 폐쇄형 제품 바깥에서 agent loop를 통제하려는 수요를 반영한다.</p>
+        <span class="badge">Tool calling</span><span class="badge">Self-hosted</span>
+      </article>
+      <article class="card">
+        <h3><span class="rank">5</span><a href="https://github.com/teng-lin/notebooklm-py">teng-lin/notebooklm-py</a></h3>
+        <p>Google NotebookLM의 비공식 Python API와 agentic skill이다. 설명에는 Claude Code, Codex, OpenClaw 같은 AI agents와의 연동이 직접 언급된다.</p>
+        <div class="metric">Python · 전체 14,295 stars · 182 stars today</div>
+        <p><strong>주목 이유:</strong> 코딩 에이전트가 코드 저장소뿐 아니라 지식 관리 도구까지 호출해 문서 기반 작업을 자동화하는 흐름이다.</p>
+        <span class="badge">Knowledge tool</span><span class="badge">Codex</span><span class="badge">Claude Code</span>
+      </article>
+      <article class="card">
+        <h3><span class="rank">6</span><a href="https://github.com/dotnet/skills">dotnet/skills</a></h3>
+        <p>.NET 및 C#용 AI coding agent 보조 skill 저장소다.</p>
+        <div class="metric">C# · 전체 2,112 stars · 179 stars today</div>
+        <p><strong>주목 이유:</strong> 범용 코딩 에이전트가 언어별 skill과 프로젝트 규칙을 읽는 방식으로 실무 적합성을 높이는 방향을 보여준다.</p>
+        <span class="badge">Skills</span><span class="badge">.NET</span><span class="badge">AI coding agents</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="analysis" class="panel">
+    <h2>트렌드 해석</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>1. Plugin과 skill이 에이전트 품질의 새 단위가 됨</h3>
+        <p>Claude 공식 plugin 디렉터리와 .NET skill 저장소가 동시에 보인다. 앞으로 도구 선택은 "어떤 모델이 더 똑똑한가"뿐 아니라 "우리 조직의 반복 절차를 어떤 skill/plugin으로 고정할 수 있는가"가 된다.</p>
+      </article>
+      <article class="card">
+        <h3>2. Managed agents가 단일 assistant를 대체</h3>
+        <p>Multica와 oh-my-pi는 작업 배정, 상태 추적, 서브에이전트, 브라우저, LSP 같은 운영 표면을 강조한다. AI 코딩 도구 시장의 관심이 IDE 보조에서 에이전트 운영체계로 이동한다.</p>
+      </article>
+      <article class="card">
+        <h3>3. 외부 지식 도구 연동이 중요해짐</h3>
+        <p>NotebookLM API/skill 저장소가 Claude Code, Codex, OpenClaw를 직접 언급한다. 코드 수정뿐 아니라 문서, 회의, 연구 자료를 연결하는 agentic workflow가 실사용 영역으로 들어온다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sources" class="panel">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://github.com/trending?since=daily">GitHub Trending Daily</a> - 2026-05-22 조회 기준.</li>
+      <li><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></li>
+      <li><a href="https://github.com/multica-ai/multica">multica-ai/multica</a></li>
+      <li><a href="https://github.com/can1357/oh-my-pi">can1357/oh-my-pi</a></li>
+      <li><a href="https://github.com/antoinezambelli/forge">antoinezambelli/forge</a></li>
+      <li><a href="https://github.com/teng-lin/notebooklm-py">teng-lin/notebooklm-py</a></li>
+      <li><a href="https://github.com/dotnet/skills">dotnet/skills</a></li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>확인 불가 및 주의</h2>
+    <ul>
+      <li>GitHub Trending은 조회 시점에 따라 순위와 stars today 값이 달라질 수 있다. 본 보고서는 2026-05-22 조회 시점 값을 기록했다.</li>
+      <li>이번 보고서는 AI 코딩 및 개발 생산성과 직접 연결되는 저장소만 선별했으며, 전체 Trending 순위표를 그대로 복제하지 않았다.</li>
+    </ul>
+  </section>
+
+  <footer>생성일: 2026-05-22 · 기준: GitHub Trending Daily · 확인 상태: 링크별 수동 확인 완료</footer>
+</main>
+</body>
+</html>

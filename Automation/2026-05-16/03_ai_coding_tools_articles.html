@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 아티클 요약 - 2026-05-16</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --ink:#17202a; --muted:#5d6875; --line:#d9e0ea; --blue:#1457a8; --amber:#9a6700; --green:#147a5c; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1080px, calc(100vw - 32px)); margin:28px auto 60px; }
+    .hero { background:#24304f; color:white; border-radius:14px; padding:30px; }
+    h1 { margin:0; font-size:30px; } h2 { margin:0 0 12px; } h3 { margin:0 0 8px; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; margin-top:18px; }
+    .notice { background:#fff6db; border:1px solid #eed48a; color:#594000; border-radius:10px; padding:14px; margin-top:18px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .tool { margin-top:18px; }
+    .article { border:1px solid var(--line); border-radius:12px; padding:16px; background:#fff; margin-top:12px; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-size:12px; font-weight:700; margin-right:6px; background:#e9eef6; color:#26384d; }
+    .official { background:#e6f5ef; color:var(--green); }
+    .review { background:#eef5ff; color:#174f8d; }
+    .news { background:#f1edff; color:#4d3b8f; }
+    .ad { background:#fff4d6; color:var(--amber); }
+    .meta-line { color:var(--muted); font-size:14px; }
+    ul { margin-top:8px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>AI 코딩 도구 아티클 요약</h1>
+      <p>Claude Code, Cursor, OpenAI Codex 관련 최근 글을 실무 관점으로 선별했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-16</div>
+        <div><strong>기본 기간</strong><br>최근 2일 우선</div>
+        <div><strong>기간 확장</strong><br>최근 7일로 확장</div>
+        <div><strong>확장 사유</strong><br>2일 내 Claude Code/Codex 독립 분석 글 부족</div>
+      </div>
+    </header>
+
+    <div class="notice">
+      <strong>7일 확장 명시:</strong> 엄격한 최근 2일 기준으로는 Claude Code와 OpenAI Codex의 독립 실사용/비교 글 수가 부족했다. 따라서 2026-05-10부터 2026-05-16까지 최근 7일 범위로 확장했다.
+    </div>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li>Claude Code 관련 글</li>
+        <li>Cursor 관련 글</li>
+        <li>OpenAI Codex 관련 글</li>
+        <li>출처</li>
+      </ol>
+    </section>
+
+    <section class="panel tool">
+      <h2>Claude Code</h2>
+      <article class="article">
+        <h3><a href="https://www.totalum.app/blog/cline-vs-claude-code">Cline vs Claude Code in 2026: The Honest Verdict</a></h3>
+        <p class="meta-line">게시일: 2026-05-14 · 작성자/매체: Francesc / Totalum · <span class="badge review">비교 리뷰</span></p>
+        <ul>
+          <li>Cline과 Claude Code를 control, model flexibility, terminal autonomy, routines 관점에서 비교한다.</li>
+          <li>Claude Code는 terminal-native execution, automatic context compaction, Slack/web surface, Routines가 강점으로 제시된다.</li>
+          <li>다만 폐쇄형 도구라 감사 가능성은 제한되고, Cline은 open-source와 model routing에서 우위가 있다고 설명한다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> Claude Code는 믿고 맡기는 장시간 terminal agent 작업에 강하지만, 규제/감사 환경에서는 Cline류의 승인 흐름도 검토해야 한다.</p>
+      </article>
+      <article class="article">
+        <h3><a href="https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison">Claude Code vs. Codex vs. Cursor vs. GitHub Copilot</a></h3>
+        <p class="meta-line">게시일: 2026-05-13 · 작성자/매체: Blake Crawford, Carl Knoos / Built In · <span class="badge review">비교 리뷰</span></p>
+        <ul>
+          <li>6개월 테스트를 바탕으로 Claude Code를 complex, multi-file planning과 terminal-heavy workflows에 강한 도구로 평가한다.</li>
+          <li>AI 변경의 상당 부분은 여전히 디버깅과 리뷰가 필요하며, TDD loop가 품질 통제에 중요하다고 강조한다.</li>
+          <li>Claude Code는 context awareness가 강하지만 vendor regression과 quality drift를 관리해야 한다고 지적한다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> Claude Code를 쓰더라도 작은 단위 작업, 테스트 우선, 반복 리뷰가 핵심 운영 원칙이다.</p>
+      </article>
+    </section>
+
+    <section class="panel tool">
+      <h2>Cursor</h2>
+      <article class="article">
+        <h3><a href="https://cursor.com/changelog/05-13-26">Development environments for cloud agents</a></h3>
+        <p class="meta-line">게시일: 2026-05-13 · 작성자/매체: Cursor · <span class="badge official">공식 글</span></p>
+        <ul>
+          <li>Cloud agents와 automations에 multi-repo environment가 추가됐다.</li>
+          <li>Dockerfile 기반 구성, build secrets, layer caching, version history, rollback, audit log, environment-level secret scoping이 핵심이다.</li>
+          <li>Agent가 실제 팀 환경과 가까운 개발 환경에서 end-to-end 작업을 수행하도록 만드는 업데이트다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> Cursor Cloud Agent는 이제 단순 IDE 보조보다 조직 환경을 복제한 병렬 실행 인프라로 평가해야 한다.</p>
+      </article>
+      <article class="article">
+        <h3><a href="https://www.buildfastwithai.com/blogs/cursor-cloud-agents-development-environments-2026">Cursor Cloud Agents & Dev Environments: Complete 2026 Guide</a></h3>
+        <p class="meta-line">게시일: 2026-05-14 · 작성자/매체: BuildFastWithAI · <span class="badge ad">튜토리얼/홍보성 일부</span></p>
+        <ul>
+          <li>Cursor의 2026-05-13 업데이트를 multi-repo, Dockerfile, scoped secrets, Teams integration까지 한 번에 해설한다.</li>
+          <li>Cloud agent가 isolated VM에서 dependencies, credentials, build toolchain을 갖추고 PR artifact를 만드는 구조를 설명한다.</li>
+          <li>가격/플랜 설명과 경쟁 도구 비교가 포함돼 있지만 자체 프로그램 홍보도 포함되어 있다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> 도입 검토에는 유용하지만 비용/벤치마크 수치는 공식 가격표와 별도 검증이 필요하다.</p>
+      </article>
+    </section>
+
+    <section class="panel tool">
+      <h2>OpenAI Codex</h2>
+      <article class="article">
+        <h3><a href="https://openai.com/index/work-with-codex-from-anywhere/">Work with Codex from anywhere</a></h3>
+        <p class="meta-line">게시일: 2026-05-14 · 작성자/매체: OpenAI · <span class="badge official">공식 글</span></p>
+        <ul>
+          <li>Codex가 ChatGPT mobile app preview로 제공되어 active threads, approvals, diffs, screenshots, terminal output, test results를 모바일에서 확인할 수 있다.</li>
+          <li>secure relay layer를 통해 trusted machines와 session state를 동기화하되 파일과 credentials는 실행 환경에 남긴다고 설명한다.</li>
+          <li>Remote SSH, Hooks, programmatic access tokens, HIPAA-compliant local use까지 enterprise 운영 포인트를 함께 발표했다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> Codex는 장시간 작업에서 사람이 승인/방향전환만 모바일로 개입하는 운영 모델을 강화하고 있다.</p>
+      </article>
+      <article class="article">
+        <h3><a href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/">OpenAI says Codex is coming to your phone</a></h3>
+        <p class="meta-line">게시일: 2026-05-14 · 작성자/매체: Lucas Ropek / TechCrunch · <span class="badge news">뉴스 기사</span></p>
+        <ul>
+          <li>TechCrunch는 Codex 모바일 통합을 개발 workflow 원격 관리 기능으로 요약한다.</li>
+          <li>모바일에서 live environments를 보고 approvals와 새 작업 시작을 할 수 있다는 점을 강조한다.</li>
+          <li>Anthropic의 원격 제어 기능과 경쟁하는 흐름이라는 시장 맥락도 제시한다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> 모바일에서 코딩하는 것이 아니라 긴 작업의 결정 지점을 놓치지 않게 하는 보조 채널로 이해해야 한다.</p>
+      </article>
+      <article class="article">
+        <h3><a href="https://www.axios.com/2026/05/14/openai-brings-codex-to-your-phone">OpenAI brings Codex to your phone</a></h3>
+        <p class="meta-line">게시일: 2026-05-14 · 작성자/매체: Madison Mills / Axios · <span class="badge news">뉴스 기사</span></p>
+        <ul>
+          <li>Axios는 모바일 승인, output review, 새 task 시작이 Codex 접근성을 높이는 장치라고 해석한다.</li>
+          <li>동시에 작은 화면에서 agent approval을 처리할 때 오류 위험이 커질 수 있다는 현실 점검을 덧붙인다.</li>
+          <li>HIPAA-compliant local environments와 prompt checking/code validation 같은 enterprise update도 함께 언급한다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> 모바일 승인은 속도를 높이지만, 고위험 변경에는 desktop diff review 정책을 유지해야 한다.</p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.totalum.app/blog/cline-vs-claude-code">Totalum: Cline vs Claude Code in 2026</a></li>
+        <li><a href="https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison">Built In: Claude Code vs. Codex vs. Cursor vs. GitHub Copilot</a></li>
+        <li><a href="https://cursor.com/changelog/05-13-26">Cursor Changelog: Development environments for cloud agents</a></li>
+        <li><a href="https://www.buildfastwithai.com/blogs/cursor-cloud-agents-development-environments-2026">BuildFastWithAI: Cursor Cloud Agents guide</a></li>
+        <li><a href="https://openai.com/index/work-with-codex-from-anywhere/">OpenAI: Work with Codex from anywhere</a></li>
+        <li><a href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/">TechCrunch: OpenAI says Codex is coming to your phone</a></li>
+        <li><a href="https://www.axios.com/2026/05/14/openai-brings-codex-to-your-phone">Axios: OpenAI brings Codex to your phone</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

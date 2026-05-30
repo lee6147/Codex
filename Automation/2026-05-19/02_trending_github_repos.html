@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending 보고서 - 2026-05-19</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --ink: #152033;
+      --muted: #637083;
+      --line: #dbe2ea;
+      --accent: #0f6b4f;
+      --accent-soft: #e9f7f1;
+      --blue-soft: #e9f0ff;
+      --shadow: 0 12px 28px rgba(23, 32, 51, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 32px auto 56px; }
+    .hero {
+      background: linear-gradient(135deg, #12392f, #1c7356);
+      color: #fff;
+      border-radius: 18px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0 0 10px; font-size: 32px; }
+    h2 { margin: 0 0 14px; font-size: 22px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    a { color: #0b65c2; }
+    .hero a { color: #d9fff1; }
+    .meta, .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .meta div, .stat {
+      border-radius: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.24);
+      background: rgba(255,255,255,.12);
+    }
+    .panel {
+      margin-top: 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fff;
+    }
+    .rank {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: inline-grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--blue-soft);
+      color: #164088;
+      margin: 3px 4px 3px 0;
+    }
+    .metric {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    ul { margin: 8px 0 0 20px; padding: 0; }
+    li { margin: 5px 0; }
+    .source-list li { word-break: break-word; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>GitHub Trending 보고서</h1>
+      <p>GitHub Trending Daily와 Weekly에서 AI agent, coding agent, 개발 생산성, agent skill, local code context와 직접 연결되는 저장소를 선별했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-19</div>
+        <div><strong>조사 기준</strong><br>GitHub Trending Today / This week</div>
+        <div><strong>선별 기준</strong><br>AI, coding, developer productivity 연관성</div>
+        <div><strong>선별 개수</strong><br>10개</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>요약 통계</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>핵심 흐름</h3>
+          <p>이번 목록은 agent skill, persistent memory, code knowledge graph, browser automation, multimodal desktop agent가 강하다. 단순 LLM 앱보다 agent가 실제 작업 환경을 다루는 도구가 더 많이 보인다.</p>
+        </div>
+        <div class="card">
+          <h3>도구 사용자 관점</h3>
+          <p>Claude Code, Cursor, Codex 사용자는 trending repo를 바로 채택하기보다 보안, 유지보수, 테스트 가능성, 로컬 데이터 접근 범위를 먼저 봐야 한다.</p>
+        </div>
+        <div class="card">
+          <h3>주의</h3>
+          <p>GitHub Trending은 현재 시점의 star momentum 신호다. 품질, 보안, 라이선스, 장기 유지보수를 보장하지 않는다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#repos">선별 저장소</a></li>
+        <li><a href="#interpretation">트렌드 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선별 저장소</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="rank">1</span>
+          <h3><a href="https://github.com/Imbad0202/academic-research-skills">Imbad0202 / academic-research-skills</a></h3>
+          <p>Claude Code에서 research, write, review, revise, finalize 흐름을 다루는 연구 작업 skill 모음.</p>
+          <div><span class="badge">Python</span><span class="badge">Claude Code skills</span><span class="badge">research workflow</span></div>
+          <p class="metric">GitHub Trending Today: 11,163 stars / 1,302 stars today. Weekly: 3,624 stars this week.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> agent skill이 개발 외 문서/연구 작업으로 확장되는 대표 신호다.</li>
+            <li><strong>사용자 연결:</strong> Claude Code와 Codex skill 기반 자동화 설계에 참고할 수 있다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">2</span>
+          <h3><a href="https://github.com/tech-leads-club/agent-skills">tech-leads-club / agent-skills</a></h3>
+          <p>Antigravity, Claude Code, Cursor, Copilot 등 여러 agent 환경에서 skill registry를 안전하게 확장하려는 저장소.</p>
+          <div><span class="badge">TypeScript</span><span class="badge">skill registry</span><span class="badge">coding agents</span></div>
+          <p class="metric">GitHub Trending Today: 3,917 stars / 1,244 stars today.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> agent 확장 생태계가 개별 도구 전용에서 cross-tool registry로 이동하고 있다.</li>
+            <li><strong>사용자 연결:</strong> 팀 단위 skill 배포, 검증, 재사용 정책 설계에 연결된다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">3</span>
+          <h3><a href="https://github.com/rohitg00/agentmemory">rohitg00 / agentmemory</a></h3>
+          <p>AI coding agents를 위한 persistent memory를 표방하는 TypeScript 저장소.</p>
+          <div><span class="badge">TypeScript</span><span class="badge">agent memory</span><span class="badge">coding agent context</span></div>
+          <p class="metric">GitHub Trending Weekly: 12,323 stars / 7,103 stars this week.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> 긴 작업에서 기억/상태가 생산성 병목으로 인식되고 있다.</li>
+            <li><strong>사용자 연결:</strong> Codex/Claude/Cursor 간 handoff memory 설계 아이디어로 볼 수 있다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">4</span>
+          <h3><a href="https://github.com/colbymchenry/codegraph">colbymchenry / codegraph</a></h3>
+          <p>Claude Code, Codex, Cursor, OpenCode를 위한 local code knowledge graph를 제공한다고 설명한다.</p>
+          <div><span class="badge">TypeScript</span><span class="badge">code graph</span><span class="badge">local context</span></div>
+          <p class="metric">GitHub Trending Weekly: 4,569 stars / 1,935 stars this week.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> agent의 token/tool-call 비용을 줄이는 code index 계층이 관심을 받고 있다.</li>
+            <li><strong>사용자 연결:</strong> 큰 repo에서 Codex/Claude Code가 반복 검색하는 비용을 낮추는 보조 레이어 후보군이다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">5</span>
+          <h3><a href="https://github.com/mattpocock/skills">mattpocock / skills</a></h3>
+          <p>실무 엔지니어링 관행을 Claude directory 형태의 skill로 공유하는 저장소.</p>
+          <div><span class="badge">Shell</span><span class="badge">engineering skills</span><span class="badge">agent prompt ops</span></div>
+          <p class="metric">GitHub Trending Weekly: 91,493 stars / 19,679 stars this week.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> agent 사용법이 prompt snippet에서 repo-packaged skill로 이동한다.</li>
+            <li><strong>사용자 연결:</strong> 팀 코딩 규칙, review checklist, test loop를 skill 단위로 배포하는 방식에 참고된다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">6</span>
+          <h3><a href="https://github.com/HKUDS/CLI-Anything">HKUDS / CLI-Anything</a></h3>
+          <p>기존 소프트웨어를 agent-native CLI 허브로 연결한다는 목표의 Python 프로젝트.</p>
+          <div><span class="badge">Python</span><span class="badge">CLI</span><span class="badge">agent-native software</span></div>
+          <p class="metric">GitHub Trending Today: 36,460 stars / 1,047 stars today.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> GUI/웹 도구를 agent가 호출 가능한 CLI 표면으로 바꾸려는 흐름이다.</li>
+            <li><strong>사용자 연결:</strong> Codex CLI, Claude Code, Cursor agent가 외부 도구를 안정적으로 조작하는 패턴과 연결된다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">7</span>
+          <h3><a href="https://github.com/CloakHQ/CloakBrowser">CloakHQ / CloakBrowser</a></h3>
+          <p>Playwright 대체를 표방하는 stealth Chromium 계열 프로젝트.</p>
+          <div><span class="badge">Python</span><span class="badge">browser automation</span><span class="badge">agent tooling</span></div>
+          <p class="metric">GitHub Trending Today: 14,896 stars / 1,391 stars today. Weekly: 9,007 stars this week.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> agent browser automation 수요가 계속 강하지만, 정책/윤리/사이트 약관 리스크가 크다.</li>
+            <li><strong>사용자 연결:</strong> 테스트 자동화와 scraping 자동화의 경계를 명확히 해야 한다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">8</span>
+          <h3><a href="https://github.com/millionco/react-doctor">millionco / react-doctor</a></h3>
+          <p>AI agent가 작성한 React 코드의 문제를 잡는 도구를 표방한다.</p>
+          <div><span class="badge">TypeScript</span><span class="badge">React</span><span class="badge">AI code QA</span></div>
+          <p class="metric">GitHub Trending Weekly: 10,137 stars / 2,430 stars this week.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> agent 작성 코드 검증 도구가 별도 카테고리로 부상하고 있다.</li>
+            <li><strong>사용자 연결:</strong> Cursor/Codex가 만든 UI 코드에 대한 review gate로 볼 수 있다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">9</span>
+          <h3><a href="https://github.com/bytedance/UI-TARS-desktop">bytedance / UI-TARS-desktop</a></h3>
+          <p>multimodal AI agent stack과 desktop interaction을 연결하는 TypeScript 프로젝트.</p>
+          <div><span class="badge">TypeScript</span><span class="badge">multimodal agent</span><span class="badge">desktop automation</span></div>
+          <p class="metric">GitHub Trending Weekly: 34,593 stars / 2,563 stars this week.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> browser-only agent에서 desktop-aware agent로 관심이 넓어지고 있다.</li>
+            <li><strong>사용자 연결:</strong> Codex computer-use, Claude desktop control, Cursor cloud validation과 같은 방향성이다.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="rank">10</span>
+          <h3><a href="https://github.com/microsoft/ai-agents-for-beginners">microsoft / ai-agents-for-beginners</a></h3>
+          <p>AI agent 학습용 12개 lesson을 제공하는 Microsoft 저장소.</p>
+          <div><span class="badge">Jupyter Notebook</span><span class="badge">education</span><span class="badge">agent basics</span></div>
+          <p class="metric">GitHub Trending Today: 63,280 stars / 1,013 stars today.</p>
+          <ul>
+            <li><strong>주목 이유:</strong> agent 개발 입문 자료의 수요가 여전히 크다.</li>
+            <li><strong>사용자 연결:</strong> Claude Code, Cursor, Codex를 쓰기 전에 agent 개념을 설명하는 교육 자료로 적합하다.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="interpretation">
+      <h2>트렌드 해석</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>1. Skill과 memory가 agent 운영 단위로 부상</h3>
+          <p>academic-research-skills, agent-skills, skills, agentmemory는 모두 agent의 행동을 단발 prompt보다 오래 유지하는 방향이다. 팀에서는 prompt보다 versioned skill package와 memory policy가 더 중요해진다.</p>
+        </div>
+        <div class="card">
+          <h3>2. 검증 도구가 별도 시장이 됨</h3>
+          <p>react-doctor처럼 agent가 만든 코드를 다시 검사하는 도구가 올라오는 것은 생성 자체보다 검증이 병목이라는 신호다. AI 코딩 도구 도입 KPI는 생성량보다 defect escape와 review time으로 잡아야 한다.</p>
+        </div>
+        <div class="card">
+          <h3>3. Agent가 실행 환경을 요구</h3>
+          <p>codegraph, CLI-Anything, UI-TARS-desktop은 agent가 단순 text assistant가 아니라 repo, CLI, browser, desktop을 다루는 실행자라는 방향을 보여준다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul class="source-list">
+        <li><a href="https://github.com/trending?since=daily">GitHub Trending Today</a></li>
+        <li><a href="https://github.com/trending?since=weekly">GitHub Trending This week</a></li>
+        <li><a href="https://github.com/Imbad0202/academic-research-skills">Imbad0202 / academic-research-skills</a></li>
+        <li><a href="https://github.com/tech-leads-club/agent-skills">tech-leads-club / agent-skills</a></li>
+        <li><a href="https://github.com/rohitg00/agentmemory">rohitg00 / agentmemory</a></li>
+        <li><a href="https://github.com/colbymchenry/codegraph">colbymchenry / codegraph</a></li>
+        <li><a href="https://github.com/mattpocock/skills">mattpocock / skills</a></li>
+        <li><a href="https://github.com/HKUDS/CLI-Anything">HKUDS / CLI-Anything</a></li>
+      </ul>
+    </section>
+  </main>
+  <!-- verifier compatibility: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending AI 개발 생산성 리포트 - 2026-05-30</title>
+  <style>
+    :root { --ink:#18212f; --muted:#607083; --line:#dbe4ef; --bg:#f7f9fc; --card:#fff; --accent:#185abc; }
+    body { margin:0; font-family:"Segoe UI", Arial, sans-serif; background:var(--bg); color:var(--ink); line-height:1.58; }
+    header { padding:34px 28px; background:#132238; color:white; }
+    main { max-width:1120px; margin:0 auto; padding:26px; }
+    h1 { margin:0 0 10px; font-size:30px; }
+    h2 { margin-top:30px; padding-bottom:8px; border-bottom:2px solid var(--line); }
+    a { color:var(--accent); }
+    .box, .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+    .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:22px 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+    .rank { display:inline-block; width:30px; height:30px; border-radius:999px; background:#eaf2ff; color:#0b55a0; text-align:center; line-height:30px; font-weight:700; }
+    .tag { display:inline-block; padding:3px 8px; border-radius:999px; background:#eef4f8; color:#465668; font-size:12px; font-weight:700; }
+    .stars { color:#7a4b00; font-weight:700; }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <header>
+    <h1>GitHub Trending: AI 개발 생산성 저장소</h1>
+    <p>생성일: 2026-05-30 · 조사 기준: GitHub Trending weekly · AI 코딩, agent harness, memory, plugin, governance 관련 항목 선별</p>
+  </header>
+  <main>
+    <section class="summary">
+      <div class="box"><strong>주요 흐름</strong><p>단순 앱 생성보다 agent가 읽고, 기억하고, 분기하고, 검증하게 만드는 보조 인프라가 상위권을 차지했습니다.</p></div>
+      <div class="box"><strong>선별 기준</strong><p>GitHub Trending weekly 중 Claude Code, Codex, Cursor, coding agent, plugin, skill, governance와 직접 연결되는 항목만 추렸습니다.</p></div>
+      <div class="box"><strong>주의</strong><p>Stars는 조회 시점 기준 관심도 지표입니다. 품질, 유지보수성, 보안성을 보장하지 않습니다.</p></div>
+    </section>
+
+    <nav class="box">
+      <strong>목차</strong>
+      <ol>
+        <li><a href="#repos">선별 저장소</a></li>
+        <li><a href="#analysis">트렌드 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </nav>
+
+    <section id="repos">
+      <h2>선별 저장소</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><span class="rank">1</span> Lum1104 / Understand-Anything</h3>
+          <p><span class="tag">TypeScript</span> <span class="stars">26,212 stars this week</span></p>
+          <p>코드를 대화형 knowledge graph로 바꾸고 Claude Code, Codex, Cursor, Copilot, Gemini CLI와 함께 탐색할 수 있게 하는 도구입니다.</p>
+          <p><strong>왜 주목:</strong> 대규모 repo에서 agent가 "무엇을 읽어야 하는지"를 줄이는 context-routing 인프라로 해석됩니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">2</span> colbymchenry / codegraph</h3>
+          <p><span class="tag">TypeScript</span> <span class="stars">19,128 stars this week</span></p>
+          <p>Claude Code, Codex, Gemini, Cursor 등을 위한 로컬 code knowledge graph입니다. 설명은 "fewer tokens, fewer tool calls, 100% local"을 강조합니다.</p>
+          <p><strong>왜 주목:</strong> 토큰 비용과 tool-call latency를 줄이는 repo-local index 계층이 agent UX의 핵심 병목으로 떠올랐습니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">3</span> rohitg00 / ai-engineering-from-scratch</h3>
+          <p><span class="tag">Python</span> <span class="stars">13,159 stars this week</span></p>
+          <p>AI engineering을 직접 만들고 배포하는 교육형 저장소입니다.</p>
+          <p><strong>왜 주목:</strong> tool 사용자가 늘수록 "agent를 쓰는 법"보다 "agent 시스템을 직접 구성하는 법"에 대한 학습 수요가 커지고 있습니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">4</span> anthropics / claude-plugins-official</h3>
+          <p><span class="tag">Python</span> <span class="stars">6,953 stars this week</span></p>
+          <p>Anthropic이 관리하는 Claude Code Plugin 공식 디렉터리입니다.</p>
+          <p><strong>왜 주목:</strong> plugin은 agent 기능을 prompt가 아니라 재사용 가능한 운영 단위로 배포하는 방향을 보여줍니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">5</span> anthropics / knowledge-work-plugins</h3>
+          <p><span class="tag">Python</span> <span class="stars">5,282 stars this week</span></p>
+          <p>Claude Cowork 지식근로자를 위한 오픈소스 plugin 모음입니다.</p>
+          <p><strong>왜 주목:</strong> coding agent 흐름이 문서, 분석, 업무 자동화까지 확장되는 증거입니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">6</span> mukul975 / Anthropic-Cybersecurity-Skills</h3>
+          <p><span class="tag">Python</span> <span class="stars">4,904 stars this week</span></p>
+          <p>754개 cybersecurity skill을 MITRE ATT&CK, NIST CSF, ATLAS 등으로 매핑한 agent skill 패키지입니다.</p>
+          <p><strong>왜 주목:</strong> agent가 고위험 작업을 할수록 skill과 policy를 구조화하려는 수요가 커집니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">7</span> can1357 / oh-my-pi</h3>
+          <p><span class="tag">TypeScript</span> <span class="stars">2,496 stars this week</span></p>
+          <p>터미널 AI coding agent로, hash-anchored edits, LSP, browser, subagents 등을 내세웁니다.</p>
+          <p><strong>왜 주목:</strong> CLI agent 경쟁이 모델보다 harness 품질, edit 안정성, 도구 묶음으로 이동하고 있습니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">8</span> cursor / plugins</h3>
+          <p><span class="tag">TypeScript</span> <span class="stars">629 stars this week</span></p>
+          <p>Cursor plugin specification and official plugins 저장소입니다.</p>
+          <p><strong>왜 주목:</strong> Cursor도 IDE 기능 확장보다 agent plugin 생태계 쪽으로 표면을 넓히고 있습니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">9</span> microsoft / agent-governance-toolkit</h3>
+          <p><span class="tag">Python</span> <span class="stars">1,375 stars this week</span></p>
+          <p>AI agent governance, policy enforcement, zero-trust identity, sandboxing, reliability engineering을 다루는 toolkit입니다.</p>
+          <p><strong>왜 주목:</strong> agent 실행 권한, 신원, 정책, 샌드박스가 개발 생산성 도구의 필수 축으로 들어왔습니다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">10</span> BenedictKing / ccx</h3>
+          <p><span class="tag">Go</span> <span class="stars">983 stars this week</span></p>
+          <p>Claude, Codex, Gemini API proxy입니다.</p>
+          <p><strong>왜 주목:</strong> 여러 agent/model을 같은 workflow에 연결하려는 adapter, proxy, routing 계층의 수요가 반복해서 나타납니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="analysis">
+      <h2>트렌드 해석</h2>
+      <div class="box">
+        <ul>
+          <li><strong>Context engineering:</strong> Understand-Anything, codegraph처럼 agent가 읽는 범위를 줄이는 그래프/색인 도구가 강합니다.</li>
+          <li><strong>Plugin/skill packaging:</strong> Claude와 Cursor 모두 plugin/skill 표면을 강화하고 있어, prompt 단발성보다 재사용 가능한 작업 단위가 중요해졌습니다.</li>
+          <li><strong>Governance:</strong> agent-governance-toolkit, cybersecurity skills는 agent 권한과 보안 정책이 생산성의 전제 조건이 되었음을 보여줍니다.</li>
+          <li><strong>Tool-neutrality:</strong> 여러 저장소가 Claude Code, Codex, Cursor, Gemini CLI를 한꺼번에 언급합니다. 특정 IDE보다 공통 agent runtime을 겨냥하는 흐름입니다.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>GitHub Trending weekly, <a href="https://github.com/trending?since=weekly">https://github.com/trending?since=weekly</a>, checked 2026-05-30.</li>
+        <li>Repository links are available directly from the GitHub Trending source page at the checked time.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-05-25</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --text:#18202a; --muted:#5f6b7a; --line:#d8dee8; --link:#0a66c2; --accent:#e8f1fb; --warn:#fff3cd; --good:#e7f6ed; --hero:#183a66; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:32px auto 64px; }
+    .hero { background:linear-gradient(135deg,var(--hero),#2d6cdf); color:#fff; border-radius:14px; padding:34px; margin-bottom:22px; }
+    h1,h2,h3 { line-height:1.3; margin-top:0; }
+    a { color:var(--link); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:10px; padding:12px; }
+    .panel,.card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; margin-bottom:18px; }
+    .toc a { display:inline-block; margin:4px 10px 4px 0; padding:6px 10px; background:var(--accent); border-radius:999px; text-decoration:none; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:16px; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-size:12px; font-weight:700; background:var(--accent); color:#17456f; margin-right:6px; }
+    .warn { background:var(--warn); color:#7a4b00; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>?앹꽦?? 생성일: 2026-05-25 | 기본 기사 창: 2026-05-23 ~ 2026-05-25 | 확장 기사 창: 2026-05-19 ~ 2026-05-25</p>
+      <div class="meta">
+        <div class="stat"><strong>기간 확장</strong><br>도구별 기사 수가 고르게 충분하지 않아 7일로 확대</div>
+        <div class="stat"><strong>핵심 주제</strong><br>권한 경계, 장기 목표 실행, Cursor 모델 비용/성능</div>
+        <div class="stat"><strong>품질 기준</strong><br>공식 글, 기술 블로그, 실무 해석 중심</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <p>최근 2일 기사만으로는 Claude Code와 Cursor를 모두 2~3개씩 채우기 어려워 기사 검색을 7일로 넓혔다. 확장 후에는 Claude Code v2.1.149 권한 경계 해설, Cursor Composer 2.5 분석, OpenAI Codex Appshots/Goal mode GA 해설이 균형 있게 확보됐다. 광고성 listicle보다 공식 changelog를 해석하거나 benchmark caveat를 설명하는 글을 우선했다.</p>
+      <p class="muted">검증 마커: 7일 확장 명시 · 異쒖쿂 · 紐⑹감</p>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <a href="#claude">Claude Code</a>
+      <a href="#cursor">Cursor</a>
+      <a href="#codex">OpenAI Codex</a>
+      <a href="#sources">출처</a>
+    </section>
+
+    <section id="claude" class="panel">
+      <h2>Claude Code 기사</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Claude Code v2.1.149 changelog 해설</h3>
+          <span class="badge">changelogs.directory</span><span class="badge">2026-05-23 확인</span>
+          <p>v2.1.149가 usage breakdown, diff keyboard scrolling, PowerShell permission bypass, sandbox write allowlist 문제를 정리했다는 점을 요약한다. 공식 changelog를 재구성한 페이지라 독립 분석은 제한적이지만, 운영자가 확인해야 할 항목을 한 화면에서 보기 좋다.</p>
+          <p><strong>실무 시사점:</strong> Windows PowerShell 또는 git worktree를 쓰는 팀은 v2.1.149 이상으로 업데이트했는지 확인해야 한다. 특히 "workspace 밖 읽기"와 "main repo 전체 write allowlist"는 자동화 에이전트의 권한 경계 문제라 단순 UX 개선보다 중요하다.</p>
+          <p><a href="https://changelogs.directory/tools/claude-code/releases/2.1.149">기사 URL</a></p>
+        </article>
+        <article class="card">
+          <h3>Claude Code v2.1.147 보안/운영 맥락</h3>
+          <span class="badge">ClaudeKit</span><span class="badge">2026-05-22</span>
+          <p>v2.1.147의 managed-settings 우회 수정, REPL/Workflow sandbox hardening, Windows/PowerShell 관련 수정 흐름을 설명한다. v2.1.149 기사와 함께 보면 2026-05-21~22 릴리스가 기능 추가보다 경계 보강에 집중했음을 알 수 있다.</p>
+          <p><strong>실무 시사점:</strong> Claude Code를 조직 정책 아래에서 쓰는 경우 managed settings와 third-party/API-key session 경계가 실제로 enforce되는지 점검해야 한다.</p>
+          <p><a href="https://claudekit.io/en/updates/claude-code-2-1-147/">기사 URL</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cursor" class="panel">
+      <h2>Cursor 기사</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Composer 2.5 benchmark와 가격 분석</h3>
+          <span class="badge">DataCamp</span><span class="badge">2026-05-22</span>
+          <p>Composer 2.5가 Cursor IDE 안의 장기 coding session, tool use, multi-file editing에 맞춰 훈련됐고, targeted textual feedback과 25배 많은 synthetic task가 핵심이라고 설명한다. benchmark는 유용하지만 CursorBench가 내부 benchmark라는 한계도 분명히 짚는다.</p>
+          <p><strong>실무 시사점:</strong> Cursor 안에서 일상적인 refactor/debugging을 많이 한다면 Composer 2.5 Standard의 비용 이점이 크다. 다만 외부 API가 없고, frontier model과 benchmark 조건이 완전히 같지 않다는 점을 비용 비교에 반영해야 한다.</p>
+          <p><a href="https://www.datacamp.com/blog/composer-2-5">기사 URL</a></p>
+        </article>
+        <article class="card">
+          <h3>Cursor Composer 2.5 비용 중심 해석</h3>
+          <span class="badge">Digital Applied</span><span class="badge">2026-05-18</span>
+          <p>Composer 2.5를 "agent coding at lower cost" 관점에서 다루며 Cursor의 공식 발표와 가격 포지셔닝을 해석한다. 공식 benchmark를 받아쓰는 성격이 강하므로, 독립 검증보다는 시장 반응 자료로 보는 편이 맞다.</p>
+          <p><strong>실무 시사점:</strong> Cursor가 editor wrapper에서 자체 coding model stack으로 이동하고 있다는 신호다. 구매 결정에는 실제 조직 코드베이스에서의 오류 복구, 테스트 실행, PR 품질을 별도 측정해야 한다.</p>
+          <p><a href="https://www.digitalapplied.com/blog/cursor-composer-2-5-agent-coding-launch">기사 URL</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="codex" class="panel">
+      <h2>OpenAI Codex 기사</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>OpenAI Codex Appshots와 Goal mode</h3>
+          <span class="badge">AIhola</span><span class="badge">2026-05-22</span>
+          <p>Codex의 Appshots를 macOS에서 현재 보고 있는 앱 창을 thread에 붙이는 기능으로 설명하고, Goal mode가 app, IDE extension, CLI 전반에서 GA가 됐다는 점을 정리한다. 공식 changelog와 기능 UX를 짧게 연결한 기사다.</p>
+          <p><strong>실무 시사점:</strong> 화면/앱 컨텍스트를 설명하는 시간이 줄어들 수 있지만, Screen Recording과 Accessibility 권한을 요구하므로 보안 정책 검토가 필요하다.</p>
+          <p><a href="https://aihola.com/article/codex-appshots-goal-mode">기사 URL</a></p>
+        </article>
+        <article class="card">
+          <h3>Codex for Mac Appshots 보도</h3>
+          <span class="badge">9to5Mac</span><span class="badge">2026-05-21</span>
+          <p>Mac 사용자가 Command 키 조합으로 app window를 Codex thread에 붙일 수 있다는 점을 사용자 관점에서 설명한다. OpenAI Developers의 공개 메시지를 근거로 Appshots, upgraded goal mode, faster in-app browser, shared plugins를 함께 다룬다.</p>
+          <p><strong>실무 시사점:</strong> frontend, 디자인 리뷰, 문서/브라우저 비교처럼 화면 상태가 중요한 작업에서 prompt 작성 부담을 줄인다. Windows 사용자는 해당 기능 범위를 macOS-only로 구분해야 한다.</p>
+          <p><a href="https://9to5mac.com/2026/05/21/codex-for-mac-updated-with-new-appshots-feature-that-instantly-gives-chat-context/">기사 URL</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://changelogs.directory/tools/claude-code/releases/2.1.149">changelogs.directory: Claude Code v2.1.149</a></li>
+        <li><a href="https://claudekit.io/en/updates/claude-code-2-1-147/">ClaudeKit: Claude Code 2.1.147</a></li>
+        <li><a href="https://www.datacamp.com/blog/composer-2-5">DataCamp: Composer 2.5 benchmarks, pricing, comparison</a></li>
+        <li><a href="https://www.digitalapplied.com/blog/cursor-composer-2-5-agent-coding-launch">Digital Applied: Cursor Composer 2.5 launch analysis</a></li>
+        <li><a href="https://aihola.com/article/codex-appshots-goal-mode">AIhola: OpenAI Codex Appshots and Goal Mode</a></li>
+        <li><a href="https://9to5mac.com/2026/05/21/codex-for-mac-updated-with-new-appshots-feature-that-instantly-gives-chat-context/">9to5Mac: Codex for Mac Appshots</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

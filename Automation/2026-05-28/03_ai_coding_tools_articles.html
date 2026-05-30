@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-05-28</title>
+  <style>
+    :root { --ink:#172033; --muted:#64748b; --line:#d9e2ef; --bg:#f8fafc; --card:#fff; --accent:#1d4ed8; --notice:#fff7ed; --notice-line:#fdba74; }
+    body { margin:0; font-family: Arial, "Noto Sans KR", sans-serif; background:var(--bg); color:var(--ink); line-height:1.58; }
+    main { max-width:1120px; margin:0 auto; padding:32px 20px 50px; }
+    header { border-bottom:2px solid var(--line); margin-bottom:24px; padding-bottom:18px; }
+    h1 { margin:0 0 10px; font-size:30px; }
+    h2 { margin-top:34px; font-size:22px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:var(--accent); }
+    .meta { color:var(--muted); font-size:14px; }
+    .notice { background:var(--notice); border:1px solid var(--notice-line); border-radius:8px; padding:14px 16px; margin:18px 0; }
+    .grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:14px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .label { display:inline-block; padding:3px 8px; border-radius:999px; background:#eef2ff; color:#3730a3; font-size:12px; font-weight:700; }
+    .tool { margin-top: 28px; }
+    ul { padding-left:20px; }
+    @media (max-width: 820px) { .grid { grid-template-columns:1fr; } main { padding:22px 14px 38px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AI 코딩 도구 기사 요약</h1>
+    <div class="meta">생성일: 2026-05-28 · 대상: Claude Code, Cursor, OpenAI Codex · 기사/블로그 우선 기간: 2026-05-21부터 2026-05-28까지</div>
+    <div class="notice"><strong>검색 범위 확장:</strong> 최근 2일만으로는 세 도구별 2~3개 기사 균형을 맞추기 어려웠다. 따라서 기사 검색은 요청 조건에 따라 최근 7일(2026-05-21~2026-05-28)로 확장했다.</div>
+    <p>이번 기사 흐름은 “하나의 승자”보다 역할 분화에 가깝다. Claude Code는 터미널 기반 장시간/다중 파일 작업, Cursor는 IDE와 팀 artifact 관리, Codex는 목표 기반 비동기 실행과 cloud/CLI 연결에서 비교된다.</p>
+  </header>
+
+  <section>
+    <h2>목차</h2>
+    <ul>
+      <li><a href="#claude">Claude Code 관련 기사</a></li>
+      <li><a href="#cursor">Cursor 관련 기사</a></li>
+      <li><a href="#codex">OpenAI Codex 관련 기사</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ul>
+  </section>
+
+  <section id="claude" class="tool">
+    <h2>Claude Code 관련 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="https://www.developer-tech.com/news/ai-coding-agents-cursor-anthropic-alibaba-price-floor-2026/">AI coding agents: three launches, 72 hours, one price shift</a></h3>
+        <p class="meta">2026-05-26 · DeveloperTech · Dashveenjit Kaur · <span class="label">뉴스 기사</span></p>
+        <p>Cursor Composer 2.5, Anthropic의 Code with Claude London 발표, Alibaba Qwen 3.7 Max API를 한 흐름으로 묶어 가격 경쟁과 agent 인프라 변화를 설명한다. Claude 쪽에서는 self-hosted sandboxes와 MCP tunnels가 enterprise adoption의 데이터 경계 문제를 줄이는 신호로 다뤄졌다.</p>
+        <p><strong>실무 시사점:</strong> 규제·보안 조직은 Claude agent를 쓰더라도 실행 환경을 자사 인프라 안에 두려는 요구가 커진다. 단, 기사도 beta/research preview caveat를 명시하므로 안정성 보장은 공식 문서로 별도 확인해야 한다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://aiweekender.substack.com/p/how-coding-agents-actually-work-and">How Coding Agents Actually Work Under the Hood</a></h3>
+        <p class="meta">2026-05-21 · AI Weekender/Substack · Claudia Ng · <span class="label">실사용/기술 해설</span></p>
+        <p>Cursor, Claude Code류 agent가 ReAct-like loop, 도구 호출, 컨텍스트 누적 구조에서 어떻게 실패하는지 설명한다. terminal coding agent 논문과 연결해 tool output이 context를 잠식하는 문제를 강조한다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code를 장시간 실행할수록 “도구 출력 관리, 계획 파일, 재검증 루프”가 성능만큼 중요하다. 자동화 harness를 만들 때 로그 요약과 컨텍스트 절약 규칙을 명시해야 한다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://www.tuscanagency.com/blog/cursor-vs-claude-code-agency-comparison">Cursor or Claude Code? An agency owner's honest take</a></h3>
+        <p class="meta">2026-05-21 · Tuscan Agency · <span class="label">실사용 후기</span></p>
+        <p>Next.js, Supabase, Shopify 같은 agency 작업에서 Cursor와 Claude Code의 차이를 비교한다. Claude Code는 migrations와 multi-file surgery에서 강점이 있고, Cursor는 IDE 안에서 즉시 편집하는 흐름에 유리하다는 관점이다.</p>
+        <p><strong>실무 시사점:</strong> 팀 내 역할 분담은 “Claude Code=큰 작업 위임, Cursor=에디터 안 빠른 수정”처럼 나누는 편이 자연스럽다. 비용은 사용량과 agent 세션 길이에 따라 달라진다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="cursor" class="tool">
+    <h2>Cursor 관련 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="https://dev.to/alexmercedcoder/ai-weekly-cheaper-coding-models-custom-chips-and-a-stateless-mcp-963">AI Weekly: Cheaper Coding Models, Custom Chips, and a Stateless MCP</a></h3>
+        <p class="meta">2026-05-27 · DEV Community · <span class="label">기술 주간 요약</span></p>
+        <p>Cursor Composer 2.5를 중심으로 “frontier-adjacent coding capability”의 비용 하락을 설명한다. 기사에서는 Composer 2.5가 CursorBench와 SWE-Bench Multilingual에서 강한 성능을 보이면서 가격을 낮춘 점을 핵심 변화로 본다.</p>
+        <p><strong>실무 시사점:</strong> Cursor는 단순 자동완성보다 long, tool-heavy session을 다루는 IDE control panel 쪽으로 이동 중이다. 비용 민감한 팀은 Cursor의 자체 모델과 frontier 모델을 작업 난도별로 나누어 쓰는 전략을 검토할 수 있다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://hundredtabs.com/blog/cursor-composer-vs-claude-code-may-2026">Cursor Composer 2.5 vs Claude Code</a></h3>
+        <p class="meta">2026-05-23 · Hundred Tabs · <span class="label">비교 리뷰</span></p>
+        <p>Cursor Composer 2.5와 Claude Code를 workflow 차이로 비교한다. Cursor는 IDE 통합, inline edits, 시각적 피드백이 강하고 Claude Code는 terminal agent 기반 복잡 작업에 적합하다고 정리한다.</p>
+        <p><strong>실무 시사점:</strong> 팀이 한 도구만 표준화하기보다, 파일 단위 빠른 수정은 Cursor, 아키텍처/리팩터링은 terminal agent로 나누는 혼합 운용이 합리적이다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://arslandg.substack.com/p/claude-code-cursor-copilot-how-the">Claude Code, Cursor, Copilot: How the Tool Choice Actually Affects How You Code</a></h3>
+        <p class="meta">2026-05-21 · Arslan Ahmad/Substack · <span class="label">비공식 의견</span></p>
+        <p>Cursor를 AI가 중심에 있는 standalone IDE 철학으로, Claude Code를 파일시스템과 터미널을 오가며 작업을 위임받는 agent 철학으로 설명한다. tool choice가 개발자의 daily workflow를 바꾼다는 점을 강조한다.</p>
+        <p><strong>실무 시사점:</strong> Cursor는 에디터 안에서 개발자가 통제권을 유지하려는 팀에 잘 맞는다. 반대로 ticket 단위 위임을 원하면 terminal/cloud agent가 더 자연스럽다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="codex" class="tool">
+    <h2>OpenAI Codex 관련 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <h3><a href="https://ofox.ai/blog/agentic-coding-claude-codex-gemini-cursor-2026/">Agentic Coding in 2026: Claude Code vs Codex CLI vs Gemini CLI vs Cursor Agent</a></h3>
+        <p class="meta">2026-05-25 · oFox.ai · <span class="label">비교 리뷰</span></p>
+        <p>Codex CLI를 장시간 autonomous goal execution에 강한 도구로 설명한다. Goal mode, remote computer use, CLI/IDE/app 확장을 Codex의 차별점으로 본다.</p>
+        <p><strong>실무 시사점:</strong> Codex는 “작업 시간이 몇 시간 단위인 목표”에 맞고, 짧은 파일 편집보다는 비동기 위임·검증 루프에 더 잘 맞는다. 기사 내 성능 수치와 모델명 주장은 공식 changelog와 별도 대조가 필요하다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://weavai.app/blog/en/2026/05/24/2026-openai-codex-vs-cursor-cloud-agent-vs-ai-ide/">2026 OpenAI Codex vs Cursor: Cloud Agent vs AI IDE</a></h3>
+        <p class="meta">2026-05-23 · WeavAI Blog · <span class="label">비교 리뷰</span></p>
+        <p>Codex를 cloud autonomous agent, Cursor를 AI-native IDE로 구분한다. Codex는 delegate-and-wait 모델, Cursor는 real-time collaboration 모델이라는 대비가 핵심이다.</p>
+        <p><strong>실무 시사점:</strong> 업무가 “PR 단위 위임”이면 Codex류 cloud/CLI agent가 맞고, 개발자가 코드를 계속 보며 조정해야 하면 Cursor가 맞다. 두 도구는 경쟁보다 보완 관계로 보는 것이 안전하다.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://adipod.ai/topics/ai-coding-agents-compared/">AI Coding Agents Compared: Claude Code, Codex, Cursor, Pi Agent, and the Rest</a></h3>
+        <p class="meta">2026-05-23 · ADI Pod · <span class="label">실사용 비교</span></p>
+        <p>Claude Code, Codex, Cursor, Pi Agent 등을 hands-on 관점에서 비교한다. Codex는 Claude Code와 UX가 가까워졌고, OpenAI가 Codex prompt를 공개한 점과 harness engineering 방향을 장점으로 다룬다.</p>
+        <p><strong>실무 시사점:</strong> Codex가 Claude Code와 수렴하고 있어 도구 기능보다 모델 품질, 권한 모델, 조직의 검증 루프가 더 중요해지고 있다. 실제 선택은 자신의 repo와 업무 흐름으로 비교해야 한다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sources">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://www.developer-tech.com/news/ai-coding-agents-cursor-anthropic-alibaba-price-floor-2026/">DeveloperTech - AI coding agents: three launches, 72 hours, one price shift</a></li>
+      <li><a href="https://dev.to/alexmercedcoder/ai-weekly-cheaper-coding-models-custom-chips-and-a-stateless-mcp-963">DEV Community - AI Weekly: Cheaper Coding Models, Custom Chips, and a Stateless MCP</a></li>
+      <li><a href="https://aiweekender.substack.com/p/how-coding-agents-actually-work-and">AI Weekender - How Coding Agents Actually Work Under the Hood</a></li>
+      <li><a href="https://www.tuscanagency.com/blog/cursor-vs-claude-code-agency-comparison">Tuscan Agency - Cursor or Claude Code?</a></li>
+      <li><a href="https://hundredtabs.com/blog/cursor-composer-vs-claude-code-may-2026">Hundred Tabs - Cursor Composer 2.5 vs Claude Code</a></li>
+      <li><a href="https://arslandg.substack.com/p/claude-code-cursor-copilot-how-the">Arslan Ahmad - Claude Code, Cursor, Copilot</a></li>
+      <li><a href="https://ofox.ai/blog/agentic-coding-claude-codex-gemini-cursor-2026/">oFox.ai - Agentic Coding in 2026</a></li>
+      <li><a href="https://weavai.app/blog/en/2026/05/24/2026-openai-codex-vs-cursor-cloud-agent-vs-ai-ide/">WeavAI - 2026 OpenAI Codex vs Cursor</a></li>
+      <li><a href="https://adipod.ai/topics/ai-coding-agents-compared/">ADI Pod - AI Coding Agents Compared</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

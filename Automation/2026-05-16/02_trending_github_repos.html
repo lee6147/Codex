@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 레포트 - 2026-05-16</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --ink:#17202a; --muted:#5d6875; --line:#d9e0ea; --blue:#1457a8; --green:#147a5c; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1120px, calc(100vw - 32px)); margin:28px auto 60px; }
+    .hero { background:#17324f; color:#fff; border-radius:14px; padding:30px; }
+    h1 { margin:0; font-size:30px; } h2 { margin:0 0 12px; } h3 { margin:0 0 8px; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; margin-top:18px; }
+    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+    .stat { background:#eef5ff; border:1px solid #cfe0f7; border-radius:10px; padding:14px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:14px; margin-top:14px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px; }
+    .rank { display:inline-block; width:28px; height:28px; border-radius:50%; background:#dcecff; text-align:center; line-height:28px; font-weight:700; margin-right:6px; color:#174f8d; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; font-size:12px; font-weight:700; background:#e9eef6; color:#26384d; margin-right:6px; }
+    .stars { color:var(--green); font-weight:700; }
+    .muted { color:var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>트렌딩 GitHub 레포트</h1>
+      <p>GitHub Trending Daily/Weekly에서 AI, 코딩, 개발 생산성과 직접 연결되는 저장소만 추렸다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-16</div>
+        <div><strong>조사 범위</strong><br>GitHub Trending Today + This week</div>
+        <div><strong>조회 시점</strong><br>2026-05-16 05:07 +09:00</div>
+        <div><strong>선정 수</strong><br>10개, 억지 채움 없음</div>
+      </div>
+    </header>
+
+    <section class="panel stats">
+      <div class="stat"><strong>Daily 강세</strong><br>Agent Skills, MCP, NotebookLM 자동화처럼 에이전트 작업을 패키징하는 저장소가 다수 등장했다.</div>
+      <div class="stat"><strong>Weekly 강세</strong><br>AI agent memory, AI coding router, terminal coding agent가 강하게 올라왔다.</div>
+      <div class="stat"><strong>해석</strong><br>Claude Code/Cursor/Codex 사용자는 도구 자체보다 skill, memory, MCP, routing layer를 함께 관리해야 한다.</div>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li>Today snapshot</li>
+        <li>This week snapshot</li>
+        <li>실무 연결 해석</li>
+        <li>출처</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>선정 저장소 카드</h2>
+      <div class="cards">
+        <article class="card">
+          <h3><span class="rank">1</span><a href="https://github.com/obra/superpowers">obra/superpowers</a></h3>
+          <p>Agentic skills framework와 software development methodology를 묶은 Shell 기반 저장소.</p>
+          <p><span class="badge">Today</span><span class="stars">192,657 stars / 1,646 stars today</span></p>
+          <p><strong>연결점:</strong> Claude Code나 Codex에서 반복 가능한 작업 절차를 skill 단위로 고정하려는 흐름과 직접 연결된다.</p>
+          <p><strong>한줄 총평:</strong> 도구 성능보다 실행 규율을 표준화하려는 수요가 크다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">2</span><a href="https://github.com/K-Dense-AI/scientific-agent-skills">K-Dense-AI/scientific-agent-skills</a></h3>
+          <p>Research, science, engineering, finance, writing용 ready-to-use Agent Skills 모음.</p>
+          <p><span class="badge">Today</span><span class="stars">22,358 stars / 643 stars today</span></p>
+          <p><strong>연결점:</strong> AI 코딩 도구를 범용 채팅이 아니라 분야별 작업 팩으로 쓰는 방식에 맞다.</p>
+          <p><strong>한줄 총평:</strong> skill library가 새로운 생산성 인프라로 부상 중이다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">3</span><a href="https://github.com/anthropics/skills">anthropics/skills</a></h3>
+          <p>Anthropic의 Agent Skills 공개 저장소.</p>
+          <p><span class="badge">Today</span><span class="stars">134,985 stars / 625 stars today</span></p>
+          <p><strong>연결점:</strong> Claude Code 사용자는 공식 skill 포맷을 기준으로 팀 작업 표준을 만들 수 있다.</p>
+          <p><strong>한줄 총평:</strong> Anthropic 생태계의 skill 중심 전환을 보여주는 대표 신호다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">4</span><a href="https://github.com/czlonkowski/n8n-mcp">czlonkowski/n8n-mcp</a></h3>
+          <p>Claude Desktop, Claude Code, Windsurf, Cursor에서 n8n workflow를 만들도록 돕는 MCP.</p>
+          <p><span class="badge">Today</span><span class="stars">20,849 stars / 68 stars today</span></p>
+          <p><strong>연결점:</strong> AI 코딩 도구를 코드 편집뿐 아니라 워크플로 자동화 생성기로 연결한다.</p>
+          <p><strong>한줄 총평:</strong> MCP는 에이전트 도구 연결의 기본 접착층이 되고 있다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">5</span><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></h3>
+          <p>실무 엔지니어링용 Claude skill 모음.</p>
+          <p><span class="badge">Today/Week</span><span class="stars">84,694 stars / 17,059 stars this week</span></p>
+          <p><strong>연결점:</strong> Cursor/Codex에서도 재사용 가능한 프롬프트 운영 규칙의 중요성을 보여준다.</p>
+          <p><strong>한줄 총평:</strong> 개인 생산성 노하우가 repo 형태로 빠르게 유통된다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">6</span><a href="https://github.com/joeseesun/qiaomu-anything-to-notebooklm">joeseesun/qiaomu-anything-to-notebooklm</a></h3>
+          <p>WeChat, web, YouTube, PDF, Markdown, search query를 NotebookLM용 산출물로 변환하는 Claude Skill.</p>
+          <p><span class="badge">Today</span><span class="stars">2,614 stars / 465 stars today</span></p>
+          <p><strong>연결점:</strong> 문서 수집-요약-학습자료 생성 같은 비코딩 자동화도 AI 개발 도구 워크플로에 흡수된다.</p>
+          <p><strong>한줄 총평:</strong> 콘텐츠 처리 자동화가 agent skill 시장의 빠른 사용처다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">7</span><a href="https://github.com/rohitg00/agentmemory">rohitg00/agentmemory</a></h3>
+          <p>AI coding agents용 persistent memory를 표방하는 TypeScript 저장소.</p>
+          <p><span class="badge">This week</span><span class="stars">9,549 stars / 6,467 stars this week</span></p>
+          <p><strong>연결점:</strong> 장시간 Codex/Claude/Cursor 작업에서 맥락 유지와 재현 가능한 memory layer가 병목이다.</p>
+          <p><strong>한줄 총평:</strong> 에이전트 성능 논쟁이 memory 운영 문제로 이동 중이다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">8</span><a href="https://github.com/decolua/9router">decolua/9router</a></h3>
+          <p>Claude Code, Codex, Cursor, Cline, Copilot 등을 여러 provider로 라우팅한다는 JavaScript 저장소.</p>
+          <p><span class="badge">This week</span><span class="stars">10,614 stars / 6,024 stars this week</span></p>
+          <p><strong>연결점:</strong> 단일 벤더 lock-in을 줄이고 비용/제한을 우회하려는 수요가 강하다.</p>
+          <p><strong>한줄 총평:</strong> 모델 라우팅은 2026년 AI 코딩 운영의 비용 관리 레이어다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">9</span><a href="https://github.com/Hmbown/DeepSeek-TUI">Hmbown/DeepSeek-TUI</a></h3>
+          <p>DeepSeek 모델용 terminal coding agent.</p>
+          <p><span class="badge">This week</span><span class="stars">29,807 stars / 11,303 stars this week</span></p>
+          <p><strong>연결점:</strong> Claude Code/Codex와 유사한 CLI agent 경험을 저비용 모델로 구현하려는 흐름이다.</p>
+          <p><strong>한줄 총평:</strong> terminal-native agent UX가 주요 경쟁 형식으로 굳어지고 있다.</p>
+        </article>
+        <article class="card">
+          <h3><span class="rank">10</span><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></h3>
+          <p>Production-grade engineering skills for AI coding agents.</p>
+          <p><span class="badge">This week</span><span class="stars">42,001 stars / 9,198 stars this week</span></p>
+          <p><strong>연결점:</strong> 검증, 프론트엔드, 리뷰, 품질 루틴을 agent skill로 명시하는 방향과 맞다.</p>
+          <p><strong>한줄 총평:</strong> 실무형 skill pack은 AI 코딩 도구를 팀 표준으로 묶는 핵심 재료다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>출처</h2>
+      <p class="muted">Star 수와 daily/weekly 상승 수는 GitHub Trending 페이지를 2026-05-16 05:07 +09:00에 조회한 값이다. GitHub Trending은 동적 스냅샷이므로 이후 바뀔 수 있다.</p>
+      <ul>
+        <li><a href="https://github.com/trending?since=daily">GitHub Trending Today</a></li>
+        <li><a href="https://github.com/trending?since=weekly">GitHub Trending This week</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

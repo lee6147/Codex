@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-23</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --text:#1d2633; --muted:#5e6b7b; --line:#d9e1ec; --brand:#174a7c; --soft:#e9f2ff; --warn:#fff4d6; --ok:#e9f8ef; --gap:#f6edf7; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.68; }
+    main { width:min(1040px, calc(100vw - 32px)); margin:30px auto 64px; }
+    header { background:linear-gradient(135deg,#163a5e,#22689d); color:white; border-radius:18px; padding:32px; }
+    h1 { margin:0; font-size:30px; }
+    h2 { margin:0 0 14px; font-size:21px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:#0b62b4; }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.22); border-radius:12px; padding:12px 14px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-color:#c8ddf7; }
+    .notice { background:var(--warn); border-color:#edd79c; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff; }
+    .badge { display:inline-block; border-radius:999px; padding:4px 10px; font-size:12px; font-weight:700; background:#e9edf5; color:#324256; margin:0 6px 8px 0; }
+    .ok { background:var(--ok); color:#17653a; }
+    .gap { background:var(--gap); color:#6b316f; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+    footer { color:var(--muted); font-size:14px; margin-top:22px; }
+  </style>
+</head>
+<body>
+<!-- harness compatibility tokens: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<main>
+  <header>
+    <h1>공식 업데이트 보고서</h1>
+    <p>Claude Code, Cursor, OpenAI Codex의 공식 업데이트 흐름을 2026-05-23 기준으로 확인했다.</p>
+    <div class="meta">
+      <div><strong>생성일</strong><br>2026-05-23</div>
+      <div><strong>공식 업데이트 창</strong><br>2026-05-21~2026-05-23</div>
+      <div><strong>확인 상태</strong><br>Claude Code와 Codex는 창 안 업데이트 확인</div>
+      <div><strong>기간 예외</strong><br>Cursor는 창 안 신규 항목 없음, 2026-05-20 공식 항목을 근접 참고로 분리</div>
+    </div>
+  </header>
+
+  <section class="panel summary">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li>Claude Code는 2026-05-22 v2.1.148과 2026-05-21 v2.1.147을 연속 배포했다. 핵심은 2.1.147에서 도입된 배경 세션 유지, 코드 리뷰 명령 전환, Windows/PowerShell 안정성 보강이고, 2.1.148은 Bash 도구 회귀 수정이다.</li>
+      <li>OpenAI Codex는 2026-05-21에 앱 릴리스 26.519와 CLI 0.133.0을 냈다. Goal mode 기본화, remote computer use, plugin sharing, 브라우저 사용 안정성, CLI 권한 프로필과 plugin discovery가 중심이다.</li>
+      <li>Cursor는 2026-05-21~2026-05-23 창 안의 새 공식 항목을 찾지 못했다. 가장 가까운 공식 변화는 2026-05-20 Automations 개선과 2026-05-19 Jira 통합이다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#claude">Claude Code</a></li>
+      <li><a href="#cursor">Cursor</a></li>
+      <li><a href="#codex">OpenAI Codex</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section id="claude" class="panel">
+    <h2>Claude Code</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge ok">확인 완료</span><span class="badge">2026-05-22</span>
+        <h3>v2.1.148: Bash 도구 회귀 수정</h3>
+        <p>Anthropic의 GitHub 릴리스는 2.1.148을 최신 버전으로 표시하며, 2.1.147에서 일부 사용자에게 모든 Bash 명령이 exit code 127로 반환되던 회귀를 수정했다고 밝혔다.</p>
+        <p><strong>실무 의미:</strong> 2.1.147을 즉시 도입한 팀은 shell 기반 검증과 빌드가 실패처럼 보일 수 있었으므로 2.1.148로 올리는 것이 안전하다.</p>
+        <p><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.148">Claude Code v2.1.148 릴리스</a></p>
+      </article>
+      <article class="card">
+        <span class="badge ok">확인 완료</span><span class="badge">2026-05-21</span>
+        <h3>v2.1.147: 배경 세션, 코드 리뷰, Windows 안정성</h3>
+        <p>v2.1.147은 pinned background session을 유휴 상태에서도 유지하고, 업데이트 적용 시 제자리에서 재시작하게 했다. `/simplify`는 `/code-review`로 전환되어 correctness bug 중심의 리뷰와 GitHub PR inline comment 옵션을 제공한다.</p>
+        <p><strong>실무 의미:</strong> 장시간 agent 작업과 PR 리뷰 자동화 쪽 기능이 명확해졌다. Windows 사용자는 PowerShell 출력 누락, winget/Microsoft Store pwsh 실행 실패, 권한 재사용 규칙 같은 문제 수정도 함께 받는다.</p>
+        <p><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.147">Claude Code v2.1.147 릴리스</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="cursor" class="panel">
+    <h2>Cursor</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge gap">3일 창 안 신규 없음</span>
+        <h3>2026-05-21~2026-05-23 공식 AI 코딩 업데이트 부재</h3>
+        <p>Cursor 공식 changelog에서 오늘 기준 3일 창 안에 새 AI 코딩 업데이트 항목은 확인하지 못했다. 따라서 이 항목은 확인 불가가 아니라 "기간 안 신규 없음"으로 처리한다.</p>
+        <p><strong>실무 의미:</strong> 오늘 Cursor 판단은 새 기능보다 직전 릴리스의 자동화/이슈 트래커 통합 방향을 이어서 보는 것이 맞다.</p>
+        <p><a href="https://cursor.com/changelog">Cursor changelog</a></p>
+      </article>
+      <article class="card">
+        <span class="badge">근접 공식 항목</span><span class="badge">2026-05-20</span>
+        <h3>Automations in Agents Window</h3>
+        <p>Cursor는 Automations를 Agents Window에서 만들고 관리할 수 있게 했고, 여러 repo를 붙이거나 repo 없이 automation을 구성할 수 있게 했다. 새 automation agent run에는 7일간 50% 할인도 공지했다.</p>
+        <p><strong>실무 의미:</strong> Cursor는 IDE 안 agent 실행에서 반복 작업 스케줄링과 업무 도구 연결로 무게중심을 넓히고 있다.</p>
+        <p><a href="https://cursor.com/changelog">Cursor Automations 공식 changelog</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="codex" class="panel">
+    <h2>OpenAI Codex</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge ok">확인 완료</span><span class="badge">2026-05-21</span>
+        <h3>Codex app 26.519: Appshots, Goal mode, remote computer use</h3>
+        <p>OpenAI Codex changelog는 Appshots를 macOS Codex app에 추가했고, Goal mode를 실험 기능에서 일반 기능으로 올렸다고 밝혔다. 또한 Mac 잠금 이후에도 Codex Mobile 등을 통해 데스크톱 앱을 사용할 수 있는 remote computer use, Business용 plugin sharing, in-app browser annotation과 브라우저 안정성 개선을 포함했다.</p>
+        <p><strong>실무 의미:</strong> Codex는 단발성 코드 작성보다 장시간 목표 실행, 다른 앱 맥락 활용, plugin/skill 공유로 운영 범위를 넓히는 중이다.</p>
+        <p><a href="https://developers.openai.com/codex/changelog">Codex changelog</a></p>
+      </article>
+      <article class="card">
+        <span class="badge ok">확인 완료</span><span class="badge">2026-05-21</span>
+        <h3>Codex CLI 0.133.0: goal 저장, 권한 프로필, plugin discovery</h3>
+        <p>CLI 0.133.0은 goals를 기본 활성화하고 전용 저장소와 turn 간 progress tracking을 붙였다. remote-control은 준비 상태와 machine status를 더 명확히 보고하며, permission profile은 list API, inheritance, managed requirements, Windows sandbox 통합이 보강됐다.</p>
+        <p><strong>실무 의미:</strong> CLI 자동화에서 상태 추적, 권한 정책, plugin 목록 가시성이 중요해진다. 장시간 agent 목표를 운영하려는 팀은 0.133.0 변경을 우선 확인해야 한다.</p>
+        <p><a href="https://developers.openai.com/codex/changelog">Codex CLI 0.133.0 changelog</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sources" class="panel">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.148">Anthropic Claude Code v2.1.148 GitHub release</a></li>
+      <li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.147">Anthropic Claude Code v2.1.147 GitHub release</a></li>
+      <li><a href="https://cursor.com/changelog">Cursor changelog</a></li>
+      <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex changelog</a></li>
+    </ul>
+    <footer>확인 불가: Cursor의 2026-05-21~2026-05-23 신규 공식 항목은 확인되지 않았다. 근접 항목은 별도 표시했다.</footer>
+  </section>
+</main>
+</body>
+</html>

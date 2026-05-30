@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-21 GitHub Trending AI/개발 생산성</title>
+  <style>
+    :root { --bg:#f6f8fb; --panel:#fff; --text:#18212d; --muted:#637083; --line:#dce3ee; --blue:#0b62b4; --purple:#6f42c1; --green:#147d50; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    .wrap { width:min(1080px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#1f2937; color:#fff; border-radius:18px; padding:32px; }
+    h1, h2, h3 { line-height:1.25; margin-top:0; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:12px 14px; }
+    .panel, .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px; margin-top:18px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+    .statline { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
+    .badge { border-radius:999px; padding:3px 10px; font-size:12px; font-weight:700; background:#eef2ff; color:var(--purple); }
+    .stars { background:#e8f7ef; color:var(--green); }
+    .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+    .summary div { background:#eef6ff; border-left:4px solid var(--blue); border-radius:12px; padding:14px; }
+    .source { color:var(--muted); font-size:14px; }
+    ol, ul { margin:8px 0 0; padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>GitHub Trending: AI 코딩·개발 생산성 레포트</h1>
+      <p>GitHub Trending Daily 스냅샷에서 AI 코딩, 에이전트 운영, 개발 생산성과 직접 연결되는 저장소만 선별했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-21</div>
+        <div><strong>스냅샷</strong><br>GitHub Trending Daily</div>
+        <div><strong>선정 수</strong><br>10개</div>
+        <div><strong>제외 기준</strong><br>AI/개발 생산성과 연결 약한 일반 앱 제외</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>요약 통계</h2>
+      <div class="summary">
+        <div><strong>에이전트 운영 보조가 강세</strong><br>메모리, 코드 그래프, 스킬, 플러그인, 터미널 에이전트가 상위권에 다수 보인다.</div>
+        <div><strong>Claude/Codex/Cursor 공통 문제를 겨냥</strong><br>토큰 절약, 세션 유지, 지침 파일, 로컬 인덱싱처럼 도구를 가로지르는 보조 레이어가 인기다.</div>
+        <div><strong>교육형 레포도 여전히 강함</strong><br>AI engineering 학습 자료와 연구 작성 워크플로가 실무 온보딩 수요를 반영한다.</div>
+      </div>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li>트렌드 해석</li>
+        <li>선정 저장소 10개</li>
+        <li>Claude Code, Cursor, Codex 사용자 관점</li>
+        <li>출처</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>트렌드 해석</h2>
+      <p>오늘 Daily 스냅샷은 “새 모델”보다 “에이전트를 오래 굴리는 보조 인프라”에 무게가 있다. 코드베이스 사전 인덱싱, 지속 메모리, 스킬/플러그인 묶음, 터미널 에이전트 하네스가 주목받는 것은 Claude Code, Cursor, Codex 모두가 실제 프로젝트에서 같은 병목을 겪기 때문이다.</p>
+    </section>
+
+    <section class="panel">
+      <h2>선정 저장소</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>1. colbymchenry / codegraph</h3>
+          <div class="statline"><span class="badge stars">8,651 stars</span><span class="badge">1,910 stars today</span><span class="badge">TypeScript</span></div>
+          <p><a href="https://github.com/colbymchenry/codegraph">codegraph</a>는 Claude Code, Codex, Cursor, OpenCode용 로컬 코드 지식 그래프를 사전 생성해 토큰과 tool call을 줄이는 도구다.</p>
+          <p><strong>주목 이유:</strong> 대형 저장소 탐색 비용을 줄이는 문제를 직접 겨냥한다.</p>
+          <p><strong>연결점:</strong> 세 도구 모두 대형 코드베이스에서 검색·읽기 루프가 길어지므로, 사전 인덱싱은 에이전트 효율을 높일 수 있다.</p>
+          <p><strong>한줄 총평:</strong> 에이전트 시대의 repo map 인프라 후보.</p>
+        </article>
+
+        <article class="card">
+          <h3>2. Imbad0202 / academic-research-skills</h3>
+          <div class="statline"><span class="badge stars">15,703 stars</span><span class="badge">1,639 stars today</span><span class="badge">Python</span></div>
+          <p><a href="https://github.com/Imbad0202/academic-research-skills">academic-research-skills</a>는 Claude Code에서 research, write, review, revise, finalize 흐름을 스킬로 묶은 연구 작성 워크플로다.</p>
+          <p><strong>주목 이유:</strong> 코딩 에이전트의 스킬 구조가 문서·연구 자동화까지 확장되는 흐름을 보여준다.</p>
+          <p><strong>연결점:</strong> Codex Skills, Claude Code Skills, Cursor 규칙 파일을 비교할 때 좋은 벤치마크가 된다.</p>
+          <p><strong>한줄 총평:</strong> 개발 외 지식 작업으로 번지는 스킬 패턴.</p>
+        </article>
+
+        <article class="card">
+          <h3>3. multica-ai / andrej-karpathy-skills</h3>
+          <div class="statline"><span class="badge stars">140,290 stars</span><span class="badge">2,620 stars today</span><span class="badge">CLAUDE.md</span></div>
+          <p><a href="https://github.com/multica-ai/andrej-karpathy-skills">andrej-karpathy-skills</a>는 LLM 코딩 함정에 대한 관찰을 Claude Code용 단일 CLAUDE.md 지침 파일로 정리한다.</p>
+          <p><strong>주목 이유:</strong> 모델보다 프롬프트·프로젝트 지침 품질이 결과를 크게 좌우한다는 인식이 강하다.</p>
+          <p><strong>연결점:</strong> Claude의 CLAUDE.md, Codex의 AGENTS.md, Cursor의 규칙 파일을 정렬하는 데 참고 가능하다.</p>
+          <p><strong>한줄 총평:</strong> 에이전트 성능을 올리는 운영 지침 레포.</p>
+        </article>
+
+        <article class="card">
+          <h3>4. rohitg00 / ai-engineering-from-scratch</h3>
+          <div class="statline"><span class="badge stars">9,267 stars</span><span class="badge">762 stars today</span><span class="badge">Python</span></div>
+          <p><a href="https://github.com/rohitg00/ai-engineering-from-scratch">ai-engineering-from-scratch</a>는 AI engineering을 직접 구현하며 학습하도록 구성된 교육형 레포다.</p>
+          <p><strong>주목 이유:</strong> 에이전트를 잘 쓰려면 모델 호출, 평가, 도구 연결의 기본 구조를 이해해야 한다.</p>
+          <p><strong>연결점:</strong> Cursor/Codex/Claude 결과물을 검증하는 개발자 교육 자료로 유용하다.</p>
+          <p><strong>한줄 총평:</strong> 에이전트 사용자에게 필요한 기초 체력 자료.</p>
+        </article>
+
+        <article class="card">
+          <h3>5. HKUDS / CLI-Anything</h3>
+          <div class="statline"><span class="badge stars">38,387 stars</span><span class="badge">930 stars today</span><span class="badge">Python</span></div>
+          <p><a href="https://github.com/HKUDS/CLI-Anything">CLI-Anything</a>은 소프트웨어를 agent-native하게 만들기 위한 CLI-Hub 방향의 프로젝트다.</p>
+          <p><strong>주목 이유:</strong> 에이전트가 GUI보다 CLI를 안정적으로 다루기 때문에, CLI 표준화는 자동화 성공률과 직결된다.</p>
+          <p><strong>연결점:</strong> Codex/Claude Code가 shell 기반 작업을 할 때 도구 표면을 단순화하는 데 맞닿아 있다.</p>
+          <p><strong>한줄 총평:</strong> 에이전트 친화적 소프트웨어 표면을 겨냥한다.</p>
+        </article>
+
+        <article class="card">
+          <h3>6. can1357 / oh-my-pi</h3>
+          <div class="statline"><span class="badge stars">5,296 stars</span><span class="badge">237 stars today</span><span class="badge">TypeScript</span></div>
+          <p><a href="https://github.com/can1357/oh-my-pi">oh-my-pi</a>는 터미널용 AI 코딩 에이전트로 hash-anchored edits, LSP, 브라우저, subagents 등을 표방한다.</p>
+          <p><strong>주목 이유:</strong> CLI 에이전트 하네스 경쟁이 Claude Code/Codex 주변 생태계로 확산되고 있다.</p>
+          <p><strong>연결점:</strong> Codex CLI나 Claude Code의 대안·보조 도구를 검토하는 사용자에게 비교군이 된다.</p>
+          <p><strong>한줄 총평:</strong> 터미널 에이전트 UX 실험 레포.</p>
+        </article>
+
+        <article class="card">
+          <h3>7. obra / superpowers</h3>
+          <div class="statline"><span class="badge stars">199,754 stars</span><span class="badge">1,776 stars today</span><span class="badge">Shell</span></div>
+          <p><a href="https://github.com/obra/superpowers">superpowers</a>는 에이전트 스킬과 소프트웨어 개발 방법론을 묶은 프레임워크다.</p>
+          <p><strong>주목 이유:</strong> 단순 프롬프트보다 TDD, 디버깅, 검증 같은 절차형 스킬이 중요해지는 흐름을 보여준다.</p>
+          <p><strong>연결점:</strong> Claude Code/Codex 모두 스킬 기반 워크플로를 갖기 시작하면서 재사용 가능한 절차 패키지가 핵심이 된다.</p>
+          <p><strong>한줄 총평:</strong> 에이전트 작업 품질을 절차로 고정하는 시도.</p>
+        </article>
+
+        <article class="card">
+          <h3>8. anthropics / claude-plugins-official</h3>
+          <div class="statline"><span class="badge stars">20,635 stars</span><span class="badge">706 stars today</span><span class="badge">Python</span></div>
+          <p><a href="https://github.com/anthropics/claude-plugins-official">claude-plugins-official</a>은 Anthropic이 관리하는 Claude Code plugin directory다.</p>
+          <p><strong>주목 이유:</strong> Claude Code가 플러그인·스킬 생태계를 공식 채널로 관리하려는 신호다.</p>
+          <p><strong>연결점:</strong> Codex Skills나 Cursor Marketplace와 비교할 공식 플러그인 표준 사례다.</p>
+          <p><strong>한줄 총평:</strong> Claude Code 생태계의 공식 확장 허브.</p>
+        </article>
+
+        <article class="card">
+          <h3>9. msitarzewski / agency-agents</h3>
+          <div class="statline"><span class="badge stars">102,636 stars</span><span class="badge">1,714 stars today</span><span class="badge">Shell</span></div>
+          <p><a href="https://github.com/msitarzewski/agency-agents">agency-agents</a>는 다양한 역할형 에이전트를 한 번에 제공하는 AI agency 패키지다.</p>
+          <p><strong>주목 이유:</strong> 단일 에이전트보다 역할 분리형 워크플로에 대한 수요가 크다.</p>
+          <p><strong>연결점:</strong> Codex subagents, Claude Code agents, Cursor cloud agents를 운용하는 팀이 역할 프롬프트 설계에 참고할 수 있다.</p>
+          <p><strong>한줄 총평:</strong> 역할형 에이전트 패키징 수요의 단면.</p>
+        </article>
+
+        <article class="card">
+          <h3>10. rohitg00 / agentmemory</h3>
+          <div class="statline"><span class="badge stars">14,916 stars</span><span class="badge">1,121 stars today</span><span class="badge">TypeScript</span></div>
+          <p><a href="https://github.com/rohitg00/agentmemory">agentmemory</a>는 실제 벤치마크 기반의 AI 코딩 에이전트용 persistent memory를 표방한다.</p>
+          <p><strong>주목 이유:</strong> 장기 작업에서 세션 단절과 반복 지시 문제가 계속 병목으로 남아 있다.</p>
+          <p><strong>연결점:</strong> Claude Code, Cursor, Codex 모두 memory/notes/AGENTS류 컨텍스트 관리 전략과 연결된다.</p>
+          <p><strong>한줄 총평:</strong> 에이전트 장기 기억 레이어 경쟁을 보여준다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending?since=daily">GitHub Trending Daily, 2026-05-21 조회</a></li>
+        <li><a href="https://github.com/trending?since=weekly">GitHub Trending Weekly, 보조 확인</a></li>
+      </ul>
+      <p class="source">Star 수와 “stars today”는 조회 시점 GitHub Trending 페이지 기준이다.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서 - 2026-05-23</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --text:#1d2633; --muted:#5e6b7b; --line:#d9e1ec; --brand:#174a7c; --soft:#e9f2ff; --rank:#eef7f1; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.66; }
+    main { width:min(1040px, calc(100vw - 32px)); margin:30px auto 64px; }
+    header { background:linear-gradient(135deg,#183a5c,#266b83); color:white; border-radius:18px; padding:32px; }
+    h1 { margin:0; font-size:30px; }
+    h2 { margin:0 0 14px; font-size:21px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:#0b62b4; }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.22); border-radius:12px; padding:12px 14px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-color:#c8ddf7; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff; }
+    .rank { display:inline-block; min-width:34px; text-align:center; border-radius:999px; padding:4px 8px; background:var(--rank); color:#17653a; font-weight:800; margin-right:8px; }
+    .badge { display:inline-block; border-radius:999px; padding:4px 10px; font-size:12px; font-weight:700; background:#e9edf5; color:#324256; margin:0 6px 8px 0; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+    footer { color:var(--muted); font-size:14px; margin-top:22px; }
+  </style>
+</head>
+<body>
+<!-- harness compatibility tokens: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<main>
+  <header>
+    <h1>트렌딩 GitHub 저장소 보고서</h1>
+    <p>2026-05-23 GitTrend daily snapshot에서 AI 코딩, agent, 개발 생산성 관련 저장소만 선별했다.</p>
+    <div class="meta">
+      <div><strong>생성일</strong><br>2026-05-23</div>
+      <div><strong>기준</strong><br>GitTrend daily ranking</div>
+      <div><strong>선별 수</strong><br>10개 중 개발 생산성 관련 8개 중점 분석</div>
+      <div><strong>핵심 신호</strong><br>Claude Code skill/plugin, code knowledge graph, agent framework 집중</div>
+    </div>
+  </header>
+
+  <section class="panel summary">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li>상위권은 "더 좋은 모델"보다 "agent가 repo를 덜 읽고 더 안정적으로 움직이게 하는 운영 보조층"에 집중되어 있다.</li>
+      <li>1위 codegraph는 Claude Code, Codex, Cursor, OpenCode 모두를 대상으로 하는 local code knowledge graph를 내세워 token 절감과 tool-call 감소를 전면에 둔다.</li>
+      <li>Anthropic 공식 plugin directory와 여러 skills 저장소가 함께 떠 있어 Claude Code 생태계가 command/skill/plugin 단위로 빠르게 구조화되는 모습이다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#top">상위 저장소 카드</a></li>
+      <li><a href="#read">트렌드 해석</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section id="top" class="panel">
+    <h2>상위 저장소 카드</h2>
+    <div class="grid">
+      <article class="card">
+        <h3><span class="rank">1</span>colbymchenry/codegraph</h3>
+        <span class="badge">TypeScript</span><span class="badge">+194 today</span><span class="badge">15.7k stars</span>
+        <p>Claude Code, Codex, Cursor, OpenCode용 pre-indexed code knowledge graph. "100% local", fewer tokens, fewer tool calls를 주장한다.</p>
+        <p><strong>연결성:</strong> 세 도구 모두에 직접 연결된다. agent가 매번 repo를 재탐색하는 비용을 줄이는 보조 인프라로 볼 수 있다.</p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">2</span>anthropics/claude-plugins-official</h3>
+        <span class="badge">Python</span><span class="badge">+137 today</span><span class="badge">22.6k stars</span>
+        <p>Anthropic이 관리하는 Claude Code plugin directory. 고품질 plugin을 공식적으로 모아 제공하는 저장소로 소개된다.</p>
+        <p><strong>연결성:</strong> Claude Code의 plugin/skill 흐름이 개인 설정에서 팀 공유 가능한 배포 단위로 넘어가는 신호다.</p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">3</span>multica-ai/andrej-karpathy-skills</h3>
+        <span class="badge">CLAUDE.md</span><span class="badge">+143 today</span><span class="badge">145.7k stars</span>
+        <p>Andrej Karpathy의 LLM coding pitfall 관찰을 바탕으로 Claude Code 행동을 개선하는 단일 CLAUDE.md 파일이다.</p>
+        <p><strong>연결성:</strong> 모델 자체보다 repo-local instruction 품질을 높이는 방향의 관심을 보여준다.</p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">4</span>Lum1104/Understand-Anything</h3>
+        <span class="badge">TypeScript</span><span class="badge">+107 today</span><span class="badge">16.6k stars</span>
+        <p>코드를 interactive knowledge graph로 바꿔 탐색, 검색, 질문을 가능하게 하는 도구. Claude Code, Codex, Cursor, Copilot, Gemini CLI를 지원한다고 설명한다.</p>
+        <p><strong>연결성:</strong> 코드 이해를 agent에게만 맡기지 않고 사람이 검토 가능한 그래프로 만드는 흐름이다.</p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">6</span>mattpocock/skills</h3>
+        <span class="badge">Shell</span><span class="badge">+91 today</span><span class="badge">98.0k stars</span>
+        <p>실제 `.claude` 디렉터리에서 온 "Skills for Real Engineers"를 표방한다.</p>
+        <p><strong>연결성:</strong> agent를 잘 쓰는 방법이 prompt 모음에서 실행 가능한 skill 규격으로 이동하고 있다.</p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">7</span>NousResearch/hermes-agent</h3>
+        <span class="badge">Python</span><span class="badge">+82 today</span><span class="badge">162.1k stars</span>
+        <p>"The agent that grows with you"라는 설명의 Python agent 프로젝트다.</p>
+        <p><strong>연결성:</strong> 코딩 도구 직접 경쟁자는 아니지만, coding agent 주변의 범용 agent runtime 관심을 보여준다.</p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">8</span>obra/superpowers</h3>
+        <span class="badge">Shell</span><span class="badge">+70 today</span><span class="badge">201.3k stars</span>
+        <p>agentic skills framework와 development methodology를 결합한 프로젝트다.</p>
+        <p><strong>연결성:</strong> Claude Code류 도구를 단순 chat이 아니라 반복 가능한 engineering workflow로 묶으려는 움직임이다.</p>
+      </article>
+      <article class="card">
+        <h3><span class="rank">10</span>rohitg00/ai-engineering-from-scratch</h3>
+        <span class="badge">Python</span><span class="badge">+58 today</span><span class="badge">9.8k stars</span>
+        <p>AI engineering 학습과 build/ship 실습 자료를 모은 저장소다.</p>
+        <p><strong>연결성:</strong> agent 도구를 쓰는 개발자가 underlying AI engineering을 학습하려는 수요와 맞닿아 있다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="read" class="panel">
+    <h2>트렌드 해석</h2>
+    <ul>
+      <li><strong>도구 간 공통층:</strong> codegraph와 Understand-Anything은 특정 vendor보다 Claude Code, Codex, Cursor 등 여러 client를 동시에 겨냥한다. agent UI보다 repo 이해 계층이 경쟁 지점이 되고 있다.</li>
+      <li><strong>Claude Code 생태계 집중:</strong> 공식 plugin directory, CLAUDE.md, skills 저장소가 동시에 뜬 것은 Claude Code가 설정 파일과 skill 규격을 중심으로 커뮤니티 확장 중임을 보여준다.</li>
+      <li><strong>운영 방법론 상품화:</strong> superpowers류 프로젝트는 "어떤 모델이 좋은가"보다 "어떤 절차로 agent를 검증하고 반복할 것인가"를 전면에 둔다.</li>
+    </ul>
+  </section>
+
+  <section id="sources" class="panel">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://gittrend.io/">GitTrend daily trending snapshot, 2026-05-23 조회</a></li>
+      <li><a href="https://github.com/trending?since=daily">GitHub Trending daily page</a></li>
+    </ul>
+    <footer>주의: star 수와 today 증가분은 조회 시점 기준 snapshot이다. GitHub/GitTrend 집계는 시간에 따라 바뀔 수 있다.</footer>
+  </section>
+</main>
+</body>
+</html>

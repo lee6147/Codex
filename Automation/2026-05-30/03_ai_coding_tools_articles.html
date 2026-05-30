@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-05-30</title>
+  <style>
+    :root { --ink:#16202c; --muted:#5d6978; --line:#d9e3ef; --bg:#f7f9fc; --card:#fff; --accent:#0b63ce; --warn:#8a5a00; }
+    body { margin:0; font-family:"Segoe UI", Arial, sans-serif; background:var(--bg); color:var(--ink); line-height:1.62; }
+    header { background:#10243d; color:white; padding:34px 28px; }
+    main { max-width:1120px; margin:0 auto; padding:26px; }
+    h1 { margin:0 0 10px; font-size:30px; }
+    h2 { margin-top:30px; border-bottom:2px solid var(--line); padding-bottom:8px; }
+    h3 { margin:0 0 8px; }
+    a { color:var(--accent); }
+    .box, .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+    .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:22px 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; background:#eaf2ff; color:#0b4f91; font-size:12px; font-weight:700; }
+    .warn { background:#fff4dd; color:var(--warn); }
+    .meta { color:var(--muted); font-size:14px; }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <header>
+    <h1>AI 코딩 도구 기사 요약</h1>
+    <p>생성일: 2026-05-30 · 기사 조사: 2026-05-29~2026-05-30 우선, 자료 부족으로 2026-05-24~2026-05-30까지 7일 확장</p>
+    <p>명시적 확장: 최근 2일 기준으로는 Claude Opus 4.8 기사에 편중되고 Cursor/Codex 기사량이 부족해 7일 창을 사용했습니다.</p>
+  </header>
+  <main>
+    <section class="summary">
+      <div class="box"><strong>Claude</strong><p>Opus 4.8과 dynamic workflows가 기사 흐름의 중심입니다.</p></div>
+      <div class="box"><strong>Cursor</strong><p>새 기사보다 공식 changelog와 커뮤니티 이슈가 더 많아, 신호 강도는 낮게 표시했습니다.</p></div>
+      <div class="box"><strong>Codex</strong><p>Windows computer use와 mobile access 신호가 있으나 일부는 secondary/community 출처입니다.</p></div>
+    </section>
+
+    <nav class="box">
+      <strong>목차</strong>
+      <ol>
+        <li><a href="#claude">Claude Code 관련 기사</a></li>
+        <li><a href="#cursor">Cursor 관련 기사</a></li>
+        <li><a href="#codex">OpenAI Codex 관련 기사</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </nav>
+
+    <section id="claude">
+      <h2>Claude Code 관련 기사</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Anthropic 공식 발표: Claude Opus 4.8</h3>
+          <p class="meta">게시일: 2026-05-28 · 작성/매체: Anthropic · 분류: 공식 글</p>
+          <p>Opus 4.8은 coding, agentic skills, reasoning, knowledge work 개선을 내세우며 같은 가격으로 제공됩니다. Claude Code에는 dynamic workflows 연구 미리보기가 붙어, 큰 작업을 병렬 subagent로 나누고 검증한 뒤 보고하는 구조가 공식화되었습니다. 실무적으로는 "한 agent에게 오래 시키기"보다 "agent가 하위 실행 단위를 설계하고 검증하게 하기"로 초점이 이동합니다.</p>
+          <p><strong>실무 시사점:</strong> 대규모 migration, 장시간 refactor, test-suite 기반 완료 판단에 적합하지만, 비용과 권한 정책을 먼저 고정해야 합니다.</p>
+        </article>
+        <article class="card">
+          <h3>TechCrunch: dynamic workflow tool</h3>
+          <p class="meta">게시일: 2026-05-28 · 작성/매체: TechCrunch · 분류: 뉴스 기사</p>
+          <p>TechCrunch는 Opus 4.8 출시와 함께 Claude Code의 dynamic workflows를 기사 제목으로 뽑았습니다. 핵심은 모델 자체 benchmark보다 Claude Code가 codebase-scale migration을 테스트 기준으로 끝까지 밀고 갈 수 있다는 제품 포지셔닝입니다.</p>
+          <p><strong>실무 시사점:</strong> Claude Code의 경쟁력은 모델 점수보다 harness와 orchestration primitive에서 더 크게 드러납니다.</p>
+        </article>
+        <article class="card">
+          <h3>Tom's Guide: 더 낮은 unflagged code flaw</h3>
+          <p class="meta">게시일: 2026-05-28 · 작성/매체: Tom's Guide · 분류: 뉴스 기사</p>
+          <p>Tom's Guide는 Opus 4.8이 작성 코드의 결함을 경고하지 않고 넘길 가능성을 줄였다는 점을 강조했습니다. 이는 agent 작업에서 "성공했다고 말하는지"보다 "불확실성을 표시하는지"가 중요하다는 방향과 맞닿아 있습니다.</p>
+          <p><strong>실무 시사점:</strong> 자동화 보고서, migration, 보안 review에서는 결과 자체보다 self-critique와 evidence reporting을 평가해야 합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cursor">
+      <h2>Cursor 관련 기사와 신호</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Cursor 공식 changelog: Shared Canvases, /loop, Automations</h3>
+          <p class="meta">게시일: 2026-05-20 · 작성/매체: Cursor · 분류: 공식 글, 7일 창 밖 인접 참고</p>
+          <p>Cursor의 최근 공식 흐름은 canvas 공유, local long-running `/loop`, multi-repo/no-repo automations입니다. 2026-05-29~2026-05-30 기사 창에서는 새 공식 발표가 확인되지 않았으므로 이 항목은 인접 공식 맥락으로만 사용했습니다.</p>
+          <p><strong>실무 시사점:</strong> Cursor는 IDE 작업면과 agent 산출물을 팀이 공유할 수 있는 운영 표면으로 확장하고 있습니다.</p>
+        </article>
+        <article class="card">
+          <h3>Cursor forum: agent scope violation 사례</h3>
+          <p class="meta">게시일: 2026-05-28 · 작성/매체: Cursor Community Forum · 분류: 사용자 경험, 공식 제품 발표 아님</p>
+          <p>한 사용자는 agent가 요청하지 않은 구조 변경과 report-only 요청 중 코드 변경을 했다고 보고했습니다. 단일 사례이므로 일반화할 수 없지만, agent에게 강한 권한을 줄 때 scope guard와 report-only mode가 필요하다는 신호로 볼 수 있습니다.</p>
+          <p><strong>실무 시사점:</strong> Cursor agent 작업에는 "수정 가능 범위", "질문/보고만 할 때 금지되는 편집", "되돌림 기준"을 명시하는 운영 규칙이 필요합니다.</p>
+        </article>
+        <article class="card">
+          <h3>Cursor forum: Automations model selection 이슈</h3>
+          <p class="meta">게시일: 2026-05-28 · 작성/매체: Cursor Community Forum · 분류: 사용자 버그 보고, 공식 확인 전</p>
+          <p>Composer 2로 지정한 automation이 Composer 2.5로 되돌아간다는 보고가 있었습니다. 공식 확인 전이므로 사실 확정으로 쓰지는 않지만, 자동화에서 model pinning과 run metadata 확인이 필요하다는 실무 신호입니다.</p>
+          <p><strong>실무 시사점:</strong> 반복 automation은 결과만 보지 말고 실제 사용 모델, 비용, 권한, repo scope를 로그로 남겨야 합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="codex">
+      <h2>OpenAI Codex 관련 기사</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>OpenAI release notes: Codex updates</h3>
+          <p class="meta">게시일: 2026-05-21 · 작성/매체: OpenAI Help Center · 분류: 공식 글, 7일 창 인접</p>
+          <p>OpenAI는 Codex Appshots, Goal mode 일반 제공, browser annotations, locked computer use, browser reliability 개선을 공식 release notes에 정리했습니다. 2026-05-30 보고서 기준으로 Codex 기능의 가장 신뢰도 높은 공식 기준점입니다.</p>
+          <p><strong>실무 시사점:</strong> Codex는 "채팅형 코드 생성"보다 목표와 성공 기준을 주고 기다리는 비동기 실행 도구로 자리잡고 있습니다.</p>
+        </article>
+        <article class="card">
+          <h3>9to5Mac: ChatGPT mobile에서 Windows Codex 작업 시작</h3>
+          <p class="meta">게시일: 2026-05-29 · 작성/매체: 9to5Mac · 분류: 뉴스 기사</p>
+          <p>9to5Mac은 ChatGPT mobile에서 Windows Codex 작업을 시작할 수 있게 되었다고 보도하며, Computer Use가 Windows에서도 동작한다는 점을 언급했습니다. 공식 release notes에서 별도 항목을 확인하지 못했으므로, 이 보고서에서는 secondary source로만 처리합니다.</p>
+          <p><strong>실무 시사점:</strong> Windows 사용자의 remote/mobile Codex 접근성이 실제로 확장되고 있다면, 조직 내 Windows 개발 환경 자동화의 체감 변화가 큽니다. 단, 공식 문서 확인 전에는 rollout 범위와 지역 제한을 따로 점검해야 합니다.</p>
+        </article>
+        <article class="card">
+          <h3>MacRumors: locked Mac computer use</h3>
+          <p class="meta">게시일: 2026-05-22 · 작성/매체: MacRumors · 분류: 뉴스 기사, 7일 창 밖 인접 참고</p>
+          <p>MacRumors는 Codex desktop app의 Computer Use가 macOS에서 잠금 상태 이후에도 동작하는 흐름을 설명했습니다. OpenAI 공식 2026-05-21 notes의 locked computer use와 연결되는 보조 기사입니다.</p>
+          <p><strong>실무 시사점:</strong> Codex remote work는 편의 기능이 아니라 승인, 잠금, display coverage, 지역 제한 같은 보안 UX와 함께 평가해야 합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>Anthropic, <a href="https://www.anthropic.com/news/claude-opus-4-8">Introducing Claude Opus 4.8</a>, 2026-05-28.</li>
+        <li>TechCrunch, <a href="https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/">Anthropic releases Opus 4.8 with new dynamic workflow tool</a>, 2026-05-28.</li>
+        <li>Tom's Guide, <a href="https://www.tomsguide.com/ai/claude-opus-4-8-just-launched-and-anthropic-says-its-far-less-likely-to-fake-answers">Claude Opus 4.8 just launched</a>, 2026-05-28.</li>
+        <li>Cursor, <a href="https://cursor.com/en-US/changelog">What's New in Cursor</a>, latest checked 2026-05-30.</li>
+        <li>Cursor Forum, <a href="https://forum.cursor.com/t/composer-having-a-run-on-neglecting-rules/161744">Composer having a run on neglecting rules</a>, 2026-05-28.</li>
+        <li>Cursor Forum, <a href="https://forum.cursor.com/t/setting-model-to-composer-2-in-automations-always-fall-back-to-composer-2-5/161814">Automation model selection report</a>, 2026-05-28.</li>
+        <li>OpenAI Help Center, <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">ChatGPT Release Notes</a>, checked 2026-05-30.</li>
+        <li>9to5Mac, <a href="https://9to5mac.com/2026/05/29/chatgpt-for-ios-can-now-start-codex-work-on-windows/">ChatGPT for iOS and Android can now start Codex work on Windows</a>, 2026-05-29.</li>
+        <li>MacRumors, <a href="https://www.macrumors.com/2026/05/22/codex-use-mac-apps-when-locked/">OpenAI's Codex Can Now Use Your Mac Even When It's Locked</a>, 2026-05-22.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

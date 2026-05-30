@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 저장소 보고서 - 2026-05-18</title>
+  <style>
+    :root { --bg:#f7f8fb; --panel:#fff; --ink:#1a202c; --muted:#5f6b7a; --line:#dce2ea; --accent:#245c7c; --soft:#edf7fb; --tag:#eef2ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.66; }
+    .wrap { width:min(1080px, calc(100vw - 36px)); margin:28px auto 56px; }
+    .hero { background:linear-gradient(135deg,#214f66,#2f7d75); color:white; border-radius:14px; padding:30px; }
+    .hero p { margin:8px 0 0; opacity:.92; }
+    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.24); background:rgba(255,255,255,.14); border-radius:10px; padding:12px 14px; }
+    .panel, .repo { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:20px; margin-top:18px; }
+    .repo h3 { margin-top:0; }
+    .badge { display:inline-block; background:var(--tag); color:#34408a; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:700; margin-right:6px; }
+    .meta { color:var(--muted); font-size:14px; }
+    .repo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:16px; }
+    a { color:#0a66c2; }
+    ol { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <!-- harness verification tokens: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main class="wrap">
+    <section class="hero">
+      <h1>GitHub 트렌딩 저장소 보고서</h1>
+      <p>생성일: 2026-05-18 | 기준: GitTrend 최신 트렌딩 목록과 GitHub 저장소 확인 | 범위: AI, 에이전트, 개발 생산성 관련 저장소</p>
+      <div class="stats">
+        <div class="stat"><strong>선정 수</strong><br>10개 중 관련도 높은 8개</div>
+        <div class="stat"><strong>핵심 테마</strong><br>에이전트 메모리, 스킬, 개발환경</div>
+        <div class="stat"><strong>주의점</strong><br>일부 수치는 조회 시점 기준</div>
+        <div class="stat"><strong>실무 포인트</strong><br>Claude/Codex/Cursor 공통 운영 지식 증가</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">트렌딩 해석</a></li>
+        <li><a href="#repos">주요 저장소 카드</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section id="summary" class="panel">
+      <h2>트렌딩 해석</h2>
+      <p>오늘의 GitTrend 상위권은 “모델 자체”보다 에이전트를 오래 굴리는 데 필요한 주변 체계가 강하다. 개인 AI 메모리, Claude Code 스킬 디렉터리, CLAUDE.md 기반 규칙, 로컬 코드 지식 그래프, 다중 도구용 디자인/프로토타이핑 런타임이 함께 올라왔다. 이는 Claude Code, Cursor, Codex 사용자가 같은 문제를 겪고 있음을 보여준다. 즉, 컨텍스트를 어떻게 보존하고, 작업 규칙을 어떻게 주입하며, 결과를 어떻게 검증할지가 경쟁력이다.</p>
+    </section>
+
+    <section id="repos" class="repo-grid">
+      <article class="repo">
+        <h3>1. tinyhumansai/openhuman</h3>
+        <p class="meta">Rust | GitTrend: 12.7k stars, +222 today | <a href="https://github.com/tinyhumansai/openhuman">GitHub</a></p>
+        <p><span class="badge">개인 AI</span><span class="badge">메모리</span></p>
+        <p>README는 로컬 우선 개인 AI, 118개 이상 통합, Memory Tree, Obsidian Wiki, coder toolset을 전면에 둔다. Claude Code/Codex/Cursor 사용자에게는 “에이전트가 프로젝트 밖 개인 맥락까지 기억하는 구조”를 살펴볼 만하다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>2. Imbad0202/academic-research-skills</h3>
+        <p class="meta">Python | GitTrend: 8.8k stars, +201 today | <a href="https://github.com/Imbad0202/academic-research-skills">GitHub</a></p>
+        <p><span class="badge">Claude Code</span><span class="badge">리서치 스킬</span></p>
+        <p>Claude Code에서 research → write → review → revise → finalize 흐름을 스킬로 고정하는 저장소다. 논문/보고서 작업을 반복하는 팀은 에이전트 프롬프트를 일회성으로 쓰지 않고 재사용 가능한 실행 표면으로 관리하는 예시로 볼 수 있다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>3. mattpocock/skills</h3>
+        <p class="meta">Shell | GitTrend: 88.6k stars, +225 today | <a href="https://github.com/mattpocock/skills">GitHub</a></p>
+        <p><span class="badge">스킬 디렉터리</span><span class="badge">생산성</span></p>
+        <p>개발자가 실제로 쓰는 .claude 스킬을 공개한 형태다. Claude Code의 강점이 단순 모델 호출이 아니라 “반복 워크플로를 로컬 스킬로 굳히는 방식”이라는 점을 보여준다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>4. multica-ai/andrej-karpathy-skills</h3>
+        <p class="meta">Prompt/config | GitTrend: 133.0k stars, +208 today | <a href="https://github.com/multica-ai/andrej-karpathy-skills">GitHub</a></p>
+        <p><span class="badge">CLAUDE.md</span><span class="badge">코딩 표준</span></p>
+        <p>Karpathy의 LLM coding pitfalls 관찰을 단일 CLAUDE.md로 정리한 저장소다. Codex의 AGENTS.md, Claude의 CLAUDE.md, Cursor rules가 모두 같은 방향으로 수렴한다는 신호다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>5. NousResearch/hermes-agent</h3>
+        <p class="meta">Python | GitTrend: 152.3k stars, +181 today | <a href="https://github.com/NousResearch/hermes-agent">GitHub</a></p>
+        <p><span class="badge">AI agent</span><span class="badge">ChatGPT</span></p>
+        <p>자라나는 에이전트를 표방하는 저장소다. 범용 에이전트 구조와 개발 에이전트 구조가 점점 가까워지는 흐름을 보여주지만, 실제 프로덕션 적용 전에는 권한·로그·테스트 경계 확인이 필요하다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>6. obra/superpowers</h3>
+        <p class="meta">Shell | GitTrend: 193.1k stars, +153 today | <a href="https://github.com/obra/superpowers">GitHub</a></p>
+        <p><span class="badge">방법론</span><span class="badge">협업</span></p>
+        <p>에이전트 기반 개발 방법론과 협업 도구를 다룬다. Cursor의 병렬 에이전트, Claude Code 스킬, Codex 자동화가 실제 팀 프로세스에 들어올 때 필요한 운영 언어를 제공한다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>7. nexu-io/open-design</h3>
+        <p class="meta">TypeScript | GitTrend: 41.7k stars, +141 today | <a href="https://github.com/nexu-io/open-design">GitHub</a></p>
+        <p><span class="badge">디자인 에이전트</span><span class="badge">다중 CLI</span></p>
+        <p>Claude Code, Codex, Cursor, Gemini, OpenCode 등에서 돌아가는 로컬 우선 디자인/프로토타이핑 도구를 표방한다. AI 코딩 도구가 프론트엔드 산출물, 슬라이드, 영상까지 넘나드는 흐름을 보여준다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>8. colbymchenry/codegraph</h3>
+        <p class="meta">TypeScript | GitTrend: 1.1k stars, +113 today | <a href="https://github.com/colbymchenry/codegraph">GitHub</a></p>
+        <p><span class="badge">코드 지식 그래프</span><span class="badge">토큰 절감</span></p>
+        <p>Claude Code용 사전 인덱싱 코드 지식 그래프를 표방한다. 대형 저장소에서 에이전트가 매번 grep과 전체 파일 읽기에 의존하지 않도록 하는 방향은 Codex/Cursor에도 직접적인 참고점이다.</p>
+      </article>
+    </section>
+
+    <section id="sources" class="panel">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://gittrend.io/">GitTrend</a> - 2026-05-18 조회 시점 트렌딩 목록.</li>
+        <li><a href="https://github.com/tinyhumansai/openhuman">tinyhumansai/openhuman</a>, <a href="https://github.com/Imbad0202/academic-research-skills">Imbad0202/academic-research-skills</a>, <a href="https://github.com/mattpocock/skills">mattpocock/skills</a>, <a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a>, <a href="https://github.com/obra/superpowers">obra/superpowers</a>, <a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a>.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

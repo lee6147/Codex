@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-05-23</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --text:#1d2633; --muted:#5e6b7b; --line:#d9e1ec; --soft:#e9f2ff; --warn:#fff4d6; --review:#eef7f1; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.68; }
+    main { width:min(1040px, calc(100vw - 32px)); margin:30px auto 64px; }
+    header { background:linear-gradient(135deg,#153a5f,#25706d); color:white; border-radius:18px; padding:32px; }
+    h1 { margin:0; font-size:30px; }
+    h2 { margin:0 0 14px; font-size:21px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:#0b62b4; }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.22); border-radius:12px; padding:12px 14px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-color:#c8ddf7; }
+    .notice { background:var(--warn); border-color:#edd79c; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; background:#fff; }
+    .badge { display:inline-block; border-radius:999px; padding:4px 10px; font-size:12px; font-weight:700; background:#e9edf5; color:#324256; margin:0 6px 8px 0; }
+    .review { background:var(--review); color:#17653a; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+    footer { color:var(--muted); font-size:14px; margin-top:22px; }
+  </style>
+</head>
+<body>
+<!-- harness compatibility tokens: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<main>
+  <header>
+    <h1>AI 코딩 도구 기사 요약</h1>
+    <p>Claude Code, Cursor, OpenAI Codex 관련 기사와 공개 사용 데이터에서 실무 신호를 정리했다.</p>
+    <div class="meta">
+      <div><strong>생성일</strong><br>2026-05-23</div>
+      <div><strong>우선 검색 창</strong><br>2026-05-21~2026-05-23</div>
+      <div><strong>확장 검색 창</strong><br>2026-05-16~2026-05-23</div>
+      <div><strong>확장 사유</strong><br>2일 창의 tool-specific 기사량이 부족해 7일로 확장</div>
+    </div>
+  </header>
+
+  <section class="panel notice">
+    <h2>기간 확장 공지</h2>
+    <p>최근 2일(2026-05-21~2026-05-23)에는 Claude Code, Cursor, Codex를 각각 2~3개씩 다룰 만큼 독립 기사량이 부족했다. 따라서 기사 레인은 2026-05-16~2026-05-23까지 7일로 확장했다.</p>
+  </section>
+
+  <section class="panel summary">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li>기사의 공통 관심사는 "어떤 도구가 최고인가"보다 비용, 장시간 agent 운영, IDE-first와 terminal-first workflow 분리로 이동했다.</li>
+      <li>Codex는 OpenClaw 사례와 Tom's Guide 비교에서 강한 batch/analytics 성향을 보였지만, 비용 추적과 작업 설계가 중요하다는 경고도 함께 나온다.</li>
+      <li>Claude Code와 Cursor는 경쟁 관계라기보다 역할 분담으로 설명되는 경우가 많다. Claude Code는 긴 refactor와 terminal workflow, Cursor는 inline edit와 daily IDE workflow에 강점이 있다고 정리된다.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#claude">Claude Code 관련 기사</a></li>
+      <li><a href="#cursor">Cursor 관련 기사</a></li>
+      <li><a href="#codex">OpenAI Codex 관련 기사</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section id="claude" class="panel">
+    <h2>Claude Code 관련 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge review">비교 리뷰</span><span class="badge">2026-05-15</span>
+        <h3>Dupple: Claude Code vs Cursor in 2026</h3>
+        <p>Dupple은 Claude Code가 긴 autonomous task, large-codebase refactoring, terminal-first workflow에 강하고 Cursor는 IDE-native development, Tab autocomplete, Composer 기반 병렬 작업에 강하다고 정리했다. 결론은 하나만 고르기보다 Cursor를 editor로, Claude Code를 어려운 multi-file 작업용 terminal agent로 같이 쓰는 조합이다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code를 "항상 쓰는 editor"로 볼 필요는 없다. 복잡한 변경, 장시간 검증, repo 전체 맥락이 필요한 작업에 투입하는 전문 agent로 포지셔닝하는 것이 효율적이다.</p>
+        <p><strong>신뢰도 메모:</strong> 비교 리뷰. 공식 문서는 아니므로 가격과 benchmark 수치는 최신 공식 문서로 재검증 필요.</p>
+        <p><a href="https://dupple.com/learn/claude-code-vs-cursor">기사 보기</a></p>
+      </article>
+      <article class="card">
+        <span class="badge review">비교 리뷰</span><span class="badge">2026-05-17</span>
+        <h3>Tom's Guide: Claude Code와 Codex로 앱 3개 제작 비교</h3>
+        <p>Tom's Guide는 subscription tracker, grocery comparison, financing calculator를 두 agent로 만들고 비교했다. Claude Code는 즉시 사용 가능한 UX와 빠른 완성도에서 강했고, Codex는 더 풍부한 dashboard와 분석 기능을 제공하는 경향이 있었다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code는 "빠르게 돌아가는 결과물"이 중요한 초안/프로토타입 단계에서 강점이 있다. 다만 분석 dashboard나 장기 확장 구조를 원하면 결과물 검토와 보강이 필요하다.</p>
+        <p><strong>신뢰도 메모:</strong> 단일 매체의 hands-on 비교라 일반화는 제한적이다.</p>
+        <p><a href="https://www.tomsguide.com/ai/claude-code-vs-openai-codex-i-built-3-real-apps-to-find-the-better-agent-heres-the-verdict">기사 보기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="cursor" class="panel">
+    <h2>Cursor 관련 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge review">비교 리뷰</span><span class="badge">2026-05-15</span>
+        <h3>Dupple: Cursor는 daily coding과 parallel agent workflow에 강함</h3>
+        <p>Dupple은 Cursor의 장점을 Tab autocomplete, Cmd+K inline edit, Composer multi-file change, 최대 8개 병렬 agent(worktree 기반)로 요약했다. Claude Code와 비교하면 Cursor는 사용자가 editor 안에서 흐름을 유지하며 개입하기 쉽다는 점이 강조된다.</p>
+        <p><strong>실무 시사점:</strong> 개발자가 직접 파일을 보며 빠르게 수정하는 업무, UI feedback이 필요한 웹 기능, 짧은 반복 작업은 Cursor가 더 자연스러운 선택일 수 있다.</p>
+        <p><strong>신뢰도 메모:</strong> 공식 Cursor 문서가 아니라 리뷰/가이드 성격이다.</p>
+        <p><a href="https://dupple.com/learn/claude-code-vs-cursor">기사 보기</a></p>
+      </article>
+      <article class="card">
+        <span class="badge review">시장 비교</span><span class="badge">2026-05-13 update</span>
+        <h3>Hundred Tabs: Cursor 3는 developer experience에서 강점</h3>
+        <p>Hundred Tabs는 2026년 5월 AI coding tools ranking에서 Claude Code를 benchmark 선두로, Cursor 3를 developer experience 선두로 분리했다. Cursor는 AI가 editor 안에 붙어 실시간 변경과 inline suggestion을 보여주는 낮은 마찰의 workflow로 설명된다.</p>
+        <p><strong>실무 시사점:</strong> 팀 전체 도입에서는 raw benchmark보다 학습 비용과 daily workflow friction이 더 중요할 수 있다.</p>
+        <p><strong>신뢰도 메모:</strong> 월간 ranking 자료이며 Last verified가 2026-04로 표시되어 일부 수치는 보수적으로 봐야 한다.</p>
+        <p><a href="https://hundredtabs.com/blog/best-ai-coding-tools-ranked-2026">기사 보기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="codex" class="panel">
+    <h2>OpenAI Codex 관련 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge review">뉴스</span><span class="badge">2026-05-17</span>
+        <h3>Tom's Hardware: OpenClaw의 대규모 Codex agent 비용 사례</h3>
+        <p>Tom's Hardware는 Peter Steinberger의 OpenClaw 팀이 약 100개 Codex instance를 운영하며 30일간 603B tokens와 7.6M requests, 130만 달러 규모 API 사용량을 기록했다고 보도했다. 기사에서는 PR 리뷰, security scan, issue deduplication, fix 작성 같은 작업을 agent fleet이 수행했다고 설명한다.</p>
+        <p><strong>실무 시사점:</strong> Codex류 병렬 agent 운영은 생산성 실험으로 강력하지만, fast mode와 token billing이 비용 폭증 지점이 될 수 있다. 대규모 자동화에는 budget guardrail과 usage dashboard가 필수다.</p>
+        <p><strong>신뢰도 메모:</strong> 보도 기사이며 사용량 스크린샷/후속 발언 기반이다. 일반 팀의 평균 비용으로 해석하면 안 된다.</p>
+        <p><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month">기사 보기</a></p>
+      </article>
+      <article class="card">
+        <span class="badge review">사용 데이터</span><span class="badge">2026-05-22</span>
+        <h3>clawdboard: opt-in 사용 로그 기반 AI coding spend</h3>
+        <p>clawdboard는 2026-05-22 18:10 UTC 기준 56명의 opt-in 개발자 로그에서 202k달러 추정 비용과 258.1B tokens를 집계했다. Claude Code가 비용 share 74.3%, Codex CLI가 24.0%로 나타났고, Codex CLI는 16명의 개발자가 28.3B tokens를 사용한 것으로 표시됐다.</p>
+        <p><strong>실무 시사점:</strong> Codex CLI는 작은 표본에서도 비용 share가 크다. tool 선택보다 작업량, 모델, 자동화 강도가 비용을 좌우한다.</p>
+        <p><strong>신뢰도 메모:</strong> opt-in 표본이므로 시장 점유율이 아니라 공개 참여자의 사용량 snapshot으로 해석해야 한다.</p>
+        <p><a href="https://clawdboard.ai/stats/tools">자료 보기</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sources" class="panel">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://dupple.com/learn/claude-code-vs-cursor">Dupple, Claude Code vs Cursor in 2026, 2026-05-15</a></li>
+      <li><a href="https://www.tomsguide.com/ai/claude-code-vs-openai-codex-i-built-3-real-apps-to-find-the-better-agent-heres-the-verdict">Tom's Guide, Claude Code vs OpenAI Codex hands-on comparison, 2026-05-17</a></li>
+      <li><a href="https://hundredtabs.com/blog/best-ai-coding-tools-ranked-2026">Hundred Tabs, Best AI Coding Tools Ranked, last updated 2026-05-13</a></li>
+      <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month">Tom's Hardware, OpenClaw Codex token spend, 2026-05-17</a></li>
+      <li><a href="https://clawdboard.ai/stats/tools">clawdboard AI coding tool comparison, last updated 2026-05-22 18:10 UTC</a></li>
+    </ul>
+    <footer>확인 불가: 2026-05-21~2026-05-23 안에서 각 도구별 2~3개의 독립적이고 정보량 있는 기사를 확보하지 못해 7일 창으로 확장했다.</footer>
+  </section>
+</main>
+</body>
+</html>

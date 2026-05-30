@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-20</title>
+  <style>
+    :root { color-scheme: light; --bg:#f5f7fb; --panel:#fff; --text:#17202c; --muted:#607086; --line:#d8e0ec; --link:#075fb8; --accent:#e7f1ff; --ok:#e8f7ef; --warn:#fff4d8; --hero:#193b65; --hero2:#2f6f73; --hero-text:#fff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:32px auto 64px; }
+    h1,h2,h3 { line-height:1.3; margin-top:0; }
+    a { color:var(--link); }
+    .hero { background:linear-gradient(135deg,var(--hero),var(--hero2)); color:var(--hero-text); border-radius:16px; padding:34px; margin-bottom:22px; }
+    .hero p { margin:8px 0 0; opacity:.94; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:12px; padding:14px 16px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:18px; }
+    .notice { background:var(--warn); border:1px solid #f2d384; border-radius:12px; padding:14px 16px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:14px; background:#fff; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+    .badge { display:inline-block; font-size:.78rem; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--accent); color:#204977; }
+    .badge.ok { background:var(--ok); color:#17643a; }
+    .badge.warn { background:var(--warn); color:#775300; }
+    .meta-line { color:var(--muted); font-size:.92rem; margin-top:10px; }
+    .sources ul { margin:0; padding-left:20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>공식 업데이트 보고서</h1>
+      <p>생성일: 2026-05-20 | 조사 기간: 2026-05-18 ~ 2026-05-20 | 대상: Claude Code, Cursor, OpenAI Codex</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>확인된 공식 업데이트</strong><br>Cursor Composer 2.5, OpenAI-Dell Codex 엔터프라이즈 파트너십</div>
+        <div class="stat"><strong>엄격 기간 내 공백</strong><br>Claude Code는 3일 창 안의 새 공식 릴리즈를 확인하지 못함</div>
+        <div class="stat"><strong>실무 의미</strong><br>이번 흐름은 모델 품질보다 운영 환경, 원격 제어, 엔터프라이즈 배포로 이동</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#cursor">Cursor 공식 업데이트</a></li>
+        <li><a href="#codex">OpenAI Codex 공식 업데이트</a></li>
+        <li><a href="#claude">Claude Code 확인 상태</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">2026-05-18 이후 확인된 공식 변화는 Cursor와 OpenAI 쪽에 집중됐다. Cursor는 Composer 2.5로 장시간 에이전트 작업 품질을 전면에 세웠고, OpenAI는 Dell과 Codex를 하이브리드 및 온프레미스 환경으로 확장하는 기업 배포 이야기를 강화했다.</div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Composer 2.5 공개</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 블로그</span>
+          <span class="badge">2026-05-18</span>
+        </div>
+        <p>Cursor는 Composer 2.5를 공개하며 Composer 2 대비 지능과 행동 품질이 개선됐다고 밝혔다. 공식 글은 장시간 작업 지속성, 복잡한 지시 준수, 협업 감각 개선을 핵심 메시지로 제시한다.</p>
+        <p><strong>중요한 이유:</strong> Cursor는 이제 IDE 기능 추가만이 아니라 자체 에이전트 모델의 품질과 비용 구조를 전면 경쟁 축으로 삼고 있다. Cursor 안에서 긴 리팩터링, 다중 파일 수정, 계획 기반 작업을 자주 돌리는 팀은 기본 모델 선택을 재검토할 만하다.</p>
+        <p class="meta-line">출처: Cursor Blog | URL: <a href="https://cursor.com/blog/composer-2-5">https://cursor.com/blog/composer-2-5</a></p>
+      </article>
+      <article class="card">
+        <h3>Composer 2.5 가격 및 초기 사용량 확대</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 변경 로그</span>
+          <span class="badge">2026-05-18</span>
+        </div>
+        <p>Cursor 변경 로그는 Composer 2.5의 Standard와 Fast 가격을 명시하고, 출시 첫 주에는 포함 사용량이 두 배라고 안내한다.</p>
+        <p><strong>중요한 이유:</strong> 모델 성능보다 실제 비용 예측 가능성이 중요한 팀에게는 출시 초기 1주일이 실전 코드베이스에서 품질과 비용을 동시에 확인할 수 있는 평가 구간이다.</p>
+        <p class="meta-line">출처: Cursor Changelog | URL: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>Dell과 하이브리드 및 온프레미스 엔터프라이즈 환경 파트너십</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 블로그</span>
+          <span class="badge">2026-05-18</span>
+        </div>
+        <p>OpenAI는 Dell Technologies와의 파트너십을 통해 Codex를 하이브리드 및 온프레미스 기업 환경으로 확장하는 방향을 발표했다. Dell AI Factory와 Codex, ChatGPT Enterprise, API 기반 솔루션의 접점을 탐색한다는 내용이다.</p>
+        <p><strong>중요한 이유:</strong> Codex가 개인 개발자용 코딩 에이전트에서 기업 데이터와 시스템 가까이에 배치되는 운영형 에이전트로 확장되고 있음을 보여준다. 규제, 내부망, 데이터 거버넌스가 중요한 조직에 특히 관련성이 높다.</p>
+        <p class="meta-line">출처: OpenAI | URL: <a href="https://openai.com/index/dell-codex-enterprise-partnership/">https://openai.com/index/dell-codex-enterprise-partnership/</a></p>
+      </article>
+      <article class="card">
+        <h3>참고: ChatGPT 모바일 앱의 Codex 원격 접근</h3>
+        <div class="badge-row">
+          <span class="badge ok">확인 완료</span>
+          <span class="badge">공식 릴리즈 노트</span>
+          <span class="badge">2026-05-14</span>
+          <span class="badge warn">3일 창 밖</span>
+        </div>
+        <p>3일 엄격 창 밖이지만, OpenAI는 2026-05-14에 ChatGPT 모바일 앱에서 Codex 원격 접근 프리뷰를 안내했다. 사용자는 모바일에서 스레드 이동, 승인, 방향 전환, 출력 검토를 수행할 수 있다.</p>
+        <p><strong>중요한 이유:</strong> 2026-05-18 Dell 발표와 연결하면 Codex의 방향은 "데스크 앞 코딩"에서 "장시간 에이전트 세션을 여러 승인 표면에서 관리"하는 쪽으로 움직이고 있다.</p>
+        <p class="meta-line">출처: OpenAI Help Center | URL: <a href="https://help.openai.com/en/articles/6825453-release-notes">https://help.openai.com/en/articles/6825453-release-notes</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>엄격 3일 창 내 새 공식 업데이트 확인 불가</h3>
+        <div class="badge-row">
+          <span class="badge warn">확인 불가</span>
+          <span class="badge">공식 GitHub 릴리즈 확인</span>
+          <span class="badge">2026-05-18 ~ 2026-05-20</span>
+        </div>
+        <p>Anthropic의 Claude Code 공식 GitHub 릴리즈와 공개 변경 로그를 확인했지만, 2026-05-18부터 2026-05-20 사이의 새 공식 Claude Code 업데이트는 확인하지 못했다.</p>
+        <p><strong>가장 가까운 공식 참고점:</strong> 2026-05-06 릴리즈에는 플러그인 URL 세션 로딩, 패키지 매니저 자동 업데이트, Gateway 모델 발견 정책 변경, 캐시 TTL 수정, Windows 및 MCP 관련 수정 등이 포함됐다.</p>
+        <p><strong>중요한 이유:</strong> 이번 공식 업데이트 레인에서는 Claude Code 자체 기능보다 경쟁 도구의 운영 표면 확장이 더 강하게 관찰된다. Claude Code 관련 시장 이슈는 아티클 보고서에서 사용량 제한과 비교 리뷰 중심으로 따로 다룬다.</p>
+        <p class="meta-line">출처: Anthropic Claude Code GitHub Releases | URL: <a href="https://github.com/anthropics/claude-code/releases">https://github.com/anthropics/claude-code/releases</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://cursor.com/blog/composer-2-5">Cursor Blog - Introducing Composer 2.5</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://openai.com/index/dell-codex-enterprise-partnership/">OpenAI - Dell Technologies partner to bring Codex to hybrid and on-premises enterprise environments</a></li>
+        <li><a href="https://help.openai.com/en/articles/6825453-release-notes">OpenAI Help Center - ChatGPT Release Notes</a></li>
+        <li><a href="https://github.com/anthropics/claude-code/releases">Anthropic Claude Code GitHub Releases</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

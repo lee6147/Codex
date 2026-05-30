@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 아티클 요약 - 2026-05-26</title>
+  <style>
+    :root { color-scheme:light; --bg:#f7f8fb; --panel:#fff; --text:#17202a; --muted:#607085; --line:#d9e1ec; --link:#0b63c7; --accent:#eaf2ff; --warn:#fff4d8; --hero:#402c56; --review:#f2ecff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:32px auto 64px; }
+    h1,h2,h3 { line-height:1.3; margin-top:0; }
+    a { color:var(--link); }
+    .hero { background:var(--hero); color:#fff; border-radius:16px; padding:34px; margin-bottom:22px; }
+    .meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:14px 16px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:18px; }
+    .notice { background:var(--warn); border:1px solid #f1d48a; border-radius:12px; padding:14px 16px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .card { border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:14px; background:#fff; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px; }
+    .badge { display:inline-block; font-size:.78rem; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--accent); color:#174d7d; }
+    .badge.review { background:var(--review); color:#57338a; }
+    .badge.warn { background:var(--warn); color:#795500; }
+    .meta-line { color:var(--muted); font-size:.92rem; margin-top:10px; }
+    .sources ul { margin:0; padding-left:20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 아티클 요약</h1>
+      <p>생성일: 2026-05-26 | 기본 기사 창: 2026-05-25 ~ 2026-05-26 | 확장 기사 창: 2026-05-20 ~ 2026-05-26</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장</strong><br>도구별 2~3개 목표를 맞추기 어려워 7일로 확장했다.</div>
+        <div class="stat"><strong>핵심 흐름</strong><br>Goal mode, Automations, Appshots처럼 장기 agent 운영 기능이 기사 주제다.</div>
+        <div class="stat"><strong>품질 메모</strong><br>Claude 단독 최신 기사는 적어 비교/워크플로 글을 보조로 사용했다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#notice">7일 확장 공지</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="notice">
+      <h2>7일 확장 공지</h2>
+      <div class="notice">최근 2일 안에는 Claude Code, Cursor, Codex를 도구별로 균형 있게 다룬 고신뢰 아티클이 부족했다. 그래서 기사 검색 범위를 2026-05-20부터 2026-05-26까지 7일로 넓혔다.</div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>Claude Code /goal Command: Setup Guide (2026)</h3>
+        <div class="badge-row"><span class="badge review">실사용 가이드</span><span class="badge warn">7일 확장</span></div>
+        <p>게시일: 2026-05-25 | 작성자/매체: Alex Fraser, AI Systems Lab / Medium</p>
+        <p>요약: 이 글은 Claude Code의 /goal을 단순한 "계속 진행" 버튼이 아니라 완료 조건과 evaluator loop가 붙은 장기 작업 제어 모델로 설명한다. 핵심은 evaluator가 도구를 실행하지 못하므로 완료 조건 안에 검증 출력이 대화에 남아야 한다는 점이다. PLAN.md를 먼저 만들고 acceptance criteria, turn budget, risk를 명시하라는 조언이 실무적이다.</p>
+        <p>실무 시사점: 장기 agent 작업은 "테스트가 통과했는가"보다 "테스트 명령과 결과가 transcript에 남았는가"가 중요하다. Claude Code뿐 아니라 Codex Goal mode에도 같은 검증 설계가 필요하다.</p>
+        <p class="meta-line">신뢰도 메모: 실사용 후기/가이드 | <a href="https://medium.com/ai-systems-lab/claude-code-goal-command-setup-guide-2026-74f8040e9834">출처 URL</a></p>
+      </article>
+      <article class="card">
+        <h3>Claude Code 기사량 부족 메모</h3>
+        <div class="badge-row"><span class="badge warn">자료 부족</span><span class="badge">확인 불가 항목 분리</span></div>
+        <p>2026-05-20부터 2026-05-26까지의 확장 창에서도 Claude Code만을 중심으로 다룬 고신뢰 신규 아티클은 충분하지 않았다. 따라서 도구별 목표 개수를 억지로 채우지 않고, 확인 가능한 /goal 운영 가이드 1건과 공식 changelog 맥락만 반영했다.</p>
+        <p>실무 시사점: Claude Code는 기사량보다 공식 changelog와 실제 workflow 문서의 품질을 우선해서 보는 편이 안전하다. 특히 장기 실행 기능은 홍보성 요약보다 완료 조건과 검증 증거 설계가 중요하다.</p>
+        <p class="meta-line">신뢰도 메모: 자료 부족 고지 | 출처: 검색 결과 및 공식 changelog 대조 | 확인 상태: 확인 완료</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Cursor 3.5 brings multi-repo and no-repo Automations to the IDE's Agents Window</h3>
+        <div class="badge-row"><span class="badge review">뉴스 기사</span><span class="badge warn">7일 확장</span></div>
+        <p>게시일: 2026-05-21 | 작성자/매체: Pondero Newsdesk</p>
+        <p>요약: Cursor 3.5가 Automations를 IDE 안의 Agents Window로 가져오고, multi-repo와 no-repo 설정을 추가했다는 내용이다. 기존에는 web dashboard가 분리돼 있었지만 이제 agent work와 automation 관리가 같은 화면으로 묶인다. no-repo template는 Slack digest, product analytics, finance, customer health처럼 코드 밖 업무 신호까지 다룬다.</p>
+        <p>실무 시사점: Cursor는 editor를 넘어 업무 자동화 console을 지향한다. 팀은 repo 권한, 외부 SaaS 연결, agent run 비용을 함께 설계해야 한다.</p>
+        <p class="meta-line">신뢰도 메모: 뉴스 기사 | <a href="https://pondero.ai/news/2026-05-21-cursor-v35-automations/">출처 URL</a></p>
+      </article>
+      <article class="card">
+        <h3>Composer 2.5: benchmarks, prices and comparison</h3>
+        <div class="badge-row"><span class="badge review">비교 리뷰</span><span class="badge warn">7일 확장</span></div>
+        <p>게시일: 2026-05-22 업데이트 | 작성자/매체: DataCamp</p>
+        <p>요약: DataCamp는 Composer 2.5를 Cursor 안에서만 동작하는 coding-specialized model로 설명한다. 장기 코딩 세션, multi-file editing, terminal command 사용, tool use에 맞춰 훈련됐으며 CursorBench와 benchmark 수치 해석에는 한계가 있다고 짚는다. 가격은 frontier model보다 낮지만 Fast가 기본값이라 비용 체감은 설정에 따라 달라질 수 있다.</p>
+        <p>실무 시사점: Composer 2.5는 Cursor 내부 routine coding과 긴 agent session에 적합하지만, 외부 API 호출이나 독립 재현 benchmark가 필요한 조직에는 제약이 있다.</p>
+        <p class="meta-line">신뢰도 메모: 비교 리뷰 | <a href="https://www.datacamp.com/es/blog/composer-2-5">출처 URL</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>Codex for Mac updated with new Appshots feature that instantly gives chat context</h3>
+        <div class="badge-row"><span class="badge review">뉴스 기사</span><span class="badge warn">7일 확장</span></div>
+        <p>게시일: 2026-05-21 | 작성자/매체: Zac Hall / 9to5Mac</p>
+        <p>요약: 9to5Mac은 Codex for Mac의 Appshots, upgraded goal mode, faster in-app browser, shared plugins, analytics 확장을 요약했다. Command-Command로 Mac app window의 screenshot과 text를 Codex thread에 넣는 흐름을 강조한다. locked computer use와 mobile 연동도 함께 다뤘다.</p>
+        <p>실무 시사점: Codex는 prompt 작성 시간을 줄이고 화면 문맥을 바로 주입하는 방향으로 이동한다. 보안팀은 Screen Recording, Accessibility, locked use 권한을 별도 검토해야 한다.</p>
+        <p class="meta-line">신뢰도 메모: 뉴스 기사 | <a href="https://9to5mac.com/2026/05/21/codex-for-mac-updated-with-new-appshots-feature-that-instantly-gives-chat-context/">출처 URL</a></p>
+      </article>
+      <article class="card">
+        <h3>OpenAI Adds Appshots and Goal Mode to Codex</h3>
+        <div class="badge-row"><span class="badge review">뉴스 기사</span><span class="badge warn">7일 확장</span></div>
+        <p>게시일: 2026-05-22 | 작성자/매체: Andrés Martínez / aiHola</p>
+        <p>요약: aiHola는 Appshots가 macOS-only이고 Codex app build 26.519에 포함됐다고 정리한다. Goal mode가 beta를 벗어나 app, IDE extension, CLI에서 쓸 수 있게 됐고, 장기 실행 중 check-in, steer, pause가 가능하다는 점을 강조한다. 다만 multi-day run 안정성은 문서가 정량화하지 않는다고 선을 그었다.</p>
+        <p>실무 시사점: Goal mode는 장기 자동화의 표준 interface가 되고 있지만, 조직이 자체 acceptance criteria와 verifier evidence를 설계해야 한다.</p>
+        <p class="meta-line">신뢰도 메모: 뉴스 기사 | <a href="https://aihola.com/article/codex-appshots-goal-mode">출처 URL</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://medium.com/ai-systems-lab/claude-code-goal-command-setup-guide-2026-74f8040e9834">Medium - Claude Code /goal Command Setup Guide</a></li>
+        <li><a href="https://pondero.ai/news/2026-05-21-cursor-v35-automations/">Pondero - Cursor 3.5 Automations</a></li>
+        <li><a href="https://www.datacamp.com/es/blog/composer-2-5">DataCamp - Composer 2.5 benchmarks and comparison</a></li>
+        <li><a href="https://9to5mac.com/2026/05/21/codex-for-mac-updated-with-new-appshots-feature-that-instantly-gives-chat-context/">9to5Mac - Codex Appshots</a></li>
+        <li><a href="https://aihola.com/article/codex-appshots-goal-mode">aiHola - Codex Appshots and Goal Mode</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

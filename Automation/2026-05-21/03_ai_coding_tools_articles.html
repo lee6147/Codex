@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-21 AI 코딩 도구 아티클 요약</title>
+  <style>
+    :root { --bg:#f7f8fb; --panel:#fff; --text:#18212d; --muted:#627084; --line:#dbe3ee; --blue:#0b62b4; --green:#147d50; --amber:#9a6700; --rose:#b42318; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.66; }
+    .wrap { width:min(1060px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#14324a; color:white; border-radius:18px; padding:32px; }
+    h1, h2, h3 { line-height:1.25; margin-top:0; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:18px; }
+    .meta div { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:12px 14px; }
+    .panel, .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px; margin-top:18px; }
+    .notice { background:#fff7df; border-left:4px solid var(--amber); border-radius:12px; padding:14px 16px; margin-top:18px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:16px; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 10px; font-size:12px; font-weight:700; margin-right:6px; }
+    .official { background:#e8f7ef; color:var(--green); } .review { background:#eef6ff; color:var(--blue); } .news { background:#fff1f0; color:var(--rose); } .memo { background:#f1efff; color:#6f42c1; }
+    .source { color:var(--muted); font-size:14px; }
+    ul, ol { margin:8px 0 0; padding-left:20px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>AI 코딩 도구 아티클 요약</h1>
+      <p>Claude Code, Cursor, OpenAI Codex 관련 최근 기사와 기술 글을 실무 관점으로 요약했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-21</div>
+        <div><strong>우선 조사 기간</strong><br>2026-05-20 ~ 2026-05-21</div>
+        <div><strong>확장 조사 기간</strong><br>2026-05-15 ~ 2026-05-21</div>
+        <div><strong>기간 확장</strong><br>예, 2일 내 도구별 기사량 부족</div>
+      </div>
+    </header>
+
+    <section class="notice">
+      <strong>7일 확장 공지:</strong> 최근 2일 창에서는 Claude Code, Cursor, Codex를 도구별로 2~3개씩 채울 만큼의 신뢰 가능한 글이 부족했다. 따라서 기사 검색 범위를 2026-05-15부터 2026-05-21까지로 넓혔다.
+    </section>
+
+    <section class="panel">
+      <h2>핵심 요약</h2>
+      <ul>
+        <li>Cursor는 Composer 2.5와 Automations로 “IDE + 자체 모델 + 운영 자동화” 조합을 밀고 있다.</li>
+        <li>Claude Code는 높은 선호도와 사용량에도 비용·라이선스·기업 표준화 압력을 받고 있다.</li>
+        <li>Codex는 모바일 원격 접근, GitHub Copilot 기본 모델 전환, 비교 리뷰에서 비개발자 친화성과 async PR 흐름이 부각된다.</li>
+      </ul>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li>Claude Code 관련 기사</li>
+        <li>Cursor 관련 기사</li>
+        <li>OpenAI Codex 관련 기사</li>
+        <li>공통 시사점</li>
+        <li>출처</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Claude Code</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Microsoft cancels Claude Code licenses, shifting developers to GitHub Copilot CLI</h3>
+          <p><span class="badge news">뉴스 기사</span><span class="badge">2026-05-15</span></p>
+          <p class="source">매체: Windows Central · 작성자: Kevin Okemwa</p>
+          <p>Microsoft 일부 조직이 Claude Code 사용을 줄이고 GitHub Copilot CLI 쪽으로 전환하려 한다는 보도다. 기사에 따르면 Claude Code는 내부에서 인기가 있었지만, Microsoft가 직접 통제할 수 있는 GitHub Copilot CLI와 비용 구조가 전환 이유로 거론됐다. 기업 내부 AI 코딩 도구 선택이 단순 품질 비교가 아니라 비용, 보안, 플랫폼 전략의 문제라는 점을 보여준다.</p>
+          <p><strong>실무 시사점:</strong> 팀 표준 도구는 개발자가 선호하는 도구와 다를 수 있다. Claude Code를 도입할 때는 비용 추적, 감사 로그, 내부 저장소 정책과 함께 설득해야 한다.</p>
+          <p><a href="https://www.windowscentral.com/microsoft/microsoft-cancels-claude-code-licenses-shifting-developers-to-github-copilot-cli-a-move-likely-driven-by-financial-motives">원문 보기</a></p>
+        </article>
+
+        <article class="card">
+          <h3>I vibe coded 3 real apps using Claude Code and OpenAI Codex</h3>
+          <p><span class="badge review">비교 리뷰</span><span class="badge">2026-05-17</span></p>
+          <p class="source">매체: Tom's Guide · 작성자: Amanda Caswell</p>
+          <p>Claude Code와 OpenAI Codex를 실제 앱 제작 과제에 써 본 비교 리뷰다. 글은 Codex가 초보자에게 더 부드러운 경험을 제공한다고 평가하면서도, Claude Code는 깊은 커스터마이징과 분석 중심 워크플로에 더 맞는 성격으로 설명한다. 결론은 절대 승자보다 사용자 숙련도와 원하는 제어 수준에 따라 선택이 갈린다는 쪽에 가깝다.</p>
+          <p><strong>실무 시사점:</strong> Claude Code는 “내가 설계하고 에이전트가 실행”하는 고숙련 워크플로에 잘 맞고, 초보자 온보딩에는 더 많은 가드레일이 필요하다.</p>
+          <p><a href="https://www.tomsguide.com/ai/claude-code-vs-openai-codex-i-built-3-real-apps-to-find-the-better-agent-heres-the-verdict">원문 보기</a></p>
+        </article>
+
+        <article class="card">
+          <h3>OpenClaw API cost report and agent economics</h3>
+          <p><span class="badge news">뉴스 기사</span><span class="badge">2026-05-18</span></p>
+          <p class="source">매체: Tom's Hardware</p>
+          <p>OpenClaw 운영자가 한 달에 603B tokens, 7.6M requests 수준의 OpenAI API 사용량을 기록했다는 비용 기사다. 기사 자체는 OpenClaw 사례지만, Claude Code, Codex, Cursor가 모두 추론 비용을 보조하며 개발자 채택 경쟁을 벌인다는 맥락을 짚는다.</p>
+          <p><strong>실무 시사점:</strong> 에이전트 사용량이 커질수록 “월 구독료”가 실제 컴퓨팅 비용을 가리는 구조가 된다. Claude Code 같은 고강도 에이전트는 팀 단위 사용량 계측이 필수다.</p>
+          <p><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month">원문 보기</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Cursor</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Composer 2.5 is now live!</h3>
+          <p><span class="badge official">공식 글</span><span class="badge">2026-05-18</span></p>
+          <p class="source">매체: Cursor Community Forum · 작성자: Kevin Neilson</p>
+          <p>Cursor의 Composer 2.5 출시 공지다. Cursor는 25배 더 많은 synthetic RL tasks, 장기 코딩 작업, 텍스트 피드백 기반 행동 조정, Kimi K2.5 기반 continued pretraining을 강조했다. Composer 2.5가 model picker의 새 기본값이라는 점도 명시했다.</p>
+          <p><strong>실무 시사점:</strong> Cursor 사용자는 외부 frontier model만 고르는 것이 아니라 Composer 2.5를 비용 효율 기본값으로 테스트할 이유가 생겼다.</p>
+          <p><a href="https://forum.cursor.com/t/composer-2-5-is-now-live/160934">원문 보기</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Cursor Says Composer 2.5 Handles Longer Coding Jobs</h3>
+          <p><span class="badge news">뉴스 기사</span><span class="badge">2026-05-18</span></p>
+          <p class="source">매체: WinBuzzer · 작성자: Markus Kasanmascheff</p>
+          <p>Composer 2.5 출시를 보도하며 긴 코딩 작업, Kimi K2.5 기반, 훈련 스케일, 가격 포지션을 정리한 기사다. 기사 말미의 핵심은 벤치마크보다 실제 다중 파일 리팩터링에서 검증이 필요하다는 점이다.</p>
+          <p><strong>실무 시사점:</strong> Composer 2.5는 빠르게 기본 모델 후보로 올릴 수 있지만, 팀 저장소에서는 회귀 테스트와 코드 리뷰 기준으로 자체 평가가 필요하다.</p>
+          <p><a href="https://winbuzzer.com/2026/05/18/cursor-releases-composer-25-saying-its-better-at-s-xcxwbn/">원문 보기</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Cursor Composer 2.5: Benchmarks, Pricing & Full Review</h3>
+          <p><span class="badge review">비교 리뷰</span><span class="badge">2026-05-19</span></p>
+          <p class="source">매체: Build Fast with AI</p>
+          <p>Composer 2.5의 벤치마크, 가격, 실사용 관점을 묶은 리뷰다. 공식 출시일을 2026-05-18로 잡고, Cursor가 IDE 회사에서 모델 랩 성격까지 강화하고 있다는 해석을 제시한다.</p>
+          <p><strong>실무 시사점:</strong> Cursor를 이미 쓰는 팀은 Composer 2.5를 “저렴한 빠른 기본값”으로 둘지, Claude/Codex 계열과 역할을 나눌지 결정해야 한다.</p>
+          <p><a href="https://www.buildfastwithai.com/blogs/cursor-composer-2-5-review-2026">원문 보기</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>OpenAI Codex</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>GPT-5.3-Codex Becomes the Copilot Business and Enterprise Base Model</h3>
+          <p><span class="badge review">기술 블로그</span><span class="badge">2026-05-18</span></p>
+          <p class="source">매체: Start Debugging · 작성자: Marius Bughiu</p>
+          <p>GitHub의 2026-05-17 전환 공지를 개발팀 운영 관점에서 해석한 글이다. GPT-5.3-Codex가 Business/Enterprise 기본 모델이 되며, GPT-4.1 pinning과 2026-06-01 사용량 과금 전환을 점검하라고 권한다.</p>
+          <p><strong>실무 시사점:</strong> Copilot/Codex를 CI, review action, agent config에 고정해 둔 조직은 모델 pin과 비용 정책을 점검해야 한다.</p>
+          <p><a href="https://startdebugging.net/2026/05/copilot-business-gpt-5-3-codex-base-model/">원문 보기</a></p>
+        </article>
+
+        <article class="card">
+          <h3>OpenClaw API cost report and Codex-era agent economics</h3>
+          <p><span class="badge news">뉴스 기사</span><span class="badge">2026-05-18</span></p>
+          <p class="source">매체: Tom's Hardware</p>
+          <p>OpenClaw의 대규모 API 사용량 사례를 통해 AI 코딩 에이전트의 비용 구조를 다룬 기사다. 글은 Codex, Claude Code, Cursor가 모두 추론 비용을 보조하며 개발자 채택 경쟁을 벌인다고 설명한다. Codex가 token-based billing로 이동한 뒤 비용 투명성이 커졌다는 맥락도 제시한다.</p>
+          <p><strong>실무 시사점:</strong> Codex를 백그라운드 작업이나 다중 에이전트로 많이 쓰는 팀은 월 구독보다 실제 token/request 소비량을 먼저 추적해야 한다.</p>
+          <p><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month">원문 보기</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Claude Code vs OpenAI Codex app-building comparison</h3>
+          <p><span class="badge review">비교 리뷰</span><span class="badge">2026-05-17</span></p>
+          <p class="source">매체: Tom's Guide · 작성자: Amanda Caswell</p>
+          <p>비전문가가 앱을 만드는 시나리오에서 Codex가 더 부드러운 경험을 줬다는 평가가 나온다. Codex의 강점은 즉시 사용성, 안내 흐름, 제품 완성 감각으로 요약된다.</p>
+          <p><strong>실무 시사점:</strong> Codex는 “고도로 통제된 터미널 에이전트”보다 “일반 사용자가 결과물을 얻는 제품형 agent” 쪽 포지션이 강하다.</p>
+          <p><a href="https://www.tomsguide.com/ai/claude-code-vs-openai-codex-i-built-3-real-apps-to-find-the-better-agent-heres-the-verdict">원문 보기</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>공통 시사점</h2>
+      <ul>
+        <li><strong>비용:</strong> agentic coding은 autocomplete보다 추론량이 커서 사용량 기반 과금과 엔터프라이즈 표준화 이슈가 커진다.</li>
+        <li><strong>워크플로:</strong> Cursor는 Jira/Automations, Codex는 mobile remote access, Claude Code는 CLI/플러그인/스킬 쪽으로 각자의 운영 표면을 넓힌다.</li>
+        <li><strong>평가 방식:</strong> 단일 벤치마크보다 실제 저장소, 테스트, 리뷰, 장기 세션 복구 능력으로 비교해야 한다.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.windowscentral.com/microsoft/microsoft-cancels-claude-code-licenses-shifting-developers-to-github-copilot-cli-a-move-likely-driven-by-financial-motives">Windows Central: Microsoft cancels Claude Code licenses</a></li>
+        <li><a href="https://www.tomsguide.com/ai/claude-code-vs-openai-codex-i-built-3-real-apps-to-find-the-better-agent-heres-the-verdict">Tom's Guide: Claude Code vs OpenAI Codex</a></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month">Tom's Hardware: OpenClaw token cost</a></li>
+        <li><a href="https://forum.cursor.com/t/composer-2-5-is-now-live/160934">Cursor Forum: Composer 2.5</a></li>
+        <li><a href="https://winbuzzer.com/2026/05/18/cursor-releases-composer-25-saying-its-better-at-s-xcxwbn/">WinBuzzer: Cursor Composer 2.5</a></li>
+        <li><a href="https://www.buildfastwithai.com/blogs/cursor-composer-2-5-review-2026">Build Fast with AI: Composer 2.5 review</a></li>
+        <li><a href="https://startdebugging.net/2026/05/copilot-business-gpt-5-3-codex-base-model/">Start Debugging: GPT-5.3-Codex base model</a></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month">Tom's Hardware: Codex-era agent economics</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

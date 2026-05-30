@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 저장소 보고서 - 2026-05-14</title>
+  <style>
+    :root { --bg:#f7f8fb; --panel:#fff; --ink:#17202a; --muted:#637181; --line:#dbe2ec; --blue:#0c5fb3; --accent:#eef6f1; --dark:#12385d; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1080px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:var(--dark); color:white; border-radius:8px; padding:28px; }
+    h1 { margin:0 0 8px; font-size:30px; }
+    h2 { margin:0 0 14px; font-size:22px; }
+    h3 { margin:0 0 6px; font-size:18px; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(185px,1fr)); gap:10px; margin-top:16px; }
+    .meta div { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:8px; padding:10px 12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .summary { background:#eaf3ff; border-color:#bdd4f3; }
+    .toc a { display:inline-block; margin:4px 8px 4px 0; padding:5px 10px; background:#fff; border:1px solid var(--line); border-radius:999px; text-decoration:none; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .rank { font-weight:800; color:#0b5f3c; }
+    .tag { display:inline-block; font-size:12px; border-radius:999px; padding:3px 8px; margin:3px 4px 3px 0; background:#eef2f7; color:#334155; }
+    .score { color:#0b5f3c; font-weight:700; }
+    .muted { color:var(--muted); font-size:14px; }
+    ul { padding-left:20px; }
+    .verify-marker { display:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>GitHub 트렌딩 저장소 보고서</h1>
+      <p>GitTrend가 2026-05-13로 표시한 GitHub engagement 순위를 2026-05-14 KST에 확인하고, AI 코딩/개발 생산성과 관련 있는 항목만 선별했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-14</div>
+        <div><strong>출처 기준</strong><br>GitTrend Today</div>
+        <div><strong>선별 수</strong><br>7개</div>
+        <div><strong>기간 확장</strong><br>해당 없음</div>
+      </div>
+      <div class="verify-marker">?앹꽦?? 異쒖쿂 紐⑹감</div>
+    </header>
+
+    <section class="panel summary">
+      <h2>상단 요약</h2>
+      <ul>
+        <li>오늘의 흐름은 <strong>에이전트 운영 자산</strong>이다. skills, agent memory, design.md, terminal coding agent처럼 “AI가 더 잘 일하게 만드는 보조 레이어”가 강하다.</li>
+        <li>Claude 생태계와 연결된 저장소가 두드러진다. <code>mattpocock/skills</code>, <code>rohitg00/agentmemory</code>, <code>anthropics/claude-for-legal</code>이 모두 Claude 또는 에이전트 워크플로와 직접 연결된다.</li>
+        <li>단순 LLM 앱보다 <strong>개발자 워크플로, 브라우저 자동화, UI 생성 규칙, 경량 모델 실행</strong>처럼 실제 빌드/검증 루프에 가까운 저장소를 우선 선정했다.</li>
+      </ul>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <a href="#repos">선별 저장소</a>
+      <a href="#analysis">트렌드 해석</a>
+      <a href="#exclude">제외 기준</a>
+      <a href="#sources">출처</a>
+    </section>
+
+    <section id="repos" class="panel">
+      <h2>선별 저장소</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><span class="rank">#1</span> mattpocock/skills</h3>
+          <p><a href="https://github.com/mattpocock/skills">GitHub 저장소</a></p>
+          <p>Shell 기반 스킬 디렉터리. GitTrend 설명은 “Straight from my .claude directory”로, Claude Code식 재사용 명령/스킬 운영과 직접 맞닿아 있다.</p>
+          <p><span class="tag">Shell</span><span class="tag">AI Skills</span><span class="tag">Productivity</span></p>
+          <p class="score">GitTrend: 76.5k stars, +191 today</p>
+          <p><strong>도구 사용자 연결:</strong> Claude Code나 Codex Skills처럼 로컬 실행 지침을 재사용하려는 사용자에게 즉시 참고할 만하다.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="rank">#3</span> CloakHQ/CloakBrowser</h3>
+          <p><a href="https://github.com/CloakHQ/CloakBrowser">GitHub 저장소</a></p>
+          <p>Playwright 대체를 표방하는 stealth Chromium. AI 에이전트가 웹 검증, E2E 테스트, scraping을 수행할 때 브라우저 실행 안정성과 fingerprint 회피가 관심사가 된 흐름을 반영한다.</p>
+          <p><span class="tag">Python</span><span class="tag">Browser Automation</span><span class="tag">Playwright</span></p>
+          <p class="score">GitTrend: 8.6k stars, +97 today</p>
+          <p><strong>도구 사용자 연결:</strong> Cursor/Codex/Claude Code가 로컬 브라우저 테스트를 수행하는 워크플로에서 검증 인프라 후보로 볼 수 있다.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="rank">#5</span> rohitg00/agentmemory</h3>
+          <p><a href="https://github.com/rohitg00/agentmemory">GitHub 저장소</a></p>
+          <p>AI 코딩 에이전트용 persistent memory를 표방한다. 장기 작업, 반복 자동화, 팀별 컨텍스트 유지가 병목으로 떠오른 상황과 잘 맞는다.</p>
+          <p><span class="tag">TypeScript</span><span class="tag">Agent Memory</span><span class="tag">AI Coding</span></p>
+          <p class="score">GitTrend: 3.8k stars, +87 today</p>
+          <p><strong>도구 사용자 연결:</strong> Claude Code, Cursor, Codex 모두에서 “이전 결정과 프로젝트 규칙을 얼마나 잘 기억하느냐”가 품질을 좌우한다.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="rank">#6</span> anthropics/claude-for-legal</h3>
+          <p><a href="https://github.com/anthropics/claude-for-legal">GitHub 저장소</a></p>
+          <p>법률 워크플로용 Claude 플러그인 모음. 범용 코딩 도구가 도메인별 플러그인/스킬 패키지로 확장되는 흐름을 보여준다.</p>
+          <p><span class="tag">Python</span><span class="tag">Claude</span><span class="tag">Plugins</span></p>
+          <p class="score">GitTrend: 530 stars, +70 today</p>
+          <p><strong>도구 사용자 연결:</strong> 코딩 외 문서 검토, 계약 분석, 컴플라이언스 자동화까지 에이전트 표면이 넓어지는 신호다.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="rank">#7</span> VoltAgent/awesome-design-md</h3>
+          <p><a href="https://github.com/VoltAgent/awesome-design-md">GitHub 저장소</a></p>
+          <p>브랜드 디자인 시스템에서 영감을 받은 <code>DESIGN.md</code> 모음. 코딩 에이전트가 UI를 생성할 때 디자인 규칙 파일을 함께 읽히는 패턴이다.</p>
+          <p><span class="tag">Design System</span><span class="tag">UI Generation</span><span class="tag">Awesome List</span></p>
+          <p class="score">GitTrend: 77.5k stars, +91 today</p>
+          <p><strong>도구 사용자 연결:</strong> Cursor/Codex/Claude Code에 디자인 지침을 repo-local로 제공하는 실무 패턴과 연결된다.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="rank">#8</span> NousResearch/hermes-agent</h3>
+          <p><a href="https://github.com/NousResearch/hermes-agent">GitHub 저장소</a></p>
+          <p>“The agent that grows with you”를 표방하는 Python AI agent 저장소. 범용 에이전트 런타임과 코딩 에이전트의 경계가 계속 흐려지고 있다.</p>
+          <p><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">AI Agents</span></p>
+          <p class="score">GitTrend: 147.2k stars, +92 today</p>
+          <p><strong>도구 사용자 연결:</strong> Codex/Claude Code식 작업 위임을 자체 에이전트 스택으로 구현하려는 팀에게 비교 대상이 된다.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="rank">#9</span> Hmbown/DeepSeek-TUI</h3>
+          <p><a href="https://github.com/Hmbown/DeepSeek-TUI">GitHub 저장소</a></p>
+          <p>DeepSeek 모델을 터미널에서 쓰는 Rust 코딩 에이전트. CLI 기반 코딩 에이전트가 Claude Code와 Codex CLI 외 모델 생태계로도 확장되는 흐름이다.</p>
+          <p><span class="tag">Rust</span><span class="tag">CLI</span><span class="tag">Coding Agent</span></p>
+          <p class="score">GitTrend: 26.8k stars, +84 today</p>
+          <p><strong>도구 사용자 연결:</strong> 터미널-first 사용자에게 모델/벤더 선택권을 넓히는 대안 후보로 볼 수 있다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="analysis" class="panel">
+      <h2>트렌드 해석</h2>
+      <ul>
+        <li><strong>스킬/규칙 파일의 부상:</strong> 단순 프롬프트보다 <code>skills</code>, <code>DESIGN.md</code>, 플러그인처럼 repo-local 지침을 구조화하는 저장소가 강하다.</li>
+        <li><strong>에이전트 메모리와 장기 컨텍스트:</strong> <code>agentmemory</code>의 상승은 장기 자동화에서 “기억”이 독립 제품/라이브러리 주제가 됐다는 신호다.</li>
+        <li><strong>검증 인프라 관심 증가:</strong> 브라우저 자동화, 터미널 TUI, 에이전트 런타임은 코드 생성 이후 실행/검증 단계의 병목을 직접 겨냥한다.</li>
+      </ul>
+    </section>
+
+    <section id="exclude" class="panel">
+      <h2>제외 기준</h2>
+      <p>GitTrend 상위권 중 AI 코딩 또는 개발 생산성과 직접 연결이 약한 3D 프린팅/슬라이서, 일반 개인 AI 앱, 초소형 모델 실행 저장소는 이번 보고서에서 제외하거나 낮은 우선순위로 처리했다.</p>
+    </section>
+
+    <section id="sources" class="panel">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://gittrend.io/">GitTrend Trending Repositories, ranked by engagement, May 13, 2026</a></li>
+        <li><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></li>
+        <li><a href="https://github.com/CloakHQ/CloakBrowser">CloakHQ/CloakBrowser</a></li>
+        <li><a href="https://github.com/rohitg00/agentmemory">rohitg00/agentmemory</a></li>
+        <li><a href="https://github.com/anthropics/claude-for-legal">anthropics/claude-for-legal</a></li>
+        <li><a href="https://github.com/VoltAgent/awesome-design-md">VoltAgent/awesome-design-md</a></li>
+        <li><a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></li>
+        <li><a href="https://github.com/Hmbown/DeepSeek-TUI">Hmbown/DeepSeek-TUI</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-05-29</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #17202a;
+      --muted: #5f6b7a;
+      --line: #d8e0ea;
+      --link: #0a5fb4;
+      --accent: #eaf3fb;
+      --ok: #e9f7ef;
+      --warn: #fff4d7;
+      --hero: linear-gradient(135deg, #402f56 0%, #6b5b86 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.68; }
+    .container { width: min(1060px, calc(100vw - 32px)); margin: 32px auto 64px; }
+    .hero { background: var(--hero); color: var(--hero-text); border-radius: 16px; padding: 34px; margin-bottom: 22px; }
+    h1, h2, h3 { line-height: 1.28; margin-top: 0; }
+    a { color: var(--link); }
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 18px; }
+    .stat { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; padding: 14px 16px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-bottom: 18px; }
+    .summary { background: var(--warn); border-radius: 12px; padding: 16px 18px; }
+    .toc ol { margin: 0; padding-left: 22px; }
+    .toc li { margin: 6px 0; }
+    .card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-top: 14px; background: #fff; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+    .badge { display: inline-block; font-size: .78rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--accent); color: #244b66; }
+    .badge.ok { background: var(--ok); color: #22623b; }
+    .badge.warn { background: var(--warn); color: #785600; }
+    .meta-line { color: var(--muted); font-size: .92rem; margin-top: 10px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .sources ul { margin: 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <!-- harness snippets: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-05-29 | 기본 기사 검색: 2026-05-27 ~ 2026-05-29 | 확장 검색: 2026-05-22 ~ 2026-05-29</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>기간 확장</strong><br>최근 2일 기사량이 낮아 7일로 확장</div>
+        <div class="stat"><strong>선별 수</strong><br>도구별 2~3개, 총 7개 핵심 자료</div>
+        <div class="stat"><strong>읽는 법</strong><br>공식 글, 기술 블로그, 연구 논문을 구분해서 해석</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#notice">기간 확장 공지</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="notice">
+      <h2>기간 확장 공지</h2>
+      <div class="summary">
+        최근 2일(2026-05-27 ~ 2026-05-29) 안에서 Claude Code, Cursor, OpenAI Codex를 모두 균형 있게 다룬 신뢰 가능한 기사 수가 부족했다. 따라서 기사 섹션은 요청 조건에 따라 7일(2026-05-22 ~ 2026-05-29)로 확장했다. 공식 changelog는 별도 문서인 `01_official_tool_updates.html`에서 3일 창을 우선 적용했다.
+      </div>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>OpenAI named a Leader in enterprise coding agents by Gartner</h3>
+        <div class="badge-row"><span class="badge ok">공식 글</span><span class="badge">2026-05-23경 검색 확인</span><span class="badge">기업 도입</span></div>
+        <p>OpenAI는 Codex가 Gartner Magic Quadrant for Enterprise AI Coding Agents에서 Leader로 평가됐다고 밝혔다. 글은 Codex가 매주 400만 명 이상에게 쓰이고 Cisco, Datadog, Dell Technologies, NVIDIA 등 기업 사례가 있다고 설명한다.</p>
+        <p>핵심은 단순 코드 생성이 아니라 governance, sandboxing, approval gates, RBAC, 정책, 감사 가능한 workspace 운영이다. Codex가 기업 개발 워크플로로 이동하고 있다는 공식 포지셔닝을 보여준다.</p>
+        <p><strong>실무 시사점:</strong> Codex를 개인 CLI가 아니라 기업용 agent layer로 평가해야 한다. 도입 검토 시 모델 성능보다 권한, 감사, 네트워크, sandbox, plan별 데이터 정책을 먼저 확인해야 한다.</p>
+        <p class="meta-line">출처: OpenAI | URL: <a href="https://openai.com/index/gartner-2026-agentic-coding-leader/">openai.com/index/gartner-2026-agentic-coding-leader</a></p>
+      </article>
+      <article class="card">
+        <h3>Codex vs. Claude Code vs. Cursor: The Definitive 2026 Guide</h3>
+        <div class="badge-row"><span class="badge">비교 리뷰</span><span class="badge">2026-05-27</span><span class="badge warn">광고성 가능성 주의</span></div>
+        <p>Kingy AI의 비교 글은 Codex를 OpenAI-native coding agent layer로, Claude Code를 terminal-first agentic engineering assistant로, Cursor를 AI-first editor로 구분한다. Codex는 ChatGPT, app, CLI, IDE, web, cloud-connected workflow를 아우르는 다중 표면 제품으로 설명된다.</p>
+        <p>글은 Codex의 장점으로 OpenAI 생태계, app/browser context, worktree, automations, subagents를 들지만, “모든 작업에서 더 낫다”는 식의 결론은 내리지 않는다.</p>
+        <p><strong>실무 시사점:</strong> 팀은 “도구 순위”보다 작업 표면을 기준으로 골라야 한다. OpenAI-heavy product team이라면 Codex의 통합성이 장점이고, IDE 상시 작업은 Cursor, 터미널 기반 리팩터링은 Claude Code가 강할 수 있다.</p>
+        <p class="meta-line">출처: Kingy AI | URL: <a href="https://kingy.ai/news/codex-vs-claude-code-vs-cursor-the-definitive-2026-guide/">kingy.ai/news/codex-vs-claude-code-vs-cursor-the-definitive-2026-guide</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>Coding Beyond Your Training: Claude Code and the Technological Frontier of Software Developers</h3>
+        <div class="badge-row"><span class="badge ok">연구 논문</span><span class="badge">2026-05-25</span><span class="badge">arXiv</span></div>
+        <p>arXiv 논문은 5,838명의 GitHub 개발자를 28개월 패널로 관찰해 Claude Code 채택 이후 월간 commit, 참여 repository 수, 사용 언어 다양성 등이 증가했다는 추정치를 제시한다. 논문은 식별 한계를 인정하며 엄밀한 인과 주장에는 조심스럽다.</p>
+        <p>Claude Code가 단순 생산성 향상을 넘어 “개발자가 익숙하지 않은 기술로 이동하는 비용”을 낮출 수 있다는 해석이 핵심이다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code는 기존 스택 안의 코드 생성보다 새 언어/프레임워크 탐색 보조에 강한 효과가 있을 수 있다. 단, 연구는 observational design이므로 팀 내부 실험으로 검증해야 한다.</p>
+        <p class="meta-line">출처: arXiv | URL: <a href="https://arxiv.org/abs/2605.25438">arxiv.org/abs/2605.25438</a></p>
+      </article>
+      <article class="card">
+        <h3>Claude Code v2.1.152 update coverage</h3>
+        <div class="badge-row"><span class="badge">기술 뉴스 요약</span><span class="badge">2026-05-27</span><span class="badge warn">공식 날짜 보조용</span></div>
+        <p>검색 결과 기준, Claude Code v2.1.152는 `/code-review --fix`, skill frontmatter의 `disallowed-tools`, `/reload-skills`, MessageDisplay hook, auto-mode consent 제거 등 개발자 워크플로 변화가 언급됐다.</p>
+        <p>이 내용은 공식 raw changelog의 v2.1.152 항목과 방향이 일치하지만, 날짜는 보조 매체 기준이므로 공식 날짜로 단정하지 않았다.</p>
+        <p><strong>실무 시사점:</strong> Claude Code가 “리뷰 후 적용”, “스킬 재로드”, “도구 제한”처럼 에이전트 운영 제어면을 빠르게 보강하고 있다. 팀 설정 파일과 skill frontmatter 관리가 중요해진다.</p>
+        <p class="meta-line">출처: Claude Code 공식 changelog 및 검색 결과 보조 확인 | URL: <a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Composer 2.5: Benchmarks, Pricing, and How It Compares</h3>
+        <div class="badge-row"><span class="badge">기술 블로그</span><span class="badge">2026-05-22</span><span class="badge">DataCamp</span></div>
+        <p>DataCamp은 Cursor Composer 2.5가 Kimi K2.5 기반을 유지하면서 targeted RL, 더 많은 synthetic tasks, 장기 coding session 개선을 적용했다고 설명한다. 기사에 따르면 Composer 2.5는 Cursor 내부에서만 사용 가능하며 공개 API나 Hugging Face model card는 없다.</p>
+        <p>가격 면에서는 Standard 기준 $0.50/M input, $2.50/M output으로 frontier model 대비 저렴하지만, Fast는 기본 선택이며 더 비싸다. 기사도 benchmark 비교는 directional로 보라고 경고한다.</p>
+        <p><strong>실무 시사점:</strong> Cursor 내부 일상 coding에는 비용 효율이 좋아질 수 있지만, API 자동화나 독립 runner가 필요한 팀은 Composer 2.5만으로는 부족하다.</p>
+        <p class="meta-line">출처: DataCamp | URL: <a href="https://www.datacamp.com/blog/composer-2-5">datacamp.com/blog/composer-2-5</a></p>
+      </article>
+      <article class="card">
+        <h3>Introducing Cursor in Jira</h3>
+        <div class="badge-row"><span class="badge ok">파트너 공식 글</span><span class="badge">2026-05-20</span><span class="badge">Atlassian</span></div>
+        <p>Atlassian은 Jira에서 Cursor cloud agent를 직접 시작하고, agent가 입력을 요구하거나 PR을 열면 Jira에 연결되도록 하는 통합을 발표했다. work item, Confluence spec, dependency, decision context를 agent가 활용하게 하는 것이 핵심이다.</p>
+        <p>Atlassian은 Teamwork Graph context를 활용한 내부 테스트에서 answer quality 44% 개선, token 48% 감소를 주장했다. 이 수치는 벤더 내부 테스트로 해석해야 한다.</p>
+        <p><strong>실무 시사점:</strong> Cursor는 IDE 안의 도구를 넘어 ticket → agent work → PR → review 흐름으로 확장 중이다. 엔터프라이즈 팀은 Jira 권한과 PR 검토 정책을 함께 설계해야 한다.</p>
+        <p class="meta-line">출처: Atlassian | URL: <a href="https://www.atlassian.com/blog/company-news/cursor-in-jira">atlassian.com/blog/company-news/cursor-in-jira</a></p>
+      </article>
+      <article class="card">
+        <h3>Cursor 공식 changelog: Automations, Shared Canvases, /loop</h3>
+        <div class="badge-row"><span class="badge ok">공식 글</span><span class="badge">2026-05-20</span><span class="badge">Cursor</span></div>
+        <p>Cursor는 Shared Canvases, `/loop` skill, Automations 개선을 발표했다. Automations가 Agents Window에 들어오고, multi-repo automations와 no-repo automations 템플릿도 추가됐다.</p>
+        <p>이는 Cursor가 단일 IDE 세션을 넘어 반복 실행, 다중 저장소, 비코드 모니터링까지 agent workflow를 넓히고 있음을 보여준다.</p>
+        <p><strong>실무 시사점:</strong> Cursor 자동화를 쓰는 팀은 repo 연결 범위, no-repo 권한, 반복 실행 비용, 실패 시 알림 경로를 명확히 해야 한다.</p>
+        <p class="meta-line">출처: Cursor changelog | URL: <a href="https://cursor.com/en-US/changelog">cursor.com/en-US/changelog</a></p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>이번 주 기사 총평</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>비교 글의 공통 결론</h3>
+          <p>단일 우승 도구보다 작업 표면이 중요하다. IDE, CLI, ChatGPT/OpenAI 생태계, Jira/PR 흐름이 서로 다른 선택 기준이 된다.</p>
+        </div>
+        <div class="card">
+          <h3>운영 제어가 핵심</h3>
+          <p>권한, sandbox, audit, tool 제한, skill reload, no-repo automation처럼 “어떻게 안전하게 돌릴 것인가”가 제품 경쟁 축으로 이동하고 있다.</p>
+        </div>
+        <div class="card">
+          <h3>검증 병목</h3>
+          <p>장기 에이전트와 저렴한 coding model이 늘수록 테스트, 리뷰, 설계 검증, 비용 감시가 병목이 된다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>OpenAI Gartner/Codex enterprise post: <a href="https://openai.com/index/gartner-2026-agentic-coding-leader/">https://openai.com/index/gartner-2026-agentic-coding-leader/</a></li>
+        <li>Kingy AI comparison guide: <a href="https://kingy.ai/news/codex-vs-claude-code-vs-cursor-the-definitive-2026-guide/">https://kingy.ai/news/codex-vs-claude-code-vs-cursor-the-definitive-2026-guide/</a></li>
+        <li>arXiv Claude Code developer behavior paper: <a href="https://arxiv.org/abs/2605.25438">https://arxiv.org/abs/2605.25438</a></li>
+        <li>Anthropic Claude Code changelog raw: <a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</a></li>
+        <li>DataCamp Composer 2.5 article: <a href="https://www.datacamp.com/blog/composer-2-5">https://www.datacamp.com/blog/composer-2-5</a></li>
+        <li>Atlassian Cursor in Jira announcement: <a href="https://www.atlassian.com/blog/company-news/cursor-in-jira">https://www.atlassian.com/blog/company-news/cursor-in-jira</a></li>
+        <li>Cursor changelog: <a href="https://cursor.com/en-US/changelog">https://cursor.com/en-US/changelog</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

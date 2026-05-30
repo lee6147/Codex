@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-05-14</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --ink:#17202a; --muted:#607080; --line:#d9e1ec; --blue:#1457a8; --green:#147a50; --amber:#8a5a00; --soft:#eaf2ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#173b67; color:white; border-radius:8px; padding:28px; }
+    h1 { margin:0 0 8px; font-size:30px; }
+    h2 { margin:0 0 14px; font-size:22px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin-top:16px; }
+    .meta div { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); border-radius:8px; padding:10px 12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .summary { background:var(--soft); border-color:#bdd2f0; }
+    .toc a { display:inline-block; margin:4px 8px 4px 0; padding:5px 10px; background:#fff; border:1px solid var(--line); border-radius:999px; text-decoration:none; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(285px,1fr)); gap:14px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .badge { display:inline-block; font-size:12px; font-weight:700; border-radius:999px; padding:3px 8px; margin-right:6px; background:#eef5ff; color:#174f91; }
+    .ok { background:#eaf7ef; color:var(--green); }
+    .warn { background:#fff3d6; color:var(--amber); }
+    .muted { color:var(--muted); font-size:14px; }
+    ul { padding-left:20px; }
+    .sources li { margin-bottom:8px; }
+    .verify-marker { display:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>공식 업데이트 보고서</h1>
+      <p>Claude Code, Cursor, OpenAI Codex의 최근 공식 변경 사항을 2026-05-14 KST 기준으로 확인했다.</p>
+      <div class="meta">
+        <div><strong>생성일</strong><br>2026-05-14</div>
+        <div><strong>조사 범위</strong><br>공식 업데이트 최근 3일 우선</div>
+        <div><strong>기간 확장</strong><br>공식 업데이트: 확장 없음</div>
+        <div><strong>확인 상태</strong><br>공식/1차 출처 중심</div>
+      </div>
+      <div class="verify-marker">?앹꽦?? 異쒖쿂 紐⑹감</div>
+    </header>
+
+    <section class="panel summary">
+      <h2>상단 요약</h2>
+      <ul>
+        <li><strong>Cursor</strong>는 클라우드 에이전트 실행 환경을 팀 단위로 구성, 버전 관리, 감사할 수 있게 만드는 방향으로 가장 큰 제품 업데이트를 냈다.</li>
+        <li><strong>Claude Code</strong>는 2026-05-12 릴리스에서 Windows 이벤트 루프, 백그라운드 실행, 훅/플러그인 관련 안정성 수정을 집중했다.</li>
+        <li><strong>OpenAI Codex</strong>는 0.131.0 alpha 라인 릴리스가 이어졌고, Codex Security/Daybreak 축에서는 보안 검증형 에이전트 흐름이 강화됐다.</li>
+      </ul>
+    </section>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <a href="#claude">Claude Code</a>
+      <a href="#cursor">Cursor</a>
+      <a href="#codex">OpenAI Codex</a>
+      <a href="#unknown">확인 불가</a>
+      <a href="#sources">출처</a>
+    </section>
+
+    <section id="claude" class="panel">
+      <h2>Claude Code</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>v2.1.140 릴리스</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-12</span></p>
+          <p>Agent 도구의 <code>subagent_type</code> 매칭을 대소문자와 구분자 차이에 덜 민감하게 만들고, 에이전트 색상 팔레트를 갱신했다.</p>
+          <p><strong>실무 의미:</strong> 로컬/프로젝트 에이전트 이름을 사람이 쓰는 표현으로 호출해도 실패할 가능성이 줄어든다.</p>
+          <p class="muted">출처: GitHub Releases</p>
+        </article>
+        <article class="card">
+          <h3>Windows 및 백그라운드 안정성 수정</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-12</span></p>
+          <p><code>gh</code> 같은 실행 파일 누락 시 Windows에서 반복적으로 동기 <code>where.exe</code> 재실행이 걸리던 이벤트 루프 stall을 고쳤다. <code>claude --bg</code>의 백그라운드 서비스 연결 오류도 수정됐다.</p>
+          <p><strong>실무 의미:</strong> Windows 기반 Codex/OMX 사용자에게도 직접 영향을 주는 안정성 개선이다.</p>
+          <p class="muted">출처: GitHub Releases</p>
+        </article>
+        <article class="card">
+          <h3>훅/플러그인 진단 개선</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-12</span></p>
+          <p><code>/goal</code>이 훅 제한 설정에서 조용히 멈추는 문제를 명확한 메시지로 바꾸고, 플러그인 기본 폴더가 무시될 때 <code>/doctor</code>와 플러그인 목록에서 경고하도록 했다.</p>
+          <p><strong>실무 의미:</strong> 자동화 하네스나 팀 런타임에서 “멈춘 것처럼 보이는” 실패를 추적하기 쉬워진다.</p>
+          <p class="muted">출처: GitHub Releases</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cursor" class="panel">
+      <h2>Cursor</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>클라우드 에이전트 개발 환경</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-13</span></p>
+          <p>멀티 레포 환경, Dockerfile 기반 환경 구성, 빌드 시크릿, 레이어 캐시, 환경 버전 히스토리와 감사 로그를 도입했다.</p>
+          <p><strong>실무 의미:</strong> 에이전트가 단순 코드 생성이 아니라 테스트와 내부 의존성 접근까지 포함한 end-to-end 작업을 수행할 수 있도록 환경 제어가 제품 표면으로 올라왔다.</p>
+          <p class="muted">출처: Cursor Changelog/Blog</p>
+        </article>
+        <article class="card">
+          <h3>Microsoft Teams에서 Cursor 호출</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-11</span></p>
+          <p>Teams 채널에서 <code>@Cursor</code>를 멘션해 클라우드 에이전트에게 작업을 위임하거나 Cursor 정보를 끌어올 수 있게 됐다.</p>
+          <p><strong>실무 의미:</strong> 개발 요청이 IDE 밖 협업 채널에서 시작되고, 에이전트가 레포와 모델을 선택해 PR까지 만드는 흐름이 강화된다.</p>
+          <p class="muted">출처: Cursor Changelog</p>
+        </article>
+        <article class="card">
+          <h3>Bugbot Effort Levels</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-11</span></p>
+          <p>PR 리뷰용 Bugbot에 Default, High, Custom effort가 추가됐다. Cursor는 기본 effort 평균 0.7건, high effort 평균 0.95건의 버그 발견 수치를 공개했다.</p>
+          <p><strong>실무 의미:</strong> AI 코드 리뷰에서 비용/지연/탐지 깊이를 직접 조절하는 기능이 확산되는 신호다.</p>
+          <p class="muted">출처: Cursor Changelog</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="codex" class="panel">
+      <h2>OpenAI Codex</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Codex CLI 0.131.0 alpha 릴리스 라인</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-11~2026-05-12</span></p>
+          <p>GitHub 릴리스에서 <code>0.131.0-alpha.6</code>, <code>0.131.0-alpha.7</code>, <code>0.131.0-alpha.8</code>, <code>0.131.0-alpha.9</code>가 확인됐다. 상세 변경 설명은 일부 릴리스가 “Release …” 수준으로 제한적이다.</p>
+          <p><strong>실무 의미:</strong> 안정 릴리스라기보다 빠른 alpha 검증 라인으로 보이며, 자동화 환경에서는 고정 버전과 changelog 확인이 필요하다.</p>
+          <p class="muted">출처: openai/codex GitHub Releases</p>
+        </article>
+        <article class="card">
+          <h3>Codex Security 도움말 업데이트</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-13 업데이트 확인</span></p>
+          <p>Codex Security는 GitHub 저장소를 연결해 위협 모델을 만들고, 취약점을 검증한 뒤, 사람이 검토할 수 있는 패치를 제안하는 연구 미리보기로 설명된다.</p>
+          <p><strong>실무 의미:</strong> 코드 생성 에이전트가 보안 triage와 remediation 루프까지 확장되고 있다.</p>
+          <p class="muted">출처: OpenAI Help Center</p>
+        </article>
+        <article class="card">
+          <h3>Daybreak와 Codex Security 축</h3>
+          <p><span class="badge ok">확인 완료</span><span class="badge">2026-05-12 조회 가능</span></p>
+          <p>OpenAI Daybreak 페이지는 Codex를 agentic harness로 삼아 secure code review, threat modeling, patch validation, dependency risk analysis를 개발 루프에 넣는 방향을 설명한다.</p>
+          <p><strong>실무 의미:</strong> Codex의 차별점은 단일 편집 도구보다 “검증 가능한 실행 하네스”와 보안 파트너 생태계 쪽으로 이동 중이다.</p>
+          <p class="muted">출처: OpenAI Daybreak</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="unknown" class="panel">
+      <h2>확인 불가 항목</h2>
+      <ul>
+        <li>OpenAI Codex 0.131.0 alpha 각 태그의 상세 변경 내역은 GitHub 릴리스 페이지상 일부가 “Release …” 수준으로만 표시되어 세부 기능 단위 확인이 제한적이다.</li>
+        <li>OpenAI Daybreak 페이지 자체의 명시적 게시일은 페이지 본문에서 확인하지 못했다. The Verge 보도일과 OpenAI Help Center 업데이트일로 보조 확인했다.</li>
+        <li>Claude Code 공식 문서의 release notes 페이지는 “GitHub CHANGELOG.md를 확인하라”는 안내 성격이어서 실제 상세 변경은 GitHub Releases 기준으로 확인했다.</li>
+      </ul>
+    </section>
+
+    <section id="sources" class="panel">
+      <h2>출처</h2>
+      <ul class="sources">
+        <li><a href="https://github.com/anthropics/claude-code/releases">anthropics/claude-code GitHub Releases</a></li>
+        <li><a href="https://docs.anthropic.com/en/release-notes/claude-code">Anthropic Claude Code release notes</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://cursor.com/blog/cloud-agent-development-environments">Cursor Blog: Development environments for your agents</a></li>
+        <li><a href="https://github.com/openai/codex/releases">openai/codex GitHub Releases</a></li>
+        <li><a href="https://help.openai.com/en/articles/20001107-codex-security">OpenAI Help Center: Codex Security</a></li>
+        <li><a href="https://openai.com/daybreak">OpenAI Daybreak</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
