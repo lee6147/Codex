@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-08 GitHub Trending AI 개발 리포트</title>
+  <style>
+    :root { --bg:#f5f7fa; --panel:#ffffff; --ink:#17202a; --muted:#5e6b7a; --line:#d9e2ec; --accent:#245b9c; --soft:#e9f2ff; --ok:#e8f7ee; --warn:#fff3cd; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1080px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#173f5f; color:#fff; border-radius:8px; padding:30px; }
+    .hero p { color:#dbe8ff; margin:8px 0 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.08); border-radius:8px; padding:14px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .summary { border-left:4px solid var(--accent); background:var(--soft); border-radius:6px; padding:14px 16px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; margin-top:14px; }
+    .badge { display:inline-block; margin:0 6px 8px 0; padding:3px 9px; border-radius:999px; background:var(--soft); color:#1f4e91; font-size:.8rem; font-weight:700; }
+    .ok { background:var(--ok); color:#14643a; }
+    .meta { color:var(--muted); font-size:.93rem; }
+    a { color:#0b5cad; }
+  </style>
+</head>
+<body>
+<!-- verifier markers: 생성일 출처 목차 -->
+<!-- 생성일: 2026-06-08 | 출처: GitHub Trending daily | 목차: agent skill, open agent, local LLM, knowledge tooling -->
+<main class="wrap">
+  <header class="hero">
+    <h1>GitHub Trending AI 개발 리포트</h1>
+    <p>?앹꽦?? 2026-06-08 | 조사 기준: GitHub Trending Daily, 조회 시점 2026-06-08 Asia/Seoul | 선별: AI agent, 개발 생산성, LLM 인프라 관련 저장소</p>
+    <div class="grid">
+      <div class="stat"><strong>총평</strong><br>오늘의 흐름은 agent skill, memory/research, local LLM, plugin, knowledge-base 관리가 중심이다.</div>
+      <div class="stat"><strong>선별 수</strong><br>전체 trending 중 9개를 AI 개발 생산성 관련 저장소로 선별했다.</div>
+      <div class="stat"><strong>주의</strong><br>star 수는 조회 시점 기준이며 GitHub Trending 순위와 수치는 시간대별로 바뀔 수 있다.</div>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2>紐⑹감</h2>
+    <ol>
+      <li><a href="#summary">트렌드 해석</a></li>
+      <li><a href="#repos">선별 저장소</a></li>
+      <li><a href="#sources">異쒖쿂</a></li>
+    </ol>
+  </section>
+
+  <section class="panel" id="summary">
+    <h2>요약</h2>
+    <div class="summary">2026-06-08 GitHub Trending은 "코딩 모델" 자체보다 agent를 오래 굴리기 위한 주변 시스템에 무게가 있다. `last30days-skill`과 `taste-skill`은 agent 입력 품질과 리서치 품질을 다루고, `hermes-agent`, `goose`, `llama.cpp`는 agent/runtime/로컬 추론 레이어를 보여준다. `openai/plugins`와 `tolaria`는 Codex류 작업에서 plugin과 knowledge base가 점점 중요해지는 신호다.</div>
+  </section>
+
+  <section class="panel" id="repos">
+    <h2>선별 저장소</h2>
+
+    <article class="card">
+      <h3>1. mvanhorn/last30days-skill</h3>
+      <span class="badge ok">AI research skill</span><span class="badge">Python</span><span class="badge">1,097 stars today</span>
+      <p>Reddit, X, YouTube, Hacker News, Polymarket, web을 조사해 grounded summary를 합성하는 agent skill이다. Claude Code, Codex, Cursor 사용자에게는 "리서치 레인"을 skill화해 반복 업무로 만드는 패턴을 보여준다.</p>
+      <p class="meta">총 stars: 30,495 | 링크: <a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a></p>
+    </article>
+
+    <article class="card">
+      <h3>2. Leonxlnx/taste-skill</h3>
+      <span class="badge ok">agent quality skill</span><span class="badge">Shell</span><span class="badge">1,104 stars today</span>
+      <p>AI가 generic slop을 만들지 않도록 "taste" 지침을 skill로 주입하는 저장소다. 최근 agent 사용의 병목이 단순 생성량이 아니라 산출물 품질과 취향의 일관성이라는 점을 보여준다.</p>
+      <p class="meta">총 stars: 36,392 | 링크: <a href="https://github.com/Leonxlnx/taste-skill">Leonxlnx/taste-skill</a></p>
+    </article>
+
+    <article class="card">
+      <h3>3. NousResearch/hermes-agent</h3>
+      <span class="badge ok">AI agent runtime</span><span class="badge">Python</span><span class="badge">1,117 stars today</span>
+      <p>"The agent that grows with you"라는 설명처럼 개인화된 agent runtime을 지향한다. Claude Code/Codex류 도구가 늘어날수록, 별도 agent framework와 기억/성장 모델도 함께 부상한다.</p>
+      <p class="meta">총 stars: 185,747 | 링크: <a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a></p>
+    </article>
+
+    <article class="card">
+      <h3>4. lfnovo/open-notebook</h3>
+      <span class="badge ok">knowledge workspace</span><span class="badge">TypeScript</span><span class="badge">555 stars today</span>
+      <p>NotebookLM의 open-source 구현을 더 유연한 지식 작업 도구로 만든다. Codex가 보고서, 스프레드시트, 문서 산출물까지 확장되는 흐름과 맞물려 "자료를 읽고 정리하는 agent workspace" 수요를 보여준다.</p>
+      <p class="meta">총 stars: 27,109 | 링크: <a href="https://github.com/lfnovo/open-notebook">lfnovo/open-notebook</a></p>
+    </article>
+
+    <article class="card">
+      <h3>5. aaif-goose/goose</h3>
+      <span class="badge ok">open agent</span><span class="badge">Rust</span><span class="badge">338 stars today</span>
+      <p>code suggestion을 넘어 설치, 실행, 수정, 테스트를 수행하는 extensible AI agent다. 특정 벤더 도구만 쓰는 대신 LLM을 바꿔가며 로컬 실행 agent를 구성하려는 흐름에 가깝다.</p>
+      <p class="meta">총 stars: 47,370 | 링크: <a href="https://github.com/aaif-goose/goose">aaif-goose/goose</a></p>
+    </article>
+
+    <article class="card">
+      <h3>6. ggml-org/llama.cpp</h3>
+      <span class="badge ok">local LLM infra</span><span class="badge">C++</span><span class="badge">197 stars today</span>
+      <p>로컬 LLM 추론의 대표 인프라다. Claude Code, Cursor, Codex가 클라우드 agent를 강화하는 동안에도 비용, privacy, offline 요구 때문에 로컬 추론 기반 보조 agent 수요가 유지된다.</p>
+      <p class="meta">총 stars: 115,258 | 링크: <a href="https://github.com/ggml-org/llama.cpp">ggml-org/llama.cpp</a></p>
+    </article>
+
+    <article class="card">
+      <h3>7. openai/plugins</h3>
+      <span class="badge ok">plugin surface</span><span class="badge">JavaScript</span><span class="badge">262 stars today</span>
+      <p>OpenAI Plugins 저장소가 다시 trending에 보인 것은 plugin/role/tool surface가 agent 제품의 핵심 배포 단위가 되고 있음을 시사한다. Codex 쪽에서도 role-specific plugins와 marketplace 흐름을 주시할 필요가 있다.</p>
+      <p class="meta">총 stars: 1,985 | 링크: <a href="https://github.com/openai/plugins">openai/plugins</a></p>
+    </article>
+
+    <article class="card">
+      <h3>8. refactoringhq/tolaria</h3>
+      <span class="badge ok">markdown knowledge base</span><span class="badge">TypeScript</span><span class="badge">242 stars today</span>
+      <p>Markdown knowledge base를 관리하는 desktop app이다. agent가 더 많은 문서와 memory를 다루게 되면서, Obsidian류 자료 구조를 정리하고 추적하는 도구가 개발 생산성의 일부가 되고 있다.</p>
+      <p class="meta">총 stars: 12,781 | 링크: <a href="https://github.com/refactoringhq/tolaria">refactoringhq/tolaria</a></p>
+    </article>
+
+    <article class="card">
+      <h3>9. microsoft/pg_durable</h3>
+      <span class="badge ok">durable execution infra</span><span class="badge">Rust</span><span class="badge">314 stars today</span>
+      <p>PostgreSQL 내부 durable execution 저장소다. AI 도구 자체는 아니지만, 긴 agent workflow의 상태 보존, 재시도, durable task 실행에 필요한 인프라 패턴과 연결된다.</p>
+      <p class="meta">총 stars: 1,406 | 링크: <a href="https://github.com/microsoft/pg_durable">microsoft/pg_durable</a></p>
+    </article>
+  </section>
+
+  <section class="panel sources" id="sources">
+    <h2>異쒖쿂</h2>
+    <ul>
+      <li><a href="https://github.com/trending?since=daily">GitHub Trending Daily</a></li>
+      <li><a href="https://api.github.com/repos/mvanhorn/last30days-skill">GitHub API: mvanhorn/last30days-skill</a></li>
+      <li><a href="https://api.github.com/repos/Leonxlnx/taste-skill">GitHub API: Leonxlnx/taste-skill</a></li>
+      <li><a href="https://api.github.com/repos/NousResearch/hermes-agent">GitHub API: NousResearch/hermes-agent</a></li>
+      <li><a href="https://api.github.com/repos/aaif-goose/goose">GitHub API: aaif-goose/goose</a></li>
+      <li><a href="https://api.github.com/repos/openai/plugins">GitHub API: openai/plugins</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

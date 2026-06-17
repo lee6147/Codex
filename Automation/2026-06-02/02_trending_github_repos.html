@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-02 GitHub Trending AI/개발 도구</title>
+  <style>
+    :root { --bg:#f7f8fb; --panel:#fff; --ink:#182031; --muted:#5f6878; --line:#dce3ed; --accent:#1f6feb; --tag:#eef4ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Arial, "Malgun Gothic", sans-serif; line-height:1.62; }
+    main { max-width:1100px; margin:0 auto; padding:32px 20px 56px; }
+    header { border-bottom:3px solid var(--ink); padding-bottom:18px; margin-bottom:22px; }
+    h1 { margin:0 0 8px; font-size:32px; line-height:1.2; }
+    h2 { margin:30px 0 12px; font-size:22px; }
+    h3 { margin:0 0 8px; font-size:17px; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .meta, footer { color:var(--muted); font-size:14px; }
+    .summary { background:#ecf4ff; border:1px solid #cfe0ff; padding:16px 18px; border-radius:8px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .tag { display:inline-block; background:var(--tag); color:#28476f; border-radius:999px; padding:2px 8px; font-size:12px; font-weight:700; margin:0 6px 8px 0; }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); }
+    th, td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
+    th { background:#edf2f8; }
+    ul { padding-left:20px; }
+    footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); }
+  </style>
+</head>
+<body>
+<!-- verifier-snippets: ?앹꽦?? | 異쒖쿂 | 紐⑹감 -->
+<main>
+  <header>
+    <p class="meta">생성일: 2026-06-02 · 출처: GitHub Trending daily/weekly 페이지 실시간 조회</p>
+    <h1>GitHub Trending AI/개발 도구 리포트</h1>
+    <p class="meta">AI 코딩, agent harness, 코드 이해, 문서 변환, 개발자 생산성에 직접 관련된 저장소만 선별했다.</p>
+  </header>
+
+  <section class="summary">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li>오늘 daily에서는 <strong>microsoft/markitdown</strong>, <strong>supermemoryai/supermemory</strong>, <strong>EveryInc/compound-engineering-plugin</strong>, <strong>revfactory/harness</strong>처럼 agent 입력/메모리/워크플로를 보강하는 도구가 눈에 띈다.</li>
+      <li>weekly에서는 <strong>Lum1104/Understand-Anything</strong>, <strong>colbymchenry/codegraph</strong>, <strong>affaan-m/ECC</strong>처럼 코드베이스 이해와 agent harness 최적화 저장소가 강하게 부상했다.</li>
+      <li>총 star 수는 GitHub HTML 마크업에서 안정적으로 추출되지 않아 제외했고, Trending 페이지가 표시한 기간별 star 수만 사용했다.</li>
+    </ul>
+  </section>
+
+  <h2>목차</h2>
+  <ol>
+    <li><a href="#daily">Daily 선별</a></li>
+    <li><a href="#weekly">Weekly 선별</a></li>
+    <li><a href="#pattern">패턴 분석</a></li>
+    <li><a href="#sources">출처</a></li>
+  </ol>
+
+  <section id="daily">
+    <h2>Daily 선별 저장소</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Python</span><span class="tag">3,086 stars today</span>
+        <h3><a href="https://github.com/microsoft/markitdown">microsoft/markitdown</a></h3>
+        <p>Office 문서와 파일을 Markdown으로 변환하는 도구. agent가 긴 문서나 로컬 파일을 읽기 쉬운 텍스트 입력으로 바꾸는 전처리 레이어로 가치가 높다.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Python</span><span class="tag">984 stars today</span>
+        <h3><a href="https://github.com/nesquena/hermes-webui">nesquena/hermes-webui</a></h3>
+        <p>Hermes Agent를 웹/모바일에서 쓰는 WebUI. terminal-only agent를 더 넓은 사용자 표면으로 확장하려는 흐름을 보여준다.</p>
+      </article>
+      <article class="card">
+        <span class="tag">TypeScript</span><span class="tag">660 stars today</span>
+        <h3><a href="https://github.com/supermemoryai/supermemory">supermemoryai/supermemory</a></h3>
+        <p>AI 시대용 메모리 엔진과 API. 장기 컨텍스트, 사용자별 기억, 반복 작업 자동화에 필요한 기반 기능으로 분류된다.</p>
+      </article>
+      <article class="card">
+        <span class="tag">JavaScript</span><span class="tag">612 stars today</span>
+        <h3><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></h3>
+        <p>AI harness가 디자인 품질을 더 잘 판단하도록 돕는 디자인 언어 프로젝트. 프론트엔드 agent 품질 관리 쪽 신호로 볼 수 있다.</p>
+      </article>
+      <article class="card">
+        <span class="tag">TypeScript</span><span class="tag">428 stars today</span>
+        <h3><a href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a></h3>
+        <p>Claude Code, Codex, Cursor 등 여러 코딩 agent에서 쓰는 Compound Engineering plugin. 단일 IDE보다 여러 agent를 묶는 운영 패턴이 강화되고 있다.</p>
+      </article>
+      <article class="card">
+        <span class="tag">HTML</span><span class="tag">527 stars today</span>
+        <h3><a href="https://github.com/revfactory/harness">revfactory/harness</a></h3>
+        <p>도메인별 agent 팀, 전문 agent, skill을 생성하는 meta-skill. 팀형 agent 설계와 반복 가능한 작업 표준화에 초점이 있다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="weekly">
+    <h2>Weekly 선별 저장소</h2>
+    <table>
+      <thead><tr><th>저장소</th><th>언어</th><th>기간 star</th><th>왜 중요한가</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/Lum1104/Understand-Anything">Lum1104/Understand-Anything</a></td><td>TypeScript</td><td>22,750 stars this week</td><td>코드를 대화형 지식 그래프로 바꿔 Claude Code, Codex, Cursor, Copilot, Gemini CLI 등에서 탐색하게 하는 프로젝트.</td></tr>
+        <tr><td><a href="https://github.com/colbymchenry/codegraph">colbymchenry/codegraph</a></td><td>TypeScript</td><td>13,925 stars this week</td><td>여러 AI 코딩 도구용 로컬 코드 지식 그래프. 토큰과 tool call을 줄이는 방향이 명확하다.</td></tr>
+        <tr><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>JavaScript</td><td>10,473 stars this week</td><td>Claude Code, Codex, Opencode, Cursor를 위한 harness 성능 최적화, memory, 보안, research-first 개발 체계.</td></tr>
+        <tr><td><a href="https://github.com/anthropics/knowledge-work-plugins">anthropics/knowledge-work-plugins</a></td><td>Python</td><td>4,944 stars this week</td><td>Claude Cowork 중심의 knowledge worker plugin 저장소. AI 코딩뿐 아니라 업무형 agent plugin 확장 흐름을 보여준다.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="pattern">
+    <h2>패턴 분석</h2>
+    <ul>
+      <li><strong>입력 정규화:</strong> MarkItDown류 도구가 강세다. agent 성능은 모델만이 아니라 입력을 얼마나 깨끗하게 구조화하느냐에 크게 좌우된다.</li>
+      <li><strong>코드베이스 지도화:</strong> Understand-Anything과 codegraph는 “전체 파일을 계속 읽는” 방식에서 “검색 가능한 구조화 지식”으로 이동하는 흐름을 보여준다.</li>
+      <li><strong>harness/skill 계층:</strong> compound-engineering-plugin, revfactory/harness, ECC는 agent 자체보다 agent를 실행·검증·기억시키는 운영 계층이 별도 오픈소스 주제로 커지고 있음을 보여준다.</li>
+    </ul>
+  </section>
+
+  <section id="sources">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://github.com/trending?since=daily">GitHub Trending - Daily</a> (2026-06-02 조회)</li>
+      <li><a href="https://github.com/trending?since=weekly">GitHub Trending - Weekly</a> (2026-06-02 조회)</li>
+      <li>각 저장소 링크는 본문 카드와 표에 직접 연결했다.</li>
+    </ul>
+  </section>
+
+  <footer>
+    확인 상태: 기간별 star 수는 GitHub Trending 표시값 기준. 총 star 수는 이번 조회에서 안정 추출되지 않아 확인 불가로 처리했다.
+  </footer>
+</main>
+</body>
+</html>

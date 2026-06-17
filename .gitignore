@@ -1,2 +1,5 @@
 .omx/
+.omc/
 __pycache__/
+.edge-cdp-profile/
+.edge-cdp-profile-*/

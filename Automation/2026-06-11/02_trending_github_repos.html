@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub AI 개발 저장소 동향 - 2026-06-11</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #617080;
+      --line: #dce3eb;
+      --ink: #102a43;
+      --blue: #1455a0;
+      --teal: #087f83;
+      --orange: #a35f00;
+      --soft-blue: #eaf3ff;
+      --soft-teal: #e6f6f6;
+      --soft-orange: #fff2df;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+    .wrap { width: min(1120px, calc(100vw - 32px)); margin: 28px auto 56px; }
+    .hero { background: var(--ink); color: white; border-radius: 10px; padding: 30px; border-left: 8px solid var(--teal); }
+    h1, h2, h3 { line-height: 1.25; margin-top: 0; }
+    a { color: var(--blue); }
+    .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 18px; }
+    .stat { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); border-radius: 8px; padding: 12px 14px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 22px; margin-top: 18px; }
+    .notice { background: var(--soft-orange); border-left: 5px solid var(--orange); padding: 14px 16px; border-radius: 8px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .card { border: 1px solid var(--line); border-radius: 8px; padding: 18px; background: #fff; }
+    .badge { display: inline-block; margin: 0 6px 8px 0; padding: 4px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; background: var(--soft-blue); color: var(--blue); }
+    .badge.teal { background: var(--soft-teal); color: var(--teal); }
+    .badge.orange { background: var(--soft-orange); color: var(--orange); }
+    .muted { color: var(--muted); font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f7f9fb; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <!-- verifier markers: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+  <main class="wrap">
+    <header class="hero">
+      <h1>GitHub AI 개발 저장소 동향</h1>
+      <p>생성일: 2026-06-11 | 조사 기준: GitHub Trending daily/weekly 페이지 확인 후, 텍스트 추출 한계로 GitHub Search API 메타데이터를 보조 사용</p>
+      <div class="meta">
+        <div class="stat"><strong>선정 방식</strong><br>최근 7일 push, AI coding/agent/MCP/developer-tools 관련성, star 수, 설명의 실무 적합성을 함께 봤다.</div>
+        <div class="stat"><strong>주의</strong><br>아래 순위는 GitHub Trending의 원본 순위가 아니라 API fallback 기반 선별 순위다.</div>
+        <div class="stat"><strong>핵심 흐름</strong><br>컨텍스트 절감, MCP 도구화, 에이전트 하네스, 실행 샌드박스가 강하게 보인다.</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약 통계</a></li>
+        <li><a href="#repos">주목 저장소</a></li>
+        <li><a href="#pattern">트렌드 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="summary">
+      <h2>요약 통계</h2>
+      <div class="notice">
+        <p><strong>GitHub Trending 페이지는 확인했지만 repository card가 텍스트 도구에 노출되지 않았다.</strong> 따라서 이 문서는 GitHub Search API에서 <code>pushed:&gt;=2026-06-04</code>, 관련 topic, star 수 기준으로 조회한 저장소를 선별했다. 실제 Trending 랭킹이 필요한 경우 GitHub 웹 UI에서 원본 화면을 별도 확인해야 한다.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>주목 저장소</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>affaan-m/ECC</h3>
+          <span class="badge teal">agent harness</span><span class="badge">JavaScript</span><span class="badge orange">212,615 stars</span>
+          <p>Claude Code, Codex, Cursor, Opencode 등을 겨냥한 에이전트 하네스 성능 최적화 시스템으로 설명된다. 스킬, 메모리, 보안, research-first 개발 흐름을 하나의 운영 레이어로 묶는 방향이다.</p>
+          <p class="muted">Claude/Cursor/Codex 사용자 연결: 도구별 설정과 실행 방식을 표준화하려는 팀에 참고할 만하다.</p>
+        </article>
+        <article class="card">
+          <h3>rtk-ai/rtk</h3>
+          <span class="badge teal">token reduction</span><span class="badge">Rust</span><span class="badge orange">60,995 stars</span>
+          <p>일반 개발 명령에서 LLM token 소비를 60-90% 줄인다고 설명하는 CLI proxy다. 이번 주 기사 흐름에서도 비용 통제가 반복적으로 등장해 실무 관심과 맞물린다.</p>
+          <p class="muted">연결: Claude Code와 Codex 같은 장시간 CLI 에이전트의 비용 관리 실험에 적합하다.</p>
+        </article>
+        <article class="card">
+          <h3>ruvnet/ruflo</h3>
+          <span class="badge teal">multi-agent</span><span class="badge">TypeScript</span><span class="badge orange">58,850 stars</span>
+          <p>Claude 중심 multi-agent swarm과 Codex integration을 내세운 meta-harness다. 단일 assistant보다 여러 역할을 조정하는 구조에 관심이 커지고 있음을 보여준다.</p>
+          <p class="muted">연결: 대형 작업을 Claude Code와 Codex에 나누어 맡기는 실험에 맞는다.</p>
+        </article>
+        <article class="card">
+          <h3>oraios/serena</h3>
+          <span class="badge teal">MCP toolkit</span><span class="badge">Python</span><span class="badge orange">25,211 stars</span>
+          <p>코딩 에이전트를 위한 semantic retrieval 및 editing MCP toolkit이다. 에이전트가 전체 코드베이스를 무작정 읽는 대신 필요한 심볼과 관계를 찾도록 돕는다.</p>
+          <p class="muted">연결: Cursor, Claude Code, Codex 모두에서 컨텍스트 품질 개선 레이어로 활용할 수 있다.</p>
+        </article>
+        <article class="card">
+          <h3>OpenHands/OpenHands</h3>
+          <span class="badge teal">AI-driven development</span><span class="badge">Python</span><span class="badge orange">76,400 stars</span>
+          <p>오픈소스 AI 개발 에이전트로, 상용 에이전트와 비교할 수 있는 local 또는 self-hosted 실험 기반을 제공한다.</p>
+          <p class="muted">연결: Codex/Claude Code의 폐쇄형 기능을 팀 내부에서 검증하거나 대체 가능성을 실험할 때 참고할 수 있다.</p>
+        </article>
+        <article class="card">
+          <h3>daytonaio/daytona</h3>
+          <span class="badge teal">sandbox</span><span class="badge">TypeScript</span><span class="badge orange">72,438 stars</span>
+          <p>AI 생성 코드를 실행하기 위한 secure and elastic infrastructure를 내세운다. 에이전트가 코드를 직접 실행하는 흐름이 늘수록 격리된 실행 환경의 중요성이 커진다.</p>
+          <p class="muted">연결: Codex류 cloud task, Claude Code remote session, 사내 agent runner 설계에 참고 가능하다.</p>
+        </article>
+        <article class="card">
+          <h3>Kilo-Org/kilocode</h3>
+          <span class="badge teal">coding agent</span><span class="badge">TypeScript</span><span class="badge orange">19,991 stars</span>
+          <p>agentic engineering platform을 표방하는 오픈소스 코딩 에이전트다. 상용 IDE agent와 open-source agent 사이의 기능 경쟁을 보여준다.</p>
+          <p class="muted">연결: Cursor 대체 또는 보완 워크플로를 검토하는 개발자에게 비교 대상이 된다.</p>
+        </article>
+        <article class="card">
+          <h3>zilliztech/claude-context</h3>
+          <span class="badge teal">code search MCP</span><span class="badge">TypeScript</span><span class="badge orange">11,810 stars</span>
+          <p>Claude Code용 code search MCP로 설명되지만, 저장소 전체를 coding agent의 검색 가능한 컨텍스트로 만드는 방향은 모든 agent toolchain에 공통적이다.</p>
+          <p class="muted">연결: 대형 monorepo에서 context window 낭비를 줄이는 보조 레이어로 유용하다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="pattern">
+      <h2>트렌드 해석</h2>
+      <table>
+        <thead><tr><th>패턴</th><th>관찰</th><th>실무 시사점</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>컨텍스트 비용 절감</td>
+            <td>rtk, serena, claude-context처럼 token과 retrieval을 직접 다루는 저장소가 눈에 띈다.</td>
+            <td>AI 코딩 도구의 병목은 모델 성능만이 아니라 필요한 코드만 읽히는 구조다.</td>
+          </tr>
+          <tr>
+            <td>에이전트 하네스 표준화</td>
+            <td>ECC, ruflo, kilocode는 agent 실행 방식, memory, skill, workflow를 제품화하려 한다.</td>
+            <td>팀은 도구 하나를 고르는 것보다 재현 가능한 agent 운영 규칙을 먼저 정해야 한다.</td>
+          </tr>
+          <tr>
+            <td>실행 환경 분리</td>
+            <td>daytona류 sandbox가 계속 중요해진다.</td>
+            <td>에이전트가 코드를 실행하고 패키지를 설치할수록 보안 경계와 비용 경계가 필요하다.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending?since=daily">GitHub Trending daily</a> - 원본 페이지 확인, repository card 텍스트 추출 제한</li>
+        <li><a href="https://github.com/trending?since=weekly">GitHub Trending weekly</a> - 원본 페이지 확인, repository card 텍스트 추출 제한</li>
+        <li>GitHub Search API - <code>topic:ai-agent pushed:&gt;=2026-06-04 stars:&gt;500</code>, <code>topic:ai-coding pushed:&gt;=2026-06-04 stars:&gt;100</code>, <code>topic:mcp pushed:&gt;=2026-06-04 stars:&gt;500</code>, <code>topic:developer-tools pushed:&gt;=2026-06-04 stars:&gt;1000</code></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

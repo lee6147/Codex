@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 AI 코딩 도구 업데이트 - 2026-06-01</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --ink: #17202a;
+      --muted: #5c6773;
+      --line: #d9e0e8;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-soft: #e6f4f1;
+      --warn: #8a5a00;
+      --warn-soft: #fff3cd;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.62;
+    }
+    main { max-width: 1120px; margin: 0 auto; padding: 40px 22px 56px; }
+    header {
+      background: #102a43;
+      color: #fff;
+      padding: 34px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+    }
+    h1, h2, h3 { line-height: 1.24; margin: 0 0 12px; }
+    h2 { margin-top: 30px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+    p { margin: 0 0 12px; }
+    a { color: #0b5cad; }
+    .meta, .note, .source, .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 16px 0;
+    }
+    .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .label { display: block; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0; }
+    .value { font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card h3 { color: var(--accent); }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .warn { background: var(--warn-soft); border-color: #f1d490; color: var(--warn); }
+    ul { margin-top: 6px; padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); }
+    th, td { border-bottom: 1px solid var(--line); padding: 11px; vertical-align: top; text-align: left; }
+    th { background: #eef3f8; }
+    @media (max-width: 820px) {
+      .meta, .grid { grid-template-columns: 1fr; }
+      header { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+<!-- harness-check: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+<main>
+  <header>
+    <p class="badge">공식 업데이트 브리핑</p>
+    <h1>AI 코딩 도구 공식 업데이트</h1>
+    <p>Claude Code, OpenAI Codex, Cursor의 공식 변경 로그를 기준으로 2026-06-01 오전에 확인한 업데이트를 정리했다.</p>
+  </header>
+
+  <section class="meta" aria-label="보고서 메타데이터">
+    <div><span class="label">생성일</span><span class="value">2026-06-01</span></div>
+    <div><span class="label">확인 범위</span><span class="value">2026-05-28 - 2026-06-01</span></div>
+    <div><span class="label">상태</span><span class="value">공식 출처 확인 완료</span></div>
+  </section>
+
+  <section class="note">
+    <h2>핵심 요약</h2>
+    <p>이번 공식 업데이트의 공통 축은 장시간 에이전트 실행의 안전성과 운영성이다. Cursor는 Auto-review Run Mode로 승인 부담을 줄였고, Claude Code는 Auto mode의 클라우드 제공자 범위를 넓혔다. Codex는 Windows에서 컴퓨터 조작과 원격 접근을 확장해 데스크톱 자동화 범위를 넓혔다.</p>
+  </section>
+
+  <section class="card">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#claude">Claude Code 공식 변경</a></li>
+      <li><a href="#codex">OpenAI Codex 공식 변경</a></li>
+      <li><a href="#cursor">Cursor 공식 변경</a></li>
+      <li><a href="#comparison">운영 관점 비교</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section id="claude" class="card">
+    <h2>Claude Code 공식 변경</h2>
+    <h3>2.1.159 - 2026-05-31</h3>
+    <p>공식 changelog에는 내부 인프라 개선으로 표시되어 있으며 사용자 노출 기능 변화는 없다고 정리되어 있다.</p>
+    <h3>2.1.158 - 2026-05-30</h3>
+    <p>Auto mode가 Bedrock, Vertex, Foundry 환경의 Opus 4.7 및 Opus 4.8에서도 사용 가능해졌다. 활성화 조건은 <code>CLAUDE_CODE_ENABLE_AUTO_MODE=1</code> 설정이다.</p>
+    <h3>2.1.157 - 2026-05-29</h3>
+    <ul>
+      <li><code>.claude/skills</code> 아래 플러그인이 marketplace 없이 자동 로드된다.</li>
+      <li><code>claude plugin init &lt;name&gt;</code> 명령으로 로컬 skill 플러그인을 스캐폴딩할 수 있다.</li>
+      <li>OTEL 세부 로깅이 켜진 경우 tool decision telemetry에 bash 명령, MCP/skill 이름 같은 tool parameter가 포함된다.</li>
+      <li>Windows 11 WSL 이미지 붙여넣기, 스크린샷 붙여넣기, Windows Explorer 드래그 이미지 처리가 개선됐다.</li>
+    </ul>
+    <p><strong>해석:</strong> Claude Code는 단순 기능 추가보다 skill/plugin 배포와 장시간 세션 복구, Windows 터미널 안정성 개선에 초점이 있다.</p>
+  </section>
+
+  <section id="codex" class="card">
+    <h2>OpenAI Codex 공식 변경</h2>
+    <h3>Codex app 26.527 - 2026-05-29</h3>
+    <ul>
+      <li>Computer Use가 Windows에서 동작한다. Codex가 foreground Windows 데스크톱 앱을 보고 클릭하고 입력할 수 있다.</li>
+      <li>Remote control이 Windows 기기를 지원한다. iOS/Android의 ChatGPT 또는 Mac의 Codex에서 Windows 기기 작업을 시작하고 진행 상황을 확인할 수 있다.</li>
+      <li>Profile 섹션에 프로필 상세, 사용량, token activity가 표시된다.</li>
+      <li>로컬 프로젝트와 worktree의 thread coordination, 과거 thread 검색 확장이 추가됐다.</li>
+    </ul>
+    <h3>Codex CLI 0.135.0 - 2026-05-28</h3>
+    <ul>
+      <li><code>codex doctor</code>가 환경, Git, 터미널, app-server, thread inventory 진단 정보를 더 풍부하게 보고한다.</li>
+      <li><code>/status</code>가 remote transport 연결 정보를 표시한다.</li>
+      <li>Vim mode text-object 편집, permission profile 표시, Python SDK sandbox preset이 추가됐다.</li>
+    </ul>
+    <p><strong>해석:</strong> Codex는 Windows 사용자와 원격 작업자를 직접 겨냥했다. 로컬 자동화, 원격 handoff, 진단 가능성이 한 번에 커졌다.</p>
+  </section>
+
+  <section id="cursor" class="card">
+    <h2>Cursor 공식 변경</h2>
+    <h3>Cursor 3.6 - 2026-05-29</h3>
+    <p>Auto-review Run Mode가 추가됐다. Cursor가 더 오래 작업하면서 승인 프롬프트를 줄이고, Shell/MCP/Fetch tool call을 위험도에 따라 자동 허용, sandbox 실행, classifier subagent 검토, 사용자 승인 요청으로 분기한다.</p>
+    <ul>
+      <li>설정 경로: Settings &gt; Cursor Settings &gt; Agents &gt; Run Mode.</li>
+      <li>classifier agent에 사용자 지정 지침을 줄 수 있다.</li>
+      <li>목표는 YOLO식 무제한 실행이 아니라 승인 빈도와 안전성의 균형이다.</li>
+    </ul>
+    <p><strong>해석:</strong> Cursor는 IDE 중심 agent 경험에서 승인 정책을 제품화하고 있다. 반복적 local edit/test 작업에 특히 유리하다.</p>
+  </section>
+
+  <section id="comparison">
+    <h2>운영 관점 비교</h2>
+    <table>
+      <thead>
+        <tr><th>도구</th><th>이번 신호</th><th>실무 영향</th><th>주의점</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Claude Code</td>
+          <td>Auto mode 제공자 확대, skill/plugin 자동 로드</td>
+          <td>클라우드/엔터프라이즈 환경에서도 장시간 agent 실행 설계가 쉬워진다.</td>
+          <td>Auto mode는 별도 환경 변수와 제공자 조건을 확인해야 한다.</td>
+        </tr>
+        <tr>
+          <td>OpenAI Codex</td>
+          <td>Windows Computer Use, remote control</td>
+          <td>Windows 데스크톱 앱까지 포함한 자동화 범위가 커진다.</td>
+          <td>권한, 화면 가시성, 지역별 제공 여부는 조직별로 확인해야 한다.</td>
+        </tr>
+        <tr>
+          <td>Cursor</td>
+          <td>Auto-review Run Mode</td>
+          <td>IDE 안에서 승인 피로를 줄이고 agent 실행 시간을 늘린다.</td>
+          <td>classifier 판단은 검토 보조이며 최종 변경 리뷰는 여전히 필요하다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card warn">
+    <h2>확인 불가 및 보수적 처리</h2>
+    <p>2026-06-01 당일 신규 공식 공지는 확인하지 못했다. 따라서 본 문서는 2026-05-28부터 2026-05-31까지의 공식 변경 로그 중 2026-06-01 조사 시점에 확인 가능한 항목을 다룬다.</p>
+  </section>
+
+  <section id="sources" class="source">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://code.claude.com/docs/en/changelog">Claude Code 공식 Changelog</a></li>
+      <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex 공식 Changelog</a></li>
+      <li><a href="https://cursor.com/en-US/changelog">Cursor 공식 Changelog</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

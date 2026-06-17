@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<!-- verifier anchors: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 저장소 보고서 - 2026-06-16</title>
+  <style>
+    :root { --bg:#f6f8fb; --panel:#fff; --ink:#16202b; --muted:#617080; --line:#dce3ed; --blue:#0b62a3; --green:#18734a; --soft:#eef6ff; --warn:#fff5d6; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1120px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#173c56; color:#fff; border-radius:14px; padding:30px; margin-bottom:18px; }
+    h1 { margin:0 0 8px; font-size:2rem; }
+    h2 { margin:0 0 14px; font-size:1.25rem; }
+    h3 { margin:0 0 8px; font-size:1.05rem; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; margin:16px 0; }
+    .summary { background:var(--soft); border-left:5px solid var(--blue); }
+    .notice { background:var(--warn); border-left:5px solid #9c6b00; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:16px; background:#fff; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; margin:2px 4px 8px 0; font-size:.78rem; font-weight:700; background:#eaf4ff; color:#174d83; }
+    .metric { color:var(--green); font-weight:700; }
+    .muted { color:var(--muted); font-size:.92rem; }
+    ul { margin:8px 0 0; padding-left:20px; }
+    .sources li { margin:6px 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>GitHub 트렌딩 저장소 보고서</h1>
+      <p>생성일: 2026-06-16 | 조사 기준: GitHub Trending Daily/Weekly 확인 + GitHub Search API fallback</p>
+      <div class="meta">
+        <div class="stat"><strong>선정 기준</strong><br>2026-06-09 이후 push된 AI coding agent, developer tools, Claude/Codex/Cursor 관련 저장소.</div>
+        <div class="stat"><strong>추출 한계</strong><br>GitHub Trending 페이지가 repository card 본문을 텍스트로 노출하지 않아 API fallback을 사용했다.</div>
+        <div class="stat"><strong>이번 주 관찰</strong><br>에이전트 “본체”보다 메모리, 스킬, 그래프, 보안, 오케스트레이션 보조 도구가 강하게 보인다.</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#trend">트렌드 해석</a></li>
+        <li><a href="#repos">주목 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약</h2>
+      <p>GitHub 쪽 신호는 “코딩 에이전트 자체”에서 “에이전트를 오래 굴리기 위한 주변 시스템”으로 이동 중이다. 상위 후보에는 system prompt 아카이브, Claude/Codex/Cursor 공통 메모리 계층, long-horizon harness, local code graph, skill library, agent security scanner가 반복적으로 잡힌다.</p>
+    </section>
+
+    <section class="panel notice">
+      <h2>조사 방식 메모</h2>
+      <p>GitHub Trending Daily/Weekly 페이지는 이번 실행에서도 repository card를 안정적으로 추출하지 못했다. 따라서 `pushed:&gt;2026-06-09` 조건의 GitHub Search API 결과를 사용했고, 별점은 조회 시점의 누적 star 수다. 이는 “Trending 순위”가 아니라 최신 push가 있는 관련 저장소의 fallback metadata다.</p>
+    </section>
+
+    <section class="panel" id="trend">
+      <h2>트렌드 해석</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>1. Context와 memory가 제품 차별점이 됨</h3>
+          <p>`claude-mem`, code graph 계열 저장소는 agent가 한 번의 세션을 넘어 지식을 유지하도록 돕는다. Claude Code, Codex, Cursor 사용자는 이제 모델 성능보다 “어떻게 같은 프로젝트 맥락을 반복 주입하지 않을 것인가”에 관심이 커지고 있다.</p>
+        </article>
+        <article class="card">
+          <h3>2. Skill/command library가 새로운 플러그인 표면</h3>
+          <p>`agent-skills`, `antigravity-awesome-skills`, `taste-skill` 같은 저장소는 에이전트 프롬프트와 작업 규약을 재사용 가능한 패키지로 다룬다. 팀 표준화와 품질 통제에 가까운 흐름이다.</p>
+        </article>
+        <article class="card">
+          <h3>3. 보안과 검증 도구가 뒤따라옴</h3>
+          <p>`hol-guard`, MCP devtools, review/graph 도구는 agent에게 더 많은 권한을 줄수록 실행 전 검사와 산출물 검증이 필요하다는 수요를 반영한다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>주목 저장소</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools">x1xhlol/system-prompts-and-models-of-ai-tools</a></h3>
+          <span class="badge">system prompts</span><span class="badge">Cursor/Claude/Codex</span>
+          <p>Augment Code, Claude Code, Cursor, Devin, Replit, Windsurf, Codex 등 AI coding/productivity 도구의 system prompt와 내부 도구를 모으는 저장소다.</p>
+          <p class="metric">Stars: 140,552 | pushed: 2026-06-12 | language: 확인 불가</p>
+          <p>주목 이유: 사용자들이 상용 에이전트의 작업 규칙, tool surface, system prompt 구조를 비교 학습하려는 수요가 매우 크다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+          <span class="badge">memory</span><span class="badge">Claude Code</span><span class="badge">Codex</span>
+          <p>에이전트 세션을 캡처, 압축, 재주입해 장기 컨텍스트를 제공하는 메모리 계층이다. Claude Code, Codex, Gemini, Copilot, OpenCode 등을 대상으로 한다.</p>
+          <p class="metric">Stars: 82,507 | pushed: 2026-06-15 | language: JavaScript</p>
+          <p>연결성: Claude Code background/session 흐름, Codex automations, Cursor agent runs 모두 장기 기억 문제를 공유한다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></h3>
+          <span class="badge">long-horizon</span><span class="badge">multi-agent</span>
+          <p>연구, 코딩, 콘텐츠 생성을 sandboxes, memories, tools, skills, subagents로 묶는 long-horizon SuperAgent harness다.</p>
+          <p class="metric">Stars: 71,235 | pushed: 2026-06-15 | language: Python</p>
+          <p>주목 이유: 단발 코드 생성보다 분 단위~시간 단위 작업을 운영하는 harness가 개발 생산성 도구의 핵심 층으로 올라오고 있다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/earendil-works/pi">earendil-works/pi</a></h3>
+          <span class="badge">agent loop</span><span class="badge">TUI</span>
+          <p>통합 LLM API, agent loop, TUI, coding agent CLI를 제공하는 TypeScript 기반 agent toolkit이다.</p>
+          <p class="metric">Stars: 62,919 | pushed: 2026-06-15 | language: TypeScript</p>
+          <p>연결성: Claude/Codex/Cursor의 상용 UX 밖에서 자체 agent runtime을 구성하려는 개발자층에 맞다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/code-yeongyu/oh-my-openagent">code-yeongyu/oh-my-openagent</a></h3>
+          <span class="badge">orchestration</span><span class="badge">Codex</span><span class="badge">Cursor</span>
+          <p>Codex/OpenCode 복잡 코드베이스 작업을 위한 agent harness로 소개되며, Claude, Codex, Cursor, Gemini, OpenAI topic을 함께 갖고 있다.</p>
+          <p class="metric">Stars: 62,334 | pushed: 2026-06-15 | language: TypeScript</p>
+          <p>주목 이유: 단일 agent보다 여러 CLI/IDE agent를 감싸는 meta-harness 관심이 크다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></h3>
+          <span class="badge">skills</span><span class="badge">production engineering</span>
+          <p>AI coding agents용 production-grade engineering skills 모음이다. Claude Code, Cursor, antigravity 계열 topic과 연결된다.</p>
+          <p class="metric">Stars: 60,205 | pushed: 2026-06-14 | language: Shell</p>
+          <p>연결성: 팀의 개발 규약과 반복 작업을 skill 형태로 패키징하는 추세를 대표한다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/colbymchenry/codegraph">colbymchenry/codegraph</a></h3>
+          <span class="badge">knowledge graph</span><span class="badge">local</span>
+          <p>Claude Code, Codex, Gemini, Cursor, OpenCode 등을 위한 로컬 code knowledge graph다. code change에 따라 자동 동기화해 token/tool call 비용을 줄이는 방향이다.</p>
+          <p class="metric">Stars: 49,608 | pushed: 2026-06-15 | language: TypeScript</p>
+          <p>주목 이유: 대규모 레포에서는 “더 큰 컨텍스트”보다 “더 좋은 검색/그래프”가 비용과 정확도를 좌우한다.</p>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/hashgraph-online/hol-guard">hashgraph-online/hol-guard</a></h3>
+          <span class="badge">security</span><span class="badge">plugins/MCP</span>
+          <p>Codex, Claude Code, Cursor, Gemini, OpenCode, plugins, skills, MCP servers 실행 전 보호를 표방하는 AI developer-agent 보안 도구다.</p>
+          <p class="metric">Stars: 356 | pushed: 2026-06-15 | language: Python</p>
+          <p>주목 이유: star 수는 낮지만 agent 권한 확장과 함께 보안 스캐너/정책 도구가 필수 보조 계층이 될 가능성이 있다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending?since=daily">GitHub Trending daily</a> 및 <a href="https://github.com/trending?since=weekly">GitHub Trending weekly</a></li>
+        <li>GitHub Search API query: `ai coding agent pushed:&gt;2026-06-09`, `claude code codex cursor pushed:&gt;2026-06-09`, `agentic coding developer tools pushed:&gt;2026-06-09`</li>
+        <li>각 저장소 GitHub URL은 카드 제목 링크에 포함했다.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

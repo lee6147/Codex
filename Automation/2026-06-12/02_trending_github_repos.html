@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>트렌딩 GitHub 저장소 보고서 - 2026-06-12</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --ink: #1f2933;
+      --muted: #616e7c;
+      --line: #d8ddd5;
+      --accent: #6b5b95;
+      --accent-soft: #f0edf7;
+      --hero: #263238;
+      --good: #edf8f1;
+      --warn: #fff6df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.68;
+    }
+    .wrap { width: min(1080px, calc(100vw - 32px)); margin: 28px auto 56px; }
+    .hero {
+      background: var(--hero);
+      color: #fff;
+      border-radius: 8px;
+      padding: 30px 34px;
+    }
+    .hero p { margin: 8px 0 0; color: #d9e0e3; }
+    h1, h2, h3 { line-height: 1.28; margin-top: 0; }
+    a { color: #0957a3; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 18px; }
+    .stat { border: 1px solid rgba(255,255,255,.22); border-radius: 8px; padding: 12px 14px; background: rgba(255,255,255,.08); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+    .summary { background: var(--accent-soft); border-left: 5px solid var(--accent); }
+    .toc ol { margin: 0; padding-left: 22px; }
+    .repo {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 14px;
+      background: #fff;
+    }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 10px; }
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #4e3f79;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .badge.good { background: var(--good); color: #17603a; }
+    .badge.warn { background: var(--warn); color: #7a5200; }
+    .meta-line { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+    .sources li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>트렌딩 GitHub 저장소 보고서</h1>
+      <p>생성일: 2026-06-12 | 조사 기준: GitHub Trending Daily | 필터: AI, 에이전트, 코딩 생산성, 개발 보안</p>
+      <div class="grid">
+        <div class="stat"><strong>선정 저장소</strong><br>AI/agent/coding 생산성과 직접 연결된 4개 저장소를 선별했다.</div>
+        <div class="stat"><strong>오늘의 신호</strong><br>AI agent skill 보안, 시스템 프롬프트 아카이브, 자가개선 프레임워크가 함께 부상했다.</div>
+        <div class="stat"><strong>도구 연결</strong><br>Claude Code/Cursor/Codex 사용자는 skill, prompt, agent 보안 검토 수요와 직접 연결된다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약 통계</a></li>
+        <li><a href="#trend">트렌드 해석</a></li>
+        <li><a href="#repos">저장소 카드</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약 통계</h2>
+      <p>GitHub Trending Daily에서 AI와 개발 생산성에 직접 관련된 항목은 많지 않았지만, 선별된 저장소는 방향성이 분명했다. `NVIDIA/SkillSpector`는 AI agent skill 보안 스캐너로 308 stars today가 표시됐고, `x1xhlol/system-prompts-and-models-of-ai-tools`는 Claude Code, Cursor, Codex 계열까지 포함하는 시스템 프롬프트/내부 도구 아카이브로 재부상했다. `hexo-ai/sia`는 benchmark 기반 자가개선 AI framework로 177 stars today가 표시됐다.</p>
+    </section>
+
+    <section class="panel" id="trend">
+      <h2>트렌드 해석</h2>
+      <p>이번 흐름은 "새 코딩 에이전트" 자체보다 에이전트를 운영할 때 필요한 주변 장치로 이동한다. 첫째, skill/plugin/agent의 보안 검사가 별도 도구가 될 만큼 중요해졌다. 둘째, 상용 AI 도구의 시스템 프롬프트와 내부 tool surface를 관찰하려는 수요가 이어진다. 셋째, agent가 benchmark에서 스스로 성능을 개선하는 루프가 독립 프레임워크로 포장되고 있다.</p>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>저장소 카드</h2>
+      <article class="repo">
+        <h3>1. NVIDIA / SkillSpector</h3>
+        <div class="badge-row">
+          <span class="badge good">AI agent 보안</span>
+          <span class="badge">Python</span>
+          <span class="badge">308 stars today</span>
+        </div>
+        <p>AI agent skills의 취약점, 악성 패턴, 보안 리스크를 탐지하는 스캐너로 소개됐다. Claude Code와 Codex처럼 skill/plugin/agent 확장면이 커지는 도구에서는 커스텀 skill 검토와 공급망 점검에 바로 연결된다.</p>
+        <p class="meta-line">Star: 2,347 at 조회 시점 | Fork: 197 | 지금 주목 이유: agent 확장 생태계가 커질수록 skill 보안 검토가 운영 필수 항목이 된다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>2. x1xhlol / system-prompts-and-models-of-ai-tools</h3>
+        <div class="badge-row">
+          <span class="badge">프롬프트 아카이브</span>
+          <span class="badge">AI 도구 분석</span>
+          <span class="badge warn">운영 참고용</span>
+        </div>
+        <p>Augment Code, Claude Code, Cursor, Devin, Kiro, Lovable, Windsurf, VSCode Agent, v0 등 다수 AI 도구의 시스템 프롬프트와 내부 도구 정보를 모은 저장소다. 생산 시스템에 직접 복사하기보다, 각 도구가 어떤 권한/도구/지시 구조를 갖는지 비교하는 참고 자료로 보는 편이 안전하다.</p>
+        <p class="meta-line">GitHub Trending 표시: AI tools system prompts archive | 연결성: Cursor/Codex/Claude Code 프롬프트 설계와 권한 모델 비교에 유용하다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>3. hexo-ai / sia</h3>
+        <div class="badge-row">
+          <span class="badge good">자가개선 AI</span>
+          <span class="badge">Python</span>
+          <span class="badge">177 stars today</span>
+        </div>
+        <p>SIA는 benchmark task에서 AI system, model, agent의 성능을 자율적으로 개선하는 self-improving AI framework로 소개됐다. Codex나 Claude Code 사용자가 eval-driven repair loop를 만들 때 참고할 수 있는 형태다.</p>
+        <p class="meta-line">Star: 1,072 at 조회 시점 | Fork: 146 | 지금 주목 이유: 단일 프롬프트 개선보다 반복 평가-수정 루프가 더 중요한 주제로 이동하고 있다.</p>
+      </article>
+
+      <article class="repo">
+        <h3>4. maziyarpanahi / openmed</h3>
+        <div class="badge-row">
+          <span class="badge">Open-source healthcare AI</span>
+          <span class="badge warn">코딩 생산성과는 간접 연결</span>
+        </div>
+        <p>open-source healthcare AI로 표시된 저장소다. 코딩 도구 자체와 직접 연결되지는 않지만, 도메인 AI 앱을 빠르게 구축하려는 흐름 속에서 Codex/Cursor/Claude Code가 적용될 수 있는 vertical AI 프로젝트 사례로 볼 수 있다.</p>
+        <p class="meta-line">선정 이유: AI 애플리케이션 빌드 수요를 보여주는 보조 신호이며, 이번 보고서의 핵심 순위에서는 낮게 평가했다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending?since=daily">GitHub Trending Daily</a></li>
+        <li><a href="https://github.com/NVIDIA/SkillSpector">NVIDIA / SkillSpector</a></li>
+        <li><a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools">x1xhlol / system-prompts-and-models-of-ai-tools</a></li>
+        <li><a href="https://github.com/hexo-ai/sia">hexo-ai / sia</a></li>
+        <li><a href="https://github.com/maziyarpanahi/openmed">maziyarpanahi / openmed</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

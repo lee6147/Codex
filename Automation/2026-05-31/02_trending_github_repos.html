@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-31 GitHub 트렌딩 AI/개발 도구</title>
+  <style>
+    body{margin:0;background:#f8fafc;color:#17212f;font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.62}
+    main{max-width:1120px;margin:0 auto;padding:36px 20px 48px}
+    header{border-bottom:3px solid #203956;padding-bottom:18px;margin-bottom:24px}
+    h1{font-size:30px;margin:0 0 8px;color:#12233a}
+    h2{font-size:20px;margin:0 0 10px;color:#1d314c}
+    .meta{color:#59677a;font-size:14px}
+    .repo{background:white;border:1px solid #dce4ee;border-radius:8px;padding:16px;margin:14px 0;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+    .repo-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+    .score{font-weight:bold;color:#0f5b99;background:#eef6ff;border:1px solid #c7dff8;border-radius:999px;padding:2px 10px;font-size:13px}
+    .why{background:#eef9f1;border-left:4px solid #2f8c54;padding:10px 12px;margin-top:10px}
+    a{color:#0a5db8;text-decoration:none}
+    a:hover{text-decoration:underline}
+    table{width:100%;border-collapse:collapse;background:white;border:1px solid #dce4ee;margin-top:18px}
+    th,td{padding:10px;border-bottom:1px solid #e8edf4;text-align:left;vertical-align:top}
+    th{background:#edf3f9;color:#203956}
+  </style>
+</head>
+<body>
+  <!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main>
+    <header>
+      <h1>GitHub 트렌딩 AI/개발 도구 관찰</h1>
+      <p class="meta">생성일: 2026-05-31 · 기준: GitHub Trending Today 페이지 확인 시점 · 범위: AI 코딩, agent harness, 문서 파싱, 개발 생산성</p>
+    </header>
+
+    <section>
+      <p>오늘의 GitHub Trending은 순수 AI 모델 저장소보다 agent 실행 환경, 문서 변환, 플러그인/스킬 생태계, 자동화 도구가 강하게 보입니다. 아래 별 수는 GitHub Trending 페이지가 표시한 조사 시점 값입니다.</p>
+    </section>
+
+    <section>
+      <h2>목차</h2>
+      <ul>
+        <li>문서 전처리 도구</li>
+        <li>AI 코딩 agent 런타임</li>
+        <li>플러그인과 harness 생태계</li>
+        <li>요약 판단과 출처</li>
+      </ul>
+    </section>
+
+    <section class="repo">
+      <div class="repo-head">
+        <h2><a href="https://github.com/microsoft/markitdown">microsoft/markitdown</a></h2>
+        <span class="score">2,473 stars today</span>
+      </div>
+      <p>Office 문서와 파일을 Markdown으로 변환하는 Python 도구입니다. AI agent가 문서와 레거시 파일을 읽기 쉬운 텍스트 컨텍스트로 바꾸는 전처리 단계에 바로 연결됩니다.</p>
+      <div class="why">주목 포인트: RAG, 에이전트 리서치, 문서 기반 코딩 작업에서 "파일을 Markdown으로 정규화"하는 수요가 계속 커지고 있습니다.</div>
+    </section>
+
+    <section class="repo">
+      <div class="repo-head">
+        <h2><a href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/MoneyPrinterTurbo</a></h2>
+        <span class="score">2,775 stars today</span>
+      </div>
+      <p>LLM을 이용해 짧은 영상을 생성하는 자동화 프로젝트입니다. 코딩 도구 자체는 아니지만, agent가 스크립트·소스·렌더링 파이프라인을 묶는 대표적인 end-to-end 자동화 예시입니다.</p>
+      <div class="why">주목 포인트: 멀티모달 콘텐츠 생성 자동화는 단일 모델 성능보다 워크플로 안정성과 검수 단계가 경쟁력이 됩니다.</div>
+    </section>
+
+    <section class="repo">
+      <div class="repo-head">
+        <h2><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></h2>
+        <span class="score">595 stars today</span>
+      </div>
+      <p>터미널 기반 agentic coding tool입니다. 오늘 공식 changelog의 dynamic workflows, background agents, worktree 개선과 함께 GitHub 관심도도 유지되고 있습니다.</p>
+      <div class="why">주목 포인트: AI 코딩 도구 경쟁축이 "질문 답변"에서 "코드베이스를 읽고 명령 실행, Git workflow 처리"로 이동했음을 보여줍니다.</div>
+    </section>
+
+    <section class="repo">
+      <div class="repo-head">
+        <h2><a href="https://github.com/cursor/plugins">cursor/plugins</a></h2>
+        <span class="score">206 stars today</span>
+      </div>
+      <p>Cursor plugin specification과 공식 플러그인 저장소입니다. Cursor의 Auto-review Run Mode와 함께 보면, IDE agent 생태계가 plugin과 실행 정책을 중심으로 확장되는 흐름입니다.</p>
+      <div class="why">주목 포인트: 플러그인은 단순 확장 기능이 아니라 agent에게 허용할 도구, 컨텍스트, 실행 경계를 정의하는 운영 단위가 되고 있습니다.</div>
+    </section>
+
+    <section class="repo">
+      <div class="repo-head">
+        <h2><a href="https://github.com/revfactory/harness">revfactory/harness</a></h2>
+        <span class="score">80 stars today</span>
+      </div>
+      <p>도메인별 agent team과 skills를 설계하는 meta-skill/harness 프로젝트입니다. Claude Code, Codex, Cursor 같은 agent runtime을 실제 업무 절차로 묶는 계층에 해당합니다.</p>
+      <div class="why">주목 포인트: "모델에게 시키기"보다 "팀/역할/검증 절차를 설계하기"가 생산성 차이를 만드는 영역으로 부상 중입니다.</div>
+    </section>
+
+    <section class="repo">
+      <div class="repo-head">
+        <h2><a href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a></h2>
+        <span class="score">348 stars today</span>
+      </div>
+      <p>Claude Code, Codex, Cursor 등을 대상으로 하는 Compound Engineering 플러그인입니다. 여러 agent 도구를 한 개발 방식으로 묶으려는 시도가 트렌딩에 올라왔습니다.</p>
+      <div class="why">주목 포인트: 특정 IDE/CLI 하나에 종속되지 않는 agent workflow layer에 대한 수요를 보여줍니다.</div>
+    </section>
+
+    <section class="repo">
+      <div class="repo-head">
+        <h2><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></h2>
+        <span class="score">918 stars today</span>
+      </div>
+      <p>Claude Code, Codex, OpenCode, Cursor 등을 겨냥한 agent harness 성능 최적화 시스템입니다. skills, memory, security, research-first development를 한 묶음으로 다룹니다.</p>
+      <div class="why">주목 포인트: agentic coding의 병목은 모델 호출만이 아니라 기억, 보안, 검증 루프, 반복 실행 품질입니다.</div>
+    </section>
+
+    <section class="repo">
+      <div class="repo-head">
+        <h2><a href="https://github.com/run-llama/liteparse">run-llama/liteparse</a></h2>
+        <span class="score">929 stars today</span>
+      </div>
+      <p>빠른 오픈소스 문서 파서입니다. 코드 agent가 PDF/문서/HTML을 다루는 일이 늘수록 경량 parsing 도구의 가치가 커집니다.</p>
+      <div class="why">주목 포인트: AI 코딩 워크플로에서도 입력 정리, 문서 추출, provenance 보존이 핵심 인프라가 됩니다.</div>
+    </section>
+
+    <section>
+      <h2>요약 판단</h2>
+      <table>
+        <thead><tr><th>흐름</th><th>관찰</th><th>실무 의미</th></tr></thead>
+        <tbody>
+          <tr><td>플러그인/스킬화</td><td>Cursor plugins, Compound Engineering plugin, harness류가 동시 노출</td><td>반복 작업은 프롬프트보다 재사용 가능한 스킬/플러그인으로 이동</td></tr>
+          <tr><td>문서 전처리</td><td>markitdown, liteparse가 강세</td><td>agent에게 넣기 전 파일을 구조화하는 계층이 중요</td></tr>
+          <tr><td>agent runtime 경쟁</td><td>Claude Code 저장소가 여전히 상위권</td><td>터미널/IDE agent가 실제 실행, Git, 테스트를 맡는 방향</td></tr>
+        </tbody>
+      </table>
+      <p>출처: <a href="https://github.com/trending?since=daily">GitHub Trending Today</a></p>
+    </section>
+  </main>
+</body>
+</html>

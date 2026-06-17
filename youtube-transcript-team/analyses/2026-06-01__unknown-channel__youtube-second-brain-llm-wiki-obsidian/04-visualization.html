@@ -1,0 +1,1552 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM-Wiki Obsidian Vault Simulator</title>
+  <style>
+    :root {
+      --bg: #121019;
+      --chrome: #17131f;
+      --sidebar: #1f1a2a;
+      --panel: #242031;
+      --panel-2: #2f2940;
+      --line: #50465f;
+      --line-soft: rgba(80, 70, 95, 0.58);
+      --text: #f4efff;
+      --muted: #c4bacc;
+      --dim: #9389a1;
+      --accent: #8b6cef;
+      --accent-2: #54d6cc;
+      --warn: #ffbd68;
+      --rose: #ff7d7d;
+      --green: #8fe388;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+      font-family: "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 22% 0%, rgba(139, 108, 239, 0.23), transparent 31%),
+        radial-gradient(circle at 88% 12%, rgba(84, 214, 204, 0.13), transparent 28%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 72vh;
+      display: grid;
+      align-items: center;
+      padding: 56px 0 32px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow,
+    .pill,
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 32px;
+      padding: 6px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #ded4ff;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.04;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height: 1.15;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .lead {
+      margin-top: 20px;
+      max-width: 760px;
+      font-size: 19px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .mini-window {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(36, 32, 49, 0.96), rgba(23, 19, 31, 0.98));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .titlebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #100e17;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--rose);
+    }
+
+    .dots span:nth-child(2) {
+      background: var(--warn);
+    }
+
+    .dots span:nth-child(3) {
+      background: var(--accent-2);
+    }
+
+    .hero-demo {
+      display: grid;
+      grid-template-columns: 156px minmax(0, 1fr);
+      min-height: 360px;
+    }
+
+    .hero-tree {
+      padding: 14px;
+      border-right: 1px solid var(--line);
+      background: var(--sidebar);
+      font-size: 13px;
+    }
+
+    .hero-tree strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .tree-row {
+      min-height: 30px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    .tree-row.active {
+      background: rgba(139, 108, 239, 0.18);
+      color: var(--text);
+    }
+
+    .hero-note {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 20px;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        #1a1624;
+      background-size: 26px 26px;
+    }
+
+    .hero-card {
+      max-width: none;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(36, 32, 49, 0.92);
+    }
+
+    .hero-card h3 {
+      font-size: 22px;
+    }
+
+    .hero-card .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .graph-preview {
+      position: relative;
+      justify-self: end;
+      width: min(100%, 320px);
+      height: 160px;
+      border: 1px solid rgba(84, 214, 204, 0.42);
+      border-radius: 8px;
+      background: rgba(12, 18, 27, 0.72);
+    }
+
+    .preview-node {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      min-width: 72px;
+      min-height: 34px;
+      padding: 6px 10px;
+      border: 1px solid rgba(139, 108, 239, 0.72);
+      border-radius: 999px;
+      background: rgba(139, 108, 239, 0.16);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 900;
+      animation: pulse 3.2s ease-in-out infinite;
+    }
+
+    .preview-node:nth-child(1) {
+      left: 16px;
+      top: 26px;
+    }
+
+    .preview-node:nth-child(2) {
+      right: 18px;
+      top: 48px;
+      border-color: rgba(84, 214, 204, 0.72);
+      background: rgba(84, 214, 204, 0.14);
+      animation-delay: -0.8s;
+    }
+
+    .preview-node:nth-child(3) {
+      left: 74px;
+      bottom: 22px;
+      border-color: rgba(255, 189, 104, 0.72);
+      background: rgba(255, 189, 104, 0.13);
+      animation-delay: -1.4s;
+    }
+
+    section {
+      padding: 70px 0;
+      border-top: 1px solid rgba(80, 70, 95, 0.68);
+    }
+
+    .section-intro {
+      max-width: 840px;
+      margin-bottom: 24px;
+    }
+
+    .section-intro p {
+      margin-top: 12px;
+      font-size: 17px;
+    }
+
+    .vault {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--chrome);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .vault-toolbar {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr) 260px;
+      gap: 0;
+      border-bottom: 1px solid var(--line);
+      background: #100e17;
+    }
+
+    .toolbar-cell {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-right: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .toolbar-cell:last-child {
+      border-right: 0;
+      justify-content: flex-end;
+    }
+
+    .vault-body {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr) 260px;
+      min-height: 680px;
+    }
+
+    .sidebar,
+    .backlinks {
+      padding: 16px;
+      background: var(--sidebar);
+    }
+
+    .sidebar {
+      border-right: 1px solid var(--line);
+    }
+
+    .backlinks {
+      border-left: 1px solid var(--line);
+    }
+
+    .pane-title {
+      margin-bottom: 12px;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .folder-label {
+      margin: 14px 0 6px;
+      color: var(--dim);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .file-btn,
+    .query-btn,
+    .command-btn,
+    .graph-node {
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      background: transparent;
+      color: var(--muted);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color 160ms ease, background 160ms ease, transform 160ms ease, color 160ms ease;
+    }
+
+    .file-btn {
+      min-height: 38px;
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+
+    .file-btn:hover,
+    .file-btn.active,
+    .query-btn:hover,
+    .query-btn.active,
+    .command-btn:hover,
+    .command-btn.active {
+      border-color: rgba(139, 108, 239, 0.72);
+      background: rgba(139, 108, 239, 0.15);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .main-pane {
+      min-width: 0;
+      background: #17141f;
+    }
+
+    .tabs {
+      display: flex;
+      min-height: 46px;
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+    }
+
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      min-width: 160px;
+      padding: 10px 14px;
+      border-right: 1px solid var(--line);
+      background: #211c2c;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .tab.active {
+      background: #17141f;
+      color: var(--text);
+      box-shadow: inset 0 2px 0 var(--accent);
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      min-height: 634px;
+    }
+
+    .note-pane {
+      min-width: 0;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .note-paper {
+      min-height: 566px;
+      padding: 26px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: rgba(36, 32, 49, 0.58);
+    }
+
+    .note-path {
+      margin-bottom: 14px;
+      color: var(--dim);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .note-paper h3 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .markdown-list {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .markdown-list li {
+      padding: 10px 12px;
+      border-left: 3px solid var(--accent-2);
+      border-radius: 6px;
+      background: rgba(84, 214, 204, 0.07);
+    }
+
+    .wikilinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .wikilink {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(139, 108, 239, 0.18);
+      color: #ded4ff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .graph-pane {
+      min-width: 0;
+      padding: 18px;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        #181520;
+      background-size: 28px 28px;
+    }
+
+    .graph-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .graph-canvas {
+      position: relative;
+      min-height: 430px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: rgba(12, 11, 18, 0.22);
+      overflow: hidden;
+    }
+
+    .edge {
+      position: absolute;
+      height: 1px;
+      transform-origin: left center;
+      background: rgba(139, 108, 239, 0.34);
+      transition: background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .edge.active {
+      background: rgba(84, 214, 204, 0.82);
+      box-shadow: 0 0 16px rgba(84, 214, 204, 0.45);
+    }
+
+    .edge.e1 {
+      left: 21%;
+      top: 24%;
+      width: 45%;
+      transform: rotate(18deg);
+    }
+
+    .edge.e2 {
+      left: 30%;
+      top: 57%;
+      width: 42%;
+      transform: rotate(-27deg);
+    }
+
+    .edge.e3 {
+      left: 52%;
+      top: 36%;
+      width: 30%;
+      transform: rotate(34deg);
+    }
+
+    .edge.e4 {
+      left: 22%;
+      top: 70%;
+      width: 50%;
+      transform: rotate(-9deg);
+    }
+
+    .graph-node {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: auto;
+      min-width: 112px;
+      max-width: 156px;
+      min-height: 46px;
+      padding: 9px 12px;
+      border-color: rgba(139, 108, 239, 0.62);
+      border-radius: 999px;
+      background: rgba(139, 108, 239, 0.16);
+      color: var(--text);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 0 0 0 rgba(139, 108, 239, 0.28);
+    }
+
+    .graph-node.raw {
+      left: 8%;
+      top: 14%;
+      border-color: rgba(255, 189, 104, 0.72);
+      background: rgba(255, 189, 104, 0.12);
+    }
+
+    .graph-node.wiki {
+      left: 42%;
+      top: 25%;
+      border-color: rgba(84, 214, 204, 0.72);
+      background: rgba(84, 214, 204, 0.13);
+    }
+
+    .graph-node.index {
+      left: 28%;
+      top: 61%;
+    }
+
+    .graph-node.answer {
+      right: 8%;
+      top: 48%;
+      border-color: rgba(143, 227, 136, 0.72);
+      background: rgba(143, 227, 136, 0.12);
+    }
+
+    .graph-node.active {
+      border-color: var(--accent-2);
+      background: rgba(84, 214, 204, 0.2);
+      box-shadow: 0 0 0 7px rgba(84, 214, 204, 0.08);
+      animation: pulse 2.6s ease-in-out infinite;
+    }
+
+    .graph-trail {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      display: grid;
+      gap: 8px;
+      padding: 14px;
+      border: 1px solid rgba(84, 214, 204, 0.44);
+      border-radius: 8px;
+      background: rgba(18, 16, 25, 0.88);
+    }
+
+    .graph-trail strong {
+      color: var(--text);
+    }
+
+    .graph-trail p {
+      font-size: 13px;
+    }
+
+    .query-panel {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: rgba(36, 32, 49, 0.78);
+    }
+
+    .query-buttons {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .query-btn {
+      min-height: 42px;
+      padding: 9px 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border-color: var(--line-soft);
+      font-size: 13px;
+    }
+
+    .backlink-card {
+      padding: 12px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .backlink-card + .backlink-card {
+      margin-top: 10px;
+    }
+
+    .backlink-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .backlink-card p {
+      font-size: 13px;
+    }
+
+    .command-palette {
+      margin-top: 18px;
+      padding: 12px;
+      border: 1px solid rgba(139, 108, 239, 0.58);
+      border-radius: 8px;
+      background: rgba(18, 16, 25, 0.72);
+    }
+
+    .command-input {
+      width: 100%;
+      min-height: 38px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #100e17;
+      color: var(--text);
+      font: inherit;
+    }
+
+    .command-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .command-btn {
+      min-height: 38px;
+      padding: 8px 10px;
+      border-color: var(--line-soft);
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 13px;
+    }
+
+    .explain-band {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .explain-card {
+      min-width: 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(36, 32, 49, 0.82);
+    }
+
+    .explain-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .step {
+      position: relative;
+      min-height: 150px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(36, 32, 49, 0.78);
+      overflow: hidden;
+    }
+
+    .step::before {
+      content: attr(data-step);
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: rgba(139, 108, 239, 0.24);
+      color: #ded4ff;
+      font-weight: 900;
+    }
+
+    .status-log {
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid rgba(84, 214, 204, 0.44);
+      border-radius: 8px;
+      background: rgba(84, 214, 204, 0.08);
+    }
+
+    .terminal-guide {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+      gap: 18px;
+      align-items: start;
+      margin-top: 24px;
+    }
+
+    .terminal-card,
+    .prompt-card {
+      min-width: 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(36, 32, 49, 0.82);
+    }
+
+    .terminal-window {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #0d0b12;
+      overflow: hidden;
+    }
+
+    .terminal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 38px;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    pre {
+      margin: 0;
+      padding: 14px;
+      color: #e7f6f4;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font: 13px/1.65 Consolas, "Cascadia Mono", "Courier New", monospace;
+    }
+
+    .prompt-template {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .prompt-template div {
+      padding: 12px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .prompt-template strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .log-row {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(84, 214, 204, 0.22);
+      color: var(--muted);
+    }
+
+    .log-row:last-child {
+      border-bottom: 0;
+    }
+
+    .log-row strong {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 28px 0 44px;
+      color: var(--dim);
+      font-size: 13px;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .vault-toolbar,
+      .vault-body,
+      .explain-band,
+      .timeline,
+      .terminal-guide {
+        grid-template-columns: 1fr;
+      }
+
+      .vault-toolbar .toolbar-cell,
+      .sidebar,
+      .backlinks,
+      .note-pane {
+        border-right: 0;
+        border-left: 0;
+      }
+
+      .sidebar,
+      .backlinks,
+      .note-pane {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-demo {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-tree {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .graph-preview {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 18px;
+      }
+
+      .hero-note {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .note-pane {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .note-paper {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 36px 0 28px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .note-pane,
+      .graph-pane,
+      .sidebar,
+      .backlinks {
+        padding: 14px;
+      }
+
+      .note-paper {
+        padding: 18px;
+        min-height: auto;
+      }
+
+      .graph-canvas {
+        min-height: 500px;
+      }
+
+      .graph-node.raw {
+        left: 8%;
+        top: 8%;
+      }
+
+      .graph-node.wiki {
+        left: 24%;
+        top: 29%;
+      }
+
+      .graph-node.index {
+        left: 14%;
+        top: 55%;
+      }
+
+      .graph-node.answer {
+        right: 7%;
+        top: 75%;
+      }
+
+      .edge {
+        opacity: 0.42;
+      }
+
+      .log-row {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Lecture-based guide · 2026-06-01</span>
+        <h1>LLM-Wiki를 Obsidian 볼트처럼 이해하기</h1>
+        <p class="lead">
+          이 페이지는 Obsidian 사용법 설명서가 아니다. 강의 스크립트가 말한 LLM-Wiki를,
+          Obsidian의 파일 트리, 노트, 그래프, 백링크 감각으로 직접 눌러보며 이해하는 시뮬레이터다.
+        </p>
+        <div class="hero-pills">
+          <span class="pill">핵심: AI가 읽기 쉬운 지식 캐시</span>
+          <span class="pill">근거: 저장된 wiki 강의 스크립트</span>
+          <span class="pill">대상: 비개발자</span>
+        </div>
+      </div>
+
+      <div class="mini-window" aria-label="Obsidian styled preview">
+        <div class="titlebar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <span>LLM-Wiki Vault</span>
+        </div>
+        <div class="hero-demo">
+          <aside class="hero-tree">
+            <strong>Vault Explorer</strong>
+            <div class="tree-row active">00_raw_sources</div>
+            <div class="tree-row">10_wiki_notes</div>
+            <div class="tree-row">20_schema_index</div>
+            <div class="tree-row">30_agent_queries</div>
+          </aside>
+          <div class="hero-note">
+            <article class="hero-card">
+              <h3>[[LLM-Wiki]]</h3>
+              <p>원본을 버리지 않고, AI가 다시 읽기 쉬운 위키와 인덱스로 정리한다.</p>
+              <div class="links">
+                <span class="wikilink">[[Raw Sources]]</span>
+                <span class="wikilink">[[Index]]</span>
+                <span class="wikilink">[[Agent Query]]</span>
+              </div>
+            </article>
+            <div class="graph-preview" aria-hidden="true">
+              <div class="preview-node">원본</div>
+              <div class="preview-node">위키</div>
+              <div class="preview-node">질문</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="section-intro">
+          <h2>볼트 시뮬레이터</h2>
+          <p>
+            왼쪽 파일을 누르면 가운데 노트, 그래프, 오른쪽 백링크가 같이 바뀐다.
+            이것이 “Obsidian스러운” 부분이다. 다만 주인공은 Obsidian이 아니라 LLM-Wiki의 지식 구조다.
+          </p>
+        </div>
+
+        <div class="vault">
+          <div class="vault-toolbar">
+            <div class="toolbar-cell">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <span>Explorer</span>
+            </div>
+            <div class="toolbar-cell">
+              <span class="status-pill" id="vaultStatus">Graph synced</span>
+              <span id="activePath">10_wiki_notes/LLM-Wiki란.md</span>
+            </div>
+            <div class="toolbar-cell">
+              <span>Backlinks · <span id="linkCount">4</span></span>
+            </div>
+          </div>
+
+          <div class="vault-body">
+            <aside class="sidebar" aria-label="Vault file tree">
+              <div class="pane-title">Vault Explorer</div>
+              <div class="folder-label">00 Raw Sources</div>
+              <button class="file-btn" type="button" data-note="raw">transcript-part-01.md</button>
+              <button class="file-btn" type="button" data-note="slides">lecture-slides.md</button>
+
+              <div class="folder-label">10 Wiki Notes</div>
+              <button class="file-btn active" type="button" data-note="wiki">LLM-Wiki란.md</button>
+              <button class="file-btn" type="button" data-note="rag">RAG와의 차이.md</button>
+              <button class="file-btn" type="button" data-note="obsidian">Obsidian의 역할.md</button>
+
+              <div class="folder-label">20 Schema Index</div>
+              <button class="file-btn" type="button" data-note="index">concept-index.base</button>
+              <button class="file-btn" type="button" data-note="queries">agent-query-routes.md</button>
+            </aside>
+
+            <section class="main-pane" aria-label="Obsidian workspace">
+              <div class="tabs">
+                <div class="tab active" id="tabTitle">LLM-Wiki란.md</div>
+                <div class="tab">Graph View</div>
+                <div class="tab">Query Routes</div>
+              </div>
+
+              <div class="workspace">
+                <div class="note-pane">
+                  <article class="note-paper">
+                    <div class="note-path" id="notePath">10_wiki_notes/LLM-Wiki란.md</div>
+                    <h3 id="noteTitle">LLM-Wiki란?</h3>
+                    <p id="noteBody">
+                      LLM-Wiki는 유튜브 대본, 슬라이드, 메모 같은 원본을 그대로 보관하면서,
+                      AI가 다시 읽고 답변에 재사용하기 쉬운 중간 지식 노트와 인덱스를 만드는 방식이다.
+                    </p>
+                    <ul class="markdown-list" id="noteBullets">
+                      <li>원본은 Raw Sources에 남겨 검증 기준으로 둔다.</li>
+                      <li>핵심 설명은 Wiki Notes로 분리한다.</li>
+                      <li>에이전트는 Index를 통해 필요한 노트를 빠르게 찾는다.</li>
+                    </ul>
+                    <div class="wikilinks" id="noteLinks">
+                      <span class="wikilink">[[Raw Sources]]</span>
+                      <span class="wikilink">[[Schema Index]]</span>
+                      <span class="wikilink">[[Agent Query]]</span>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="graph-pane">
+                  <div class="graph-head">
+                    <strong>Local Graph</strong>
+                    <span class="status-pill" id="graphMode">LLM-Wiki 중심</span>
+                  </div>
+                  <div class="graph-canvas" aria-label="Interactive graph view">
+                    <div class="edge e1 active" data-edge="raw-wiki"></div>
+                    <div class="edge e2 active" data-edge="wiki-index"></div>
+                    <div class="edge e3 active" data-edge="index-query"></div>
+                    <div class="edge e4" data-edge="raw-index"></div>
+                    <button class="graph-node raw" type="button" data-note="raw">Raw Source</button>
+                    <button class="graph-node wiki active" type="button" data-note="wiki">Wiki Note</button>
+                    <button class="graph-node index" type="button" data-note="index">Schema Index</button>
+                    <button class="graph-node answer" type="button" data-note="queries">Agent Query</button>
+                    <div class="graph-trail">
+                      <strong id="graphTrailTitle">그래프 경로: Raw Source → Wiki Note → Schema Index</strong>
+                      <p id="graphTrailText">그래프에서 노드를 고르면, 에이전트가 어떤 노트를 먼저 읽고 어떤 근거로 이동하는지 표시된다.</p>
+                    </div>
+                  </div>
+
+                  <div class="query-panel">
+                    <h3>질문 시뮬레이션</h3>
+                    <p id="queryAnswer">
+                      “이 강의의 핵심은?”이라고 물으면, 에이전트는 위키 노트와 인덱스를 먼저 읽고 원본으로 근거를 확인한다.
+                    </p>
+                    <div class="query-buttons">
+                      <button class="query-btn active" type="button" data-query="summary">이 강의의 핵심은?</button>
+                      <button class="query-btn" type="button" data-query="rag">RAG와 LLM-Wiki는 어떻게 다른가?</button>
+                      <button class="query-btn" type="button" data-query="build">내 자료에 바로 적용하려면?</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <aside class="backlinks" aria-label="Backlinks and command palette">
+              <div class="pane-title">Backlinks</div>
+              <div id="backlinkList">
+                <article class="backlink-card">
+                  <strong>[[Raw Sources]]</strong>
+                  <p>대본과 슬라이드 원본을 보존해 답변의 기준점으로 삼는다.</p>
+                </article>
+                <article class="backlink-card">
+                  <strong>[[Schema Index]]</strong>
+                  <p>어떤 노트가 어떤 질문에 필요한지 연결한다.</p>
+                </article>
+                <article class="backlink-card">
+                  <strong>[[Agent Query]]</strong>
+                  <p>에이전트가 읽을 순서와 근거 확인 절차를 제공한다.</p>
+                </article>
+              </div>
+
+              <div class="command-palette">
+                <div class="pane-title">Command Palette</div>
+                <input class="command-input" value="/wiki query 핵심 요약" aria-label="Command example" readonly>
+                <div class="command-list">
+                  <button class="command-btn active" type="button" data-command="query">Run wiki query</button>
+                  <button class="command-btn" type="button" data-command="distill">Distill transcript</button>
+                  <button class="command-btn" type="button" data-command="link">Refresh backlinks</button>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-intro">
+          <h2>이 화면에서 봐야 할 핵심</h2>
+          <p>
+            Obsidian스러운 느낌은 그래프의 예쁜 선이 아니라, 지식이 파일, 링크, 백링크, 검색 가능한 인덱스로 계속 움직이는 감각이다.
+          </p>
+        </div>
+        <div class="explain-band">
+          <article class="explain-card">
+            <h3>원본은 보관한다</h3>
+            <p>요약만 남기지 않는다. 나중에 AI 답변이 맞는지 확인하려면 대본과 슬라이드 같은 Raw Source가 필요하다.</p>
+          </article>
+          <article class="explain-card">
+            <h3>위키는 재사용한다</h3>
+            <p>긴 대본을 매번 다시 읽히지 않고, 핵심 주장과 근거가 정리된 Wiki Note를 반복 질문의 출발점으로 삼는다.</p>
+          </article>
+          <article class="explain-card">
+            <h3>그래프는 지도다</h3>
+            <p>그래프는 이해를 돕는 지도다. 좋은 답변 자체는 원본, 정리 품질, 인덱스, 검증 절차가 함께 만들 때 나온다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-intro">
+          <h2>Obsidian 안에서 에이전트를 부르는 기본 흐름</h2>
+          <p>
+            초보자는 “Obsidian이 AI를 실행한다”고 이해하기 쉽지만, 실제로는 Obsidian 볼트 폴더를 터미널에서 열고 Codex나 Claude Code가 그 폴더의 Markdown을 읽게 하는 방식에 가깝다.
+          </p>
+        </div>
+        <div class="terminal-guide">
+          <article class="terminal-card">
+            <h3>1. 볼트 폴더에서 터미널 열기</h3>
+            <p>Obsidian의 볼트는 결국 Markdown 파일 폴더다. 그 폴더에서 터미널을 열어 에이전트를 실행한다.</p>
+            <div class="terminal-window">
+              <div class="terminal-head">
+                <span>PowerShell 예시</span>
+                <span>개념용</span>
+              </div>
+              <pre>cd "C:\Users\user\Documents\Obsidian Vault"
+
+# Codex CLI 설치 예시
+npm install -g @openai/codex
+codex
+
+# Claude Code 설치 예시
+npm install -g @anthropic-ai/claude-code
+claude</pre>
+            </div>
+            <p style="margin-top: 12px;">
+              설치 명령은 2026-06-01 기준 확인한 예시다. 실제 인증, 요금제, 지원 OS는 각 공식 문서를 확인해야 한다.
+            </p>
+          </article>
+
+          <article class="prompt-card">
+            <h3>2. 프롬프트는 “그래프를 읽는 순서”를 지정한다</h3>
+            <p>그냥 “요약해줘”라고 하지 말고, 원본, 위키 노트, 인덱스, 백링크를 어떤 순서로 읽을지 알려줘야 LLM-Wiki답게 작동한다.</p>
+            <div class="prompt-template">
+              <div>
+                <strong>역할</strong>
+                너는 내 Obsidian 볼트의 LLM-Wiki 관리자다.
+              </div>
+              <div>
+                <strong>읽을 순서</strong>
+                먼저 <code>20_schema_index</code>를 보고 관련 노트를 찾은 뒤, <code>10_wiki_notes</code>를 읽고, 필요한 경우 <code>00_raw_sources</code>로 근거를 확인해라.
+              </div>
+              <div>
+                <strong>출력 형식</strong>
+                답변은 핵심 요약, 근거가 된 노트, 추가로 만들어야 할 wikilink, 확인이 필요한 원본 항목으로 나눠라.
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-intro">
+          <h2>새 강의가 들어오면 볼트가 갱신된다</h2>
+          <p>
+            아래 흐름은 LLM-Wiki의 “살아 있는 노트” 성격을 보여준다. 새 자료가 들어오면 파일 하나가 추가되는 데서 끝나지 않고, 연결과 질문 경로가 같이 바뀐다.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="step" data-step="1">
+            <h3>Ingest</h3>
+            <p>대본, 슬라이드, 메모를 Raw Sources에 넣는다.</p>
+          </article>
+          <article class="step" data-step="2">
+            <h3>Distill</h3>
+            <p>AI가 핵심 주장, 근거, 관련 개념을 노트로 뽑는다.</p>
+          </article>
+          <article class="step" data-step="3">
+            <h3>Link</h3>
+            <p>기존 노트와 새 노트 사이에 wikilink와 backlinks를 만든다.</p>
+          </article>
+          <article class="step" data-step="4">
+            <h3>Query</h3>
+            <p>다음 질문부터는 정리된 위키와 인덱스를 먼저 읽는다.</p>
+          </article>
+        </div>
+        <div class="status-log" id="statusLog">
+          <div class="log-row"><strong>실행 예시</strong><span>/wiki ingest transcript-part-01.md</span></div>
+          <div class="log-row"><strong>결과</strong><span>Raw Source가 저장되고, LLM-Wiki란.md와 concept-index.base가 갱신된다.</span></div>
+          <div class="log-row"><strong>주의</strong><span>이 명령은 개념 예시다. 실제 도구명은 사용 환경에 맞춰 바뀔 수 있다.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Source: saved transcript segment <code>transcript/transcript-part-01.md</code> and analysis note <code>01-analysis.md</code>. This page explains the lecture content conservatively and does not verify external tool behavior.
+    </div>
+  </footer>
+
+  <script>
+    const notes = {
+      raw: {
+        path: "00_raw_sources/transcript-part-01.md",
+        tab: "transcript-part-01.md",
+        title: "Raw Source",
+        body: "원본 대본은 버리지 않는다. LLM-Wiki가 만든 설명이 맞는지 확인하려면 항상 되돌아갈 기준이 필요하다.",
+        bullets: [
+          "유튜브 대본, 슬라이드, 메모가 이 층에 들어온다.",
+          "요약 품질을 검증할 때 원본이 기준이 된다.",
+          "AI가 만든 노트와 원본은 분리해서 보관한다."
+        ],
+        links: ["[[LLM-Wiki란]]", "[[Distilled Wiki]]", "[[검증 기준]]"],
+        backlinks: [
+          ["[[LLM-Wiki란]]", "원본 위에 AI가 읽기 쉬운 위키를 만든다는 설명의 근거다."],
+          ["[[RAG와의 차이]]", "검색 조각과 원본 보존의 차이를 비교할 때 참조된다."],
+          ["[[Agent Query]]", "답변 전 원본 확인 단계로 연결된다."]
+        ],
+        graph: "Raw Source 중심",
+        status: "Raw source selected",
+        active: ["raw", "wiki"],
+        edges: ["raw-wiki", "raw-index"]
+      },
+      slides: {
+        path: "00_raw_sources/lecture-slides.md",
+        tab: "lecture-slides.md",
+        title: "Lecture Slides",
+        body: "슬라이드는 대본보다 구조가 선명할 수 있다. LLM-Wiki는 대본과 슬라이드를 같이 보며 개념 목차를 더 안정적으로 만든다.",
+        bullets: [
+          "슬라이드는 목차와 핵심 용어를 제공한다.",
+          "대본은 상세 설명과 맥락을 보완한다.",
+          "둘을 연결하면 위키 노트의 근거가 더 분명해진다."
+        ],
+        links: ["[[Raw Source]]", "[[Schema Index]]", "[[LLM-Wiki란]]"],
+        backlinks: [
+          ["[[Schema Index]]", "슬라이드의 제목과 목차가 인덱스 후보가 된다."],
+          ["[[LLM-Wiki란]]", "개념 설명을 구조화할 때 참조된다."]
+        ],
+        graph: "Slide source 중심",
+        status: "Slide source selected",
+        active: ["raw", "index"],
+        edges: ["raw-index"]
+      },
+      wiki: {
+        path: "10_wiki_notes/LLM-Wiki란.md",
+        tab: "LLM-Wiki란.md",
+        title: "LLM-Wiki란?",
+        body: "LLM-Wiki는 원본 자료 위에 AI가 읽고 갱신하기 쉬운 지식 노트와 인덱스를 만드는 방식이다. 강의의 핵심은 Obsidian 자체가 아니라 이 지식 캐시 구조다.",
+        bullets: [
+          "원본은 Raw Sources에 남겨 검증 기준으로 둔다.",
+          "핵심 설명은 Wiki Notes로 분리한다.",
+          "에이전트는 Index를 통해 필요한 노트를 빠르게 찾는다."
+        ],
+        links: ["[[Raw Sources]]", "[[Schema Index]]", "[[Agent Query]]"],
+        backlinks: [
+          ["[[Raw Sources]]", "원본 보존이 위키 신뢰도의 출발점이다."],
+          ["[[Schema Index]]", "위키 노트가 질문 경로의 중심 노드가 된다."],
+          ["[[Agent Query]]", "에이전트가 이 노트를 읽고 답변을 만든다."]
+        ],
+        graph: "LLM-Wiki 중심",
+        status: "Graph synced",
+        active: ["raw", "wiki", "index", "answer"],
+        edges: ["raw-wiki", "wiki-index", "index-query"]
+      },
+      rag: {
+        path: "10_wiki_notes/RAG와의 차이.md",
+        tab: "RAG와의 차이.md",
+        title: "RAG와 LLM-Wiki의 차이",
+        body: "RAG는 질문마다 관련 문서 조각을 찾아 붙이는 방식에 가깝다. LLM-Wiki는 자주 쓰는 지식을 미리 정리해 노트와 링크로 축적한다.",
+        bullets: [
+          "RAG는 검색과 권한 제어가 중요한 서비스에 강하다.",
+          "LLM-Wiki는 개인 지식 정리와 반복 질문에 유리하다.",
+          "둘은 경쟁 개념이라기보다 목적이 다르다."
+        ],
+        links: ["[[LLM-Wiki란]]", "[[검색]]", "[[지식 캐시]]"],
+        backlinks: [
+          ["[[LLM-Wiki란]]", "위키를 지식 캐시로 이해할 때 비교 기준이 된다."],
+          ["[[Agent Query]]", "질문 처리 방식의 차이를 설명한다."]
+        ],
+        graph: "비교 노트 중심",
+        status: "Comparison note selected",
+        active: ["wiki", "index", "answer"],
+        edges: ["wiki-index", "index-query"]
+      },
+      obsidian: {
+        path: "10_wiki_notes/Obsidian의 역할.md",
+        tab: "Obsidian의 역할.md",
+        title: "Obsidian 그래프는 읽는 순서를 보여주는 지도다",
+        body: "Obsidian의 그래프는 LLM-Wiki가 어떤 원본, 위키 노트, 인덱스, 질문 경로를 오가는지 보여주는 지도다. 답변 품질은 그래프 자체가 아니라 이 경로를 따라 근거를 확인하는 방식에서 나온다.",
+        bullets: [
+          "파일 트리는 지식의 보관 위치를 보여준다.",
+          "그래프는 연결을 직관적으로 보여준다.",
+          "백링크는 어떤 노트가 근거로 쓰이는지 보여준다."
+        ],
+        links: ["[[LLM-Wiki란]]", "[[Graph View]]", "[[Backlinks]]"],
+        backlinks: [
+          ["[[LLM-Wiki란]]", "Obsidian은 설명의 주인공이 아니라 시각화 창이다."],
+          ["[[Schema Index]]", "링크 구조가 인덱스와 함께 작동한다."],
+          ["[[한계와 주의]]", "그래프만으로 답변 품질이 보장되지는 않는다."]
+        ],
+        graph: "Obsidian view 중심",
+        status: "Map view selected",
+        active: ["wiki", "index"],
+        edges: ["wiki-index", "index-query"]
+      },
+      index: {
+        path: "20_schema_index/concept-index.base",
+        tab: "concept-index.base",
+        title: "Schema / Index",
+        body: "인덱스는 어디에 어떤 지식이 있는지 알려주는 목차다. 에이전트가 긴 원본을 처음부터 다시 읽지 않고 필요한 노트로 진입하게 돕는다.",
+        bullets: [
+          "핵심 개념 목록을 관리한다.",
+          "원본, 위키 노트, 질문 경로를 연결한다.",
+          "새 자료가 들어오면 관련 링크를 갱신한다."
+        ],
+        links: ["[[LLM-Wiki란]]", "[[Agent Query]]", "[[Backlinks]]"],
+        backlinks: [
+          ["[[LLM-Wiki란]]", "위키가 재사용되려면 인덱스가 필요하다."],
+          ["[[Agent Query]]", "질문이 들어오면 인덱스가 진입점을 제공한다."],
+          ["[[RAG와의 차이]]", "검색과 인덱스의 역할 차이를 설명한다."]
+        ],
+        graph: "Schema Index 중심",
+        status: "Index selected",
+        active: ["index", "wiki", "answer"],
+        edges: ["wiki-index", "index-query"]
+      },
+      queries: {
+        path: "30_agent_queries/agent-query-routes.md",
+        tab: "agent-query-routes.md",
+        title: "Agent Query Route",
+        body: "질문 단계에서는 Claude Code나 Codex 같은 에이전트가 위키와 인덱스를 읽고, 필요하면 원본으로 돌아가 근거를 확인한 뒤 답한다.",
+        bullets: [
+          "질문 의도를 먼저 파악한다.",
+          "인덱스로 관련 노트를 찾는다.",
+          "답변이 불확실하면 원본을 다시 확인한다."
+        ],
+        links: ["[[Schema Index]]", "[[Raw Sources]]", "[[LLM-Wiki란]]"],
+        backlinks: [
+          ["[[Schema Index]]", "질문 경로의 시작점을 제공한다."],
+          ["[[Raw Sources]]", "근거 확인이 필요한 답변에서 다시 참조된다."],
+          ["[[LLM-Wiki란]]", "지식 캐시가 실제 답변에 쓰이는 지점이다."]
+        ],
+        graph: "Agent Query 중심",
+        status: "Query route selected",
+        active: ["answer", "index", "wiki", "raw"],
+        edges: ["raw-wiki", "wiki-index", "index-query"]
+      }
+    };
+
+    const queryText = {
+      summary: {
+        text: "“이 강의의 핵심은?”이라고 물으면, 에이전트는 LLM-Wiki란.md를 먼저 읽고 Raw Source로 근거를 확인한다.",
+        active: ["wiki", "raw", "index", "answer"],
+        edges: ["raw-wiki", "wiki-index", "index-query"],
+        trail: "Raw Source → Wiki Note → Schema Index → Agent Query"
+      },
+      rag: {
+        text: "“RAG와 어떻게 다른가?”라고 물으면, 비교 노트와 인덱스를 읽고 LLM-Wiki를 지식 캐시로 설명한다.",
+        active: ["wiki", "index", "answer"],
+        edges: ["wiki-index", "index-query"],
+        trail: "Wiki Note → Schema Index → Agent Query"
+      },
+      build: {
+        text: "“내 자료에 적용하려면?”이라고 물으면, Raw Source 폴더와 Wiki Notes 폴더를 나누고 링크 규칙을 먼저 만들라고 답한다.",
+        active: ["raw", "wiki", "index"],
+        edges: ["raw-wiki", "raw-index", "wiki-index"],
+        trail: "Raw Source → Wiki Note → Schema Index"
+      }
+    };
+
+    const commandText = {
+      query: "/wiki query 핵심 요약",
+      distill: "/wiki distill transcript-part-01.md",
+      link: "/wiki refresh backlinks"
+    };
+
+    const fileButtons = document.querySelectorAll(".file-btn");
+    const graphNodes = document.querySelectorAll(".graph-node");
+    const notePath = document.querySelector("#notePath");
+    const tabTitle = document.querySelector("#tabTitle");
+    const noteTitle = document.querySelector("#noteTitle");
+    const noteBody = document.querySelector("#noteBody");
+    const noteBullets = document.querySelector("#noteBullets");
+    const noteLinks = document.querySelector("#noteLinks");
+    const backlinkList = document.querySelector("#backlinkList");
+    const graphMode = document.querySelector("#graphMode");
+    const graphEdges = document.querySelectorAll(".edge");
+    const graphTrailTitle = document.querySelector("#graphTrailTitle");
+    const graphTrailText = document.querySelector("#graphTrailText");
+    const vaultStatus = document.querySelector("#vaultStatus");
+    const activePath = document.querySelector("#activePath");
+    const linkCount = document.querySelector("#linkCount");
+    const queryAnswer = document.querySelector("#queryAnswer");
+    const queryButtons = document.querySelectorAll(".query-btn");
+    const commandButtons = document.querySelectorAll(".command-btn");
+    const commandInput = document.querySelector(".command-input");
+
+    function renderNote(key) {
+      const note = notes[key];
+      fileButtons.forEach((button) => button.classList.toggle("active", button.dataset.note === key));
+      graphNodes.forEach((node) => node.classList.toggle("active", note.active.includes(node.dataset.note)));
+      graphEdges.forEach((edge) => edge.classList.toggle("active", (note.edges || []).includes(edge.dataset.edge)));
+      notePath.textContent = note.path;
+      tabTitle.textContent = note.tab;
+      noteTitle.textContent = note.title;
+      noteBody.textContent = note.body;
+      noteBullets.innerHTML = note.bullets.map((item) => `<li>${item}</li>`).join("");
+      noteLinks.innerHTML = note.links.map((item) => `<span class="wikilink">${item}</span>`).join("");
+      backlinkList.innerHTML = note.backlinks.map(([title, text]) => `<article class="backlink-card"><strong>${title}</strong><p>${text}</p></article>`).join("");
+      graphMode.textContent = note.graph;
+      graphTrailTitle.textContent = `그래프 경로: ${(note.links || []).join(" → ").replaceAll("[[", "").replaceAll("]]", "")}`;
+      graphTrailText.textContent = "선이 밝아진 구간이 에이전트가 먼저 확인하는 지식 경로다. 필요한 경우 Raw Source로 돌아가 근거를 확인한다.";
+      vaultStatus.textContent = note.status;
+      activePath.textContent = note.path;
+      linkCount.textContent = String(note.backlinks.length);
+    }
+
+    fileButtons.forEach((button) => {
+      button.addEventListener("click", () => renderNote(button.dataset.note));
+    });
+
+    graphNodes.forEach((node) => {
+      node.addEventListener("click", () => renderNote(node.dataset.note));
+    });
+
+    queryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const query = queryText[button.dataset.query];
+        queryButtons.forEach((item) => item.classList.toggle("active", item === button));
+        queryAnswer.textContent = query.text;
+        graphNodes.forEach((node) => node.classList.toggle("active", query.active.includes(node.dataset.note)));
+        graphEdges.forEach((edge) => edge.classList.toggle("active", query.edges.includes(edge.dataset.edge)));
+        graphTrailTitle.textContent = `그래프 경로: ${query.trail}`;
+        graphTrailText.textContent = "질문에 따라 그래프의 활성 노드와 연결선이 바뀐다. 이 흐름이 Obsidian 그래프를 활용한 시뮬레이션이다.";
+        vaultStatus.textContent = "Query simulated";
+      });
+    });
+
+    commandButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        commandButtons.forEach((item) => item.classList.toggle("active", item === button));
+        commandInput.value = commandText[button.dataset.command];
+        vaultStatus.textContent = "Command ready";
+      });
+    });
+  </script>
+</body>
+</html>

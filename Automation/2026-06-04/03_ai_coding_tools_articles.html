@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-04 AI 코딩 도구 기사 요약</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#17202a; --muted:#617086; --line:#d8e0ea; --accent:#8a4b14; --soft:#fff4e7; --soft2:#edf3ff; --warn:#fff5d7; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#5d3210; color:white; border-radius:8px; padding:30px; }
+    .hero p { color:#ffe9d1; margin:8px 0 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.24); padding:13px; border-radius:8px; background:rgba(255,255,255,.08); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .notice { background:var(--warn); border-left:4px solid #c47b1a; padding:14px 16px; border-radius:6px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; margin-top:14px; }
+    .badge { display:inline-block; margin:0 6px 8px 0; padding:3px 9px; border-radius:999px; background:var(--soft2); color:#224f8d; font-size:.8rem; font-weight:700; }
+    .tag { background:var(--soft); color:#83460f; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    a { color:#0b5cad; }
+  </style>
+</head>
+<body>
+<!-- verifier: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+<main class="container">
+  <header class="hero">
+    <h1>AI 코딩 도구 기사 요약</h1>
+    <p>생성일: 2026-06-04 | 기본 기사 기간: 2026-06-02부터 2026-06-04까지 | 확장 기간: 2026-05-29부터 2026-06-04까지</p>
+    <div class="grid">
+      <div class="stat"><strong>기간 확장</strong><br>도구별 기사량이 2일 기준으로 부족해 7일로 확장했다.</div>
+      <div class="stat"><strong>신뢰도</strong><br>공식 글과 커뮤니티/기술 블로그를 분리해 표시했다.</div>
+      <div class="stat"><strong>핵심 흐름</strong><br>승인 자동화, 권한 경계, 지식 업무 확장이 공통 주제다.</div>
+    </div>
+  </header>
+
+  <section class="panel toc">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#notice">기간 확장 공지</a></li>
+      <li><a href="#openai">OpenAI Codex</a></li>
+      <li><a href="#claude">Claude Code</a></li>
+      <li><a href="#cursor">Cursor</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section class="panel" id="notice">
+    <h2>기간 확장 공지</h2>
+    <div class="notice">최근 2일(2026-06-02부터 2026-06-04까지) 기준으로 Claude Code와 Cursor의 독립 기사량이 충분하지 않았다. 따라서 기사 수집 범위를 최근 7일(2026-05-29부터 2026-06-04까지)로 확장했으며, 아래 항목마다 공식 글, 실사용 후기, 비평 리뷰, 뉴스 기사 여부를 명시했다.</div>
+  </section>
+
+  <section class="panel" id="openai">
+    <h2>OpenAI Codex</h2>
+    <article class="card">
+      <h3>Codex for every role, tool, and workflow</h3>
+      <span class="badge tag">공식 글</span><span class="badge">OpenAI</span><span class="badge">2026-06-02</span>
+      <p>OpenAI는 Codex를 개발자 중심 도구에서 역할별 지식 업무 도구로 확장한다고 발표했다. 핵심은 역할별 플러그인, 공유 가능한 Sites preview, 생성물의 특정 부분을 지정해 수정하는 annotations다.</p>
+      <p>실무적으로는 Codex가 코드베이스 수정뿐 아니라 보고서, 대시보드, 피치 자료, 디자인 프로토타입까지 다루는 에이전트 작업면으로 확장되고 있음을 뜻한다.</p>
+      <p class="meta">실무 시사점: 개발팀은 사내 플러그인·스킬·문서 권한 모델을 미리 정리해야 한다.</p>
+      <p><a href="https://openai.com/index/codex-for-every-role-tool-workflow/">원문 링크</a></p>
+    </article>
+    <article class="card">
+      <h3>Codex is becoming a productivity tool for everyone</h3>
+      <span class="badge tag">공식 글</span><span class="badge">OpenAI</span><span class="badge">2026-06-02</span>
+      <p>OpenAI는 Codex가 5백만 명 이상의 weekly active users를 기록했고, 지식 노동자가 전체 사용자 중 약 20%를 차지한다고 밝혔다. 빠르게 늘어나는 사용 사례는 데이터 분석, 리서치, 지식 산출물 제작이다.</p>
+      <p>개발 생산성 관점에서는 코딩 도구가 점점 문서, 스프레드시트, 프레젠테이션 생성과 결합된다는 점이 중요하다.</p>
+      <p class="meta">실무 시사점: 엔지니어링 팀의 자동화 기준이 비개발 팀 산출물에도 확산될 가능성이 크다.</p>
+      <p><a href="https://openai.com/index/codex-for-knowledge-work/">원문 링크</a></p>
+    </article>
+    <article class="card">
+      <h3>Codex CLI 0.136.0 release notes 해설</h3>
+      <span class="badge tag">실사용 후기</span><span class="badge">The Forge</span><span class="badge">2026-06-02</span>
+      <p>The Forge는 0.136.0의 Bedrock, archive, app-server stdio, remote-control server token, Windows sandbox setup을 운영 관점에서 해석했다. 공식 릴리스 노트보다 실무 적용 포인트가 빠르게 정리되어 있다.</p>
+      <p class="meta">실무 시사점: AWS 거버넌스 환경에서 Codex를 쓰려는 팀은 provider·token·sandbox 경계를 함께 점검해야 한다.</p>
+      <p><a href="https://hammerautomation.ai/en/forge/openai-codex-release-notes-2026-06-02">원문 링크</a></p>
+    </article>
+  </section>
+
+  <section class="panel" id="claude">
+    <h2>Claude Code</h2>
+    <article class="card">
+      <h3>Claude Code 2.1.160 turns some files into approval points</h3>
+      <span class="badge tag">실사용 후기</span><span class="badge">The Forge</span><span class="badge">2026-06-02</span>
+      <p>이 글은 Claude Code 2.1.160의 핵심을 위험 파일 쓰기 승인 지점으로 요약한다. shell startup 파일과 빌드 도구 설정 파일은 작은 변경만으로도 임의 코드 실행 경로가 될 수 있어 자동 편집에서 별도 승인이 필요하다는 설명이다.</p>
+      <p>Claude Code의 방향은 단순히 더 많이 자동 실행하는 것이 아니라, 위험도가 높은 쓰기 경로를 구분해 에이전트의 장시간 실행을 안전하게 만드는 쪽이다.</p>
+      <p class="meta">실무 시사점: 저장소 정책에서 .npmrc, .pre-commit-config.yaml, devcontainer 같은 파일을 고위험 변경으로 분류할 필요가 있다.</p>
+      <p><a href="https://hammerautomation.ai/en/forge/claude-code-2-1-160-skyddade-filer">원문 링크</a></p>
+    </article>
+    <article class="card">
+      <h3>Coding Beyond Your Training: Claude Code and the Technological Frontier</h3>
+      <span class="badge tag">비평 리뷰</span><span class="badge">arXiv</span><span class="badge">2026-05-28</span>
+      <p>Claude Code 도입 이후 GitHub 개발자 패널을 분석한 연구로, Claude-co-authored commit을 처리 시점으로 보고 월간 commit, 기여 repo, 사용 언어 수 등의 변화를 측정했다.</p>
+      <p>제품 릴리스 글은 아니지만, AI 코딩 도구가 생산성 지표를 어떻게 바꾸는지 정량적으로 보려는 팀에 참고 가치가 있다.</p>
+      <p class="meta">실무 시사점: 도구 도입 효과를 체감이 아니라 repo-level 지표로 추적하는 평가 설계가 필요하다.</p>
+      <p><a href="https://arxiv.org/abs/2605.25438">원문 링크</a></p>
+    </article>
+  </section>
+
+  <section class="panel" id="cursor">
+    <h2>Cursor</h2>
+    <article class="card">
+      <h3>Auto-review Run Mode</h3>
+      <span class="badge tag">공식 글</span><span class="badge">Cursor Forum</span><span class="badge">2026-05-29</span>
+      <p>Cursor는 Auto-review Run Mode를 공식 포럼에서 설명했다. Shell, MCP, Fetch 호출은 allowlist, sandbox, classifier 순서로 판단되며, classifier는 현재 요청과 사용자 지침을 함께 보고 허용·대안·승인 요청을 결정한다.</p>
+      <p>이는 Cursor가 장시간 에이전트 실행의 마찰을 줄이면서도 완전 무승인 실행으로 바로 가지 않는 중간 단계를 만들었다는 의미다.</p>
+      <p class="meta">실무 시사점: 팀은 allowlist와 custom instructions를 별도 운영 자산으로 관리해야 한다.</p>
+      <p><a href="https://forum.cursor.com/t/auto-review-run-mode/161922">원문 링크</a></p>
+    </article>
+    <article class="card">
+      <h3>Cursor Auto-Review Mode Ends the Agentic Interrupt Loop</h3>
+      <span class="badge tag">비평 리뷰</span><span class="badge">Vibe Coder Blog</span><span class="badge">2026-06-01</span>
+      <p>이 글은 Auto-review를 "계속 승인하기"와 "무제한 실행" 사이의 운영 모드로 해석한다. 도구 호출이 반복되는 agentic session에서 사람이 매번 멈춰 승인하지 않아도 되도록 classifier subagent가 중간 판단을 맡는다는 점을 강조한다.</p>
+      <p class="meta">실무 시사점: Cursor를 장시간 자동화에 쓰는 팀은 sandbox 가능한 호출과 classifier로 넘길 호출의 경계를 테스트해야 한다.</p>
+      <p><a href="https://blog.vibecoder.me/cursor-auto-review-agentic-run-mode">원문 링크</a></p>
+    </article>
+  </section>
+
+  <section class="panel" id="sources">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://openai.com/index/codex-for-every-role-tool-workflow/">OpenAI - Codex for every role, tool, and workflow</a></li>
+      <li><a href="https://openai.com/index/codex-for-knowledge-work/">OpenAI - Codex is becoming a productivity tool for everyone</a></li>
+      <li><a href="https://hammerautomation.ai/en/forge/openai-codex-release-notes-2026-06-02">The Forge - OpenAI Codex release notes</a></li>
+      <li><a href="https://hammerautomation.ai/en/forge/claude-code-2-1-160-skyddade-filer">The Forge - Claude Code 2.1.160</a></li>
+      <li><a href="https://arxiv.org/abs/2605.25438">arXiv - Coding Beyond Your Training</a></li>
+      <li><a href="https://forum.cursor.com/t/auto-review-run-mode/161922">Cursor Forum - Auto-review Run Mode</a></li>
+      <li><a href="https://blog.vibecoder.me/cursor-auto-review-agentic-run-mode">Vibe Coder Blog - Cursor Auto-review</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 아티클 요약 - 2026-06-10</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#17202a; --muted:#5d6978; --line:#d9e1ec; --accent:#7c3aed; --soft:#f1ebff; --ok:#dff7ea; --warn:#fff3d6; --risk:#ffe7e7; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .container { width:min(1080px,calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#25124d; color:white; border-radius:8px; padding:28px; margin-bottom:18px; }
+    .hero h1 { margin:0 0 8px; font-size:2rem; }
+    .hero p { margin:4px 0; color:#e8defc; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:20px; margin:16px 0; }
+    h2 { margin:0 0 12px; font-size:1.35rem; }
+    h3 { margin:0 0 8px; }
+    a { color:var(--accent); }
+    .toc ol { margin:0; padding-left:22px; }
+    .notice { background:var(--warn); border-left:5px solid #b7791f; padding:14px; border-radius:8px; }
+    .article { border:1px solid var(--line); border-radius:8px; padding:16px; margin:12px 0; background:#fff; }
+    .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 10px; }
+    .badge { background:var(--soft); color:#553c9a; border-radius:999px; padding:3px 9px; font-size:.82rem; font-weight:700; }
+    .badge.ok { background:var(--ok); color:#17633a; }
+    .badge.warn { background:var(--warn); color:#775500; }
+    .badge.risk { background:var(--risk); color:#8a1f1f; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    .sources li { margin:7px 0; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 아티클 요약</h1>
+      <p>생성일: 2026-06-10 | 우선 범위: 2026-06-08 ~ 2026-06-10 | 확장 범위: 2026-06-03 ~ 2026-06-10</p>
+      <div class="grid">
+        <div class="stat"><strong>기간 확장</strong><br>최근 2일 독립 기사량이 낮아 7일로 확장했다.</div>
+        <div class="stat"><strong>핵심 주제</strong><br>프런티어 모델, 비용 충격, lock-in, role/plugin 생태계.</div>
+        <div class="stat"><strong>주의점</strong><br>Cursor 독립 기사량은 부족해 공식 changelog와 비용/운영 기사로 보완했다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#notice">검색 범위 공지</a></li>
+        <li><a href="#claude">Claude Code 관련 글</a></li>
+        <li><a href="#cursor">Cursor 관련 글</a></li>
+        <li><a href="#codex">OpenAI Codex 관련 글</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="notice">
+      <h2>7일 확장 여부</h2>
+      <div class="notice">
+        최근 2일 창에서는 Claude Fable/Mythos와 OpenAI ChatGPT/Codex superapp 관련 보도는 확인됐지만, Cursor 전용 독립 기사와 실사용 후기는 충분하지 않았다. 따라서 기사 검색 범위를 2026-06-03부터 2026-06-10까지 7일로 확장했다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code 관련 글</h2>
+      <article class="article">
+        <h3>Anthropic releases its first Mythos-class model Claude Fable</h3>
+        <div class="badges"><span class="badge ok">뉴스 기사</span><span class="badge">2026-06-09</span><span class="badge">The Verge</span></div>
+        <p>Anthropic이 Claude Fable 5와 제한된 Mythos 5를 공개했다는 보도다. Fable 5는 소프트웨어 엔지니어링, 지식 업무, 시각 작업에서 강점을 보이며, 위험 영역에는 안전 제약과 fallback이 붙는 구조로 설명된다.</p>
+        <p>실무 시사점: Claude Code 사용자는 모델 성능 상승만 볼 것이 아니라 refusal, fallback, 안전 분류로 인한 워크플로 중단 가능성을 함께 봐야 한다. 보안/바이오/역공학성 요청이 섞인 자동화는 사전 설계가 필요하다.</p>
+        <p class="meta">작성자/매체: The Verge | URL: <a href="https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos">https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos</a> | 신뢰도 메모: 뉴스 기사</p>
+      </article>
+      <article class="article">
+        <h3>Anthropic says Claude now writes more than 80 percent of its merged code</h3>
+        <div class="badges"><span class="badge warn">뉴스 기사</span><span class="badge">2026-06-06</span><span class="badge">Tom's Hardware</span></div>
+        <p>Anthropic 내부에서 Claude가 병합 코드의 80% 이상을 작성한다는 주장과 recursive self-improvement 우려를 다룬 기사다. 내부 수치와 경고성 메시지가 섞여 있어 독립 검증은 필요하지만, AI 코딩 비용과 통제 논의를 키우는 기사다.</p>
+        <p>실무 시사점: Claude Code를 대규모로 쓰는 조직은 생산성 수치만 추적하면 부족하다. 인간 리뷰 비율, rollback, 테스트 실패율, 비용 한도를 같이 측정해야 한다.</p>
+        <p class="meta">작성자/매체: Tom's Hardware | URL: <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-now-writes-more-than-80-percent-of-its-merged-code">https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-now-writes-more-than-80-percent-of-its-merged-code</a> | 신뢰도 메모: 뉴스 기사, 내부 수치 기반</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor 관련 글</h2>
+      <article class="article">
+        <h3>Design Mode Improvements</h3>
+        <div class="badges"><span class="badge ok">공식 글</span><span class="badge">2026-06-05</span><span class="badge">Cursor</span></div>
+        <p>Cursor 공식 changelog는 브라우저 Design Mode에서 multi-select와 voice input을 추가했다고 설명한다. 에이전트가 선택한 요소의 코드, 주변 레이아웃, 시각 관계를 함께 이해하게 한다는 점이 핵심이다.</p>
+        <p>실무 시사점: Cursor는 최근 기사보다 공식 업데이트가 더 정보량이 높다. UI 작업자는 텍스트 프롬프트보다 화면 위 selection과 음성 피드백을 결합하는 작업법을 실험할 가치가 있다.</p>
+        <p class="meta">작성자/매체: Cursor | URL: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+      <article class="article">
+        <h3>Custom stores, custom tools, and auto-review for the Cursor SDK</h3>
+        <div class="badges"><span class="badge ok">공식 글</span><span class="badge">2026-06-04</span><span class="badge">Cursor</span></div>
+        <p>Cursor SDK가 custom tools, auto-review, JSONL/custom store, nested subagents를 지원한다는 공식 글이다. IDE 안의 상호작용형 에이전트와 별개로, headless agent를 CI나 내부 스크립트에 넣는 방향이 강화됐다.</p>
+        <p>실무 시사점: Cursor를 도입한 팀은 편집기 UI만 평가하지 말고 SDK 런 기록, permission rule, JSONL 로그 보관 방식을 함께 검토해야 한다.</p>
+        <p class="meta">작성자/매체: Cursor | URL: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex 관련 글</h2>
+      <article class="article">
+        <h3>Codex for every role, tool, and workflow</h3>
+        <div class="badges"><span class="badge ok">공식 글</span><span class="badge">2026-06-02</span><span class="badge">OpenAI</span></div>
+        <p>OpenAI가 Codex를 소프트웨어 개발자 전용 도구에서 비개발 지식 업무까지 확장하는 공식 발표다. role-specific plugins, Sites, annotations, 62개 앱, 110개 skills, 주간 사용자 500만 명 이상이 핵심 수치로 제시됐다.</p>
+        <p>실무 시사점: Codex 도입 판단은 “코딩 성능”만으로는 부족하다. 조직은 어떤 앱 권한, plugin, skill, Sites 공유 범위를 허용할지 먼저 정해야 한다.</p>
+        <p class="meta">작성자/매체: OpenAI | URL: <a href="https://openai.com/index/codex-for-every-role-tool-workflow/">https://openai.com/index/codex-for-every-role-tool-workflow/</a> | 신뢰도 메모: 공식 글</p>
+      </article>
+      <article class="article">
+        <h3>OpenAI is giving ChatGPT its biggest makeover yet, with plans to create a superapp</h3>
+        <div class="badges"><span class="badge warn">뉴스 기사</span><span class="badge">2026-06-08</span><span class="badge">New York Post</span></div>
+        <p>OpenAI가 ChatGPT를 더 많은 앱, 코딩 도구, 작업 자동화가 결합된 superapp으로 재편하려 한다는 보도다. Codex 강화와 기업 고객 확대가 핵심 맥락으로 제시된다.</p>
+        <p>실무 시사점: Codex는 독립 개발 도구라기보다 ChatGPT, 앱, 문서, 원격 실행과 묶이는 방향이다. 팀은 기능 확장만큼 권한 경계와 감사 로그를 중요하게 봐야 한다.</p>
+        <p class="meta">작성자/매체: New York Post | URL: <a href="https://nypost.com/2026/06/08/business/openai-is-giving-chatgpt-its-biggest-makeover-yet-with-plans-for-superapp/">https://nypost.com/2026/06/08/business/openai-is-giving-chatgpt-its-biggest-makeover-yet-with-plans-for-superapp/</a> | 신뢰도 메모: 뉴스 기사</p>
+      </article>
+      <article class="article">
+        <h3>OpenAI and Anthropic's next lock-in play: Databases of coding intent</h3>
+        <div class="badges"><span class="badge warn">비교 리뷰</span><span class="badge">2026-06-06</span><span class="badge">Business Insider</span></div>
+        <p>Pydantic CEO Samuel Colvin의 관점을 통해 OpenAI와 Anthropic이 coding intent와 interaction trajectory를 축적해 lock-in을 강화할 수 있다는 분석이다. 개별 모델 성능보다 작업 이력 데이터의 소유권이 경쟁력이 될 수 있다는 주장이다.</p>
+        <p>실무 시사점: Codex와 Claude Code 모두에서 대화 이력, 실행 로그, agent trajectory를 내보내고 보관할 수 있는지 확인해야 한다. 장기 유지보수에는 코드 자체보다 “왜 이렇게 바뀌었는가”의 기록이 중요하다.</p>
+        <p class="meta">작성자/매체: Business Insider | URL: <a href="https://www.businessinsider.com/openai-anthropic-ai-coding-database-intent-samuel-colvin-pydantic-2026-6">https://www.businessinsider.com/openai-anthropic-ai-coding-database-intent-samuel-colvin-pydantic-2026-6</a> | 신뢰도 메모: 비교 리뷰</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>The Verge: <a href="https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos">https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos</a></li>
+        <li>Tom's Hardware: <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-now-writes-more-than-80-percent-of-its-merged-code">https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-now-writes-more-than-80-percent-of-its-merged-code</a></li>
+        <li>Cursor changelog: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a></li>
+        <li>OpenAI Codex announcement: <a href="https://openai.com/index/codex-for-every-role-tool-workflow/">https://openai.com/index/codex-for-every-role-tool-workflow/</a></li>
+        <li>New York Post: <a href="https://nypost.com/2026/06/08/business/openai-is-giving-chatgpt-its-biggest-makeover-yet-with-plans-for-superapp/">https://nypost.com/2026/06/08/business/openai-is-giving-chatgpt-its-biggest-makeover-yet-with-plans-for-superapp/</a></li>
+        <li>Business Insider: <a href="https://www.businessinsider.com/openai-anthropic-ai-coding-database-intent-samuel-colvin-pydantic-2026-6">https://www.businessinsider.com/openai-anthropic-ai-coding-database-intent-samuel-colvin-pydantic-2026-6</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

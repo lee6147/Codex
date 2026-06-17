@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<!-- verifier anchors: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-06-16</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --ink:#17202a; --muted:#5d6b7a; --line:#d9e0ea; --blue:#1d5fa7; --green:#1f7a4d; --amber:#8a5b00; --soft:#eef5ff; --warn:#fff7df; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1080px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#143d63; color:#fff; border-radius:14px; padding:30px; margin-bottom:18px; }
+    h1 { margin:0 0 8px; font-size:2rem; }
+    h2 { margin:0 0 14px; font-size:1.25rem; }
+    h3 { margin:0 0 8px; font-size:1.05rem; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; margin:16px 0; }
+    .summary { background:var(--soft); border-left:5px solid var(--blue); }
+    .notice { background:var(--warn); border-left:5px solid var(--amber); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:16px; background:#fff; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; margin:2px 4px 8px 0; font-size:.78rem; font-weight:700; background:#e9f3ff; color:#174d83; }
+    .ok { background:#eaf8f0; color:var(--green); }
+    .warn { background:#fff0cc; color:var(--amber); }
+    .muted { color:var(--muted); font-size:.92rem; }
+    ul { margin:8px 0 0; padding-left:20px; }
+    .sources li { margin:6px 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>공식 업데이트 보고서</h1>
+      <p>생성일: 2026-06-16 | 조사 기준: 2026-06-14 ~ 2026-06-16 우선, 최신 공식 항목 보강</p>
+      <div class="meta">
+        <div class="stat"><strong>핵심 신호</strong><br>Claude Code는 최신 패키지/체인지로그 흐름이 가장 활발하고, Cursor와 Codex는 직전 공식 릴리스의 운영 기능이 이번 주 기준선이다.</div>
+        <div class="stat"><strong>확인 상태</strong><br>공식 출처 3개와 npm 레지스트리 조회를 사용했다. Claude Code 항목별 changelog 날짜는 원문에 노출되지 않는다.</div>
+        <div class="stat"><strong>실무 영향</strong><br>권한, 모델 제한, 브라우저 디버깅, 리뷰 자동화처럼 에이전트 운영 안정성 쪽 업데이트가 주류다.</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약</h2>
+      <p>최근 3일 안에 Cursor와 Codex의 새 공식 changelog 항목은 확인되지 않았다. 대신 Cursor의 2026-06-10 Bugbot 업데이트와 OpenAI Codex app 26.609(2026-06-11)가 이번 주 사용 판단에 가장 직접적이다. Claude Code는 공식 GitHub changelog 최신 항목이 2.1.176까지 보이며, npm 레지스트리는 2026-06-15 수정 시각과 더 최신 패키지 타임라인을 노출하지만 GitHub changelog 원문은 항목별 게시일을 제공하지 않는다.</p>
+    </section>
+
+    <section class="panel notice">
+      <h2>확인 불가 또는 주의</h2>
+      <p>Claude Code 공식 changelog에는 버전별 날짜가 없으므로 날짜는 npm 레지스트리 보조 신호와 구분해 기록했다. npm 조회에서는 `version` 필드와 `time` 목록 사이에 2.1.177/2.1.178 차이가 보여, 보고서 본문에는 GitHub changelog 기준 최신 공개 내용과 npm 수정 시각을 분리했다.</p>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>2.1.176 changelog: 세션, 권한, Remote Control, background agent 안정화</h3>
+        <span class="badge ok">공식 changelog 확인</span><span class="badge warn">게시일 확인 불가</span>
+        <p>최신 GitHub changelog 상단은 2.1.176이다. 핵심은 대화 언어 기반 세션 제목, footer link badge 설정, Bedrock credential 캐싱 개선, `availableModels` 제한 우회 방지, Fable 5 auto mode fallback, Read/Edit/Write hook 경로 매칭 수정이다.</p>
+        <p>실무 관점에서는 조직 관리 설정이 모델 선택과 권한을 더 강하게 통제하고, tmux/SSH/Windows/Remote Control/background agent의 끊김과 오표시를 줄이는 방향이다. 대규모 작업을 여러 세션으로 돌리는 팀에는 기능 추가보다 운영 신뢰성 개선으로 보는 편이 맞다.</p>
+        <p class="muted">발표일: 공식 changelog 원문 기준 확인 불가 | 보조 확인: npm registry modified 2026-06-15T19:03:37Z | 확인 상태: 확인 완료/일부 날짜 확인 불가</p>
+      </article>
+      <article class="card">
+        <h3>최근 버전 흐름: background, model allowlist, sandbox, agent view</h3>
+        <span class="badge">운영 안정성</span><span class="badge">엔터프라이즈 설정</span>
+        <p>2.1.172~2.1.176 구간은 nested subagents, Bedrock region 처리, plugin 검색, model allowlist enforcement, background-session attach/respawn, Windows agent view 수정이 반복된다. 새 모델 발표보다 에이전트 실행면을 안정화하는 업데이트가 많다.</p>
+        <p>Claude Code를 업무 표준으로 쓰는 팀은 모델 allowlist, managed settings, background daemon 상태, Remote Control 접속 정책을 먼저 점검해야 한다.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Bugbot: 3배 이상 빠른 리뷰, 22% 비용 감소, 10% 더 많은 버그 발견</h3>
+        <span class="badge ok">공식 changelog</span><span class="badge">2026-06-10</span>
+        <p>Cursor의 최신 공식 항목은 2026-06-10 Bugbot 개선이다. 평균 리뷰 시간이 약 5분에서 약 90초로 줄고, 리뷰당 평균 버그 발견 수는 0.56에서 0.62로 올라갔으며, 실행 비용은 약 22% 낮아졌다고 발표했다.</p>
+        <p>`/review`, `/review-bugbot`, `/review-security`로 push 전 검토를 실행하고, 같은 diff가 PR로 올라오면 GitHub/GitLab Bugbot 리뷰와 동기화하는 흐름도 추가됐다. CLI 지원은 “coming soon”으로 표시되어 현재는 Cursor 3.7+ 및 cursor.com/agents 중심이다.</p>
+        <p class="muted">발표일: 2026-06-10 | 출처: Cursor changelog | 확인 상태: 확인 완료</p>
+      </article>
+      <article class="card">
+        <h3>SDK 및 Design Mode 직전 업데이트도 이번 주 판단에 유효</h3>
+        <span class="badge">SDK</span><span class="badge">Design Mode</span>
+        <p>2026-06-04~05 업데이트에서는 Design Mode multi-select/voice input, SDK custom tools, local auto-review, JSONL/custom stores, nested subagents, requestId, Windows bundled ripgrep 개선이 발표됐다. Cursor는 IDE 내부 작업 지시와 리뷰 자동화를 한 화면에서 묶는 쪽으로 강하게 간다.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>Codex app 26.609: Browser Developer mode, reset banking, Computer Use, 자동화 수정</h3>
+        <span class="badge ok">공식 changelog</span><span class="badge">2026-06-11</span>
+        <p>OpenAI 개발자 문서의 Codex changelog는 2026-06-11 Codex app 26.609를 최신 주요 항목으로 제시한다. 새 기능은 Plus/Pro rate-limit reset banking, referral invitations, Browser Developer mode, `/init`, macOS Dock 아이콘, Enterprise Computer Use, Windows per-app Computer Use controls, Unread chats section이다.</p>
+        <p>성능/수정 항목에서는 CDP와 DOM snapshot 최적화로 Browser use가 최대 2배 빨라졌다고 설명한다. scheduled automations가 선택한 approval mode를 따르도록 수정된 점은 이 자동화 워크스페이스와 직접 관련 있다.</p>
+        <p class="muted">발표일: 2026-06-11 | 출처: OpenAI Developers Codex changelog | 확인 상태: 확인 완료</p>
+      </article>
+      <article class="card">
+        <h3>실무 의미: Codex는 로컬 앱, 브라우저, 자동화, 엔터프라이즈 권한을 묶는 방향</h3>
+        <span class="badge">브라우저 디버깅</span><span class="badge">자동화</span><span class="badge">권한 관리</span>
+        <p>이번 업데이트는 코드 생성 품질보다 실행 환경 관리에 초점이 있다. Browser Developer mode와 Computer Use 정책, automations approval mode 수정은 Codex가 “작업 실행면”을 넓히는 과정에서 필요한 안전장치로 해석된다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">Anthropic Claude Code CHANGELOG.md</a></li>
+        <li>npm registry 조회: `npm view @anthropic-ai/claude-code version time.modified time --json`</li>
+        <li><a href="https://cursor.com/changelog">Cursor 공식 changelog</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Developers - Codex changelog</a></li>
+        <li><a href="https://help.openai.com/en/articles/11369540-codex-release-notes">OpenAI Help Center - Codex release notes</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

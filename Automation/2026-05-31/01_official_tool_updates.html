@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-31 공식 AI 코딩 도구 업데이트</title>
+  <style>
+    body{margin:0;background:#f6f7f9;color:#18202a;font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.62}
+    main{max-width:1080px;margin:0 auto;padding:36px 20px 48px}
+    header{border-bottom:3px solid #26384f;padding-bottom:18px;margin-bottom:24px}
+    h1{font-size:30px;margin:0 0 8px;color:#142033}
+    h2{font-size:21px;margin:0 0 10px;color:#1d314c}
+    .meta{color:#5a6675;font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+    .card{background:white;border:1px solid #dde3eb;border-radius:8px;padding:18px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+    .tag{display:inline-block;border:1px solid #b8c6d8;border-radius:999px;padding:2px 9px;font-size:12px;color:#314762;background:#f7fbff}
+    .note{background:#fff8e5;border-left:4px solid #c38a22;padding:12px 14px;margin:18px 0}
+    ul{padding-left:20px}
+    a{color:#0a5db8;text-decoration:none}
+    a:hover{text-decoration:underline}
+    table{width:100%;border-collapse:collapse;background:white;border:1px solid #dde3eb;border-radius:8px;overflow:hidden}
+    th,td{border-bottom:1px solid #e7ecf3;padding:10px;text-align:left;vertical-align:top}
+    th{background:#edf3fa;color:#26384f}
+  </style>
+</head>
+<body>
+  <!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main>
+    <header>
+      <h1>공식 AI 코딩 도구 업데이트 리포트</h1>
+      <p class="meta">생성일: 2026-05-31 · 확인 창: 2026-05-28~2026-05-31 · 기준: 공급사 공식 릴리스/문서</p>
+    </header>
+
+    <section class="note">
+      공식 업데이트는 Claude Code와 Cursor가 2026-05-29~2026-05-30에 새 항목을 냈고, OpenAI Codex는 GitHub 릴리스 기준 최신 태그가 2026-05-28의 0.135.0입니다. 확인 가능한 공식 출처가 없는 항목은 포함하지 않았습니다.
+    </section>
+
+    <section>
+      <h2>목차</h2>
+      <ul>
+        <li>Claude Code 공식 업데이트</li>
+        <li>Cursor 공식 업데이트</li>
+        <li>OpenAI Codex 공식 업데이트</li>
+        <li>비교 요약 및 출처</li>
+      </ul>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <span class="tag">Claude Code</span>
+        <h2>2.1.158 / 2.1.157 / 2.1.154</h2>
+        <p><strong>핵심:</strong> Claude Code는 Opus 4.8, dynamic workflows, 자동 모드 범위 확대, 플러그인 초기화/자동 로딩, worktree와 background agent 안정성 개선을 연속 업데이트했습니다.</p>
+        <ul>
+          <li>2026-05-30 2.1.158: Bedrock, Vertex, Foundry에서 Opus 4.7/4.8 자동 모드를 opt-in으로 제공.</li>
+          <li>2026-05-29 2.1.157: <code>.claude/skills</code> 플러그인 자동 로딩, <code>claude plugin init</code>, <code>claude agents</code> 설정 존중, worktree 전환 개선.</li>
+          <li>2026-05-28 2.1.154: Opus 4.8 기본 high effort, dynamic workflows, 수십~수백 background agent 오케스트레이션, <code>/simplify</code> 정리 전용 리뷰, MCP pending approval 표시 개선.</li>
+        </ul>
+        <p><strong>운영 해석:</strong> Claude Code는 단일 터미널 보조도구에서 background agent/workflow 런타임으로 빠르게 이동하고 있습니다. 다만 조직 적용 시 worktree 격리, sandbox 승인, background 세션 정리 정책을 먼저 점검해야 합니다.</p>
+        <p><a href="https://code.claude.com/docs/en/changelog">공식 출처: Claude Code Changelog</a></p>
+      </article>
+
+      <article class="card">
+        <span class="tag">Cursor</span>
+        <h2>3.6 Auto-review Run Mode</h2>
+        <p><strong>핵심:</strong> Cursor는 2026-05-29에 Auto-review Run Mode를 공개했습니다. 목표는 더 긴 agent 실행을 더 적은 승인 프롬프트와 더 안전한 실행 정책으로 처리하는 것입니다.</p>
+        <ul>
+          <li>Shell, MCP, Fetch 도구 호출에 적용됩니다.</li>
+          <li>allowlist 호출은 즉시 실행되고, sandbox 가능한 호출은 sandbox에서 실행됩니다.</li>
+          <li>나머지 agent 액션은 classifier subagent가 허용, 다른 접근, 사용자 승인 요청 중 하나를 판단합니다.</li>
+          <li>설정 위치는 Cursor Settings > Agents > Run Mode입니다.</li>
+        </ul>
+        <p><strong>운영 해석:</strong> Cursor도 승인 비용을 낮추는 방향으로 이동하지만, 완전 자동화가 아니라 classifier 기반 안전 게이트를 앞세웁니다. 팀 환경에서는 allowlist와 classifier instruction 품질이 실제 안정성을 좌우합니다.</p>
+        <p><a href="https://cursor.com/changelog">공식 출처: Cursor Changelog</a></p>
+      </article>
+
+      <article class="card">
+        <span class="tag">OpenAI Codex</span>
+        <h2>0.135.0 릴리스</h2>
+        <p><strong>핵심:</strong> GitHub 릴리스 기준 Codex의 최신 공식 태그는 2026-05-28의 0.135.0입니다. 지원 진단, 원격 연결 상태, Vim 모드, 권한 프로필, Python SDK sandbox preset, 비대화형 설치가 중심입니다.</p>
+        <ul>
+          <li><code>codex doctor</code>가 환경, Git, 터미널, app-server, thread inventory 진단을 더 자세히 보고합니다.</li>
+          <li><code>/status</code>가 remote transport 연결 세부 정보와 서버 버전을 표시합니다.</li>
+          <li><code>/permissions</code>가 named permission profile과 custom profile 표시를 지원합니다.</li>
+          <li>Python SDK가 thread/turn API용 <code>Sandbox</code> preset을 제공합니다.</li>
+          <li><code>install.sh</code>/<code>install.ps1</code>가 <code>CODEX_NON_INTERACTIVE=1</code> 비대화형 설치를 지원합니다.</li>
+        </ul>
+        <p><strong>운영 해석:</strong> 이번 Codex 업데이트는 대형 기능보다 진단/권한/설치/SDK 표면을 다지는 성격입니다. 반복 자동화와 지원 케이스에서는 <code>codex doctor</code> 출력 품질이 특히 중요합니다.</p>
+        <p><a href="https://github.com/openai/codex/releases">공식 출처: openai/codex releases</a></p>
+      </article>
+    </section>
+
+    <section>
+      <h2>비교 요약</h2>
+      <table>
+        <thead><tr><th>도구</th><th>이번 창의 변화</th><th>사용자가 볼 실질 변화</th><th>확인 상태</th></tr></thead>
+        <tbody>
+          <tr><td>Claude Code</td><td>dynamic workflows, Opus 4.8, plugin/worktree/background agent 개선</td><td>큰 작업을 더 오래, 더 병렬로 맡기는 방향</td><td>공식 changelog 확인</td></tr>
+          <tr><td>Cursor</td><td>Auto-review Run Mode</td><td>승인 프롬프트를 줄이되 classifier subagent로 위험 판단</td><td>공식 changelog 확인</td></tr>
+          <tr><td>OpenAI Codex</td><td>0.135.0 진단/권한/SDK/설치 개선</td><td>운영 지원성과 반복 자동화 환경 구성 개선</td><td>GitHub releases 확인</td></tr>
+        </tbody>
+      </table>
+      <p>출처: 각 도구의 공식 changelog와 GitHub release 페이지.</p>
+    </section>
+  </main>
+</body>
+</html>

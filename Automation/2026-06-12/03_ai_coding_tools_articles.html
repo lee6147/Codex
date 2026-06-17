@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-06-12</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f6f8;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #5d6773;
+      --line: #dbe1e8;
+      --accent: #8a4f2d;
+      --accent-soft: #fff0e8;
+      --warn: #fff7d6;
+      --hero: #3f2e2a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.68;
+    }
+    .wrap { width: min(1080px, calc(100vw - 32px)); margin: 28px auto 56px; }
+    .hero { background: var(--hero); color: #fff; border-radius: 8px; padding: 30px 34px; }
+    .hero p { margin: 8px 0 0; color: #f1dfd8; }
+    h1, h2, h3 { line-height: 1.28; margin-top: 0; }
+    a { color: #0957a3; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 18px; }
+    .stat { border: 1px solid rgba(255,255,255,.22); border-radius: 8px; padding: 12px 14px; background: rgba(255,255,255,.08); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+    .summary { background: var(--accent-soft); border-left: 5px solid var(--accent); }
+    .notice { background: var(--warn); border-left: 5px solid #bc8500; }
+    .toc ol { margin: 0; padding-left: 22px; }
+    .card { border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-top: 14px; background: #fff; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 10px; }
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #71401e;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .badge.warn { background: #fff1bf; color: #715000; }
+    .meta-line { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+    .sources li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-06-12 | 우선 기간: 2026-06-10 ~ 2026-06-12 | 확장 기간: 2026-06-05 ~ 2026-06-12</p>
+      <div class="grid">
+        <div class="stat"><strong>기간 확장</strong><br>최근 2일 기사량이 낮아 7일로 확장했다.</div>
+        <div class="stat"><strong>대표 주제</strong><br>비용 통제, vendor lock-in, 경쟁 심화, 리뷰 자동화 성능 개선.</div>
+        <div class="stat"><strong>실무 결론</strong><br>코딩 에이전트 선택은 성능보다 비용 구조와 데이터/의도 이력 소유권까지 같이 봐야 한다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#scope">기간 확장 공지</a></li>
+        <li><a href="#claude">Claude Code 관련 기사</a></li>
+        <li><a href="#cursor">Cursor 관련 기사</a></li>
+        <li><a href="#codex">OpenAI Codex 관련 기사</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel notice" id="scope">
+      <h2>기간 확장 공지</h2>
+      <p>최근 2일(2026-06-10~2026-06-12) 안에 Claude Code, Cursor, OpenAI Codex를 각각 2~3개씩 채울 만큼 독립 기사량이 충분하지 않았다. 따라서 이 기사 보고서는 하네스 규칙에 따라 7일 범위(2026-06-05~2026-06-12)로 확장했다.</p>
+    </section>
+
+    <section class="panel summary">
+      <h2>요약</h2>
+      <p>이번 주 기사는 신기능 소개보다 비용과 lock-in 쟁점에 집중됐다. Business Insider는 OpenAI와 Anthropic의 가격/토큰 구조 변화가 기업의 사용량 통제를 부르고 있다고 보도했고, 별도 기사에서는 Codex와 Claude Code가 생성한 코드와 상호작용 이력이 장기 lock-in의 기반이 될 수 있다는 관점을 다뤘다. Cursor는 기사보다 공식 changelog에서 Bugbot 성능 개선 신호가 강했다.</p>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code 관련 기사</h2>
+      <article class="card">
+        <h3>C-suites have decided: It's time to put AI on a diet</h3>
+        <div class="badge-row">
+          <span class="badge">뉴스 기사</span>
+          <span class="badge">2026-06-11</span>
+          <span class="badge warn">가격/사용량 통제</span>
+        </div>
+        <p>Business Insider는 기업들이 token 기반 비용 상승과 사용량 증가 때문에 AI 도구 사용을 제한하고 있다고 보도했다. 기사에는 OpenAI, Anthropic, GitHub 등 주요 플랫폼의 가격 구조 변화와 기업 내부 cap, budget discipline, ROI 측정 강화가 함께 언급된다.</p>
+        <p>Claude Code 사용자에게는 "무제한처럼 보이는 개인/팀 요금제"를 업무 표준으로 삼기 어렵다는 신호다. 대규모 팀은 모델별 비용, 로그, 토큰 소비량, 사용 정책을 운영 지표로 묶어야 한다.</p>
+        <p class="meta-line">매체: Business Insider | 출처 URL: https://www.businessinsider.com/ai-companies-raising-prices-internal-token-limits-openai-anthropic-ipo-2026-6 | 유용성 메모: 비용 관리 관점의 뉴스 기사</p>
+      </article>
+
+      <article class="card">
+        <h3>Claude Code 비용 절감 사례 보도</h3>
+        <div class="badge-row">
+          <span class="badge">뉴스 기사</span>
+          <span class="badge">2026-06-06</span>
+          <span class="badge warn">비공식 경험담 기반</span>
+        </div>
+        <p>Economic Times는 GrapeRoot라는 dependency graph 기반 context layer가 Claude Code 사용 비용과 속도를 개선했다는 개발자 주장과 커뮤니티 반응을 보도했다. 수치 자체는 독립 검증된 benchmark라기보다 사례성 주장에 가깝다.</p>
+        <p>실무 시사점은 분명하다. Claude Code 같은 에이전트의 비용은 모델 선택만이 아니라 context 설계, 파일 선택, dependency graph, 캐시 전략에 크게 좌우된다. 도구 도입 팀은 "프롬프트를 잘 쓰자"보다 context 공급 파이프라인을 먼저 측정해야 한다.</p>
+        <p class="meta-line">매체: Economic Times | 출처 URL: https://m.economictimes.com/news/new-updates/100k-savings-in-3-months-techie-says-claude-code-is-now-2x-faster-3x-cheaper-using-this-tool/articleshow/131522412.cms | 유용성 메모: 실사용 주장, 추가 검증 필요</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor 관련 기사</h2>
+      <article class="card">
+        <h3>In the AI gold rush, everyone is selling the same shovels</h3>
+        <div class="badge-row">
+          <span class="badge">뉴스 기사</span>
+          <span class="badge">2026-06-09</span>
+          <span class="badge">경쟁 구도</span>
+        </div>
+        <p>Business Insider는 OpenAI, Anthropic, Cursor 같은 회사들이 점점 서로의 영역으로 확장하면서 AI coding, app builder, agent 제품의 경계가 흐려지고 있다고 분석했다. Cursor 같은 application-layer 스타트업은 상위 모델 제공자가 직접 경쟁자로 들어오는 압박을 받는다.</p>
+        <p>Cursor 사용자에게는 기능 출시 속도만큼 platform dependency를 보는 것이 중요하다. Cursor가 제공하는 editor-native workflow와 Bugbot/Review 경험은 강점이지만, 기반 모델과 가격 정책이 외부 공급자 변화에 노출될 수 있다.</p>
+        <p class="meta-line">매체: Business Insider | 출처 URL: https://www.businessinsider.com/everyone-is-building-everything-openai-anthropic-lovable-cursor-canva-2026-6 | 유용성 메모: 경쟁 구도 분석</p>
+      </article>
+
+      <article class="card">
+        <h3>Bugbot 성능 개선 공식 업데이트</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-06-10</span>
+          <span class="badge">리뷰 자동화</span>
+        </div>
+        <p>Cursor 공식 changelog는 Bugbot 평균 리뷰 시간이 약 90초로 줄고, 평균 발견 버그 수와 비용 지표도 개선됐다고 밝혔다. `/review`, `/review-bugbot`, `/review-security`를 통한 푸시 전 검토와 GitHub/GitLab 중복 리뷰 회피가 실무 핵심이다.</p>
+        <p>기사성 독립 분석은 아직 부족하지만, 실제 워크플로 변화는 크다. PR을 열고 리뷰를 기다리는 흐름에서, 로컬 diff 상태에서 사전 리뷰를 통과시키는 흐름으로 이동한다.</p>
+        <p class="meta-line">매체: Cursor 공식 changelog | 출처 URL: https://cursor.com/changelog | 유용성 메모: 공식 글, 광고성 가능성은 낮지만 자체 성능 수치임</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex 관련 기사</h2>
+      <article class="card">
+        <h3>OpenAI and Anthropic's next lock-in play: Databases of coding intent</h3>
+        <div class="badge-row">
+          <span class="badge">뉴스/인터뷰</span>
+          <span class="badge">2026-06-06</span>
+          <span class="badge warn">전략 해석</span>
+        </div>
+        <p>Business Insider는 Pydantic CEO Samuel Colvin의 관점을 통해 OpenAI와 Anthropic이 AI coding tool에서 "coding intent" 데이터베이스를 lock-in 수단으로 활용할 수 있다는 해석을 다뤘다. 코드만이 아니라 왜 그렇게 바뀌었는지의 상호작용 이력이 가치 있는 자산이 된다는 주장이다.</p>
+        <p>Codex 사용자에게는 memory, transcript, review log, task history의 exportability가 중요한 체크포인트가 된다. 장기적으로 에이전트가 만든 코드의 유지보수성은 결과 diff보다 의도 이력을 얼마나 검색/이전할 수 있는지에 달릴 수 있다.</p>
+        <p class="meta-line">매체: Business Insider | 출처 URL: https://www.businessinsider.com/openai-anthropic-ai-coding-database-intent-samuel-colvin-pydantic-2026-6 | 유용성 메모: 전략적 시각, 직접 기능 발표는 아님</p>
+      </article>
+
+      <article class="card">
+        <h3>Codex CLI 0.139.0 공식 업데이트</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">2026-06-09</span>
+          <span class="badge">CLI / MCP</span>
+        </div>
+        <p>OpenAI 공식 changelog는 Codex CLI 0.139.0에서 코드 모드의 독립 웹 검색, tool/connector schema 보존, `codex doctor` 진단 정보 강화, plugin marketplace JSON 개선, 이미지 편집 경로 처리 수정 등을 공개했다.</p>
+        <p>실무적으로는 Codex가 단순 코드 편집기에서 도구/connector/MCP 생태계와 더 깊게 결합하는 방향이다. MCP schema 호환성 개선은 내부 자동화와 사내 connector를 붙이는 팀에 특히 중요하다.</p>
+        <p class="meta-line">매체: OpenAI Developers 공식 changelog | 출처 URL: https://developers.openai.com/codex/changelog | 유용성 메모: 공식 업데이트</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/ai-companies-raising-prices-internal-token-limits-openai-anthropic-ipo-2026-6">Business Insider - AI companies raising prices and internal token limits</a></li>
+        <li><a href="https://m.economictimes.com/news/new-updates/100k-savings-in-3-months-techie-says-claude-code-is-now-2x-faster-3x-cheaper-using-this-tool/articleshow/131522412.cms">Economic Times - Claude Code cost/speed claim</a></li>
+        <li><a href="https://www.businessinsider.com/everyone-is-building-everything-openai-anthropic-lovable-cursor-canva-2026-6">Business Insider - AI gold rush / overlapping products</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://www.businessinsider.com/openai-anthropic-ai-coding-database-intent-samuel-colvin-pydantic-2026-6">Business Insider - coding intent lock-in</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Developers - Codex changelog</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

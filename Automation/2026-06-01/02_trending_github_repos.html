@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 AI/개발 생산성 저장소 - 2026-06-01</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --ink: #18202b;
+      --muted: #596778;
+      --panel: #ffffff;
+      --line: #d7dee8;
+      --accent: #155e75;
+      --soft: #e8f5f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.62;
+    }
+    main { max-width: 1180px; margin: 0 auto; padding: 40px 22px 56px; }
+    header {
+      background: #243b53;
+      color: #fff;
+      border-radius: 8px;
+      padding: 34px;
+      margin-bottom: 22px;
+    }
+    h1, h2, h3 { line-height: 1.25; margin: 0 0 12px; }
+    h2 { margin-top: 30px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+    p { margin: 0 0 12px; }
+    a { color: #075985; }
+    .meta, .card, .source {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 16px 0;
+    }
+    .meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .label { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0; }
+    .value { font-weight: 700; }
+    .repo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .repo { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+    .repo h3 { color: var(--accent); }
+    .stat { display: inline-block; margin: 4px 8px 4px 0; padding: 3px 8px; background: var(--soft); color: var(--accent); border-radius: 999px; font-size: 12px; font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); }
+    th, td { padding: 11px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #eef4f7; }
+    ul { padding-left: 20px; }
+    @media (max-width: 860px) {
+      .meta, .repo-grid { grid-template-columns: 1fr; }
+      header { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+<!-- harness-check: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+<main>
+  <header>
+    <p>GitHub Trending 조사 스냅샷</p>
+    <h1>트렌딩 GitHub 저장소: AI 에이전트와 개발 생산성</h1>
+    <p>2026-06-01 조사 시점의 GitHub Trending daily, Python daily, weekly 목록에서 AI 코딩, 에이전트 harness, 개발 지식화, 자동화와 연결되는 저장소를 선별했다.</p>
+  </header>
+
+  <section class="meta">
+    <div><span class="label">생성일</span><span class="value">2026-06-01</span></div>
+    <div><span class="label">소스</span><span class="value">GitHub Trending</span></div>
+    <div><span class="label">범위</span><span class="value">Daily + Weekly</span></div>
+    <div><span class="label">선정 기준</span><span class="value">AI/agent/dev productivity 관련성</span></div>
+  </section>
+
+  <section class="card">
+    <h2>핵심 요약</h2>
+    <p>이번 목록에서는 문서 변환, agent harness, 코드 지식 그래프, Claude/Codex/Cursor 호환 플러그인처럼 AI 코딩 도구의 주변 인프라가 강하게 보인다. 단순 모델 저장소보다 “에이전트가 더 오래, 더 많이, 더 안전하게 일하게 하는 층”이 트렌딩 상단에 올라왔다.</p>
+  </section>
+
+  <section class="card">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#repos">주요 저장소</a></li>
+      <li><a href="#patterns">패턴 분석</a></li>
+      <li><a href="#watch">관찰 포인트</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section id="repos">
+    <h2>주요 저장소</h2>
+    <div class="repo-grid">
+      <article class="repo">
+        <h3><a href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a></h3>
+        <p><span class="stat">TypeScript</span><span class="stat">18,655 stars</span><span class="stat">243 stars today</span></p>
+        <p>Claude Code, Codex, Cursor 등을 대상으로 하는 공식 Compound Engineering plugin. 여러 agentic coding surface를 하나의 engineering workflow로 묶으려는 흐름을 보여준다.</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/revfactory/harness">revfactory/harness</a></h3>
+        <p><span class="stat">HTML</span><span class="stat">4,537 stars</span><span class="stat">318 stars today</span></p>
+        <p>도메인별 agent team, specialized agent, skill 생성을 돕는 meta-skill. AI 코딩 도구가 단일 프롬프트에서 역할 기반 운영체계로 이동하고 있음을 보여준다.</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/anthropics/claude-code">anthropics/claude-code</a></h3>
+        <p><span class="stat">Python</span><span class="stat">128,811 stars</span><span class="stat">490 stars today</span></p>
+        <p>터미널 기반 agentic coding 도구. 이번 공식 changelog의 skill/plugin, Auto mode, Windows/WSL 개선 신호와 직접 연결된다.</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/microsoft/markitdown">microsoft/markitdown</a></h3>
+        <p><span class="stat">Python</span><span class="stat">134,614 stars</span><span class="stat">2,759 stars today</span></p>
+        <p>문서와 Office 파일을 Markdown으로 변환하는 도구. agent가 기존 업무 산출물을 읽고 요약하고 편집 가능한 텍스트로 전환하는 워크플로에 유용하다.</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/supermemoryai/supermemory">supermemoryai/supermemory</a></h3>
+        <p><span class="stat">TypeScript</span><span class="stat">23,236 stars</span><span class="stat">236 stars today</span></p>
+        <p>AI 시대의 memory API를 표방한다. 장시간 coding agent가 과거 결정, 프로젝트 규칙, 사용자 선호를 유지하는 문제와 맞닿아 있다.</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/colbymchenry/codegraph">colbymchenry/codegraph</a></h3>
+        <p><span class="stat">TypeScript</span><span class="stat">35,236 stars</span><span class="stat">15,909 stars this week</span></p>
+        <p>Claude Code, Codex, Gemini, Cursor, OpenCode 등을 위한 pre-indexed code knowledge graph. agent의 token 사용량과 tool call 수를 줄이는 보조 인프라다.</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/cursor/plugins">cursor/plugins</a></h3>
+        <p><span class="stat">TypeScript</span><span class="stat">1,600 stars</span><span class="stat">738 stars this week</span></p>
+        <p>Cursor plugin specification과 official plugins. Cursor가 IDE 자체 기능을 넘어 plugin ecosystem을 공식화하는 방향을 보여준다.</p>
+      </article>
+      <article class="repo">
+        <h3><a href="https://github.com/a5c-ai/babysitter">a5c-ai/babysitter</a></h3>
+        <p><span class="stat">JavaScript</span><span class="stat">1,067 stars</span><span class="stat">58 stars today</span></p>
+        <p>agentic workforce의 순응성과 deterministic workflow 관리를 표방한다. 자동 승인, 장시간 실행, agent team 운영이 커질수록 필요한 통제층에 해당한다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="patterns">
+    <h2>패턴 분석</h2>
+    <table>
+      <thead>
+        <tr><th>패턴</th><th>관련 저장소</th><th>의미</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>에이전트 운영체계화</td>
+          <td>compound-engineering-plugin, revfactory/harness, babysitter</td>
+          <td>도구가 코드를 쓰는 단계를 넘어 역할, 권한, 반복 실행, 검증을 포괄하는 workflow layer로 이동한다.</td>
+        </tr>
+        <tr>
+          <td>컨텍스트/메모리 인프라</td>
+          <td>supermemory, codegraph</td>
+          <td>긴 작업에서 핵심 병목은 모델 성능만이 아니라 기억, 코드 구조 인덱싱, 검색 품질이다.</td>
+        </tr>
+        <tr>
+          <td>문서 변환과 지식 흡수</td>
+          <td>markitdown</td>
+          <td>업무 문서가 agent-readable Markdown으로 바뀌면 코드 작업과 문서 작업의 경계가 낮아진다.</td>
+        </tr>
+        <tr>
+          <td>플러그인 생태계</td>
+          <td>cursor/plugins, anthropics/claude-code</td>
+          <td>각 제품이 extension, skill, plugin으로 반복 가능한 작업 단위를 공식화하고 있다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="watch" class="card">
+    <h2>관찰 포인트</h2>
+    <ul>
+      <li>단순 star 수보다 “어떤 agent surface와 연결되는가”를 봐야 한다. Claude Code, Codex, Cursor를 동시에 언급하는 저장소는 adoption 신호가 강하다.</li>
+      <li>주간 급등 저장소는 품질이 검증됐다는 뜻이 아니라 관심이 집중됐다는 뜻이다. 실제 도입 전에는 license, 유지보수 빈도, issue 품질을 따로 확인해야 한다.</li>
+      <li>이번 주는 AI 앱 생성 자체보다 agent를 제어하고 기억시키고 검토하는 보조 시스템이 더 눈에 띈다.</li>
+    </ul>
+  </section>
+
+  <section id="sources" class="source">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://github.com/trending?since=daily">GitHub Trending Daily</a></li>
+      <li><a href="https://github.com/trending/python?since=daily">GitHub Trending Python Daily</a></li>
+      <li><a href="https://github.com/trending?since=weekly">GitHub Trending Weekly</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

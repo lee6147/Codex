@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-04 공식 업데이트 보고서</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --ink:#17202a; --muted:#607086; --line:#d9e1ec; --accent:#2457a7; --soft:#eaf2ff; --warn:#fff5d7; --ok:#eaf7ef; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#17355f; color:white; border-radius:8px; padding:30px; }
+    .hero p { margin:8px 0 0; color:#dbe8ff; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.22); padding:13px; border-radius:8px; background:rgba(255,255,255,.08); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .summary { background:var(--soft); border-left:4px solid var(--accent); padding:14px 16px; border-radius:6px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; margin-top:14px; }
+    .badge { display:inline-block; margin:0 6px 8px 0; padding:3px 9px; border-radius:999px; background:var(--soft); color:#1f4e91; font-size:.8rem; font-weight:700; }
+    .ok { background:var(--ok); color:#166534; }
+    .warn { background:var(--warn); color:#7a5400; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    a { color:#0b5cad; }
+  </style>
+</head>
+<body>
+<!-- verifier: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+<main class="container">
+  <header class="hero">
+    <h1>공식 업데이트 보고서</h1>
+    <p>생성일: 2026-06-04 | 조사 기간: 2026-06-01부터 2026-06-04까지, Cursor는 공식 strict-window 업데이트가 없어 2026-05-29 항목을 주변 맥락으로 별도 표기</p>
+    <div class="grid">
+      <div class="stat"><strong>핵심 신호</strong><br>Codex는 업무 전반 확장과 CLI 릴리스가 동시에 확인됐고, Claude Code는 권한·백그라운드 안정성 중심으로 빠르게 갱신됐다.</div>
+      <div class="stat"><strong>확인 상태</strong><br>OpenAI, Anthropic, Cursor 공식 페이지와 GitHub Releases 기준으로 확인했다.</div>
+      <div class="stat"><strong>확인 불가</strong><br>Cursor의 2026-06-01 이후 신규 공식 릴리스는 확인하지 못했다.</div>
+    </div>
+  </header>
+
+  <section class="panel toc">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#openai">OpenAI Codex</a></li>
+      <li><a href="#claude">Claude Code</a></li>
+      <li><a href="#cursor">Cursor</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section class="panel">
+    <h2>요약</h2>
+    <div class="summary">이번 strict-window의 가장 큰 변화는 Codex의 범위 확장이다. OpenAI는 2026-06-02에 역할별 플러그인, Sites, annotations를 발표했고, GitHub Releases에는 2026-06-03의 0.137.0-alpha.4와 2026-06-01의 0.136.0이 확인됐다. Claude Code는 2026-06-02에 2.1.161과 2.1.160을 공개해 병렬 도구 호출, telemetry, Windows, 위험 파일 쓰기 승인 지점을 강화했다.</div>
+  </section>
+
+  <section class="panel" id="openai">
+    <h2>OpenAI Codex</h2>
+    <article class="card">
+      <h3>Codex for every role, tool, and workflow</h3>
+      <span class="badge ok">확인 완료</span><span class="badge">공식 블로그</span><span class="badge">2026-06-02</span>
+      <p>OpenAI는 Codex를 개발자 전용 도구에서 분석, 디자인, 세일즈, 투자, 뱅킹 등 지식 업무 전반으로 확장한다고 발표했다. 역할별 플러그인은 62개 앱과 110개 스킬을 묶고, Sites preview는 업무용 대시보드·검토 공간·경량 앱을 URL로 공유하는 흐름을 제공한다.</p>
+      <p class="meta">실무 의미: Codex가 코드 생성기를 넘어 조직 내부 산출물 제작·검토·공유 플랫폼으로 이동하고 있다.</p>
+      <p class="meta">출처: OpenAI | <a href="https://openai.com/index/codex-for-every-role-tool-workflow/">codex-for-every-role-tool-workflow</a></p>
+    </article>
+    <article class="card">
+      <h3>Codex CLI 0.136.0 및 0.137.0-alpha.4</h3>
+      <span class="badge ok">확인 완료</span><span class="badge">GitHub Releases</span><span class="badge">2026-06-01 / 2026-06-03</span>
+      <p>0.136.0은 TUI 링크 표시, 세션 archive/unarchive, app-server stdio, remote-control 서버 토큰, Windows sandbox elevated setup alpha, image artifact pipeline 등을 포함한다. 0.137.0-alpha.4는 2026-06-03 pre-release로 확인되나 릴리스 노트 상세가 제한되어 안정 채널 판단에는 0.136.0을 우선한다.</p>
+      <p class="meta">실무 의미: 장시간 세션 관리, 원격 제어 보안, Windows 격리 운용이 CLI 운영 포인트로 올라왔다.</p>
+      <p class="meta">출처: GitHub Releases | <a href="https://github.com/openai/codex/releases">openai/codex releases</a></p>
+    </article>
+  </section>
+
+  <section class="panel" id="claude">
+    <h2>Claude Code</h2>
+    <article class="card">
+      <h3>Claude Code 2.1.161</h3>
+      <span class="badge ok">확인 완료</span><span class="badge">공식 changelog</span><span class="badge">2026-06-02</span>
+      <p>2.1.161은 병렬 tool call에서 Bash 실패가 다른 도구 호출을 취소하지 않도록 수정하고, claude agents 목록의 진행률 표시, MCP connector 정리, Linux clipboard 처리, telemetry 초기화 전 이벤트 누락 수정 등을 담았다.</p>
+      <p class="meta">실무 의미: 팀/서브에이전트와 병렬 실행을 쓰는 환경에서 실패 격리와 관측성이 개선된다.</p>
+      <p class="meta">출처: Claude Code Docs | <a href="https://code.claude.com/docs/en/changelog">changelog</a></p>
+    </article>
+    <article class="card">
+      <h3>Claude Code 2.1.160</h3>
+      <span class="badge ok">확인 완료</span><span class="badge">공식 changelog</span><span class="badge">2026-06-02</span>
+      <p>2.1.160은 shell startup 파일과 code execution 권한을 줄 수 있는 빌드 설정 파일 쓰기에 승인 지점을 추가했다. 또한 grep 이후 단일 파일 edit read-before-edit 충족, WSL clipboard, background session 복구, Windows file URL 처리, CJK IME 위치 문제 등을 수정했다.</p>
+      <p class="meta">실무 의미: 자동 편집 모드에서 조용히 실행 경로가 바뀌는 설정 파일을 더 보수적으로 다룬다.</p>
+      <p class="meta">출처: Claude Code Docs | <a href="https://code.claude.com/docs/en/changelog">changelog</a></p>
+    </article>
+  </section>
+
+  <section class="panel" id="cursor">
+    <h2>Cursor</h2>
+    <article class="card">
+      <h3>Cursor 3.6 Auto-review Run Mode</h3>
+      <span class="badge warn">주변 맥락</span><span class="badge">공식 changelog</span><span class="badge">2026-05-29</span>
+      <p>2026-06-01부터 2026-06-04까지 신규 공식 Cursor 릴리스는 확인하지 못했다. 가장 가까운 공식 항목은 2026-05-29의 3.6으로, Auto-review Run Mode가 Shell, MCP, Fetch 호출에 대해 allowlist, sandbox, classifier 순서의 승인 판단을 제공한다고 설명한다.</p>
+      <p class="meta">실무 의미: Cursor도 Claude Code와 Codex처럼 긴 실행을 허용하되 권한 분기와 classifier를 앞세우는 방향으로 움직인다.</p>
+      <p class="meta">출처: Cursor Changelog | <a href="https://cursor.com/changelog">cursor.com/changelog</a></p>
+    </article>
+  </section>
+
+  <section class="panel" id="sources">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://openai.com/index/codex-for-every-role-tool-workflow/">OpenAI - Codex for every role, tool, and workflow</a></li>
+      <li><a href="https://openai.com/index/codex-for-knowledge-work/">OpenAI - Codex is becoming a productivity tool for everyone</a></li>
+      <li><a href="https://github.com/openai/codex/releases">GitHub - openai/codex releases</a></li>
+      <li><a href="https://code.claude.com/docs/en/changelog">Claude Code Docs - changelog</a></li>
+      <li><a href="https://cursor.com/changelog">Cursor - changelog</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

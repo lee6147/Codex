@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-06-09</title>
+  <style>
+    :root { --bg:#f6f8fb; --panel:#fff; --ink:#17202a; --muted:#627083; --line:#dbe3ee; --accent:#7c3aed; --soft:#f1eaff; --green:#e5f8ed; --yellow:#fff3d6; --red:#ffe8e8; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .container { width:min(1080px,calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#24143f; color:white; border-radius:8px; padding:28px; }
+    .hero h1 { margin:0 0 8px; }
+    .hero p { margin:4px 0; color:#eadcff; }
+    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:8px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:20px; margin:16px 0; }
+    .summary { background:var(--soft); border-left:5px solid var(--accent); padding:14px; border-radius:8px; }
+    .toc ol { margin:0; padding-left:22px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; margin:12px 0; }
+    .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 10px; }
+    .badge { background:var(--soft); color:#5b21b6; border-radius:999px; padding:3px 9px; font-size:.82rem; font-weight:700; }
+    .badge.green { background:var(--green); color:#17633a; }
+    .badge.yellow { background:var(--yellow); color:#775500; }
+    .badge.red { background:var(--red); color:#8a1f1f; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    a { color:#5b21b6; }
+    .sources li { margin:7px 0; }
+  </style>
+</head>
+<body>
+  <!-- verifier tokens: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-06-09 | 기사 검색 기간: 최근 2일 우선, 자료 부족으로 최근 7일로 확장</p>
+      <div class="stats">
+        <div class="stat"><strong>기간 확장</strong><br>확장함. 2026-06-02 ~ 2026-06-09 기사와 공식 글을 포함.</div>
+        <div class="stat"><strong>기사량 평가</strong><br>Claude Code와 Codex는 충분, Cursor는 독립 기사보다 공식 changelog 중심.</div>
+        <div class="stat"><strong>광고성 주의</strong><br>일부 바이럴/가이드 글은 실사용 검증보다 해설 성격이 강해 별도 표시.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code 기사</a></li>
+        <li><a href="#cursor">Cursor 글</a></li>
+        <li><a href="#codex">OpenAI Codex 기사</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="summary">
+        7일 확장 검색 결과, 보도와 해설의 중심은 “agent가 더 오래, 더 많이, 더 자율적으로 일할 때 사람이 어떻게 검토하고 통제할 것인가”다. Claude Code는 Dynamic Workflows와 token/cost risk, Codex는 knowledge-work 확장과 multi-agent/remote-control governance, Cursor는 시각적 편집과 SDK 운영화가 핵심 키워드다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>InfoQ: Claude Code Adds Dynamic Workflows for Parallel Agent Coordination</h3>
+        <div class="badges"><span class="badge green">뉴스 기사</span><span class="badge">2026-06-01</span><span class="badge">신뢰도 높음</span></div>
+        <p>InfoQ는 Dynamic Workflows를 복잡한 소프트웨어 작업을 여러 AI agent로 분해·병렬 실행·검증하는 기능으로 설명한다. 수동으로 agent team을 구성하는 대신 Claude가 목표에 맞춰 workflow를 생성하고, 결과가 수렴할 때까지 비교·검증한다는 점을 강조한다.</p>
+        <p>실무 시사점은 명확하다. 대형 migration, 성능 리뷰, 보안 감사처럼 “단일 agent가 context를 잃기 쉬운 작업”에 적합하지만, token 사용량이 커질 수 있어 작은 범위부터 시작해야 한다.</p>
+        <p class="meta">출처: InfoQ | URL: https://www.infoq.com/news/2026/06/dynamic-workflows-claude-code/</p>
+      </article>
+
+      <article class="card">
+        <h3>note.com: Claude Code has changed 4 times in the last 2 months</h3>
+        <div class="badges"><span class="badge yellow">실사용 해설</span><span class="badge">2026-06-06</span><span class="badge yellow">개인 분석</span></div>
+        <p>이 글은 Dynamic Workflows, Agent View, Fast Mode, Windows PowerShell support를 한 흐름으로 묶어 Claude Code가 coding assistant에서 agent orchestration platform으로 이동했다고 해석한다. 특히 Windows PowerShell 지원은 기업 Windows 환경 도입 장벽을 낮추는 요소로 본다.</p>
+        <p>다만 비용·속도·품질 수치는 공식 벤치마크와 개인 해석이 섞여 있으므로, 팀 도입 판단에는 공식 문서와 자체 테스트를 함께 봐야 한다.</p>
+        <p class="meta">출처: note.com | URL: https://note.com/jolly_crocus1878/n/n68e4d5778e29?hl=en</p>
+      </article>
+
+      <article class="card">
+        <h3>YouMind: Dynamic Workflows pattern guide</h3>
+        <div class="badges"><span class="badge yellow">바이럴/가이드</span><span class="badge">2026-06-03</span><span class="badge yellow">검증 필요</span></div>
+        <p>Dynamic Workflows를 fan-out, adversarial verification, tournament, quarantine 같은 orchestration pattern으로 풀어 설명한다. 실제 팀에 유용한 점은 “workflow는 Claude가 쓰는 harness”라는 관점이다. agent 품질을 prompt 하나에 맡기기보다 분류, 병렬 실행, 검증 단계를 구조화하라는 메시지가 실용적이다.</p>
+        <p>확인 메모: 원문은 X 기반 바이럴 트래킹 성격이 강하므로 사실 근거는 Anthropic 공식 글과 FAQ로 재확인해야 한다.</p>
+        <p class="meta">출처: YouMind | URL: https://youmind.com/landing/x-viral-articles/master-claude-code-dynamic-workflows</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Cursor Changelog: Design Mode Improvements</h3>
+        <div class="badges"><span class="badge green">공식 글</span><span class="badge">2026-06-05</span><span class="badge">프론트엔드</span></div>
+        <p>Cursor 3.7은 browser Design Mode에서 multi-select와 voice input을 강조한다. 프론트엔드 agent 작업의 병목이 “코드를 어떻게 수정할지 설명”에서 “어떤 화면 요소를 어떻게 맞출지 지시”로 이동하는 신호다.</p>
+        <p>실무 시사점은 UI QA 루프에 크다. 디자이너·PM이 DOM이나 컴포넌트명을 몰라도 시각적 요소를 직접 지정해 agent에게 수정 요청할 수 있다.</p>
+        <p class="meta">출처: Cursor | URL: https://cursor.com/en-US/changelog</p>
+      </article>
+
+      <article class="card">
+        <h3>Cursor Changelog: Custom tools, custom stores, auto-review for SDK</h3>
+        <div class="badges"><span class="badge green">공식 글</span><span class="badge">2026-06-04</span><span class="badge">SDK 운영</span></div>
+        <p>Cursor SDK는 custom tools, <code>local.autoReview</code>, JSONL/custom store를 추가했다. 이는 에이전트를 IDE 안 대화 기능이 아니라 headless workflow, CI, 내부 자동화 스크립트 안에 넣으려는 팀에게 중요하다.</p>
+        <p>실무 시사점은 auditability다. JSONL store는 실행 기록을 읽고 diff하고 보존하기 쉬워, agent가 어떤 단계에서 어떤 결정을 했는지 추적하기 좋다.</p>
+        <p class="meta">출처: Cursor | URL: https://cursor.com/en-US/changelog</p>
+      </article>
+
+      <article class="card">
+        <h3>확인 불가: 최근 7일 내 독립 실사용 기사 부족</h3>
+        <div class="badges"><span class="badge red">확인 불가</span><span class="badge">자료 부족</span></div>
+        <p>2026-06-02 ~ 2026-06-09 범위에서 Cursor의 3.7/SDK 업데이트를 직접 다룬 독립 매체 글은 충분히 확인하지 못했다. 따라서 Cursor 섹션은 공식 changelog를 중심으로 정리했고, 독립 실사용 평가는 다음 실행에서 재검색하는 것이 좋다.</p>
+        <p class="meta">검색 메모: “Cursor Design Mode SDK auto-review June 2026 article” 등으로 확인했으나 공식 changelog 외 고신뢰 독립 기사 부족.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>Axios: Office workers drive OpenAI's Codex growth</h3>
+        <div class="badges"><span class="badge green">뉴스 기사</span><span class="badge">2026-06-02</span><span class="badge">시장/사용 패턴</span></div>
+        <p>Axios는 OpenAI 보고서를 바탕으로 Codex 주간 사용자가 500만 명을 넘고, knowledge worker가 약 20%를 차지하며 개발자보다 3배 이상 빠르게 성장한다고 보도했다. 동시에 여러 agent workstream을 감독하는 피로와 오류 검토 부담도 함께 다룬다.</p>
+        <p>실무 시사점은 “Codex가 개발팀만의 도구가 아니다”라는 점이다. 데이터 분석, 보고서, 대시보드, 문서 생성까지 확대되지만, 전문 검토자가 반드시 필요하다는 사례도 같이 제시된다.</p>
+        <p class="meta">출처: Axios | URL: https://www.axios.com/2026/06/02/openai-codex-knowledge-workers</p>
+      </article>
+
+      <article class="card">
+        <h3>TheRouter.ai: Codex multi-agent v2 per-thread runtime routing</h3>
+        <div class="badges"><span class="badge yellow">기술 해설</span><span class="badge">2026-06-04</span><span class="badge">운영/라우팅</span></div>
+        <p>이 글은 Codex CLI 0.137.0의 multi-agent v2를 gateway routing과 cost attribution 관점에서 해석한다. 핵심은 sub-agent가 parent session 전체 설정을 그대로 따르는 모델에서 벗어나 thread별 runtime 선택을 유지한다는 점이다.</p>
+        <p>실무 시사점은 비용·권한·로그가 session 단위가 아니라 thread 단위로 내려가야 한다는 것이다. agent gateway나 내부 플랫폼을 운영하는 팀은 request ledger와 approval 환경 식별자를 더 세밀하게 설계해야 한다.</p>
+        <p class="meta">출처: TheRouter.ai | URL: https://therouter.ai/news/openai-codex-multi-agent-v2-per-thread-runtime-routing/</p>
+      </article>
+
+      <article class="card">
+        <h3>Hammer Automation: Codex CLI 0.137.0 makes agent work easier to govern</h3>
+        <div class="badges"><span class="badge yellow">기술 블로그</span><span class="badge">2026-06-04</span><span class="badge">거버넌스</span></div>
+        <p>이 글은 Codex CLI 0.137.0을 화려한 기능보다 governance update로 해석한다. <code>codex plugin list --json</code>, remote-control grant 관리, monthly credit limits, environment identity on approvals 같은 항목이 agent 운영 검토에 더 중요하다는 관점이다.</p>
+        <p>실무 시사점은 도입 전 plugin inventory, grant, environment, log line을 먼저 정리하라는 것이다. 이는 작은 팀이 Codex를 실제 시스템과 연결할 때 바로 쓸 수 있는 체크리스트다.</p>
+        <p class="meta">출처: Hammer Automation | URL: https://hammerautomation.ai/en/forge/openai-codex-release-notes-2026-06-04</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>InfoQ: <a href="https://www.infoq.com/news/2026/06/dynamic-workflows-claude-code/">https://www.infoq.com/news/2026/06/dynamic-workflows-claude-code/</a></li>
+        <li>note.com: <a href="https://note.com/jolly_crocus1878/n/n68e4d5778e29?hl=en">https://note.com/jolly_crocus1878/n/n68e4d5778e29?hl=en</a></li>
+        <li>YouMind: <a href="https://youmind.com/landing/x-viral-articles/master-claude-code-dynamic-workflows">https://youmind.com/landing/x-viral-articles/master-claude-code-dynamic-workflows</a></li>
+        <li>Cursor changelog: <a href="https://cursor.com/en-US/changelog">https://cursor.com/en-US/changelog</a></li>
+        <li>Axios: <a href="https://www.axios.com/2026/06/02/openai-codex-knowledge-workers">https://www.axios.com/2026/06/02/openai-codex-knowledge-workers</a></li>
+        <li>TheRouter.ai: <a href="https://therouter.ai/news/openai-codex-multi-agent-v2-per-thread-runtime-routing/">https://therouter.ai/news/openai-codex-multi-agent-v2-per-thread-runtime-routing/</a></li>
+        <li>Hammer Automation: <a href="https://hammerautomation.ai/en/forge/openai-codex-release-notes-2026-06-04">https://hammerautomation.ai/en/forge/openai-codex-release-notes-2026-06-04</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

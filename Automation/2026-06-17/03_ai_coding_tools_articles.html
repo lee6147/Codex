@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 동향 - 2026-06-17</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5d6a7b;
+      --line: #dbe2ea;
+      --blue: #0f5fa6;
+      --hero: linear-gradient(135deg, #3a2412 0%, #8a5528 100%);
+      --soft: #fff7e6;
+      --warn: #ffe9c2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+    }
+    .wrap {
+      width: min(1100px, calc(100vw - 32px));
+      margin: 28px auto 56px;
+    }
+    header {
+      background: var(--hero);
+      color: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    h2 { margin: 0 0 14px; font-size: 1.28rem; }
+    h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    a { color: var(--blue); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .summary { background: var(--soft); }
+    .notice { background: var(--warn); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+    }
+    .card + .card { margin-top: 14px; }
+    .badge {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #eef4ff;
+      color: #174e83;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>AI 코딩 도구 기사 동향</h1>
+      <p>생성일: 2026-06-17 | 기사 조사 구간: 2026-06-11 ~ 2026-06-17</p>
+      <div class="meta">
+        <div class="stat"><strong>확장 사유</strong><br>최근 2일만 보면 기사 수가 얇아서, 이번 리포트는 7일 구간으로 넓혀 비교했다.</div>
+        <div class="stat"><strong>핵심 흐름</strong><br>기업 현장에서는 생산성 상승과 동시에 품질 통제, 토큰 비용 관리, 승인 절차가 같이 강화되고 있다.</div>
+        <div class="stat"><strong>도구별 초점</strong><br>Claude Code와 Cursor는 대기업 엔지니어링 도입 사례가 두드러졌고, Codex는 장기 실행 인프라 확장 서사가 강했다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#window">조사 구간 메모</a></li>
+        <li><a href="#claude">Claude Code 관련 기사</a></li>
+        <li><a href="#cursor">Cursor 관련 기사</a></li>
+        <li><a href="#codex">OpenAI Codex 관련 기사</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약</h2>
+      <p>이번 주 기사 흐름은 "AI 코딩 도구를 더 많이 쓰자"가 아니라 "생산성은 올리되 품질과 비용을 통제하자"에 가깝다. Paramount와 Disney 사례는 Claude Code와 Cursor가 이미 대기업 워크플로에 들어왔음을 보여주지만, 동시에 토큰 추적, 대시보드, human review, 실패한 AI 산출물 최소화 같은 통제 장치가 같이 붙고 있다. Codex 쪽은 OpenAI의 실행 환경 확장과 Ona 인수 서사가 장기 실행형 에이전트 인프라 경쟁을 키우고 있다.</p>
+    </section>
+
+    <section class="panel notice" id="window">
+      <h2>조사 구간 메모</h2>
+      <p>최근 2일 기준만으로는 Claude Code, Cursor, Codex를 균형 있게 다룰 만한 기사 수가 충분하지 않았다. 그래서 이번 리포트는 2026-06-11 ~ 2026-06-17, 7일 구간으로 확장했다. 이 확장 사실은 종합 Markdown에도 동일하게 반영했다.</p>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code 관련 기사</h2>
+      <article class="card">
+        <h3>Paramount Skydance: Claude Code가 "며칠 걸리던 작업"을 몇 분대로 줄임</h3>
+        <div>
+          <span class="badge">Business Insider</span>
+          <span class="badge">2026-06-11</span>
+          <span class="badge">기업 도입</span>
+        </div>
+        <p>Business Insider는 2026-06-11 보도에서 Paramount Skydance 내부 기술 조직이 Claude Code와 AI 기반 triage 도구로 몇 시간~며칠 걸리던 작업을 몇 분 수준으로 줄였다고 전했다. 동시에 회사는 토큰 사용량과 AI 활용도를 대시보드로 추적하고 있었다.</p>
+        <p>의미는 분명하다. Claude Code는 이미 대기업의 속도 향상 도구로 인식되지만, 무제한 자율 사용이 아니라 usage analytics와 spend limit이 붙는 통제형 배치가 기본값이 되고 있다.</p>
+      </article>
+      <article class="card">
+        <h3>Disney: Claude와 Cursor는 쓰되, 실패하는 AI-coded 제품은 줄여라</h3>
+        <div>
+          <span class="badge">Times of India</span>
+          <span class="badge">2026-06-15</span>
+          <span class="badge">품질 통제</span>
+        </div>
+        <p>Times of India는 Disney가 엔지니어에게 Claude와 Cursor 활용을 계속 밀면서도, 출시 후 문제를 일으키는 AI-coded 제품은 최소화하라고 지시했다고 보도했다. 속도 자체보다 품질과 복원력까지 포함한 결과 책임이 강화된 셈이다.</p>
+        <p>Claude Code 관점에서는 "빨리 만들 수 있다"는 장점이 더 이상 충분하지 않다. 결과물에 대한 human review와 운영 품질 기준을 통과해야 조직 배치가 지속된다.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor 관련 기사</h2>
+      <article class="card">
+        <h3>SpaceX의 Cursor 600억 달러 인수 발표가 경쟁 지형을 흔듦</h3>
+        <div>
+          <span class="badge">AP</span>
+          <span class="badge">2026-06-17</span>
+          <span class="badge">M&amp;A</span>
+        </div>
+        <p>AP는 2026-06-17 SpaceX가 AI 코딩 스타트업 Cursor를 600억 달러에 인수한다고 보도했다. Cursor는 독립 제품을 넘어 대형 AI 플랫폼 경쟁의 전략 자산으로 재평가되고 있다.</p>
+        <p>이 뉴스는 Cursor의 제품 방향 자체보다 생태계 위치를 바꾼다. 이제 Cursor는 IDE 경험뿐 아니라 compute, distribution, 모델 파트너십 재편과 함께 읽어야 한다.</p>
+      </article>
+      <article class="card">
+        <h3>Disney와 Paramount 사례에서 Cursor는 이미 대시보드 관리 대상</h3>
+        <div>
+          <span class="badge">Times of India</span>
+          <span class="badge">2026-06-15</span>
+          <span class="badge">Business Insider</span>
+        </div>
+        <p>Disney 보도와 Paramount 보도 모두 Cursor나 유사 AI 코딩 도구 사용량을 대시보드로 추적하는 흐름을 보여준다. Cursor는 개인 생산성 도구이면서 동시에 비용과 품질을 관리해야 하는 기업 운영 대상이 됐다.</p>
+        <p>즉 Cursor의 다음 경쟁 포인트는 "잘 써준다"뿐 아니라 "관리 가능한 방식으로 잘 써준다"가 될 가능성이 높다.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex 관련 기사</h2>
+      <article class="card">
+        <h3>Ona 인수 보도: Codex가 장기 실행형 에이전트 인프라 쪽으로 이동</h3>
+        <div>
+          <span class="badge">TechRadar</span>
+          <span class="badge">2026-06-12</span>
+          <span class="badge">장기 실행</span>
+        </div>
+        <p>TechRadar는 2026-06-12 OpenAI의 Ona 인수 계획을 전하며, Codex가 secure persistent environments를 통해 더 긴 작업을 지속하는 방향으로 확장될 수 있다고 해석했다. 이는 Codex가 단순 코드 제안 도구를 넘어 실행 인프라까지 잡으려 한다는 관측과 맞물린다.</p>
+      </article>
+      <article class="card">
+        <h3>공식 changelog도 같은 방향: 브라우저, 컴퓨터 사용, 메모리, 승인 모드</h3>
+        <div>
+          <span class="badge">OpenAI 공식</span>
+          <span class="badge">2026-06-16</span>
+          <span class="badge">실행 환경</span>
+        </div>
+        <p>기사와 별개로, OpenAI 공식 changelog는 2026-06-16과 2026-06-11에 Computer Use, Chrome extension, Browser Developer mode, memories, scheduled automations approval mode를 묶어 공개했다. 외부 기사 서사와 공식 제품 방향이 같은 쪽을 가리킨다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/paramount-skydance-ai-usage-streaming-tech-claude-coding-david-ellison-2026-6">Business Insider - Paramount Skydance AI usage</a></li>
+        <li><a href="https://timesofindia.indiatimes.com/technology/tech-news/almost-a-year-after-giving-engineers-access-to-claude-and-cursor-disney-tells-engineers-minimise-ai-coded-products-that-/articleshow/131728705.cms">Times of India - Disney, Claude, Cursor</a></li>
+        <li><a href="https://apnews.com/article/a5c60fcbaaca262cf107d30f1de899ef">AP - SpaceX buys Cursor</a></li>
+        <li><a href="https://www.techradar.com/pro/openais-latest-acquisition-could-see-big-changes-on-the-way-for-its-codex-coding-assistant">TechRadar - OpenAI and Ona</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Developers - Codex changelog</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-05-31 AI 코딩 도구 기사/분석</title>
+  <style>
+    body{margin:0;background:#f7f8fb;color:#17212f;font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.62}
+    main{max-width:1080px;margin:0 auto;padding:36px 20px 48px}
+    header{border-bottom:3px solid #27384f;padding-bottom:18px;margin-bottom:24px}
+    h1{font-size:30px;margin:0 0 8px;color:#12233a}
+    h2{font-size:21px;margin:0 0 10px;color:#243957}
+    h3{font-size:17px;margin:12px 0 6px;color:#2f4057}
+    .meta{color:#59677a;font-size:14px}
+    .notice{background:#fff7df;border-left:4px solid #bc8420;padding:12px 14px;margin:16px 0}
+    .card{background:white;border:1px solid #dce4ee;border-radius:8px;padding:16px;margin:14px 0;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+    .label{display:inline-block;border-radius:999px;border:1px solid #c8d6e6;background:#f2f7fc;color:#314762;padding:2px 9px;font-size:12px}
+    ul{padding-left:20px}
+    a{color:#0a5db8;text-decoration:none}
+    a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main>
+    <header>
+      <h1>AI 코딩 도구 기사·분석 브리핑</h1>
+      <p class="meta">생성일: 2026-05-31 · 기사 검색 창: 2026-05-25~2026-05-31</p>
+    </header>
+
+    <section class="notice">
+      2일 창에서는 Claude Opus 4.8 관련 보도는 충분했지만 Codex와 Cursor의 균형 있는 기사 수가 부족했습니다. 따라서 기사/분석 검색 범위를 7일(2026-05-25~2026-05-31)로 넓혔고, 공식 릴리스 문서와 외부 기사/블로그를 구분해 표시합니다.
+    </section>
+
+    <section class="card">
+      <h2>목차</h2>
+      <ul>
+        <li>Claude Code / Anthropic 기사 흐름</li>
+        <li>OpenAI Codex 공식 글과 운영 사례</li>
+        <li>Cursor Auto-review Run Mode</li>
+        <li>종합 판단과 출처</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <span class="label">Claude Code / Anthropic</span>
+      <h2>Opus 4.8과 dynamic workflows가 기사 흐름을 주도</h2>
+      <h3>확인한 글</h3>
+      <ul>
+        <li><a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic: Introducing Claude Opus 4.8</a> (2026-05-28, 공식)</li>
+        <li><a href="https://www.axios.com/2026/05/28/anthropic-opus-release-mythos">Axios: Anthropic releases new model, Opus 4.8</a> (2026-05-28, 기사)</li>
+        <li><a href="https://venturebeat.com/technology/anthropics-claude-opus-4-8-is-here-with-3x-cheaper-fast-mode-and-near-mythos-level-alignment">VentureBeat: Opus 4.8 and cheaper fast mode</a> (2026-05-28, 기사)</li>
+      </ul>
+      <p><strong>요점:</strong> Anthropic은 Opus 4.8을 같은 정규 가격으로 제공하면서 Claude Code에는 dynamic workflows를 추가했습니다. 공식 글은 더 큰 코드베이스 작업을 계획하고 수백 개 병렬 subagent로 실행한 뒤 검증하는 방향을 설명합니다.</p>
+      <p><strong>읽는 법:</strong> 외부 기사는 성능/가격/경쟁 구도를 강조하지만, 실무자는 "대규모 agent 실행을 어떤 격리·검증·비용 한도로 운영할 것인가"를 먼저 봐야 합니다.</p>
+    </section>
+
+    <section class="card">
+      <span class="label">OpenAI Codex</span>
+      <h2>공식 글은 내부 활용 사례와 운영 안전성을 강조</h2>
+      <h3>확인한 글</h3>
+      <ul>
+        <li><a href="https://cdn.openai.com/pdf/6a2631dc-783e-479b-b1a4-af0cfbd38630/how-openai-uses-codex.pdf">OpenAI: How OpenAI uses Codex</a> (검색 기준 최근 공개 PDF, 공식)</li>
+        <li><a href="https://openai.com/index/running-codex-safely/">OpenAI: Running Codex safely at OpenAI</a> (2026-05-08, 공식 배경)</li>
+        <li><a href="https://openai.com/index/introducing-the-codex-app/">OpenAI: Introducing the Codex app</a> (2026-05-31 조사 시점 재확인, 공식 배경)</li>
+      </ul>
+      <p><strong>요점:</strong> "How OpenAI uses Codex"는 코드 이해, refactoring/migration, 성능 최적화, 테스트 보강, 개발 속도, 흐름 유지, 탐색/아이디어 발굴을 내부 사용 사례로 정리합니다. "Running Codex safely"는 sandbox, managed configuration, approval, telemetry, audit trail의 필요성을 설명합니다.</p>
+      <p><strong>읽는 법:</strong> Codex 쪽 메시지는 "모델이 더 똑똑하다"보다 "반복 가능한 개발 운영 체계 안에서 Codex를 어떻게 배치하는가"에 가깝습니다. AGENTS.md, Ask Mode, task queue, sandbox preset이 핵심 운영 단어입니다.</p>
+    </section>
+
+    <section class="card">
+      <span class="label">Cursor</span>
+      <h2>Auto-review Run Mode가 안전 자동화 메시지를 강화</h2>
+      <h3>확인한 글</h3>
+      <ul>
+        <li><a href="https://cursor.com/changelog/auto-review">Cursor: Auto-review Run Mode</a> (2026-05-29, 공식)</li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a> (2026-05-29/2026-05-20, 공식)</li>
+        <li><a href="https://codersera.com/blog/cursor-composer-vs-claude-code-vs-codex-vs-gemini-cli-2026/">Codersera: Cursor Composer vs Claude Code vs Codex vs Gemini CLI 2026</a> (최근 7일 내 검색 노출, 비교 글)</li>
+      </ul>
+      <p><strong>요점:</strong> Cursor의 새 run mode는 Shell, MCP, Fetch 호출을 allowlist, sandbox, classifier subagent 판단으로 나누며 approval 피로를 줄이려는 기능입니다. 2026-05-20의 Shared Canvases, /loop, Automations 개선은 7일 창 밖이므로 배경으로만 봤습니다.</p>
+      <p><strong>읽는 법:</strong> Cursor는 IDE 안에서 장시간 agent 실행을 안전하게 유지하는 방향입니다. "적게 묻기"가 목표이지만, classifier가 위험을 충분히 잘 분류하도록 팀별 정책 설정이 필요합니다.</p>
+    </section>
+
+    <section class="card">
+      <span class="label">종합</span>
+      <h2>이번 주 기사 신호</h2>
+      <ul>
+        <li>Claude Code: 대규모 병렬 agent 실행과 모델 개선이 전면에 나왔습니다.</li>
+        <li>Codex: 내부 개발 사례, 보안/감사/telemetry, AGENTS.md 기반 운영 방식이 강합니다.</li>
+        <li>Cursor: IDE agent의 긴 실행을 허용하되 classifier/sandbox로 제어하는 방향입니다.</li>
+      </ul>
+      <p>결론적으로 2026-05-31 기준 AI 코딩 도구 경쟁은 "어떤 모델이 코드를 더 잘 쓰는가"보다 "장시간 agent 실행을 안전하게 위임하고 검증 가능한 결과로 회수하는가"로 이동하고 있습니다.</p>
+      <p>출처: Anthropic, OpenAI, Cursor 공식 문서와 Axios, VentureBeat, Codersera 기사.</p>
+    </section>
+  </main>
+</body>
+</html>

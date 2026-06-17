@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-04 GitHub Trending 보고서</title>
+  <style>
+    :root { --bg:#f6f7fb; --panel:#fff; --ink:#17202a; --muted:#617086; --line:#d8e0ea; --accent:#1f6b55; --soft:#e9f7f2; --soft2:#edf3ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .container { width:min(1040px, calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#16483d; color:white; border-radius:8px; padding:30px; }
+    .hero p { color:#ddfff3; margin:8px 0 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .stat { border:1px solid rgba(255,255,255,.24); padding:13px; border-radius:8px; background:rgba(255,255,255,.08); }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin-top:18px; }
+    .toc ol { margin:0; padding-left:20px; }
+    .summary { background:var(--soft); border-left:4px solid var(--accent); padding:14px 16px; border-radius:6px; }
+    .repo { border:1px solid var(--line); border-radius:8px; padding:16px; margin-top:14px; }
+    .badge { display:inline-block; margin:0 6px 8px 0; padding:3px 9px; border-radius:999px; background:var(--soft2); color:#224f8d; font-size:.8rem; font-weight:700; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    a { color:#0b5cad; }
+  </style>
+</head>
+<body>
+<!-- verifier: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+<main class="container">
+  <header class="hero">
+    <h1>트렌딩 GitHub 저장소 보고서</h1>
+    <p>생성일: 2026-06-04 | 조사 기준: GitHub Trending Today, AI·코딩·개발 생산성 직접 관련 저장소 선별</p>
+    <div class="grid">
+      <div class="stat"><strong>선별 수</strong><br>10개 중 AI 개발 워크플로와 직접 연결된 8개를 우선 정리</div>
+      <div class="stat"><strong>주요 흐름</strong><br>토큰 압축, 에이전트 하네스, 문서 전처리, 메모리 엔진이 강세</div>
+      <div class="stat"><strong>주의</strong><br>별 수는 조회 시점 기준이며 GitHub Trending은 계속 변동된다.</div>
+    </div>
+  </header>
+
+  <section class="panel toc">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#summary">트렌드 해석</a></li>
+      <li><a href="#repos">선별 저장소</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </section>
+
+  <section class="panel" id="summary">
+    <h2>요약</h2>
+    <div class="summary">오늘의 GitHub Trending은 대형 모델 자체보다 에이전트 운영 비용과 신뢰성을 낮추는 주변 도구가 강하다. headroom은 LLM 입력 전 압축, ECC는 다중 에이전트 하네스, markitdown은 문서→Markdown 전처리, supermemory는 장기 메모리 API를 제공한다. Claude Code, Cursor, Codex 사용자는 이 저장소들을 직접 플러그인·MCP·사전 처리 파이프라인으로 붙일 수 있다.</div>
+  </section>
+
+  <section class="panel" id="repos">
+    <h2>선별 저장소</h2>
+    <article class="repo">
+      <h3>1. chopratejas/headroom</h3>
+      <span class="badge">Python</span><span class="badge">3,528 stars today</span><span class="badge">LLM 입력 압축</span>
+      <p>툴 출력, 로그, 파일, RAG chunk를 LLM에 넣기 전에 압축하는 라이브러리·프록시·MCP 서버다. 장기 에이전트에서 비용과 컨텍스트 소모가 병목인 팀에 직접적이다.</p>
+      <p class="meta">Claude/Cursor/Codex 연결: 셸 출력과 검색 결과를 모델 입력 전에 축약하는 공통 미들웨어 후보.</p>
+      <p><a href="https://github.com/chopratejas/headroom">GitHub 저장소</a></p>
+    </article>
+    <article class="repo">
+      <h3>2. affaan-m/ECC</h3>
+      <span class="badge">JavaScript</span><span class="badge">2,147 stars today</span><span class="badge">에이전트 하네스</span>
+      <p>Claude Code, Codex, OpenCode, Cursor를 대상으로 skills, instincts, memory, security, research-first development를 묶은 성능 최적화 하네스다.</p>
+      <p class="meta">연결: 여러 코딩 에이전트를 한 개발 프로세스에 맞추려는 팀의 규칙·메모리·보안 레이어 참고 자료.</p>
+      <p><a href="https://github.com/affaan-m/ECC">GitHub 저장소</a></p>
+    </article>
+    <article class="repo">
+      <h3>3. NousResearch/hermes-agent</h3>
+      <span class="badge">Python</span><span class="badge">1,736 stars today</span><span class="badge">지속형 에이전트</span>
+      <p>스스로 성장하는 에이전트라는 포지셔닝으로, 장기 기억과 멀티플랫폼 접근을 전면에 둔다. 에이전트가 한 세션을 넘어 작업 상태를 이어가는 방향을 보여준다.</p>
+      <p class="meta">연결: Claude Code background agents, Codex goal/session, Cursor Automations와 같은 장시간 실행 흐름과 비교할 만하다.</p>
+      <p><a href="https://github.com/NousResearch/hermes-agent">GitHub 저장소</a></p>
+    </article>
+    <article class="repo">
+      <h3>4. microsoft/markitdown</h3>
+      <span class="badge">Python</span><span class="badge">2,006 stars today</span><span class="badge">문서 전처리</span>
+      <p>파일과 Office 문서를 Markdown으로 변환하는 도구다. 사내 문서, PDF, Office 파일을 AI 코딩 도구의 컨텍스트로 공급하기 전에 구조를 보존하는 데 유용하다.</p>
+      <p class="meta">연결: Codex/Claude/Cursor에 대형 문서 맥락을 넣는 팀의 표준 사전 처리 후보.</p>
+      <p><a href="https://github.com/microsoft/markitdown">GitHub 저장소</a></p>
+    </article>
+    <article class="repo">
+      <h3>5. nesquena/hermes-webui</h3>
+      <span class="badge">Python</span><span class="badge">734 stars today</span><span class="badge">웹 UI</span>
+      <p>Hermes Agent를 웹이나 휴대폰에서 사용하기 위한 인터페이스다. 로컬 터미널 중심 도구를 원격·모바일 접근으로 확장하려는 흐름과 맞닿아 있다.</p>
+      <p class="meta">연결: Codex mobile remote, Claude background agents, Cursor web/cloud agents와 동일한 접근성 문제를 다룬다.</p>
+      <p><a href="https://github.com/nesquena/hermes-webui">GitHub 저장소</a></p>
+    </article>
+    <article class="repo">
+      <h3>6. D4Vinci/Scrapling</h3>
+      <span class="badge">Python</span><span class="badge">1,078 stars today</span><span class="badge">웹 스크래핑</span>
+      <p>단일 요청부터 크롤링까지 다루는 adaptive web scraping 프레임워크다. AI 에이전트가 최신 웹 자료를 안정적으로 가져오는 레이어로 평가할 수 있다.</p>
+      <p class="meta">연결: 리서치형 코딩 에이전트의 WebFetch 대체·보완 파이프라인 후보.</p>
+      <p><a href="https://github.com/D4Vinci/Scrapling">GitHub 저장소</a></p>
+    </article>
+    <article class="repo">
+      <h3>7. opendataloader-project/opendataloader-pdf</h3>
+      <span class="badge">Java</span><span class="badge">573 stars today</span><span class="badge">AI-ready PDF</span>
+      <p>PDF를 AI-ready 데이터로 파싱하고 접근성 자동화를 지원한다. 문서 기반 개발·분석 업무가 늘면서 PDF 전처리 도구도 에이전트 생태계의 핵심 보조 도구가 되고 있다.</p>
+      <p class="meta">연결: 보고서, 사양서, 논문을 코딩 에이전트 작업 컨텍스트로 가져올 때 유용하다.</p>
+      <p><a href="https://github.com/opendataloader-project/opendataloader-pdf">GitHub 저장소</a></p>
+    </article>
+    <article class="repo">
+      <h3>8. supermemoryai/supermemory</h3>
+      <span class="badge">TypeScript</span><span class="badge">601 stars today</span><span class="badge">AI 메모리 API</span>
+      <p>빠르고 확장 가능한 AI 시대용 memory engine/API를 표방한다. 반복 작업, 장기 프로젝트, 팀 단위 에이전트 운영에서 기억과 검색 레이어를 분리하려는 수요를 보여준다.</p>
+      <p class="meta">연결: Codex memories, Claude project memory, Cursor rules/knowledge와 비교 가능한 외부 메모리 계층.</p>
+      <p><a href="https://github.com/supermemoryai/supermemory">GitHub 저장소</a></p>
+    </article>
+  </section>
+
+  <section class="panel" id="sources">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://github.com/trending">GitHub Trending - Today</a></li>
+      <li><a href="https://trending-repos.com/">Trending Repos - momentum mirror</a></li>
+      <li>각 저장소 GitHub 페이지: headroom, ECC, hermes-agent, markitdown, hermes-webui, Scrapling, opendataloader-pdf, supermemory</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

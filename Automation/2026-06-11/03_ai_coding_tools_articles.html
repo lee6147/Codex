@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-06-11</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #202733;
+      --muted: #606d7b;
+      --line: #dce2ea;
+      --blue: #174ea6;
+      --red: #a33a3a;
+      --green: #23744d;
+      --soft-blue: #eaf2ff;
+      --soft-red: #fff0f0;
+      --soft-green: #e9f6ee;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+    .wrap { width: min(1080px, calc(100vw - 32px)); margin: 28px auto 56px; }
+    .hero { background: #233142; color: white; border-radius: 10px; padding: 30px; border-left: 8px solid #4f9d69; }
+    h1, h2, h3 { line-height: 1.25; margin-top: 0; }
+    a { color: var(--blue); }
+    .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 18px; }
+    .stat { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); border-radius: 8px; padding: 12px 14px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 22px; margin-top: 18px; }
+    .notice { background: var(--soft-red); border-left: 5px solid var(--red); padding: 14px 16px; border-radius: 8px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 16px; }
+    .card { border: 1px solid var(--line); border-radius: 8px; padding: 18px; background: #fff; }
+    .badge { display: inline-block; margin: 0 6px 8px 0; padding: 4px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; background: var(--soft-blue); color: var(--blue); }
+    .badge.green { background: var(--soft-green); color: var(--green); }
+    .badge.red { background: var(--soft-red); color: var(--red); }
+    .muted { color: var(--muted); font-size: 14px; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <!-- verifier markers: ?앹꽦?? 紐⑹감 異쒖쿂 -->
+  <main class="wrap">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-06-11 | 조사 기준: 최근 2일 우선, 기사량 부족으로 2026-06-04부터 2026-06-11까지 7일로 확장</p>
+      <div class="meta">
+        <div class="stat"><strong>기간 확장</strong><br>최근 2일 내 독립 기사량이 부족해 7일로 확장했다.</div>
+        <div class="stat"><strong>핵심 흐름</strong><br>생산성보다 비용, lock-in, 검증, 내부 도구화가 전면에 나왔다.</div>
+        <div class="stat"><strong>검증 메모</strong><br>일부 기사는 내부 주장 또는 커뮤니티 사례 기반이라 신뢰 등급을 따로 표시했다.</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#notice">7일 확장 공지</a></li>
+        <li><a href="#articles">기사별 요약</a></li>
+        <li><a href="#tool-view">도구별 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="notice">
+      <h2>7일 확장 공지</h2>
+      <div class="notice">
+        <p><strong>최근 2일 기사량이 낮아 검색 범위를 7일로 넓혔다.</strong> 2026-06-10 전후에는 공식 changelog는 풍부했지만, Claude Code, Cursor, Codex를 각각 다룬 독립 기사 수는 충분하지 않았다. 따라서 2026-06-04 이후 기사와 연구성 자료를 함께 보고 실무 신호만 선별했다.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="articles">
+      <h2>기사별 요약</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>AI productivity paradox</h3>
+          <span class="badge">Business Insider</span><span class="badge green">2026-06-10</span><span class="badge">뉴스 기사</span>
+          <p><strong>요약:</strong> 소프트웨어 엔지니어 개인은 AI 도구로 시간을 절약한다고 보고하지만, 기업 전체 생산성 개선은 아직 균일하게 확인되지 않는다는 내용이다. AI 도입이 늘어도 비용, 통합 복잡성, 측정 난제가 커져 회사 단위 ROI가 늦게 나타날 수 있다고 설명한다.</p>
+          <p><strong>실무 시사점:</strong> Claude Code, Cursor, Codex 도입 평가는 "개발자가 좋아한다"에서 끝내면 부족하다. PR lead time, 리뷰 재작업률, token 비용, 장애 복구 시간 같은 운영 지표를 함께 봐야 한다.</p>
+          <p class="muted">신뢰 메모: 기사 기반. 기업 생산성 수치는 출처별 측정 방식 차이가 클 수 있다.</p>
+        </article>
+
+        <article class="card">
+          <h3>Claude가 Anthropic 코드의 80% 이상을 작성한다는 보도</h3>
+          <span class="badge">Tom's Hardware</span><span class="badge green">2026-06-05</span><span class="badge red">내부 주장 기반</span>
+          <p><strong>요약:</strong> Anthropic이 Claude가 내부 merged code의 80% 이상을 작성한다고 밝혔고, recursive self-improvement 위험과 frontier 개발 중단 옵션 필요성을 언급했다는 보도다. 기사에는 내부 coding benchmark 개선과 인간 oversight 축소 우려가 함께 나온다.</p>
+          <p><strong>실무 시사점:</strong> Claude Code의 생산성 신호는 강하지만, 자동 작성 비율이 높아질수록 리뷰 권한, 변경 범위 제한, 재현 가능한 테스트가 더 중요하다.</p>
+          <p class="muted">신뢰 메모: 내부 데이터와 보도 해석 중심. 독립 검증 수치로 사용하기에는 제한이 있다.</p>
+        </article>
+
+        <article class="card">
+          <h3>Walmart의 Code Puppy와 vendor lock-in 대응</h3>
+          <span class="badge">Business Insider</span><span class="badge green">2026-06-04</span><span class="badge">기업 사례</span>
+          <p><strong>요약:</strong> Walmart가 OpenAI, Anthropic 같은 외부 제공자 의존도를 낮추기 위해 model-agnostic 내부 AI 코딩 assistant인 Code Puppy를 만들었다는 기사다. 여러 모델을 비교하는 LLM council 방식과 비용 통제를 강조한다.</p>
+          <p><strong>실무 시사점:</strong> Codex나 Claude Code를 그대로 표준화하기보다, 모델과 에이전트 실행 계층을 분리하려는 대기업의 움직임이 강해지고 있다. Cursor 같은 IDE tool도 장기적으로 교체 가능성과 데이터 경계를 따져야 한다.</p>
+          <p class="muted">신뢰 메모: 기업 내부 사례 보도. 외부 재현성은 제한적이지만 전략 방향은 명확하다.</p>
+        </article>
+
+        <article class="card">
+          <h3>GrapeRoot로 Claude Code 비용과 속도 개선 주장</h3>
+          <span class="badge">Economic Times</span><span class="badge green">2026-06-05</span><span class="badge red">커뮤니티 사례</span>
+          <p><strong>요약:</strong> 한 개발자가 GrapeRoot라는 dependency graph 기반 context layer로 Claude Code를 2배 빠르게, 3분의 1 비용으로 운영했다는 Reddit 사례를 다룬 기사다. 핵심은 코드베이스 컨텍스트를 더 정밀하게 줄이는 것이다.</p>
+          <p><strong>실무 시사점:</strong> 숫자는 검증 전까지 과장 가능성을 봐야 하지만, context engineering과 dependency graph 기반 retrieval은 실제로 Claude Code, Cursor, Codex 모두에서 비용을 줄일 수 있는 방향이다.</p>
+          <p class="muted">신뢰 메모: 광고성 또는 사례 과장이 섞였을 가능성이 있어 "비공식 경험"으로만 반영했다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="tool-view">
+      <h2>도구별 해석</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Claude Code</h3>
+          <p>이번 기사 흐름에서 Claude Code는 생산성 상징이자 비용/안전성 논쟁의 중심이다. 내부 코드 작성 비율, GrapeRoot 사례, context layer 논의가 모두 Claude Code에 집중되어 있다.</p>
+        </article>
+        <article class="card">
+          <h3>Cursor</h3>
+          <p>독립 기사량은 적었지만 공식 changelog에서 Bugbot 비용과 리뷰 속도를 직접 수치화했다. Cursor는 IDE 경험보다 코드 리뷰 자동화와 UI 변경 피드백 루프를 강화하는 쪽으로 보인다.</p>
+        </article>
+        <article class="card">
+          <h3>OpenAI Codex</h3>
+          <p>기사에서는 Walmart 사례처럼 OpenAI 의존 회피 대상으로 언급되지만, 공식 업데이트는 CLI, 데스크톱, 모바일, 플러그인을 잇는 운영 플랫폼화에 가깝다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/companies-waiting-ai-productivity-boom-2026-6">Business Insider - AI's productivity paradox</a>, 2026-06-10</li>
+        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-now-writes-more-than-80-percent-of-its-merged-code">Tom's Hardware - Anthropic says Claude writes more than 80 percent of merged code</a>, 2026-06-05</li>
+        <li><a href="https://www.businessinsider.com/walmart-code-puppy-ai-anthropic-claude-code-openai-codex-2026-6">Business Insider - Walmart Code Puppy</a>, 2026-06-04</li>
+        <li><a href="https://m.economictimes.com/news/new-updates/100k-savings-in-3-months-techie-says-claude-code-is-now-2x-faster-3x-cheaper-using-this-tool/articleshow/131522412.cms">Economic Times - Claude Code and GrapeRoot cost claim</a>, 2026-06-05</li>
+        <li><a href="https://cursor.com/changelog">Cursor changelog</a>, 2026-06-10</li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex changelog</a>, 2026-06-09</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

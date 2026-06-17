@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending AI 개발 리포지토리 | 2026-06-13</title>
+  <style>
+    :root {
+      --ink: #1f2732;
+      --muted: #657386;
+      --line: #d9e0e8;
+      --bg: #f7f9fb;
+      --panel: #ffffff;
+      --accent: #245f9d;
+      --accent-soft: #e8f0fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Malgun Gothic", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.62;
+    }
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 20px 48px; }
+    header { border-bottom: 1px solid var(--line); margin-bottom: 22px; padding-bottom: 20px; }
+    h1 { margin: 0 0 10px; font-size: 30px; letter-spacing: 0; }
+    h2 { margin: 30px 0 12px; font-size: 21px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    a { color: #075f91; }
+    .meta { color: var(--muted); font-size: 14px; }
+    .summary {
+      background: var(--accent-soft);
+      border: 1px solid #c3d4eb;
+      border-left: 5px solid var(--accent);
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+    .toc, .repo, .source-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+    .repo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .metrics { color: var(--muted); font-size: 14px; margin: 8px 0 10px; }
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 2px 9px;
+      margin: 0 6px 6px 0;
+      font-size: 12px;
+      background: #fbfcfe;
+      color: var(--muted);
+    }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); }
+    th, td { border: 1px solid var(--line); padding: 10px; vertical-align: top; }
+    th { background: #eef3f7; text-align: left; }
+    @media (max-width: 820px) { .repo-grid { grid-template-columns: 1fr; } main { padding: 22px 14px 36px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="meta">생성일: 2026-06-13 | 조사 기준: GitHub Trending daily 우선, 보조 신호로 weekly 확인 | 확인 상태: 출처 링크 확인</p>
+    <h1>GitHub Trending AI 개발 리포지토리</h1>
+    <p>GitHub Trending에서 AI 코딩 에이전트, 개발 생산성, LLM 운영과 직접 연결되는 리포지토리만 추렸다. 관련성이 낮은 일반 유틸리티는 제외했다.</p>
+  </header>
+
+  <section class="summary">
+    <strong>핵심 요약</strong>
+    <ul>
+      <li>오늘의 가장 강한 신호는 AI 코딩 에이전트용 스킬, 플러그인, 에이전시형 자동화 묶음이다.</li>
+      <li>LLM 인프라에서는 KV cache 계층인 LMCache가 꾸준히 관심을 받으며, 에이전트 실행 비용과 지연시간 절감 흐름과 맞물린다.</li>
+      <li>주간 보조 신호로 Agent-Reach가 크게 부상했다. 에이전트가 외부 웹과 소셜 데이터를 직접 읽는 도구 수요가 커지고 있다.</li>
+    </ul>
+  </section>
+
+  <nav class="toc" aria-label="목차">
+    <h2>목차</h2>
+    <ol>
+      <li><a href="#repos">선정 리포지토리</a></li>
+      <li><a href="#matrix">활용 관점 비교</a></li>
+      <li><a href="#sources">출처</a></li>
+    </ol>
+  </nav>
+
+  <section id="repos">
+    <h2>선정 리포지토리</h2>
+    <div class="repo-grid">
+      <article class="repo">
+        <h3><a href="https://github.com/addyosmani/agent-skills">addyosmani / agent-skills</a></h3>
+        <p class="metrics">Shell | 56,414 stars | 6,080 forks | 2,660 stars today</p>
+        <span class="tag">AI coding agents</span><span class="tag">skills</span><span class="tag">engineering workflow</span>
+        <p>프로덕션 수준의 AI 코딩 에이전트 스킬 묶음이다. Claude Code, Codex, Cursor류 도구에서 재사용 가능한 작업 지침과 품질 게이트를 표준화하려는 흐름을 대표한다.</p>
+      </article>
+
+      <article class="repo">
+        <h3><a href="https://github.com/msitarzewski/agency-agents">msitarzewski / agency-agents</a></h3>
+        <p class="metrics">Shell | 112,101 stars | 18,307 forks | 1,040 stars today</p>
+        <span class="tag">multi-agent</span><span class="tag">automation</span><span class="tag">agency workflow</span>
+        <p>전문 역할 에이전트를 묶어 업무 흐름을 구성하는 저장소다. 단일 코딩 보조에서 역할 기반 팀 자동화로 관심이 이동하는 신호로 볼 수 있다.</p>
+      </article>
+
+      <article class="repo">
+        <h3><a href="https://github.com/phuryn/pm-skills">phuryn / pm-skills</a></h3>
+        <p class="metrics">16,775 stars | 1,729 forks | 823 stars today</p>
+        <span class="tag">PM skills</span><span class="tag">plugins</span><span class="tag">agentic workflow</span>
+        <p>제품 관리 업무용 스킬, 명령, 플러그인을 모은 마켓플레이스형 저장소다. 코딩 에이전트가 개발자만이 아니라 PM, 기획, 리뷰 업무로 확장되는 흐름과 맞물린다.</p>
+      </article>
+
+      <article class="repo">
+        <h3><a href="https://github.com/LMCache/LMCache">LMCache / LMCache</a></h3>
+        <p class="metrics">Python | 8,543 stars | 1,284 forks | 17 stars today</p>
+        <span class="tag">LLM infra</span><span class="tag">KV cache</span><span class="tag">latency</span>
+        <p>LLM용 KV cache 계층이다. 장기 컨텍스트, 반복 에이전트 실행, 병렬 검증 루프의 비용과 지연시간을 줄이는 인프라 관심을 반영한다.</p>
+      </article>
+
+      <article class="repo">
+        <h3><a href="https://github.com/maziyarpanahi/openmed">maziyarpanahi / openmed</a></h3>
+        <p class="metrics">Python | 3,092 stars | 297 forks | 517 stars today</p>
+        <span class="tag">open-source AI</span><span class="tag">healthcare</span><span class="tag">domain agent</span>
+        <p>의료 분야 오픈소스 AI 저장소다. 일반 코딩 도구는 아니지만, 도메인별 에이전트 평가와 규제 민감 데이터 처리 측면에서 확인할 가치가 있다.</p>
+      </article>
+
+      <article class="repo">
+        <h3><a href="https://github.com/Panniantong/Agent-Reach">Panniantong / Agent-Reach</a></h3>
+        <p class="metrics">Python | 26,619 stars | 2,179 forks | 5,186 stars this week</p>
+        <span class="tag">weekly signal</span><span class="tag">web search</span><span class="tag">agent tools</span>
+        <p>주간 트렌딩 보조 신호다. 에이전트가 Twitter, Reddit, YouTube, GitHub 등 외부 정보를 읽고 검색하는 CLI로, 리서치형 코딩 에이전트의 데이터 접근 문제와 연결된다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="matrix">
+    <h2>활용 관점 비교</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>분류</th>
+          <th>대표 저장소</th>
+          <th>Claude Code / Cursor / Codex 사용자에게 의미</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>에이전트 스킬</td>
+          <td>agent-skills, pm-skills</td>
+          <td>반복 작업을 지침 파일과 명령으로 고정해 결과 품질을 재현하기 쉽다.</td>
+        </tr>
+        <tr>
+          <td>역할형 자동화</td>
+          <td>agency-agents</td>
+          <td>단일 프롬프트보다 역할, 검증, handoff를 명시하는 운영 방식이 중요해진다.</td>
+        </tr>
+        <tr>
+          <td>LLM 실행 인프라</td>
+          <td>LMCache</td>
+          <td>대형 컨텍스트와 반복 실행 비용 최적화가 에이전트 생산성의 병목으로 떠오른다.</td>
+        </tr>
+        <tr>
+          <td>외부 정보 접근</td>
+          <td>Agent-Reach</td>
+          <td>검색과 브라우징을 에이전트 루프에 안전하게 넣는 설계가 차별점이 된다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="sources" class="source-box">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://github.com/trending?since=daily">GitHub Trending daily</a></li>
+      <li><a href="https://github.com/trending?since=weekly">GitHub Trending weekly</a></li>
+      <li><a href="https://github.com/addyosmani/agent-skills">addyosmani / agent-skills</a></li>
+      <li><a href="https://github.com/msitarzewski/agency-agents">msitarzewski / agency-agents</a></li>
+      <li><a href="https://github.com/phuryn/pm-skills">phuryn / pm-skills</a></li>
+      <li><a href="https://github.com/LMCache/LMCache">LMCache / LMCache</a></li>
+      <li><a href="https://github.com/maziyarpanahi/openmed">maziyarpanahi / openmed</a></li>
+      <li><a href="https://github.com/Panniantong/Agent-Reach">Panniantong / Agent-Reach</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

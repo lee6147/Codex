@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-06-12</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --ink: #17202a;
+      --muted: #5c6773;
+      --line: #d9e0ea;
+      --accent: #116466;
+      --accent-soft: #e4f3f1;
+      --warn: #fff5d6;
+      --ok: #edf8ea;
+      --hero: #12343b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.68;
+    }
+    .wrap { width: min(1080px, calc(100vw - 32px)); margin: 28px auto 56px; }
+    .hero {
+      background: var(--hero);
+      color: white;
+      padding: 30px 34px;
+      border-radius: 8px;
+    }
+    h1, h2, h3 { line-height: 1.28; margin-top: 0; }
+    a { color: #0a5ea8; }
+    .hero p { margin: 8px 0 0; color: #d9edf0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 18px; }
+    .stat { border: 1px solid rgba(255,255,255,.25); border-radius: 8px; padding: 12px 14px; background: rgba(255,255,255,.08); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+    .summary { background: var(--accent-soft); border-left: 5px solid var(--accent); }
+    .notice { background: var(--warn); border-left: 5px solid #c48600; }
+    .toc ol { margin: 0; padding-left: 22px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 14px;
+      background: #fff;
+    }
+    .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 10px; }
+    .badge {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #0d4f50;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .badge.warn { background: #fff0c2; color: #755100; }
+    .meta-line { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+    .sources li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>공식 업데이트 보고서 - AI 코딩 도구</h1>
+      <p>생성일: 2026-06-12 | 조사 기간: 2026-06-09 ~ 2026-06-12 | 대상: Claude Code, Cursor, OpenAI Codex</p>
+      <div class="grid">
+        <div class="stat"><strong>핵심 변화</strong><br>Codex와 Cursor는 2026-06-09~10 공식 업데이트가 확인됐다.</div>
+        <div class="stat"><strong>확인 상태</strong><br>Claude Code는 공식 changelog 내용은 확인됐지만 항목별 날짜는 확인 불가다.</div>
+        <div class="stat"><strong>실무 초점</strong><br>도구 호출 안정성, 리뷰 자동화, 서브에이전트/플러그인 관리가 공통 축이다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#unknowns">확인 불가</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary">
+      <h2>요약</h2>
+      <p>최근 3일 공식 업데이트만 보면 OpenAI Codex가 가장 넓은 표면을 갱신했다. 2026-06-09에 데스크톱 앱, iOS, CLI가 동시에 갱신됐고, CLI 0.139.0은 코드 모드의 독립 웹 검색과 MCP 스키마 호환성 개선을 포함한다. Cursor는 2026-06-10 Bugbot 성능/비용 개선과 사전 푸시 리뷰 흐름을 강조했다. Claude Code는 공식 changelog에 2.1.173/2.1.172 계열 수정이 올라와 있으나, 공개 원문에서 날짜가 분리되어 있지 않아 항목별 발표일은 확인 불가로 처리했다.</p>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>2.1.173 / 2.1.172 계열 안정성 업데이트</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge warn">날짜 확인 불가</span>
+        </div>
+        <p>공식 changelog에는 Fable 5 모델명 정규화, Windows sandbox 경고 수정, 하위 에이전트의 재귀적 하위 에이전트 생성, Bedrock 리전 탐색, 플러그인 marketplace 검색, 1M context 세션 compaction, 백그라운드 에이전트 권한/상태 표시 수정 등이 포함됐다.</p>
+        <p>실무 관점에서는 대화가 길거나 여러 에이전트를 병렬로 쓰는 팀에서 발생하는 상태 불일치, 권한 상속, Windows 콘솔 이슈를 줄이는 성격이 강하다. 다만 원문 changelog가 날짜를 직접 노출하지 않아 최근 3일 공식 업데이트로 단정하지 않는다.</p>
+        <p class="meta-line">발표일: 확인 불가 | 출처명: Anthropic Claude Code 공식 changelog | 확인 상태: 확인 완료, 날짜 확인 불가</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Bugbot 리뷰가 더 빠르고 저렴해졌다는 공식 발표</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge">2026-06-10</span>
+          <span class="badge">리뷰 자동화</span>
+        </div>
+        <p>Cursor는 Bugbot 평균 리뷰 시간이 약 5분에서 약 90초로 줄고, 평균 발견 버그 수가 0.56에서 0.62로 증가했으며, 실행 비용도 약 22% 감소했다고 밝혔다. 이 개선은 Composer 2.5 학습 진전에 기반하며, 모델 block list를 존중한다고 설명했다.</p>
+        <p>새 `/review` 흐름은 푸시 전 Bugbot 및 Security Review를 실행하게 하고, 이후 동일 diff로 PR을 열면 GitHub/GitLab의 Bugbot이 이미 검토된 diff로 인식해 중복 리뷰를 피한다. 실무적으로는 리뷰 피드백을 PR 이후가 아니라 로컬/사전 단계로 앞당기는 변화다.</p>
+        <p class="meta-line">발표일: 2026-06-10 | 출처명: Cursor Changelog | 확인 상태: 확인 완료</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>Codex app 26.608: 마이그레이션 흐름과 플러그인 화면 개선</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge">2026-06-09</span>
+          <span class="badge">데스크톱 앱</span>
+        </div>
+        <p>Codex app 26.608은 Claude Code 및 Claude Cowork에서 지원되는 설정을 가져오는 "Migrate to Codex" 흐름을 추가했고, 플러그인 화면을 탭/마켓플레이스/카테고리 필터 중심으로 재구성했다. Settings 검색 범위도 Git 및 pets 등 더 많은 패널로 확장됐다.</p>
+        <p>성능 및 버그 수정에는 좁은 레이아웃에서 goal timer 겹침 수정, active goal 진행 중 읽지 않은 알림 감소, review diff 순서 안정화, Windows 10 등 반투명 backdrop 미지원 환경의 렌더링 개선이 포함됐다.</p>
+        <p class="meta-line">발표일: 2026-06-09 | 출처명: OpenAI Codex Changelog | 확인 상태: 확인 완료</p>
+      </article>
+      <article class="card">
+        <h3>Codex CLI 0.139.0: 코드 모드 웹 검색과 MCP 호환성 개선</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge">2026-06-09</span>
+          <span class="badge">CLI</span>
+        </div>
+        <p>Codex CLI 0.139.0은 코드 모드에서 독립 웹 검색을 직접 호출할 수 있게 했고, 중첩 JavaScript 도구 호출에서도 plaintext 검색 결과를 받을 수 있다고 설명한다. 또한 tool/connector input schema에서 `oneOf`와 `allOf` 보존을 개선해 복잡한 MCP 도구와의 호환성을 넓혔다.</p>
+        <p>추가로 `codex doctor`의 로컬 리포트 환경 정보 보강, 플러그인 marketplace JSON 출력 개선, `resume --last`/`fork --last` 인자 처리 수정, MCP startup warning 범위 수정, 이미지 편집 파일 경로 처리 개선 등이 포함됐다.</p>
+        <p class="meta-line">발표일: 2026-06-09 | 출처명: OpenAI Codex Changelog | 확인 상태: 확인 완료</p>
+      </article>
+    </section>
+
+    <section class="panel notice" id="unknowns">
+      <h2>확인 불가</h2>
+      <p>Claude Code 공식 changelog는 항목 내용은 확인되지만 원문에서 항목별 게시일을 제공하지 않았다. 따라서 2.1.173/2.1.172 내용을 "공식 확인 완료"로 두되, 2026-06-09~2026-06-12 기간 내 발표라고 단정하지 않았다.</p>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md">Anthropic Claude Code CHANGELOG.md</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Developers - Codex changelog</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

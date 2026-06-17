@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<!-- verifier anchors: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-06-16</title>
+  <style>
+    :root { --bg:#f7f8fb; --panel:#fff; --ink:#17202a; --muted:#5d6b7a; --line:#dce3ed; --blue:#0c62a5; --red:#9a3412; --soft:#eef6ff; --warn:#fff3d7; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .wrap { width:min(1080px, calc(100vw - 32px)); margin:28px auto 56px; }
+    header { background:#174064; color:#fff; border-radius:14px; padding:30px; margin-bottom:18px; }
+    h1 { margin:0 0 8px; font-size:2rem; }
+    h2 { margin:0 0 14px; font-size:1.25rem; }
+    h3 { margin:0 0 8px; font-size:1.05rem; }
+    a { color:var(--blue); }
+    .meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; margin:16px 0; }
+    .summary { background:var(--soft); border-left:5px solid var(--blue); }
+    .notice { background:var(--warn); border-left:5px solid #9c6b00; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:16px; background:#fff; }
+    .badge { display:inline-block; border-radius:999px; padding:3px 9px; margin:2px 4px 8px 0; font-size:.78rem; font-weight:700; background:#eaf4ff; color:#174d83; }
+    .risk { background:#fff0e8; color:var(--red); }
+    .muted { color:var(--muted); font-size:.92rem; }
+    ul { margin:8px 0 0; padding-left:20px; }
+    .sources li { margin:6px 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>AI 코딩 도구 기사 요약</h1>
+      <p>생성일: 2026-06-16 | 기사 조사 기간: 2026-06-10 ~ 2026-06-16</p>
+      <div class="meta">
+        <div class="stat"><strong>기간 확장</strong><br>최근 2일 기사량이 도구별 2~3개 기준에 부족해 7일로 확장했다.</div>
+        <div class="stat"><strong>대표 흐름</strong><br>기업 도입은 늘지만, 생산성 측정과 AI 생성 코드 통제는 더 엄격해지고 있다.</div>
+        <div class="stat"><strong>도구별 신호</strong><br>Claude Code는 조직 도입과 통제, Cursor는 성장/모델 독립, Codex는 장기 실행 인프라가 핵심이다.</div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#notice">기간 확장 공지</a></li>
+        <li><a href="#claude">Claude Code 관련 기사</a></li>
+        <li><a href="#cursor">Cursor 관련 기사</a></li>
+        <li><a href="#codex">OpenAI Codex 관련 기사</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel notice" id="notice">
+      <h2>기간 확장 공지</h2>
+      <p>최근 2일(2026-06-15 ~ 2026-06-16) 기준으로 Claude Code, Cursor, OpenAI Codex 각각에 대해 의미 있는 기사 2~3개를 확보하기 어려웠다. 따라서 기사 보고서는 7일 범위(2026-06-10 ~ 2026-06-16)로 확장했다.</p>
+    </section>
+
+    <section class="panel summary">
+      <h2>요약</h2>
+      <p>기사 흐름은 “AI coding agent가 실제 업무에 들어갔다”와 “그 성과를 어떻게 검증할 것인가”로 갈린다. Paramount/Disney 사례는 Claude와 Cursor 같은 도구가 조직 현장에 이미 들어왔음을 보여주지만, Business Insider의 생산성 역설 기사는 회사 전체 생산성으로 전환되는 데는 비용, 복잡성, 측정 문제가 남아 있음을 지적한다. Codex 쪽은 Ona 인수 보도처럼 장기 실행, persistent environment, cloud orchestration이 핵심 키워드다.</p>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code 관련 기사</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://www.businessinsider.com/paramount-skydance-ai-usage-streaming-tech-claude-coding-david-ellison-2026-6">Paramount streaming leaders share AI productivity details</a></h3>
+          <span class="badge">뉴스 기사</span><span class="badge">게시일: 2026-06-13</span>
+          <p>Paramount Skydance 내부에서 Claude Code 등 AI 도구가 데이터 triage와 coding assistance에 사용되고, 몇 시간~며칠짜리 작업을 분 단위로 줄였다는 사례를 다룬다. 일부 팀은 여러 AI bot을 병렬로 운영하고, 사용량 대시보드와 높은 월별 token 한도도 검토하는 흐름이다.</p>
+          <p><strong>실무 시사점:</strong> 대기업 도입은 “개별 개발자의 편의”가 아니라 조직 사용량 추적, 예산, 플랫폼 통합과 함께 간다. Claude Code 도입 시 대시보드, 권한, 품질 관리가 먼저 필요하다.</p>
+          <p class="muted">신뢰도 메모: 사례 보도. 공식 발표가 아니므로 내부 수치와 범위는 보도 기준으로만 사용.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://timesofindia.indiatimes.com/technology/tech-news/almost-a-year-after-giving-engineers-access-to-claude-and-cursor-disney-tells-engineers-minimise-ai-coded-products-that-/articleshow/131728705.cms">Disney tells engineers to minimize certain AI-coded products</a></h3>
+          <span class="badge">뉴스 기사</span><span class="badge">게시일: 2026-06-16</span><span class="badge risk">통제 신호</span>
+          <p>Disney가 Claude와 Cursor 접근을 제공한 뒤 일부 AI-coded product 사용을 줄이라는 내부 지침을 냈다는 보도다. AI 활용을 중단한다기보다 품질, 창의성, 표준 준수를 위해 생성 코드 사용 범위를 관리하려는 움직임으로 읽힌다.</p>
+          <p><strong>실무 시사점:</strong> Claude Code 사용량 확대와 동시에 “어떤 산출물은 AI 생성 비중을 낮출 것인가”라는 정책이 필요하다. 리뷰, provenance, human ownership 기준을 문서화해야 한다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://arxiv.org/abs/2606.11447">AI Coding Agents Can Reproduce Social Science Findings</a></h3>
+          <span class="badge">연구 논문</span><span class="badge">게시일: 2026-06-09</span>
+          <p>Claude Code와 Codex가 사회과학 재현성 과제를 얼마나 수행하는지 평가한 연구다. 두 agent 모두 기존 일반 LLM agent보다 높은 재현 능력을 보였고, Claude Code가 Codex보다 더 강한 성과를 냈다고 보고한다.</p>
+          <p><strong>실무 시사점:</strong> 코딩 에이전트는 앱 개발뿐 아니라 데이터/논문/재현 워크플로에도 쓰일 수 있다. 다만 원문 PDF 제공이 불가능 과제에서 편향을 만들 수 있다는 경고도 중요하다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor 관련 기사</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://www.businessinsider.com/cursor-ceo-michael-truell-spacex-elon-musk-anthropic-2026-6">The quiet, galactic ambitions of Cursor CEO Michael Truell</a></h3>
+          <span class="badge">프로필/비즈니스 기사</span><span class="badge">게시일: 2026-06-16</span>
+          <p>Cursor CEO Michael Truell과 회사 성장, Anthropic 의존도에서 Composer 계열 자체 모델로 이동한 배경, SpaceX와의 대형 컴퓨트/인수 관련 계약 구조를 다룬다. Cursor가 Fortune 500 고객과 대규모 사용자 기반을 확보했다는 보도도 포함된다.</p>
+          <p><strong>실무 시사점:</strong> Cursor의 경쟁력은 IDE UX만이 아니라 자체 모델, 컴퓨트 계약, 기업 고객 기반으로 확장되고 있다. 도입 팀은 특정 외부 모델 의존도와 장기 가격/성능 변동을 함께 봐야 한다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://timesofindia.indiatimes.com/technology/tech-news/almost-a-year-after-giving-engineers-access-to-claude-and-cursor-disney-tells-engineers-minimise-ai-coded-products-that-/articleshow/131728705.cms">Disney guidance on Claude and Cursor use</a></h3>
+          <span class="badge">뉴스 기사</span><span class="badge">게시일: 2026-06-16</span><span class="badge risk">거버넌스</span>
+          <p>Disney 사례는 Cursor가 이미 일반 개발 도구처럼 조직에 배포됐지만, AI-coded output을 전면 신뢰하지 않는 관리 단계로 넘어갔음을 보여준다.</p>
+          <p><strong>실무 시사점:</strong> Cursor Bugbot과 review workflow를 쓰더라도 최종 제품 산출물에는 human review와 정책적 제한이 필요하다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://www.businessinsider.com/companies-waiting-ai-productivity-boom-2026-6">AI's productivity paradox</a></h3>
+          <span class="badge">분석 기사</span><span class="badge">게시일: 2026-06-11</span>
+          <p>개별 소프트웨어 엔지니어는 AI 도구로 시간을 절약하지만, 기업 전체 생산성으로는 아직 일관되게 전환되지 않는다는 분석이다. 도입 비용, 프로세스 복잡성, 측정 문제 때문에 “AI를 쓴다”와 “조직 생산성이 오른다” 사이에 간극이 있다고 본다.</p>
+          <p><strong>실무 시사점:</strong> Cursor 같은 도구의 ROI는 autocomplete 사용량이 아니라 cycle time, defect rate, review burden, incident rate 같은 팀 지표로 측정해야 한다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex 관련 기사</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://www.techradar.com/pro/openais-latest-acquisition-could-see-big-changes-on-the-way-for-its-codex-coding-assistant">OpenAI's latest acquisition could see big changes for Codex</a></h3>
+          <span class="badge">뉴스 기사</span><span class="badge">게시일: 2026-06-13</span>
+          <p>OpenAI가 secure, persistent environments for AI agents를 만드는 Ona를 인수하려 한다는 보도다. 보도는 Ona 기술이 Codex의 long-running, autonomous, cloud-backed workflow에 기여할 수 있다고 설명한다.</p>
+          <p><strong>실무 시사점:</strong> Codex의 경쟁축은 단순 코드 생성에서 “오래 실행되는 작업을 어디서 안전하게 계속 돌릴 수 있는가”로 이동한다. enterprise 환경에서는 세션 지속성, 승인 정책, 로그/감사가 중요해진다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://m.economictimes.com/tech/artificial-intelligence/openai-to-acquire-ona-to-strengthen-codex-cloud-capabilities/articleshow/131664834.cms">OpenAI to acquire Ona to strengthen Codex cloud capabilities</a></h3>
+          <span class="badge">뉴스 기사</span><span class="badge">게시일: 2026-06-12</span>
+          <p>Economic Times 역시 Ona를 cloud execution and orchestration 전문 회사로 설명하며, Codex 플랫폼의 장기 작업 처리와 확장성을 강화하려는 움직임으로 해석한다.</p>
+          <p><strong>실무 시사점:</strong> Codex를 로컬 CLI만이 아니라 cloud orchestration 계층으로 보는 관점이 필요하다. 민감 코드, 인증, 네트워크 접근 정책을 함께 설계해야 한다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://arxiv.org/abs/2606.11447">AI Coding Agents Can Reproduce Social Science Findings</a></h3>
+          <span class="badge">연구 논문</span><span class="badge">게시일: 2026-06-09</span>
+          <p>Codex는 Claude Code와 함께 재현성 과제에 평가됐다. 연구는 frontier coding agent가 소프트웨어 개발 외의 계산 워크플로 실행자로도 쓰일 수 있음을 보여준다.</p>
+          <p><strong>실무 시사점:</strong> Codex 활용 범위는 codebase 변경을 넘어 데이터 분석, 논문 재현, 검증 자동화로 확장될 수 있다. 단, prompt framing이 결과 확인 편향을 만들 수 있다는 경고가 있다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/paramount-skydance-ai-usage-streaming-tech-claude-coding-david-ellison-2026-6">Business Insider - Paramount AI usage and Claude coding</a></li>
+        <li><a href="https://timesofindia.indiatimes.com/technology/tech-news/almost-a-year-after-giving-engineers-access-to-claude-and-cursor-disney-tells-engineers-minimise-ai-coded-products-that-/articleshow/131728705.cms">Times of India - Disney guidance on Claude and Cursor</a></li>
+        <li><a href="https://www.businessinsider.com/cursor-ceo-michael-truell-spacex-elon-musk-anthropic-2026-6">Business Insider - Cursor CEO Michael Truell profile</a></li>
+        <li><a href="https://www.businessinsider.com/companies-waiting-ai-productivity-boom-2026-6">Business Insider - AI productivity paradox</a></li>
+        <li><a href="https://www.techradar.com/pro/openais-latest-acquisition-could-see-big-changes-on-the-way-for-its-codex-coding-assistant">TechRadar - OpenAI/Ona/Codex</a></li>
+        <li><a href="https://m.economictimes.com/tech/artificial-intelligence/openai-to-acquire-ona-to-strengthen-codex-cloud-capabilities/articleshow/131664834.cms">Economic Times - OpenAI to acquire Ona</a></li>
+        <li><a href="https://arxiv.org/abs/2606.11447">arXiv - AI Coding Agents Can Reproduce Social Science Findings</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

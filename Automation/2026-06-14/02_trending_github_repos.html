@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub AI 개발 도구 관찰 - 2026-06-14</title>
+  <style>
+    :root { --ink:#172026; --muted:#5d6873; --line:#d8e0e8; --bg:#f7f9fc; --card:white; --accent:#0b6bcb; --green:#16833a; --warn:#9a6700; }
+    body { margin:0; font-family:"Segoe UI", Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+    header { padding:34px 22px; background:#0f172a; color:white; border-bottom:5px solid #7dd3fc; }
+    main { max-width:1180px; margin:auto; padding:24px; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:0; }
+    h2 { margin:0 0 12px; font-size:23px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:#095fb8; }
+    .meta { color:#d7e4f5; }
+    .summary, .toc, .card, .sourcebox { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px; margin:16px 0; box-shadow:0 1px 2px rgba(15,23,42,.05); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .repo { border-left:5px solid var(--accent); }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:700; background:#e8f1ff; color:#0b55a0; margin-right:6px; }
+    .warn { background:#fff4d6; color:var(--warn); }
+    .stars { background:#eaf7ef; color:var(--green); }
+    .small { color:var(--muted); font-size:14px; }
+    ul { margin:8px 0 0 20px; padding:0; }
+    footer { color:var(--muted); font-size:13px; margin-top:28px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GitHub AI 개발 도구 관찰</h1>
+    <div class="meta">생성일: 2026-06-14 · 기준: GitHub Trending Daily 확인 시도 + GitHub 저장소 페이지 fallback · 최대 10개</div>
+  </header>
+  <main>
+    <section class="summary">
+      <h2>요약 통계</h2>
+      <div class="grid">
+        <div><span class="badge warn">스냅샷 제한</span><p>GitHub Trending 페이지는 조사 시점의 텍스트 추출에서 저장소 카드가 노출되지 않았다. 따라서 Trending 자체는 출처로 남기고, AI 코딩/개발 생산성 저장소 페이지에서 별도 확인한 star 수를 fallback으로 사용했다.</p></div>
+        <div><span class="badge">선정 8개</span><p>억지로 10개를 채우지 않고, AI coding agent, terminal pair programming, IDE agent, autonomous development와 직접 연결되는 저장소만 남겼다.</p></div>
+        <div><span class="badge">흐름</span><p>대형 상용 도구의 공식 CLI와 오픈소스 agent framework가 함께 주목받는다. 핵심 비교축은 IDE 밀착도, 터미널 자동화, 다중 agent 운영, governance다.</p></div>
+      </div>
+    </section>
+
+    <nav class="toc">
+      <h2>목차</h2>
+      <ul>
+        <li><a href="#repos">선정 저장소 카드</a></li>
+        <li><a href="#trend">트렌드 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ul>
+    </nav>
+
+    <section id="repos" class="grid">
+      <article class="card repo">
+        <h3>1. anthropics/claude-code</h3>
+        <p><span class="badge stars">132k stars</span><span class="badge">agentic coding CLI</span></p>
+        <p>Claude Code의 공개 저장소. 터미널, IDE, GitHub tagging을 통해 코드베이스 이해, 루틴 작업 실행, git workflow 처리를 지원한다.</p>
+        <ul>
+          <li>주목 이유: 공식 CLI 자체가 빠르게 기능을 늘리며 background agents, plugins, permissions, remote workflows를 품고 있다.</li>
+          <li>Claude/Cursor/Codex 연결점: Claude Code 자체이며, Cursor/Codex가 따라가는 agentic CLI 기준점 역할을 한다.</li>
+          <li>한줄 총평: agentic coding 도구의 운영체제화가 가장 선명하다.</li>
+        </ul>
+        <p><a href="https://github.com/anthropics/claude-code">GitHub URL</a></p>
+      </article>
+
+      <article class="card repo">
+        <h3>2. openai/codex</h3>
+        <p><span class="badge stars">90.8k stars</span><span class="badge">terminal coding agent</span></p>
+        <p>OpenAI의 경량 터미널 coding agent 저장소. Codex app, CLI, IDE, cloud workflow와 연결되는 핵심 오픈소스 표면이다.</p>
+        <ul>
+          <li>주목 이유: 공식 changelog에서 app, mobile, CLI가 같은 Codex 경험으로 수렴하고 있다.</li>
+          <li>Claude/Cursor/Codex 연결점: Codex CLI가 Claude Code식 터미널 agent 경쟁축을 직접 형성한다.</li>
+          <li>한줄 총평: OpenAI 생태계 안에서 장기 작업과 로컬 작업을 묶는 중심축이다.</li>
+        </ul>
+        <p><a href="https://github.com/openai/codex">GitHub URL</a></p>
+      </article>
+
+      <article class="card repo">
+        <h3>3. OpenHands/OpenHands</h3>
+        <p><span class="badge stars">76.8k stars</span><span class="badge">AI-driven development</span></p>
+        <p>SDK, CLI, local GUI, cloud, enterprise 배포면을 갖춘 AI-driven development 프로젝트다.</p>
+        <ul>
+          <li>주목 이유: 2026-06-10 최신 릴리스가 확인되며, CLI 경험은 Claude Code/Codex 사용자에게 익숙한 흐름을 지향한다.</li>
+          <li>Claude/Cursor/Codex 연결점: Claude, GPT 등 여러 모델을 얹는 agent framework로 도구 독립 운영을 실험하기 좋다.</li>
+          <li>한줄 총평: 오픈소스 기반 다중 배포형 software agent 플랫폼에 가깝다.</li>
+        </ul>
+        <p><a href="https://github.com/OpenHands/OpenHands">GitHub URL</a></p>
+      </article>
+
+      <article class="card repo">
+        <h3>4. cline/cline</h3>
+        <p><span class="badge stars">63.2k stars</span><span class="badge">IDE extension, SDK, CLI</span></p>
+        <p>자율 coding agent를 SDK, IDE extension, CLI assistant 형태로 제공한다.</p>
+        <ul>
+          <li>주목 이유: 2026-06-11 CLI v3.0.24 최신 릴리스가 확인된다.</li>
+          <li>Claude/Cursor/Codex 연결점: IDE와 CLI를 모두 걸치는 점에서 Cursor식 편집기 경험과 Claude/Codex식 터미널 경험 사이에 있다.</li>
+          <li>한줄 총평: 실사용자 plugin/extension 생태계가 큰 agent 도구다.</li>
+        </ul>
+        <p><a href="https://github.com/cline/cline">GitHub URL</a></p>
+      </article>
+
+      <article class="card repo">
+        <h3>5. Aider-AI/aider</h3>
+        <p><span class="badge stars">46.1k stars</span><span class="badge">terminal pair programming</span></p>
+        <p>기존 코드베이스를 map으로 이해하고 LLM과 터미널에서 pair programming하는 도구다.</p>
+        <ul>
+          <li>주목 이유: Git 통합, lint/test loop, 웹/이미지 context 등 실무형 기능이 오래 누적돼 있다.</li>
+          <li>Claude/Cursor/Codex 연결점: Claude와 OpenAI 계열 모델 모두 연결 가능해 모델 교체 실험의 기준 도구로 유용하다.</li>
+          <li>한줄 총평: 화려함보다 제어 가능한 터미널 편집 workflow가 강점이다.</li>
+        </ul>
+        <p><a href="https://github.com/Aider-AI/aider">GitHub URL</a></p>
+      </article>
+
+      <article class="card repo">
+        <h3>6. continuedev/continue</h3>
+        <p><span class="badge stars">33.7k stars</span><span class="badge">source-controlled AI checks</span></p>
+        <p>오픈소스 Continue CLI 기반으로 source-controlled AI checks와 CI enforceable workflow를 제공한다.</p>
+        <ul>
+          <li>주목 이유: 단순 chat assistant보다 코드 검토와 정책화된 체크에 초점을 둔다.</li>
+          <li>Claude/Cursor/Codex 연결점: Cursor/Codex/Claude 결과물을 CI 수준에서 다시 검증하는 보완 계층이 될 수 있다.</li>
+          <li>한줄 총평: AI coding 확산 뒤에 필요한 guardrail 성격이 강하다.</li>
+        </ul>
+        <p><a href="https://github.com/continuedev/continue">GitHub URL</a></p>
+      </article>
+
+      <article class="card repo">
+        <h3>7. voideditor/void</h3>
+        <p><span class="badge stars">28.8k stars</span><span class="badge warn">archived 2026-06-02</span></p>
+        <p>오픈소스 AI editor 프로젝트였으나 2026-06-02 read-only archive 상태로 전환됐다.</p>
+        <ul>
+          <li>주목 이유: AI editor 시장의 경쟁 강도와 유지보수 부담을 보여주는 신호다.</li>
+          <li>Claude/Cursor/Codex 연결점: Cursor 대체 오픈소스 IDE 흐름의 한계와 분기점을 점검하게 한다.</li>
+          <li>한줄 총평: star 수는 크지만 신규 채택 판단에는 archive 상태를 먼저 봐야 한다.</li>
+        </ul>
+        <p><a href="https://github.com/voideditor/void">GitHub URL</a></p>
+      </article>
+
+      <article class="card repo">
+        <h3>8. RooCodeInc/Roo-Code</h3>
+        <p><span class="badge stars">24.2k stars</span><span class="badge warn">archived 2026-05-15</span></p>
+        <p>코드 편집기 안에서 AI agent 팀을 제공하던 프로젝트였으나 2026-05-15 archive 상태가 됐다.</p>
+        <ul>
+          <li>주목 이유: multi-agent IDE 도구 수요는 컸지만 독립 프로젝트 지속성은 별도 검토가 필요하다.</li>
+          <li>Claude/Cursor/Codex 연결점: Cursor의 통합형 UX와 Claude/Codex의 공식 agent stack이 오픈소스 IDE agent에 압박을 준다.</li>
+          <li>한줄 총평: 참고 가치는 높지만 신규 도입 후보에서는 낮게 둔다.</li>
+        </ul>
+        <p><a href="https://github.com/RooCodeInc/Roo-Code">GitHub URL</a></p>
+      </article>
+    </section>
+
+    <section id="trend" class="card">
+      <h2>트렌드 해석</h2>
+      <ul>
+        <li>공식 vendor CLI가 커졌다. Claude Code와 Codex는 단순 helper가 아니라 permission, background run, browser, plugin, mobile, remote session을 품는 운영 환경으로 이동 중이다.</li>
+        <li>오픈소스 도구는 모델 독립성과 self-hosting을 무기로 삼지만, archive된 인기 프로젝트가 보여주듯 지속 유지보수가 핵심 리스크다.</li>
+        <li>Cursor 사용자는 IDE/Design Mode 흐름, Claude Code 사용자는 장시간 agent와 workflow, Codex 사용자는 앱·CLI·브라우저 통합을 비교하면 된다.</li>
+      </ul>
+    </section>
+
+    <section id="sources" class="sourcebox">
+      <h2>출처 모음</h2>
+      <ul>
+        <li>GitHub Trending Daily: <a href="https://github.com/trending?since=daily">https://github.com/trending?since=daily</a></li>
+        <li>anthropics/claude-code: <a href="https://github.com/anthropics/claude-code">https://github.com/anthropics/claude-code</a></li>
+        <li>openai/codex: <a href="https://github.com/openai/codex">https://github.com/openai/codex</a></li>
+        <li>OpenHands/OpenHands: <a href="https://github.com/OpenHands/OpenHands">https://github.com/OpenHands/OpenHands</a></li>
+        <li>cline/cline: <a href="https://github.com/cline/cline">https://github.com/cline/cline</a></li>
+        <li>Aider-AI/aider: <a href="https://github.com/Aider-AI/aider">https://github.com/Aider-AI/aider</a></li>
+        <li>continuedev/continue: <a href="https://github.com/continuedev/continue">https://github.com/continuedev/continue</a></li>
+        <li>voideditor/void: <a href="https://github.com/voideditor/void">https://github.com/voideditor/void</a></li>
+        <li>RooCodeInc/Roo-Code: <a href="https://github.com/RooCodeInc/Roo-Code">https://github.com/RooCodeInc/Roo-Code</a></li>
+      </ul>
+      <p class="small">확인 불가 항목: GitHub Trending HTML의 저장소 카드가 텍스트 추출에 노출되지 않아, 본문 저장소 순위는 Trending 순위가 아니라 저장소 페이지 확인 기반 관찰 목록이다.</p>
+    </section>
+    <footer>생성일: 2026-06-14 · Star 수: 조사 시점 GitHub 저장소 페이지 표시 기준</footer>
+  </main>
+</body>
+</html>

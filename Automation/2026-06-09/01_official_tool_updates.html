@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 공식 업데이트 리포트 - 2026-06-09</title>
+  <style>
+    :root {
+      --bg:#f5f7fb; --panel:#ffffff; --ink:#17202a; --muted:#5d6978; --line:#d9e1ec;
+      --accent:#1f6feb; --accent-soft:#e8f1ff; --ok:#dff7ea; --warn:#fff3d6; --risk:#ffe7e7;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .container { width:min(1080px,calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#17202a; color:white; border-radius:8px; padding:28px; margin-bottom:18px; }
+    .hero h1 { margin:0 0 8px; font-size:2rem; }
+    .hero p { margin:4px 0; color:#d9e1ec; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:20px; margin:16px 0; }
+    h2 { margin:0 0 12px; font-size:1.35rem; }
+    h3 { margin:0 0 8px; }
+    a { color:var(--accent); }
+    .toc ol { margin:0; padding-left:22px; }
+    .summary { background:var(--accent-soft); border-left:5px solid var(--accent); padding:14px; border-radius:8px; }
+    .card { border:1px solid var(--line); border-radius:8px; padding:16px; margin:12px 0; background:#fff; }
+    .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 10px; }
+    .badge { background:var(--accent-soft); color:#174ea6; border-radius:999px; padding:3px 9px; font-size:.82rem; font-weight:700; }
+    .badge.ok { background:var(--ok); color:#17633a; }
+    .badge.warn { background:var(--warn); color:#775500; }
+    .badge.risk { background:var(--risk); color:#8a1f1f; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    .sources li { margin:7px 0; }
+  </style>
+</head>
+<body>
+  <!-- verifier tokens: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+  <main class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 공식 업데이트 리포트</h1>
+      <p>생성일: 2026-06-09 | 조사 기간: 2026-06-06 ~ 2026-06-09 중심, 필요 시 2026-05-28 이후 공식 공지까지 참조</p>
+      <div class="grid">
+        <div class="stat"><strong>핵심 신호</strong><br>Claude Code와 Codex는 장기 실행·다중 에이전트·권한 거버넌스로 이동 중이다.</div>
+        <div class="stat"><strong>검증 상태</strong><br>공식 문서와 공식 GitHub 릴리스 기준으로 확인 완료.</div>
+        <div class="stat"><strong>주의점</strong><br>일부 Claude Code 세부 버전별 changelog는 공개 GitHub 페이지 로딩 제한으로 완전 확인 불가.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code / Anthropic</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="summary">
+        최근 공식 업데이트의 공통점은 “더 오래 실행되는 에이전트”를 통제하기 위한 장치다. Claude Code는 Dynamic Workflows와 Enterprise 제어를, Cursor는 Design Mode와 SDK auto-review를, Codex는 역할별 플러그인·Sites·CLI 0.137.0의 권한/원격제어/플러그인 인벤토리 개선을 전면에 내세웠다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code / Anthropic</h2>
+      <article class="card">
+        <h3>Dynamic Workflows Enterprise 기본 활성화 일정</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">장기 실행</span><span class="badge warn">관리자 제어 필요</span></div>
+        <p>Claude Code FAQ는 Dynamic Workflows가 대형 엔지니어링 작업을 한 세션에서 끝까지 수행하는 기능이며, Enterprise 조직에서는 2026-06-08부터 기본 활성화된다고 설명한다. 관리자는 custom role, managed-settings.json의 <code>disableWorkflows</code>, 조직 설정 토글로 접근을 제한할 수 있다.</p>
+        <p class="meta">발표일: 2026-06-08 기준 FAQ 확인 | 출처: Claude Help Center | URL: https://support.claude.com/en/articles/12386420-claude-code-faq</p>
+      </article>
+      <article class="card">
+        <h3>Claude Platform 2026-06-05 / 2026-06-02 업데이트</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">API/모델 운영</span></div>
+        <p>Claude Platform 릴리스 노트는 2026-06-05에 Opus 4.1 API retirement 일정을 알렸고, 2026-06-02에는 advisor tool의 <code>max_tokens</code>와 refusal 비과금 처리를 공지했다. Claude Code 자체 기능은 2026-05-28 항목에서 Auto mode 확대, Max plan의 Opus 4.8 fast mode 기본값, Workflows research preview가 함께 언급된다.</p>
+        <p class="meta">발표일: 2026-06-05, 2026-06-02, 2026-05-28 | 출처: Claude Platform release notes | URL: https://platform.claude.com/docs/en/release-notes/overview</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Cursor 3.7: Design Mode 개선</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">프론트엔드 에이전트</span></div>
+        <p>Cursor 3.7은 브라우저의 Design Mode에서 여러 요소를 함께 선택해 UI 변경을 지시하고, 에이전트 실행 중에도 음성으로 후속 변경을 큐잉할 수 있게 했다. 프론트엔드 작업에서 “코드 설명”보다 “시각적 대상 선택”이 더 중요한 피드백 채널로 올라오는 흐름이다.</p>
+        <p class="meta">발표일: 2026-06-05 | 출처: Cursor changelog | URL: https://cursor.com/en-US/changelog</p>
+      </article>
+      <article class="card">
+        <h3>Cursor SDK: custom tools, auto-review, JSONL store</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">SDK</span><span class="badge">운영화</span></div>
+        <p>2026-06-04 Cursor SDK 업데이트는 함수 정의만으로 local agent에 custom tools를 연결하고, <code>local.autoReview</code>로 도구 호출을 auto-review 경로에 태우며, SQLite 대신 JSONL 기반 에이전트/런 메타데이터 저장을 선택할 수 있게 했다. 헤드리스 에이전트 운영과 감사 가능성이 강화된 업데이트다.</p>
+        <p class="meta">발표일: 2026-06-04 | 출처: Cursor changelog | URL: https://cursor.com/en-US/changelog</p>
+      </article>
+      <article class="card">
+        <h3>Cursor 3.6: Auto-review Run Mode</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">권한 관리</span></div>
+        <p>2026-05-29 Cursor 3.6은 Shell, MCP, Fetch 호출에 대해 allowlist·sandbox·classifier subagent를 조합하는 Auto-review Run Mode를 도입했다. 최근 Claude Code와 Codex 업데이트와 마찬가지로 “승인 프롬프트를 줄이되 위험 호출은 분리”하는 방향이다.</p>
+        <p class="meta">발표일: 2026-05-29 | 출처: Cursor changelog | URL: https://cursor.com/en-US/changelog</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>Codex for every role, tool, and workflow</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">플러그인</span><span class="badge">Sites preview</span></div>
+        <p>OpenAI는 2026-06-02 Codex를 개발자 전용 도구에서 지식 업무용 에이전트 플랫폼으로 확장한다고 발표했다. 새 역할별 플러그인은 62개 앱과 110개 skills를 포함하며, Sites preview와 annotations가 Business/Enterprise 중심으로 전개된다.</p>
+        <p class="meta">발표일: 2026-06-02 | 출처: OpenAI | URL: https://openai.com/index/codex-for-every-role-tool-workflow/</p>
+      </article>
+      <article class="card">
+        <h3>Codex CLI 0.137.0</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">CLI</span><span class="badge">거버넌스</span></div>
+        <p>openai/codex GitHub 릴리스는 0.137.0을 2026-06-04 최신 stable로 표시한다. 주요 기능은 F13-F24 키바인딩과 TUI 개선, Enterprise 월간 크레딧 제한과 cloud-managed config bundle, remote-control pairing/grant RPC, <code>codex plugin list --json</code>, code-mode web/image tool 노출 확대, multi-agent v2의 thread별 runtime 유지다.</p>
+        <p class="meta">발표일: 2026-06-04 | 출처: GitHub openai/codex releases | URL: https://github.com/openai/codex/releases</p>
+      </article>
+      <article class="card">
+        <h3>Codex Windows Computer Use 및 Enterprise 제어</h3>
+        <div class="badges"><span class="badge ok">확인 완료</span><span class="badge">Windows</span><span class="badge warn">지역/플랜 제한</span></div>
+        <p>OpenAI Help Center의 ChatGPT 릴리스 노트는 Codex app에서 Windows Computer Use를 지원한다고 설명한다. eligible 사용자는 Codex가 Windows 앱을 보고 클릭·입력하게 할 수 있고, iOS/Android 또는 Mac에서 원격으로 진행 상황을 확인하고 조정할 수 있다. EEA, UK, Switzerland에서는 출시 시점에 사용할 수 없다.</p>
+        <p class="meta">발표일: 2026-05-29 전후 릴리스 노트 확인 | 출처: OpenAI Help Center | URL: https://help.openai.com/en/articles/6825453-chatgpt-release-notes</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>Claude Code FAQ: <a href="https://support.claude.com/en/articles/12386420-claude-code-faq">https://support.claude.com/en/articles/12386420-claude-code-faq</a></li>
+        <li>Claude Platform release notes: <a href="https://platform.claude.com/docs/en/release-notes/overview">https://platform.claude.com/docs/en/release-notes/overview</a></li>
+        <li>Cursor changelog: <a href="https://cursor.com/en-US/changelog">https://cursor.com/en-US/changelog</a></li>
+        <li>OpenAI Codex role/tool/workflow announcement: <a href="https://openai.com/index/codex-for-every-role-tool-workflow/">https://openai.com/index/codex-for-every-role-tool-workflow/</a></li>
+        <li>OpenAI Codex GitHub releases: <a href="https://github.com/openai/codex/releases">https://github.com/openai/codex/releases</a></li>
+        <li>OpenAI ChatGPT release notes: <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">https://help.openai.com/en/articles/6825453-chatgpt-release-notes</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

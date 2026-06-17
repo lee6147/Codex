@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-06-03</title>
+  <style>
+    :root { --ink:#17202a; --muted:#607080; --line:#dce3ec; --bg:#f7f9fc; --card:#fff; --accent:#0b63ce; --warn:#8a5a00; --ok:#176b46; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Segoe UI", Arial, sans-serif; line-height:1.58; }
+    header { padding:34px 28px; background:#13283d; color:white; }
+    main { max-width:1120px; margin:0 auto; padding:24px; }
+    h1 { margin:0 0 10px; font-size:30px; }
+    h2 { margin-top:30px; font-size:22px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:var(--accent); }
+    .meta { color:#dce6f2; font-size:14px; }
+    .notice, .card, .sources { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px; margin:18px 0; box-shadow:0 1px 2px rgba(15,23,42,.04); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px; }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:700; margin:0 6px 8px 0; background:#e8f0fe; color:#174ea6; }
+    .warn { background:#fff7df; color:var(--warn); }
+    .ok { background:#e8f5ee; color:var(--ok); }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+<!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<header>
+  <h1>AI 코딩 도구 기사 요약</h1>
+  <div class="meta">생성일: 2026-06-03 · 기본 기사 범위: 2026-06-01 ~ 2026-06-03 · 확장 기사 범위: 2026-05-28 ~ 2026-06-03</div>
+</header>
+<main>
+  <section class="notice">
+    <span class="badge warn">7일 확장 적용</span>
+    최근 2일 범위에서는 Claude Code와 Codex 기사는 확인됐지만 Cursor 기사량이 부족했다. 따라서 로컬 하네스 규칙에 따라 기사 검색을 7일 범위인 2026-05-28 ~ 2026-06-03으로 확장했다. 아래 기사 중 일부 Cursor 보조 기사는 2026-05-20 공식 릴리스를 다루지만, 이번 확장 범위 바깥이라 "인접 공식 맥락"으로만 해석했다.
+  </section>
+
+  <section class="card">
+    <h2>목차</h2>
+    <p><a href="#claude">Claude Code</a> · <a href="#cursor">Cursor</a> · <a href="#codex">OpenAI Codex</a> · <a href="#sources">출처</a></p>
+  </section>
+
+  <section id="claude">
+    <h2>Claude Code 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge ok">기술 요약</span>
+        <h3>Claude Code v2.1.159 to v2.1.160 Major Updates</h3>
+        <p class="muted">DevelopersIO · 2026-06-02 · <a href="https://dev.classmethod.jp/en/articles/20260602-cc-updates-v2-1-160/">원문</a></p>
+        <ul>
+          <li>v2.1.160의 사용자 영향 변경을 보안 확인, background agent 안정화, dynamic workflow 키워드 변경으로 정리했다.</li>
+          <li>셸 시작 파일과 빌드 도구 설정 파일 쓰기 전 확인 프롬프트가 핵심이다.</li>
+          <li><code>grep</code>으로 단일 파일을 본 경우 read-before-edit 조건을 충족하는 개선도 실무 속도에 영향이 있다.</li>
+          <li>실무 시사점은 "자동 승인 모드에서도 실행 가능 설정 파일은 별도 확인 대상"이라는 점이다.</li>
+        </ul>
+        <p><strong>신뢰 메모:</strong> 공식 changelog를 바탕으로 한 기술 요약. 날짜와 버전 매핑을 보조 검증에 사용했다.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge">시장 맥락</span>
+        <h3>Codex vs. Claude Code vs. Cursor: The Definitive 2026 Guide</h3>
+        <p class="muted">Kingy AI · 2026-05-27 · <a href="https://kingy.ai/news/codex-vs-claude-code-vs-cursor-the-definitive-2026-guide/">원문</a></p>
+        <ul>
+          <li>Claude Code를 terminal-first agentic repo work에 강한 도구로 분류한다.</li>
+          <li>Cursor는 IDE workflow, Codex는 OpenAI-native multi-surface workflow로 구분한다.</li>
+          <li>세 도구 모두 코드 리뷰, 테스트, 보안 판단을 대체하지 못한다는 caveat를 강조한다.</li>
+        </ul>
+        <p><strong>신뢰 메모:</strong> 긴 비교 글이며 광고성 표현이 섞여 있다. 공식 기능 확인보다 포지셔닝 해석에만 사용한다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="cursor">
+    <h2>Cursor 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge warn">범위 밖 인접 맥락</span>
+        <h3>Cursor Automations Now in Agents Window with Multi-Repo Support</h3>
+        <p class="muted">AI อะไรเนี่ย · 2026-05-20 · <a href="https://www.aiarainia.com/en/news/tools/cursor-automations-agents-window-multi-repo">원문</a></p>
+        <ul>
+          <li>Cursor Automations가 Agents Window 안으로 들어왔고 multi-repo, no-repo automation을 지원한다고 요약한다.</li>
+          <li>분산 코드베이스를 동시에 다루는 업무와 외부 신호 모니터링을 Cursor 자동화의 사용처로 제시한다.</li>
+          <li>5개 no-repo 템플릿과 신규 agent run 할인도 함께 다룬다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> Cursor는 코딩 편집기에서 운영 자동화 화면으로 넓어지는 중이다. 다만 날짜가 7일 확장 범위 밖이므로 최신 기사로 보지 않는다.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge warn">범위 밖 인접 맥락</span>
+        <h3>Cursor Introduces Shared Canvases and /loop Skill</h3>
+        <p class="muted">AI อะไรเนี่ย · 2026-05-20 · <a href="https://www.aiarainia.com/en/news/tools/cursor-shared-canvases-and-loop-skill">원문</a></p>
+        <ul>
+          <li>Shared Canvases를 agent-generated report/dashboard를 팀에 읽기 전용으로 공유하는 기능으로 설명한다.</li>
+          <li><code>/loop</code>는 로컬 스케줄이나 목표 달성까지 prompt를 반복 실행하는 장기 실행 기능으로 정리한다.</li>
+          <li>팀 공유와 지속 실행을 결합해 에이전트 산출물의 협업성을 높이는 방향이다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> Cursor의 강점은 단일 agent 품질보다 반복 실행과 결과 공유의 UX로 확장되고 있다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="codex">
+    <h2>OpenAI Codex 기사</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge ok">뉴스 기사</span>
+        <h3>Office workers drive OpenAI's Codex growth</h3>
+        <p class="muted">Axios · 2026-06-02 · <a href="https://www.axios.com/2026/06/02/openai-codex-knowledge-workers">원문</a></p>
+        <ul>
+          <li>Codex 사용자 중 지식노동자가 약 5분의 1을 차지하고, 개발자보다 빠르게 성장 중이라고 보도했다.</li>
+          <li>OpenAI는 Codex를 개발자 전용 도구에서 문서, 데이터 분석, 리서치, 업무 산출물 운영 도구로 확장하려 한다.</li>
+          <li>동시에 여러 작업을 감독하는 피로와 전문가 검토 필요성도 함께 지적한다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> Codex는 코드 작성만이 아니라 데이터, 문서, 업무 자동화 쪽으로 사용 범위가 넓어지고 있다.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge">릴리스 집계</span>
+        <h3>OpenAI Release Notes, Codex 0.136.0</h3>
+        <p class="muted">Releasebot · 2026-06-02 조회 · <a href="https://releasebot.io/updates/openai">원문</a></p>
+        <ul>
+          <li>0.136.0에서 clickable links, session archive, app-server status, remote execution, Windows sandbox setup, image generation extension을 정리했다.</li>
+          <li>OpenAI frontier models와 Codex가 AWS/Amazon Bedrock에서 제공된다는 2026-06-01 업데이트도 함께 집계했다.</li>
+          <li>공식 원문을 대체하지 않고, 여러 OpenAI 업데이트를 한 화면에서 비교하는 보조 자료로만 사용한다.</li>
+        </ul>
+        <p><strong>실무 시사점:</strong> Codex는 CLI 릴리스와 AWS 엔터프라이즈 배포 경로가 동시에 강화되는 흐름이다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sources" class="sources">
+    <h2>출처</h2>
+    <ul>
+      <li>DevelopersIO, Claude Code v2.1.159 to v2.1.160 Major Updates: <a href="https://dev.classmethod.jp/en/articles/20260602-cc-updates-v2-1-160/">https://dev.classmethod.jp/en/articles/20260602-cc-updates-v2-1-160/</a></li>
+      <li>Axios, Office workers drive OpenAI's Codex growth: <a href="https://www.axios.com/2026/06/02/openai-codex-knowledge-workers">https://www.axios.com/2026/06/02/openai-codex-knowledge-workers</a></li>
+      <li>Releasebot OpenAI updates: <a href="https://releasebot.io/updates/openai">https://releasebot.io/updates/openai</a></li>
+      <li>AI อะไรเนี่ย, Cursor Automations: <a href="https://www.aiarainia.com/en/news/tools/cursor-automations-agents-window-multi-repo">https://www.aiarainia.com/en/news/tools/cursor-automations-agents-window-multi-repo</a></li>
+      <li>AI อะไรเนี่ย, Cursor Shared Canvases and /loop: <a href="https://www.aiarainia.com/en/news/tools/cursor-shared-canvases-and-loop-skill">https://www.aiarainia.com/en/news/tools/cursor-shared-canvases-and-loop-skill</a></li>
+      <li>Kingy AI comparison: <a href="https://kingy.ai/news/codex-vs-claude-code-vs-cursor-the-definitive-2026-guide/">https://kingy.ai/news/codex-vs-claude-code-vs-cursor-the-definitive-2026-guide/</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

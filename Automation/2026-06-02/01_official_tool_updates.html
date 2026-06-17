@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-06-02 공식 AI 코딩 도구 업데이트</title>
+  <style>
+    :root { --bg:#f6f8fb; --panel:#ffffff; --ink:#172033; --muted:#5d6a7c; --line:#d9e1ec; --accent:#2458d3; --ok:#147a45; --warn:#9a5a00; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Arial, "Malgun Gothic", sans-serif; line-height:1.62; }
+    main { max-width:1040px; margin:0 auto; padding:32px 20px 56px; }
+    header { border-bottom:3px solid var(--ink); padding-bottom:18px; margin-bottom:22px; }
+    h1 { margin:0 0 8px; font-size:32px; line-height:1.2; }
+    h2 { margin:30px 0 12px; font-size:22px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .meta, .note { color:var(--muted); font-size:14px; }
+    .summary { background:#eaf1ff; border:1px solid #c9d8ff; padding:16px 18px; border-radius:8px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .status { display:inline-block; font-size:12px; font-weight:700; border-radius:999px; padding:2px 8px; margin-bottom:8px; }
+    .status.ok { background:#dff5e9; color:var(--ok); }
+    .status.warn { background:#fff1cf; color:var(--warn); }
+    table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); }
+    th, td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
+    th { background:#edf2f8; }
+    ul { padding-left:20px; }
+    footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+  </style>
+</head>
+<body>
+<!-- verifier-snippets: ?앹꽦?? | 異쒖쿂 | 紐⑹감 -->
+<main>
+  <header>
+    <p class="meta">생성일: 2026-06-02 · 조사 기준: 공식 릴리스/체인지로그 · 엄격 창: 2026-05-31~2026-06-02</p>
+    <h1>공식 AI 코딩 도구 업데이트</h1>
+    <p class="meta">Codex, Claude Code, Cursor의 공식 발표만 우선 확인했다. 상대 날짜가 아니라 확인된 공개 날짜를 기준으로 정리했다.</p>
+  </header>
+
+  <section class="summary">
+    <h2>핵심 요약</h2>
+    <ul>
+      <li><strong>OpenAI Codex</strong>: 2026-06-01에 <strong>Codex CLI 0.136.0</strong>이 공식 공개됐다. TUI 링크/표 표시, 세션 아카이브, app-server, 원격 실행, Windows 샌드박스, 인증/보안 수정까지 포함된 비교적 큰 CLI 릴리스다.</li>
+      <li><strong>Claude Code</strong>: 2026-05-31에 <strong>2.1.159</strong>가 올라왔지만, 공식 설명은 내부 인프라 개선이며 사용자 노출 기능은 없다고 명시했다.</li>
+      <li><strong>Cursor</strong>: 엄격 창 안의 새 공식 업데이트는 확인하지 못했다. 가장 가까운 공식 릴리스는 2026-05-29 <strong>Cursor 3.6 Auto-review Run Mode</strong>다.</li>
+    </ul>
+  </section>
+
+  <h2>목차</h2>
+  <ol>
+    <li><a href="#codex">OpenAI Codex</a></li>
+    <li><a href="#claude">Claude Code</a></li>
+    <li><a href="#cursor">Cursor</a></li>
+    <li><a href="#watch">운영 관찰 포인트</a></li>
+    <li><a href="#sources">출처</a></li>
+  </ol>
+
+  <section id="codex" class="card">
+    <span class="status ok">공식 확인</span>
+    <h2>OpenAI Codex: CLI 0.136.0</h2>
+    <p><strong>공개일:</strong> 2026-06-01 · <strong>출처:</strong> OpenAI Developers Codex changelog</p>
+    <p>이번 릴리스는 단순 패치보다 운영면 개선 폭이 크다. 터미널 UI의 Markdown 링크가 OSC 8 메타데이터를 유지하고, 좁은 표는 링크 대상을 잃지 않는 key/value 형태로 전환된다. 세션은 TUI의 <code>/archive</code> 또는 CLI의 <code>codex archive</code>/<code>codex unarchive</code>로 보관할 수 있으며, 보관된 세션은 복원 전까지 resume/fork에서 보호된다.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>개발자 경험</h3>
+        <p>링크 가능한 TUI 출력, 세션 아카이브, app-server의 초기 턴 페이지 재개와 MCP 서버 상태 노출이 개선됐다. 반복 리포트/검증 세션을 많이 다루는 팀에는 세션 보관 기능이 특히 유용하다.</p>
+      </div>
+      <div class="card">
+        <h3>보안/운영</h3>
+        <p>ChatGPT 인증 갱신, 명령 안전성, 샌드박스 명령 정리, Windows 네트워크 거부 처리, PowerShell 실행 방어, browser-origin websocket 핸드셰이크 거부가 포함됐다.</p>
+      </div>
+      <div class="card">
+        <h3>확장성</h3>
+        <p>원격 실행 등록에 <code>CODEX_API_KEY</code>를 쓸 수 있고, remote-control websocket은 ChatGPT access token 대신 단기 서버 토큰을 사용한다. Windows 관리자용 샌드박스 설치 경로도 alpha로 추가됐다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="claude" class="card">
+    <span class="status ok">공식 확인</span>
+    <h2>Claude Code: 2.1.159</h2>
+    <p><strong>공개일:</strong> 2026-05-31 · <strong>출처:</strong> Claude Code Docs changelog</p>
+    <p>공식 변경 내역은 “내부 인프라 개선, 사용자 노출 변경 없음”이다. 기능 채택 판단에는 큰 영향을 주지 않지만, 직전 2.1.158과 2.1.157에서 Auto mode, plugin/skills 로딩, agents, worktree, tmux, resume 관련 개선이 이어졌으므로 운영 안정화 흐름은 계속되고 있다.</p>
+  </section>
+
+  <section id="cursor" class="card">
+    <span class="status warn">엄격 창 밖</span>
+    <h2>Cursor: 3.6 Auto-review Run Mode</h2>
+    <p><strong>공개일:</strong> 2026-05-29 · <strong>출처:</strong> Cursor changelog</p>
+    <p>2026-05-31~2026-06-02 안에서 새 공식 Cursor 업데이트는 확인하지 못했다. 다만 가장 가까운 공식 항목인 Cursor 3.6은 Auto-review Run Mode를 추가했다. Shell, MCP, Fetch 호출을 대상으로 allowlist 실행, sandbox 실행, classifier subagent 판단을 조합해 승인 프롬프트를 줄이면서 장시간 작업을 더 안전하게 실행하도록 설계됐다.</p>
+  </section>
+
+  <section id="watch">
+    <h2>운영 관찰 포인트</h2>
+    <table>
+      <thead><tr><th>도구</th><th>오늘의 의미</th><th>팀 적용 판단</th></tr></thead>
+      <tbody>
+        <tr><td>Codex</td><td>CLI/앱 서버/보안/Windows 운영면이 동시에 강화됐다.</td><td>터미널 기반 자동화, Windows 샌드박스, 원격 실행을 쓰는 팀은 업데이트 후보.</td></tr>
+        <tr><td>Claude Code</td><td>오늘 창에서는 제품 기능보다 안정화 릴리스 성격이다.</td><td>새 기능 검토보다 기존 워크플로 회귀 여부 확인에 초점.</td></tr>
+        <tr><td>Cursor</td><td>엄격 창 밖이지만 승인 감소와 classifier 기반 실행 정책이 중요하다.</td><td>장시간 agent run을 자주 돌리는 IDE 팀은 3.6 정책을 별도 검토.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="sources">
+    <h2>출처</h2>
+    <ul>
+      <li><a href="https://developers.openai.com/codex/changelog/">OpenAI Developers - Codex changelog</a> (2026-06-01 Codex CLI 0.136.0 확인)</li>
+      <li><a href="https://code.claude.com/docs/en/changelog">Claude Code Docs - Changelog</a> (2026-05-31 Claude Code 2.1.159 확인)</li>
+      <li><a href="https://cursor.com/en-US/changelog">Cursor - Changelog</a> (2026-05-29 Cursor 3.6 확인, 엄격 창 밖)</li>
+    </ul>
+  </section>
+
+  <footer>
+    확인 상태: 공식 체인지로그 기준. Cursor의 2026-05-31~2026-06-02 신규 공식 업데이트는 확인 불가.
+  </footer>
+</main>
+</body>
+</html>

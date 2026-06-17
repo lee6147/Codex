@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 AI 코딩 도구 업데이트 - 2026-06-03</title>
+  <style>
+    :root { --ink:#17202a; --muted:#5d6875; --line:#d9e2ec; --bg:#f7fafc; --card:#ffffff; --accent:#1967d2; --ok:#176b46; --warn:#8a5a00; }
+    body { margin:0; font-family: "Segoe UI", Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.58; }
+    header { background:#10233f; color:white; padding:34px 28px; }
+    main { max-width:1100px; margin:0 auto; padding:24px; }
+    h1 { margin:0 0 10px; font-size:30px; }
+    h2 { margin-top:30px; font-size:22px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:var(--accent); }
+    .meta { color:#dce7f5; font-size:14px; }
+    .summary, .card, .sources { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px; margin:18px 0; box-shadow:0 1px 2px rgba(15,23,42,.04); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:16px; }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:700; background:#e8f0fe; color:#174ea6; margin-right:6px; }
+    .ok { background:#e8f5ee; color:var(--ok); }
+    .warn { background:#fff7df; color:var(--warn); }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+    .toc a { display:block; padding:4px 0; }
+  </style>
+</head>
+<body>
+<!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<header>
+  <h1>공식 AI 코딩 도구 업데이트</h1>
+  <div class="meta">생성일: 2026-06-03 · 조사 범위: 공식 업데이트 2026-06-01 ~ 2026-06-03 · 대상: Claude Code, Cursor, OpenAI Codex</div>
+</header>
+<main>
+  <section class="summary">
+    <span class="badge ok">핵심</span>
+    <strong>이번 공식 업데이트의 중심은 장시간 에이전트 운용의 안정성과 운영 통제다.</strong>
+    OpenAI Codex는 0.136.0에서 원격 실행, 아카이브, Windows 샌드박스, 앱 서버 기능을 넓혔다. Claude Code 2.1.160은 셸 시작 파일과 빌드 설정 파일 쓰기 전 확인을 강화했고, Cursor는 strict 3일 범위에는 새 공식 릴리스가 없어서 2026-05-20의 3.5 업데이트를 인접 공식 맥락으로만 기록했다.
+  </section>
+
+  <section class="card toc">
+    <h2>목차</h2>
+    <a href="#claude">1. Claude Code</a>
+    <a href="#cursor">2. Cursor</a>
+    <a href="#codex">3. OpenAI Codex</a>
+    <a href="#sources">출처</a>
+  </section>
+
+  <section id="claude" class="card">
+    <h2>1. Claude Code</h2>
+    <span class="badge warn">공식일자 확인 제한</span>
+    <h3>Claude Code 2.1.160</h3>
+    <p><strong>발표일:</strong> 공식 changelog에는 날짜가 직접 노출되지 않는다. 보조 검증 기사 기준으로 v2.1.160의 사용자 영향 변경은 2026-06-01 릴리스로 정리되어 있다.</p>
+    <ul>
+      <li><strong>주요 변화:</strong> 셸 시작 파일, <code>~/.config/git/</code>, 빌드 도구 설정 파일에 쓰기 전에 확인 프롬프트를 추가했다. <code>acceptEdits</code> 모드에서도 코드 실행 가능 설정 파일은 자동 승인되지 않는다.</li>
+      <li><strong>운영 의미:</strong> 장시간 에이전트가 권한이 높은 설정 파일을 수정하는 위험을 낮춘다. 특히 팀 환경에서 자동 수정 권한을 열어 둔 경우 안전장치가 더 중요해졌다.</li>
+      <li><strong>실무 영향:</strong> 단일 파일을 <code>grep</code>으로 확인한 뒤 별도 Read 없이 Edit가 가능해져 반복 수정 흐름은 조금 짧아졌다.</li>
+      <li><strong>확인 상태:</strong> 공식 changelog 내용은 확인 완료, 공식 발표일은 확인 불가.</li>
+    </ul>
+  </section>
+
+  <section id="cursor" class="card">
+    <h2>2. Cursor</h2>
+    <span class="badge warn">strict 3일 내 신규 없음</span>
+    <h3>Cursor 3.5: Shared canvases, /loop, Automations</h3>
+    <p><strong>발표일:</strong> 2026-05-20. 2026-06-01 ~ 2026-06-03 공식 changelog에서 새 항목은 확인되지 않았다.</p>
+    <ul>
+      <li><strong>주요 변화:</strong> 공유 캔버스, <code>/loop</code> 스킬, Agents Window 안의 Automations, multi-repo/no-repo automation을 제공한다.</li>
+      <li><strong>운영 의미:</strong> Cursor는 IDE 안의 일회성 코딩 보조를 넘어, 반복 실행과 팀 공유 가능한 에이전트 산출물 쪽으로 방향을 잡고 있다.</li>
+      <li><strong>실무 영향:</strong> 여러 저장소를 동시에 보는 자동화와 외부 도구 모니터링은 백엔드, 데이터, 운영 팀의 반복 업무에 유용하다.</li>
+      <li><strong>확인 상태:</strong> 공식 changelog 확인 완료. 단, 이번 strict 3일 공식 업데이트에는 포함하지 않고 인접 맥락으로만 사용한다.</li>
+    </ul>
+  </section>
+
+  <section id="codex" class="card">
+    <h2>3. OpenAI Codex</h2>
+    <span class="badge ok">공식 확인 완료</span>
+    <h3>Codex CLI 0.136.0</h3>
+    <p><strong>발표일:</strong> 2026-06-01.</p>
+    <ul>
+      <li><strong>주요 변화:</strong> TUI 링크 렌더링, 세션 아카이브, app-server <code>--stdio</code>, 원격 실행 API 키 등록, Windows 샌드박스 setup 경로, 독립 이미지 생성 확장 경로가 추가됐다.</li>
+      <li><strong>운영 의미:</strong> Codex는 단일 CLI 보조 도구보다, 데스크톱 앱, 원격 제어, 앱 서버, Bedrock 환경까지 이어지는 운영형 에이전트 플랫폼 성격이 강해지고 있다.</li>
+      <li><strong>보안 및 안정성:</strong> ChatGPT auth 갱신, 명령 안전성, sandbox cleanup, Bedrock 인증 fallback 등이 보강됐다.</li>
+      <li><strong>확인 상태:</strong> GitHub 공식 릴리스 확인 완료.</li>
+    </ul>
+  </section>
+
+  <section class="summary">
+    <h2>이번 업데이트 해석</h2>
+    <p>세 도구 모두 더 긴 작업 시간, 더 많은 자동화, 더 넓은 실행 권한을 다루는 방향으로 움직이고 있다. 따라서 이번 주 실무 체크포인트는 새 기능 자체보다 권한 경계, 재실행 방지, 작업 이력 보존, 운영자가 검토할 수 있는 산출물 구조다.</p>
+  </section>
+
+  <section id="sources" class="sources">
+    <h2>출처</h2>
+    <ul>
+      <li>OpenAI Codex GitHub Releases: <a href="https://github.com/openai/codex/releases">https://github.com/openai/codex/releases</a></li>
+      <li>Anthropic Claude Code Changelog: <a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</a></li>
+      <li>Claude Code v2.1.159 to v2.1.160 Major Updates, DevelopersIO, 2026-06-02: <a href="https://dev.classmethod.jp/en/articles/20260602-cc-updates-v2-1-160/">https://dev.classmethod.jp/en/articles/20260602-cc-updates-v2-1-160/</a></li>
+      <li>Cursor Changelog: <a href="https://cursor.com/changelog">https://cursor.com/changelog</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

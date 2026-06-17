@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌드 리포트 - 2026-06-17</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --panel: #ffffff;
+      --text: #17202a;
+      --muted: #5d6b79;
+      --line: #d9e0ea;
+      --blue: #0d5ea8;
+      --hero: linear-gradient(135deg, #0d304f 0%, #24679d 100%);
+      --soft: #eef5ff;
+      --warn: #fff3d4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap {
+      width: min(1120px, calc(100vw - 32px));
+      margin: 28px auto 56px;
+    }
+    header {
+      background: var(--hero);
+      color: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    h2 { margin: 0 0 14px; font-size: 1.28rem; }
+    h3 { margin: 0 0 8px; font-size: 1.02rem; }
+    a { color: var(--blue); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .summary { background: var(--soft); }
+    .notice { background: var(--warn); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+    }
+    .badge {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #e8f1ff;
+      color: #184f85;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>GitHub 트렌드 리포트</h1>
+      <p>생성일: 2026-06-17 | 조사 기준: GitHub Trending 확인 + Search API fallback metadata</p>
+      <div class="meta">
+        <div class="stat"><strong>핵심 군집</strong><br>이번 주 AI 코딩 생태계에서는 memory, agent harness, skills, code graph, security guard 같은 운영 보조 레이어 저장소가 강하게 올라왔다.</div>
+        <div class="stat"><strong>수집 방식</strong><br>Trending HTML은 텍스트 추출만으로 카드 본문을 안정적으로 복원하지 못해서, 최근 push·star·설명은 GitHub Search API metadata로 보강했다.</div>
+        <div class="stat"><strong>실무 의미</strong><br>단일 모델 성능보다 컨텍스트 유지, 장기 작업, 안전장치, 재사용 스킬이 실제 도입 병목으로 인식되고 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#method">수집 메모</a></li>
+        <li><a href="#repos">주요 저장소</a></li>
+        <li><a href="#signals">관찰 포인트</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약</h2>
+      <p>2026-06-17 기준 GitHub 쪽 흐름은 AI 코딩 도구의 주변 인프라가 급속히 상품화되고 있다는 점이다. 이번에 눈에 띈 저장소는 시스템 프롬프트 수집, 세션 메모리, 장기 실행 superagent, 통합 CLI, skill 패키지, code graph, agent security scanner처럼 실제 운영 보조물에 몰려 있다. 순수 모델 데모보다 워크플로를 붙이는 층이 더 뜨겁다.</p>
+    </section>
+
+    <section class="panel notice" id="method">
+      <h2>수집 메모</h2>
+      <p>GitHub Trending 일간·주간 페이지는 확인했지만, 현재 환경의 텍스트 추출 결과만으로는 저장소 카드 내용을 안정적으로 구조화하기 어려웠다. 그래서 본 리포트는 Trending 확인 사실을 남기고, 각 저장소의 star 수·최근 push 시각·설명은 GitHub Search API 결과를 fallback metadata로 사용했다.</p>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>주요 저장소</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools">x1xhlol/system-prompts-and-models-of-ai-tools</a></h3>
+          <div><span class="badge">140,668 stars</span><span class="badge">최근 push 2026-06-12</span></div>
+          <p>Augment, Claude Code, Cursor 등 주요 AI 도구의 system prompt와 내부 모델 구성을 정리한다. 시장이 여전히 "도구 내부 규칙"을 경쟁력으로 본다는 신호다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></h3>
+          <div><span class="badge">82,756 stars</span><span class="badge">최근 push 2026-06-15</span></div>
+          <p>Claude Code, Codex 같은 코딩 에이전트에 persistent context를 덧붙이는 메모리 도구다. 세션 간 기억 보존이 여전히 사용자 고통점이라는 점을 직접 보여준다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a></h3>
+          <div><span class="badge">71,325 stars</span><span class="badge">최근 push 2026-06-16</span></div>
+          <p>sandbox, memory, tools, skills, subagents를 엮은 long-horizon superagent 하네스다. 장기 실행 업무를 코드 생성보다 상위 문제로 보는 흐름과 맞닿아 있다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/earendil-works/pi">earendil-works/pi</a></h3>
+          <div><span class="badge">63,254 stars</span><span class="badge">최근 push 2026-06-16</span></div>
+          <p>통합 LLM API, agent loop, TUI, coding agent CLI를 묶은 TypeScript 기반 도구다. 여러 모델과 실행 표면을 한 번에 다루려는 수요가 강하다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/code-yeongyu/oh-my-openagent">code-yeongyu/oh-my-openagent</a></h3>
+          <div><span class="badge">62,465 stars</span><span class="badge">최근 push 2026-06-16</span></div>
+          <p>복잡한 코드베이스용 코딩 에이전트 하네스를 지향한다. 사용자는 더 이상 단일 챗 인터페이스보다 절차와 역할 분리가 있는 운영 레이어를 원한다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></h3>
+          <div><span class="badge">61,118 stars</span><span class="badge">최근 push 2026-06-16</span></div>
+          <p>생산 환경용 engineering skills 모음이다. 프롬프트 한 번보다 재사용 가능한 작업 단위와 절차화된 skill이 더 중요해졌다는 것을 보여준다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/colbymchenry/codegraph">colbymchenry/codegraph</a></h3>
+          <div><span class="badge">50,265 stars</span><span class="badge">최근 push 2026-06-16</span></div>
+          <p>Claude Code, Codex 등에 붙일 수 있는 pre-indexed local code knowledge graph다. 큰 코드베이스에서 "검색 가능한 맥락"이 모델 자체만큼 중요해졌다는 뜻이다.</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/hashgraph-online/hol-guard">hashgraph-online/hol-guard</a></h3>
+          <div><span class="badge">356 stars</span><span class="badge">최근 push 2026-06-16</span></div>
+          <p>developer agents, plugins, skills, MCP를 대상으로 한 보안 스캐너 성격의 저장소다. 에이전트 채택이 늘면서 공급망과 실행 권한 감시도 별도 제품군이 되고 있다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="signals">
+      <h2>관찰 포인트</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>1. 메모리와 장기 작업</h3>
+          <p>세션 메모리와 long-horizon agent 하네스가 상위권에 꾸준히 보이는 점은, 사용자가 아직도 "한 번에 끝나는 코드 생성"보다 "계속 이어지는 작업"에 더 큰 불편을 느낀다는 뜻이다.</p>
+        </article>
+        <article class="card">
+          <h3>2. 스킬과 절차의 상품화</h3>
+          <p>agent-skills, openagent 계열은 좋은 모델보다 좋은 절차가 실무 품질을 더 좌우한다는 방향을 반영한다. 팀 표준화가 경쟁력이 되고 있다.</p>
+        </article>
+        <article class="card">
+          <h3>3. 검색 가능 맥락과 보안</h3>
+          <p>code graph와 security guard가 같이 뜨는 것은, 정확한 검색과 안전한 실행이 도입 장벽의 양쪽 끝이라는 점을 보여준다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending</a></li>
+        <li><a href="https://github.com/trending?since=weekly">GitHub Trending Weekly</a></li>
+        <li>GitHub Search API metadata 조회: 최근 push와 설명, star 수 기준 보강</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

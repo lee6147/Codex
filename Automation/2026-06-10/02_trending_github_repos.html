@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending AI 개발 레포트 - 2026-06-10</title>
+  <style>
+    :root { --bg:#f5f7fb; --panel:#fff; --ink:#17202a; --muted:#5d6978; --line:#d9e1ec; --accent:#0f766e; --soft:#e7f7f4; --ok:#dff7ea; --warn:#fff3d6; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Noto Sans KR",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
+    .container { width:min(1080px,calc(100vw - 32px)); margin:28px auto 56px; }
+    .hero { background:#143832; color:white; border-radius:8px; padding:28px; margin-bottom:18px; }
+    .hero h1 { margin:0 0 8px; font-size:2rem; }
+    .hero p { margin:4px 0; color:#d9f1ec; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:18px; }
+    .stat { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:12px; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:20px; margin:16px 0; }
+    h2 { margin:0 0 12px; font-size:1.35rem; }
+    h3 { margin:0 0 8px; }
+    a { color:var(--accent); }
+    .toc ol { margin:0; padding-left:22px; }
+    .summary { background:var(--soft); border-left:5px solid var(--accent); padding:14px; border-radius:8px; }
+    .repo { border:1px solid var(--line); border-radius:8px; padding:16px; margin:12px 0; background:#fff; }
+    .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 10px; }
+    .badge { background:var(--soft); color:#075e56; border-radius:999px; padding:3px 9px; font-size:.82rem; font-weight:700; }
+    .badge.ok { background:var(--ok); color:#17633a; }
+    .badge.warn { background:var(--warn); color:#775500; }
+    .meta { color:var(--muted); font-size:.92rem; }
+    .sources li { margin:7px 0; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>GitHub Trending AI 개발 레포트</h1>
+      <p>생성일: 2026-06-10 | 조사 기준: GitHub Trending Today 스냅샷 | 출처: GitHub Trending</p>
+      <div class="grid">
+        <div class="stat"><strong>선정 수</strong><br>AI, 코딩, 개발 생산성과 연결성이 높은 9개 저장소만 유지.</div>
+        <div class="stat"><strong>강한 패턴</strong><br>skills, agent memory, knowledge base, system prompt archive가 반복 등장.</div>
+        <div class="stat"><strong>해석 주의</strong><br>Star 수와 daily stars는 조회 시점 기준이며 하루 중 변동될 수 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#trend">트렌드 해석</a></li>
+        <li><a href="#repos">선정 저장소</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel" id="trend">
+      <h2>트렌드 해석</h2>
+      <div class="summary">
+        오늘의 GitHub Trending은 에이전트를 직접 만드는 저장소보다 “에이전트가 더 잘 일하게 만드는 주변 레이어”가 강하다. 주제는 skill 패키징, 지식베이스 관리, 로컬 LLM 벤치마킹, Claude Code 기반 업무 운영, 시스템 프롬프트 관찰로 갈린다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 저장소</h2>
+      <article class="repo">
+        <h3>1. mvanhorn/last30days-skill</h3>
+        <div class="badges"><span class="badge ok">Python</span><span class="badge">36,709 stars</span><span class="badge">3,177 stars today</span></div>
+        <p>Reddit, X, YouTube, HN, Polymarket, web을 조사해 grounded summary를 만드는 AI agent skill이다. Claude Code, Cursor, Codex 사용자에게는 반복 리서치 작업을 skill로 포장하는 예시가 된다.</p>
+        <p class="meta">URL: <a href="https://github.com/mvanhorn/last30days-skill">https://github.com/mvanhorn/last30days-skill</a> | 한줄 총평: 리서치 자동화가 독립 앱보다 agent skill 단위로 이동하는 신호.</p>
+      </article>
+      <article class="repo">
+        <h3>2. refactoringhq/tolaria</h3>
+        <div class="badges"><span class="badge ok">TypeScript</span><span class="badge">14,169 stars</span><span class="badge">821 stars today</span></div>
+        <p>Markdown knowledge base를 관리하는 데스크톱 앱이다. 에이전트가 생성한 문서, 회의록, 조사 결과가 늘어날수록 Markdown 기반 지식 관리가 개발 생산성 도구의 일부가 된다.</p>
+        <p class="meta">URL: <a href="https://github.com/refactoringhq/tolaria">https://github.com/refactoringhq/tolaria</a> | 한줄 총평: AI 산출물 축적 뒤에 오는 지식베이스 정리 수요를 보여준다.</p>
+      </article>
+      <article class="repo">
+        <h3>3. aaif-goose/goose</h3>
+        <div class="badges"><span class="badge ok">Rust</span><span class="badge">48,391 stars</span><span class="badge">490 stars today</span></div>
+        <p>코드 제안 수준을 넘어 설치, 실행, 수정, 테스트까지 수행하는 오픈소스 AI agent다. 상용 도구 의존도를 낮추거나 자체 agent harness를 실험하려는 팀에게 비교 기준이 된다.</p>
+        <p class="meta">URL: <a href="https://github.com/aaif-goose/goose">https://github.com/aaif-goose/goose</a> | 한줄 총평: Claude Code/Codex와 견줄 오픈 에이전트 런타임 후보.</p>
+      </article>
+      <article class="repo">
+        <h3>4. Andyyyy64/whichllm</h3>
+        <div class="badges"><span class="badge ok">Python</span><span class="badge">3,940 stars</span><span class="badge">631 stars today</span></div>
+        <p>로컬 하드웨어에서 실제로 잘 도는 LLM을 recency-aware benchmark로 찾는 도구다. AI 코딩 도구의 비용이 커지는 시점에 로컬 모델 평가와 라우팅은 실무적으로 중요해진다.</p>
+        <p class="meta">URL: <a href="https://github.com/Andyyyy64/whichllm">https://github.com/Andyyyy64/whichllm</a> | 한줄 총평: 모델 선택을 감이 아니라 로컬 측정으로 바꾸려는 흐름.</p>
+      </article>
+      <article class="repo">
+        <h3>5. x1xhlol/system-prompts-and-models-of-ai-tools</h3>
+        <div class="badges"><span class="badge ok">AI tools archive</span><span class="badge">139,069 stars</span><span class="badge">66 stars today</span></div>
+        <p>Augment Code, Claude Code, Cursor, Devin, Replit, Windsurf 등 여러 AI 도구의 system prompt와 내부 도구 구성을 모아둔 저장소다. 직접 재사용보다 도구 설계와 prompt surface 비교용으로 봐야 한다.</p>
+        <p class="meta">URL: <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools">https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools</a> | 한줄 총평: AI 코딩 도구가 prompt와 tool contract 경쟁으로도 읽힌다.</p>
+      </article>
+      <article class="repo">
+        <h3>6. phuryn/pm-skills</h3>
+        <div class="badges"><span class="badge ok">Skills marketplace</span><span class="badge">13,285 stars</span><span class="badge">808 stars today</span></div>
+        <p>제품관리용 agentic skills, commands, plugins 마켓플레이스다. Codex의 role-specific plugins 흐름과 맞닿아 있고, 비개발자 업무가 skill 묶음으로 재사용되는 방향을 보여준다.</p>
+        <p class="meta">URL: <a href="https://github.com/phuryn/pm-skills">https://github.com/phuryn/pm-skills</a> | 한줄 총평: 코딩 외 업무도 skill 배포 단위로 표준화되는 중.</p>
+      </article>
+      <article class="repo">
+        <h3>7. santifer/career-ops</h3>
+        <div class="badges"><span class="badge ok">JavaScript</span><span class="badge">51,311 stars</span><span class="badge">1,114 stars today</span></div>
+        <p>Claude Code 기반 AI job search system으로 14개 skill modes, Go dashboard, PDF generation, batch processing을 포함한다. AI 코딩 도구가 실제 개인 업무 자동화 제품으로 확장되는 사례다.</p>
+        <p class="meta">URL: <a href="https://github.com/santifer/career-ops">https://github.com/santifer/career-ops</a> | 한줄 총평: Claude Code를 앱 생성기가 아니라 운영 자동화 엔진으로 쓰는 사례.</p>
+      </article>
+      <article class="repo">
+        <h3>8. openai/plugins</h3>
+        <div class="badges"><span class="badge ok">JavaScript</span><span class="badge">2,519 stars</span><span class="badge">284 stars today</span></div>
+        <p>OpenAI Plugins 저장소다. Codex가 역할별 플러그인과 앱 연결을 강조하는 시점에, plugin packaging과 배포 단위 자체가 다시 관심을 받고 있다.</p>
+        <p class="meta">URL: <a href="https://github.com/openai/plugins">https://github.com/openai/plugins</a> | 한줄 총평: Codex 생태계가 plugin inventory와 governance로 커지는 신호.</p>
+      </article>
+      <article class="repo">
+        <h3>9. addyosmani/agent-skills</h3>
+        <div class="badges"><span class="badge ok">Shell</span><span class="badge">49,621 stars</span><span class="badge">348 stars today</span></div>
+        <p>AI coding agents를 위한 production-grade engineering skills 모음이다. Claude Code, Cursor, Codex 모두에서 재사용 가능한 작업 지시, 검증 절차, 운영 패턴이 중요해지는 흐름과 직접 연결된다.</p>
+        <p class="meta">URL: <a href="https://github.com/addyosmani/agent-skills">https://github.com/addyosmani/agent-skills</a> | 한줄 총평: 모델보다 reusable skill 품질이 생산성 차이를 만든다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li>GitHub Trending Today: <a href="https://github.com/trending?since=daily">https://github.com/trending?since=daily</a></li>
+        <li>각 저장소 링크는 GitHub Trending 스냅샷에 표시된 저장소 URL을 기준으로 정리했다.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

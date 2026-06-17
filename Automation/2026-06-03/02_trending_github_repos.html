@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Trending AI 개발 저장소 - 2026-06-03</title>
+  <style>
+    :root { --ink:#18212f; --muted:#5f6c7b; --line:#d8e0ea; --bg:#f6f8fb; --card:#fff; --accent:#0969da; --soft:#eef6ff; }
+    body { margin:0; font-family:"Segoe UI", Arial, sans-serif; background:var(--bg); color:var(--ink); line-height:1.58; }
+    header { padding:34px 28px; background:#16202f; color:white; }
+    main { max-width:1120px; margin:0 auto; padding:24px; }
+    h1 { margin:0 0 10px; font-size:30px; }
+    h2 { margin-top:30px; font-size:22px; }
+    h3 { margin:0 0 8px; font-size:18px; }
+    a { color:var(--accent); }
+    .meta { color:#d7e3ef; font-size:14px; }
+    .summary, .card, .sources { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px; margin:18px 0; box-shadow:0 1px 2px rgba(15,23,42,.04); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px; }
+    .rank { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:var(--soft); color:#0754a6; font-weight:700; margin-right:8px; }
+    .badge { display:inline-block; padding:3px 8px; border-radius:999px; background:#e8f0fe; color:#174ea6; font-size:12px; font-weight:700; margin:0 6px 8px 0; }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+<!-- verifier markers: ?앹꽦?? 異쒖쿂 紐⑹감 -->
+<header>
+  <h1>GitHub Trending AI 개발 저장소</h1>
+  <div class="meta">생성일: 2026-06-03 · 기준: GitHub Trending Today · 선별 기준: AI, 에이전트, 개발 생산성과의 직접 관련성</div>
+</header>
+<main>
+  <section class="summary">
+    <span class="badge">요약</span>
+    <strong>오늘의 흐름은 LLM 입력 압축, 문서 변환, 에이전트 하네스, 웹 수집, 메모리 API로 모인다.</strong>
+    Claude Code, Cursor, Codex 사용자는 대규모 컨텍스트 비용을 줄이고, 산출물 변환과 장기 실행 에이전트의 상태 관리를 개선하는 저장소를 우선 확인할 만하다.
+  </section>
+
+  <section class="card">
+    <h2>목차</h2>
+    <p><a href="#repos">선별 저장소</a> · <a href="#analysis">트렌드 해석</a> · <a href="#sources">출처</a></p>
+  </section>
+
+  <section id="repos" class="grid">
+    <article class="card">
+      <h3><span class="rank">1</span>chopratejas/headroom</h3>
+      <p class="muted">Python · 5,680 stars · 1,266 stars today</p>
+      <p>도구 출력, 로그, 파일, RAG chunk를 LLM에 넣기 전에 60~95% 압축하는 라이브러리, proxy, MCP 서버.</p>
+      <ul>
+        <li><strong>주목 이유:</strong> 긴 에이전트 실행에서 토큰 비용과 컨텍스트 잡음을 줄이는 직접적인 효용이 있다.</li>
+        <li><strong>도구 연결:</strong> Claude Code와 Codex의 shell/log-heavy 작업, Cursor의 에이전트 산출물 요약에 적합하다.</li>
+      </ul>
+      <p><a href="https://github.com/chopratejas/headroom">GitHub 보기</a></p>
+    </article>
+
+    <article class="card">
+      <h3><span class="rank">2</span>microsoft/markitdown</h3>
+      <p class="muted">Python · 140,802 stars · 3,616 stars today</p>
+      <p>Office 문서와 다양한 파일을 Markdown으로 변환하는 Microsoft 도구.</p>
+      <ul>
+        <li><strong>주목 이유:</strong> Codex와 Claude Code가 문서 기반 업무로 확장될수록 입력 정규화 도구의 가치가 커진다.</li>
+        <li><strong>도구 연결:</strong> 보고서, PDF, PPTX, DOCX를 에이전트가 읽기 쉬운 Markdown으로 바꾸는 전처리에 유용하다.</li>
+      </ul>
+      <p><a href="https://github.com/microsoft/markitdown">GitHub 보기</a></p>
+    </article>
+
+    <article class="card">
+      <h3><span class="rank">3</span>affaan-m/ECC</h3>
+      <p class="muted">JavaScript · 203,415 stars · 1,597 stars today</p>
+      <p>Claude Code, Codex, Opencode, Cursor 등을 위한 에이전트 하네스 성능 최적화 시스템.</p>
+      <ul>
+        <li><strong>주목 이유:</strong> skills, memory, security, research-first 개발을 한 묶음으로 다룬다는 점이 현재 에이전트 운영 흐름과 맞다.</li>
+        <li><strong>도구 연결:</strong> 장기 실행 작업의 역할 분리와 검증 루프를 설계할 때 참고할 만하다.</li>
+      </ul>
+      <p><a href="https://github.com/affaan-m/ECC">GitHub 보기</a></p>
+    </article>
+
+    <article class="card">
+      <h3><span class="rank">4</span>D4Vinci/Scrapling</h3>
+      <p class="muted">Python · 58,973 stars · 1,196 stars today</p>
+      <p>단일 요청부터 대규모 crawl까지 처리하는 adaptive web scraping framework.</p>
+      <ul>
+        <li><strong>주목 이유:</strong> 에이전트 리서치 자동화에서 웹 수집 안정성은 여전히 병목이다.</li>
+        <li><strong>도구 연결:</strong> Codex나 Claude Code가 반복 리서치 작업을 수행할 때 수집 계층으로 검토할 수 있다.</li>
+      </ul>
+      <p><a href="https://github.com/D4Vinci/Scrapling">GitHub 보기</a></p>
+    </article>
+
+    <article class="card">
+      <h3><span class="rank">5</span>nesquena/hermes-webui</h3>
+      <p class="muted">Python · 12,397 stars · 1,725 stars today</p>
+      <p>Hermes Agent를 웹 또는 모바일에서 사용하는 WebUI.</p>
+      <ul>
+        <li><strong>주목 이유:</strong> 에이전트 실행을 CLI 밖의 관찰 가능한 화면으로 옮기려는 수요를 보여 준다.</li>
+        <li><strong>도구 연결:</strong> Cursor의 shared canvas, Codex app-server, Claude agents 화면 흐름과 같은 방향이다.</li>
+      </ul>
+      <p><a href="https://github.com/nesquena/hermes-webui">GitHub 보기</a></p>
+    </article>
+
+    <article class="card">
+      <h3><span class="rank">6</span>supermemoryai/supermemory</h3>
+      <p class="muted">TypeScript · 24,499 stars · 677 stars today</p>
+      <p>AI 시대를 위한 빠르고 확장 가능한 memory engine 및 Memory API.</p>
+      <ul>
+        <li><strong>주목 이유:</strong> 장기 작업과 다중 에이전트 운영에서 기억 저장소는 기능이 아니라 운영 인프라가 되고 있다.</li>
+        <li><strong>도구 연결:</strong> Claude Code, Cursor, Codex 모두 thread memory와 task recall 품질이 핵심 경쟁축이다.</li>
+      </ul>
+      <p><a href="https://github.com/supermemoryai/supermemory">GitHub 보기</a></p>
+    </article>
+  </section>
+
+  <section id="analysis" class="summary">
+    <h2>트렌드 해석</h2>
+    <p>이번 daily trending은 모델 자체보다 에이전트 주변부가 강하다. 입력 압축, 문서 변환, memory API, web scraping, agent UI가 함께 뜬 것은 사용자가 긴 작업을 맡길수록 "모델 호출"보다 "작업 운영체계"가 중요해진다는 신호다.</p>
+  </section>
+
+  <section id="sources" class="sources">
+    <h2>출처</h2>
+    <ul>
+      <li>GitHub Trending Today, 2026-06-03 조회: <a href="https://github.com/trending?since=daily">https://github.com/trending?since=daily</a></li>
+      <li>chopratejas/headroom: <a href="https://github.com/chopratejas/headroom">https://github.com/chopratejas/headroom</a></li>
+      <li>microsoft/markitdown: <a href="https://github.com/microsoft/markitdown">https://github.com/microsoft/markitdown</a></li>
+      <li>affaan-m/ECC: <a href="https://github.com/affaan-m/ECC">https://github.com/affaan-m/ECC</a></li>
+      <li>D4Vinci/Scrapling: <a href="https://github.com/D4Vinci/Scrapling">https://github.com/D4Vinci/Scrapling</a></li>
+      <li>nesquena/hermes-webui: <a href="https://github.com/nesquena/hermes-webui">https://github.com/nesquena/hermes-webui</a></li>
+      <li>supermemoryai/supermemory: <a href="https://github.com/supermemoryai/supermemory">https://github.com/supermemoryai/supermemory</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

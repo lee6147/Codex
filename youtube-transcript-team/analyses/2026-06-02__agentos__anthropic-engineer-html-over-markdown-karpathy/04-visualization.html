@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML over Markdown Transcript Advisor</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --ink: #151515;
+      --muted: #5d625f;
+      --line: #d9d0c2;
+      --panel: #fffaf2;
+      --panel-strong: #ffffff;
+      --green: #13795b;
+      --blue: #245f9c;
+      --amber: #98620b;
+      --red: #a23a2a;
+      --teal-soft: #dff1ec;
+      --blue-soft: #e2ecf7;
+      --amber-soft: #f7ead0;
+      --red-soft: #f4ded8;
+      --shadow: 0 18px 48px rgba(57, 45, 28, 0.14);
+      font-family: "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(130deg, rgba(19, 121, 91, 0.11), transparent 30%),
+        linear-gradient(315deg, rgba(36, 95, 156, 0.10), transparent 34%),
+        var(--bg);
+      line-height: 1.58;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      padding: 54px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 32px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: 1.04;
+      letter-spacing: 0;
+      max-width: 980px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .lead {
+      margin-top: 20px;
+      max-width: 720px;
+      font-size: 19px;
+      color: #343836;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      border: 1px solid var(--ink);
+      border-radius: 8px;
+      padding: 11px 15px;
+      background: var(--ink);
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.74);
+      color: var(--ink);
+    }
+
+    .brief {
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 242, 0.92);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .brief .label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .verdict {
+      margin-top: 10px;
+      font-size: 30px;
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    .meters {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .meter-row {
+      display: grid;
+      grid-template-columns: 112px 1fr 54px;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .track {
+      height: 10px;
+      overflow: hidden;
+      background: #e8dfd2;
+      border-radius: 999px;
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .fill.medium {
+      width: 58%;
+      background: var(--amber);
+    }
+
+    .fill.high {
+      width: 78%;
+    }
+
+    .fill.risk {
+      width: 62%;
+      background: var(--red);
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .meta {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #fff;
+    }
+
+    .meta strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .meta span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-head p {
+      max-width: 560px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.74);
+      padding: 18px;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      color: #17372f;
+      background: var(--teal-soft);
+      border: 1px solid rgba(19, 121, 91, 0.20);
+    }
+
+    .tag.blue {
+      color: #173657;
+      background: var(--blue-soft);
+      border-color: rgba(36, 95, 156, 0.18);
+    }
+
+    .tag.amber {
+      color: #684104;
+      background: var(--amber-soft);
+      border-color: rgba(152, 98, 11, 0.20);
+    }
+
+    .tag.red {
+      color: #6f2118;
+      background: var(--red-soft);
+      border-color: rgba(162, 58, 42, 0.20);
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 0.8fr 1.1fr 1.1fr;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .matrix > div {
+      padding: 15px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 90px;
+    }
+
+    .matrix > div:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .matrix > div:nth-last-child(-n + 3) {
+      border-bottom: 0;
+    }
+
+    .matrix .head {
+      min-height: auto;
+      background: #f0e8dc;
+      font-weight: 900;
+      color: #2b2a27;
+    }
+
+    .matrix .axis {
+      font-weight: 900;
+      color: #2b2a27;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .moment {
+      position: relative;
+      border-left: 4px solid var(--blue);
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 8px;
+      padding: 16px 16px 16px 18px;
+      min-height: 164px;
+    }
+
+    .moment:nth-child(2) {
+      border-color: var(--amber);
+    }
+
+    .moment:nth-child(3) {
+      border-color: var(--green);
+    }
+
+    .moment:nth-child(4) {
+      border-color: var(--red);
+    }
+
+    .time {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .prompt {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #151515;
+      color: #fff;
+      padding: 18px;
+    }
+
+    .prompt h3,
+    .prompt p {
+      color: #fff;
+    }
+
+    .prompt pre {
+      margin: 14px 0 0;
+      white-space: pre-wrap;
+      color: #e9e2d7;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .copy {
+      margin-top: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.44);
+      border-radius: 8px;
+      padding: 9px 11px;
+      background: #fff;
+      color: #151515;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 8px;
+      padding: 12px;
+      color: #343836;
+    }
+
+    .status-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .source {
+      border-top: 1px solid var(--line);
+      padding: 26px 0 42px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%) translateY(18px);
+      opacity: 0;
+      pointer-events: none;
+      background: #151515;
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 900;
+      transition: 160ms ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 880px) {
+      .shell {
+        width: min(100% - 28px, 720px);
+      }
+
+      .hero-grid,
+      .split,
+      .prompt-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .timeline,
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix > div,
+      .matrix > div:nth-child(3n),
+      .matrix > div:nth-last-child(-n + 3) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .matrix > div:last-child {
+        border-bottom: 0;
+      }
+
+      .matrix .head {
+        display: none;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Transcript Advisor Artifact · AgentOS · 2026-06-02</div>
+          <h1>Markdown을 버리고 HTML로 가라는 말, 어디까지 믿을까?</h1>
+          <p class="lead">이 대시보드는 YouTube 자동 자막을 기반으로 만든 분석 노트를 HTML artifact로 재구성한 것이다. 결론은 간단하다. 실험해 볼 가치는 높지만, 권위 인용과 제품 능력 주장은 검증 전이다.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#actions">바로 쓸 프롬프트</a>
+            <a class="btn secondary" href="#verification">검증할 주장</a>
+          </div>
+        </div>
+
+        <aside class="brief" aria-label="핵심 판정">
+          <div class="label">Final recommendation</div>
+          <div class="verdict">필요 구간만 시청, 이후 바로 작은 HTML 실험</div>
+          <p style="margin-top: 12px;">이미 agent artifact를 써 봤다면 요약만으로 충분하다. 처음이라면 70초-135초와 249초-330초만 보면 핵심이 잡힌다.</p>
+          <div class="meters" aria-label="판단 지표">
+            <div class="meter-row">
+              <span>실행 가능성</span>
+              <div class="track"><div class="fill high"></div></div>
+              <span>높음</span>
+            </div>
+            <div class="meter-row">
+              <span>직접 시청</span>
+              <div class="track"><div class="fill medium"></div></div>
+              <span>보통</span>
+            </div>
+            <div class="meter-row">
+              <span>검증 리스크</span>
+              <div class="track"><div class="fill risk"></div></div>
+              <span>주의</span>
+            </div>
+          </div>
+          <div class="meta-grid">
+            <div class="meta">
+              <strong>입력</strong>
+              <span>자동 자막 254개</span>
+            </div>
+            <div class="meta">
+              <strong>길이</strong>
+              <span>약 6분 34초</span>
+            </div>
+            <div class="meta">
+              <strong>신뢰도</strong>
+              <span>보통</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>영상이 실제로 말하는 것</h2>
+          <p>영상의 메시지는 Markdown 폐기론이 아니라, 사람이 실제로 읽고 판단해야 하는 복잡한 AI 산출물에는 HTML artifact가 더 나을 수 있다는 주장이다.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="tag">핵심</span>
+            <strong>긴 Markdown은 잘 안 읽힌다</strong>
+            <p>AI가 만든 100줄 이상의 계획서나 스펙은 작성은 쉽지만 검토율이 낮아질 수 있다.</p>
+          </article>
+          <article class="card">
+            <span class="tag blue">전환</span>
+            <strong>HTML은 시각과 인터랙션을 담는다</strong>
+            <p>색, 레이아웃, SVG, 슬라이더, 버튼, 드래그 카드 같은 요소로 판단 비용을 줄인다.</p>
+          </article>
+          <article class="card">
+            <span class="tag amber">주의</span>
+            <strong>권위 인용은 아직 검증 전</strong>
+            <p>Anthropic 엔지니어 글과 Karpathy 트윗은 원문 확인 전까지 그대로 인용하면 안 된다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>Markdown과 HTML의 선택 기준</h2>
+          <p>HTML-first가 항상 답은 아니다. 짧은 기록은 Markdown이 낫고, 판단해야 하는 복잡한 산출물은 HTML 실험 가치가 있다.</p>
+        </div>
+        <div class="matrix" role="table" aria-label="Markdown HTML 비교">
+          <div class="head">기준</div>
+          <div class="head">Markdown 유지</div>
+          <div class="head">HTML artifact 요청</div>
+
+          <div class="axis">문서 목적</div>
+          <div>장기 보존, git diff, 간단한 메모, 텍스트 중심 decision note</div>
+          <div>스펙 비교, PR 리뷰, 리서치 요약, 우선순위 보드, 시각적 판단</div>
+
+          <div class="axis">강점</div>
+          <div>가볍고 검색/버전관리가 쉽다. 원문 근거와 결정 기록을 오래 남기기 좋다.</div>
+          <div>정보 밀도, 시각적 구분, 인터랙션, 복사 버튼으로 다음 행동까지 빠르게 이어진다.</div>
+
+          <div class="axis">비용</div>
+          <div>긴 문서는 읽지 않고 넘길 위험이 있다. 표와 다이어그램 표현력이 제한된다.</div>
+          <div>토큰과 응답 시간이 늘고, diff가 지저분하며, 공유 보안과 보존 전략이 필요하다.</div>
+
+          <div class="axis">추천 방식</div>
+          <div>결론과 근거는 Markdown으로 남긴다.</div>
+          <div>복잡한 판단 화면은 HTML로 만들고, 최종 결정은 짧은 Markdown으로 다시 기록한다.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>볼 만한 구간</h2>
+          <p>전체를 다 볼 필요는 낮다. 자막 기준으로 핵심 주장과 단점, 활용 시나리오가 몰린 구간만 보면 된다.</p>
+        </div>
+        <div class="timeline">
+          <article class="moment">
+            <div class="time">0:70-2:15</div>
+            <h3>HTML로 바꾸는 다섯 이유</h3>
+            <p>정보 밀도, 시각적 명확성, 공유성, 양방향 인터랙션, Claude Code의 맥락 흡수력을 설명한다.</p>
+          </article>
+          <article class="moment">
+            <div class="time">2:25-4:03</div>
+            <h3>단점 인정</h3>
+            <p>토큰 사용량 증가, 응답 시간, 지저분한 git diff를 비용으로 제시한다.</p>
+          </article>
+          <article class="moment">
+            <div class="time">4:09-5:30</div>
+            <h3>활용 시나리오</h3>
+            <p>스펙 비교, PR 설명, 디자인 프로토타입, 연구 리포트, 커스텀 티켓 에디터를 든다.</p>
+          </article>
+          <article class="moment">
+            <div class="time">검증 전</div>
+            <h3>외부 인용</h3>
+            <p>Anthropic 엔지니어와 Karpathy 언급은 원문 확인 전에는 결론의 근거로 쓰지 않는다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="actions">
+      <div class="shell">
+        <div class="section-head">
+          <h2>바로 쓸 프롬프트</h2>
+          <p>아래 문구는 follow-up 노트의 추천 프롬프트를 실험용으로 다듬은 것이다. 버튼을 누르면 클립보드에 복사된다.</p>
+        </div>
+        <div class="prompt-grid">
+          <article class="prompt">
+            <h3>복잡한 분석을 HTML로 바꾸기</h3>
+            <pre id="promptArtifact">이 내용을 Markdown 보고서가 아니라 한 파일짜리 HTML artifact로 만들어줘.
+탭 구조, 위험도 색상, 비교표, 근거/미확인 주장 구분, copy prompt 버튼을 포함해줘.
+민감 정보가 있으면 별도 섹션으로 표시하고 외부 공유 금지 문구를 넣어줘.</pre>
+            <button class="copy" type="button" data-copy="promptArtifact">프롬프트 복사</button>
+          </article>
+          <article class="prompt">
+            <h3>PR 리뷰 대시보드 만들기</h3>
+            <pre id="promptReview">이 PR을 reviewer가 빠르게 판단할 수 있는 HTML 대시보드로 설명해줘.
+파일별 변경 의도, 위험도, 테스트 공백, 확인 질문, 승인 전 체크리스트를 포함해줘.</pre>
+            <button class="copy" type="button" data-copy="promptReview">프롬프트 복사</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="verification">
+      <div class="shell split">
+        <div>
+          <h2>검증 전에는 믿지 말 것</h2>
+          <p style="margin-top: 12px;">이 HTML은 분석 Markdown을 시각화한 것이지, 외부 fact check를 끝낸 결과가 아니다. 권위 인용과 제품 능력 주장은 별도 확인이 필요하다.</p>
+          <div class="status-line">
+            <span class="tag red">인용 주의</span>
+            <span class="tag amber">자동 자막 기반</span>
+            <span class="tag blue">실무 팁은 실험 가능</span>
+          </div>
+        </div>
+        <ul class="checklist">
+          <li>Anthropic 또는 Claude Code 엔지니어 원문 글의 실제 작성자, 문맥, 문구 확인</li>
+          <li>Karpathy 트윗의 정확한 표현과 영상의 해석이 일치하는지 확인</li>
+          <li>HTML이 Markdown보다 토큰을 2-4배 더 쓴다는 수치 검증</li>
+          <li>로컬 파일, git history, MCP 데이터 시각화가 어떤 권한과 보안 경계에서 가능한지 확인</li>
+          <li>S3나 링크 공유 시 내부 데이터가 HTML에 포함되지 않는지 확인</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>실험 설계</h2>
+          <p>영상의 조언은 논쟁보다 실험으로 판단하는 편이 빠르다. 기존 긴 Markdown 하나를 골라 같은 입력으로 HTML 버전을 생성하고 아래 네 가지를 비교한다.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="tag">1</span>
+            <strong>읽은 시간</strong>
+            <p>처음부터 끝까지 실제로 검토하는 데 걸린 시간을 비교한다.</p>
+          </article>
+          <article class="card">
+            <span class="tag blue">2</span>
+            <strong>놓친 위험</strong>
+            <p>Markdown에서는 지나쳤고 HTML에서는 발견한 위험이나 결정을 기록한다.</p>
+          </article>
+          <article class="card">
+            <span class="tag amber">3</span>
+            <strong>다음 액션 속도</strong>
+            <p>복사 버튼, 체크리스트, 비교표가 실제 후속 작업을 줄였는지 본다.</p>
+          </article>
+          <article class="card">
+            <span class="tag red">4</span>
+            <strong>보존 비용</strong>
+            <p>git diff, 장기 보관, 접근성, 보안 공유 비용이 감당 가능한지 판단한다.</p>
+          </article>
+          <article class="card">
+            <span class="tag">결론</span>
+            <strong>둘 다 남기는 전략</strong>
+            <p>복잡한 판단은 HTML, 최종 결정과 근거는 짧은 Markdown으로 남기는 조합이 가장 안전하다.</p>
+          </article>
+          <article class="card">
+            <span class="tag blue">다음 영상</span>
+            <strong>함께 볼 유형</strong>
+            <p>Claude Code/Codex artifact 생성, PR review automation, MCP data visualization, HTML artifact 보안을 추천한다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="source">
+    <div class="shell">
+      근거 파일: <code>00-intake.md</code>, <code>01-analysis.md</code>, <code>02-followup.md</code>, <code>transcript/transcript-part-01.md</code>.
+      이 파일은 transcript-only 분석을 HTML로 재구성한 산출물이다.
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">복사했습니다</div>
+
+  <script>
+    const toast = document.getElementById("toast");
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 1500);
+    }
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+    }
+
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const target = document.getElementById(button.dataset.copy);
+        if (!target) return;
+        try {
+          await copyText(target.textContent.trim());
+          showToast("프롬프트를 복사했습니다");
+        } catch (error) {
+          showToast("복사에 실패했습니다");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
