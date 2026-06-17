@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 저장소 보고서 - 2026-06-18</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5d6878;
+      --line: #dbe2ea;
+      --link: #0f5fa6;
+      --hero: linear-gradient(135deg, #143b37 0%, #25755e 100%);
+      --soft: #ebfbf4;
+      --warn: #fff4d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+    }
+    .wrap {
+      width: min(1100px, calc(100vw - 32px));
+      margin: 28px auto 56px;
+    }
+    header {
+      background: var(--hero);
+      color: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    h2 { margin: 0 0 14px; font-size: 1.28rem; }
+    h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    a { color: var(--link); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .summary { background: var(--soft); }
+    .notice { background: var(--warn); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+    }
+    .card + .card { margin-top: 14px; }
+    .badge {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #e8f5ef;
+      color: #16644f;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>GitHub 트렌딩 저장소 보고서</h1>
+      <p>생성일: 2026-06-18 | 조사 기준: GitHub Trending Repositories today 페이지를 2026-06-18에 확인하고, AI 및 개발 생산성 연관 저장소만 선별</p>
+      <div class="hero-grid">
+        <div class="stat"><strong>관측 포인트</strong><br>오늘 트렌딩 상단에는 에이전트가 인터넷을 읽고, skills를 재사용하고, 샌드박스를 제어하는 저장소가 강하게 올라왔다.</div>
+        <div class="stat"><strong>선정 방식</strong><br>순위는 단순 stars today보다 "코딩 에이전트/개발 생산성 직접성"을 더 크게 반영했다. 순수 학습 자료나 범용 앱은 제외했다.</div>
+        <div class="stat"><strong>실무 연결</strong><br>Claude Code, Cursor, Codex처럼 에이전트형 코딩 도구가 커질수록 외부 검색, skills 묶음, 운영 메서드, 샌드박스 라이브러리 수요가 함께 커진다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#selection">선정 메모</a></li>
+        <li><a href="#repos">저장소 카드</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약</h2>
+      <p>2026-06-18 GitHub Trending을 보면 개발자 관심은 "새 모델 발표"보다 "에이전트를 실제로 굴리기 위한 도구층"에 몰린다. Agent-Reach는 에이전트에 외부 웹 시야를 붙이고, superpowers와 skills는 에이전트 작업 방식을 재사용 가능한 규칙 묶음으로 만든다. meshery는 운영 복잡도를 낮추는 플랫폼 쪽이고, rlm은 샌드박스 포함 추론 런타임 실험을 밀어준다. 즉 트렌딩의 무게중심이 코드 자동완성보다 오케스트레이션, 탐색, 검증 보강으로 이동하고 있다.</p>
+    </section>
+
+    <section class="panel notice" id="selection">
+      <h2>선정 메모</h2>
+      <p>GitHub Trending today 페이지는 언어와 분야를 넓게 보여 주기 때문에, 여기서는 AI 코딩/개발 생산성과 연결이 약한 저장소는 의도적으로 뺐다. stars 수치는 GitHub Trending 페이지에서 2026-06-18 조회 시점 기준으로 읽었다.</p>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>저장소 카드</h2>
+      <article class="card">
+        <h3>1. Panniantong / Agent-Reach</h3>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">33,008 stars</span>
+          <span class="badge">1,154 stars today</span>
+        </div>
+        <p><strong>주요 테마:</strong> AI agent에게 Twitter, Reddit, YouTube, GitHub 등 외부 웹을 읽고 검색하는 시야를 붙이는 CLI.</p>
+        <p><strong>왜 지금 주목받나:</strong> "에이전트가 코드는 짜도 바깥 근거를 읽지는 못한다"는 약점을 메우는 저장소라서 agent workflow 수요와 정확히 맞물린다.</p>
+        <p><strong>Claude Code / Cursor / Codex 연결:</strong> 세 도구 모두 브라우저나 웹 검색 통합이 중요해지는 흐름인데, Agent-Reach는 그 바깥 탐색층을 오픈소스로 제공하는 느낌이다.</p>
+        <p><strong>시장 메모:</strong> 에이전트 경쟁이 모델 품질에서 "관측 가능한 외부 세계" 경쟁으로 넘어가고 있다는 신호다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/Panniantong/Agent-Reach">https://github.com/Panniantong/Agent-Reach</a></p>
+      </article>
+
+      <article class="card">
+        <h3>2. obra / superpowers</h3>
+        <div>
+          <span class="badge">Shell</span>
+          <span class="badge">230,866 stars</span>
+          <span class="badge">1,109 stars today</span>
+        </div>
+        <p><strong>주요 테마:</strong> agentic skills framework와 소프트웨어 개발 방법론을 묶은 저장소.</p>
+        <p><strong>왜 지금 주목받나:</strong> 에이전트 성능 차이가 프롬프트보다 운영 방식, 역할 분리, 검증 루프에서 더 크게 드러나기 시작했기 때문이다.</p>
+        <p><strong>Claude Code / Cursor / Codex 연결:</strong> 세 도구 모두 longer-running task와 rules/skills 재사용이 핵심이어서, superpowers 같은 메서드 저장소가 곧 실무 생산성 레이어가 된다.</p>
+        <p><strong>시장 메모:</strong> 개발자는 더 이상 "어떤 모델을 쓸까"만 보지 않고 "어떤 작업 규약으로 굴릴까"를 따지기 시작했다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/obra/superpowers">https://github.com/obra/superpowers</a></p>
+      </article>
+
+      <article class="card">
+        <h3>3. mattpocock / skills</h3>
+        <div>
+          <span class="badge">Shell</span>
+          <span class="badge">133,261 stars</span>
+          <span class="badge">1,849 stars today</span>
+        </div>
+        <p><strong>주요 테마:</strong> 실제 엔지니어의 <code>.claude</code> 디렉터리에서 나온 skills 모음.</p>
+        <p><strong>왜 지금 주목받나:</strong> reusable skill pack은 개인 프롬프트보다 공유와 검증이 쉽고, 팀 표준화에 바로 연결된다.</p>
+        <p><strong>Claude Code / Cursor / Codex 연결:</strong> Claude Code에서는 바로 맥락이 맞고, Cursor와 Codex에서도 rules, workflows, checklists를 재사용하는 철학이 동일하다.</p>
+        <p><strong>시장 메모:</strong> skill 패키징 자체가 새로운 개발 자산이 되고 있다. 코드뿐 아니라 에이전트 운영 노하우가 저장소 형태로 거래되는 셈이다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/mattpocock/skills">https://github.com/mattpocock/skills</a></p>
+      </article>
+
+      <article class="card">
+        <h3>4. meshery / meshery</h3>
+        <div>
+          <span class="badge">TypeScript</span>
+          <span class="badge">10,983 stars</span>
+          <span class="badge">199 stars today</span>
+        </div>
+        <p><strong>주요 테마:</strong> cloud native manager. 인프라와 운영면의 복잡도를 낮추는 플랫폼.</p>
+        <p><strong>왜 지금 주목받나:</strong> 에이전트가 코드를 더 많이 만들수록 배포, 관찰, 운영 정합성 문제가 뒤따르기 때문에 DevOps 생산성 층이 다시 주목받는다.</p>
+        <p><strong>Claude Code / Cursor / Codex 연결:</strong> 세 도구가 산출물을 만드는 속도를 높일수록, Meshery 같은 운영 조정 레이어가 병목 완화 수단이 된다.</p>
+        <p><strong>시장 메모:</strong> AI 코딩 툴의 성장 수혜는 코드 생성기만이 아니라 운영 플랫폼에도 분산된다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/meshery/meshery">https://github.com/meshery/meshery</a></p>
+      </article>
+
+      <article class="card">
+        <h3>5. alexzhang13 / rlm</h3>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">4,866 stars</span>
+          <span class="badge">37 stars today</span>
+        </div>
+        <p><strong>주요 테마:</strong> recursive language model용 추론 라이브러리. 여러 sandboxes 지원이 눈에 띈다.</p>
+        <p><strong>왜 지금 주목받나:</strong> 에이전트가 단발성 응답이 아니라 재귀적 계획과 검증을 수행하려면 추론 런타임과 샌드박스 설계가 중요해지기 때문이다.</p>
+        <p><strong>Claude Code / Cursor / Codex 연결:</strong> 직접적인 IDE 도구는 아니지만, agent runtime 연구가 실무형 coding agents의 다음 최적화 포인트와 맞닿아 있다.</p>
+        <p><strong>시장 메모:</strong> 2026년의 트렌드는 단순 completions보다 planner/runtime 아키텍처 쪽으로도 넓어지고 있다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/alexzhang13/rlm">https://github.com/alexzhang13/rlm</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending - Repositories</a> (2026-06-18 조회)</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
