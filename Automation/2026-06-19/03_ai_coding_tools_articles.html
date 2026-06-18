@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 동향 - 2026-06-19</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5d6a7b;
+      --line: #dbe2ea;
+      --blue: #0f5fa6;
+      --hero: linear-gradient(135deg, #3a2412 0%, #8a5528 100%);
+      --soft: #fff7e6;
+      --warn: #ffe9c2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+    }
+    .wrap {
+      width: min(1100px, calc(100vw - 32px));
+      margin: 28px auto 56px;
+    }
+    header {
+      background: var(--hero);
+      color: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    h2 { margin: 0 0 14px; font-size: 1.28rem; }
+    h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    a { color: var(--blue); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .summary { background: var(--soft); }
+    .notice { background: var(--warn); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+    }
+    .card + .card { margin-top: 14px; }
+    .badge {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #eef4ff;
+      color: #174e83;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>AI 코딩 도구 기사 동향</h1>
+      <p>생성일: 2026-06-19 | 기사 조사 기간: 최근 2일 우선 검색 후 기사량이 부족해 최근 7일(2026-06-13~2026-06-19)로 확장</p>
+      <div class="meta">
+        <div class="stat"><strong>확장 사유</strong><br>최근 2일 창만으로는 Claude Code와 OpenAI Codex를 균형 있게 다룬 기사량이 부족했다. 따라서 최근 7일 창으로 넓히고, 이 사실을 본문과 종합 Markdown에 명시한다.</div>
+        <div class="stat"><strong>공통 흐름</strong><br>기사들은 기능 소개보다 기업 도입 통제, 토큰 비용 관리, 대형 인수, 장기 실행 인프라 같은 운영 문제를 더 많이 다뤘다.</div>
+        <div class="stat"><strong>관찰 포인트</strong><br>Cursor는 기업 가치와 인수 기사, Claude Code는 비용·보안·거버넌스 기사, Codex는 장기 실행 환경과 제품 통합 기사 비중이 높았다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#window">조사 기간 메모</a></li>
+        <li><a href="#claude">Claude Code 관련 기사</a></li>
+        <li><a href="#cursor">Cursor 관련 기사</a></li>
+        <li><a href="#codex">OpenAI Codex 관련 기사</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약</h2>
+      <p>이번 주 기사 흐름에서 가장 두드러진 메시지는 “AI 코딩 도구는 이제 단순 기능 경쟁이 아니라 운영 체계 경쟁”이라는 점이다. Claude Code 쪽 기사는 토큰 통제와 데이터 보존 정책이 기업 채택을 어떻게 바꾸는지 보여 줬고, Cursor 쪽은 대형 인수와 자체 모델/컴퓨트 확보가 시장 판도를 흔드는 신호로 읽혔다. Codex 쪽은 장기 실행 인프라와 제품 통합이 핵심 서사였다.</p>
+    </section>
+
+    <section class="panel notice" id="window">
+      <h2>조사 기간 메모</h2>
+      <p>이번 실행에서는 최근 2일 기사만으로 세 도구를 균형 있게 다루기 어려웠다. 특히 Claude Code와 Codex는 최근 2일 순수 기사량이 얇고, Cursor만 대형 인수 기사로 과대표집되는 경향이 있었다. 그래서 기사 검색 창을 최근 7일(2026-06-13~2026-06-19)로 넓혔고, 각 카드에 날짜를 분명히 적었다.</p>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code 관련 기사</h2>
+      <article class="card">
+        <h3>Disney: Claude와 Cursor는 계속 쓰되, 실패하는 AI-coded 제품은 줄여라</h3>
+        <div>
+          <span class="badge">Times of India</span>
+          <span class="badge">2026-06-15</span>
+          <span class="badge">기업 도입</span>
+        </div>
+        <p>Times of India 보도에 따르면 Disney는 지난해부터 Claude와 Cursor 사용을 확대했지만, 최근에는 토큰 추적과 개발 속도 향상은 유지하되 출시 후 실패하는 AI-coded 제품은 줄이라고 엔지니어에게 주문했다. 기사 본문에는 “tokenmaxxing”을 경계하고, AI Adoption Dashboard로 사용량을 보되 품질과 복원력도 함께 보겠다는 메시지가 나온다.</p>
+        <p>이 기사는 Claude Code의 경쟁력이 단순 생산성 수치만으로 유지되지 않는다는 점을 보여 준다. 대기업 환경에서는 “얼마나 빠른가”와 동시에 “실패 비용을 얼마나 낮출 수 있는가”가 같은 무게로 평가된다.</p>
+        <p class="muted">출처 메모: 업계 기사 | 링크: <a href="https://timesofindia.indiatimes.com/technology/tech-news/almost-a-year-after-giving-engineers-access-to-claude-and-cursor-disney-tells-engineers-minimise-ai-coded-products-that-/articleshow/131728705.cms">Times of India</a></p>
+      </article>
+      <article class="card">
+        <h3>Microsoft 임시 금지 기사: 데이터 보존 정책이 채택 속도를 되돌릴 수 있다</h3>
+        <div>
+          <span class="badge">Windows Central</span>
+          <span class="badge">2026-06-12</span>
+          <span class="badge">보안/거버넌스</span>
+        </div>
+        <p>Windows Central은 Anthropic의 새 데이터 보존 정책 때문에 Microsoft가 Claude Fable 5 사용을 임시로 금지했다고 전했다. 기사에 따르면 프롬프트와 출력은 최대 30일, 안전 시스템에 걸린 콘텐츠는 최대 2년까지 보존될 수 있다. 같은 기사에는 Microsoft가 2025년 12월부터 Claude Code를 도입해 왔지만 2026-06-30 종료 예정이라는 내용도 포함된다.</p>
+        <p>직접적인 Claude Code 기사라기보다 Claude 생태계 기사에 가깝지만, 실무적으로는 매우 중요하다. 코딩 에이전트 채택을 막는 요인이 모델 성능보다 데이터 보존 정책과 내부 법무 검토일 수 있다는 점을 드러낸다.</p>
+        <p class="muted">출처 메모: 업계 기사 | 링크: <a href="https://www.windowscentral.com/artificial-intelligence/microsoft-temporarily-ban-employees-from-using-claude-fable-5-ai">Windows Central</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor 관련 기사</h2>
+      <article class="card">
+        <h3>AP: SpaceX의 600억 달러 Cursor 인수는 AI 코딩 시장의 배급권 싸움</h3>
+        <div>
+          <span class="badge">AP</span>
+          <span class="badge">2026-06-16</span>
+          <span class="badge">인수</span>
+        </div>
+        <p>AP는 SpaceX가 Cursor를 600억 달러에 인수하기로 했고, 이 거래가 Anthropic과 OpenAI에 맞서려는 전략의 일부라고 보도했다. 기사 요지는 Cursor의 “expert software engineers에 대한 distribution”과 사용자 기반이 SpaceX/xAI에 전략 자산이 된다는 것이다.</p>
+        <p>이는 Cursor를 단순 IDE 스타트업이 아니라, 고급 개발자 접근권과 코딩 상호작용 데이터까지 포함한 인프라 자산으로 재평가하는 기사다. 제품 기능보다 소유 구조와 데이터/컴퓨트 결합이 더 큰 뉴스가 되었다.</p>
+        <p class="muted">출처 메모: 뉴스 기사 | 링크: <a href="https://apnews.com/article/a5c60fcbaaca262cf107d30f1de899ef">AP</a></p>
+      </article>
+      <article class="card">
+        <h3>Business Insider 프로필: Cursor는 Anthropic 의존에서 Composer 체계로 빠르게 이동 중</h3>
+        <div>
+          <span class="badge">Business Insider</span>
+          <span class="badge">2026-06-15</span>
+          <span class="badge">시장 해석</span>
+        </div>
+        <p>Business Insider는 Michael Truell 프로필 기사에서 Cursor가 Anthropic의 경쟁 제품 등장 이후 자체 Composer 계열 모델 개발로 방향을 틀었고, 최신 Composer 2.5는 대부분 자사 작업물이라는 점을 조명했다. 동시에 SpaceX와의 컴퓨트 결합이 왜 필요한지도 함께 설명했다.</p>
+        <p>이 기사는 Cursor의 위험과 기회를 동시에 보여 준다. 빠른 성장의 핵심은 제품 UX였지만, 다음 단계 경쟁력은 모델 독립성과 컴퓨트 조달 능력에 더 가까워지고 있다.</p>
+        <p class="muted">출처 메모: 업계 기사 | 링크: <a href="https://www.businessinsider.com/cursor-ceo-michael-truell-spacex-elon-musk-anthropic-2026-6">Business Insider</a></p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex 관련 기사</h2>
+      <article class="card">
+        <h3>TechRadar: Ona 인수는 Codex를 장기 실행형 에이전트로 밀어 올리는 신호</h3>
+        <div>
+          <span class="badge">TechRadar</span>
+          <span class="badge">2026-06-12</span>
+          <span class="badge">인프라</span>
+        </div>
+        <p>TechRadar는 OpenAI의 Ona 인수 계획이 Codex 팀으로 흡수될 수 있으며, secure persistent environments가 장기 실행 작업을 가능하게 해 줄 것이라고 전했다. 기사 본문은 Codex가 코딩 보조도구에서 더 넓은 업무 도구로 진화하고 있고, Ona의 환경 계층이 그 확장을 떠받칠 것이라고 해석한다.</p>
+        <p>이는 Codex 경쟁력이 단순 모델 출력보다 “얼마나 오래 상태를 유지하며 일을 계속하느냐”로 이동하고 있다는 강한 외부 신호다.</p>
+        <p class="muted">출처 메모: 업계 기사 | 링크: <a href="https://www.techradar.com/pro/openais-latest-acquisition-could-see-big-changes-on-the-way-for-its-codex-coding-assistant">TechRadar</a></p>
+      </article>
+      <article class="card">
+        <h3>Wired 인터뷰: Codex는 개발자 도구에서 ChatGPT 슈퍼앱 구성요소로 편입되는 중</h3>
+        <div>
+          <span class="badge">Wired</span>
+          <span class="badge">2026-06-12</span>
+          <span class="badge">제품 전략</span>
+        </div>
+        <p>Wired는 ChatGPT 핵심 제품 책임자 인터뷰를 통해 OpenAI가 Codex 기능을 더 큰 “super app” 구상 안으로 묶으려 한다고 전했다. 기사 요지는 Codex가 개발자 전용 도구에 머무르지 않고, 더 넓은 업무 자동화 계층으로 편입된다는 것이다.</p>
+        <p>Codex를 따로 떼어 놓고 보는 시각보다, ChatGPT 생태계 안의 작업 엔진으로 보는 해석이 더 중요해지고 있음을 보여 준다. 이는 향후 제품 경계와 가격정책, 권한 구조에도 영향을 줄 수 있다.</p>
+        <p class="muted">출처 메모: 업계 기사 | 링크: <a href="https://www.wired.com/story/model-behavior-interview-with-openai-codex-lead-tibo-sottiaux">Wired</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://timesofindia.indiatimes.com/technology/tech-news/almost-a-year-after-giving-engineers-access-to-claude-and-cursor-disney-tells-engineers-minimise-ai-coded-products-that-/articleshow/131728705.cms">Times of India - Disney, Claude, Cursor</a></li>
+        <li><a href="https://www.windowscentral.com/artificial-intelligence/microsoft-temporarily-ban-employees-from-using-claude-fable-5-ai">Windows Central - Anthropic data retention and Microsoft response</a></li>
+        <li><a href="https://apnews.com/article/a5c60fcbaaca262cf107d30f1de899ef">AP - SpaceX buys Cursor</a></li>
+        <li><a href="https://www.businessinsider.com/cursor-ceo-michael-truell-spacex-elon-musk-anthropic-2026-6">Business Insider - Cursor CEO profile</a></li>
+        <li><a href="https://www.techradar.com/pro/openais-latest-acquisition-could-see-big-changes-on-the-way-for-its-codex-coding-assistant">TechRadar - Ona and Codex</a></li>
+        <li><a href="https://www.wired.com/story/model-behavior-interview-with-openai-codex-lead-tibo-sottiaux">Wired - ChatGPT and Codex product integration</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

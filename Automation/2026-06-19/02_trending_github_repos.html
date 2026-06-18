@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 저장소 보고서 - 2026-06-19</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5d6878;
+      --line: #dbe2ea;
+      --link: #0f5fa6;
+      --hero: linear-gradient(135deg, #143b37 0%, #25755e 100%);
+      --soft: #ebfbf4;
+      --warn: #fff4d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+    }
+    .wrap {
+      width: min(1100px, calc(100vw - 32px));
+      margin: 28px auto 56px;
+    }
+    header {
+      background: var(--hero);
+      color: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    h2 { margin: 0 0 14px; font-size: 1.28rem; }
+    h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    a { color: var(--link); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .summary { background: var(--soft); }
+    .notice { background: var(--warn); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+    }
+    .card + .card { margin-top: 14px; }
+    .badge {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #e8f5ef;
+      color: #16644f;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>GitHub 트렌딩 저장소 보고서</h1>
+      <p>생성일: 2026-06-19 | 조사 기간: GitHub Trending this week를 2026-06-19에 확인, AI 코딩·에이전트·개발 생산성과 직접 연결되는 저장소만 선별</p>
+      <div class="hero-grid">
+        <div class="stat"><strong>관찰 포인트</strong><br>이번 주 트렌딩은 모델 자체보다 스킬, 메모리, 토큰 압축, 코드 인텔리전스, 에이전트 관측성 같은 “에이전트 운영 계층” 저장소가 강했다.</div>
+        <div class="stat"><strong>선정 방식</strong><br>GitHub Trending 일간 화면은 직접적인 AI 코딩 저장소가 적어 주간 화면으로 확장했다. 순위는 stars this week와 개발 생산성 연관성을 함께 본다.</div>
+        <div class="stat"><strong>실무 연결</strong><br>Claude Code, Cursor, Codex 모두 긴 작업 루프와 다중 에이전트 운영으로 이동 중이라, 이번 주 인기 저장소는 보조 인프라 수요를 잘 보여 준다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#selection">선정 메모</a></li>
+        <li><a href="#repos">저장소 카드</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약</h2>
+      <p>2026-06-19 기준 GitHub Trending 주간 흐름은 “더 좋은 모델”보다 “더 안전하게, 더 길게, 더 싸게 에이전트를 운영하는 방법”에 관심이 쏠려 있다는 점을 보여 준다. SkillSpector, agent-skills, Agent-Reach, agentsview, headroom, codebase-memory-mcp가 동시에 뜬 것은 스킬 보안, 작업 절차 재사용, 외부 정보 수집, 세션 분석, 토큰 절감, 저장형 코드 메모리가 모두 병목으로 떠올랐다는 뜻이다.</p>
+    </section>
+
+    <section class="panel notice" id="selection">
+      <h2>선정 메모</h2>
+      <p>이번 리포트는 GitHub Trending “this week” 기준을 사용했다. “today” 화면은 일반 AI/오픈소스 저장소 비중이 높아 AI 코딩 도구와 개발 생산성에 직접 연결되는 신호가 상대적으로 약했다. 주간 화면에서는 에이전트 스킬, 세션 검색, 메모리 MCP, 토큰 압축처럼 실제 코딩 에이전트 운영에 가까운 저장소가 더 명확하게 드러났다.</p>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>저장소 카드</h2>
+      <article class="card">
+        <h3>1. NVIDIA / SkillSpector</h3>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">7,804 stars</span>
+          <span class="badge">5,257 stars this week</span>
+        </div>
+        <p><strong>주요 내용:</strong> AI agent skill용 보안 스캐너다. 스킬 내부의 취약점, 악성 패턴, 보안 리스크를 검사한다.</p>
+        <p><strong>왜 지금 뜨나:</strong> Claude Code, Cursor, Codex 모두 스킬과 MCP 확장을 키우는 시기라 “무엇을 연결할 수 있나” 못지않게 “연결해도 안전한가”가 핵심 질문이 됐다.</p>
+        <p><strong>도구 연결:</strong> 권한·자동화·원격 실행이 늘수록 스킬 보안 감사는 선택이 아니라 배포 게이트가 된다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/NVIDIA/SkillSpector">https://github.com/NVIDIA/SkillSpector</a></p>
+      </article>
+
+      <article class="card">
+        <h3>2. addyosmani / agent-skills</h3>
+        <div>
+          <span class="badge">Shell</span>
+          <span class="badge">62,714 stars</span>
+          <span class="badge">11,684 stars this week</span>
+        </div>
+        <p><strong>주요 내용:</strong> AI coding agents용 production-grade engineering skills 묶음이다.</p>
+        <p><strong>왜 지금 뜨나:</strong> 모델 성능 차이보다 운영 절차, 체크리스트, 반복 가능한 작업 규약이 결과 품질을 좌우한다는 인식이 넓게 퍼지고 있다.</p>
+        <p><strong>도구 연결:</strong> Cursor의 <code>/automate</code>, Codex의 Record &amp; Replay, Claude Code의 nested skills 흐름과 정확히 맞물린다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/addyosmani/agent-skills">https://github.com/addyosmani/agent-skills</a></p>
+      </article>
+
+      <article class="card">
+        <h3>3. Panniantong / Agent-Reach</h3>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">34,058 stars</span>
+          <span class="badge">6,855 stars this week</span>
+        </div>
+        <p><strong>주요 내용:</strong> Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu를 읽고 검색하는 에이전트용 CLI다.</p>
+        <p><strong>왜 지금 뜨나:</strong> 코딩 에이전트가 로컬 코드 수정만 잘하는 단계에서 벗어나 외부 신호 수집과 사실 검증을 함께 처리해야 한다는 수요가 커지고 있다.</p>
+        <p><strong>도구 연결:</strong> Claude Code, Cursor, Codex 같은 코딩 에이전트에 외부 정보 감각을 붙이는 보조 도구로 읽힌다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/Panniantong/Agent-Reach">https://github.com/Panniantong/Agent-Reach</a></p>
+      </article>
+
+      <article class="card">
+        <h3>4. kenn-io / agentsview</h3>
+        <div>
+          <span class="badge">Go</span>
+          <span class="badge">2,822 stars</span>
+          <span class="badge">1,445 stars this week</span>
+        </div>
+        <p><strong>주요 내용:</strong> Claude Code, Codex 등 20개 이상 코딩 에이전트의 세션 검색, 분석, 인사이트, 토큰 통계를 제공하는 local-first 도구다.</p>
+        <p><strong>왜 지금 뜨나:</strong> 다중 에이전트가 길게 돌수록 “무엇을 했는가”보다 “어디서 토큰을 쓰고, 어떤 작업이 재발하며, 어느 플로우가 낭비가 큰가”를 보는 운영 계측 수요가 커진다.</p>
+        <p><strong>도구 연결:</strong> 세 툴 모두 장기 실행·자동화·서브에이전트를 강조하고 있어 관측성 계층의 가치가 빠르게 올라가고 있다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/kenn-io/agentsview">https://github.com/kenn-io/agentsview</a></p>
+      </article>
+
+      <article class="card">
+        <h3>5. chopratejas / headroom</h3>
+        <div>
+          <span class="badge">Python</span>
+          <span class="badge">32,757 stars</span>
+          <span class="badge">9,475 stars this week</span>
+        </div>
+        <p><strong>주요 내용:</strong> 로그, 파일, RAG 청크, 도구 출력을 LLM에 넘기기 전에 압축해 60~95% 토큰을 줄이는 라이브러리·프록시·MCP 서버다.</p>
+        <p><strong>왜 지금 뜨나:</strong> 에이전트가 긴 작업을 수행할수록 병목은 모델 품질보다 컨텍스트 비용과 토큰 예산이 된다.</p>
+        <p><strong>도구 연결:</strong> Cursor의 자동화, Codex의 장기 작업, Claude Code의 대형 세션 모두 headroom 같은 압축 계층의 직접 수혜 영역이다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/chopratejas/headroom">https://github.com/chopratejas/headroom</a></p>
+      </article>
+
+      <article class="card">
+        <h3>6. DeusData / codebase-memory-mcp</h3>
+        <div>
+          <span class="badge">C</span>
+          <span class="badge">6,618 stars</span>
+          <span class="badge">1,097 stars this week</span>
+        </div>
+        <p><strong>주요 내용:</strong> 코드베이스를 persistent knowledge graph로 색인하는 고성능 MCP 서버다. 158개 언어, sub-ms 질의, 99% 토큰 절감을 내세운다.</p>
+        <p><strong>왜 지금 뜨나:</strong> 장기 코딩 에이전트의 품질은 모델보다 “코드 기억을 얼마나 값싸고 빠르게 불러오느냐”에 더 민감해지고 있다.</p>
+        <p><strong>도구 연결:</strong> Codex의 Memories/Chronicle, Claude Code의 대형 리포지토리 세션, Cursor의 클라우드 워커 모두 저장형 코드 메모리와 궁합이 좋다.</p>
+        <p class="muted">GitHub URL: <a href="https://github.com/DeusData/codebase-memory-mcp">https://github.com/DeusData/codebase-memory-mcp</a></p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending?since=weekly">GitHub Trending - Repositories (this week)</a> (2026-06-19 조회)</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-06-19</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5d6878;
+      --line: #d8e0ea;
+      --link: #0f5fa6;
+      --hero: linear-gradient(135deg, #163556 0%, #315f96 100%);
+      --soft: #edf4ff;
+      --warn: #fff4d6;
+      --ok: #eaf7ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+    }
+    .wrap {
+      width: min(1080px, calc(100vw - 32px));
+      margin: 28px auto 56px;
+    }
+    header {
+      background: var(--hero);
+      color: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    h2 { margin: 0 0 14px; font-size: 1.28rem; }
+    h3 { margin: 0 0 10px; font-size: 1.05rem; }
+    a { color: var(--link); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+    }
+    .hero-grid, .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .hero-grid { margin-top: 18px; }
+    .stat {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .summary { background: var(--soft); }
+    .notice { background: var(--warn); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+    }
+    .card + .card { margin-top: 14px; }
+    .badge {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #e8f1ff;
+      color: #174f86;
+    }
+    .badge.ok { background: var(--ok); color: #236944; }
+    .badge.warn { background: var(--warn); color: #8c5c00; }
+    .muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .toc ol, .sources ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>공식 업데이트 보고서</h1>
+      <p>생성일: 2026-06-19 | 조사 기간: 2026-06-16~2026-06-19 기준 최신 공식 업데이트 확인, 최근 3일 내 신규 항목이 없으면 마지막 공식 항목을 명시</p>
+      <div class="hero-grid">
+        <div class="stat"><strong>핵심 변화</strong><br>Cursor는 자동화와 클라우드 에이전트에 가장 공격적으로 투자했고, Codex는 Record &amp; Replay와 지역 확장을 밀어붙였으며, Claude Code는 2.1.181에서 운영 안정성과 세션 품질을 다듬었다.</div>
+        <div class="stat"><strong>확인 방식</strong><br>Claude Code는 GitHub raw changelog, Cursor는 공식 changelog, Codex는 OpenAI Developers 공식 changelog를 직접 확인했다.</div>
+        <div class="stat"><strong>주의 메모</strong><br>Claude Code raw changelog는 최신 항목의 개별 게시일을 노출하지 않아 2.1.181의 날짜는 확인 불가로 남긴다. Cursor와 Codex는 날짜가 명시되어 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#summary">요약</a></li>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel summary" id="summary">
+      <h2>요약</h2>
+      <p>2026-06-19 기준 최신 공식 신호는 세 제품 모두 “더 오래 실행되는 작업”과 “운영 제어” 쪽으로 무게가 이동하고 있다는 점이다. Cursor는 자동화와 클라우드 워커를 제품 전면으로 끌어올렸고, Codex는 브라우저/컴퓨터 사용과 재사용 가능한 스킬 생성 기능을 넓혔으며, Claude Code는 화려한 기능 추가보다 장기 세션, 권한, 파일 쓰기 신뢰성을 다지는 릴리즈를 이어갔다.</p>
+    </section>
+
+    <section class="panel notice">
+      <h2>확인 불가 항목</h2>
+      <p>Claude Code의 최신 changelog 맨 위 항목인 2.1.181은 버전과 변경 내용은 공식 원문으로 확인되지만, raw changelog 자체에는 해당 항목의 게시일이 적혀 있지 않았다. 따라서 이 보고서에서는 “2026-06-19 확인 시점의 최신 공식 항목”으로만 표기한다.</p>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>최신 공식 항목은 2.1.181, 초점은 세션 신뢰성과 파일 쓰기 안정화</h3>
+        <div>
+          <span class="badge ok">공식 changelog</span>
+          <span class="badge">2026-06-19 확인</span>
+          <span class="badge warn">게시일 확인 불가</span>
+        </div>
+        <p>Anthropic의 raw changelog 최상단 최신 항목은 2.1.181이다. 이번 항목에는 프롬프트에서 직접 설정을 바꾸는 <code>/config key=value</code>, macOS Apple Events 샌드박스 예외 옵션, <code>CLAUDE_CLIENT_PRESENCE_FILE</code>, Bun 1.4 업그레이드, 장문 스트리밍 개선, 자동 재시도 강화, 서브에이전트 패널 정리, MCP OAuth 브라우저 경험 개선이 포함됐다.</p>
+        <p>특히 실무적으로 중요한 부분은 “네트워크 드라이브·클라우드 동기화 폴더에서 0바이트 또는 잘린 파일이 생기던 문제 수정”, “느린 네트워크에서 시작 시 공백 터미널로 멈추는 문제 수정”, “유휴 장기 세션 히스토리 손실 수정”이다. 즉 새 모델 과시보다 실제 작업 루프의 파손점을 줄이는 쪽이 이번 공식 메시지의 중심이다.</p>
+        <p class="muted">발표일: 확인 불가 | 출처: Anthropic Claude Code CHANGELOG | 확인 상태: 확인 완료 | 링크: <a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</a></p>
+      </article>
+      <article class="card">
+        <h3>직전 2.1.179~2.1.178 흐름도 같은 방향: 권한 규칙과 장기 실행 안정화</h3>
+        <div>
+          <span class="badge">2.1.179</span>
+          <span class="badge">2.1.178</span>
+          <span class="badge">운영 안정성</span>
+        </div>
+        <p>직전 공식 항목 2.1.179는 mid-stream connection drop 보존, WSL2 스크롤 복구, 원격 세션 백그라운드 작업 표시 개선에 초점이 있었다. 2.1.178은 파라미터 기반 권한 규칙 문법과 nested skills 로딩, auto mode의 서브에이전트 검토 강화까지 포함했다.</p>
+        <p>이 흐름을 합치면 Claude Code는 2026년 6월 중순 현재 “에이전트가 더 멀리 가도록 하는 기능” 못지않게 “멈추지 않고, 잘못 쓰지 않고, 권한을 설명 가능하게 유지하는 것”을 릴리즈 핵심으로 삼고 있다.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>2026-06-18: Automations를 전면 기능으로 승격</h3>
+        <div>
+          <span class="badge ok">공식 changelog</span>
+          <span class="badge">2026-06-18</span>
+          <span class="badge">자동화</span>
+        </div>
+        <p>Cursor의 최신 공식 항목은 2026-06-18 “Improvements to Cursor Automations”다. 로컬 에이전트 세션에서 바로 자동화를 만드는 <code>/automate</code> 스킬, Slack 이모지 트리거, GitHub 이슈/리뷰/워크플로 완료 트리거, 그리고 automation용 computer use가 추가됐다.</p>
+        <p>의미는 분명하다. Cursor는 IDE 안에서 코드를 도와주는 제품을 넘어서, GitHub와 Slack 이벤트를 받아 항상 켜져 있는 에이전트가 후속 작업을 수행하는 오케스트레이션 제품으로 확장 중이다.</p>
+        <p class="muted">발표일: 2026-06-18 | 출처: Cursor changelog | 확인 상태: 확인 완료 | 링크: <a href="https://cursor.com/changelog">cursor.com/changelog</a></p>
+      </article>
+      <article class="card">
+        <h3>2026-06-17: 클라우드 개발환경과 클라우드 서브에이전트 강화</h3>
+        <div>
+          <span class="badge ok">공식 changelog</span>
+          <span class="badge">2026-06-17</span>
+          <span class="badge">클라우드 워커</span>
+        </div>
+        <p>하루 전 항목은 cloud environment setup과 <code>/in-cloud</code> 서브에이전트다. Cursor는 10분 이하의 클라우드 환경 준비, 재사용 가능한 환경 스냅샷, 별도 VM/브랜치에서 돌아가는 클라우드 서브에이전트, 로컬-클라우드 handoff를 전면에 배치했다.</p>
+        <p>이제 Cursor의 가치 제안은 “에디터 안 자동완성”보다 “로컬 세션은 가볍게 두고 긴 작업은 클라우드 워커가 붙잡는 구조”에 더 가까워졌다.</p>
+      </article>
+      <article class="card">
+        <h3>2026-06-10: Bugbot은 여전히 리뷰 자동화 ROI의 핵심 카드</h3>
+        <div>
+          <span class="badge ok">공식 changelog</span>
+          <span class="badge">2026-06-10</span>
+          <span class="badge">코드 리뷰</span>
+        </div>
+        <p>2026-06-10 공식 항목에서 Cursor는 Bugbot 평균 리뷰 시간을 약 5분에서 90초 수준으로 줄이고, 리뷰당 발견 버그 수를 0.56에서 0.62로 늘렸으며, 비용은 약 22% 절감했다고 밝혔다. 여기에 <code>/review</code>, <code>/review-bugbot</code>, <code>/review-security</code> 흐름을 GitHub/GitLab PR과 연결했다.</p>
+        <p>즉 Cursor는 이번 주 “자동화 오케스트레이션”을, 지난주에는 “리뷰 에이전트 경제성”을 밀었다. 이 둘이 합쳐져 제품의 실제 매출 포인트를 만든다.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>2026-06-18: Record &amp; Replay로 시연한 작업을 재사용 가능한 스킬로 전환</h3>
+        <div>
+          <span class="badge ok">공식 changelog</span>
+          <span class="badge">2026-06-18</span>
+          <span class="badge">Codex app 26.616</span>
+        </div>
+        <p>Codex의 최신 공식 앱 릴리즈는 2026-06-18, app 26.616이다. 핵심은 macOS용 Record &amp; Replay다. 사용자가 한 번 시연한 워크플로를 재사용 가능한 스킬로 바꾸며, bulk actions로 automation run history를 한꺼번에 읽음 처리하거나 보관할 수도 있다.</p>
+        <p>이 업데이트는 Codex가 단순히 명령을 수행하는 것을 넘어, 사람이 보여 준 절차를 내재화해 재사용 자산으로 만드는 방향을 강화한다.</p>
+        <p class="muted">발표일: 2026-06-18 | 출처: OpenAI Developers Codex changelog | 확인 상태: 확인 완료 | 링크: <a href="https://developers.openai.com/codex/changelog">developers.openai.com/codex/changelog</a></p>
+      </article>
+      <article class="card">
+        <h3>2026-06-16: EEA·영국·스위스까지 Computer Use, Chrome extension, Memories, Chronicle 확대</h3>
+        <div>
+          <span class="badge ok">공식 changelog</span>
+          <span class="badge">2026-06-16</span>
+          <span class="badge">지역 확장</span>
+        </div>
+        <p>2026-06-16 항목에서 Codex는 EEA, 영국, 스위스 사용자를 대상으로 Computer Use, Codex Chrome extension, Memories, Chronicle을 확장했다. Chronicle은 macOS용 opt-in research preview로, 최근 화면 맥락에서 기억을 만드는 실험 기능으로 설명된다.</p>
+        <p>즉 Codex는 브라우저/데스크톱 조작과 기억 축적을 더 넓은 지역에서 제공하며, “한 번성 답변”보다 “지속되는 작업 상태”를 제품 기본값으로 만들고 있다.</p>
+      </article>
+      <article class="card">
+        <h3>2026-06-11: Browser use Developer mode와 Windows 제어 강화</h3>
+        <div>
+          <span class="badge ok">공식 changelog</span>
+          <span class="badge">2026-06-11</span>
+          <span class="badge">디버깅/제어</span>
+        </div>
+        <p>2026-06-11 app 26.609에는 Browser use Developer mode가 추가됐다. Chrome과 Codex 인앱 브라우저에서 CDP 기반 접근을 통해 네트워크 트래픽, 콘솔 출력, 런타임 오류, 페이지 상태까지 더 깊게 디버깅할 수 있다. 같은 릴리즈에는 <code>/init</code>, Windows per-app access controls, Enterprise용 Computer Use, Browser use 최대 2배 속도 개선도 포함됐다.</p>
+        <p>OpenAI가 Codex를 브라우저 디버깅과 컴퓨터 조작이 가능한 범용 작업 플랫폼으로 확장한다는 방향이 가장 명확하게 드러난 항목이다.</p>
+      </article>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">Anthropic Claude Code CHANGELOG.md</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor changelog</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Developers - Codex changelog</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
