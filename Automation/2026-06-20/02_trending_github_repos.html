@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 저장소 보고서 - 2026-06-20</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --text: #1a2433;
+      --muted: #5e6b7d;
+      --line: #d6dfeb;
+      --link: #0f5fa6;
+      --hero: linear-gradient(135deg, #1b3c64 0%, #2d79a8 100%);
+      --soft: #eef5ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+    }
+    .wrap {
+      width: min(1120px, calc(100vw - 32px));
+      margin: 28px auto 56px;
+    }
+    header {
+      background: var(--hero);
+      color: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    h2 { margin: 0 0 14px; font-size: 1.28rem; }
+    h3 { margin: 0 0 10px; font-size: 1.02rem; }
+    a { color: var(--link); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      margin: 16px 0;
+    }
+    .hero-grid, .repo-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .hero-grid { margin-top: 18px; }
+    .stat {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .summary { background: var(--soft); }
+    .repo {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 18px;
+    }
+    .badge {
+      display: inline-block;
+      margin: 0 6px 8px 0;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #e8f1ff;
+    }
+    ul { padding-left: 18px; }
+    .sources li + li { margin-top: 6px; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p>AI Trend Automation</p>
+      <h1>GitHub 트렌딩 저장소 보고서</h1>
+      <p>2026-06-20 GitHub Trending 기준으로 AI 코딩, 에이전트, 개발 생산성에 직접 연결되는 저장소만 추려 의미를 해석했다.</p>
+      <div class="hero-grid">
+        <div class="stat"><strong>생성일</strong><br>2026-06-20</div>
+        <div class="stat"><strong>선별 방식</strong><br>Trending 노출 + AI 코딩 연관성</div>
+        <div class="stat"><strong>핵심 신호</strong><br>MCP, 에이전트 런타임, 시계열·모델 자산 강세</div>
+      </div>
+    </header>
+
+    <section class="panel summary">
+      <h2>요약</h2>
+      <ul>
+        <li>오늘 트렌딩은 순수 LLM 프롬프트보다 에이전트 연결 계층과 실행 인프라 저장소가 더 강하게 떠올랐다.</li>
+        <li>코딩 에이전트 사용자 관점에서는 MCP, 메모리, 리뷰 보조, 시계열 모델 자산이 실제 생산성 도구로 묶이고 있다.</li>
+        <li>거대 범용 저장소와 함께, 비교적 작은 저장소도 하루 증가량이 커서 니치 툴이 빠르게 주목받는 구간이다.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>목차</h2>
+      <ol>
+        <li>주요 저장소 8선</li>
+        <li>공통 해석</li>
+        <li>출처</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>1. 주요 저장소 8선</h2>
+      <div class="repo-grid">
+        <article class="repo">
+          <span class="badge">38,009 stars</span>
+          <span class="badge">+3,938 today</span>
+          <h3><a href="https://github.com/chopratejas/headroom">chopratejas/headroom</a></h3>
+          <p>에이전트 시대 개발자의 집중력 관리와 작업 문맥 보존을 다루는 도구로 해석된다.</p>
+          <ul>
+            <li>왜 뜨나: 생산성 피로가 커진 상황에서 “집중을 유지하는 실행 환경” 자체가 제품으로 인정받고 있다.</li>
+            <li>도구 연결: Claude Code, Cursor, Codex 같은 에이전트를 오래 돌리는 워크플로와 궁합이 좋다.</li>
+          </ul>
+        </article>
+        <article class="repo">
+          <span class="badge">8,002 stars</span>
+          <span class="badge">+1,055 today</span>
+          <h3><a href="https://github.com/DeusData/codebase-memory-mcp">DeusData/codebase-memory-mcp</a></h3>
+          <p>코드베이스 메모리를 MCP로 노출하는 저장소다.</p>
+          <ul>
+            <li>왜 뜨나: 에이전트 정확도를 높이는 핵심이 모델보다 장기 문맥과 회상 계층이라는 인식이 강해졌다.</li>
+            <li>도구 연결: Codex·Cursor·Claude Code 모두 MCP 확장과 메모리 전략이 중요한 국면이다.</li>
+          </ul>
+        </article>
+        <article class="repo">
+          <span class="badge">233,201 stars</span>
+          <span class="badge">+1,113 today</span>
+          <h3><a href="https://github.com/obra/superpowers">obra/superpowers</a></h3>
+          <p>에이전트 작업 방식을 체계화한 대규모 프롬프트/워크플로 자산으로 보인다.</p>
+          <ul>
+            <li>왜 뜨나: 단일 모델 성능보다 실행 프로토콜과 운영 습관이 결과 품질을 좌우한다는 신호다.</li>
+            <li>도구 연결: 실제 코딩 에이전트 운영팀이 재사용 가능한 플레이북을 찾고 있음을 보여준다.</li>
+          </ul>
+        </article>
+        <article class="repo">
+          <span class="badge">24,004 stars</span>
+          <span class="badge">+1,516 today</span>
+          <h3><a href="https://github.com/google-research/timesfm">google-research/timesfm</a></h3>
+          <p>시계열 기초모델 자산으로, “AI 코딩” 바깥의 실제 업무 예측 수요와 연결된다.</p>
+          <ul>
+            <li>왜 뜨나: 에이전트가 생성만이 아니라 분석·예측 업무까지 연결될 때 재사용 가능한 모델 자산 가치가 커진다.</li>
+            <li>도구 연결: 데이터 팀이 코딩 에이전트를 쓰는 실제 목적이 분석 파이프라인 자동화라는 점을 상기시킨다.</li>
+          </ul>
+        </article>
+        <article class="repo">
+          <span class="badge">27,549 stars</span>
+          <span class="badge">+155 today</span>
+          <h3><a href="https://github.com/aishwaryanr/awesome-generative-ai-guide">aishwaryanr/awesome-generative-ai-guide</a></h3>
+          <p>생성형 AI 도구와 학습 자산을 정리한 가이드성 저장소다.</p>
+          <ul>
+            <li>왜 뜨나: 시장이 너무 빨라져서 비교표와 진입 가이드 자체가 하나의 인프라가 되고 있다.</li>
+            <li>도구 연결: Claude Code, Cursor, Codex를 처음 비교하는 사용자에게 레퍼런스 허브 역할을 한다.</li>
+          </ul>
+        </article>
+        <article class="repo">
+          <span class="badge">961 stars</span>
+          <span class="badge">+210 today</span>
+          <h3><a href="https://github.com/BuilderIO/agent-native">BuilderIO/agent-native</a></h3>
+          <p>에이전트 친화적 애플리케이션 구조를 노린 저장소로 보인다.</p>
+          <ul>
+            <li>왜 뜨나: “에이전트가 코드를 잘 쓰는가”에서 “제품 자체가 에이전트 친화적인가”로 질문이 바뀌고 있다.</li>
+            <li>도구 연결: Codex와 Cursor가 브라우저·컴퓨터 사용까지 확장되는 흐름과 맞물린다.</li>
+          </ul>
+        </article>
+        <article class="repo">
+          <span class="badge">5,779 stars</span>
+          <span class="badge">+305 today</span>
+          <h3><a href="https://github.com/withastro/flue">withastro/flue</a></h3>
+          <p>현대 프런트엔드/개발자 경험 층에서 주목받는 저장소로 해석된다.</p>
+          <ul>
+            <li>왜 뜨나: 에이전트가 만든 결과물을 실제 제품 코드로 흡수하는 프런트엔드 파이프라인 수요가 크다.</li>
+            <li>도구 연결: Cursor의 Design Mode, Codex의 Browser use 같은 시각/프런트엔드 흐름과 접점이 있다.</li>
+          </ul>
+        </article>
+        <article class="repo">
+          <span class="badge">4,488 stars</span>
+          <span class="badge">+478 today</span>
+          <h3><a href="https://github.com/zai-org/GLM-5">zai-org/GLM-5</a></h3>
+          <p>오픈 모델 계열 경쟁이 여전히 살아 있음을 보여주는 신호다.</p>
+          <ul>
+            <li>왜 뜨나: 상용 코딩 도구가 강해질수록 비교 대상이 되는 오픈 모델/오픈 스택에도 관심이 붙는다.</li>
+            <li>도구 연결: 자체 모델 전략을 키우는 Cursor, 멀티모델 경로를 넓히는 Codex와 비교 재료가 된다.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>2. 공통 해석</h2>
+      <ul>
+        <li>MCP와 메모리 계층은 이제 부가 기능이 아니라 에이전트 실전 정확도를 좌우하는 핵심 인프라다.</li>
+        <li>트렌딩 목록은 모델 연구 저장소만이 아니라 운영 절차, 리뷰, 문맥 유지, 실행환경 도구까지 같이 뜨고 있다.</li>
+        <li>즉, 시장 초점이 “더 똑똑한 모델” 하나에서 “더 오래, 더 안전하게, 더 많이 맡길 수 있는 시스템”으로 이동 중이다.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>출처</h2>
+      <ul class="sources">
+        <li><a href="https://github.com/trending">GitHub Trending</a></li>
+        <li><a href="https://github.com/chopratejas/headroom">headroom repository</a></li>
+        <li><a href="https://github.com/DeusData/codebase-memory-mcp">codebase-memory-mcp repository</a></li>
+        <li><a href="https://github.com/obra/superpowers">superpowers repository</a></li>
+        <li><a href="https://github.com/google-research/timesfm">timesfm repository</a></li>
+        <li><a href="https://github.com/aishwaryanr/awesome-generative-ai-guide">awesome-generative-ai-guide repository</a></li>
+        <li><a href="https://github.com/BuilderIO/agent-native">agent-native repository</a></li>
+        <li><a href="https://github.com/withastro/flue">flue repository</a></li>
+        <li><a href="https://github.com/zai-org/GLM-5">GLM-5 repository</a></li>
+      </ul>
+      <p class="muted">비고: 수치는 2026-06-20 Trending 스냅샷 기준이며, 하루 증가량은 GitHub Trending 표시값을 따른다.</p>
+    </section>
+  </div>
+</body>
+</html>
