@@ -1,0 +1,245 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 동향 보고서 - 2026-06-23</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --link: #0a66c2;
+      --accent: #e8f1fb;
+      --warn: #fff3cd;
+      --hero: linear-gradient(135deg, #183a66 0%, #28539c 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      width: min(980px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 16px;
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      margin: 8px 0 0;
+      opacity: 0.92;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li {
+      margin: 6px 0;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #204977;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    .sources ul,
+    .panel ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 동향 보고서 - 2026-06-23</h1>
+      <p>생성일: 2026-06-23 | 기사 창: 2026-06-17 ~ 2026-06-23 | 최근 2일 기사량이 얇아 7일 창으로 확장했다.</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>핵심 포인트</strong><br>Claude는 workflow maturity와 새로운 보안 공격면이 동시에, Cursor는 automation platform 확장과 cloud workflow가, Codex는 loop orchestration과 runtime 운영성이 중심이었다.</div>
+        <div class="stat"><strong>조사 기준</strong><br>최근 2일만으로는 세 도구를 균형 있게 채우기 어려워 7일 창을 사용했다. 반복 재탕 기사와 광고성 강한 요약물은 제외했다.</div>
+        <div class="stat"><strong>메모</strong><br>Cursor와 Codex는 7일 창 안에서도 고신호 기사 수가 적어 공식 changelog를 보조 근거로 적극 반영했다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#interpretation">종합 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">
+        최근 2일 기사만으로는 균형 잡힌 비교가 불가능해 2026-06-17 ~ 2026-06-23 7일 창으로 넓혔다.
+        이 구간에서 Claude는 팀 문화와 보안 surface, Cursor는 automation/cloud product move, Codex는 loop orchestration과 runtime reproducibility로 주로 해석됐다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>2026-06-22 | Business Insider: Claude Code가 엔지니어를 더 고립시키고 있다는 내부 시각</h3>
+        <div class="badge-row">
+          <span class="badge">실사용 후기</span>
+          <span class="badge">Business Insider</span>
+          <span class="badge">팀 문화</span>
+        </div>
+        <p>Anthropic 엔지니어링 리더 Fiona Fung 인터뷰를 통해, agentic coding이 생산성을 높이는 대신 개발자가 더 혼자 일하게 만드는 부작용도 커졌다고 짚은 기사다. 회사는 programming lunch, hackathon, shared maker time 같은 협업 장치를 다시 도입하고 있다고 설명한다.</p>
+        <p class="meta-line">실무 시사점: Claude Code는 이제 단순 도구가 아니라 조직의 협업 리듬까지 바꾸는 수준으로 침투하고 있다. 신뢰도 메모: 실사용 후기</p>
+      </article>
+      <article class="card">
+        <h3>2026-06-20 | Business Insider: prompt보다 loop engineering이 새 표준이 되고 있다는 서사</h3>
+        <div class="badge-row">
+          <span class="badge">비교 리뷰</span>
+          <span class="badge">Business Insider</span>
+          <span class="badge">워크플로</span>
+        </div>
+        <p>Claude Code 제작자 Boris Cherny와 OpenAI 엔지니어 Peter Steinberger를 같이 인용하며, 사용자가 직접 프롬프트를 치는 대신 agent가 agent를 지시하는 loop 설계가 새 생산성 패턴이 되고 있다고 설명한다. Claude Code와 Codex가 모두 장기 목표 기반 도구로 언급된다.</p>
+        <p class="meta-line">실무 시사점: Claude의 경쟁력은 모델 체급보다 반복 가능한 자동화 루프 설계에서 더 강하게 평가받고 있다. 신뢰도 메모: 비교 리뷰</p>
+      </article>
+      <article class="card">
+        <h3>2026-06-18 | TechRadar: Shared Claude Chats 악용 malware 캠페인</h3>
+        <div class="badge-row">
+          <span class="badge">보안 기사</span>
+          <span class="badge">TechRadar</span>
+          <span class="badge">공격면</span>
+        </div>
+        <p>Trend Micro 분석을 토대로, 공격자가 Shared Claude Chats와 Google Ads를 이용해 macOS 개발자를 가짜 Apple Support 대화로 유도하고 Claude Code 설치 명목의 악성 명령을 붙여 넣게 했다고 보도했다. Anthropic은 계정 차단과 대화 비활성화를 진행했다.</p>
+        <p class="meta-line">실무 시사점: Claude 생태계가 커질수록 공유 링크, skill, 설치 경로까지 모두 보안 표면으로 관리해야 한다. 신뢰도 메모: 뉴스 기사</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>2026-06-18 | Cursor Changelog 3.8: Automations를 실제 실행 플랫폼으로 확장</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">Cursor</span>
+          <span class="badge">Automations</span>
+        </div>
+        <p><code>/automate</code>, GitHub trigger 5종, Slack trigger, computer use, incomplete-state save, PR tool 기본화, memory file 삭제가 한 번에 묶였다. 공식 문서이지만 이번 주 Cursor를 설명하는 가장 직접적인 기사성 자료이기도 하다.</p>
+        <p class="meta-line">실무 시사점: Cursor는 좋은 IDE보다 항상 켜진 에이전트 실행 허브에 더 가까워지고 있다. 신뢰도 메모: 공식 글</p>
+      </article>
+      <article class="card">
+        <h3>2026-06-17 | Cursor Changelog 3.7: cloud environment setup과 background subagent 강화</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">Cursor</span>
+          <span class="badge">Cloud</span>
+        </div>
+        <p>cloud environment snapshot, local/cloud handoff, background cloud subagent, <code>/review</code> 기반 Bugbot/Security Review가 핵심이다. 7일 창 안의 외부 media는 대부분 인수 서사 반복이었고, 실제 제품 변화 자체는 이 공식 entry가 가장 정보량이 높다.</p>
+        <p class="meta-line">실무 시사점: Cursor의 차별점은 더 이상 편집 경험 하나가 아니라, 클라우드에서 장기 실행과 검증 루프를 자연스럽게 돌리는 구조다. 신뢰도 메모: 공식 글</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>2026-06-20 | Business Insider: loop engineering 기사에서 Codex가 장기 목표 실행 도구로 소비됨</h3>
+        <div class="badge-row">
+          <span class="badge">비교 리뷰</span>
+          <span class="badge">Business Insider</span>
+          <span class="badge">오케스트레이션</span>
+        </div>
+        <p>loop engineering 기사에서 Codex는 <code>/goal</code> 류의 장기 목표 수행 예시로 Claude Code와 함께 거론된다. 외부 인식에서 Codex가 단발성 코드 생성기보다 orchestration runtime으로 재정의되고 있다는 점이 드러난다.</p>
+        <p class="meta-line">실무 시사점: Codex는 기능 나열보다 길게 맡겨서 굴리는 도구라는 브랜드가 더 강해지고 있다. 신뢰도 메모: 비교 리뷰</p>
+      </article>
+      <article class="card">
+        <h3>2026-06-18 | OpenAI Codex Changelog: Record &amp; Replay와 handoff 중심의 공식 방향</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">OpenAI</span>
+          <span class="badge">재현성</span>
+        </div>
+        <p>Record &amp; Replay, automation history bulk actions, local/remote host thread handoff, Browser Use 상태 지속성 개선이 들어갔다. 7일 창 안의 외부 기사량이 얇은 대신, 공식 changelog가 제품 방향을 가장 분명하게 보여준다.</p>
+        <p class="meta-line">실무 시사점: Codex는 실행 결과의 재현성과 운영 이력 축적을 가장 명시적으로 밀고 있는 제품이다. 신뢰도 메모: 공식 글</p>
+      </article>
+    </section>
+
+    <section class="panel" id="interpretation">
+      <h2>종합 해석</h2>
+      <ul>
+        <li>Claude는 실전 운영성뿐 아니라 팀 협업 방식과 보안 surface까지 함께 논의되는 단계에 들어갔다.</li>
+        <li>Cursor는 외부 media보다 공식 changelog가 더 중요했다. 이번 주 외부 기사 다수는 인수 서사 반복이었고, 실제 제품 변화는 automations/cloud 쪽이 본체였다.</li>
+        <li>Codex는 기사량이 적지만, loop orchestration과 runtime reproducibility라는 방향성은 오히려 더 선명하게 읽힌다.</li>
+        <li>세 도구 모두 단순 코딩 품질보다 장기 실행, 운영 통제, 재현 가능성의 문제로 비교되기 시작했다.</li>
+      </ul>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/anthropic-claude-code-ai-engineering-loneliness-fiona-fung">Business Insider - Claude Code and engineering loneliness</a></li>
+        <li><a href="https://www.businessinsider.com/what-are-loops-ai-engineering-tips-2026-6">Business Insider - Loop engineering</a></li>
+        <li><a href="https://www.techradar.com/pro/security/this-marks-a-sophisticated-evolution-experts-warn-claude-feature-hijacked-by-hackers-to-launch-major-malware-campaign">TechRadar - Shared Claude Chats malware campaign</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex Changelog</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
