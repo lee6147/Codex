@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-06-24</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf7f3;
+      --panel: #ffffff;
+      --text: #241d17;
+      --muted: #6d6258;
+      --line: #e3d9cf;
+      --link: #8f4b17;
+      --accent: #fff1e5;
+      --warn: #fff6d8;
+      --hero: linear-gradient(135deg, #5d3415 0%, #9b5e25 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      width: min(980px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+    .hero p { margin: 8px 0 0; opacity: 0.94; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #7a4316;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    .sources ul,
+    .panel ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약 - 2026-06-24</h1>
+      <p>생성일: 2026-06-24 | 기사 검색 창은 원칙상 최근 2일을 먼저 확인했지만 볼륨이 부족해 2026-06-17 ~ 2026-06-24 7일 창으로 확장했다.</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>2일 창 결과</strong><br>2026-06-22 ~ 2026-06-24 사이에는 Claude Code/Codex 보안 사건 기사 1건 외에 교차 비교 가치가 높은 글이 드물었다.</div>
+        <div class="stat"><strong>최종 선정</strong><br>7일 창에서 보안, workflow 개념, 시장/경쟁 서사를 각각 대표하는 기사 3건을 뽑았다.</div>
+        <div class="stat"><strong>해석 주의</strong><br>공식 changelog는 별도 HTML 보고서에서 다뤘고, 이 문서에서는 외부 기사 관점과 공식 글 1건의 보조 맥락만 섞어 읽었다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#article-1">기사 1</a></li>
+        <li><a href="#article-2">기사 2</a></li>
+        <li><a href="#article-3">기사 3</a></li>
+        <li><a href="#observation">종합 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">
+        이번 기사 층은 제품 기능 비교보다 agent 운영 방식의 변화와 보안 표면 확대를 더 강하게 반영했다.
+        한쪽에서는 Claude Code와 Codex가 loop 중심 워크플로의 대표 예시로 다뤄졌고,
+        다른 한쪽에서는 같은 agent형 도구가 낮은 숙련도의 공격자에게도 강한 실행력을 제공할 수 있다는 경고가 나왔다.
+      </div>
+    </section>
+
+    <section class="panel" id="article-1">
+      <h2>기사 1</h2>
+      <article class="card">
+        <h3>TechRadar (2026-06-22): Claude Code와 Codex가 14개 조직 침해에 악용된 사례</h3>
+        <div class="badge-row">
+          <span class="badge">보안 사건</span>
+          <span class="badge">Claude Code</span>
+          <span class="badge">Codex</span>
+        </div>
+        <ul>
+          <li>OALABS가 공격자의 전체 작업 디렉터리를 분석했고, Claude Code와 Codex agent 세션 1,000건 이상을 확인했다고 전한다.</li>
+          <li>기사 핵심은 공격자가 숙련된 오퍼레이터가 아니어도, vague prompt만 던지고 reconnaissance, exploit code 작성, data harvesting를 agent에 맡길 수 있었다는 점이다.</li>
+          <li>이 사례는 skill, plugin, automation이 늘수록 guardrail 우회와 작업 로그 노출이 실제 보안 문제로 연결될 수 있음을 보여준다.</li>
+        </ul>
+        <p class="meta-line">게시일: 2026-06-22 | 출처 메모: 외부 보안 사건 기사 | 링크: https://www.techradar.com/pro/security/a-newbie-hacker-used-vague-low-skill-prompts-in-claude-and-codex-to-breach-14-companies-and-the-ai-agents-did-all-the-legwork</p>
+      </article>
+    </section>
+
+    <section class="panel" id="article-2">
+      <h2>기사 2</h2>
+      <article class="card">
+        <h3>Business Insider (2026-06-20): prompt engineering보다 loop engineering이 중요해진다는 관찰</h3>
+        <div class="badge-row">
+          <span class="badge">워크플로 개념</span>
+          <span class="badge">Claude Code</span>
+          <span class="badge">Codex</span>
+        </div>
+        <ul>
+          <li>Claude Code의 Boris Cherny와 OpenAI 쪽 Peter Steinberger 사례를 묶어, 사용자가 직접 prompt를 치는 대신 loop를 설계하는 방식이 주류가 되고 있다고 설명한다.</li>
+          <li>기사 안에서 loop의 핵심 요소로 automations, worktrees, skills, plugins/connectors, sub-agents가 제시됐는데, 이는 이번 주 GitHub Trending과 공식 changelog 흐름과 거의 정확히 겹친다.</li>
+          <li>툴 경쟁의 초점이 “답 잘하는 모델”에서 “검증 가능한 반복 작업 구조를 얼마나 잘 짜 주는가”로 이동하고 있다는 기사로 읽는 편이 맞다.</li>
+        </ul>
+        <p class="meta-line">게시일: 2026-06-20 | 출처 메모: 개념 정리형 외부 기사 | 링크: https://www.businessinsider.com/what-are-loops-ai-engineering-tips-2026-6</p>
+      </article>
+    </section>
+
+    <section class="panel" id="article-3">
+      <h2>기사 3</h2>
+      <article class="card">
+        <h3>MarketWatch (2026-06-19): Cursor를 제품보다 경쟁 구도와 인수 서사로 다룬 기사</h3>
+        <div class="badge-row">
+          <span class="badge">시장 서사</span>
+          <span class="badge">Cursor</span>
+          <span class="badge">경쟁 구도</span>
+        </div>
+        <ul>
+          <li>이 기사는 Cursor의 세부 기능보다 Claude Code 부상 이후 Cursor가 어떤 경쟁 압력을 받았는지, 그리고 SpaceX backing이 어떤 의미인지에 초점을 맞춘다.</li>
+          <li>즉 외부 media에서 Cursor는 여전히 구체 기능보다 시장 위치와 성장성 서사로 더 자주 소비되고 있음을 보여준다.</li>
+          <li>제품 실체를 보려면 결국 Cursor 공식 changelog를 직접 읽어야 하고, 외부 기사만 보면 Automations와 cloud agent 변화가 과소평가되기 쉽다.</li>
+        </ul>
+        <p class="meta-line">게시일: 2026-06-19 | 출처 메모: 시장/경쟁 기사, 제품 리뷰 비중 낮음 | 링크: https://www.marketwatch.com/story/social-media-declared-cursor-dead-then-spacex-handed-the-ai-startup-a-60-billion-lifeline-50454e29</p>
+      </article>
+    </section>
+
+    <section class="panel" id="observation">
+      <h2>종합 해석</h2>
+      <ul>
+        <li>7일 창으로 넓혀도 기사 층은 제품 기능 deep dive보다 보안, 운영 방식, 경쟁 서사에 더 쏠려 있었다.</li>
+        <li>Claude Code와 Codex는 외부 기사에서 loop-driven agent workflow의 대표 예시로 함께 언급되는 빈도가 높았다.</li>
+        <li>Cursor는 외부 media에서 시장 스토리의 비중이 높아, 실제 제품 방향은 공식 changelog와 docs를 병행해 봐야 한다.</li>
+        <li>이번 기사 층만 놓고 보면 “agent를 더 똑똑하게 만드는 것”보다 “agent를 어떻게 반복 실행하고 어떻게 통제할 것인가”가 더 큰 담론이었다.</li>
+      </ul>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.techradar.com/pro/security/a-newbie-hacker-used-vague-low-skill-prompts-in-claude-and-codex-to-breach-14-companies-and-the-ai-agents-did-all-the-legwork">TechRadar: Claude Code and Codex breach article</a></li>
+        <li><a href="https://www.businessinsider.com/what-are-loops-ai-engineering-tips-2026-6">Business Insider: Loop engineering article</a></li>
+        <li><a href="https://www.marketwatch.com/story/social-media-declared-cursor-dead-then-spacex-handed-the-ai-startup-a-60-billion-lifeline-50454e29">MarketWatch: Cursor / SpaceX article</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex Changelog</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
