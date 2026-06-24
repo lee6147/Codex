@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 코딩 도구 기사 요약 - 2026-06-25</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf7f3;
+      --panel: #ffffff;
+      --text: #241d17;
+      --muted: #6d6258;
+      --line: #e3d9cf;
+      --link: #8f4b17;
+      --accent: #fff1e5;
+      --warn: #fff6d8;
+      --hero: linear-gradient(135deg, #5d3415 0%, #9b5e25 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      width: min(980px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+    .hero p { margin: 8px 0 0; opacity: 0.94; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #7a4316;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    .sources ul,
+    .panel ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>AI 코딩 도구 기사 요약 - 2026-06-25</h1>
+      <p>생성일: 2026-06-25 | 기사 검색 창은 최근 2일을 먼저 확인했지만 교차 검증 가능한 기사 풀이 얇아 2026-06-19 ~ 2026-06-25의 최근 7일 창으로 확장했다.</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>2일 창 결과</strong><br>Claude 장애 기사와 Codex 공식 블로그는 있었지만, Cursor까지 포함한 균형 잡힌 2~3개 묶음을 만들기엔 외부 기사 풀이 부족했다.</div>
+        <div class="stat"><strong>최종 선정</strong><br>운영 리스크 1건, 공식 운영 가이드 1건, 시장·전략 기사 1건으로 성격이 다른 기사 3개를 골랐다.</div>
+        <div class="stat"><strong>해석 주의</strong><br>이번 기사 묶음은 제품 기능 비교보다 장애, 운영 패턴, 경쟁 구도 해설에 더 무게가 실려 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#article-1">기사 1</a></li>
+        <li><a href="#article-2">기사 2</a></li>
+        <li><a href="#article-3">기사 3</a></li>
+        <li><a href="#observation">종합 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">
+        7일 창으로 넓히자 이번 주 기사들은 세 제품의 세부 기능 리뷰보다
+        "장애가 날 때 얼마나 넓게 흔들리는가", "원격 운영을 어떻게 제어 평면으로 설계하는가", "경쟁 구도 속에서 어느 전략을 택하는가"에 더 집중하고 있었다.
+        즉, 언론과 공식 글 모두 AI 코딩 도구를 모델 비교가 아닌 운영 시스템으로 읽기 시작했다는 점이 핵심이다.
+      </div>
+    </section>
+
+    <section class="panel" id="article-1">
+      <h2>기사 1</h2>
+      <article class="card">
+        <h3>TechRadar (2026-06-23): Claude 장애가 Claude Code까지 포함한 전면 서비스 계층을 흔들었다</h3>
+        <div class="badge-row">
+          <span class="badge">장애</span>
+          <span class="badge">Claude Code</span>
+          <span class="badge">타사 기사</span>
+        </div>
+        <ul>
+          <li>TechRadar는 2026-06-23 장애가 Claude chat, Claude Code, Claude Cowork, API 전반에 걸쳐 발생했다고 정리했고, Downdetector 미국 기준 최대 7,119건의 신고를 기록했다고 전했다.</li>
+          <li>Anthropic status 기준 문제는 10:02 a.m. ET 무렵 시작됐고, 12:44 p.m. ET에 resolved로 전환됐다. 원인은 공개되지 않았다.</li>
+          <li>이 기사는 agent 기능 확대와 별개로, 서비스 계층 장애가 개발 워크플로 전체를 한 번에 멈출 수 있다는 운영 리스크를 환기한다.</li>
+        </ul>
+        <p class="meta-line">게시일: 2026-06-23 | 출처 메모: Claude 전면 장애 추적 기사 | 링크: https://www.techradar.com/news/live/claude-down-june-23-2026</p>
+      </article>
+    </section>
+
+    <section class="panel" id="article-2">
+      <h2>기사 2</h2>
+      <article class="card">
+        <h3>OpenAI Developers Blog (2026-06-23): Codex Remote를 폰 기반 제어 평면으로 설계하는 공식 운영 가이드</h3>
+        <div class="badge-row">
+          <span class="badge">공식 글</span>
+          <span class="badge">Codex</span>
+          <span class="badge">Remote</span>
+        </div>
+        <ul>
+          <li>OpenAI는 Codex Remote를 작은 터미널 복제물이 아니라 시작·steer·review·organize를 담당하는 "control plane"으로 정의했다.</li>
+          <li>글 안에서 remote host connections, worktrees, goals, side chats, inline code review, queued prompts, skills, plugins, archived threads, security controls를 한 흐름으로 묶어 설명한다.</li>
+          <li>최근 Codex의 공식 메시지가 코드 생성 기능보다 장시간 엔지니어링 운영을 어디서 어떻게 조정할 것인가로 이동했음을 가장 선명하게 보여주는 자료다.</li>
+        </ul>
+        <p class="meta-line">게시일: 2026-06-23 | 출처 메모: Codex 운영 공식 블로그 | 링크: https://developers.openai.com/blog/mastering-codex-remote-for-engineering</p>
+      </article>
+    </section>
+
+    <section class="panel" id="article-3">
+      <h2>기사 3</h2>
+      <article class="card">
+        <h3>MarketWatch (2026-06-19): Cursor의 경쟁 구도를 제품 기능보다 시장·인프라 전략으로 해석한 기사</h3>
+        <div class="badge-row">
+          <span class="badge">시장/전략</span>
+          <span class="badge">Cursor</span>
+          <span class="badge">타사 기사</span>
+        </div>
+        <ul>
+          <li>MarketWatch는 Cursor가 Claude Code의 부상 이후 압박을 받았지만, SpaceX의 Anysphere 인수와 Colossus 인프라 접근으로 다시 반등 기반을 얻었다는 서사를 전개한다.</li>
+          <li>기사의 핵심은 Cursor를 범용 모델 회사와 다른, 개발자 경험 특화 도구이자 비용·모델 선택 유연성으로 승부하는 플레이어로 본다는 점이다.</li>
+          <li>공식 changelog만 보면 Automations와 cloud handoff가 핵심인데, 외부 시장 기사는 이를 기업 경쟁 구도와 compute 확보 관점에서 읽고 있어 관점 차이를 비교하기 좋다.</li>
+        </ul>
+        <p class="meta-line">게시일: 2026-06-19 | 출처 메모: Cursor 시장/전략 기사 | 링크: https://www.marketwatch.com/story/social-media-declared-cursor-dead-then-spacex-handed-the-ai-startup-a-60-billion-lifeline-50454e29</p>
+      </article>
+    </section>
+
+    <section class="panel" id="observation">
+      <h2>종합 해석</h2>
+      <ul>
+        <li>7일 창으로 넓힌 뒤에도 "새 기능 나열"형 기사보다 장애, 운영 철학, 경쟁 구도 기사가 더 많았다.</li>
+        <li>Claude 계열은 안정성과 가용성, Codex는 원격 운영 체계, Cursor는 전략적 포지셔닝과 자원 확보가 이번 기사 층의 중심축이었다.</li>
+        <li>즉, 언론과 공식 블로그 모두 AI 코딩 도구를 이제 단일 모델 비교가 아니라 운영 시스템과 제품 전략의 문제로 읽고 있다.</li>
+        <li>외부 기사만 보면 Codex와 Cursor의 세부 제품 변화가 과소평가되기 쉬우므로, 이번처럼 공식 changelog와 함께 읽는 방식이 필요하다.</li>
+      </ul>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://www.techradar.com/news/live/claude-down-june-23-2026">TechRadar: Claude outage live coverage</a></li>
+        <li><a href="https://developers.openai.com/blog/mastering-codex-remote-for-engineering">OpenAI Developers Blog: Mastering Codex Remote for engineering</a></li>
+        <li><a href="https://www.marketwatch.com/story/social-media-declared-cursor-dead-then-spacex-handed-the-ai-startup-a-60-billion-lifeline-50454e29">MarketWatch: Cursor / Anysphere / SpaceX article</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex Changelog</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

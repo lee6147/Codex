@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>공식 업데이트 보고서 - 2026-06-25</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #627080;
+      --line: #d9e1ea;
+      --link: #0f62c9;
+      --accent: #e7f0ff;
+      --warn: #fff3cd;
+      --hero: linear-gradient(135deg, #15345f 0%, #24559f 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      width: min(980px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      margin: 8px 0 0;
+      opacity: 0.94;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li {
+      margin: 6px 0;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #234a76;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    .sources ul,
+    .panel ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>공식 업데이트 보고서 - 2026-06-25</h1>
+      <p>생성일: 2026-06-25 | 확인 범위: 2026-06-22 ~ 2026-06-25 기준으로 Claude Code, Cursor, OpenAI Codex의 공식 changelog와 공식 개발자 문서를 다시 확인했다.</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>최신 확인점</strong><br>Cursor는 2026-06-22에 3.9를 공개했고, Codex는 2026-06-23 공식 블로그에서 Remote 운영 패턴을 정리했다. Claude Code는 raw changelog 최상단이 2.1.190 계열까지 올라가 있다.</div>
+        <div class="stat"><strong>확인 불가</strong><br>Claude Code raw changelog는 항목별 게시일을 노출하지 않아 2.1.190과 2.1.187 세부 항목의 정확한 공개 날짜는 공식 소스만으로 확인할 수 없다.</div>
+        <div class="stat"><strong>공통 축</strong><br>세 도구 모두 모델 자체보다 권한 경계, 커스터마이징, 원격/병렬 작업, 반복 가능한 워크플로 운영 능력을 더 전면에 올리고 있다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#claude">Claude Code</a></li>
+        <li><a href="#cursor">Cursor</a></li>
+        <li><a href="#codex">OpenAI Codex</a></li>
+        <li><a href="#observation">종합 관찰</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">
+        Claude Code는 최신 raw changelog에서 보안 경계와 장시간 에이전트 신뢰성을 다듬는 방향을 이어갔고,
+        Cursor는 3.9에서 plugins·skills·MCPs·subagents를 한 화면에서 관리하는 Customize 축을 전면화했으며,
+        Codex는 Remote 운영 문서와 6월 changelog를 통해 모바일 제어, 원격 호스트, 자동화 이력, 재사용 가능한 skill화 같은 운영 계층을 더 두껍게 만들고 있다.
+      </div>
+    </section>
+
+    <section class="panel" id="claude">
+      <h2>Claude Code</h2>
+      <article class="card">
+        <h3>최신 raw changelog 블록(2.1.190 / 2.1.187 계열): 권한 경계와 원격 신뢰성 보강</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge">Sandbox</span>
+          <span class="badge">Remote MCP</span>
+        </div>
+        <ul>
+          <li><code>sandbox.credentials</code> 설정이 추가되어 샌드박스 명령이 자격 증명 파일과 비밀 환경 변수를 읽지 못하도록 막을 수 있게 됐다.</li>
+          <li>조직이 제한한 모델을 model picker, <code>--model</code>, <code>/model</code>, <code>ANTHROPIC_MODEL</code> 전반에서 일관되게 차단하고 경고를 보여준다.</li>
+          <li>원격 MCP 도구가 5분 동안 응답 없이 매달리는 상황을 오류로 중단하도록 바뀌었고, 구조화 출력 루프와 background jobs 정체, worktree 등록 누수, 세션 채널 끊김 문제도 함께 정리됐다.</li>
+        </ul>
+        <p class="meta-line">발표일: 확인 불가 | 출처: Anthropic Claude Code CHANGELOG raw | 링크: https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</p>
+      </article>
+      <article class="card">
+        <h3>운영성 세부 개선: CJK paste 복구, GitHub App 설치 단순화, plugin 정리 흐름 개선</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge">CJK fix</span>
+          <span class="badge">GitHub App</span>
+        </div>
+        <ul>
+          <li>터미널이 바이트 단위 확장 키 이벤트로 paste를 전달할 때 한국어/CJK 텍스트가 깨지는 문제를 수정해 다국어 로컬 CLI 워크플로의 실사용성이 좋아졌다.</li>
+          <li><code>/install-github-app</code>에서 GitHub Actions workflow 설정이 필수가 아니게 되어, GitHub App만 설치하고 workflow·secret 단계는 건너뛸 수 있다.</li>
+          <li><code>/plugin</code>이 최근 사용하지 않은 plugin을 더 잘 드러내고, malformed <code>SKILL.md</code> frontmatter도 본문을 살려 읽도록 바뀌어 skill 자산 관리가 덜 brittle해졌다.</li>
+        </ul>
+        <p class="meta-line">발표일: 확인 불가 | 출처: Anthropic Claude Code CHANGELOG raw | 링크: https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md</p>
+      </article>
+    </section>
+
+    <section class="panel" id="cursor">
+      <h2>Cursor</h2>
+      <article class="card">
+        <h3>Cursor 3.9 (2026-06-22): Customize Cursor로 plugins, skills, MCPs를 한 화면에 통합</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge">Customize</span>
+          <span class="badge">Marketplace</span>
+        </div>
+        <ul>
+          <li>새 Customize 페이지에서 plugins, skills, MCPs, subagents, rules, commands, hooks를 user·team·workspace 레벨로 추가하고 관리할 수 있다.</li>
+          <li>팀 내부에서 가장 인기 있는 plugins·skills·MCPs를 보여주는 leaderboard가 생겨 조직 차원의 워크플로 표준화가 쉬워졌다.</li>
+          <li>GitLab, BitBucket, Azure DevOps의 plugin 저장소를 Team marketplace로 가져올 수 있게 되어 외부 자산 유통 경로가 넓어졌다.</li>
+        </ul>
+        <p class="meta-line">발표일: 2026-06-22 | 출처: Cursor Changelog 3.9 | 링크: https://cursor.com/changelog</p>
+      </article>
+      <article class="card">
+        <h3>Cursor 3.8 (2026-06-18): Automations를 GitHub·Slack·computer use까지 확장</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge">Automations</span>
+          <span class="badge">GitHub triggers</span>
+        </div>
+        <ul>
+          <li><code>/automate</code>로 로컬 agent 세션 안에서 바로 automation을 만들 수 있고, Slack emoji trigger와 5종의 GitHub trigger가 추가됐다.</li>
+          <li>cloud agents가 automation에서 computer use를 기본으로 쓸 수 있게 되어 데모 제작과 UI 산출물 생성까지 자동화 범위가 넓어졌다.</li>
+          <li>미완성 automation 저장, 기본 PR 열기, memory file 삭제 같은 운영 세부 기능도 보강돼 Cursor의 중심축이 editor 보조에서 workflow runtime으로 더 이동하고 있다.</li>
+        </ul>
+        <p class="meta-line">발표일: 2026-06-18 | 출처: Cursor Changelog 3.8 | 링크: https://cursor.com/changelog</p>
+      </article>
+    </section>
+
+    <section class="panel" id="codex">
+      <h2>OpenAI Codex</h2>
+      <article class="card">
+        <h3>Mastering Codex Remote for engineering (2026-06-23): 휴대폰을 제어 평면으로 쓰는 운영 패턴 정리</h3>
+        <div class="badge-row">
+          <span class="badge">공식 블로그</span>
+          <span class="badge">Remote</span>
+          <span class="badge">Control plane</span>
+        </div>
+        <ul>
+          <li>OpenAI는 휴대폰을 작은 터미널로 복제하는 대신, 시작·steer·review·organize를 담당하는 제어 평면으로 쓰는 것이 Codex Remote의 핵심이라고 정리했다.</li>
+          <li>최근 두 달 사이 remote host connections, worktrees, goals, side chats, inline code review, queued/steering prompts, attachments, skills, plugins, archived threads, security controls가 누적됐다고 명시했다.</li>
+          <li>이 글은 Codex가 단순 코드 생성기가 아니라 장시간 엔지니어링 운영을 분산 제어하는 인터페이스로 포지셔닝되고 있음을 보여준다.</li>
+        </ul>
+        <p class="meta-line">발표일: 2026-06-23 | 출처: OpenAI Developers Blog | 링크: https://developers.openai.com/blog/mastering-codex-remote-for-engineering</p>
+      </article>
+      <article class="card">
+        <h3>Codex Mobile / App 6월 흐름: 진행 가시성, autocomplete, Record &amp; Replay, host handoff 축 강화</h3>
+        <div class="badge-row">
+          <span class="badge">공식 changelog</span>
+          <span class="badge">Codex Mobile</span>
+          <span class="badge">App 26.616</span>
+        </div>
+        <ul>
+          <li>2026-06-22 ChatGPT for iOS 1.2026.167은 commands·skills·plugins autocomplete, subagent/task/worktree 진행 가시성, workspace file search와 code review drafts를 개선했다.</li>
+          <li>2026-06-18 Codex app 26.616은 Record &amp; Replay로 시연한 작업을 재사용 가능한 skill로 바꾸고, automation run history bulk action과 local/remote host 간 thread handoff를 추가했다.</li>
+          <li>핵심은 Codex의 최근 변화가 모델 교체보다 원격 운영, 재사용 가능한 작업 자산화, 여러 host 사이의 작업 이어받기 같은 orchestration 계층에 집중된다는 점이다.</li>
+        </ul>
+        <p class="meta-line">발표일: 2026-06-22 / 2026-06-18 | 출처: OpenAI Codex Changelog | 링크: https://developers.openai.com/codex/changelog</p>
+      </article>
+    </section>
+
+    <section class="panel" id="observation">
+      <h2>종합 관찰</h2>
+      <ul>
+        <li>Claude Code는 권한 경계와 장시간 세션 신뢰성 보강에 가장 공격적으로 투자하고 있다.</li>
+        <li>Cursor는 3.9에서 customization 자산을 팀 단위로 배포하고 관찰하는 허브를 만들며 조직 배포형 개발 도구로 더 선명해졌다.</li>
+        <li>Codex는 mobile/remote/app surface를 엮어 여러 기기와 host를 넘나드는 운영 계층을 계속 두껍게 만들고 있다.</li>
+        <li>세 제품 모두 이제 "코드를 잘 쓰는가"보다 "반복 작업을 안전하게 구조화하고, 장시간 운영하고, 재사용 가능한 workflow 자산으로 남기는가" 경쟁으로 이동 중이다.</li>
+      </ul>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md">Anthropic Claude Code CHANGELOG raw</a></li>
+        <li><a href="https://cursor.com/changelog">Cursor Changelog</a></li>
+        <li><a href="https://developers.openai.com/codex/changelog">OpenAI Codex Changelog</a></li>
+        <li><a href="https://developers.openai.com/blog/mastering-codex-remote-for-engineering">OpenAI Developers Blog: Mastering Codex Remote for engineering</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
