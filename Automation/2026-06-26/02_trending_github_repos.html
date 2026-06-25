@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 트렌딩 레포지터리 보고서 - 2026-06-26</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f8f5;
+      --panel: #ffffff;
+      --text: #1c241d;
+      --muted: #5f6c63;
+      --line: #d7e3da;
+      --link: #116149;
+      --accent: #e6f5ee;
+      --warn: #eef9ff;
+      --hero: linear-gradient(135deg, #133b2f 0%, #2d7a5f 100%);
+      --hero-text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      width: min(980px, calc(100vw - 32px));
+      margin: 32px auto 64px;
+    }
+    h1, h2, h3 { line-height: 1.3; }
+    a { color: var(--link); }
+    .hero {
+      background: var(--hero);
+      color: var(--hero-text);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+    .hero p { margin: 8px 0 0; opacity: 0.94; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .notice {
+      background: var(--warn);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc li { margin: 6px 0; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfffc 100%);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #1d5a45;
+    }
+    .meta-line {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    .sources ul,
+    .panel ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>GitHub 트렌딩 레포지터리 보고서 - 2026-06-26</h1>
+      <p>생성일: 2026-06-26 | 조사 방식: 2026-06-26 시점의 GitHub Trending daily snapshot을 확인했고, 오늘은 daily 자체에 AI coding·agent workflow·security 자산이 충분히 모여 있어 weekly 보조 없이 daily를 그대로 채택했다.</p>
+      <div class="meta-grid">
+        <div class="stat"><strong>선정 기준</strong><br>persistent spec, skill/package, agent toolkit, browser/page control, security 검증처럼 Claude Code·Cursor·Codex의 실사용 워크플로와 직접 닿는 저장소만 남겼다.</div>
+        <div class="stat"><strong>대표 뷰</strong><br>오늘 daily는 일반 범용 오픈소스보다 agent 운영 자산이 상단에 더 선명하게 모여 있어 이번에는 weekly보다 해석력이 좋았다.</div>
+        <div class="stat"><strong>핵심 흐름</strong><br>설계 계약서, skill 묶음, browser agent, 보안 스캐너, 팀용 agent toolkit이 동시에 떠오르며 "agent를 어떻게 오래 굴릴 것인가"가 중심 화제가 됐다.</div>
+      </div>
+    </header>
+
+    <section class="panel toc">
+      <h2>목차</h2>
+      <ol>
+        <li><a href="#repos">선정 레포지터리</a></li>
+        <li><a href="#observation">트렌드 해석</a></li>
+        <li><a href="#sources">출처</a></li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>요약</h2>
+      <div class="notice">
+        2026-06-26의 GitHub Trending daily는 "더 센 모델"보다 "더 안정적이고 재사용 가능한 에이전트 운영 자산"이 강세인 하루였다.
+        design contract, skill 패키지, browser/page agent, 보안 검증, 팀용 toolkit이 상위권에 같이 떠올랐고,
+        이는 최근 Claude Code·Cursor·Codex의 공식 메시지가 모두 customization과 orchestration 계층으로 이동하고 있다는 점과 정확히 맞물린다.
+      </div>
+    </section>
+
+    <section class="panel" id="repos">
+      <h2>선정 레포지터리</h2>
+
+      <article class="card">
+        <h3>1. google-labs-code / design.md</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge">18,876 stars</span>
+          <span class="badge">1,407 stars today</span>
+        </div>
+        <ul>
+          <li>"coding agents를 위한 visual identity spec"이라는 설명 자체가 persistent design contract를 핵심 자산으로 내세운다.</li>
+          <li>프롬프트 한 번으로 끝내는 대신, 에이전트가 계속 참조할 수 있는 구조화된 설계 문서를 남기는 흐름이 트렌딩 상단까지 올라온 셈이다.</li>
+          <li>AGENTS.md, repo-local rules, Cursor Customize, Codex skills처럼 운영 계약을 파일로 남기는 최근 공식 제품 흐름과 직접 이어진다.</li>
+        </ul>
+        <p class="meta-line">저장소: https://github.com/google-labs-code/design.md | 관찰 시점 기준 누적 star: 18,876</p>
+      </article>
+
+      <article class="card">
+        <h3>2. calesthio / OpenMontage</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">21,848 stars</span>
+          <span class="badge">3,553 stars today</span>
+        </div>
+        <ul>
+          <li>12 pipelines, 52 tools, 500+ agent skills를 전면에 세우며, 모델이 아니라 skill 조합과 실행 파이프라인이 제품 본체가 된 사례다.</li>
+          <li>에이전트 활용의 무게중심이 단일 코딩 보조에서 복합 워크플로 조립으로 이동하고 있음을 가장 노골적으로 보여준다.</li>
+          <li>Claude Code skill 생태계, Cursor plugins/skills/MCPs, Codex Record &amp; Replay와 같은 자산 재사용 흐름과 강하게 맞닿는다.</li>
+        </ul>
+        <p class="meta-line">저장소: https://github.com/calesthio/OpenMontage | 관찰 시점 기준 누적 star: 21,848</p>
+      </article>
+
+      <article class="card">
+        <h3>3. garrytan / gstack</h3>
+        <div class="badge-row">
+          <span class="badge">TypeScript</span>
+          <span class="badge">115,679 stars</span>
+          <span class="badge">836 stars today</span>
+        </div>
+        <ul>
+          <li>"Garry Tan's exact Claude Code setup"과 23개 도구 조합을 전면에 내세워, 성공한 개인 workflow가 복제 가능한 stack으로 유통되는 모습을 보여준다.</li>
+          <li>이번 트렌딩에서는 모델 자체보다 setup recipe와 역할 분업된 도구 묶음이 더 큰 관심을 끌고 있다.</li>
+          <li>Cursor team marketplace나 Codex reusable skills처럼, 개인 프롬프트가 아닌 공유 가능한 운영 묶음이 가치의 단위가 되고 있음을 잘 보여준다.</li>
+        </ul>
+        <p class="meta-line">저장소: https://github.com/garrytan/gstack | 관찰 시점 기준 누적 star: 115,679</p>
+      </article>
+
+      <article class="card">
+        <h3>4. aws / agent-toolkit-for-aws</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">1,100 stars</span>
+          <span class="badge">15 stars today</span>
+        </div>
+        <ul>
+          <li>AWS가 공식 지원하는 MCP servers, skills, plugins 묶음을 제공해, agent 운영을 vendor-supported toolkit 형태로 배포하는 흐름을 보여준다.</li>
+          <li>이 저장소는 실험적 개인 설정이 아니라 조직 배포 가능한 agent 도구 표준화에 초점을 둔다.</li>
+          <li>기업 환경에서 Claude Code·Cursor·Codex를 실제 인프라와 붙일 때 필요한 연결 계층이 독립된 트렌딩 주제가 됐다는 점이 중요하다.</li>
+        </ul>
+        <p class="meta-line">저장소: https://github.com/aws/agent-toolkit-for-aws | 관찰 시점 기준 누적 star: 1,100</p>
+      </article>
+
+      <article class="card">
+        <h3>5. mukul975 / Anthropic-Cybersecurity-Skills</h3>
+        <div class="badge-row">
+          <span class="badge">Python</span>
+          <span class="badge">21,106 stars</span>
+          <span class="badge">600 stars today</span>
+          <span class="badge">Security</span>
+        </div>
+        <ul>
+          <li>817 structured cybersecurity skills를 여러 보안 프레임워크에 매핑하고 Claude Code, Codex CLI, Cursor 등 20개 이상 플랫폼 지원을 내세운다.</li>
+          <li>skills가 개인 노하우 메모가 아니라 표준화된 교환 자산이 되는 방향을 가장 직접적으로 보여주는 사례다.</li>
+          <li>최근 Claude의 sandbox/credential 경계, Cursor의 team customization, Codex security surface와 맞물려 보안형 skill 자산이 독립 카테고리로 커지고 있다.</li>
+        </ul>
+        <p class="meta-line">저장소: https://github.com/mukul975/Anthropic-Cybersecurity-Skills | 관찰 시점 기준 누적 star: 21,106</p>
+      </article>
+
+      <article class="card">
+        <h3>6. alibaba / page-agent</h3>
+        <div class="badge-row">
+          <span class="badge">JavaScript</span>
+          <span class="badge">19,748 stars</span>
+          <span class="badge">196 stars today</span>
+          <span class="badge">Browser Agent</span>
+        </div>
+        <ul>
+          <li>"in-page GUI agent"로 웹 인터페이스를 자연어로 제어하는 구조를 내세워, 브라우저 표면이 agent 작업 공간으로 굳어지고 있음을 보여준다.</li>
+          <li>로컬 코드 편집만으로는 끝나지 않는 업무 자동화에서 page-level control이 점점 핵심이 되고 있다는 신호다.</li>
+          <li>Claude Code browser 계열 흐름, Cursor computer use, Codex Browser Use와 같은 최근 공식 표면 확장과 직접 연결된다.</li>
+        </ul>
+        <p class="meta-line">저장소: https://github.com/alibaba/page-agent | 관찰 시점 기준 누적 star: 19,748</p>
+      </article>
+    </section>
+
+    <section class="panel" id="observation">
+      <h2>트렌드 해석</h2>
+      <ul>
+        <li>오늘 daily trending의 핵심 키워드는 design contract, skill packaging, browser control, security validation, team toolkit이다.</li>
+        <li>에이전트 경쟁의 본체가 모델 점수보다 "반복 가능한 작업 시스템"으로 이동하고 있음을 저장소 구성 자체가 보여준다.</li>
+        <li>특히 design.md, gstack, AWS toolkit, cybersecurity skills가 동시에 뜬 것은 운영 규칙과 조직 배포 자산이 제품 경험의 일부가 됐다는 뜻이다.</li>
+        <li>이번에는 weekly를 보조로 쓰지 않아도 daily만으로 Claude Code·Cursor·Codex 사용자의 실무 관심사를 해석하기에 충분히 깨끗한 신호가 나왔다.</li>
+      </ul>
+    </section>
+
+    <section class="panel sources" id="sources">
+      <h2>출처</h2>
+      <ul>
+        <li><a href="https://github.com/trending">GitHub Trending (daily)</a></li>
+        <li><a href="https://github.com/google-labs-code/design.md">google-labs-code/design.md</a></li>
+        <li><a href="https://github.com/calesthio/OpenMontage">calesthio/OpenMontage</a></li>
+        <li><a href="https://github.com/garrytan/gstack">garrytan/gstack</a></li>
+        <li><a href="https://github.com/aws/agent-toolkit-for-aws">aws/agent-toolkit-for-aws</a></li>
+        <li><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills">mukul975/Anthropic-Cybersecurity-Skills</a></li>
+        <li><a href="https://github.com/alibaba/page-agent">alibaba/page-agent</a></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
